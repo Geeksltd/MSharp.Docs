@@ -3,7 +3,7 @@ Documentation for M# programming.
 
 ## Table of contents
 
-### [Installing M#](Install/readme.md)
+### [Installing M#](Install/README.md)
 Learn how to install M# on your computer to get started.
 
 ### [Hello world](HelloWorld/README.md)
