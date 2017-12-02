@@ -30,3 +30,4 @@ Make sure you have all of the following installed on your computer:
 If you experienced any problem try the following:
 1. Open a cmd and run Initialize.bat file and watch for NodeJS error. You might have missing components.
 2. Make sure all nuget packages are successfully restored.
+3.If you there is issues with gulp, just try to reinstall it.
