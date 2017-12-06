@@ -5,3 +5,4 @@ M# is a model-driven declarative programming model intended for developing data-
 ## Is C# not enough?
 In business applications there are common code patterns that repeat over and over. They are vast, yet slow and error-prone to write manually. Although similar, but they are not identical which is why code-reuse methods don't work there.
 
+![Overview diagram](MSharp-Overview.png "M# Overview")
