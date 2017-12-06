@@ -3,6 +3,10 @@ When you create a new M# ASP.NET project you will see the following structure in
 
 ![](Solution.JPG)
 
+The following diagram explains the relationship between these projects, and also how you, as the developer, will interact with these projects:
+
+![](DevModel.JPG)
+
 ## @Model
 This is where you define your application entities using the high level M# concept.
 An entity represents a real world object which exists in a business domain. In M# development you always start here. Think of it as your database design stage, but at a more conceptual level. Here you declare your business data types and their associations, which will be the foundation of everything else.
