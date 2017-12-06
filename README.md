@@ -1,13 +1,12 @@
 # Learn M#
-Documentation for M# programming.
+M# enables you to build robust .NET business applications and complex websites 4X faster than before.
 
-## Table of contents
+### [Introduction: What is M#?](Overview/README.md)
+Understand the M# development model in a nutshell.
 
 ### [Installing M#](Install/README.md)
 Learn how to install M# on your computer and create a project to get started.
 
-### [Overview: How M# Works](Overview/README.md)
-Understand the M# development model in a nutshell.
 
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
