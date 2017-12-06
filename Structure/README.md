@@ -13,8 +13,13 @@ An entity represents a real world object which exists in a business domain. In M
 >- It's only used during development.
 
 ## Domain
-This is the home for your business domain objects and business logic. By default you will have the following folders In this project you will have:
->-
-This M# intelligently converts an Entity Domain Model, with all the associations and relationships, into database tables while maintaining entity relationships. This eliminates the need of developing Database and Business entities separately, significantly reducing the development time.
+This is the home for your business domain objects and business logic. By default you will have the following folders:
+![](Domain.JPG)
+
+>-**«GEN»Entities**: For every entity definition in your *@Model* project, M# will generate a business class (partial) here.
+>-**«GEN»DAL**: For every entity definition in your *@Model* project, M# will generate a data access class class here.
+>-Logic: This is where you write any custom code *(as partial classes)* for the generated business entity classes.
+
+M# intelligently converts your high level entity definitions, with all the associations, inheritence, validation, data access, etc into the two generated folders explained above. It will also generate the database creation scripts (SQL). This eliminates the need of developing Database and Business entities manually.
 
 M# fully supports Object Oriented development and encourages developers to use all such features exposed at entity and property level.
