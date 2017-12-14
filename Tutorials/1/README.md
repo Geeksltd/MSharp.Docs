@@ -1,5 +1,5 @@
 # App 1 - Tutorial
-In this lesson you will learn the following M# concepts.
+In this tutorial you will learn the following M# concepts.
 
 - Entity Type Creation
 - Association
@@ -12,7 +12,7 @@ In this lesson you will learn the following M# concepts.
 
 
 ## Requirements :
-In this tutorial we are going to implement Contact Managment System that you can see all available contacts and simpley do *CRUD* operation on each one of them. here are pictures of requirments :
+We are going to implement Contact Managment System that you can see all available contacts and simpley do *CRUD* operation on each one of them. here are pictures of requirments :
 
 ![Contact List](ContactList.PNG "Contact List")
 ![Contact Form](ContactAddEdit.PNG "Contact Form")
@@ -92,7 +92,7 @@ public class ContactPage : RootPage
 ```
 this  is our root class that inherit from **RootPage** class, **RootPage** is a special class that tell M# framework how to deal with page. in **ContactPage.cs** I have mentioned that by the runing this page it should navigate to **ContactsPage.cs** that list all of my Contacts. so our next step is to create **ContactsPage.cs**
 
-#### Creating Contact List Page && Contact List Module
+#### Creating Contact List Page & Contact List Module
 
 ```C#
 public class ContactsPage : SubPage<ContactPage>
@@ -144,7 +144,7 @@ public class ContactsList : ListModule<Domain.Contact>
 ```
 in this class we have include our needed column according to Visual Spec and add *Edit,Delete* and *Add Contact* buttons with there navigation instruction. you should notice that we have inherit from **ListModule** class, this class is special class that tell M# framework that how to generate code for showing this class.
 
-#### Creating Contact Form Page && Contact Form Module
+#### Creating Contact Form Page & Contact Form Module
 After creating contact list its time to create contact form page that is responsible for add or edit operation. we continue or work by creating contact form page in **@UI** project
 ```C#
 public class EnterPage : SubPage<ContactsPage>
@@ -186,7 +186,7 @@ public class ContactForm : FormModule<Domain.Contact>
 ```
 Another important module is form module that deal with add or edit entity. this class inherit from **FormModule** class that tell M# framework how to deal with this class. this special class tell M# that it should generate form page that is responsible for Add or Edit entity.
 
-### Adding Contact List page to Menu
+### Adding Contact List Page to Menu
 our last step is to include *contact list page* in main menu, for doing this open **MainMenu.cs** class and add *ContactPage* class here as menu item.
 ```C#
 public class MainMenu : MenuModule
