@@ -10,6 +10,9 @@ Learn how to install M# on your computer and create a project to get started.
 #### [Structure of an M# solution](Structure/README.md)
 Learn about the structure of an M# solution and learn the development workflow.
 
+#### [M# Concepts](Concepts/README.md)
+An introduction to all key M# concepts such as Entity Type, Property, Page, Module, ....
+
 # Tutorials
 
 ### [Tutorial 1: Your first M# app](Tutorials/1/README.md)
