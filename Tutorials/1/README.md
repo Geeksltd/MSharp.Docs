@@ -17,7 +17,7 @@ In this lesson you will learn the following M# concepts.
 ## Adding New Entity :
 For adding new entity, right click on **@Model** project and add C# class. as you have saw in Visual Spec, we are going to create two entity, *Category* and *Contact* .
 
-![Model Overview](Model-Overview.png "M# Overview")
+![Model Overview](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/1/Model-Overview.PNG "Model Overview")
 
 In M# the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects. in our example we are going to create *Category* and *Contact* entity like this :
 ```C#
@@ -57,7 +57,7 @@ after creating all entities, we are going to build our model. build your model b
 #### Adding Page
 In our example, we have contact page that hold list and contact form. as you can see, I have created root page with the name of **ContactPage.cs** that act like holder for **EnterPage.cs** and **ContactsPage.cs** and these two pages inherit from their parent.
 
-![UI Overview](UI-Overview.png "M# Overview")
+![UI Overview](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/1/UI-Overview.PNG "UI Overview")
 
 ```C#
 public class ContactPage : RootPage
