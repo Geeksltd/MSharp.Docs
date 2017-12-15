@@ -11,29 +11,32 @@ In this tutorial you will learn the following M# concepts.
 - Menu 
 
 
-## Requirements :
-We are going to implement Contact Management System that you can see all available contacts and simply do *CRUD* operation on each one of them. Here are pictures of requirements :
+## Requirements:
+We are going to implement Contact Management System that you can see all available contacts and simply do *CRUD* operation. Here are pictures of requirements:
 
 ![Contact List](ContactList.PNG "Contact List")
 ![Contact Form](ContactAddEdit.PNG "Contact Form")
 
 By using **M# framework** you have the power of creating this application 4time faster than usual application development process, so lets see how we can achieve this.
 
-## M# Structure :
+#### Note:
+> We suppose that you are familiar with M# framework, if you are totally unfamiliar with it please first look at [Understanding M#](http://msharp.co.uk/Learn/Understanding-MSharp.html)
+
+## M# Structure:
 ![Structure of an M#](https://github.com/Geeksltd/MSharp.Docs/blob/master/Structure/DevModel.JPG "Structure of an M#")
 As you can see, you as a developer should interact with these projects. If you are not familiar with this structure please look at [Structure of an M# solution](https://github.com/Geeksltd/MSharp.Docs/blob/master/Structure/README.md).
- Our development steps are :
-1. Create required entity class in **@Model** project.
-2. Generate created class in former step in **Domain** project.
-3. Create and develop required pages based on generated classes in **@UI** project.
+ Our development steps are:
+1. Create required C# class in **@Model** project.
+2. Build **@Model** project, this action generates domain class with all their dependencies for data access layer in **Domain** project.
+3. Create and develop required pages in **@UI** project and build this project to get the final result in **WebSite** project.
 
-## Knowing Entities and Implementation :
-In our example, we have *Contact* and *Category* entity that have one to many relationship between *Contact* and *Category*. Our first step is to create *Contact* and *Category* classes.
+## Knowing Entities and Implementation:
+In our example, we have *Contact* and *Category* entity that have one to many relationship. Our first step is to create *Contact* and *Category* classes in **@Model** project.
 
 ### Adding Entities:
 For adding a new entity, right click on **@Model** project and add required C# class. We are going to create two entities, *Category* and *Contact* .
 
-![Model Overview](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/1/Model-Overview.PNG "Model Overview")
+![Model Overview](Model-Overview.PNG "Model Overview")
 
 In M# the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
 ```C#
@@ -64,21 +67,26 @@ public class Contact : EntityType
     }
 ```
 
-Every entity in M# should inherit from **EntityType** base class, this special class that instructs M# how to deal with an entity. As you can see we have created an association between *Category* and *Contac*t entity and implement their properties. All properties are mandatory and for email property, we have specified special validation that check email address format. 
+Every entity in M# should inherit from **EntityType** base class, this special class instructs M# how to deal with an entity. As you can see we have created an association between *Category* and *Contact* entity and implement their properties. All properties are mandatory and for email property, we have specified special validation that check email address format.
+
+#### Note:
+> - M# framework has some built-in methods that all classes and properties generate according to them, For example, we have used **String("Name")** that generate a class with a property **Name**. You will learn more about these methods and properties by the time pass.
+> - Always use singular naming convention when creating entities. M# intelligently uses plural naming convention where and when required.
+> 
 After creating all entities, we are going to build our model. Build your model by right click on **@Model** project and selecting **Build** from context menu. This step generates related C# class to **Domain** project that consist of all related code for generating and persisting data to the database. Now it's time to build this project too, right click on **Domain** project and select **Build**. Our final step starts from here, **@UI** project deal with user interface and generate all required stuff that user interact with it. In **@UI** project we have three main steps to do:
 1. Add Pages
 2. Config Menu
 3. Add Modules To Pages
 
 ## Developing UI
-In our example, we have a contact page that list our contacts and another page to adding and editing each contact.
+In our example, we have a contact page that list our contacts and another one for adding and editing contact.
 
 ### Creating Contact Pages
 Until now, we have done these steps:
 1. Created our entities in **@Model** project and build the project in visual studio
 2. Then build **Domain** project in visual studio.
 Now it's time to create our first page. Here we have two pages, one that is responsible for showing a contacts list and the other for adding and editing contact, these two pages can have some property in common, so first we create a parent page and then inherit other required page according to our example.
-![UI Overview](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/1/UI-Overview.PNG "UI Overview")
+![UI Overview](UI-Overview.PNG "UI Overview")
 ```C#
 public class ContactPage : RootPage
 {
@@ -142,10 +150,10 @@ public class ContactsList : ListModule<Domain.Contact>
         }
     }
 ```
-In this class we have included our needed column according to Visual Spec and add *Edit, Delete* and *Add Contact* buttons with their navigation instruction. You should notice that we have inherited from **ListModule** class, this class is a special class that tells M# framework that how to generate code for showing this class.
+In this class we have included our needed column according to the picture and add *Edit, Delete* and *Add Contact* buttons with their navigation instruction. You should notice that we have inherited from **ListModule** class, this class is a special class that tells M# framework how to generate code for showing this class.
 
 #### Creating Contact Form Page & Contact Form Module
-After creating a contact list its time to create a contact form page that is responsible for add or edit operation. We continue our work by creating a contact form page in **@UI** project
+After creating a contact list its time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **@UI** project
 ```C#
 public class EnterPage : SubPage<ContactsPage>
     {
@@ -157,7 +165,7 @@ public class EnterPage : SubPage<ContactsPage>
         }
     }
 ```
-As you can see, this class inherits from Contacts page and it instruct the M# framework that this class is responsible for showing contact form module.
+As you can see, this class inherits from Contacts page and by using **Add\<ContactForm\>** it instruct M# framework that this page is responsible for showing contact form module.
 ```C#
 public class ContactForm : FormModule<Domain.Contact>
     {
@@ -184,7 +192,7 @@ public class ContactForm : FormModule<Domain.Contact>
         }
     }
 ```
-Another important module is form module that deals with add or edit entity. This class inherits from **FormModule** class that tell M# framework how to deal with this class. This special class tells M# that it should generate a form page that is responsible for Add or Edit entity.
+Another important module is form module that deals with add or edit entity. This class inherits from **FormModule** class that tell M# framework how to deal with this class. This special class tells M# that it should generate a form page.
 
 ### Adding Contact List Page to Menu
 Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class and add *ContactPage* class here as a menu item.
@@ -206,5 +214,7 @@ public class MainMenu : MenuModule
         }
     }
 ```
-By adding *ContactPage* class as menu item here, we tell M# framework that by clicking on Contacts link, it should navigate user to *ContactPage* that this page shows a list of all contacts in our database. 
-Now its time to build **@UI** project, this project generated related files in **WebSite** project, is setting this project as your default *StartUp* project and set your *connection string* in **appsetting.json** file and then hit F5 to see M# magic. Your project is ready to use in a short time.
+By adding *ContactPage* class as menu item here, we tell M# framework that by clicking on Contacts link, it should navigate user to *ContactPage* that shows a list of all contacts in our database. 
+
+#### Final Step
+Now its time to build **@UI** project, this project generated related files in **WebSite** project, after building **@UI** project set the **WebSite** project as your default *StartUp* project and then set your *connection string* in **appsetting.json** file and hit F5 to see M# magic. Your project is ready to use in a short time.
