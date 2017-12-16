@@ -21,6 +21,12 @@ In this lesson you will learn about the key M# concepts:
 - Page & menus and navigation
 - List modules, form modules and buttons
 
+### [Tutorial 2: Your second M# app](Tutorials/2/README.md)
+In this lesson you will learn:
+- Menu
+- Pop-up (modal) pages
+- Image and File properties
+
 
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
