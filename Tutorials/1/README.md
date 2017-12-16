@@ -41,30 +41,30 @@ For adding a new entity, right click on **@Model** project and add required C# c
 In M# the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
 ```C#
 public class Category : EntityType
+{
+    public Category()
     {
-        public Category()
-        {
-            String("Name").Mandatory();
-        }
+        String("Name").Mandatory();
     }
+}
 ```
 
 ```C#
 public class Contact : EntityType
+{
+    public Contact()
     {
-        public Contact()
-        {
-            Associate<Category>("Category").Mandatory();
+        Associate<Category>("Category").Mandatory();
 
-            String("First name").Mandatory();
+        String("First name").Mandatory();
 
-            String("Last name").Mandatory();
+        String("Last name").Mandatory();
 
-            String("Tel").Mandatory();
+        String("Tel").Mandatory();
 
-            String("Email").Mandatory().Accepts(TextPattern.EmailAddress);
-        }
+        String("Email").Mandatory().Accepts(TextPattern.EmailAddress);
     }
+}
 ```
 
 Every entity in M# should inherit from **EntityType** base class, this special class instructs M# how to deal with an entity. As you can see we have created an association between *Category* and *Contact* entity and implement their properties. All properties are mandatory and for email property, we have specified special validation that check email address format.
@@ -104,51 +104,51 @@ This  is our root class that inherits from **RootPage** class, **RootPage** is a
 
 ```C#
 public class ContactsPage : SubPage<ContactPage>
+{
+    public ContactsPage()
     {
-        public ContactsPage()
-        {
-            Layout(Layouts.FrontEnd);
+        Layout(Layouts.FrontEnd);
 
-            Add<ContactsList>();
-        }
+        Add<ContactsList>();
     }
+}
 ```
 This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add\<ContactList>()* I told M# that this page should show ContactList module. Implementation of **ContactList.cs** class is like this:
 ```C#
 public class ContactsList : ListModule<Domain.Contact>
+{
+    public ContactsList()
     {
-        public ContactsList()
-        {
-            Column(x => x.Category);
+        Column(x => x.Category);
 
-            Column(x => x.FirstName);
+        Column(x => x.FirstName);
 
-            Column(x => x.LastName);
+        Column(x => x.LastName);
 
-            Column(x => x.Tel).LabelText("Telephone");
+        Column(x => x.Tel).LabelText("Telephone");
 
-            Column(x => x.Email);
+        Column(x => x.Email);
 
-            ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
-                .OnClick(x => x.Go<EnterPage>()
-                .Send("item", "item.ID").SendReturnUrl(false));
+        ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
+            .OnClick(x => x.Go<EnterPage>()
+            .Send("item", "item.ID").SendReturnUrl(false));
 
-            ButtonColumn("Delete").HeaderText("Actions")
-                .GridColumnCssClass("actions")
-                .ConfirmQuestion("Are you sure you want to delete this Contact?")
-                .CssClass("btn-danger")
-                .Icon(FA.Remove)
-                .OnClick(x =>
-                {
-                    x.DeleteItem();
-                    x.RefreshPage();
-                });
+        ButtonColumn("Delete").HeaderText("Actions")
+            .GridColumnCssClass("actions")
+            .ConfirmQuestion("Are you sure you want to delete this Contact?")
+            .CssClass("btn-danger")
+            .Icon(FA.Remove)
+            .OnClick(x =>
+            {
+                x.DeleteItem();
+                x.RefreshPage();
+            });
 
-            Button("Add Contact")
-                .Icon(FA.Plus)
-                .OnClick(x => x.Go<EnterPage>().SendReturnUrl(false));
-        }
+        Button("Add Contact")
+            .Icon(FA.Plus)
+            .OnClick(x => x.Go<EnterPage>().SendReturnUrl(false));
     }
+}
 ```
 In this class we have included our needed column according to the picture and add *Edit, Delete* and *Add Contact* buttons with their navigation instruction. You should notice that we have inherited from **ListModule** class, this class is a special class that tells M# framework how to generate code for showing this class.
 
@@ -156,41 +156,45 @@ In this class we have included our needed column according to the picture and ad
 After creating a contact list its time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **@UI** project
 ```C#
 public class EnterPage : SubPage<ContactsPage>
+{
+    public EnterPage()
     {
-        public EnterPage()
-        {
-            Layout(Layouts.FrontEnd);
+        Layout(Layouts.FrontEnd);
 
-            Add<ContactForm>();
-        }
+        Add<ContactForm>();
     }
+}
 ```
 As you can see, this class inherits from Contacts page and by using **Add\<ContactForm\>** it instruct M# framework that this page is responsible for showing contact form module.
 ```C#
 public class ContactForm : FormModule<Domain.Contact>
+{
+    public ContactForm()
     {
-        public ContactForm()
-        {
-            HeaderText("Contact Details");
+        HeaderText("Contact Details");
 
-            Field(x => x.Category).Control(ControlType.DropdownList);
-            Field(x => x.FirstName).Control(ControlType.Textbox).Mandatory();
-            Field(x => x.LastName).Control(ControlType.Textbox);
-            Field(x => x.Email).Control(ControlType.Textbox);
-            Field(x => x.Tel).Control(ControlType.Textbox).Label("Telephone");
+        Field(x => x.Category).Control(ControlType.DropdownList);
 
-            Button("Cancel").CausesValidation(false)
-                .OnClick(x => x.ReturnToPreviousPage());
+        Field(x => x.FirstName).Control(ControlType.Textbox).Mandatory();
 
-            Button("Save").IsDefault().Icon(FA.Check)
-                .OnClick(x =>
-                {
-                    x.SaveInDatabase();
-                    x.GentleMessage("Saved successfully.");
-                    x.ReturnToPreviousPage();
-                });
-        }
+        Field(x => x.LastName).Control(ControlType.Textbox);
+
+        Field(x => x.Email).Control(ControlType.Textbox);
+
+        Field(x => x.Tel).Control(ControlType.Textbox).Label("Telephone");
+
+        Button("Cancel").CausesValidation(false)
+            .OnClick(x => x.ReturnToPreviousPage());
+
+        Button("Save").IsDefault().Icon(FA.Check)
+            .OnClick(x =>
+            {
+                x.SaveInDatabase();
+                x.GentleMessage("Saved successfully.");
+                x.ReturnToPreviousPage();
+            });
     }
+}
 ```
 Another important module is form module that deals with add or edit entity. This class inherits from **FormModule** class that tell M# framework how to deal with this class. This special class tells M# that it should generate a form page.
 
@@ -198,21 +202,21 @@ Another important module is form module that deals with add or edit entity. This
 Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class and add *ContactPage* class here as a menu item.
 ```C#
 public class MainMenu : MenuModule
+{
+    public MainMenu()
     {
-        public MainMenu()
-        {
-            AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
+        AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
 
-            Item("Login").Icon(FA.UnlockAlt).VisibleIf(AppRole.Anonymous)
-                .OnClick(x => x.Go<LoginPage>());
+        Item("Login").Icon(FA.UnlockAlt).VisibleIf(AppRole.Anonymous)
+            .OnClick(x => x.Go<LoginPage>());
 
-            Item("Settings").Icon(FA.Cog).VisibleIf(AppRole.Administrator)
-                .OnClick(x => x.Go<SettingsPage>());
+        Item("Settings").Icon(FA.Cog).VisibleIf(AppRole.Administrator)
+            .OnClick(x => x.Go<SettingsPage>());
 
-            Item("Contacts").Icon(FA.Cog)
-                .OnClick(x => x.Go<ContactPage>());
-        }
+        Item("Contacts").Icon(FA.Cog)
+            .OnClick(x => x.Go<ContactPage>());
     }
+}
 ```
 By adding *ContactPage* class as menu item here, we tell M# framework that by clicking on Contacts link, it should navigate user to *ContactPage* that shows a list of all contacts in our database. 
 
