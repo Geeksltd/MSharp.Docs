@@ -22,10 +22,10 @@ In this lesson you will learn about the key M# concepts:
 - List modules, form modules and buttons
 
 ### [Tutorial 2: Your second M# app](Tutorials/2/README.md)
-In this lesson you will learn:
+In this lesson you will learn about:
 - Menu
 - Pop-up (modal) pages
-- Image and File properties
+- Image and file properties
 
 
 ### [Business Domain - Basics](Domain/README.md)
