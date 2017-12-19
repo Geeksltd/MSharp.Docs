@@ -6,7 +6,7 @@ Make sure you have all of the following installed on your computer:
 1. Windows 10
 2. Visual Studio 2017 (latest build)
 3. GIT
-4. NodeJs
+4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
 
 ## How to install
 1. Close all instances of Visual Studio.
