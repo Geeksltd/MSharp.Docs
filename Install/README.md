@@ -5,7 +5,7 @@ Make sure you have all of the following installed on your computer:
 
 1. Windows 10
 2. Visual Studio 2017 (latest build)
-3. GIT
+3. GIT for Windows ([install from here](http://gitforwindows.org/))
 4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
 
 ## How to install
