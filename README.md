@@ -10,11 +10,14 @@ Learn how to install M# on your computer and create a project to get started.
 #### [Structure of an M# solution](Structure/README.md)
 Learn about the structure of an M# solution and learn the development workflow.
 
-#### [M# Concepts](Concepts/README.md)
+#### [M# Concepts](Basics/Concepts.md)
 An introduction to all key M# concepts such as Entity Type, Property, Page, Module, ....
 
-#### [M# CLI (msharp.exe)](Concepts/CLI.md)
+#### [M# CLI (msharp.exe)](Basics/CLI.md)
 Learn how to use the msharp.exe CLI (Command Line Interface) to diagnose problems, or automate things.
+
+#### [Shortkeys & Editing tips](Basics/Tips.md)
+Learn tips and tricks to speed you up and make your life easier when developing M# apps in Visual Studio.
 
 # Tutorials
 
