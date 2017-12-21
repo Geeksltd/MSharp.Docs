@@ -13,6 +13,9 @@ Learn about the structure of an M# solution and learn the development workflow.
 #### [M# Concepts](Concepts/README.md)
 An introduction to all key M# concepts such as Entity Type, Property, Page, Module, ....
 
+#### [M# CLI (msharp.exe)](Concepts/CLI.md)
+Learn how to use the msharp.exe CLI (Command Line Interface) to diagnose problems, or automate things.
+
 # Tutorials
 
 ### [Tutorial 1: Your first M# app](Tutorials/1/README.md)
