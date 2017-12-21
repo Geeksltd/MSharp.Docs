@@ -24,3 +24,13 @@ In the above example, the default value expression is a **constant string**, whi
 4. Write the code and press Ctrl + S.
 5. The pop-up will automatically hide.
 6. In the above example, the new code will appear as the argument of Default() method.
+
+## Jump to related files using F7
+Thanks to the [M# F7](https://marketplace.visualstudio.com/items?itemName=Paymon.SmartF7) visual studio extension, you can quickly jump between sister files in a group of related files in Visual Studio.
+
+For example if you're editing an M# Entity type, pressing F7 (multiple times) will rotate between the following sister files:
+- @Model{namespace}\Customer.cs
+- Domain\Entities\Customer.cs
+- Domain-Logic\Customer.cs
+
+It works with pages, modules and entities.
