@@ -7,7 +7,7 @@ The following diagram explains the relationship between these projects, and also
 
 ![](DevModel.JPG)
 
-## @Model
+## #Model
 This is where you define your application entities using the high level M# concept.
 An entity represents a real world object which exists in a business domain. In M# development you always start here. Think of it as your database design stage, but at a more conceptual level. Here you declare your business data types and their associations, which will be the foundation of everything else.
 
@@ -21,8 +21,8 @@ This is the home for your business domain objects and business logic. By default
 
 ![](Domain.JPG)
 
-- **[GEN-Entities]**: For every entity definition in your *@Model* project, M# will generate a business class (partial) here.
-- **[GEN-DAL]**: For every entity definition in your *@Model* project, M# will generate a data access class class here.
+- **[GEN-Entities]**: For every entity definition in your *#Model* project, M# will generate a business class (partial) here.
+- **[GEN-DAL]**: For every entity definition in your *#Model* project, M# will generate a data access class class here.
 - **Logic**: This is where you write any custom code *(as partial classes)* for the generated business entity classes.
 - **Services**: This is where you write service classes for complex business logic scenarios.
 - **Utilities**: This is where you can write extension methods (on system types) or any other handy utility function that doesn't belong anywhere else.
@@ -32,7 +32,7 @@ M# intelligently converts your high level entity definitions, with all the assoc
 
 M# fully supports Object Oriented development and encourages developers to use all such features exposed at entity and property level.
 
-## @UI
+## #UI
 This is where you define your application UI using the high level M# concept.
 
 It consists of the following folders:
@@ -62,12 +62,12 @@ This is your ASP.NET MVC project. It consists of everything you'd expect any MVC
 >- *Views\Pages*
 >- *Views\Modules*
 
-You will declare your pages and modules inside @UI project using the high level M# concept. M# CLI (msharp.exe) will then automatically generate the final controllers and views automatically.
+You will declare your pages and modules inside #UI project using the high level M# concept. M# CLI (msharp.exe) will then automatically generate the final controllers and views automatically.
 
->- Your definitions in the @UI project will be the true source. But they don't exist at run-time.
+>- Your definitions in the #UI project will be the true source. But they don't exist at run-time.
 >- The generated code in Website folder is the final product which will execute on a server.
->- Typically every one line of M# code (in @UI) will result in 10 lines of generated code (controller actions, views, etc).
+>- Typically every one line of M# code (in #UI) will result in 10 lines of generated code (controller actions, views, etc).
 >- The M# code is also much simpler, more declarative and less error prone.
 
 **Debugging**
-During development, you will use the generated MVC code for debugging. You can temporarily change the code until you get things right. But you should always apply any changes back on @UI files (M# definitions). Otherwise your changes will be lost as soon as M# generates the target code again.
+During development, you will use the generated MVC code for debugging. You can temporarily change the code until you get things right. But you should always apply any changes back on #UI files (M# definitions). Otherwise your changes will be lost as soon as M# generates the target code again.
