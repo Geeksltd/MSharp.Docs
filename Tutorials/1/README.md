@@ -1,5 +1,6 @@
-# App 1 - Tutorial
-In this tutorial you will work with the following:
+# Your First M# App
+This tutorial is assuming readers' familiarity with the M# framework obtained from the preceding chapters.  
+In this tutorial you will work with the following components:
 
 - Entity types
 - Association between entity types
@@ -9,74 +10,100 @@ In this tutorial you will work with the following:
 - A form module
 - A menu
 
-## Requirements:
-We are going to implement Contact Management System that you can see all available contacts and simply do *CRUD* operation. Here are pictures of requirements:
+## Requirements
+Implement a contact book that lets the user list all contacts and do *CRUD* operation on them.  
+Sketches for the list and form modules are given below.
 
 ![Contact List](ContactList.PNG "Contact List")
 ![Contact Form](ContactAddEdit.PNG "Contact Form")
 
-By using **M# framework** you have the power of creating this application 4time faster than usual application development process, so lets see how we can achieve this.
+## Implementation
+From the simple requirements we can identify two entity types called "Contact" and "Category".  
+We also understand that they have a Many-to-One relationship since many contacts can belong to the same category.  
+Now let's create the corresponding classes in the *@Model* project.
 
-#### Note:
-> We suppose that you are familiar with M# framework, if you are totally unfamiliar with it please first look at [Understanding M#](http://msharp.co.uk/Learn/Understanding-MSharp.html)
+#### Creating M# Entity Types
+In Solution Explorer of your Visual Studio under your *@Model* project make sure you have a folder named "Domain".
+Right click the folder and add a class called "Category" to it.
 
-## M# Structure:
-![Structure of an M#](https://github.com/Geeksltd/MSharp.Docs/blob/master/Structure/DevModel.JPG "Structure of an M#")
-As you can see, you as a developer should interact with these projects. If you are not familiar with this structure please look at [Structure of an M# solution](https://github.com/Geeksltd/MSharp.Docs/blob/master/Structure/README.md).
- Our development steps are:
-1. Create required C# class in **@Model** project.
-2. Build **@Model** project, this action generates domain class with all their dependencies for data access layer in **Domain** project.
-3. Create and develop required pages in **@UI** project and build this project to get the final result in **WebSite** project.
+![Model](Model.PNG "Model")
 
-## Knowing Entities and Implementation:
-In our example, we have *Contact* and *Category* entity that have one to many relationship. Our first step is to create *Contact* and *Category* classes in **@Model** project.
+Please note that ASP.NET consumes classes in the *Domain* project and expects to find the business logic there not here.  
+M# translates the code we write here in the *Model* project and *Model* namespace to appropriate classes in the *Domain* project for ASP.NET to consume.  
+Therefore, do not expect the code we're writing here to work elsewhere in the solution.  
+In order to equip your entity type with all the functionality that M# offers, make it public and inherit from a class called "EntityType".
+This class is part of the M# framework, so at the top of your document you need to reference the *MSharp* namespace as shown here:
 
-### Adding Entities:
-For adding a new entity, right click on **@Model** project and add required C# class. We are going to create two entities, *Category* and *Contact* .
-
-![Model Overview](Model-Overview.PNG "Model Overview")
-
-In M# the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
 ```C#
-public class Category : EntityType
+using System;
+using System.Collections.Generic;
+using System.Text;
+using MSharp;
+
+namespace Model
 {
-    public Category()
+    public class Category : EntityType
     {
-        String("Name").Mandatory();
+        public Category()
+        {
+            String("Name").Mandatory();
+        }
     }
 }
 ```
 
+In M# we use the default constructor to add properties to entity types.  
+The only property of the *Category* class is of type *string* and is called *Name*.
+You can find the corresponding line in the above snippet.  
+In order to make this property mandatory we only need to call the *.Mandatory()* method using M# fluent API.  
+  
+In a similar way add another entity type called *Contact* but this time with a set of properties shown in the snippet below:
+
 ```C#
-public class Contact : EntityType
+using System;
+using System.Collections.Generic;
+using System.Text;
+using MSharp;
+
+namespace Model
 {
-    public Contact()
+    public class Contact : EntityType
     {
-        Associate<Category>("Category").Mandatory();
-
-        String("First name").Mandatory();
-
-        String("Last name").Mandatory();
-
-        String("Tel").Mandatory();
-
-        String("Email").Mandatory().Accepts(TextPattern.EmailAddress);
+        public Contact()
+        {
+            Associate<Category>("Category").Mandatory();
+            String("Name").Mandatory();
+            String("First name").Mandatory();
+            String("Last name").Mandatory();
+            String("Tel").Mandatory();
+            String("Email").Mandatory().Accepts(TextPattern.EmailAddress);
+        }
     }
 }
 ```
 
-Every entity in M# should inherit from **EntityType** base class, this special class instructs M# how to deal with an entity. As you can see we have created an association between *Category* and *Contact* entity and implement their properties. All properties are mandatory and for email property, we have specified special validation that check email address format.
+One of the strengths of M# is its fluent API that makes the code easily decipherable to everyone.  
+As you can see we have created an association between *Contact* and *Category*.  
+We have a number of mandatory string properties and for the Email we have applied text pattern validation.
 
-#### Note:
-> - M# framework has some built-in methods that all classes and properties generate according to them, For example, we have used **String("Name")** that generate a class with a property **Name**. You will learn more about these methods and properties by the time pass.
-> - Always use singular naming convention when creating entities. M# intelligently uses plural naming convention where and when required.
-> 
-After creating all entities, we are going to build our model. Build your model by right click on **@Model** project and selecting **Build** from context menu. This step generates related C# class to **Domain** project that consist of all related code for generating and persisting data to the database. Now it's time to build this project too, right click on **Domain** project and select **Build**. Our final step starts from here, **@UI** project deal with user interface and generate all required stuff that user interact with it. In **@UI** project we have three main steps to do:
+**Note:** Always use singular names for entity types. M# is smart enough to automatically use their plural forms when necessary.
+  
+Now it's time to feed our two entity types to M# code generator. You invoke it by building the *@Model* project.  
+In solution explorer, right click the *@Model* project and select *Build*.  
+After the build process you can find the resulting files in the *Domain* project under the *[GEN-Entities] branch as shown below:  
+
+![Domain](Domain.PNG "Domain")
+
+The branch is so named to always remind us that everything under it is GENerated and gets overwritten every time we build the *@Model* project.  
+There are other related classes under the *[GEN-DAL]* branch as well. They are responsible for generating and persisting data for entities of these types in the database. They form *data access layer* of the solution architecture and are again generated.
+Before moving on to developing the UI let's build the *Domain* project to make sure everything regarding it is fine.
+
+## Developing UI
+In **@UI** project we have three main steps to do:
 1. Add Pages
 2. Config Menu
 3. Add Modules To Pages
 
-## Developing UI
 In our example, we have a contact page that list our contacts and another one for adding and editing contact.
 
 ### Creating Contact Pages
