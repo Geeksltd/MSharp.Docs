@@ -26,7 +26,7 @@ Now let's create the corresponding classes in the *@Model* project.
 In Solution Explorer of your Visual Studio under your *@Model* project make sure you have a folder named "Domain".
 Right click the folder and add a class called "Category" to it.
 
-![Model](Model.PNG "Model")
+![Model](Model.png "Model")
 
 Please note that ASP.NET consumes classes in the *Domain* project and expects to find the business logic there not here.  
 M# translates the code we write here in the *Model* project and *Model* namespace to appropriate classes in the *Domain* project for ASP.NET to consume.  
