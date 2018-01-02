@@ -1,15 +1,13 @@
 # App 1 - Tutorial
-In this tutorial you will learn the following M# concepts.
+In this tutorial you will work with the following:
 
-- Entity Type Creation
-- Association
-- Page
-- Navigation
-- Button
-- List Module
-- Form Module
-- Menu 
-
+- Entity types
+- Association between entity types
+- Pages and navigation
+- Action buttons
+- A list module
+- A form module
+- A menu
 
 ## Requirements:
 We are going to implement Contact Management System that you can see all available contacts and simply do *CRUD* operation. Here are pictures of requirements:
