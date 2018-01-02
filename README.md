@@ -21,13 +21,13 @@ Learn tips and tricks to speed you up and make your life easier when developing 
 
 # Tutorials
 
-### [Tutorial 1: Your first M# app](Tutorials/1/README.md)
+### [Your First M# App](Tutorials/1/README.md)
 In this lesson you will learn about the key M# concepts:
 - Entity type creation (including associations)
 - Page & menus and navigation
 - List modules, form modules and buttons
 
-### [Tutorial 2: Your second M# app](Tutorials/2/README.md)
+### [Your Second M# App](Tutorials/2/README.md)
 In this lesson you will learn about:
 - Menu
 - Pop-up (modal) pages
