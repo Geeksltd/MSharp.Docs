@@ -92,7 +92,7 @@ Now it's time to feed our two entity types to M# code generator. You invoke it b
 In solution explorer, right click the *@Model* project and select *Build*.  
 After the build process you can find the resulting files in the *Domain* project under the *[GEN-Entities] branch as shown below:  
 
-![Domain](Domain.PNG "Domain")
+![Domain](Domain.png "Domain")
 
 The branch is so named to always remind us that everything under it is GENerated and gets overwritten every time we build the *@Model* project.  
 There are other related classes under the *[GEN-DAL]* branch as well. They are responsible for generating and persisting data for entities of these types in the database. They form *data access layer* of the solution architecture and are again generated.
