@@ -34,3 +34,8 @@ For example if you're editing an M# Entity type, pressing F7 (multiple times) wi
 - Domain-Logic\Customer.cs
 
 It works with pages, modules and entities.
+
+## GoTo
+If you press ***Ctrl + .*** with your cursor on an M# property definition line, you will see some Quick Action snippets appearing on the left hand side, allowing you to jump into the generated code for that property (in the *Domain\[Gen-Entities]* folder). You can subsequently find all references to that property, to see exactly where a property is being used.
+
+This works in the other way around also. You can jump from a generated property's code into its M# definition by pressing ***Ctrl + .***.
