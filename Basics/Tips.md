@@ -35,7 +35,12 @@ For example if you're editing an M# Entity type, pressing F7 (multiple times) wi
 
 It works with pages, modules and entities.
 
-## GoTo
-If you press ***Ctrl + .*** with your cursor on an M# property definition line, you will see some Quick Action snippets appearing on the left hand side, allowing you to jump into the generated code for that property (in the *Domain\[Gen-Entities]* folder). You can subsequently find all references to that property, to see exactly where a property is being used.
+## Where is {Property} used?
+If you press ***Ctrl + .*** with your cursor on an M# property definition line, you will see some Quick Action snippets appearing on the left hand side reading **"Where is *{PropertyName}* used?"**.
+When you click it, it will jump onto the generated code for that property (in the *Domain\[Gen-Entities]* folder) and then finds all references to that.
 
-This works in the other way around also. You can jump from a generated property's code into its M# definition by pressing ***Ctrl + .***.
+This way you can see where that property is used in:
+- Business logic
+- M# UI objects (Forms, Lists, Views)
+
+> This works in the other way around also. You can jump from a generated property's code into its M# definition by pressing ***Ctrl + .***.
