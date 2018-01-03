@@ -10,9 +10,8 @@ Make sure you have all of the following installed on your computer:
 
 ## How to install
 1. Close all instances of Visual Studio.
-1. Install the MSharp Visual Studio Extension [from here](https://marketplace.visualstudio.com/items?itemName=Paymon.MSharp)
-2. Install the MSharp.F7 Visual Studio Extension [from here](https://marketplace.visualstudio.com/items?itemName=Paymon.SmartF7)
-3. Open your Visual Studio as ADMIN (it's recommended that you make this the default)
+1. Install all M# Visual Studio extensions [from here](https://marketplace.visualstudio.com/search?term=msharp&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance)
+2. Open your Visual Studio as ADMIN (it's recommended that you make this the default)
 
 ## Create your first application
 
