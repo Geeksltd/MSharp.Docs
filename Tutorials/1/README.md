@@ -18,7 +18,7 @@ Sketches for the list and form modules are given below.
 ![Contact Form](ContactAddEdit.PNG "Contact Form")
 
 ## Implementation
-From the simple requirements we can identify two entity types called "Contact" and "Category".  
+From the sample requirements we can identify two entity types called "Contact" and "Category".  
 We also understand that they have a Many-to-One relationship since many contacts can belong to the same category.  
 Now let's create the corresponding classes in the *@Model* project.
 
