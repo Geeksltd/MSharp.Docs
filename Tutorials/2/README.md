@@ -29,7 +29,7 @@ After understanding requirements and identifying its related entities and their 
 In Solution Explorer of your Visual Studio under your *#Model* project make sure you have a folder named "Domain".
 Right click the folder and add a class called "Country", Do the same, but this time add "Customer" class.
 
-![Add Entity](AddEntity.png "Add Entity")
+![Add Entity](AddEntity.png "Add Entity ")
 
 By default M# will create a concrete class that inherits from *EntityType* class, let change our class and add required properties:
 
