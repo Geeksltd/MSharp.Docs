@@ -85,7 +85,7 @@ As you can see, M# framework gives use excellent power to use it's fluent API co
 
 Now it's time to feed our two entity types to the M# code generator. You invoke it by building the *#Model* project.  
 In solution explorer, right click the *#Model* project and select *Build*.  
-After the build process, you can find the resulting files in the *Domain* project under the *[GEN-Entities] branch as shown below: 
+After the build process, you can find the resulting files in the *Domain* project under the *[GEN-Entities]* branch as shown below: 
 
 ![Domain Overview](DomainProject.PNG "Domain Overview")
 

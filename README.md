@@ -27,8 +27,12 @@ In this lesson you will learn about the key M# concepts:
 ### [Your Second M# App](Tutorials/2/README.md)
 In this lesson you will learn about: 
 - Menu
-- Pop-up (modal) pages, 
+- Pop-up (modal) pages 
 - Image and file properties
+
+### [Your third M# App](Tutorials/3/README.md)
+In this lesson you will learn about: 
+- Uniqueness rules
 
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
