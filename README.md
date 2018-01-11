@@ -30,7 +30,7 @@ In this lesson you will learn about:
 - Pop-up (modal) pages 
 - Image and file properties
 
-### [Your third M# App](Tutorials/3/README.md)
+### [Your Third M# App](Tutorials/3/README.md)
 In this lesson you will learn about: 
 - Uniqueness rules
 
