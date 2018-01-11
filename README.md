@@ -1,6 +1,8 @@
 ***************************
 > # NOTE
-> This documentation website is under construction. Its content is to be ported from the [legacy documentation](http://msharp.co.uk/Learn/Understanding-MSharp.html) and also the [Video Tutorials](https://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc) (contact us for access).
+> This documentation website is under construction. Its content is to be ported from the [legacy documentation](http://msharp.co.uk/Learn/Understanding-MSharp.html) and also the [Video Tutorials](https://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc) (contact us for access). Previously you used a web-based IDE for developing M# apps and all the old documentation is based on that model. In the new M#, everything is in Visual Studio and you use special C# classes to define M# concepts.
+
+> Mapping from the old model to the new one is not too complex as the concepts are still the same. You just need to map the syntax between the two in your head.
 
 # Introduction
 
