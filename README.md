@@ -36,6 +36,12 @@ In this lesson you will learn about:
 In this lesson you will learn about: 
 - Uniqueness rules
 
+### [Your Forth M# App](Tutorials/4/README.md)
+In this lesson you will learn about: 
+- Property search element
+- All fields search element
+- Custom Label for form / search elements
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
