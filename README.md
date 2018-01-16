@@ -42,6 +42,13 @@ In this lesson you will learn about:
 - All fields search element
 - Custom Label for form / search elements
 
+### [Your Fifth M# App](Tutorials/5/README.md)
+In this lesson you will learn about: 
+- Inheritence
+- Export to excel
+- Client-side filter
+- Index column
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 

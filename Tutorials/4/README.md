@@ -32,7 +32,7 @@ As you can see, In the assets list we have filter and search  columns, and in ed
 
 ## Implementation
 From requirements, we can identify three entities, "Asset Type", "Owner" and "Assets". In asset entity, we have two One-to-Many relationships one with the owner and the other one with asset type.  
-After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
+After understanding requirements and identifying its related properties and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
 We start our work by creating related classes in a *#Model* project under *Domain* folder:
