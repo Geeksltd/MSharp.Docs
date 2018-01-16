@@ -44,3 +44,8 @@ This way you can see where that property is used in:
 - M# UI objects (Forms, Lists, Views)
 
 > This works in the other way around also. You can jump from a generated property's code into its M# definition by pressing ***Ctrl + .***.
+
+## Faster running and debugging
+When you use F5 in Visual Studio to run the project, it will always build the website again which is a slow process. If you have manually compiled the projects using Shift + F6 already and you just want to run the website, you can:
+- In Solution Explorer right click on the Website
+- Select Just Run
