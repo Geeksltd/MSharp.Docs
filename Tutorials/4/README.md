@@ -233,7 +233,7 @@ public class OwnerPage : RootPage
     }
 }
 ```
-In this class we add *OwnerList* module that is responsible for showing all owners, we continue our work by creating a *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add a *Owners* class like bellow:
+In this class we add *OwnerList* module that is responsible for showing all owners, we continue our work by creating a *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add a *Enter* class like bellow:
 
 ```C#
 using MSharp;
@@ -320,7 +320,7 @@ namespace Modules
 These two classes has responsibility for CRUD (Create, Read, Update, Delete) operation.
 
 #### Creating Asset Pages
-Our last step is to create related pages for *Asset* entity*. Use M# context menu to add a *Asset* root page:
+Our last step is to create related pages for *Asset* entity. Use M# context menu to add a *Asset* root page:
 
 ```C#
 using MSharp;
@@ -333,7 +333,7 @@ public class AssetPage : RootPage
     }
 }
 ```
-In this class we add *AssetsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add a *Assets* class like bellow:
+In this class we add *AssetsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add a *Enter* class like bellow:
 
 ```C#
 using MSharp;

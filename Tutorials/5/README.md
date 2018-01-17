@@ -102,4 +102,319 @@ According to the requirement, we have these pages:
 So, we have three root pages that hold our list modules and 2 sub pages that are related to add or edit operation.
 
 ### Creating Vehicle Pages
-Comming soon...
+Use M# context menu to add *Vehicle* root page:
+
+![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
+
+```C#
+using MSharp;
+
+public class VehiclePage : RootPage
+{
+    public VehiclePage()
+    {
+        Add<Modules.VehiclesList>();
+    }
+}
+```
+In this class we have added "VehiclesList" module that is responsible for listing all vehicles.
+We continue our work by adding "VehiclesList" module.
+
+#### Creating Asset Types List Module
+Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* by using the M# context menu like bellow:
+
+![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class VehiclesList : ListModule<Domain.Vehicle>
+    {
+        public VehiclesList()
+        {
+            HeaderText("Vehicles");
+
+            ShowHeaderRow();
+
+            Column(x => x.Make);
+
+            Column(x => x.Model);
+        }
+    }
+}
+```
+This class is read only and is used just for showing purposes.
+
+#### Creating Bike Pages
+Use M# context menu to add a *Bike* root page:
+
+```C#
+using MSharp;
+
+public class BikePage : RootPage
+{
+    public BikePage()
+    {
+        Add<Modules.BikesList>();
+    }
+}
+```
+In this class we add *BikesList* module that is responsible for showing all bikes, we continue our work by creating a *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like bellow:
+
+```C#
+using MSharp;
+
+namespace Bikes
+{
+    class Enter : SubPage<BikePage>
+    {
+        public Enter()
+        {
+            Add<Modules.BikeForm>();
+        }
+    }
+}
+```
+In this class we add our *BikeForm* module.
+
+#### Creating Bike Modules
+Now it's time to create related *Modules*, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class BikeForm : FormModule<Domain.Bike>
+    {
+        public BikeForm()
+        {
+            HeaderText("Bike details");
+
+            Field(x => x.Make);
+
+            Field(x => x.Model);
+
+            Field(x => x.RegistrationNumber);
+
+            Field(x => x.RequiresLicense).Control(ControlType.CheckBox);
+
+            Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
+
+            Button("Save").IsDefault().Icon(FA.Check)
+            .OnClick(x =>
+            {
+                x.SaveInDatabase();
+                x.GentleMessage("Saved successfully.");
+                x.ReturnToPreviousPage();
+            });
+        }
+    }
+}
+```
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class BikesList : ListModule<Domain.Bike>
+    {
+        public BikesList()
+        {
+            HeaderText("Bikes");
+
+            ShowHeaderRow();
+
+            Search(GeneralSearch.ClientSideFilter).Label("Filter:");
+
+            Column(x => x.Make);
+
+            Column(x => x.Model);
+
+            Column(x => x.RegistrationNumber);
+
+            Column(x => x.RequiresLicense);
+
+            ButtonColumn("Edit").Icon(FA.Edit)
+                .OnClick(x => x.Go<Bikes.Enter>()
+                .Send("item", "item.ID")
+                .SendReturnUrl());
+
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
+
+            Button("Add bike").Icon(FA.Plus)
+                .OnClick(x =>
+                x.Go<Bikes.Enter>()
+                .SendReturnUrl());
+        }
+    }
+}
+```
+In this class we have used ***Search(GeneralSearch.ClientSideFilter)** method that let users have client side search.
+
+#### Creating Car Pages
+Our last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
+
+```C#
+using MSharp;
+
+public class CarPage : RootPage
+{
+    public CarPage()
+    {
+        Add<Modules.CarsList>();
+    }
+}
+```
+In this class we add *CarsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like bellow:
+
+```C#
+using MSharp;
+
+namespace Cars
+{
+    class Enter : SubPage<CarPage>
+    {
+        public Enter()
+        {
+            Add<Modules.CarForm>();
+        }
+    }
+}
+```
+In this class we have added *CarForm* module that tells M# framework how to generate related form code for this class.
+
+#### Creating Car Modules
+We continue our work by creating related *Modules*, we need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class CarForm : FormModule<Domain.Car>
+    {
+        public CarForm()
+        {
+            HeaderText("Car details");
+
+            Field(x => x.Make);
+
+            Field(x => x.Model);
+
+            Field(x => x.RegistrationNumber);
+
+            Field(x => x.NumberOfDoors).Control(ControlType.HorizontalRadioButtons);
+
+            Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
+
+            Button("Save").IsDefault().Icon(FA.Check)
+            .OnClick(x =>
+            {
+                x.SaveInDatabase();
+                x.GentleMessage("Saved successfully.");
+                x.ReturnToPreviousPage();
+            });
+        }
+    }
+}
+```
+In this class, we have used **.Control(ControlType.HorizontalRadioButtons)** method for *Number of doors* property, this method generate horizontal radio button and let user select just one value from 3 to 5.
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class CarsList : ListModule<Domain.Car>
+    {
+        public CarsList()
+        {
+            HeaderText("Cars");
+
+            ShowHeaderRow();
+
+            IndexColumn();
+
+            Column(x => x.Make);
+
+            Column(x => x.Model);
+
+            Column(x => x.RegistrationNumber);
+
+            Column(x => x.NumberOfDoors);
+
+            ButtonColumn("Edit").Icon(FA.Edit)
+                .OnClick(x => x.Go<Cars.Enter>()
+                .Send("item", "item.ID")
+                .SendReturnUrl());
+
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
+
+            Button("Export").Icon(FA.FileExcelO)
+                .OnClick(x => x.Export(ExportFormat.Excel));
+
+            Button("Add car").Icon(FA.Plus)
+                .OnClick(x => x.Go<Cars.Enter>()
+                .SendReturnUrl());
+        }
+    }
+}
+```
+In this class we have used **Button("Export")** M# method, this method generates a button and by using *Export(ExportFormat.Excel)* M# generate related code for generating excel and when user click on "Export" button, excel file will be downloaded.
+
+#### Adding Pages to Menu
+Our last step is to add a root page to the main menu:
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class MainMenu : MenuModule
+    {
+        public MainMenu()
+        {
+            AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
+
+            Item("Login")
+                .Icon(FA.UnlockAlt)
+                .VisibleIf(AppRole.Anonymous)
+                .OnClick(x => x.Go<LoginPage>());
+
+            Item("Settings")
+                .VisibleIf(AppRole.Administrator)
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<Admin.SettingsPage>());
+
+            Item("Vehicles")
+                .Icon(FA.Navicon)
+                .OnClick(x => x.Go<VehiclePage>());
+
+            Item("Bikes")
+                .Icon(FA.Navicon)
+                .OnClick(x => x.Go<BikePage>());
+
+            Item("Cars")
+                .Icon(FA.Navicon)
+                .OnClick(x => x.Go<CarPage>());
+        }
+    }
+}
+```
+
+### Final Step
+Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
