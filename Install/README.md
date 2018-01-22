@@ -31,3 +31,4 @@ If you experienced any problem try the following:
 1. Open a cmd and run Initialize.bat file and watch for errors. You might have missing components.
 2. Make sure all nuget packages are successfully restored.
 3. If your package did not restore correctly, remove the .nuget contents folder from C:\Users\{YOUR USER NAME}
+4. make sure that the path to the solution is not too long or it does not contain special characters such as space.
