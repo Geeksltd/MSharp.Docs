@@ -49,6 +49,11 @@ In this lesson you will learn about:
 - Client-side filter
 - Index column
 
+### [Your Sixth M# App](Tutorials/6/README.md)
+In this lesson you will learn about: 
+- One to Many (inverse) associations
+- Many to Many associations 
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
