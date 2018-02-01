@@ -120,7 +120,7 @@ public class VehiclePage : RootPage
 In this class we have added "VehiclesList" module that is responsible for listing all vehicles.
 We continue our work by adding "VehiclesList" module.
 
-#### Creating Asset Types List Module
+#### Creating Vehicle List Module
 Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* by using the M# context menu like bellow:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
@@ -180,7 +180,7 @@ namespace Bikes
 In this class we add our *BikeForm* module.
 
 #### Creating Bike Modules
-Now it's time to create related *Modules*, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
+Now it's time to create other modules, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
 using MSharp;
