@@ -54,6 +54,14 @@ In this lesson you will learn about:
 - One to Many (inverse) associations
 - Many to Many associations 
 
+### [Your Seventh M# App](Tutorials/7/README.md)
+In this lesson you will learn about: 
+- Range validation
+- Paging
+- Button style (link) 
+- Property setter
+- Expected lines
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
