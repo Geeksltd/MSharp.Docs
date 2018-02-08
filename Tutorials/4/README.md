@@ -129,16 +129,16 @@ public class AssetTypePage : RootPage
     }
 }
 ```
-As you can see, we have added **Add\<Modules.ProjectsList>();**, we are going to create this class soon and for now just skip it and we continue our work by creating a *Enter* class like bellow:
+As you can see, we have added **Add\<Modules.ProjectsList>();**, we are going to create this class soon and for now just skip it and we continue our work by creating an *EnterPage* class like below:
 
 ```C#
 using MSharp;
 
 namespace AssetTypes
 {
-    class Enter : SubPage<AssetTypePage>
+    class EnterPage : SubPage<AssetTypePage>
     {
-        public Enter()
+        public EnterPage()
         {
             Layout(Layouts.FrontEnd);
 
@@ -168,7 +168,7 @@ namespace Modules
             Column(x => x.Name);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<AssetTypes.Enter>()
+                .OnClick(x => x.Go<AssetTypes.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -180,7 +180,7 @@ namespace Modules
                 });
 
             Button("New Asset Types").Icon(FA.Plus)
-                .OnClick(x => x.Go<AssetTypes.Enter>()
+                .OnClick(x => x.Go<AssetTypes.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -189,7 +189,7 @@ namespace Modules
 In this class we show a list of asset types according to the requirements and add a route for adding, editing and removing items.
 
 #### Creating Asset Type Form Module
-Add *AssetTypeForm* class by using the M# context menu under the *Modules* folder of the *#UI* project in *AssetType* like bellow:
+Add *AssetTypeForm* class by using the M# context menu under the *Modules* folder of the *#UI* project in *AssetType* like below:
 
 ```C#
 using MSharp;
@@ -233,16 +233,16 @@ public class OwnerPage : RootPage
     }
 }
 ```
-In this class we add *OwnerList* module that is responsible for showing all owners, we continue our work by creating a *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add a *Enter* class like bellow:
+In this class we add *OwnerList* module that is responsible for showing all owners, we continue our work by creating a *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add an *EnterPage* class like below:
 
 ```C#
 using MSharp;
 
 namespace Owners
 {
-    class Enter : SubPage<OwnerPage>
+    class EnterPage : SubPage<OwnerPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Layout(Layouts.FrontEnd);
 
@@ -299,7 +299,7 @@ namespace Modules
             Column(x => x.LastName);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Owners.Enter>()
+                .OnClick(x => x.Go<Owners.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -311,7 +311,7 @@ namespace Modules
                 });
 
             Button("New Owner").Icon(FA.Plus)
-                .OnClick(x => x.Go<Owners.Enter>()
+                .OnClick(x => x.Go<Owners.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -333,16 +333,16 @@ public class AssetPage : RootPage
     }
 }
 ```
-In this class we add *AssetsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add a *Enter* class like bellow:
+In this class we add *AssetsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add an *EnterPage* class like below:
 
 ```C#
 using MSharp;
 
 namespace Assets
 {
-    class Enter : SubPage<AssetPage>
+    class EnterPage : SubPage<AssetPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Layout(Layouts.FrontEnd);
 
@@ -358,9 +358,9 @@ using MSharp;
 
 namespace Assets
 {
-    class View : SubPage<AssetPage>
+    class ViewPage : SubPage<AssetPage>
     {
-        public View()
+        public ViewPage()
         {
             Layout(Layouts.FrontEnd);
 
@@ -424,7 +424,7 @@ namespace Modules
             SearchButton("Search");
 
             ButtonColumn("View").HeaderText("View").Icon(FA.SearchPlus)
-                .OnClick(x => x.Go<Assets.View>().SendReturnUrl());
+                .OnClick(x => x.Go<Assets.ViewPage>().Send("item", "item.ID").SendReturnUrl());
 
             Column(x => x.Code);
             Column(x => x.Name);
@@ -433,7 +433,7 @@ namespace Modules
             Column(x => x.Owner);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Assets.Enter>()
+                .OnClick(x => x.Go<Assets.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -445,7 +445,7 @@ namespace Modules
                 });
 
             Button("New Asset").Icon(FA.Plus)
-                .OnClick(x => x.Go<Assets.Enter>()
+                .OnClick(x => x.Go<Assets.EnterPage>()
                 .SendReturnUrl());
         }
     }
