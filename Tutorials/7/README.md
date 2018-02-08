@@ -108,7 +108,7 @@ namespace Clients
 We continue our work by adding "ClientsList" and "ClientForm" modules.
 
 #### Creating Client List Module
-Add a folder with the name of *Client* under the *Modules* folder of the *#UI* project and add *ClientsList* by using the M# context menu like bellow:
+Add a folder with the name of *Client* under the *Modules* folder of the *#UI* project and add *ClientsList* by using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -165,7 +165,7 @@ This class has some new methods as bellow:
 You should notice that "Add invoice" button should be link button, so we have used **.Style(ButtonStyle.Link)** to achieve this. We also need to send client id as query string to invoice page, by calling **.Send("client", "item.ID")** method we send a query string with the name of **client** and with the value of client ID to invoice page.
 
 #### Creating Client Form Module
-Use M# context menu to add form module and do like bellow:
+Use M# context menu to add form module and do like below:
 
 ```C#
 using MSharp;
@@ -195,7 +195,7 @@ namespace Modules
 ```
 
 #### Creating Invoice Page
-Create "AddInvoice" page under the client folder in a #UI project like bellow:
+Create "AddInvoice" page under the client folder in a #UI project like below:
 
 ```C#
 using MSharp;
@@ -214,7 +214,7 @@ namespace Clients
 This page holds "InvoiceForm" module. 
 
 #### Creating Invoice Form Module
-Create a folder with the name of "Invoice" and add "InvoiceForm" module using the M# context menu like bellow:
+Create a folder with the name of "Invoice" and add "InvoiceForm" module using the M# context menu like below:
 
 ```C#
 using MSharp;

@@ -121,7 +121,7 @@ In this class we have added "VehiclesList" module that is responsible for listin
 We continue our work by adding "VehiclesList" module.
 
 #### Creating Vehicle List Module
-Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* by using the M# context menu like bellow:
+Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* by using the M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
@@ -161,7 +161,7 @@ public class BikePage : RootPage
     }
 }
 ```
-In this class we add *BikesList* module that is responsible for showing all bikes, we continue our work by creating a *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like bellow:
+In this class we add *BikesList* module that is responsible for showing all bikes, we continue our work by creating a *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like below:
 
 ```C#
 using MSharp;
@@ -274,7 +274,7 @@ public class CarPage : RootPage
     }
 }
 ```
-In this class we add *CarsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like bellow:
+In this class we add *CarsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like below:
 
 ```C#
 using MSharp;

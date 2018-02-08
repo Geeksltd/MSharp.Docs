@@ -62,6 +62,12 @@ In this lesson you will learn about:
 - Property setter
 - Expected lines
 
+### [Your Eighth M# App](Tutorials/8/README.md)
+In this lesson you will learn about: 
+- Footer
+- Cascade delete
+- Calculated property
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 

@@ -129,7 +129,7 @@ In this class we have added "CategoriesList" module that is responsible for list
 We continue our work by adding "CategoriesList" module.
 
 #### Creating Category List Module
-Add a folder with the name of *Category* under the *Modules* folder of the *#UI* project and add *CategoriesList* by using the M# context menu like bellow:
+Add a folder with the name of *Category* under the *Modules* folder of the *#UI* project and add *CategoriesList* by using the M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
@@ -171,7 +171,7 @@ namespace Modules
 This class list all categories and related products. By using **Column(x => x.Products)** M# is smart enough to understand how to show products and by default it shows the name of each related product and separate each one with " | " character.
 
 #### Creating Category Form Module
-Like above use M# context menu to add form module and do like bellow:
+Like above use M# context menu to add form module and do like below:
 
 ```C#
 using MSharp;
@@ -201,7 +201,7 @@ namespace Modules
 ```
 
 #### Creating Product List Module
-Use M# context menu and select "Add List" then type "ProductsList" for its name and select product under "On Type" dropdown list like bellow :
+Use M# context menu and select "Add List" then type "ProductsList" for its name and select product under "On Type" dropdown list like below :
 
 ![Add List Module](AddListModule.PNG "Add List Module")
 
@@ -243,7 +243,7 @@ namespace Modules
 ```
 
 #### Creating Product Form Module
-Do the same, like above and add "ProductForm" like bellow:
+Do the same, like above and add "ProductForm" like below:
 
 ```C#
 using MSharp;
@@ -274,7 +274,7 @@ namespace Modules
 ```
 
 #### Creating Shop List Module
-Use M# context menu to add "ShopsList" module like bellow:
+Use M# context menu to add "ShopsList" module like below:
 
 ```C#
 using MSharp;

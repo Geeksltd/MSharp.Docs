@@ -281,7 +281,7 @@ For task page, like *Project* pages we have these pages :
 - Task edit page: This page hold task edit module
 - Task view page: This page hold task view module
 
-Create *ProjectTask.cs* class under *Pages* folder in #UI project like bellow:
+Create *ProjectTask.cs* class under *Pages* folder in #UI project like below:
 
 ```C#
 using MSharp;

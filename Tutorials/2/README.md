@@ -181,7 +181,7 @@ After creating a Country list its time to create a country form page that is res
 
 ![Country Enter](CountryEnter.PNG "Country Enter")
 
-Add a class with the name of *EnterPage* like bellow:
+Add a class with the name of *EnterPage* like below:
 
 ```C#
 using MSharp;
@@ -199,7 +199,7 @@ namespace Country
 }
 ```
 This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add\<Modules.CountryForm\>** we instruct the M# framework that this page is responsible for showing country form module.
-Now it's time to create *CountryForm* class, Add this class under the *Countery* folder in *Modules* folder like bellow:
+Now it's time to create *CountryForm* class, Add this class under the *Countery* folder in *Modules* folder like below:
 
 ```C#
 using MSharp;
@@ -270,7 +270,7 @@ public class CustomerPage : RootPage
 }
 ```
 
-Now it's time to add *CustomersPage*, add this class like bellow:
+Now it's time to add *CustomersPage*, add this class like below:
 
 ```C#
 using MSharp;
@@ -327,7 +327,7 @@ According to the requirements, this class should include more columns to be show
 Now we need to create a form page that let users to add or edit entities.
 
 #### Creating Customer Form Page
-We continue our work by creating a *EnterPage* class in a *Customer* folder under the *Page* folder in *#UI* project. Add a class with the name of *EnterPage* like bellow:
+We continue our work by creating a *EnterPage* class in a *Customer* folder under the *Page* folder in *#UI* project. Add a class with the name of *EnterPage* like below:
 
 ```C#
 using MSharp;
@@ -344,7 +344,7 @@ namespace Customer
     }
 }
 ```
-Our next step is to create *CustomerForm* class, Add this class under the *Customer* folder in *Modules* folder like bellow:
+Our next step is to create *CustomerForm* class, Add this class under the *Customer* folder in *Modules* folder like below:
 
 ```C#
 using MSharp;

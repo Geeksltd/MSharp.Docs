@@ -150,7 +150,7 @@ namespace AssetTypes
 Create a new folder with the name of *AssetTypes* and then add the above class as a sub-page for *AssetTypePage*, this class holds asset type form module.
 
 #### Creating Asset Types List Module
-Add a folder with the name of *AssetType* under the *Modules* folder of the *#UI* project and add *AssetTypesList* by using the M# context menu like bellow:
+Add a folder with the name of *AssetType* under the *Modules* folder of the *#UI* project and add *AssetTypesList* by using the M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
