@@ -68,6 +68,10 @@ In this lesson you will learn about:
 - Cascade delete
 - Calculated property
 
+### [Your Ninth M# App](Tutorials/9/README.md)
+In this lesson you will learn about: 
+- Master-detail forms
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
