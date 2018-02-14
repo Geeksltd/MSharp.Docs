@@ -7,6 +7,7 @@ Make sure you have all of the following installed on your computer:
 2. Visual Studio 2017 (latest build)
 3. GIT for Windows ([install from here](http://gitforwindows.org/))
 4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
+5. Docker, plus Windows runtime ([install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
 
 ## How to install
 1. Close all instances of Visual Studio.
