@@ -11,7 +11,7 @@ In this tutorial we are going to develop a website that lists Service types, sup
 
 ![ServiceType Add/Edit](ServiceTypeAddEdit.PNG "ServiceType Add/Edit")
 
-The Service type page is simple, I just show a list of all service types and let users do CRUD operation.
+The service type page is simple, It just shows a list of all service types and let users do CRUD operation.
 
 ### Suppliers:
 ![Suppliers List](Suppliers.PNG "Suppliers List")
@@ -25,7 +25,6 @@ On the supplier page, user can see a list of all supplier and their related serv
 
 This page is just a list of all supplier and their related services.
 
-[Continue here]
 ## Creating Entities
 We start our work by creating **Service Type**, **Supplier** and **Supplier Service** classes in a *#Model* project under *Domain* folder:
 
