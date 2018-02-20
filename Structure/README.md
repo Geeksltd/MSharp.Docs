@@ -22,7 +22,7 @@ This is the home for your business domain objects and business logic. By default
 ![](Domain.JPG)
 
 - **[GEN-Entities]**: For every entity definition in your *#Model* project, M# will generate a business class (partial) here.
-- **[GEN-DAL]**: For every entity definition in your *#Model* project, M# will generate a data access class class here.
+- **[GEN-DAL]**: For every entity definition in your *#Model* project, M# will generate a data access class here.
 - **Logic**: This is where you write any custom code *(as partial classes)* for the generated business entity classes.
 - **Services**: This is where you write service classes for complex business logic scenarios.
 - **Utilities**: This is where you can write extension methods (on system types) or any other handy utility function that doesn't belong anywhere else.
