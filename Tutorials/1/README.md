@@ -96,6 +96,13 @@ After the build process you can find the resulting files in the *Domain* project
 
 The branch is so named to always remind us that everything under it is GENerated and gets overwritten every time we build the *@Model* project.  
 There are other related classes under the *[GEN-DAL]* branch as well. They are responsible for generating and persisting data for entities of these types in the database. They form *data access layer* of the solution architecture and are again generated.
+
+According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
+
+![Add Category Value](AddCategoryValue.png "Add Category Value")
+
+As you can see we have added a method with the name of **CreateCategory()** and initiate category value in it.
+
 Before moving on to developing the UI let's build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
