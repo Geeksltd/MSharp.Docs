@@ -99,7 +99,7 @@ There are other related classes under the *[GEN-DAL]* branch as well. They are r
 
 According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
 
-![Add Category Value](AddCategoryValue.png "Add Category Value")
+![Add Category Value](AddCategoryValue.PNG "Add Category Value")
 
 As you can see we have added a method with the name of **CreateCategory()** and initiate category value in it.
 
