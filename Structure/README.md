@@ -1,5 +1,5 @@
 # Structure of an M# solution
-When you create a new M# ASP.NET project you will see the following structure in Visual Studio.
+When you create a new M# ASP.NET Core MVC project you will see the following structure in Visual Studio.
 
 ![](Solution.JPG)
 
@@ -47,7 +47,7 @@ NOTE:
 >- It's only used during development.
 
 ## Website
-This is your ASP.NET MVC project. It consists of everything you'd expect any MVC application to have:
+This is your ASP.NET Core MVC project. It consists of everything you'd expect any MVC application to have:
 - Controller and ViewComponent classes (for all pages and modules)
 - View (cshtml) files for layouts, pages and modules
 - SASS fiels (for styling)
