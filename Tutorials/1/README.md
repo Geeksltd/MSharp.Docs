@@ -20,10 +20,10 @@ Sketches for the list and form modules are given below.
 ## Implementation
 From the sample requirements we can identify two entity types called "Contact" and "Category".  
 We also understand that they have a Many-to-One relationship since many contacts can belong to the same category.  
-Now let's create the corresponding classes in the *@Model* project.
+Now let's create the corresponding classes in the *#Model* project.
 
 #### Creating M# Entity Types
-In Solution Explorer of your Visual Studio under your *@Model* project make sure you have a folder named "Domain".
+In Solution Explorer of your Visual Studio under your *#Model* project make sure you have a folder named "Domain".
 Right click the folder and add a class called "Category" to it.
 
 ![Model](Model.png "Model")
@@ -72,7 +72,6 @@ namespace Model
         public Contact()
         {
             Associate<Category>("Category").Mandatory();
-            String("Name").Mandatory();
             String("First name").Mandatory();
             String("Last name").Mandatory();
             String("Tel").Mandatory();
@@ -88,25 +87,65 @@ We have a number of mandatory string properties and for the Email we have applie
 
 **Note:** Always use singular names for entity types. M# is smart enough to automatically use their plural forms when necessary.
   
-Now it's time to feed our two entity types to M# code generator. You invoke it by building the *@Model* project.  
-In solution explorer, right click the *@Model* project and select *Build*.  
+Now it's time to feed our two entity types to M# code generator. You invoke it by building the *#Model* project.  
+In solution explorer, right click the *#Model* project and select *Build*.  
 After the build process you can find the resulting files in the *Domain* project under the *[GEN-Entities] branch as shown below:  
 
 ![Domain](Domain.png "Domain")
 
-The branch is so named to always remind us that everything under it is GENerated and gets overwritten every time we build the *@Model* project.  
+The branch is so named to always remind us that everything under it is GENerated and gets overwritten every time we build the *#Model* project.  
 There are other related classes under the *[GEN-DAL]* branch as well. They are responsible for generating and persisting data for entities of these types in the database. They form *data access layer* of the solution architecture and are again generated.
 
 According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
 
-![Add Category Value](AddCategoryValue.PNG "Add Category Value")
+```C#
+public class ReferenceData
+    {
+        static Task Create(IEntity item) => Database.Instance.Save(item, SaveBehaviour.BypassAll);
+
+        public static async Task Create()
+        {
+            await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
+
+            await CreateContentBlocks();
+            await CreateAdmin();
+
+            await CreateCategory();
+        }
+
+        static async Task CreateCategory()
+        {
+
+            await Create(new Category
+            {
+                Name = "Family"
+            });
+            await Create(new Category
+            {
+                Name = "Friends"
+            });
+            await Create(new Category
+            {
+                Name = "Business"
+            });
+            await Create(new Category
+            {
+                Name = "Other"
+            });
+
+        }
+        
+        //Other blocks of code
+        ...
+}
+```
 
 As you can see we have added a method with the name of **CreateCategory()** and initiate category value in it.
 
 Before moving on to developing the UI let's build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
-In **@UI** project we have three main steps to do:
+In **#UI** project we have three main steps to do:
 1. Add Pages
 2. Config Menu
 3. Add Modules To Pages
@@ -115,7 +154,7 @@ In our example, we have a contact page that list our contacts and another one fo
 
 ### Creating Contact Pages
 Until now, we have done these steps:
-1. Created our entities in **@Model** project and build the project in visual studio
+1. Created our entities in **#Model** project and build the project in visual studio
 2. Then build **Domain** project in visual studio.
 Now it's time to create our first page. Here we have two pages, one that is responsible for showing a contacts list and the other for adding and editing contact, these two pages can have some property in common, so first we create a parent page and then inherit other required page according to our example.
 ![UI Overview](UI-Overview.PNG "UI Overview")
@@ -185,7 +224,7 @@ public class ContactsList : ListModule<Domain.Contact>
 In this class we have included our needed column according to the picture and add *Edit, Delete* and *Add Contact* buttons with their navigation instruction. You should notice that we have inherited from **ListModule** class, this class is a special class that tells M# framework how to generate code for showing this class.
 
 #### Creating Contact Form Page & Contact Form Module
-After creating a contact list its time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **@UI** project
+After creating a contact list its time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project
 ```C#
 public class EnterPage : SubPage<ContactsPage>
 {
@@ -231,7 +270,7 @@ public class ContactForm : FormModule<Domain.Contact>
 Another important module is form module that deals with add or edit entity. This class inherits from **FormModule** class that tell M# framework how to deal with this class. This special class tells M# that it should generate a form page.
 
 ### Adding Contact List Page to Menu
-Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class and add *ContactPage* class here as a menu item.
+Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menues of #UI project)* and add *ContactPage* class here as a menu item.
 ```C#
 public class MainMenu : MenuModule
 {
@@ -253,4 +292,4 @@ public class MainMenu : MenuModule
 By adding *ContactPage* class as menu item here, we tell M# framework that by clicking on Contacts link, it should navigate user to *ContactPage* that shows a list of all contacts in our database. 
 
 #### Final Step
-Now its time to build **@UI** project, this project generated related files in **WebSite** project, after building **@UI** project set the **WebSite** project as your default *StartUp* project and then set your *connection string* in **appsetting.json** file and hit F5 to see M# magic. Your project is ready to use in a short time.
+Now its time to build **#UI** project, this project generated related files in **WebSite** project, after building **#UI** project set the **WebSite** project as your default *StartUp* project and then set your *connection string* in **appsetting.json** file and hit F5 to see M# magic. Your project is ready to use in a short time.
