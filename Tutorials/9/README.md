@@ -85,6 +85,8 @@ namespace Domain
             Associate<ServiceType>("Service type");
 
             Money("Price");
+
+            ToStringExpression("ServiceType.Name");
         }
     }
 }
@@ -283,7 +285,7 @@ namespace Modules
 
             Field(x => x.Postcode);
 
-            //MasterDetail<SupplierServiceForm>(x => x.Services); //TODO: Complete this part
+            MasterDetail<SupplierServiceForm>(x => x.Services).MinCardinality(3);
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
@@ -295,9 +297,25 @@ namespace Modules
                 x.ReturnToPreviousPage();
             });
         }
+
+        public class SupplierServiceForm : FormModule<Domain.SupplierService>
+        {
+            public SupplierServiceForm()
+            {
+                HeaderText("Supplier service details");
+
+                Field(x => x.ServiceType).Control(ControlType.DropdownList);
+
+                Field(x => x.Price);
+
+                Button("Add service").OnClick(x => x.AddMasterDetailRow());
+            }
+        }
     }
 }
 ```
+The "SupplierForm" has a new generic method with the name of **MasterDetail\<SupplierServiceForm\>(x => x.Services)**. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is **AddMasterDetailRow()**. By calling **MinCardinality()** method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call **MaxCardinality()** function.
+
 
 ### Creating Supplier Service Pages
 Use M# context menu to add a root page to the "Pages" folder:
