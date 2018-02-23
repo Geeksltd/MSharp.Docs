@@ -45,7 +45,9 @@ In solution explorer, right click the *#Model* project and select *Build* and th
 
 ## Creating Business Logic
 After building #Model project, M# framework will generate its related entities, DAL and scripts in the **Domian** project as shown bellow:
+
 ![Domain Project](DomainProject.PNG "Domain Project")
+
 In this scenario, we need a custom method with the name of "GetWarnings()" that return proper result according user input. Add a partial class with the name of **Employee** under **Logic** as do as shown bellow:
 
 ```C#

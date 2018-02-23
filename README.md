@@ -83,7 +83,7 @@ In this lesson you will learn about:
 - Html.Raw
 - Empty markup
 - Method logic 
--  
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
