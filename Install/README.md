@@ -33,3 +33,4 @@ If you experienced any problem try the following:
 2. Make sure all nuget packages are successfully restored.
 3. If your package did not restore correctly, remove the .nuget contents folder from C:\Users\{YOUR USER NAME}
 4. Make sure that the path to the solution is not too long or it does not contain special characters such as space.
+5. If you had any kind of difficulties and unexpected problems or you faced with M#/Olive template issues, just leave an issue [HERE](https://github.com/Geeksltd/Olive.MvcTemplate/issues).
