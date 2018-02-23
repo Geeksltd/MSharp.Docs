@@ -28,7 +28,7 @@ From requirements, we can identify two entities, "Project" and "Task" that these
 After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
-We start our work by creating *Project* class in *#Model* project:
+In the *#Model* project in the folder *Domain* (If you couldn't find this folder, create one) create a new class named *Project*:
 
 ```C#
 using MSharp;
@@ -114,7 +114,7 @@ According to the requirement, we have these pages:
 So, we have two root pages that hold our list modules and 5 sub pages that are related to add or edit operation.
 
 ### Creating Project Pages
-We continue our work by adding *Project Root Page* in #UI project.
+We continue our work by adding *Project Root Page* in the *Pages* folder of #UI project.
 
 ```C#
 using MSharp;
