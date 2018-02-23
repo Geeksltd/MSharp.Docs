@@ -269,8 +269,7 @@ public class CustomerPage : RootPage
     }
 }
 ```
-
-Now it's time to add *CustomersPage*, add this class like below:
+Add a folder with the name of *Customer* under the *Pages* folder of *#UI* project and then add *CustomersPage* class:
 
 ```C#
 using MSharp;
