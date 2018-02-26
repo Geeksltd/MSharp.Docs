@@ -6,7 +6,7 @@ In this tutorial you will learn:
  - Custom Label for form / search elements
 
 ## Requirements
-In this tutorial we are going to implement an asset management system that lets users to do CRUD operation on assets and owners and let them to search and find assets and related owners easily.
+In this tutorial we are going to implement an asset management system that lets users to do CRUD operations on assets and owners and let them to search and find assets and related owners easily.
 Here are the sketches for list and model.
 
 ### Asset Types:
@@ -129,7 +129,7 @@ public class AssetTypePage : RootPage
     }
 }
 ```
-As you can see, we have added `Add\<Modules.ProjectsList>();`, we are going to create this class soon but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetTypes* then make a class named *EnterPage* class in *AssetTypes* folder like below:
+As you can see, we have added `Add<Modules.ProjectsList>();`, we are going to create this class soon but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetTypes* then make a class named *EnterPage* class in *AssetTypes* folder like below:
 
 ```C#
 using MSharp;
@@ -317,7 +317,7 @@ namespace Modules
     }
 }
 ```
-These two classes has responsibility for CRUD (Create, Read, Update, Delete) operation.
+These two classes has responsibility for CRUD (Create, Read, Update, Delete) operations.
 
 #### Creating Asset Pages
 Our last step is to create related pages for *Asset* entity. Go to *Pages* folder of *#UI* and use M# context menu to add a *Asset* root page class:
@@ -451,7 +451,7 @@ namespace Modules
     }
 }
 ```
-In this class some new M# methods have been used. **Search()** method lets us to add new search and filter capacity. By using `Search(x => x.Type).Label("Type:");` we tell M# that we need a filter over *Type*  property with custom text "Type:". By using `Search(GeneralSearch.AllFields).Label("Find:");` we add search for all columns to our list module and we have added a search button with "Search" label that let users search through entities.
+In this class some new M# methods have been used. `Search()` method lets us to add new search and filter capacity. By using `Search(x => x.Type).Label("Type:");` we tell M# that we need a filter over *Type*  property with custom text "Type:". By using `Search(GeneralSearch.AllFields).Label("Find:");` we add search for all columns to our list module and we have added a search button with "Search" label that let users search through entities.
 
 ```C#
 using MSharp;
