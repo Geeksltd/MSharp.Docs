@@ -20,14 +20,14 @@ In vehicle entity, we just have a list of them and they are read only.
 
 ![Bike Add/Edit](BikeAddEdit.PNG "Bike Add/Edit")
 
-In bike entity, we have CRUD (Create, Read, Update, Delete) operation and client side filter. This class inherits from the vehicle.
+In bike entity, there's CRUD (Create, Read, Update, Delete) operations and client side filter. This class inherits from the vehicle.
 
 ### Car:
 ![Cars List](Cars.PNG "Cars List")
 
 ![Car Add/Edit](CarAddEdit.PNG "Car Add/Edit")
 
-In the car list we have an export to Excel button, and in add or editing mode, for *Number of doors* property we have custom view and limited to 3 numbers.
+In the car list there's an export to Excel button, and in add or editing mode, for *Number of doors* property we have custom view and limited to 3 numbers.
 
 ## Implementation
 We can identify three entities, "Vehicle", "Bike" and "Car". Bike and Car entity inherit from *Vehicle*.
@@ -91,7 +91,7 @@ By using the M# fluent API, **.Min()** and **Max()** we set its minimum and maxi
 Now it's time to feed our two entity types to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
-According to the requirement, we have these pages:
+According to the notes above, these pages are required:
 
 - Vehicle List
 - Bikes List
@@ -102,7 +102,7 @@ According to the requirement, we have these pages:
 So, we have three root pages that hold our list modules and 2 sub pages that are related to add or edit operation.
 
 ### Creating Vehicle Pages
-Use M# context menu to add *Vehicle* root page:
+Go to *Pages* folder of M# project and add a class named *Vehicle*. Also you can use M# context menu to add *Vehicle* root page:
 
 ![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
 
@@ -118,10 +118,10 @@ public class VehiclePage : RootPage
 }
 ```
 In this class we have added "VehiclesList" module that is responsible for listing all vehicles.
-We continue our work by adding "VehiclesList" module.
+Let's move on with adding "VehiclesList" module.
 
 #### Creating Vehicle List Module
-Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* by using the M# context menu like below:
+Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* class using M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
@@ -161,7 +161,7 @@ public class BikePage : RootPage
     }
 }
 ```
-In this class we add *BikesList* module that is responsible for showing all bikes, we continue our work by creating a *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like below:
+In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like below:
 
 ```C#
 using MSharp;
@@ -177,7 +177,7 @@ namespace Bikes
     }
 }
 ```
-In this class we add our *BikeForm* module.
+In this class we added *BikeForm* module to this page.
 
 #### Creating Bike Modules
 Now it's time to create other modules, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
@@ -258,10 +258,10 @@ namespace Modules
     }
 }
 ```
-In this class we have used ***Search(GeneralSearch.ClientSideFilter)** method that let users have client side search.
+In this class we have used `Search(GeneralSearch.ClientSideFilter)` method that let users have client side search.
 
 #### Creating Car Pages
-Our last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
+Last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
 
 ```C#
 using MSharp;
@@ -274,7 +274,7 @@ public class CarPage : RootPage
     }
 }
 ```
-In this class we add *CarsList* module that is responsible for showing all assets, we continue our work by creating a *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like below:
+In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like below:
 
 ```C#
 using MSharp;
@@ -293,7 +293,7 @@ namespace Cars
 In this class we have added *CarForm* module that tells M# framework how to generate related form code for this class.
 
 #### Creating Car Modules
-We continue our work by creating related *Modules*, we need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
+Now we need to create related *Modules*. We need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
 using MSharp;
@@ -327,7 +327,7 @@ namespace Modules
     }
 }
 ```
-In this class, we have used **.Control(ControlType.HorizontalRadioButtons)** method for *Number of doors* property, this method generate horizontal radio button and let user select just one value from 3 to 5.
+In this class, we have used `.Control(ControlType.HorizontalRadioButtons)` method for *Number of doors* property, this method generate horizontal radio button and let user select just one value from 3 to 5.
 
 ```C#
 using MSharp;
@@ -374,7 +374,7 @@ namespace Modules
     }
 }
 ```
-In this class we have used **Button("Export")** M# method, this method generates a button and by using *Export(ExportFormat.Excel)* M# generate related code for generating excel and when user click on "Export" button, excel file will be downloaded.
+In this class we have used `Button("Export")` M# method, this method generates a button and by using `Export(ExportFormat.Excel)` M# generate related code for generating excel and when user click on "Export" button, excel file will be downloaded.
 
 #### Adding Pages to Menu
 Our last step is to add a root page to the main menu:
