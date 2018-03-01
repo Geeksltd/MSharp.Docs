@@ -1,0 +1,187 @@
+# Your Twelvth M# Application
+In this tutorial you will learn:
+
+- Validate() method of objects
+- Form level custom validation
+- Form element header markup
+- Module header text
+
+## Requirements
+In this tutorial we are going to implement a registration form that lets user to enter contact information. There are three criteria:
+- System should not allow registration if the user is younger than 18 years old.
+- Do not allow gmail and yahoo accounts.
+- Only accept secret code of LG2016
+If the user enters valid data, his information will be saved and if criteria did not pass, related error message will be shown to the user.
+
+### Register Form:
+![RegisterForm](RegisterForm.PNG "RegisterForm")
+
+This is the only page that we are going to implement, in this page user fill the form and get a suitable response from the web site.
+
+## Implementation
+From requirements, one entity can be identified, "Register". In registering entity, there are five properties: "First name", "Last name", "Date of birth", "Email", "Password" and a view model property for an invitation code. All criteria will be implemented on business logic layer.
+After understanding requirements and identifying its related properties, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
+
+## Creating M# Entity Types
+Let's start with creating related classes in a *#Model* project under *Domain* folder:
+
+```C#
+using MSharp;
+
+namespace Domain
+{
+    public class Register : EntityType
+    {
+        public Register()
+        {
+            String("First name").Mandatory();
+
+            String("Last name").Mandatory();
+
+            Date("Date of birth").Mandatory();
+
+            String("Email").Accepts(TextPattern.EmailAddress);
+
+            String("Password");
+        }
+    }
+}
+```
+The register class just uses simple M# property and for email address there is a restriction for entering just valid email.
+Now it's time to feed our entity to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
+
+## Add Business logic
+Navigate to *Logic* folder of the *#UI* project; then add a class named *Register* and add logic as shown bellow:
+```C#
+using Olive;
+using Olive.Entities;
+using System;
+using System.Threading.Tasks;
+
+namespace Domain
+{
+    public partial class Register
+    {
+        public override Task Validate()
+        {
+            if (LocalTime.Now.Subtract(this.DateOfBirth) < TimeSpan.FromDays(365 * 18))
+            {
+                throw new ValidationException("User must be at least 18 years old to register.");
+            }
+
+            if (Email.ContainsAny(new[] { "@gmail.", "@yahoo." }, caseSensitive: false))
+            {
+                throw new ValidationException("Gmail and Yahoo emails are not accepted.");
+            }
+
+            return base.Validate();
+        }
+    }
+}
+```
+The register class is a partial C# class that holds all business logic, for adding validation criteria we should override `Validate()` method and add our custom logics. According to the requirements there are two criteria:
+- System should not allow registration if the user is younger than 18 years old.
+- Do not allow gmail and yahoo accounts.
+
+## Developing UI
+According to the requirement, there is just one root page named "RegisterPage".
+
+### Creating Register Page
+Navigate to *Pages* folder of the *#UI* project; Then add a class named *RegisterPage* or you can use M# context menu to add *RegisterPage* root page:
+
+```C#
+using MSharp;
+
+public class RegisterPage : RootPage
+{
+    public RegisterPage()
+    {
+        Add<Modules.RegisterForm>();
+    }
+}
+```
+As you can see, we have added `Add<Modules.RegisterForm>();`, we are going to create this class soon, but for now let's skip it for a while and as you can see, this class holds the register form module.
+
+#### Creating Register Form Module
+Add *RegisterForm* class by using the M# context menu under the *Register* folder of the *Modules* like below:
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class RegisterForm : FormModule<Domain.Register>
+    {
+        public RegisterForm()
+        {
+            HeaderText("Register today!");
+
+            Header("Please register in order to access our wonderful website.");
+
+            Field(x => x.FirstName);
+
+            Field(x => x.LastName);
+
+            Field(x => x.DateOfBirth);
+
+            Field(x => x.Email);
+
+            Field(x => x.Password);
+
+            //TODO: should be completed soon
+            ViewModelProperty<string>("InvitationCode");
+
+            SupportsEdit(false);
+
+            Button("Register").IsDefault()
+            .OnClick(x =>
+            {
+                if (info.InvitationCode != "LG2016")
+                {
+                    x.GentleMessage("Invalid registration key.");
+                }
+                else
+                {
+                    x.SaveInDatabase();
+                }
+            });
+        }
+    }
+}
+```
+This class has responsibility for generating related forms for adding entity. According the requirements, there is an invitation code property that lets user enter any number, but if the user enter *LG2016* user will be legible to save the form. This property is not going to be saved in the database, because it just acts like a validation, for this purpose we have used `ViewModelProperty<string>("InvitationCode")` generic method. By using this method M# just create a view model property that is related to our DTO object and will not be saved on database. We have used **InvitationCode** property in the `.OnClick()` method for adding criteria and checked user entered value. After creating this module, add it to *RegisterPage.cs* class that is our root page if you have let them empty in previous sections.
+
+#### Adding Pages to Menu
+Our last step is to add a root page to the main menu:
+
+```C#
+using MSharp;
+
+namespace Modules
+{
+    public class MainMenu : MenuModule
+    {
+        public MainMenu()
+        {
+            AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
+
+            Item("Login")
+                .Icon(FA.UnlockAlt)
+                .VisibleIf(AppRole.Anonymous)
+                .OnClick(x => x.Go<LoginPage>());
+
+            Item("Settings")
+                .VisibleIf(AppRole.Admin)
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<Admin.SettingsPage>());
+
+            Item("Register")
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<RegisterPage>());
+        }
+    }
+}
+```
+
+### Final Step
+Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.

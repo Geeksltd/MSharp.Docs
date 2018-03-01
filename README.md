@@ -84,6 +84,13 @@ In this lesson you will learn about:
 - Empty markup
 - Method logic 
 
+### [Your Twelvth M# App](Tutorials/12/README.md)
+In this lesson you will learn about: 
+- Validate() method of objects
+- Form level custom validation
+- Form element header markup
+- Module header text
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
