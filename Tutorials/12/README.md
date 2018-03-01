@@ -1,7 +1,7 @@
 # Your Twelvth M# Application
 In this tutorial you will learn:
 
-- Validate() method of objects
+- `Validate()` method of objects
 - Form level custom validation
 - Form element header markup
 - Module header text
@@ -10,7 +10,7 @@ In this tutorial you will learn:
 In this tutorial we are going to implement a registration form that lets user to enter contact information. There are three criteria:
 - System should not allow registration if the user is younger than 18 years old.
 - Do not allow gmail and yahoo accounts.
-- Only accept secret code of LG2016
+- Only accept secret code of **SuperSecretFormula**
 If the user enters valid data, his information will be saved and if criteria did not pass, related error message will be shown to the user.
 
 ### Register Form:
@@ -23,7 +23,7 @@ From requirements, one entity can be identified, "Register". In registering enti
 After understanding requirements and identifying its related properties, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
-Let's start with creating related classes in a *#Model* project under *Domain* folder:
+Let's start with creating a **Register** class in *Domain* folder of the *#Model* project:
 
 ```C#
 using MSharp;
@@ -48,7 +48,7 @@ namespace Domain
 }
 ```
 The register class just uses simple M# property and for email address there is a restriction for entering just valid email.
-Now it's time to feed our entity to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
+Now it's time to feed our entity to M#. In the solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Add Business logic
 Navigate to *Logic* folder of the *#UI* project; then add a class named *Register* and add logic as shown bellow:
@@ -84,7 +84,7 @@ The register class is a partial C# class that holds all business logic, for addi
 - Do not allow gmail and yahoo accounts.
 
 ## Developing UI
-According to the requirement, there is just one root page named "RegisterPage".
+According to the requirements, there is just one root page named "RegisterPage".
 
 ### Creating Register Page
 Navigate to *Pages* folder of the *#UI* project; Then add a class named *RegisterPage* or you can use M# context menu to add *RegisterPage* root page:
@@ -100,10 +100,10 @@ public class RegisterPage : RootPage
     }
 }
 ```
-As you can see, we have added `Add<Modules.RegisterForm>();`, we are going to create this class soon, but for now let's skip it for a while and as you can see, this class holds the register form module.
+As you can see, we have added `Add<Modules.RegisterForm>();` (which will be implemented later), this class holds the register form module.
 
 #### Creating Register Form Module
-Add *RegisterForm* class by using the M# context menu under the *Register* folder of the *Modules* like below:
+Create a folder named *Register* in the *Modules* folder of *#UI* project then add *RegisterForm* class using the M# context:
 
 ```C#
 using MSharp;
@@ -136,7 +136,7 @@ namespace Modules
             Button("Register").IsDefault()
             .OnClick(x =>
             {
-                if (info.InvitationCode != "LG2016")
+                if (info.InvitationCode != "SuperSecretFormula")
                 {
                     x.GentleMessage("Invalid registration key.");
                 }
@@ -149,7 +149,7 @@ namespace Modules
     }
 }
 ```
-This class has responsibility for generating related forms for adding entity. According the requirements, there is an invitation code property that lets user enter any number, but if the user enter *LG2016* user will be legible to save the form. This property is not going to be saved in the database, because it just acts like a validation, for this purpose we have used `ViewModelProperty<string>("InvitationCode")` generic method. By using this method M# just create a view model property that is related to our DTO object and will not be saved on database. We have used **InvitationCode** property in the `.OnClick()` method for adding criteria and checked user entered value. After creating this module, add it to *RegisterPage.cs* class that is our root page if you have let them empty in previous sections.
+This class has responsibility for generating related forms for adding entity. According the requirements, there is an invitation code property that lets user enter any number, but if the user enter *SuperSecretFormula* user will be legible to save the form. This property is not going to be saved in the database, because it just acts like a validation, for this purpose we have used `ViewModelProperty<string>("InvitationCode")` generic method. By using this method M# just create a view model property that is related to our DTO object and will not be saved on database. We have used **InvitationCode** property in the `.OnClick()` method for adding criteria and checked user entered value. After creating this module, add it to *RegisterPage.cs* class that is our root page if you have let them empty in previous sections.
 
 #### Adding Pages to Menu
 Our last step is to add a root page to the main menu:
