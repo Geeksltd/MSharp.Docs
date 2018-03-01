@@ -11,22 +11,22 @@ In this tutorial we are going to develop a website that lists Service types, sup
 
 ![ServiceType Add/Edit](ServiceTypeAddEdit.PNG "ServiceType Add/Edit")
 
-The service type page is simple, It just shows a list of all service types and let users do CRUD operation.
+The service type page is simple, It just shows a list of all service types and let users do CRUD operations.
 
 ### Suppliers:
 ![Suppliers List](Suppliers.PNG "Suppliers List")
 
 ![Supplier Add/Edit](SupplierAddEdit.PNG "Supplier Add/Edit")
 
-On the supplier page, user can see a list of all supplier and their related services, in the list page all supplier address is connected with each other. In the add or edit pages, user can insert supplier information with their related service types as a master detail page.
+On the supplier page, user can see a list of all suppliers and their related services, in the list page all supplier addresses are connected to each other. In the add or edit pages, user can insert supplier information with their related service types as a master detail page.
 
 ## Supplier Services:
 ![SupplierServices List](SupplierServices.PNG "SupplierServices List")
 
-This page is just a list of all supplier and their related services.
+This page is just a list of all suppliers and their related services.
 
 ## Creating Entities
-We start our work by creating **Service Type**, **Supplier** and **Supplier Service** classes in a *#Model* project under *Domain* folder:
+Let's start with creating **Service Type**, **Supplier** and **Supplier Service** classes in a *#Model* project under *Domain* folder:
 
 ```C#
 using MSharp;
@@ -92,10 +92,10 @@ namespace Domain
 }
 ```
 "SupplierService" class has two associations with "Supplier" and "ServiceType" class and a money property.
-In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
+In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything is just fine.
 
 ## Developing UI
-According to the requirement, we have these pages to develop:
+According to the requirements, there are these pages to develop:
 
 - Service Types List
   - Add / Edit Service Type
@@ -116,7 +116,7 @@ public class ServiceTypePage : RootPage
     }
 }
 ```
-Create a folder with the name of "ServiceType" under "Pages" folder and add this sub page:
+Create a folder with the name of "ServiceType" under "Pages" folder and add this sub page class:
 ```C#
 using MSharp;
 
@@ -135,7 +135,7 @@ namespace ServiceType
 ```
 
 #### Creating Service Type List Module
-Add a folder with the name of *ServiceType* under the *Modules* folder of the *#UI* project and add *ServiceTypesList* by using the M# context menu like below:
+Add a folder with the name of *ServiceType* under the *Modules* folder of the *#UI* project and add *ServiceTypesList* class using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -164,10 +164,10 @@ namespace Modules
     }
 }
 ```
-"ServiceTypesList" class just lists service types items in a grid and let users do CRUD operation.
+"ServiceTypesList" class just lists service types items in a grid and lets users do CRUD operations.
 
 #### Creating Service Type Form Module
-Add a form module with the name of *ServiceTypeForm* by using the M# context menu like below:
+Add a form module with the name of *ServiceTypeForm* using the M# context menu like below:
 ```C#
 using MSharp;
 
@@ -196,7 +196,7 @@ namespace Modules
 ```
 
 ### Creating Supplier Pages
-Use M# context menu to add a root page to the "Pages" folder of "#UI" project:
+Use M# context menu to add *Supplier* root page to the "Pages" folder of "#UI" project:
 ```C#
 using MSharp;
 
@@ -208,7 +208,7 @@ public class SupplierPage : RootPage
     }
 }
 ```
-Create a folder with the name of "Supplier" under "Pages" folder and add this sub page:
+Create a folder with the name of "Supplier" under "Pages" folder and add an *Enter* sub page:
 ```C#
 using MSharp;
 
@@ -227,7 +227,7 @@ namespace Supplier
 ```
 
 #### Creating Supplier List Module
-Add a folder with the name of *Supplier* under the *Modules* folder of the *#UI* project and add *SuppliersList* by using the M# context menu like below:
+Add a folder with the name of *Supplier* under the *Modules* folder of the *#UI* project and add *SuppliersList* using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -314,11 +314,11 @@ namespace Modules
     }
 }
 ```
-The "SupplierForm" has a new generic method with the name of **MasterDetail\<SupplierServiceForm\>(x => x.Services)**. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is **AddMasterDetailRow()**. By calling **MinCardinality()** method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call **MaxCardinality()** function.
+The "SupplierForm" has got a new generic method with the name of `MasterDetail\<SupplierServiceForm\>(x => x.Services)`. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is `AddMasterDetailRow()`. By calling `MinCardinality()` method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call `MaxCardinality()` function.
 
 
 ### Creating Supplier Service Pages
-Use M# context menu to add a root page to the "Pages" folder:
+Use M# context menu to add *SupplierService* root page to the "Pages" folder:
 ```C#
 using MSharp;
 
@@ -358,7 +358,7 @@ namespace Modules
 ```
 
 #### Adding Pages to Menu
-Our last step is to add a root page to the main menu:
+The last step is to add a root page to the main menu:
 ```C#
 using MSharp;
 
