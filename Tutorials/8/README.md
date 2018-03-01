@@ -13,14 +13,14 @@ In this tutorial we are going to develop a website that lists projects, develope
 
 ![Project Add/Edit](ProjectAddEdit.PNG "Project Add/Edit")
 
-On the project page, user can see a list of all projects and total work hours that have been spent on each project. User can do the CRUD operation. You should notice that on this page we have **inverse assosiation** and the sum of all working hours should be displayed in the footer row and if there is any related time logs, user should be unable to delete any project.
+On the project page, user can see a list of all projects and total work hours that have been spent on each project. User can do the CRUD operation. You should notice that on this page we have **inverse association** and the sum of all working hours should be displayed in the footer row and if there is any related time logs, user should be unable to delete any project.
 
 ### Developers:
 ![Developers List](Developers.PNG "Developers List")
 
 ![Developer Add/Edit](DeveloperAddEdit.PNG "Developer Add/Edit")
 
-On the developer page, user can see all developers and their last activity date and their total working time. The user should be able to do CRUD operation and if the user deletes any one the developers, their related time logs should be deleted.
+On the developer page, user can see all developers and their last activity date and their total working time. The user should be able to do CRUD operations and if the user deletes any one the developers, their related time logs should be deleted.
 
 ## Time Logs:
 ![TimeLogs List](TimeLogs.PNG "TimeLogs List")
@@ -29,7 +29,7 @@ On the developer page, user can see all developers and their last activity date 
 Time log page show all projects, task and their related starting and ending date time. User can see total times for each project by each developer.
 
 ## Creating Entities
-We start our work by creating **Project**, **Developer** and **Time Log** classes in a *#Model* project under *Domain* folder:
+We get started with creating **Project**, **Developer** and **Time Log** classes in a *#Model* project under *Domain* folder:
 
 ```C#
 using MSharp;
@@ -45,7 +45,7 @@ namespace Domain
     }
 }
 ```
-Project class just have "Name" property right now, we will complete this class soon.
+Project class just has a "Name" property right now, we will complete this class soon.
 ```C#
 using MSharp;
 
@@ -66,7 +66,7 @@ namespace Domain
     }
 }
 ```
-Developer class has "First Name" and "Last Name" and "Full name" string property. "Full name" is a calculated property. Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in “Entity Class” of the “Model Project” and marks them with “Calculated” attribute. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making.
+Developer class has "First Name" and "Last Name" and "Full name" string property. "Full name" is a calculated property. Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in â€œEntity Classâ€ of the â€œModel Projectâ€ and marks them with â€œCalculatedâ€ attribute. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making.
 
 > **Note**:  A calculated property must not contain complex calculations because this is not the intended purpose of entity behaviours. It is always recommended to implement Methods / Functions for such complex calculations.
 
@@ -96,7 +96,7 @@ namespace Domain
     }
 }
 ```
-Time log class has an association with "Project" and "Developer", because we need to delete all related time logs when a developer delete, we have changed the default cascade action by calling this method: **.OnDelete(CascadeAction.CascadeDelete)**. "Hours" property is a calculated property and as requirement told us, we have calculated total hours. "Details" property has a new method, **HelpText()** add an information icon on UI and when a user click on that icon a simple text will be displayed for the user.
+Time log class has an association with "Project" and "Developer", because we need to delete all related time logs when a developer delete, we have changed the default cascade action by calling this method: `.OnDelete(CascadeAction.CascadeDelete)`. "Hours" property is a calculated property and as requirement told us, we have calculated total hours. "Details" property has a new method, `HelpText()` add an information icon on UI and when a user click on that icon a simple text will be displayed for the user.
 
 Now open developer class again and change it like below:
 ```C#
@@ -125,9 +125,9 @@ namespace Domain
     }
 }
 ```
-We have added "Latest work" property, this calculated property shows all developer's latest activities so we have used "TimeLogs" property which is an *Inverse Associate* property, by using this property we can get all related time logs. **ToStringExpression("FullName")** property set default *.ToString()* method of the class.
+We have added "Latest work" property, this calculated property shows all developer's latest activities so we have used "TimeLogs" property which is an *Inverse Associate* property, by using this property we can get all related time logs. `ToStringExpression("FullName")` property set default `.ToString()` method of the class.
 
-We continue our work by opening "Project" class and change it like below:
+Now open up your "Project" class and change it like so:
 ```C#
 using MSharp;
 
@@ -153,7 +153,7 @@ Project class has an *InverseAssociate* with "TimeLog" class and a calculated pr
 In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
-According to the requirement, we have these pages to develop:
+According to the requirements, we have these pages to develop:
 
 - Projects List
   - Add / Edit Project
@@ -226,7 +226,7 @@ namespace Modules
     }
 }
 ```
-This class has a new M# method, **.FooterFormula(AggregateFormula.Sum)** method, add the sum of all columns at footer as a total sum.
+This class has a new M# method, `.FooterFormula(AggregateFormula.Sum)` method, add the sum of all columns at footer as a total sum.
 
 #### Creating Project Form Module
 Add form module with the name of *ProjectForm* by using the M# context menu like below:
@@ -322,7 +322,7 @@ namespace Modules
 ```
 
 #### Creating Developer Form Module
-Add form module with the name of *DeveloperForm* by using the M# context menu like below:
+Add a folder named *Developer* under *Modules* folder then create a form module with the name of *DeveloperForm* by using the M# context menu like so:
 ```C#
 using MSharp;
 
@@ -423,7 +423,7 @@ namespace Modules
 ```
 
 #### Creating Time Log Form Module
-Add form module with the name of *TimeLogForm* by using the M# context menu like below:
+Add form module with the name of *TimeLogForm* using the M# context menu like below:
 ```C#
 using MSharp;
 
@@ -462,7 +462,7 @@ namespace Modules
 ```
 
 #### Adding Pages to Menu
-Our last step is to add a root page to the main menu:
+The last step is to add a root page to the main menu:
 ```C#
 using MSharp;
 
