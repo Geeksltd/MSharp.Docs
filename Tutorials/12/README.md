@@ -49,7 +49,7 @@ namespace Domain
     }
 }
 ```
-The register class just uses simple M# property and for email address there is a restriction for entering just valid email. The *InvitationCode* property is using `.Calculated()` method, this property is read-only and hold user entered value in the UI and if the value is "LG2016" form will be saved.
+The register class just uses simple M# property and for email address there is a restriction for entering just valid email. The *InvitationCode* property is using `.Calculated()` method, this property is read-only and hold user entered value in the UI and if the value is "SuperSecretFormula" form will be saved.
 Now it's time to feed our entity to M#. In the solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Add Business logic
@@ -137,7 +137,7 @@ namespace Modules
             Button("Register").IsDefault()
             .OnClick(x =>
             {
-                x.If("info.InvitationCode != \"LG2016\"").GentleMessage("Invalid registration key.").Exits();
+                x.If("info.InvitationCode != \"SuperSecretFormula\"").GentleMessage("Invalid registration key.").Exits();
 
                 x.SaveInDatabase();
             });
