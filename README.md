@@ -91,6 +91,12 @@ In this lesson you will learn about:
 - Form element header markup
 - Module header text
 
+### [Your Thirteenth M# App](Tutorials/13/README.md)
+In this lesson you will learn about: 
+- Control type
+- Form element data source
+- Form element Source criteria
+
 ### [Business Domain - Basics](Domain/README.md)
 ... (port from http://msharp.co.uk/Learn/Understanding-entity-types.html)
 
