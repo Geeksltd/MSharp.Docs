@@ -54,8 +54,6 @@ namespace Domain
 {
     public class City : EntityType
     {
-        // I just have a name and one country
-
         public City()
         {
             String("Name");
@@ -73,7 +71,6 @@ namespace Domain
 {
     public class Country : EntityType
     {
-        // I have many cities, many customers and many resellers. Also I have a name and It sould be clear if I'm in Europe or not.
         public Country()
         {
             String("Name");
@@ -97,7 +94,6 @@ namespace Domain
 {
     public class Customer : EntityType
     {
-        // I got a name and I have a reseller and a country
         public Customer()
         {
             String("Name");
@@ -117,7 +113,6 @@ namespace Domain
 {
     public class Reseller : EntityType
     {
-        // I've got a name and a country, nothing more
         public Reseller()
         {
             String("Name");
@@ -128,7 +123,7 @@ namespace Domain
 }
 ```
 
-After you added these classes, build **#Model** and after that **Domain** project.
+After you added these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
 ## Implementation : UI
 
