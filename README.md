@@ -37,7 +37,7 @@ In this lesson you will learn about the key M# concepts:
 In this lesson you will learn about:
 
 - Menu
-- Pop-up (modal) pages 
+- Pop-up (modal) pages
 - Image and file properties
 
 ### [Your Third M# App](Tutorials/3/README.md)

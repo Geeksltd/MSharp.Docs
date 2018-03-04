@@ -1,21 +1,10 @@
 * [Home](/)
 
-* Basics
-
-    * [CLI](Basics/CLI.md)
-    * [Concepts](Basics/Concepts.md)
-    * [Tips](Basics/Tips.md)
-
-* Install
-
-    * [Install](Install/README.md)
-
-* Overview
+* Introduction
     * [Overview](Overview/README.md)
-
-* Structure
-
+    * [Installation](Install/README.md)
     * [Structure](Structure/README.md)
+    * [Concepts](Basics/Concepts.md)
 
 * Tutorials
     * [Chapter 1](Tutorials/1/README.md)
@@ -31,3 +20,7 @@
     * [Chapter 11](Tutorials/11/README.md)
     * [Chapter 12](Tutorials/12/README.md)
     * [Chapter 13](Tutorials/13/README.md)
+
+* Tips and tools
+    * [CLI](Basics/CLI.md)
+    * [Tips](Basics/Tips.md)
