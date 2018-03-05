@@ -13,7 +13,7 @@ An entity represents a real world object which exists in a business domain. In M
 
 >- This project does not reference any other project in your solution.
 >- It references the core [M# nuget package](https://www.nuget.org/packages/MSharp/)
->- The compiled output of this prject will not be deployed and will not be used at runtime by your application.
+>- The compiled output of this project will not be deployed and will not be used at runtime by your application.
 >- It's only used during development.
 
 ## Domain
@@ -43,7 +43,7 @@ NOTE:
 
 >- This project references the Domain project.
 >- It also references the core [M# nuget package](https://www.nuget.org/packages/MSharp/)
->- The compiled output of this prject will not be deployed and will not be used at runtime by your application.
+>- The compiled output of this project will not be deployed and will not be used at runtime by your application.
 >- It's only used during development.
 
 ## Website
