@@ -1,29 +1,34 @@
 # Your Forth M# Application
+
 In this tutorial you will learn:
 
- - Property search element
- - All fields search element
- - Custom Label for form / search elements
+- Property search element
+- All fields search element
+- Custom Label for form / search elements
 
 ## Requirements
+
 In this tutorial we are going to implement an asset management system that lets users to do CRUD operations on assets and owners and let them to search and find assets and related owners easily.
 Here are the sketches for list and model.
 
-### Asset Types:
+### Asset Types
+
 ![Asset Types List](AssetType.PNG "Asset Types List")
 
 ![Asset Type Add/Edit](AssetTypeAddEdit.PNG "Asset Type Add/Edit")
 
 For asset types, there are just CRUD operations.
 
-### Owner:
+### Owner
+
 ![Owner](Owner.PNG "Owner")
 
 ![Owner Add/Edit](OwnerAddEdit.PNG "Owner Add/Edit")
 
 For owners, there are just simple CRUD operations, same as asset types.
 
-### Assets:
+### Assets
+
 ![Assets](Assets.PNG "Assets")
 
 ![Asset Add/Edit](AssetAddEdit.PNG "Asset Add/Edit")
@@ -31,10 +36,12 @@ For owners, there are just simple CRUD operations, same as asset types.
 As you can see, In the assets list there are filter and search  columns, and in editing mode, the default label should be changed to custom one.
 
 ## Implementation
-From requirements, three entities can be identified, "Asset Type", "Owner" and "Assets". In asset entity, there are two One-to-Many relationships one with the owner and the other one with asset type.  
+
+From requirements, three entities can be identified, "Asset Type", "Owner" and "Assets". In asset entity, there are two One-to-Many relationships one with the owner and the other one with asset type.
 After understanding requirements and identifying its related properties and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
+
 Let's start with creating related classes in a *#Model* project under *Domain* folder:
 
 ```C#
@@ -74,6 +81,7 @@ namespace Domain
     }
 }
 ```
+
 In owner class, a new M# method have been used. It's `ToStringExpression()`, as its name applies, this method is used for changing default M# `.ToString()` behavior and here we tell M# framework that it should render *First Name + Last Name* for showing entity.
 
 ```C#
@@ -100,10 +108,12 @@ namespace Domain
     }
 }
 ```
+
 As you can see, there are two relations, one with *AssetType* and the other one with *Owner* class. For *Cost* property, we have used `Money()` methods that tell M# framework how to behave and render this property.
 Now it's time to feed our two entity types to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
+
 According to the requirement, there are these pages:
 
 - Asset Types List
@@ -116,6 +126,7 @@ According to the requirement, there are these pages:
 So, there are three root pages that hold our list modules and 6 sub pages that are related to add or edit operation.
 
 ### Creating Asset Type Pages
+
 Navigate to *Pages* folder of the *#UI* project; Then add a class named *Asset Type* or you can use M# context menu to add *Asset Type* root page:
 
 ```C#
@@ -129,6 +140,7 @@ public class AssetTypePage : RootPage
     }
 }
 ```
+
 As you can see, we have added `Add<Modules.ProjectsList>();`, we are going to create this class soon but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetTypes* then make a class named *EnterPage* class in *AssetTypes* folder like below:
 
 ```C#
@@ -147,9 +159,11 @@ namespace AssetTypes
     }
 }
 ```
+
 As you can see, this class holds asset type form module.
 
 #### Creating Asset Types List Module
+
 Add a folder with the name of *AssetType* under the *Modules* folder of the *#UI* project and add a class with the name of *AssetTypesList*. It can be easier by using the M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
@@ -186,9 +200,11 @@ namespace Modules
     }
 }
 ```
+
 In this class a list of asset types are shown according to the requirements also a route for adding, editing and removing items.
 
 #### Creating Asset Type Form Module
+
 Add *AssetTypeForm* class by using the M# context menu under the *AssetType* folder of the *Modules* like below:
 
 ```C#
@@ -217,9 +233,11 @@ namespace Modules
     }
 }
 ```
+
 This class has responsibility for generating related forms for adding and editing entity. After creating these modules, add them to *AssetType.cs* class that is our root page and *Enter.cs* class under *AssetTypes* folder if you have let them empty in previous sections.
 
 #### Creating Owner Pages
+
 Go to *Pages* folder of *#UI* project then create a class named *Owner*. Also you can use M# context menu to add the *Owner* root page:
 
 ```C#
@@ -233,6 +251,7 @@ public class OwnerPage : RootPage
     }
 }
 ```
+
 In this class we added *OwnerList* module which is responsible for showing all owners. Let's continue with creating an *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add an *EnterPage* class like below:
 
 ```C#
@@ -251,9 +270,11 @@ namespace Owners
     }
 }
 ```
+
 In this class we add *OwnerForm* module which tells the M# framework how to generate related code for this class.
 
 #### Creating Owner Modules
+
 Now it's time to create related *Modules*. Two modules are needed for owner entity; they are **ListModule** and **FormModule**. Create a new folder with the name of *Owner* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
@@ -317,9 +338,11 @@ namespace Modules
     }
 }
 ```
+
 These two classes has responsibility for CRUD (Create, Read, Update, Delete) operations.
 
 #### Creating Asset Pages
+
 Our last step is to create related pages for *Asset* entity. Go to *Pages* folder of *#UI* and use M# context menu to add a *Asset* root page class:
 
 ```C#
@@ -333,6 +356,7 @@ public class AssetPage : RootPage
     }
 }
 ```
+
 In this class *AssetsList* module is added which is responsible for showing all assets, now let's move on with creating an *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add an *EnterPage* class like below:
 
 ```C#
@@ -351,6 +375,7 @@ namespace Assets
     }
 }
 ```
+
 In this class we added *AssetForm* module that tells M# framework how to generate related form code for this class.
 
 ```C#
@@ -369,9 +394,11 @@ namespace Assets
     }
 }
 ```
+
 This class is responsible for the view only purpose and we have added *AssetView* module.
 
 #### Creating Asset Modules
+
 Now, let's continue our work by creating related *Modules*, three modules are needed for asset entity, they are **ListModule**, **FormModule** and **ViewModule**. Create a new folder with the name of *Asset* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
@@ -404,6 +431,7 @@ namespace Modules
     }
 }
 ```
+
 In this class, the `.Label()` method is used, this method helps you to write your custom label for the property and we have added custom text according to requirement.
 
 ```C#
@@ -451,6 +479,7 @@ namespace Modules
     }
 }
 ```
+
 In this class some new M# methods have been used. `Search()` method lets us to add new search and filter capacity. By using `Search(x => x.Type).Label("Type:");` we tell M# that we need a filter over *Type*  property with custom text "Type:". By using `Search(GeneralSearch.AllFields).Label("Find:");` we add search for all columns to our list module and we have added a search button with "Search" label that let users search through entities.
 
 ```C#
@@ -475,9 +504,11 @@ namespace Modules
     }
 }
 ```
+
 This class just shows asset detail and let the users go back to the previous page by click on "Back" button.
 
 #### Adding Pages to Menu
+
 Our last step is to add a root page to the main menu:
 
 ```C#
@@ -511,4 +542,5 @@ namespace Modules
 ```
 
 ### Final Step
+
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.

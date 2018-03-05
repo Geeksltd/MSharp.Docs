@@ -1,4 +1,5 @@
 # Your Fifth M# Application
+
 In this tutorial you will learn:
 
 - Inheritence
@@ -7,22 +8,26 @@ In this tutorial you will learn:
 - Index column
 
 ## Requirements
+
 In this tutorial we are going to implement a system that lets users add a car or a bike and see them in related tab, we also let user to see all vehicles that are parent of all cars or bikes in a vehicle tab.
 Here are the sketches for list and model.
 
-### Vehicle:
+### Vehicle
+
 ![Vehicles List](Vehicles.PNG "Vehicles List")
 
 In vehicle entity, we just have a list of them and they are read only.
 
-### Bike:
+### Bike
+
 ![Bike](Bikes.PNG "Bike")
 
 ![Bike Add/Edit](BikeAddEdit.PNG "Bike Add/Edit")
 
 In bike entity, there's CRUD (Create, Read, Update, Delete) operations and client side filter. This class inherits from the vehicle.
 
-### Car:
+### Car
+
 ![Cars List](Cars.PNG "Cars List")
 
 ![Car Add/Edit](CarAddEdit.PNG "Car Add/Edit")
@@ -30,10 +35,12 @@ In bike entity, there's CRUD (Create, Read, Update, Delete) operations and clien
 In the car list there's an export to Excel button, and in add or editing mode, for *Number of doors* property we have custom view and limited to 3 numbers.
 
 ## Implementation
+
 We can identify three entities, "Vehicle", "Bike" and "Car". Bike and Car entity inherit from *Vehicle*.
 After understanding requirements and identifying its related properties and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
+
 We start our work by creating related classes in a *#Model* project under *Domain* folder:
 
 ```C#
@@ -54,6 +61,7 @@ namespace Domain
     }
 }
 ```
+
 Vehicle class is our root class for Bike and Car class, it has shared properties and act as a parent.
 
 ```C#
@@ -70,6 +78,7 @@ namespace Domain
     }
 }
 ```
+
 In Bike class, we have used new M# generic class. It's **SubType<>**, this class tell the M# framework that this class inherit from *Vehicle* class.
 
 ```C#
@@ -86,11 +95,13 @@ namespace Domain
     }
 }
 ```
+
 Car class, like bike class inherits from *Vehicle* class and according to our requirement, *Number of doors* property should have numbers between 3 to 5 and it should be radio buttons, so in this class we just set its min and max value that could have and soon you will see how we tell the M# render this values in radio buttons.
 By using the M# fluent API, **.Min()** and **Max()** we set its minimum and maximum acceptable value.
 Now it's time to feed our two entity types to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
+
 According to the notes above, these pages are required:
 
 - Vehicle List
@@ -102,6 +113,7 @@ According to the notes above, these pages are required:
 So, we have three root pages that hold our list modules and 2 sub pages that are related to add or edit operation.
 
 ### Creating Vehicle Pages
+
 Go to *Pages* folder of M# project and add a class named *Vehicle*. Also you can use M# context menu to add *Vehicle* root page:
 
 ![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
@@ -117,10 +129,12 @@ public class VehiclePage : RootPage
     }
 }
 ```
+
 In this class we have added "VehiclesList" module that is responsible for listing all vehicles.
 Let's move on with adding "VehiclesList" module.
 
 #### Creating Vehicle List Module
+
 Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* class using M# context menu like below:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
@@ -145,9 +159,11 @@ namespace Modules
     }
 }
 ```
+
 This class is read only and is used just for showing purposes.
 
 #### Creating Bike Pages
+
 Use M# context menu to add a *Bike* root page:
 
 ```C#
@@ -161,6 +177,7 @@ public class BikePage : RootPage
     }
 }
 ```
+
 In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like below:
 
 ```C#
@@ -177,9 +194,11 @@ namespace Bikes
     }
 }
 ```
+
 In this class we added *BikeForm* module to this page.
 
 #### Creating Bike Modules
+
 Now it's time to create other modules, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
@@ -258,9 +277,11 @@ namespace Modules
     }
 }
 ```
+
 In this class we have used `Search(GeneralSearch.ClientSideFilter)` method that let users have client side search.
 
 #### Creating Car Pages
+
 Last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
 
 ```C#
@@ -274,6 +295,7 @@ public class CarPage : RootPage
     }
 }
 ```
+
 In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like below:
 
 ```C#
@@ -290,9 +312,11 @@ namespace Cars
     }
 }
 ```
+
 In this class we have added *CarForm* module that tells M# framework how to generate related form code for this class.
 
 #### Creating Car Modules
+
 Now we need to create related *Modules*. We need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
 ```C#
@@ -327,6 +351,7 @@ namespace Modules
     }
 }
 ```
+
 In this class, we have used `.Control(ControlType.HorizontalRadioButtons)` method for *Number of doors* property, this method generate horizontal radio button and let user select just one value from 3 to 5.
 
 ```C#
@@ -374,9 +399,11 @@ namespace Modules
     }
 }
 ```
+
 In this class we have used `Button("Export")` M# method, this method generates a button and by using `Export(ExportFormat.Excel)` M# generate related code for generating excel and when user click on "Export" button, excel file will be downloaded.
 
 #### Adding Pages to Menu
+
 Our last step is to add a root page to the main menu:
 
 ```C#
@@ -417,4 +444,5 @@ namespace Modules
 ```
 
 ### Final Step
+
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.

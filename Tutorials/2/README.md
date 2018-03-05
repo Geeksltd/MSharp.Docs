@@ -1,4 +1,5 @@
 # Your Second M# Application
+
 In the previous tutorial we have learned about this topics:
 
 - Entity types
@@ -11,21 +12,24 @@ In the previous tutorial we have learned about this topics:
 
 In this tutorial we continue our learning process with enriching previous topics and learn new topics like:
 
- - Pop-up (modal) pages
- - Image and file properties
+- Pop-up (modal) pages
+- Image and file properties
 
 ## Requirements
-As web developer, we should implement a management system that let user manage their customers and related countries. 
+
+As web developer, we should implement a management system that let user manage their customers and related countries.
 Here are the sketches for list and model.
 
 ![Countries List](Countries.PNG "Countries List")
 ![Customers list](Customer.PNG "Customers list")
 
 ## Implementation
-From requirements, we can identify two entities, "Country" and "Customer" that these entities has One-to-Many relationships since any country have many customers and each customer has one country.  
+
+From requirements, we can identify two entities, "Country" and "Customer" that these entities has One-to-Many relationships since any country have many customers and each customer has one country.
 After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating M# Entity Types
+
 In Solution Explorer of your Visual Studio under your *#Model* project make sure you have a folder named "Domain".
 Right click the folder and add a class called "Country", Do the same, but this time add "Customer" class.
 
@@ -46,7 +50,8 @@ namespace Domain
     }
 }
 ```
-In M# we use the default constructor to add properties to entity types.  
+
+In M# we use the default constructor to add properties to entity types.
 The only property of the *Country* class is of type *string* and is called *Name*. This property is mandatory so we need to call .Mandatory() method using M# fluent API.
 
 In a similar way add another entity type called *Customer* but this time with a set of properties shown in the snippet below:
@@ -72,20 +77,22 @@ namespace Domain
     }
 }
 ```
+
 As you can see we have used M# fluent API to add *Customer* class properties, we have added One-to-Many relationship with **Associate\<Country>("Country")** property and continue our work to add *Company name* and other properties.
 Here you should consider these methods:
- - String() : Used for simple string property
- - Date() : Used for date and time property
- - OpenImage() : Used for image property
- - OpenFile() : Used for any document file.
+
+- String() : Used for simple string property
+- Date() : Used for date and time property
+- OpenImage() : Used for image property
+- OpenFile() : Used for any document file.
 
 As you can see, M# framework gives use excellent power to use it's fluent API continuance to add other methods like *.Width()* , *.Height()* etc.
 
 **Note:** Always use singular names for entity types. M# is smart enough to automatically use their plural forms when necessary.
 
-Now it's time to feed our two entity types to the M# code generator. You invoke it by building the *#Model* project.  
-In solution explorer, right click the *#Model* project and select *Build*.  
-After the build process, you can find the resulting files in the *Domain* project under the *[GEN-Entities]* branch as shown below: 
+Now it's time to feed our two entity types to the M# code generator. You invoke it by building the *#Model* project.
+In solution explorer, right click the *#Model* project and select *Build*.
+After the build process, you can find the resulting files in the *Domain* project under the *[GEN-Entities]* branch as shown below:
 
 ![Domain Overview](DomainProject.PNG "Domain Overview")
 
@@ -93,7 +100,9 @@ You should notice that every class in *GEN-Entities* , *GEN-DAL* , *DEV-SCRIPTS*
 Before moving on to developing the UI, let's build the *Domain* project to make sure everything regarding it is fine.
 
 ## Developing UI
+
 In **#UI** project we have three main steps to do:
+
 1. Add Pages
 2. Config Menu
 3. Add Modules To Pages
@@ -102,6 +111,7 @@ According to the requirement, we have a country and a customer page that in thes
 Our first step is to create a root page for country and customer page.
 
 ### Creating Country List Pages
+
 We continue our work with right click on the *Pages* folder in *#UI* project and add two root page as shown bellow:
 
 ![Add Root Page](AddRootPage.PNG "Add Root Page")
@@ -137,10 +147,12 @@ namespace Country
     }
 }
 ```
+
 This class inherits from *SubPage\<CountryPage>* class. We have added a *CountriesList* class that its responsibility is to list all countries in a grid like the first requirement picture.
 We continue our work by adding *CountriesList* class that inherits from *ListModule*
 
 #### Creating Country List Module
+
 Add a folder with the name of *Country* under the *Modules* folder of the *#UI* project as shown bellow:
 
 ![Add Modules](AddModules.PNG "Add Modules")
@@ -174,9 +186,11 @@ namespace Modules
     }
 }
 ```
+
 In this class we have included our needed column according to the requirement and add *Edit, Delete* and *Add Contact* buttons with their navigation instruction. You should notice that we have inherited from **ListModule** class, this class is a special class that tells M# framework how to generate code for showing this class.
 
 #### Creating Country Form Page
+
 After creating a Country list its time to create a country form page that is responsible for adding and editing operation. We continue our work by creating a *Enter* class in a *Country* folder under the *Page* folder in *#UI* project:
 
 ![Country Enter](CountryEnter.PNG "Country Enter")
@@ -198,6 +212,7 @@ namespace Country
     }
 }
 ```
+
 This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add\<Modules.CountryForm\>** we instruct the M# framework that this page is responsible for showing country form module.
 Now it's time to create *CountryForm* class, Add this class under the *Countery* folder in *Modules* folder like below:
 
@@ -224,11 +239,14 @@ namespace Modules
     }
 }
 ```
+
 This class inherits from **FormModule** class that tell the M# framework to deal with this class as a form module. This special class tells M# that it should generate a form page and a user can add or edit entity.
 For country, entity we have just one filed as requirement told us, so we just use *Field()* method to tell M# how to generate code for this property.
 
 #### Adding Country List Page to Menu
+
 Our last step is to add a *CountriesPage* to the main menu, for doing this open **MainMenu.cs** class and add *CountriesPage* class.
+
 ```C#
 using MSharp;
 namespace Modules
@@ -250,9 +268,11 @@ namespace Modules
     }
 }
 ```
+
 Now you can build #UI project and hit *F5* to run the project and see its result. But we continue our work by adding *Customer* entity to our project.
 
 #### Creating Customer List Pages
+
 We continue our work by repeating former steps. First add customer root page:
 
 ![Add Root Page](AddRootPage.PNG "Add Root Page")
@@ -269,6 +289,7 @@ public class CustomerPage : RootPage
     }
 }
 ```
+
 Add a folder with the name of *Customer* under the *Pages* folder of *#UI* project and then add *CustomersPage* class:
 
 ```C#
@@ -284,7 +305,9 @@ namespace Customer
     }
 }
 ```
+
 #### Creating Customer List Module
+
 Add a folder with the name of *Customer* under the *Modules* folder of *#UI* project and then add *CustomersList* class:
 
 ```C#
@@ -322,10 +345,12 @@ namespace Modules
     }
 }
 ```
-According to the requirements, this class should include more columns to be shown for users. We have added all required columns as shown above. 
+
+According to the requirements, this class should include more columns to be shown for users. We have added all required columns as shown above.
 Now we need to create a form page that let users to add or edit entities.
 
 #### Creating Customer Form Page
+
 We continue our work by creating a *EnterPage* class in a *Customer* folder under the *Page* folder in *#UI* project. Add a class with the name of *EnterPage* like below:
 
 ```C#
@@ -343,6 +368,7 @@ namespace Customer
     }
 }
 ```
+
 Our next step is to create *CustomerForm* class, Add this class under the *Customer* folder in *Modules* folder like below:
 
 ```C#
@@ -376,10 +402,13 @@ namespace Modules
     }
 }
 ```
+
 This class generates a form with the required columns according to requirements.
 
 #### Adding Customer List Page to Menu
+
 Our last step is to add a *CustomersPage* to the main menu, for doing this open **MainMenu.cs** class and add *CustomersPage* class.
+
 ```C#
 using MSharp;
 namespace Modules
@@ -405,4 +434,5 @@ namespace Modules
 ```
 
 ### Final Step
+
 Now its time to build **#UI** project, this project generated related files in **WebSite** project, after building **#UI** project set the **WebSite** project as your default *StartUp* project and then set your *connection string* in **appsetting.json** file and hit F5 to see M# magic. Your project is ready to use.

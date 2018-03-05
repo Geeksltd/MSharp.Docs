@@ -1,4 +1,5 @@
 # Your Seventh M# Application
+
 In this tutorial you will learn:
 
 - Range validation
@@ -8,24 +9,29 @@ In this tutorial you will learn:
 - Expected lines
 
 ## Requirements
+
 In this tutorial we are going to develop a website that lists our clients and each client can have many invoices. This page should have paging and when user click on "Add invoice" link button, add invoice page should be opened and related client should be selected by default, users can enter any negative or positive values and description property should be text area.
 
-### Clients:
+### Clients
+
 ![Clients List](Clients.PNG "Clients List")
 
 ![Client Add/Edit](AddClient.PNG "Client Add/Edit")
 
 On the client page, user can see a list of all clients and their related invoices that are separated by "|". User can do the CRUD operation. You should notice that in this page we have **inverse association** for invoice property. We also can add/edit/remove each client.
 
-### Invoice:
+### Invoice
+
 ![Invoice Add/Edit](AddInvoice.PNG "Invoice Add/Edit")
 
 This page will be opened when a user click on "Add invoice" link button and related client would be selected by M#, user can enter and negative or positive value for amount property.
 
 ## Implementation
+
 Let's get started with creating two entities, "Client" and "Invoice". There is one to many relation between "Client" and "Invoice" and an **inverse association** from client to invoice so we have parent child property too. Now let's create the corresponding classes in the *#Model* project.
 
 ## Creating Entities
+
 We start our work by creating **Client** and **Invoice** classes in a *#Model* project under *Domain* folder:
 
 ```C#
@@ -44,6 +50,7 @@ namespace Domain
     }
 }
 ```
+
 Client class has an inverse association with invoice entity, **InverseAssociate\<Invoice\>("Invoices", "Client")** generic method takes two parameters as you can see, first one is the property name and the second one is related property name in child class.
 
 ```C#
@@ -66,9 +73,11 @@ namespace Domain
     }
 }
 ```
-    In invoice class, the default "Amount" property value should be changed to any negative input. By default M# will set zero as a minimum value, we have used `.Min(decimal.MinValue)` to set its minimum value. We have also changed "Description" default M# value, by using `.Max(2500)` we tell M# that length of property is 2500 and by calling **.Lines(5)** M# mill generate text area with a 5 line in UI.
+
+In invoice class, the default "Amount" property value should be changed to any negative input. By default M# will set zero as a minimum value, we have used `.Min(decimal.MinValue)` to set its minimum value. We have also changed "Description" default M# value, by using `.Max(2500)` we tell M# that length of property is 2500 and by calling **.Lines(5)** M# mill generate text area with a 5 line in UI.
 
 ## Developing UI
+
 According to the requirement, we have three pages to develop:
 
 - Client List
@@ -76,7 +85,9 @@ According to the requirement, we have three pages to develop:
   - Add Invoice
 
 ### Creating Client Pages
+
 Use M# context menu to add a *Client* root page intp *Pages* folder:
+
 ```C#
 using MSharp;
 
@@ -88,6 +99,7 @@ public class ClientPage : RootPage
     }
 }
 ```
+
 In this class we have added "ClientsList" module that is responsible for listing all clients.
 Now create a *Clients* folder under the *Pages* folder, then add this class:
 
@@ -104,11 +116,12 @@ namespace Clients
         }
     }
 }
-
 ```
+
 Let's move on with adding "ClientsList" and "ClientForm" modules.
 
 #### Creating Client List Module
+
 Add a folder with the name of *Client* under the *Modules* folder of the *#UI* project and add *ClientsList* by using the M# context menu like below:
 
 ```C#
@@ -158,14 +171,18 @@ namespace Modules
     }
 }
 ```
+
 This class contains some new methods:
+
 - `UseDatabasePaging(false)`: This method will enable client side paging
 - `PageSize(5)`: This method determines default paging size
 - `ShowHeaderRow()`: This method generates the header for the grid
 - `PagerPosition(PagerAt.Bottom)`: This method will put paging at bottom
+
 You should notice that "Add invoice" button should be a hyper link button, so we have used `.Style(ButtonStyle.Link)` to achieve this. We also need to send client id as query string to invoice page, by calling `.Send("client", "item.ID")` method we send a query string with the name of **client** and with the value of client ID to invoice page.
 
 #### Creating Client Form Module
+
 Use M# context menu to add a form module named *ClientForm* and paste the codes below:
 
 ```C#
@@ -196,6 +213,7 @@ namespace Modules
 ```
 
 #### Creating Invoice Page
+
 Create "AddInvoice" page under the *clients* folder *Pages* like below:
 
 ```C#
@@ -212,9 +230,11 @@ namespace Clients
     }
 }
 ```
-This page holds "InvoiceForm" module. 
+
+This page holds "InvoiceForm" module.
 
 #### Creating Invoice Form Module
+
 Create a folder with the name of "Invoice" and add "InvoiceForm" module using the M# context menu like below:
 
 ```C#
@@ -250,10 +270,13 @@ namespace Modules
     }
 }
 ```
+
 This class has got a new method, `AutoSet(x => x.Client)` tell M# that its default value will come from query string.
 
 #### Adding Pages to Menu
+
 Our last step is to add a root page to the main menu:
+
 ```C#
 using MSharp;
 
@@ -282,5 +305,7 @@ namespace Modules
     }
 }
 ```
+
 ### Final Step
+
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.

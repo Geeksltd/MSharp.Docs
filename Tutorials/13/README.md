@@ -10,7 +10,7 @@ In this tutorial you will learn:
 
 In this tutorial we are going to implement a web site that manages countries and resellers. Countries can be from anywhere worldwide, but resellers can be just from European countries. By clicking on each country use can see its related cities and customers.
 
-### Countries:
+### Countries
 
 ![Countries](Countries.PNG "Countries")
 
@@ -30,7 +30,7 @@ In country detail page users can see all related cities and customers; Also user
 
 According to the requirements, we should just load selected country's cities and customers.
 
-### Resellers:
+### Resellers
 
 ![Resellers](Resellers.PNG "Resellers")
 
@@ -583,6 +583,3 @@ namespace Modules
 ### Final Step
 
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
-
-
-
