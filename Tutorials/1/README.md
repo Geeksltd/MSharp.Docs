@@ -1,4 +1,4 @@
-# Your First M# App
+# M# Tutorial - Episode 1: Your First App
 
 This tutorial is assuming readers' familiarity with the M# framework obtained from the preceding chapters
 In this tutorial you will work with the following components:

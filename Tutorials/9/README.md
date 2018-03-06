@@ -1,4 +1,4 @@
-# Your Ninth M# Application
+# M# Tutorial - Episode 9: Master-detail
 
 In this tutorial you will learn:
 

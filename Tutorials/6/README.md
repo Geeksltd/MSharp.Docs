@@ -1,4 +1,4 @@
-# Your Sixth M# Application
+# M# Tutorial - Episode 6: Advanced Associations
 
 In this tutorial you will learn:
 

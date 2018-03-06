@@ -1,4 +1,4 @@
-# Your Second M# Application
+# M# Tutorial - Episode 2: Modal pages
 
 In the previous tutorial we have learned about this topics:
 

@@ -1,4 +1,4 @@
-# Your Fifth M# Application
+# M# Tutorial - Episode 5: Inheritance
 
 In this tutorial you will learn:
 

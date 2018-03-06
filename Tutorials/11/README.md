@@ -1,4 +1,4 @@
-# Your Eleventh M# Application
+# M# Tutorial - Episode 11: Method logic
 
 In this tutorial you will learn:
 

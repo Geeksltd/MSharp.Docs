@@ -1,4 +1,4 @@
-# Your Eighth M# Application
+# M# Tutorial - Episode 8: Calculated properties
 
 In this tutorial you will learn:
 

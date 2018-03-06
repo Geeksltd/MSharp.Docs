@@ -1,4 +1,4 @@
-# Your Third M# Application
+# M# Tutorial - Episode 3: Uniqueness rules
 
 In this tutorial we continue our learning process with enriching previous topics and learn new topics:
 

@@ -1,7 +1,6 @@
 # MSharp Docs
 
-## [Read this guide in a better format](http://learn.msharp.co.uk/)
-
+> ## [Read M# docs in a better format](http://learn.msharp.co.uk/)
 > ## NOTE
 > This documentation website is under construction. Its content is to be ported from the [legacy documentation](http://msharp.co.uk/Learn/Understanding-MSharp.html) and also the [Video Tutorials](https://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc) (contact us for access). Previously you used a web-based IDE for developing M# apps and all the old documentation is based on that model. In the new M#, everything is in Visual Studio and you use special C# classes to define M# concepts.
 > Mapping from the old model to the new one is not too complex as the concepts are still the same. You just need to map the syntax between the two in your head.
@@ -26,7 +25,7 @@ An introduction to all key M# concepts such as Entity Type, Property, Page, Modu
 
 ## Tutorials
 
-### [Your First M# App](Tutorials/1/README.md)
+### [M# Tutorial - Episode 1: Your First App](Tutorials/1/README.md)
 
 In this lesson you will learn about the key M# concepts:
 
@@ -34,7 +33,7 @@ In this lesson you will learn about the key M# concepts:
 - Page & menus and navigation
 - List modules, form modules and buttons
 
-### [Your Second M# App](Tutorials/2/README.md)
+### [M# Tutorial - Episode 2: Modal pages](Tutorials/2/README.md)
 
 In this lesson you will learn about:
 
@@ -42,13 +41,13 @@ In this lesson you will learn about:
 - Pop-up (modal) pages
 - Image and file properties
 
-### [Your Third M# App](Tutorials/3/README.md)
+### [M# Tutorial - Episode 3: Uniqueness rules](Tutorials/3/README.md)
 
 In this lesson you will learn about:
 
 - Uniqueness rules
 
-### [Your Forth M# App](Tutorials/4/README.md)
+### [M# Tutorial - Episode 4: Search](Tutorials/4/README.md)
 
 In this lesson you will learn about:
 
@@ -56,7 +55,7 @@ In this lesson you will learn about:
 - All fields search element
 - Custom Label for form / search elements
 
-### [Your Fifth M# App](Tutorials/5/README.md)
+### [M# Tutorial - Episode 5: Inheritance](Tutorials/5/README.md)
 
 In this lesson you will learn about:
 
@@ -65,14 +64,14 @@ In this lesson you will learn about:
 - Client-side filter
 - Index column
 
-### [Your Sixth M# App](Tutorials/6/README.md)
+### [M# Tutorial - Episode 6: Advanced Associations](Tutorials/6/README.md)
 
 In this lesson you will learn about:
 
 - One to Many (inverse) associations
 - Many to Many associations
 
-### [Your Seventh M# App](Tutorials/7/README.md)
+### [M# Tutorial - Episode 7: Validation and pagination](Tutorials/7/README.md)
 
 In this lesson you will learn about:
 
@@ -82,7 +81,7 @@ In this lesson you will learn about:
 - Property setter
 - Expected lines
 
-### [Your Eighth M# App](Tutorials/8/README.md)
+### [M# Tutorial - Episode 8: Calculated properties](Tutorials/8/README.md)
 
 In this lesson you will learn about:
 
@@ -90,13 +89,13 @@ In this lesson you will learn about:
 - Cascade delete
 - Calculated property
 
-### [Your Ninth M# App](Tutorials/9/README.md)
+### [M# Tutorial - Episode 9: Master-detail](Tutorials/9/README.md)
 
 In this lesson you will learn about:
 
 - Master-detail forms
 
-### [Your Tenth M# App](Tutorials/10/README.md)
+### [M# Tutorial - Episode 10: List data source](Tutorials/10/README.md)
 
 In this lesson you will learn about:
 
@@ -104,7 +103,7 @@ In this lesson you will learn about:
 - View module property
 - Link button
 
-### [Your Eleventh M# App](Tutorials/11/README.md)
+### [M# Tutorial - Episode 11: Method logic](Tutorials/11/README.md)
 
 In this lesson you will learn about:
 
@@ -112,7 +111,7 @@ In this lesson you will learn about:
 - Empty markup
 - Method logic
 
-### [Your Twelvth M# App](Tutorials/12/README.md)
+### [M# Tutorial - Episode 12: Advanced validation](Tutorials/12/README.md)
 
 In this lesson you will learn about:
 
@@ -121,13 +120,13 @@ In this lesson you will learn about:
 - Form element header markup
 - Module header text
 
-### [Your Thirteenth M# App](Tutorials/13/README.md)
+### [M# Tutorial - Episode 13: Form element](Tutorials/13/README.md)
 
 In this lesson you will learn about:
 
 - Control type
 - Form element data source
-- Form element Source criteria
+- Form element source criteria
 
 ## Structure Tutorial
 

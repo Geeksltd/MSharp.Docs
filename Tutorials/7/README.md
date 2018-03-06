@@ -1,4 +1,4 @@
-# Your Seventh M# Application
+# M# Tutorial - Episode 7: Validation and pagination
 
 In this tutorial you will learn:
 
