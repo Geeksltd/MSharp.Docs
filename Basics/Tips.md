@@ -21,7 +21,6 @@ public class SomeType: EntityType
 
 In the above example, the default value expression is a **constant string**, which ultimately will be generated in the target Domain entity code. So you know that its true *nature* is a ***C# expression***, while in the M# definition file, it's just plain string. It would be often handy to use intellisense for code completion and checking write at this level to ensure your code fragment is valid.
 
-
 1. Put the cursor anywhere on the text, i.e. "C#:LocalTime.Now".
 2. Press Alt + i
 3. A small pop-up window will appear, giving the context of the target code, enabling full intellisense.

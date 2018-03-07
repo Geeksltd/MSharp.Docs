@@ -10,6 +10,8 @@ M# CLI ships with handful of commands to set up and build your project from scra
 
 By running **msharp.exe** you will see all options and outputs and how to use them.
 
+## msharp.exe
+
 ### msharp.exe /build *[/model]* *[/ul]*
 
 By running **msharp.exe /build** m# framwrok will try to compile your current project and show you the result. If your project encounters any errors, you will see the result here.
