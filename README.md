@@ -11,6 +11,9 @@
 
 Understand the M# development model in a nutshell.
 
+M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#. 
+
+
 ### [Installing M#](Install/README.md)
 
 Learn how to install M# on your computer and create a project to get started.
