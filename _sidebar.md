@@ -20,6 +20,7 @@
     * [Episode 11: Method logic](Tutorials/11/README.md)
     * [Episode 12: Advanced validation](Tutorials/12/README.md)
     * [Episode 13: Form element](Tutorials/13/README.md)
+    * [Episode 14: Sending email](Tutorials/14/README.md)
 
 * Tips and tools
 
