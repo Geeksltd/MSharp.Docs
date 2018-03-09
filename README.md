@@ -128,6 +128,14 @@ In this lesson you will learn about:
 - Form element data source
 - Form element source criteria
 
+### [M# Tutorial - Episode 14: Sending email](Tutorials/14/README.md)
+
+In this lesson you will learn about: 
+- Boolean form element (true, false text), 
+- Custom workflow action
+- Sending emails
+- Email Templates
+
 ## Structure Tutorial
 
 ### [Business Domain - Basics](Domain/README.md)
