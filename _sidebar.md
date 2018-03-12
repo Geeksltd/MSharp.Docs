@@ -21,6 +21,7 @@
     * [Episode 12: Advanced validation](Tutorials/12/README.md)
     * [Episode 13: Form element](Tutorials/13/README.md)
     * [Episode 14: Sending email](Tutorials/14/README.md)
+    * [Episode 15: Formatting property](Tutorials/15/README.md)
 
 * Tips and tools
 

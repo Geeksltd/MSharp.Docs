@@ -139,6 +139,13 @@ In this lesson you will learn about:
 - Sending emails
 - Email Templates
 
+### [M# Tutorial - Episode 15: Formatting property](Tutorials/15/README.md)
+
+In this lesson you will learn about: 
+- List column format (date and percentage, and number separator)
+- Form element display expression
+- Search element display expression 
+
 ## Structure Tutorial
 
 ### [Business Domain - Basics](Domain/README.md)

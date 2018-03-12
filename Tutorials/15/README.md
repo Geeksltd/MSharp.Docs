@@ -1,4 +1,4 @@
-# M# Tutorial - Episode 15
+# M# Tutorial - Episode 15: Formatting property
 
 In this tutorial you will learn:
 
@@ -8,30 +8,28 @@ In this tutorial you will learn:
 
 ## Requirements
 
-In this tutorial, we are going to implement a website that manages countries and companies. Some elements of companies have specific formats and we will show country name in different ways.
+In this tutorial, we are going to implement a website that manages countries and companies. On companies page some columns of grid table have specific formats and there is a search with a special string format for showing countries.
+
+### Companies
+
+![Companies](Companies.png "Companies")
+![Company Add/Edit](CompanyAdd.png "Company Add/Edit")
+
+ Every company has a company name, a registration date with a specific format, market share, which is percentage based, number of employees which is formatted with a thousand separator and a country. For searching we should consider the special string format and we should just show country code. In country detail form page country dropdown list should list all countries in this format *Code (Country Name)*
 
 ### Countries
 
 
-![Countries](Countries.PNG "Countries")
-![Countries Add/Edit](CountryAdd.PNG "Countries Add/Edit")
+![Countries](Countries.png "Countries")
+![Countries Add/Edit](CountryAdd.png "Countries Add/Edit")
 
-As you can see, each country has a name and a code which is a simple abbreviation of the country name.
-
-
-### Companies
-
-![Companies](Companies.PNG "Companies")
-![Company Add/Edit](CompanyAdd.PNG "Company Add/Edit")
-
- Every company will have a company name, a registration date with a specific format, market share which is percentage based, number of employees which is formatted with a thousand separator and a country. 
- When you are selecting a country in the Form of the company, instead of showing just the name of the country it should show the code and in the parenthesis the country name, but in the search element, we only show the code of the company.
+In countries page users can sell all countries and they can do CRUD operations.
 
 
 ## Implementation : Entities
 
 
-Two entities can be identified, "Country" and "Company". After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
+As we can see in the requirements, the two entities can be identified, **Country** and **Company**. The country has many companies and each company has one country. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
 Create a **Domain** folder and add these classes:
 
@@ -51,6 +49,8 @@ namespace Domain
     }
 }
 ```
+
+Country class has just two mandatory string property as shown above.
 
 ```C#
 using MSharp;
@@ -75,20 +75,20 @@ namespace Domain
 }
 ```
 
-In company class, a new M# method have been used. It's `IsPercentage()`, as its name applies, this method is used for showing percentage mark.
+In company class, a new M# method has been used. It's `IsPercentage()`, as its name applies, this method is used for showing percentage mark and by calling `.Scale()` method we have limited to two decimal numbers and limit its max and min value by calling `.Min()` and `.Max()` M# fluent method.
 
 After adding these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
-## Implementation
+## Implementation: UI
 
-As we can see in the requrements, we should develop these pages:
+As we can see in the requirements, we should develop these pages:
 
 - Companies
-  - Add company
--Countries
-  - Add country
+  - Add / Edit Company
+- Countries
+  - Add / Edit Country
 
-### Company Page
+### Company Pages
 
 Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Company** rootpage:
 
@@ -99,11 +99,12 @@ public class CompanyPage : RootPage
     public CompanyPage()
     {
         Add<Modules.CompaniesList>();
+        //will be implemented later
     }
 }
 ```
 
-Now create a folder named **Country** under the **Pages** folder. Then add an **Enter** class here:
+Now create a folder named **Country** under the **Pages** folder. Then add an **EnterPage** class here:
 
 ```C#
 using MSharp;
@@ -115,6 +116,7 @@ namespace Company
         public EnterPage()
         {
             Add<Modules.CompanyForm>();
+            //will be implemented later
         }
     }
 }
@@ -122,7 +124,7 @@ namespace Company
 
 #### Creating required module of Company Page
 
-Navigate to **Modules** folder of **M#** project and create folder named **Company**. Then add a *Form module* named **CompanyForm** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **Company**. Then add a *Form module* named **CompanyForm** using M# context menu:
 
 ```C#
 using MSharp;
@@ -158,9 +160,9 @@ namespace Modules
     }
 }
 ```
+According to the requirements, we should display the country name in special format, it should be something like *UK (United Kingdom)*. For this purpose we have used `DisplayExpression()` method to show the country name in special format.
 
-As you can see, we use `DisplayExpression()` method to show the country name how we want.
-Then add the **CompaniesList** module:
+Add a list module named **CompaniesList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -198,12 +200,11 @@ namespace Modules
     }
 }
 ```
+According to the requirements, in this page for search dropdown we have used `.DisplayExpression()` to display country code and for *RegistrationDate* and *NumberOfEmployees* column, we have used `.DisplayFormat()` method to show its value in special format as we want.
 
-Like above, we use `DisplayExpression()` method to show the date format how we want.
+### Country Pages
 
-### Country Page
-
-Add a *root page* named **Country** under **Pages** folder of **#UI** using M# context menu (or any oher way that you are comfortable with):
+Add a *root page* named **Country** under the **Pages** folder of **#UI** using M# context menu (or any other way that you are comfortable with):
 
 ```C#
 using MSharp;
@@ -212,6 +213,7 @@ public class CountryPage : RootPage
     public CountryPage()
     {
         Add<Modules.CountriesList>();
+        //will be implemented later
     }
 }
 ```
@@ -228,6 +230,7 @@ namespace Country
         public EnterPage()
         {
             Add<Modules.CountryForm>();
+            //will be implemented later
         }
     }
 }
@@ -235,8 +238,8 @@ namespace Country
 
 #### Creating required module of Country Page
 
-Move on to **Modules** folder of **#UI** and add a folder with the name of **Country** which will contain related modules of *country* view.
-Now use M# context menu and add a *form module* named **CountryForm**:
+Move on to the **Modules** folder of **#UI** and add a folder with the name of **Country** which will contain related modules of *country*.
+Now use the M# context menu and add a *form module* named **CountryForm**:
 
 ```C#
 using MSharp;
@@ -296,11 +299,11 @@ namespace Modules
 }
 ```
 
-Now we are done with views.
+Now we are done, county pages and modules are completed.
 
 #### Adding Pages to Menu
 
-After you ended up with form page, you need to add it to the main menu:
+After you ended up with form pages, you need to add it to the main menu:
 
 ```C#
 using MSharp;
