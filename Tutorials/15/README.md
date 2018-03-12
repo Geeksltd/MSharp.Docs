@@ -15,19 +15,16 @@ In this tutorial, we are going to implement a website that manages countries and
 ![Companies](Companies.png "Companies")
 ![Company Add/Edit](CompanyAdd.png "Company Add/Edit")
 
- Every company has a company name, a registration date with a specific format, market share, which is percentage based, number of employees which is formatted with a thousand separator and a country. For searching we should consider the special string format and we should just show country code. In country detail form page country dropdown list should list all countries in this format *Code (Country Name)*
+ Every company has a *company name*, a registration date with a specific format, market share, which is percentage based, number of employees which is formatted with a thousand separator and a country. For searching we should consider the special string format and we should just show country code. In country detail form page country dropdown list should list all countries in this format *Code (Country Name)*
 
 ### Countries
-
 
 ![Countries](Countries.png "Countries")
 ![Countries Add/Edit](CountryAdd.png "Countries Add/Edit")
 
 In countries page users can sell all countries and they can do CRUD operations.
 
-
 ## Implementation : Entities
-
 
 As we can see in the requirements, the two entities can be identified, **Country** and **Company**. The country has many companies and each company has one country. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
@@ -90,7 +87,7 @@ As we can see in the requirements, we should develop these pages:
 
 ### Company Pages
 
-Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Company** rootpage:
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Company** rootpage:
 
 ```C#
 using MSharp;
