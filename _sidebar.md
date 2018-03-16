@@ -22,6 +22,8 @@
     * [Episode 13: Form element](Tutorials/13/README.md)
     * [Episode 14: Sending email](Tutorials/14/README.md)
     * [Episode 15: Formatting property](Tutorials/15/README.md)
+    * [Episode 16: Form wizard](Tutorials/16/README.md)
+    * [Episode 17: Dynamic menu](Tutorials/17/README.md)
 
 * Tips and tools
 

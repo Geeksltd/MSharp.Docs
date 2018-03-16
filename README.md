@@ -134,6 +134,7 @@ In this lesson you will learn about:
 ### [M# Tutorial - Episode 14: Sending email](Tutorials/14/README.md)
 
 In this lesson you will learn about: 
+
 - Boolean form element (true, false text), 
 - Custom workflow action
 - Sending emails
@@ -142,9 +143,30 @@ In this lesson you will learn about:
 ### [M# Tutorial - Episode 15: Formatting property](Tutorials/15/README.md)
 
 In this lesson you will learn about: 
+
 - List column format (date and percentage, and number separator)
 - Form element display expression
 - Search element display expression 
+
+### [M# Tutorial - Episode 16: Form wizard](Tutorials/16/README.md)
+
+In this lesson you will learn about: 
+
+- Mandatory property, but optional on a form
+- Optional property, but mandatory on a form
+- Setting a form value automatically only if the user didn't.
+- Interactive Image (using buttons)
+- Custom search behaviour 
+
+### [M# Tutorial - Episode 17: Dynamic menu](Tutorials/17/README.md)
+
+In this lesson you will learn about: 
+
+- Dynamic menu item
+- Custom Active menu item
+- Visibility
+- Module box
+- After control, Before control settings  
 
 ## Structure Tutorial
 
