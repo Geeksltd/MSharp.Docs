@@ -10,7 +10,7 @@ In this tutorial you will learn:
 
 ## Requirements
 
-In this tutorial, we are going to implement a website that lets users create categories and assign contacts to each category, by adding a new category that category must be dynamically added to the main menu and when users click on the category menu item they should see only related contacts.
+In this tutorial, we are going to implement a website that lets users to create categories and assign contacts to each category, by adding a new category that category must be dynamically added to the main menu and when users click on the category menu item they should see only related contacts.
 
 ### Categories
 
@@ -18,18 +18,18 @@ In this tutorial, we are going to implement a website that lets users create cat
 ![Category Add/Edit](CategoryAddEdit.PNG "Category Add/Edit")
 ![Category, Contacts](ContactCategory.PNG "Category, Contacts")
 
-This page shows a list of all categories and let users do CRUD operations. When a user add a new category that category should be added to the menu and when user click on each category menu item, he should see just related contacts.
+This page shows a list of all categories and lets users do CRUD operations. When a user adds a new category, that category should be added to the menu and when user clicks on each category menu item, he should see just related contacts.
 
 ### Contacts
 
 ![Contacts](Contacts.PNG "Contacts")
 ![Contact Add/Edit](ContactAddEdit.PNG "Contact Add/Edit")
 
-On this page, users should select a related category for contact and there is two separate parts named **Address** and **Notes** that hold related properties. When a user come to this page from selected categories on the menu, the category dropdown list should be selected by default.
+On this page, users should select a related category for contact and there is two separate parts named **Address** and **Notes** which hold related properties. When a user navigates to this page from selected categories on the menu, the category dropdown list should be selected by default.
 
 ## Implementation : Entities
 
-As we can see in the requirements, the two entities can be identified, **Category** and **Contact**. The category entity has many contacts and each contact has one category. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
+As we can see in the requirements, the two entities can be identified; **Category** and **Contact**. The category entity has *many* contacts and each contact has *one* category. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
 Create a **Domain** folder and add these classes:
 
@@ -160,7 +160,9 @@ namespace Modules
     }
 }
 ```
-Continue our work be adding *Form module* named **CategoryForm** like above:
+
+Let's continue with adding *Form module* named **CategoryForm** like below:
+
 ```C#
 using MSharp;
 
@@ -187,6 +189,7 @@ namespace Modules
     }
 }
 ```
+
 Now its time to add these modules to their related root and sub pages. Add them if you let them empty in previous steps.
 
 ### Contact Pages
@@ -224,7 +227,7 @@ namespace Contact
 
 #### Creating required module of Contact Pages
 
-Move on to the **Modules** folder of **#UI** and add a folder with the name of **Contact** which will contain related modules of *Contact*.
+Move to the **Modules** folder of **#UI** and add a folder with the name of **Contact** which will contain related modules of *Contact*.
 Now use the M# context menu and add a *List module* named **ContactsList**:
 
 ```C#
@@ -259,11 +262,12 @@ namespace Modules
     }
 }
 ```
-In this class, if user come here by clicking on *All contacts*, they should see all contacts and **Category** should be visible but when users click on a specific category from menu item they should see only related contacts and **Category** should be hidden. We pass **Category Id** in menu item and if users click on *All contacts* menu item there is no available category , so related category property is null, we have used this feature and set visible state of *Category* property by calling **.VisibleIf()** method. We have also set **DataSource()** method by checking property state.
+
+In this class, if users navigated here by clicking on *All contacts*, they should see all contacts and **Category** should be visible but when users click on a specific category from menu item they should see only related contacts and **Category** should be hidden. We pass **Category Id** in menu item and if users click on *All contacts* menu item there is no available category , so related category property is null, we have used this feature and set visible state of *Category* property by calling `.VisibleIf()` method. We have also set `DataSource()` method by checking property state.
 
 Now add *Form module* named **ContactForm** like below:
 
-```
+```csharp
 using MSharp;
 
 namespace Modules
@@ -313,7 +317,8 @@ namespace Modules
     }
 }
 ```
-On this page there is a new M# method named **Box()**. Where you need to group your form elements, you should call *.Box()* method and add related elements to that box. According to the requirements, if category id is available category should be selected by default and for this purpose, we have called **AutoSet()** method for category property.
+
+On this page there is a new M# method named `Box()`. Where you need to group your form elements, you should call `.Box()` method and add related elements to that box. According to the requirements, if category id is available category should be selected by default and for this purpose, we have called `AutoSet()` method for category property.
 
 #### Adding Pages to Menu
 
@@ -358,11 +363,9 @@ namespace Modules
     }
 }
 ```
-In this class, menu items should be added dynamically according to the categories. For this purpose, we should call **.DataSourceType<Domain.Category>()** with its related name and key method as shown above.
+
+In this class, menu items should be added dynamically according to the categories. For this purpose, we should call `.DataSourceType<Domain.Category>()` with its related name and key method as shown above.
 
 ### Final Step
 
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
-
-
-
