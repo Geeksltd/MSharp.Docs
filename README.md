@@ -168,6 +168,17 @@ In this lesson you will learn about:
 - Module box
 - After control, Before control settings  
 
+### [M# Tutorial - Episode 18: Automated tasks](Tutorials/18/README.md)
+
+In this lesson you will learn about: 
+
+- Repeated buttons
+- Button markup template
+- Checkbox column for list modules
+- Display option for columns
+- Instance accessor for entity types
+- Automated tasks   
+
 ## Structure Tutorial
 
 ### [Business Domain - Basics](Domain/README.md)
