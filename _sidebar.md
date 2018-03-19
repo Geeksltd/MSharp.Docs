@@ -24,7 +24,7 @@
     * [Episode 15: Formatting property](Tutorials/15/README.md)
     * [Episode 16: Form wizard](Tutorials/16/README.md)
     * [Episode 17: Dynamic menu](Tutorials/17/README.md)
-    * [Episode 18: Automate tasks](Tutorials/18/README.md)
+    * [Episode 18: Automated tasks](Tutorials/18/README.md)
 
 * Structure Tutorial
 

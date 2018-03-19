@@ -1,12 +1,12 @@
 # MSharp Docs
 
-> ## [Read M# docs in a better format](http://learn.msharp.co.uk/)
 > ## NOTE
 > This documentation website is under construction. Its content is to be ported from the [legacy documentation](http://msharp.co.uk/Learn/Understanding-MSharp.html) and also the [Video Tutorials](https://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc) (contact us for access). Previously you used a web-based IDE for developing M# apps and all the old documentation is based on that model. In the new M#, everything is in Visual Studio and you use special C# classes to define M# concepts.
 > Mapping from the old model to the new one is not too complex as the concepts are still the same. You just need to map the syntax between the two in your head.
+> Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
+> ### [Read M# docs in a better format](http://learn.msharp.co.uk/)
 
-### M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#. 
----
+## M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#.
 
 ## Introduction
 
@@ -62,7 +62,7 @@ In this lesson you will learn about:
 
 In this lesson you will learn about:
 
-- Inheritence
+- Inheritance
 - Export to excel
 - Client-side filter
 - Index column
@@ -133,51 +133,51 @@ In this lesson you will learn about:
 
 ### [M# Tutorial - Episode 14: Sending email](Tutorials/14/README.md)
 
-In this lesson you will learn about: 
+In this lesson you will learn about:
 
-- Boolean form element (true, false text), 
+- Boolean form element (true, false text)
 - Custom workflow action
 - Sending emails
 - Email Templates
 
 ### [M# Tutorial - Episode 15: Formatting property](Tutorials/15/README.md)
 
-In this lesson you will learn about: 
+In this lesson you will learn about:
 
 - List column format (date and percentage, and number separator)
 - Form element display expression
-- Search element display expression 
+- Search element display expression
 
 ### [M# Tutorial - Episode 16: Form wizard](Tutorials/16/README.md)
 
-In this lesson you will learn about: 
+In this lesson you will learn about:
 
 - Mandatory property, but optional on a form
 - Optional property, but mandatory on a form
 - Setting a form value automatically only if the user didn't.
 - Interactive Image (using buttons)
-- Custom search behaviour 
+- Custom search behavior
 
 ### [M# Tutorial - Episode 17: Dynamic menu](Tutorials/17/README.md)
 
-In this lesson you will learn about: 
+In this lesson you will learn about:
 
 - Dynamic menu item
 - Custom Active menu item
 - Visibility
 - Module box
-- After control, Before control settings  
+- After control, Before control settings
 
 ### [M# Tutorial - Episode 18: Automated tasks](Tutorials/18/README.md)
 
-In this lesson you will learn about: 
+In this lesson you will learn about:
 
 - Repeated buttons
 - Button markup template
 - Checkbox column for list modules
 - Display option for columns
 - Instance accessor for entity types
-- Automated tasks   
+- Automated tasks
 
 ## Structure Tutorial
 
