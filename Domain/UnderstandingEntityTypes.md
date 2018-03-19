@@ -14,7 +14,7 @@ As explained in the previous chapter, M# provides a very detailed and user frien
 ### Methods
 
 #### Base type
-![BaseType](BaseType.png "BaseType")
+![BaseType](BaseType.PNG "BaseType")
 
 This property allows you to specify a base type for the current entity. It is particularly useful when entities contain similar data, you don't need to define the same properties for all related entities, you can work with the base type instead of duplicating logic and methods.
 For example the base type of a "Developer" Entity or "Director" Entity could also be an "Employee" because they have a similar schema: Personal/Contact details, and share logic requirements e,g. if you need to store all login attempts you can use the generic "Employee".
@@ -39,11 +39,11 @@ This allows you to specify a mode for the database. We will explain this in futu
 Use this if you want to add a custom documentation for the generated class.
 Default documentation:
 
-![Default documentation](DefaultDocumentation.png "Default documentation")
+![Default documentation](DefaultDocumentation.PNG "Default documentation")
 
 Custom documentation:
 
-![Custom documentation](CustomDocumentation.png "Custom documentation")
+![Custom documentation](CustomDocumentation.PNG "Custom documentation")
 
 #### EagerLoadData(bool value = true)
 Set this method if you don't want to defer the initialization of the object (lazy loading).
@@ -51,9 +51,9 @@ Set this method if you don't want to defer the initialization of the object (laz
 #### GenerateParseMethod(bool value = true)
 This method will create a static function that returns the Employee instance that is textually represented by a specified string value, or null if no such object is found.
 
-![Parse method](ParseMethod.png "Parse method")
+![Parse method](ParseMethod.PNG "Parse method")
 
-![Parse method detail](ParseMethodDetail.png "Parse method detail")
+![Parse method detail](ParseMethodDetail.PNG "Parse method detail")
 The search criteria is the ToString value of your instances.
 
 #### GenerateUnitTests(bool? value = true)
@@ -65,7 +65,7 @@ Set this method if you want to generate the class as abstract.
 #### Cachable(bool? value = true)
 If you want to allow this type to be cached set the value to True, if you don't set it to False.
 
-![Cachable](Cachable.png "Cachable")
+![Cachable](Cachable.PNG "Cachable")
 
 #### IsHirarchy(bool value = true)
 Set this object as hierarchical.
@@ -77,9 +77,9 @@ If your entity is an Interface you have to set the database mode to "Transient".
 #### LogEvents(bool value = true)
 By default M# stores all events for all the instances, e.g. insert, update, delete. This method allows you to disable this behaviour.
 
-![Log events](LogEvents.png "Log events")
+![Log events](LogEvents.PNG "Log events")
 
-![Log events detail](LogEventsDetail.png "LogEventsDetail")
+![Log events detail](LogEventsDetail.PNG "LogEventsDetail")
 
 #### Notes(string value)
 This method has no impact on the generated C# or SQL code, it is only a note for developers.
