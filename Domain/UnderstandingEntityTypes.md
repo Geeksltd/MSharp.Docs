@@ -19,7 +19,7 @@ As explained in the previous chapter, M# provides a very detailed and user frien
 This property allows you to specify a base type for the current entity. It is particularly useful when entities contain similar data, you don't need to define the same properties for all related entities, you can work with the base type instead of duplicating logic and methods.
 For example the base type of a "Developer" Entity or "Director" Entity could also be an "Employee" because they have a similar schema: Personal/Contact details, and share logic requirements e,g. if you need to store all login attempts you can use the generic "Employee".
 
-By specifying a base class, M# implements inheritance among the entities and generates SQL database tables in a normalized fashion using foreign key relationships between tables using “ID” column. For more details please refer to tutorial [Inheritance](Inheritance.md)
+By specifying a base class, M# implements inheritance among the entities and generates SQL database tables in a normalized fashion using foreign key relationships between tables using "ID" column. For more details please refer to tutorial [Inheritance](Inheritance.md)
 
 #### Name(string value)
 This is the name of the entity.
