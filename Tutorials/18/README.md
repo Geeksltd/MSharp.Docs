@@ -7,18 +7,20 @@ In this tutorial you will learn:
 - Checkbox column for list modules
 - Display option for columns
 - Instance accessor for entity types
-- Automated tasks   
+- Automated tasks
 
 ## Requirements
 
-In this tutorial, we are going to implement a website that manages candidates. Users can do CRUD operations on candidates and change their status. There are some criteria as below:
-- Every 2 hours if there are any pending candidates, an email should be sent to admin@uat.co to remind them to process the candidates.
+In this tutorial, we are going to implement a website that manages candidates. Users can do CRUD operations on candidates and change their status. There are some criteria listed below:
+
+- Application should send a reminder email to *admin@uat.co* if there's any new pending candidates to proceed.
 - Allow the user to select the other columns to view in the list.
-- When a candidate is added initially it should be set to Pending
-- If the candidate is Pending, the status can be changed to anything.
-  - If it's Interviewed, it can then become only Rejected or Offered.
-  - If it's Offered, it cannot change.
-  - If it's Rejected, it cannot change.
+- When a candidate is added initially it should be set to *Pending*
+- The candidate status can change during the application lifetime with these conditions:
+  - If the candidate is *Pending*, the status can turn into either *Interviewed*, *Offered* or *Rejected*.
+  - If it's *Interviewed*, it can then become only *Rejected* or *Offered*.
+  - If it's *Offered*, it cannot change.
+  - If it's *Rejected*, it cannot change.
 
 ### Candidates
 
@@ -88,12 +90,15 @@ Status class is acting like a Enum, for this purpose we have used `IsEnumReferen
 After adding these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
 ## Implementation : Logic
-According to the requirements we have three logics to implement:
-- Every 2 hours check candidates status and send email if required
-- A method to changes candidate status
-- A method to shows available status
+
+According to the requirements there's three blocks of logic to implement:
+
+- A method to check candidates status every 2 hours and send reminder email to *admin@uat.co* if necessary.
+- A method to change candidate status.
+- A method to show available status.
 
 In **Domain** project under **Logic** folder create a partial class named **Candidate** like below:
+
 ```C#
 public partial class Candidate
 {
@@ -111,13 +116,15 @@ public partial class Candidate
             return;
         }
 
-        await EmailService.Send(new EmailMessage() { Subject = "Candidate pending reminder", Body = "...", To = "admin@uat,co" });
+        await EmailService.Send(new EmailMessage() { Subject = "Candidate pending reminder", Body = "...", To = "admin@uat.co" });
     }
 }
 ```
-We will use this method in **#UI** project soon, but for now you should know that by calling `UpdateStatus()` method we change selected candidate status to specified value and by calling `RemindAdminForPendingCandidates()` method we get all pending candidates and send an email to the admin about them (for more information about sending email in M# please go to [tutorial 14](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/14/README.md)).
+
+We will use these methods in **#UI** project soon, but for now you should know that `UpdateStatus()` method will change selected candidate status to specified value and `RemindAdminForPendingCandidates()` method will gather all pending candidates and send a reminder email to the admin (for more information about sending email in M# please go to [tutorial 14](https://github.com/Geeksltd/MSharp.Docs/blob/master/Tutorials/14/README.md)).
 
 Create another partial class named **Status** like below:
+
 ```C#
 using System.Collections.Generic;
 using System.Linq;
@@ -143,7 +150,8 @@ namespace Domain
     }
 }
 ```
-According to the requirements by calling `GetPossibleChanges()` method we return available status.
+
+According to the requirements, `GetPossibleChanges()` method returns available status.
 
 ## Implementation: UI
 
@@ -264,9 +272,10 @@ namespace Modules
     }
 }
 ```
-According to the requirements users should be able to select custom columns so we have used `.DisplayMode(DisplayMode.Selectable)` M# fluent method with **DisplayMode.Selectable** parameter to let users make these columns visible or hidden. We should also put *Add candidate* and *Delete selected candidates* to the top right side of the page, so we have put their name with special format in `HeaderText()` method. For showing available status based on current candidate status, we have used `ButtonColumn()` method with other special M# fluent methods. By calling `.RepeatDataSource()` and `.RepeatDataSourceType()` method we have configured M# to use our custom method to feed its data. By calling `.SeperatorTemplate()` method we have used "|" as a separator for each value and by calling `.OnClick()` method we have called our custom method for changing selected candidate status.
 
-Let's continue our work with adding *Form module* named **CandidateForm** like below:
+According to the requirements users should be able to select custom columns; So we have used `.DisplayMode(DisplayMode.Selectable)` M# fluent method with **DisplayMode.Selectable** parameter to let users make these columns visible or hidden. We should also put *Add candidate* and *Delete selected candidates* to the top right side of the page, so we have put their name with special format in `HeaderText()` method. For showing available status based on current candidate status, we have used `ButtonColumn()` method with other special M# fluent methods. `.RepeatDataSource()` and `.RepeatDataSourceType()` methods configure M# to use our custom method to feed its data. By calling `.SeperatorTemplate()` method we have used "|" as a separator for each value and by calling `.OnClick()` method we have called our custom method for changing selected candidate status.
+
+Let's continue with adding *Form module* named **CandidateForm** like below:
 
 ```C#
 using MSharp;
@@ -342,6 +351,7 @@ namespace Modules
 build **#UI** prject to make sure everything regarding it is fine.
 
 ### Automated Task
+
 According to the requirements we should check candidate status every 2 hours and send an email to the administrator to process candidates.
 Navigate to **Website** project and under **app_Start** folder, open **TaskManager.cs** file and add `RemindAdminForPendingCandidate()` method like below:
 
@@ -359,7 +369,6 @@ public static async Task RemindAdminForPendingCandidate()
     Candidate.RemindAdminForPendingCandidates();
 }
 ```
-
 
 ### Final Step
 
