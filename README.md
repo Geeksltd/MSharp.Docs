@@ -181,9 +181,21 @@ In this lesson you will learn about:
 
 ## Structure Tutorial
 
-### [Business Domain - Basics](Domain/README.md)
+### Business Domain - Basics
 
-(port from [http://msharp.co.uk/Learn/Understanding-entity-types.html](http://msharp.co.uk/Learn/Understanding-entity-types.html))
+- [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
+- [Properties](Domain/Properties.md)
+- [Inheritance](Domain/Inheritance.md)
+- [Transient, Interface, Abstract](Domain/Transient.md)
+- [Generated Code](Domain/GeneratedCode.md)
+- [Partial Class & Business Logic](Domain/PartialClass.md)
+- [String Property](Domain/StringProperty.md)
+- [DateTime Property](Domain/DateTimeProperty.md)
+- [Associations](Domain/Associations.md)
+- [Number Property](Domain/NumberProperty.md)
+- [File](Domain/File.md)
+- [Boolean](Domain/Boolean.md)
+- [Calculated Properties](Domain/CalculatedProperties.md)
 
 ### [Business Domain - Advanced](Domain/Advanced/README.md)
 

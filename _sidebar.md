@@ -26,6 +26,11 @@
     * [Episode 17: Dynamic menu](Tutorials/17/README.md)
     * [Episode 18: Automate tasks](Tutorials/18/README.md)
 
+* Structure Tutorial
+
+    * Business Domain - Basics
+      * [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
+
 * Tips and tools
 
     * [CLI](Basics/CLI.md)
