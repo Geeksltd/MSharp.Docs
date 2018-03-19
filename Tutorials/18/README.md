@@ -370,6 +370,14 @@ public static async Task RemindAdminForPendingCandidate()
 }
 ```
 
+Also make sure that in **appsetting.json** the setting related to *Automated Tasks* is marked as *true*.
+
+```json
+"Automated.Tasks": {
+        "Enabled": false
+    }
+```
+
 ### Final Step
 
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
