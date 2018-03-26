@@ -155,7 +155,7 @@ In this lesson you will learn about:
 - Mandatory property, but optional on a form
 - Optional property, but mandatory on a form
 - Setting a form value automatically only if the user didn't.
-- Interactive Image (using buttons)
+- Interactive image (using buttons)
 - Custom search behavior
 
 ### [M# Tutorial - Episode 17: Dynamic menu](Tutorials/17/README.md)
