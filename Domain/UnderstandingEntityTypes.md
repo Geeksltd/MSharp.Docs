@@ -13,8 +13,8 @@ M# fully supports and automates most of the tasks required to create association
 
 ### Methods
 
-| Methods             | Parameters and overloads  | Sample                                 | Descriptions                                                                                                |
-| ------------------- |:-------------------------:| --------------------------------------:| -----------------------------------------------------------------------------------------------------------:|    
+| Methods             | Parameters and overloads  | Sample                                      | Descriptions                                                                                                |
+| :------------------ |:------------------------- | :------------------------------------------ | :---------------------------------------------------------------------------------------------------------- |    
 | Name                | (string value)            | Name("Last Name");                          | This is the name of the entity.                                                                             |
 | InstanceAccessors   | (bool value = true)       | InstanceAccessors();                        | M# will generates accessors for instances                                                                   |
 | ClassName           | (string value)            | ClassName("Employee");                      | This is the name of the generated C# class                                                                  |
