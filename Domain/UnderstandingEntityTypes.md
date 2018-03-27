@@ -35,11 +35,7 @@ M# fully supports and automates most of the tasks required to create association
 | SoftDelete(bool value = true)          | SoftDelete();                               | This is useful if you need to allow the user to delete data, but you want to retain a copy in the database. |
 | SortDescending(bool value = true)      | SortDescending();                           | If you set this to true M# will sort your data by descending when you will use `Database.GetList()`.      |
 | ToStringExpression(string value)       | ToStringExpression("FirstName + LastName"); | Specify the value of ToString().                                                                            |
- 
-#### InstanceAccessors(bool value = true)
-By setting this to true M# will generates accessors for instances.
-For example if you create a "Status" entity and set this to true you will be able to use:
-`myUser.Status = Status.Activated;`
+
 
 #### GenerateParseMethod(bool value = true)
 This method will create a static function that returns the instance of object that is textually represented by a specified string value, or null if no such object is found.
