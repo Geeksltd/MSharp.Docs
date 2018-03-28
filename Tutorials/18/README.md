@@ -33,7 +33,7 @@ Candidate page shows a list of all candidates and lets users to do CRUD operatio
 
 As we can see in the requirements, one entity can be identified; **Candidate**. The candidate has a status that we consider is as a class. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
-Create a **Domain** folder, *right click > Add > M#* and then add these classes:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -193,7 +193,7 @@ namespace Candidate
 }
 ```
 
-#### Creating required module of Canidate Pages
+### Creating required module of Canidate Pages
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Candidate**. Then add a *List module* named **CandidatesList** using M# context menu:
 
@@ -316,7 +316,7 @@ Now its time to add these modules to their related root and sub pages. Add them 
 
 #### Adding Pages to the Menu
 
-After you ended up with form pages, you need to add it to the main menu:
+After you ended up with the pages, you need to add them to the main menu:
 
 ```C#
 using MSharp;
