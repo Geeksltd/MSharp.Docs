@@ -30,7 +30,7 @@ On the supplier page, user can see a list of all suppliers and their related ser
 
 This page is just a list of all suppliers and their related services.
 
-## Creating Entities
+## Implementation: Entities
 
 Let's start with creating **Service Type**, **Supplier** and **Supplier Service** classes in a *#Model* project under *Domain* folder:
 
@@ -104,7 +104,7 @@ namespace Domain
 "SupplierService" class has two associations with "Supplier" and "ServiceType" class and a money property.
 In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything is just fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirements, there are these pages to develop:
 
@@ -149,9 +149,9 @@ namespace ServiceType
 }
 ```
 
-#### Creating Service Type List Module
+### Creating required module of Service Type Pages
 
-Add a folder with the name of *ServiceType* under the *Modules* folder of the *#UI* project and add *ServiceTypesList* class using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **ServiceType**. Then add a *List module* named **ServiceTypesList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -181,11 +181,9 @@ namespace Modules
 }
 ```
 
-"ServiceTypesList" class just lists service types items in a grid and lets users do CRUD operations.
+**ServiceTypesList** class just lists service types items in a grid and lets users do CRUD operations.
 
-#### Creating Service Type Form Module
-
-Add a form module with the name of *ServiceTypeForm* using the M# context menu like below:
+Let's continue with adding *Form module* named **ServiceTypeForm** like below:
 
 ```C#
 using MSharp;
@@ -249,9 +247,9 @@ namespace Supplier
 }
 ```
 
-#### Creating Supplier List Module
+### Creating required module of Supplier Pages
 
-Add a folder with the name of *Supplier* under the *Modules* folder of the *#UI* project and add *SuppliersList* using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Supplier**. Then add a *List module* named **SuppliersList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -287,9 +285,7 @@ namespace Modules
 
 For "SuppliersList" class we have used "Address" property and "Services" as requested by requirements.
 
-#### Creating Supplier Form Module
-
-Add form module with the name of *SupplierForm* by using the M# context menu like below:
+Let's continue with adding *Form module* named **SupplierForm** like below:
 
 ```C#
 using MSharp;
@@ -360,9 +356,9 @@ public class SupplierServicePage : RootPage
 }
 ```
 
-#### Creating Supplier Service List Module
+### Creating required module of Supplier Servic Pages
 
-Add a folder with the name of *SupplierService* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **SupplierService**. Then add a *List module* named **TimeLogsList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -387,7 +383,7 @@ namespace Modules
 }
 ```
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 The last step is to add a root page to the main menu:
 
