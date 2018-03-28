@@ -40,7 +40,7 @@ In the reseller page users are able to see all resellers and they can do CRUD op
 
 - Only European countries should be listed.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, *four* entities can be identified, **Country**, **Reseller**, **City** and **Customer**. Country entity has many cities, customers and resellers. Reseller entity has one country. City entity has one country. Customer has one reseller and one country.
 After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
@@ -125,7 +125,7 @@ namespace Domain
 
 After you added these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
-## Implementation : UI
+## Implementation: UI
 
 As we can see in the requrements, we should develop these pages:
 
@@ -136,8 +136,6 @@ As we can see in the requrements, we should develop these pages:
   - Add country
 -Resellers
   - Add seller
-
-### Countries view
 
 Let's start with the tough one! We'll it's not that tough actually when there's M#. Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Reseller** rootpage:
 
@@ -241,7 +239,7 @@ namespace Country.Customer
 }
 ```
 
-#### Creating required modules of country
+### Creating required modules of country
 
 Navigate to **Modules** folder of **M#** project and create folder named **Country**. Then add a *list module* named **CitiesList** using M# context menu:
 
@@ -435,8 +433,6 @@ namespace Modules
 
 We are done with *country* and it's subpages. Let's finish up with *reseller*.
 
-### Resellers view
-
 This project containes a dedicated page for *resellers*. So add a *root page* named **Reseller** under **Pages** folder of **#UI** using M# context menu (or any oher way that yu are comfortable with):
 
 ```C#
@@ -478,7 +474,7 @@ namespace Reseller
 
 ```
 
-#### Creating required modules of reseller
+### Creating required modules of reseller
 
 Move on to **Modules** folder of **#UI** and add a folder with the name of **Reseller** which will contain related modules of *reseller* view.
 Now use M# context menu and add a *form module* named **ResellerForm**:
@@ -543,7 +539,7 @@ namespace Modules
 
 And yes! now we are done with views.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 After you ended up with views, you need to add those to the main menu:
 
