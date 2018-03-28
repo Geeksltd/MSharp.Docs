@@ -23,14 +23,12 @@ If the user enters valid data, his information will be saved and if criteria did
 
 This is the only page that we are going to implement, in this page user fill the form and get a suitable response from the web site.
 
-## Implementation
+## Implementation: Entities
 
 From requirements, one entity can be identified, "Register". In registering entity, there are five properties: "First name", "Last name", "Date of birth", "Email", "Password" and a view model property for an invitation code. All criteria will be implemented on business logic layer.
 After understanding requirements and identifying its related properties, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating M# Entity Types
-
-Let's start with creating a **Register** class in *Domain* folder of the *#Model* project:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add this class:
 
 ```C#
 using MSharp;
@@ -60,7 +58,7 @@ namespace Domain
 The register class just uses simple M# property and for email address there is a restriction for entering just valid email. The *InvitationCode* property is using `.Calculated()` method, this property is read-only and hold user entered value in the UI and if the value is "SuperSecretFormula" form will be saved.
 Now it's time to feed our entity to M#. In the solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
-## Add Business logic
+## Implementation: Logic
 
 Navigate to *Logic* folder of the *#UI* project; then add a class named *Register* and add logic as shown bellow:
 
@@ -97,13 +95,13 @@ The register class is a partial C# class that holds all business logic, for addi
 - System should not allow registration if the user is younger than 18 years old.
 - Do not allow gmail and yahoo accounts.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirements, there is just one root page named "RegisterPage".
 
 ### Creating Register Page
 
-Navigate to *Pages* folder of the *#UI* project; Then add a class named *RegisterPage* or you can use M# context menu to add *RegisterPage* root page:
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **RegisterPage** rootpage:
 
 ```C#
 using MSharp;
@@ -119,9 +117,9 @@ public class RegisterPage : RootPage
 
 As you can see, we have added `Add<Modules.RegisterForm>();` (which will be implemented later), this class holds the register form module.
 
-#### Creating Register Form Module
+### Creating required module of Register Pages
 
-Create a folder named *Register* in the *Modules* folder of *#UI* project then add *RegisterForm* class using the M# context:
+Navigate to **Modules** folder of **#UI** project and create folder named **Register**. Then add a *List module* named **RegisterForm** using M# context menu:
 
 ```C#
 using MSharp;
@@ -164,9 +162,9 @@ namespace Modules
 
 This class has responsibility for generating related forms for adding entity. According the requirements, there is an invitation code property that lets user enter any number, but if the user enter *SuperSecretFormula* user will be legible to save the form. This property is not going to be saved in the database, because it just acts like a validation, for this purpose we have used `ViewModelProperty<string>("InvitationCode")` generic method. By using this method M# just create a view model property that is related to our DTO object and will not be saved on database. We have used **InvitationCode** property in the `.OnClick()` method for adding criteria and checked user entered value. After creating this module, add it to *RegisterPage.cs* class that is our root page if you have let them empty in previous sections.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
-Our last step is to add a root page to the main menu:
+After you ended up with the pages, you need to add them to the main menu:
 
 ```C#
 using MSharp;
