@@ -17,7 +17,7 @@ In this tutorial we are going to implement a registration form that get users in
 
 In this form users enter their required information and after click on the register button, website will send an email to confirm their registration process.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, *one* entity can be identified and it is **Registration**. This entity has just three *string* properties and one *boolean* property. The only business login is to send email after successful registration.
 After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
@@ -47,7 +47,7 @@ namespace Domain
 
 After adding this class, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
-### Implementation : Logic
+### Implementation: Logic
 
 According to the requirement system should send an email after user registration. For this purpose, we should add some extra business logic to our application and according to the M# architecture, we should add any business logic to the **Logic** folder of **Domain** project. But before adding any class, please add **Olive.Email** package to the **Domain** project like below:
 
@@ -159,7 +159,7 @@ M# will use this information to send emails and if there is any problem with sen
 
 Build the *Domain* project to make sure everything regarding is fine.
 
-## Implementation : UI
+## Implementation: UI
 
 As we can see in the requrements, we should develop one page:
 
@@ -182,7 +182,7 @@ public class RegistrationPage : RootPage
 
 ```
 
-#### Creating required module of Register Page
+### Creating required module of Register Page
 
 Navigate to **Modules** folder of **M#** project and create folder named **Registration**. Then add a *Form module* named **RegistrationForm** using M# context menu:
 
@@ -225,7 +225,7 @@ namespace Modules
 ```
 This is the only form that our web site has, now it's time to add this page to the menu.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 After you ended up with form page, you need to add it to the main menu:
 
