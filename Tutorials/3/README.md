@@ -1,12 +1,12 @@
 # M# Tutorial - Episode 3: Uniqueness rules
 
-In this tutorial we continue our learning process with enriching previous topics and learn new topics:
+In this tutorial you will learn:
 
 - Uniqueness rules
 
 ## Requirements
 
-As a web developer, we should implement a project management system that lets user manage their projects and related tasks.
+In this tutorial, we are going to implement a project management system that lets user manage their projects and related tasks.
 Here are the sketches for list and model.
 
 ### Projects
@@ -27,14 +27,11 @@ Here are the sketches for list and model.
 
 As you can see, Edit and Add page of project and task module differ and for the task we have a view page.
 
-## Implementation
+## Implementation: Entities
 
-From requirements, we can identify two entities, "Project" and "Task" that these entities has One-to-Many relationships since any project can have many tasks and each task has one project, We should also notice that each project name and each project task name should be unique.
-After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
+As we can see in the requirements, we can identify two entities, "Project" and "Task" that these entities has One-to-Many relationships since any project can have many tasks and each task has one project, We should also notice that each project name and each project task name should be unique. After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating M# Entity Types
-
-In the *#Model* project in the folder *Domain* (If you couldn't find this folder, create one) create a new class named *Project*:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -64,7 +61,7 @@ As you can see, We have used some new M# fluent API here, **DatabaseModel** meth
 - **DatabaseOption.Transient**: Nothing will be saved to the database and every saved entities life depend on the current application running process
 - **DatabaseOption.Custom**: You should define for the M# framework how to save entity
 
-**Name** method used to change the name of the object to our custom name that in this case we have set its name to *Project*. As our requirements told us, we should make sure that the project name is unique, to achieve this goal M# has a method with the name of **UniqueCombinarion**. In this method you should write your custom property name here.
+**Name** method used to change the name of the object to our custom name that in this case we have set its name to *Project*. As our requirements told us, we should make sure that the project name is unique, to achieve this goal M# has a method named **UniqueCombinarion**. In this method you should write your custom property name here.
 In a similar way add another entity type called *Task* but this time with a set of properties shown in the snippet below:
 
 ```C#
@@ -108,7 +105,7 @@ Now it's time to feed our two entity types to the M# code generator. You invoke 
 In solution explorer, right click the *#Model* project and select *Build*.
 Before moving on to developing the UI, let's build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirement, we have these pages:
 
@@ -124,7 +121,7 @@ So, we have two root pages that hold our list modules and 5 sub pages that are r
 
 ### Creating Project Pages
 
-We continue our work by adding *Project Root Page* in the *Pages* folder of #UI project.
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **ProjectPage** rootpage:
 
 ```C#
 using MSharp;
@@ -133,13 +130,14 @@ public class ProjectPage : RootPage
 {
     public ProjectPage()
     {
+        //will be implemented soon
         Add<Modules.ProjectsList>();
     }
 }
 ```
 
 As you can see, we have added **Add\<Modules.ProjectsList>();**, by calling this method we tell M# that it should render *ProjectsList* module to show list of projects.
-This page is our main page that is acting like parent for other pages. Now we need to add two more pages, *Add* and *Edit* pages. Add a new folder with the name of **Project** under *Pages* folder in #UI project and then add these two classes:
+This page is our main page that is acting like parent for other pages. Now we need to add two more pages, *Add* and *Edit* pages. Add a new folder named **Project** under *Pages* folder in #UI project and then add these two classes:
 
 ![Create Project Folder](AddProjectFolder.PNG "Create Project Folder")
 
@@ -181,9 +179,9 @@ namespace Project
 
 According to requirements, Adding new project should be opened in modal and editing should be opened in a new page, so we have set **Layout()** methods in each class according to its requirement and then add related module.
 
-#### Creating Project List Module
+### Creating required module of Project Pages
 
-Add a folder with the name of *Project* under the *Modules* folder of the *#UI* project and add *ProjectList* class as shown bellow:
+Navigate to **Modules** folder of **#UI** project and create folder named **Project**. Then add a *List module* named **ProjectsList** using M# context menu:
 
 ![Add Modules](AddProjectModuleFolder.PNG "Add Modules")
 
@@ -225,10 +223,7 @@ namespace Modules
 
 This class properties are ordered as requirements and we have inherited from **ListModule** generic class that is a M# framework class and by adding *Domain. Project*  class we tell M# framework, it's a list module class and its responsibility is to list projects.
 
-#### Creating Project Form Module
-
-Now it is time to add a form page that is responsible for adding and editing operations
-We continue our work by creating a *ProjectAdd.cs* and *ProjectEdit.cs* class in a *Project* folder under the *Modules* folder in *#UI* project:
+Now it is time to add a form module that is responsible for adding and editing operations. We continue our work by creating a *ProjectAdd.cs* and *ProjectEdit.cs* class in a *Project* folder under the *Modules* folder in *#UI* project:
 
 ```C#
 using MSharp;
@@ -287,7 +282,7 @@ namespace Modules
 These classes inherits from **FormModule** class that tell the M# framework to deal with this class as a form module. This special class tells M# that it should generate a form page and a user can add or edit entity.
 According to our requirement, we should have two separate classes for adding and editing modules that one of them is modal and the other one is a web page, the main difference here is about **Cancel** and **Save** button, as you can see, in Add module we have closed modal and refresh the page but in edit one we have turned back to previous page.
 
-#### Creating Task Pages
+### Creating Task Pages
 
 For task page, like *Project* pages we have these pages :
 
@@ -310,7 +305,7 @@ public class ProjectTaskPage : RootPage
 }
 ```
 
-Add a folder with the name of *ProjectTaskFolder* under *Pages* folder and add these classes:
+Add a folder named *ProjectTaskFolder* under *Pages* folder and add these classes:
 
 !["Project Task Folder"](ProjectTaskFolder.PNG "Project Task Folder")
 
@@ -369,9 +364,9 @@ namespace ProjectTask
 
 As you can see, we have added three pages, *EnterPage* has responsibility for adding new task and it will be open in new page, *EditPage* has responsibility for editing task and it will be open in a modal, *ViewPage* has responsibility for just showing task detail.
 
-#### Creating Task List Module
+### Creating required module of Task Pages
 
-Add a folder with the name of *ProjectTask* under the *Modules* folder of *#UI* project and then add these classes:
+Add a folder named *ProjectTask* under the *Modules* folder of *#UI* project and then add these classes:
 
 ```C#
 using MSharp;
@@ -524,9 +519,9 @@ namespace Modules
 **ProjectTaskView** class inherits from *ViewModule* generic class. It's a M# framework class that tells M# that this is view page and let M# know how to generate related code for it.
 We have set its property according to requirements and for *done* property, we have used *LabelText()* method to add our custom text.
 
-#### Adding Pages to Menu
+#### Adding Pages to the Menu
 
-Our last step is to add a *Project* and a *Task* root page to the main menu:
+After you ended up with the pages, you need to add them to the main menu:
 
 ```C#
 using MSharp;
