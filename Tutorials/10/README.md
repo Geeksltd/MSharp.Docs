@@ -30,9 +30,9 @@ User can add booking by clicking on "Add booking" button, it will show a modal t
 
 ![BookingEdit](BookingEdit.PNG "Booking Edit")
 
-## Creating Entities
+## Implementation: Entities
 
-Let's start with creating **Agency** and **Booking** classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -79,7 +79,7 @@ namespace Domain
 The *Booking* class has two string properties named "Customer" and "Destination". Also a date property with the name of "Date" and a one to many associate property with the name of "Agency".
 In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirements, we have these pages to develop:
 
@@ -91,7 +91,7 @@ According to the requirements, we have these pages to develop:
 
 ### Creating Service Type Pages
 
-Use the M# context menu to add the *Agency* root page to the "Pages" folder of "#UI" project:
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **AgencyPage** rootpage:
 
 ```C#
 using MSharp;
@@ -145,9 +145,9 @@ namespace Agencies
 }
 ```
 
-#### Creating Agency List Module
+### Creating required module of Agency Pages
 
-Add a folder with the name of *Agency* under the *Modules* folder of the *#UI* project and add *AgenciesList* using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Agency**. Then add a *List module* named **AgenciesList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -183,9 +183,7 @@ namespace Modules
 
 First column of an agency list module should be a hyper link button and when a user click on this page he should be navigated to an agency's detail page. For this purpose we have used `ButtonColumn()` M# fluent method and set its name property dynamically by using string expression `c#:item.Name`, this expression tell M# that button name should come from related item and because its link styled, we have used `.Style(ButtonStyle.Link)` method. By calling `.OnClick(x => x.Go<Agencies.ViewPage>()` we navigate users to agency view page and we pass agency Id by calling `.Send("item", "item.ID")`.
 
-#### Creating Agency Form Module
-
-Add a form module with the name of *AgencyForm* using the M# context menu like below:
+Let's continue with adding *Form module* named **AgencyForm** like below:
 
 ```C#
 using MSharp;
@@ -216,9 +214,7 @@ namespace Modules
 }
 ```
 
-#### Creating Agency View Module
-
-Add a form module with the name of *AgencyForm* by using the M# context menu like below:
+Add a form module with the name of **AgencyForm** by using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -276,9 +272,9 @@ namespace Bookings
 
 ```
 
-#### Creating Booking List Module
+### Creating required module of Booking Pages
 
-Add a folder with the name of *Booking* under the *Modules* folder of the *#UI* project and add *BookingsList* by using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Booking**. Then add a *List module* named **BookingsList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -323,9 +319,7 @@ namespace Modules
 - `ButtonColumn()`: This method should navigate users to the edit page. This page should be aware of selected booking and agency, so we should pass two query string with the key of **item** and **agency**. For this purpose we have used `.Send("item", "item.ID").Send("agency", "item.AgencyId")`.
 - `Button()`*: When a user click on add booking, a modal should be open and this modal should be aware of selected agency, so we should send agency Id to the modal with the help of query string and we have used: `.Send("agency", "info.Agency.ID")` this method use view model property and sent selected agency Id to the modal.
 
-#### Creating Booking Form Module
-
-Add form module with the name of *BookingForm* by using the M# context menu like below:
+Let's continue with adding *Form module* named **BookingForm** like below:
 
 ```C#
 using MSharp;
@@ -362,7 +356,7 @@ namespace Modules
 
 The "BookingForm" has a very important method with the name of `AutoSet()`. As you can remember from former section, when a user click on add / edit button he will be navigated to this page and this page expect two query string, one of them should be *item* that will be used by default in M# to get selected booking and the other one will be *agency* that will select agency for this booking. For this kind of scenario that we want to preselect a property, we should use `AutoSet()` method.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 The last step is to add a root page to the main menu:
 
