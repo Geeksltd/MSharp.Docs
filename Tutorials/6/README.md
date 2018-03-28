@@ -39,13 +39,11 @@ On the product page, user can see a list of all products and their related shops
 
 In shops page, user can see a list of all shops and their related products that are sold in the shop and separated by "|". User can do the CRUD operations. On this page we have **many to many** relation to products and shops, it means that each shop can sell many products and any products can be sold in any shops.
 
-## Implementation
+## Implementation: Entities
 
 Let's start with creating three entities, "Category", "product" and "Shop". There is a one to many relation with *Category* and *Product* also a many to many relation with *Product* and *Shop* entities. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating M# Entity Types
-
-We start our work by creating related classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -108,7 +106,7 @@ namespace Domain
 
 Shop class has three properties, `String("Name")` method add a string property with the name of "Name". `String("Address").Max(2000).Lines(5)` add an "Address" property with a length of 2000 and `.Lines(5)` tell M# framework that it would generate a "TextArea" for UI. `AssociateManyToMany<Product>("Products")` create many to many relation to product entity, it tells M# that every product can have many shops and vise versa.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirement, we have these pages to develop:
 
@@ -123,7 +121,7 @@ So, there's three root pages that hold our list modules and three sub pages that
 
 ### Creating Category Pages
 
-Use M# context menu to add a *Category* root page under the *pages* folder:
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Category** rootpage:
 
 ![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
 
@@ -166,10 +164,7 @@ public class ShopPage : RootPage
 }
 ```
 
-#### Creating SubPages
-
-Now create three folders named *Shops*, *Catrgories* and *Products*.
-Then create a class with the name of *EnterPage* in *Shops* folder, then place this code inside of it:
+Now create three folders named *Shops*, *Catrgories* and *Products*. Then create a class with the name of *EnterPage* in *Shops* folder, then place this code inside of it:
 
 ```C#
 using MSharp;
@@ -221,9 +216,9 @@ namespace Products
 }
 ```
 
-#### Creating Category List Module
+### Creating required module of Category Pages
 
-Add a folder with the name of *Category* under the *Modules* folder of the *#UI* project and add *CategoriesList* using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Category**. Then add a *List module* named **CategoriesList** using M# context menu:
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
@@ -265,9 +260,9 @@ namespace Modules
 
 This class lists all categories and related products. By using `Column(x => x.Products)` M# is smart enough to understand how to show products. M# shows the names of each related product seprated by a pipe line character **" | "** by default.
 
-#### Creating Category Form Module
-
 Like above use M# context menu to add form module named *CategoryForm* and copy the code below into that file:
+
+Navigate to **Modules** folder of **#UI** project and under **Category** folder add a *Form module* named **CategoryForm** using M# context menu:
 
 ```C#
 using MSharp;
@@ -296,9 +291,9 @@ namespace Modules
 }
 ```
 
-#### Creating Product List Module
+### Creating required module of Product Pages
 
-Create a folder named *Product* under *Modules* folder, then use M# context menu and select "Add List" then type "ProductsList" for its name and select product under "On Type" dropdown list like below :
+Navigate to **Modules** folder of **#UI** project and create folder named **Product**. Then add a *List module* named **ProductsList** using M# context menu:
 
 ![Add List Module](AddListModule.PNG "Add List Module")
 
@@ -339,8 +334,6 @@ namespace Modules
 }
 ```
 
-#### Creating Product Form Module
-
 Now add "ProductForm" with the same way that you did earlier:
 
 ```C#
@@ -371,9 +364,10 @@ namespace Modules
 }
 ```
 
-#### Creating Shop List Module
+### Creating required module of Shop Pages
 
-Create a folder named *Shop* under *Modules* folder, then use M# context menu to add "ShopsList" module like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Shop**. Then add a *List module* named **ShopsList** using M# context menu:
+
 
 ```C#
 using MSharp;
@@ -412,7 +406,7 @@ namespace Modules
 }
 ```
 
-#### Creating Shop Form Module
+Let's continue with adding *Form module* named **ShopForm** like below:
 
 ```C#
 using MSharp;
@@ -443,9 +437,9 @@ namespace Modules
 }
 ```
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
-The last step is to add a root page to the main menu:
+After you ended up with the pages, you need to add them to the main menu:
 
 ```C#
 using MSharp;
