@@ -34,14 +34,12 @@ In bike entity, there's CRUD (Create, Read, Update, Delete) operations and clien
 
 In the car list there's an export to Excel button, and in add or editing mode, for *Number of doors* property we have custom view and limited to 3 numbers.
 
-## Implementation
+## Implementation: Entities
 
 We can identify three entities, "Vehicle", "Bike" and "Car". Bike and Car entity inherit from *Vehicle*.
 After understanding requirements and identifying its related properties and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating M# Entity Types
-
-We start our work by creating related classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -100,7 +98,7 @@ Car class, like bike class inherits from *Vehicle* class and according to our re
 By using the M# fluent API, **.Min()** and **Max()** we set its minimum and maximum acceptable value.
 Now it's time to feed our two entity types to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the notes above, these pages are required:
 
@@ -133,7 +131,7 @@ public class VehiclePage : RootPage
 In this class we have added "VehiclesList" module that is responsible for listing all vehicles.
 Let's move on with adding "VehiclesList" module.
 
-#### Creating Vehicle List Module
+### Creating required module of Vehicle Pages
 
 Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* project and add *VehiclesList* class using M# context menu like below:
 
@@ -162,7 +160,7 @@ namespace Modules
 
 This class is read only and is used just for showing purposes.
 
-#### Creating Bike Pages
+### Creating Bike Pages
 
 Use M# context menu to add a *Bike* root page:
 
@@ -197,7 +195,7 @@ namespace Bikes
 
 In this class we added *BikeForm* module to this page.
 
-#### Creating Bike Modules
+### Creating required module of Bike Pages
 
 Now it's time to create other modules, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
@@ -280,7 +278,7 @@ namespace Modules
 
 In this class we have used `Search(GeneralSearch.ClientSideFilter)` method that let users have client side search.
 
-#### Creating Car Pages
+### Creating Car Pages
 
 Last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
 
@@ -315,7 +313,7 @@ namespace Cars
 
 In this class we have added *CarForm* module that tells M# framework how to generate related form code for this class.
 
-#### Creating Car Modules
+### Creating required module of Car Pages
 
 Now we need to create related *Modules*. We need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
@@ -402,7 +400,7 @@ namespace Modules
 
 In this class we have used `Button("Export")` M# method, this method generates a button and by using `Export(ExportFormat.Excel)` M# generate related code for generating excel and when user click on "Export" button, excel file will be downloaded.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 Our last step is to add a root page to the main menu:
 
