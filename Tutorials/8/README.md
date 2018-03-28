@@ -8,7 +8,7 @@ In this tutorial you will learn:
 
 ## Requirements
 
-In this tutorial we are going to develop a website that lists projects, developers and related time logs. On project tab user can see all projects and their total work hours. On developer page user can see all developers with their related total work time and last working date and on the last tab, time logs shows projects and developers with their detail information.
+In this tutorial, we are going to develop a website that lists projects, developers and related time logs. On project tab user can see all projects and their total work hours. On developer page user can see all developers with their related total work time and last working date and on the last tab, time logs shows projects and developers with their detail information.
 
 ### Projects
 
@@ -33,9 +33,9 @@ On the developer page, user can see all developers and their last activity date 
 ![TimeLog Add/Edit](TimeLogAddEdit.PNG "TimeLog Add/Edit")
 Time log page show all projects, task and their related starting and ending date time. User can see total times for each project by each developer.
 
-## Creating Entities
+## Implementation: Entities
 
-We get started with creating **Project**, **Developer** and **Time Log** classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -166,7 +166,7 @@ namespace Domain
 Project class has an *InverseAssociate* with "TimeLog" class and a calculated property that calculate all related hours.
 In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirements, we have these pages to develop:
 
@@ -179,7 +179,7 @@ According to the requirements, we have these pages to develop:
 
 ### Creating Project Pages
 
-As you have learned from previous tutorials, use the M# context menu to add a root page to the "Page" folder:
+Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **ProjectPage** rootpage:
 
 ```C#
 using MSharp;
@@ -193,7 +193,7 @@ public class ProjectPage : RootPage
 }
 ```
 
-Create a folder with the name of "Project" under "Page" folder and add this sub page:
+Create a folder named **Project** under **Page** folder and add this sub page:
 
 ```C#
 using MSharp;
@@ -213,9 +213,9 @@ namespace Project
 
 ```
 
-#### Creating Project List Module
+### Creating required module of Project Pages
 
-Add a folder with the name of *Projects* under the *Modules* folder of the *#UI* project and add *ProjectsList* by using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Projects**. Then add a *List module* named **ProjectsList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -249,9 +249,7 @@ namespace Modules
 
 This class has a new M# method, `.FooterFormula(AggregateFormula.Sum)` method, add the sum of all columns at footer as a total sum.
 
-#### Creating Project Form Module
-
-Add form module with the name of *ProjectForm* by using the M# context menu like below:
+Let's continue with adding *Form module* named **ProjectForm** like below:
 
 ```C#
 using MSharp;
@@ -296,7 +294,7 @@ public class DeveloperPage : RootPage
 }
 ```
 
-Create a folder with the name of "Developer" under "Page" folder and add this sub page:
+Create a folder named "Developer" under "Page" folder and add this sub page:
 
 ```C#
 using MSharp;
@@ -313,9 +311,9 @@ namespace Developer
 }
 ```
 
-#### Creating Developer List Module
+### Creating required module of Developer Pages
 
-Add a folder with the name of *Developers* under the *Modules* folder of the *#UI* project and add *DevelopersList* by using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Developers**. Then add a *List module* named **DevelopersList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -349,9 +347,7 @@ namespace Modules
 }
 ```
 
-#### Creating Developer Form Module
-
-Add a folder named *Developer* under *Modules* folder then create a form module with the name of *DeveloperForm* by using the M# context menu like so:
+Add a folder named *Developer* under *Modules* folder then create a form module named *DeveloperForm* by using the M# context menu like so:
 
 ```C#
 using MSharp;
@@ -398,7 +394,7 @@ public class TimeLogPage : RootPage
 }
 ```
 
-Create a folder with the name of "TimeLog" under "Page" folder and add this sub page:
+Create a folder named "TimeLog" under "Page" folder and add this sub page:
 
 ```C#
 using MSharp;
@@ -415,9 +411,9 @@ namespace TimeLog
 }
 ```
 
-#### Creating Time Log List Module
+### Creating required module of Time Log Pages
 
-Add a folder with the name of *TimeLogs* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
+Add a folder named *TimeLogs* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -457,9 +453,7 @@ namespace Modules
 }
 ```
 
-#### Creating Time Log Form Module
-
-Add form module with the name of *TimeLogForm* using the M# context menu like below:
+Add form module named *TimeLogForm* using the M# context menu like below:
 
 ```C#
 using MSharp;
@@ -498,7 +492,7 @@ namespace Modules
 }
 ```
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 The last step is to add a root page to the main menu:
 
