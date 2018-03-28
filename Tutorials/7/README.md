@@ -26,13 +26,11 @@ On the client page, user can see a list of all clients and their related invoice
 
 This page will be opened when a user click on "Add invoice" link button and related client would be selected by M#, user can enter and negative or positive value for amount property.
 
-## Implementation
+## Implementation: Entities
 
 Let's get started with creating two entities, "Client" and "Invoice". There is one to many relation between "Client" and "Invoice" and an **inverse association** from client to invoice so we have parent child property too. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating Entities
-
-We start our work by creating **Client** and **Invoice** classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -76,7 +74,7 @@ namespace Domain
 
 In invoice class, the default "Amount" property value should be changed to any negative input. By default M# will set zero as a minimum value, we have used `.Min(decimal.MinValue)` to set its minimum value. We have also changed "Description" default M# value, by using `.Max(2500)` we tell M# that length of property is 2500 and by calling **.Lines(5)** M# mill generate text area with a 5 line in UI.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirement, we have three pages to develop:
 
@@ -120,9 +118,9 @@ namespace Clients
 
 Let's move on with adding "ClientsList" and "ClientForm" modules.
 
-#### Creating Client List Module
+### Creating required module of Client Pages
 
-Add a folder with the name of *Client* under the *Modules* folder of the *#UI* project and add *ClientsList* by using the M# context menu like below:
+Navigate to **Modules** folder of **#UI** project and create folder named **Client**. Then add a *List module* named **ClientsList** using M# context menu:
 
 ```C#
 using MSharp;
@@ -181,9 +179,7 @@ This class contains some new methods:
 
 You should notice that "Add invoice" button should be a hyper link button, so we have used `.Style(ButtonStyle.Link)` to achieve this. We also need to send client id as query string to invoice page, by calling `.Send("client", "item.ID")` method we send a query string with the name of **client** and with the value of client ID to invoice page.
 
-#### Creating Client Form Module
-
-Use M# context menu to add a form module named *ClientForm* and paste the codes below:
+Let's continue with adding *Form module* named **ClientForm** like below:
 
 ```C#
 using MSharp;
@@ -212,7 +208,7 @@ namespace Modules
 }
 ```
 
-#### Creating Invoice Page
+### Creating Invoice Page
 
 Create "AddInvoice" page under the *clients* folder *Pages* like below:
 
@@ -233,7 +229,7 @@ namespace Clients
 
 This page holds "InvoiceForm" module.
 
-#### Creating Invoice Form Module
+### Creating required module of Invoice Pages
 
 Create a folder with the name of "Invoice" and add "InvoiceForm" module using the M# context menu like below:
 
@@ -273,7 +269,7 @@ namespace Modules
 
 This class has got a new method, `AutoSet(x => x.Client)` tell M# that its default value will come from query string.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 Our last step is to add a root page to the main menu:
 
