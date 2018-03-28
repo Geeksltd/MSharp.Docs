@@ -371,7 +371,7 @@ namespace Modules
 
 This class generates a form with the required columns according to requirements.
 
-#### Adding Pages to the Menu
+### Adding Pages to the Menu
 
 After you ended up with the pages, you need to add them to the main menu, for doing this open **MainMenu.cs** class:
 

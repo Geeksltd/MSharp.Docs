@@ -314,7 +314,7 @@ namespace Modules
 
 Now its time to add these modules to their related root and sub pages. Add them if you let them empty in previous steps.
 
-#### Adding Pages to the Menu
+### Adding Pages to the Menu
 
 After you ended up with the pages, you need to add them to the main menu:
 

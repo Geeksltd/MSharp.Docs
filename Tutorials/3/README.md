@@ -519,7 +519,7 @@ namespace Modules
 **ProjectTaskView** class inherits from *ViewModule* generic class. It's a M# framework class that tells M# that this is view page and let M# know how to generate related code for it.
 We have set its property according to requirements and for *done* property, we have used *LabelText()* method to add our custom text.
 
-#### Adding Pages to the Menu
+### Adding Pages to the Menu
 
 After you ended up with the pages, you need to add them to the main menu:
 

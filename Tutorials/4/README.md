@@ -8,7 +8,7 @@ In this tutorial you will learn:
 
 ## Requirements
 
-In this tutorial we are going to implement an asset management system that lets users to do CRUD operations on assets and owners and let them to search and find assets and related owners easily.
+In this tutorial, we are going to implement an asset management system that lets users to do CRUD operations on assets and owners and let them to search and find assets and related owners easily.
 Here are the sketches for list and model.
 
 ### Asset Types
@@ -35,14 +35,12 @@ For owners, there are just simple CRUD operations, same as asset types.
 
 As you can see, In the assets list there are filter and search  columns, and in editing mode, the default label should be changed to custom one.
 
-## Implementation
+## Implementation: Entities
 
 From requirements, three entities can be identified, "Asset Type", "Owner" and "Assets". In asset entity, there are two One-to-Many relationships one with the owner and the other one with asset type.
 After understanding requirements and identifying its related properties and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
-## Creating M# Entity Types
-
-Let's start with creating related classes in a *#Model* project under *Domain* folder:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -112,7 +110,7 @@ namespace Domain
 As you can see, there are two relations, one with *AssetType* and the other one with *Owner* class. For *Cost* property, we have used `Money()` methods that tell M# framework how to behave and render this property.
 Now it's time to feed our two entity types to the M# code generator. In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 According to the requirement, there are these pages:
 
@@ -162,7 +160,7 @@ namespace AssetTypes
 
 As you can see, this class holds asset type form module.
 
-#### Creating Asset Types List Module
+### Creating required module of Asset Type Pages
 
 Add a folder with the name of *AssetType* under the *Modules* folder of the *#UI* project and add a class with the name of *AssetTypesList*. It can be easier by using the M# context menu like below:
 
@@ -203,8 +201,6 @@ namespace Modules
 
 In this class a list of asset types are shown according to the requirements also a route for adding, editing and removing items.
 
-#### Creating Asset Type Form Module
-
 Add *AssetTypeForm* class by using the M# context menu under the *AssetType* folder of the *Modules* like below:
 
 ```C#
@@ -236,7 +232,7 @@ namespace Modules
 
 This class has responsibility for generating related forms for adding and editing entity. After creating these modules, add them to *AssetType.cs* class that is our root page and *Enter.cs* class under *AssetTypes* folder if you have let them empty in previous sections.
 
-#### Creating Owner Pages
+### Creating Owner Pages
 
 Go to *Pages* folder of *#UI* project then create a class named *Owner*. Also you can use M# context menu to add the *Owner* root page:
 
@@ -273,7 +269,7 @@ namespace Owners
 
 In this class we add *OwnerForm* module which tells the M# framework how to generate related code for this class.
 
-#### Creating Owner Modules
+### Creating required module of Owner Pages
 
 Now it's time to create related *Modules*. Two modules are needed for owner entity; they are **ListModule** and **FormModule**. Create a new folder with the name of *Owner* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
@@ -341,7 +337,7 @@ namespace Modules
 
 These two classes has responsibility for CRUD (Create, Read, Update, Delete) operations.
 
-#### Creating Asset Pages
+### Creating Asset Pages
 
 Our last step is to create related pages for *Asset* entity. Go to *Pages* folder of *#UI* and use M# context menu to add a *Asset* root page class:
 
@@ -397,7 +393,7 @@ namespace Assets
 
 This class is responsible for the view only purpose and we have added *AssetView* module.
 
-#### Creating Asset Modules
+### Creating required module of Asset Pages
 
 Now, let's continue our work by creating related *Modules*, three modules are needed for asset entity, they are **ListModule**, **FormModule** and **ViewModule**. Create a new folder with the name of *Asset* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
@@ -507,7 +503,7 @@ namespace Modules
 
 This class just shows asset detail and let the users go back to the previous page by click on "Back" button.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 Our last step is to add a root page to the main menu:
 
