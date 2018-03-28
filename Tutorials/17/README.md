@@ -27,7 +27,7 @@ This page shows a list of all categories and lets users do CRUD operations. When
 
 On this page, users should select a related category for contact and there is two separate parts named **Address** and **Notes** which hold related properties. When a user navigates to this page from selected categories on the menu, the category dropdown list should be selected by default.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, the two entities can be identified; **Category** and **Contact**. The category entity has *many* contacts and each contact has *one* category. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
@@ -133,7 +133,7 @@ namespace Category
 }
 ```
 
-#### Creating required module of Category Pages
+### Creating required module of Category Pages
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Category**. Then add a *List module* named **CategoriesList** using M# context menu:
 
@@ -225,7 +225,7 @@ namespace Contact
 }
 ```
 
-#### Creating required module of Contact Pages
+### Creating required module of Contact Pages
 
 Move to the **Modules** folder of **#UI** and add a folder with the name of **Contact** which will contain related modules of *Contact*.
 Now use the M# context menu and add a *List module* named **ContactsList**:
@@ -320,7 +320,7 @@ namespace Modules
 
 On this page there is a new M# method named `Box()`. Where you need to group your form elements, you should call `.Box()` method and add related elements to that box. According to the requirements, if category id is available category should be selected by default and for this purpose, we have called `AutoSet()` method for category property.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 After you ended up with form pages, you need to add it to the main menu:
 
