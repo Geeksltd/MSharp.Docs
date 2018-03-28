@@ -34,7 +34,7 @@ In this page users will see their name and their favorite player name. *Date of 
 
 On this page all related fans that have been completed their registration will be shown, but there is ability to show all fans even incomplete ones. For this purpose there is a checkbox button that lets users to select between these two states.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, the two entities can be identified; **Player** and **Fan**. Each tennis player has many fans and each fan has one tennis player. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
@@ -94,7 +94,7 @@ Fan class has a reference to the *Player* class and it has required properties a
 
 After adding these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
-## Implementation : Logic
+## Implementation: Logic
 
 According to the requirements there's one block of logic to implement:
 
@@ -186,7 +186,7 @@ namespace Player
 }
 ```
 
-#### Creating required module of Tennis Player Pages
+### Creating required module of Tennis Player Pages
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Player**. Then add a *List module* named **PlayersList** using M# context menu:
 
@@ -299,7 +299,7 @@ namespace Fan
 }
 ```
 
-#### Creating required module of Fan Pages
+### Creating required module of Fan Pages
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Fan**. Then add a *List module* named **FansList** using M# context menu:
 
@@ -414,7 +414,7 @@ In this page we should put a business logic. The reason that we have put busines
 
 Now it's time to add these modules to their related root and sub pages. Add them if you let them empty in previous steps.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 After you ended up with form pages, you need to add it to the main menu:
 
