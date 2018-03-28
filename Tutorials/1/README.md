@@ -1,7 +1,7 @@
 # M# Tutorial - Episode 1: Your First App
 
-This tutorial is assuming readers' familiarity with the M# framework obtained from the preceding chapters
-In this tutorial you will work with the following components:
+This tutorial is assuming readers' familiarity with the M# framework obtained from the preceding chapters.
+ In this tutorial you will work with the following components:
 
 - Entity types
 - Association between entity types
@@ -19,13 +19,11 @@ Sketches for the list and form modules are given below.
 ![Contact List](ContactList.PNG "Contact List")
 ![Contact Form](ContactAddEdit.PNG "Contact Form")
 
-## Implementation
+## Implementation: Entities
 
 From the sample requirements we can identify two entity types called "Contact" and "Category".
 We also understand that they have a Many-to-One relationship since many contacts can belong to the same category.
 Now let's create the corresponding classes in the *#Model* project.
-
-### Creating MSharp Entity Types
 
 In Solution Explorer of your Visual Studio under your *#Model* project make sure you have a folder named "Domain".
 Right click the folder and add a class called "Category" to it.
@@ -144,7 +142,7 @@ As you can see we have added a method with the name of **CreateCategory()** and 
 
 Before moving on to developing the UI let's build the *Domain* project to make sure everything regarding it is fine.
 
-## Developing UI
+## Implementation: UI
 
 In **#UI** project we have three main steps to do:
 
@@ -162,6 +160,7 @@ Until now, we have done these steps:
 2. Then build **Domain** project in visual studio.
 
 Now it's time to create our first page. Here we have two pages, one that is responsible for showing a contacts list and the other for adding and editing contact, these two pages can have some property in common, so first we create a parent page and then inherit other required page according to our example.
+
 ![UI Overview](UI-Overview.PNG "UI Overview")
 
 ```C#
@@ -171,6 +170,7 @@ public class ContactPage : RootPage
     {
         Add<MainMenu>();
 
+        //will be implemented soon
         OnStart(x => x.Go<ContactsPage>().RunServerSide());
     }
 }
@@ -180,6 +180,8 @@ This  is our root class that inherits from **RootPage** class, **RootPage** is a
 
 #### Creating Contact List Page & Contact List Module
 
+In **#UI** project under **Pages** folder create a folder named **Contact** and add this class:
+
 ```C#
 public class ContactsPage : SubPage<ContactPage>
 {
@@ -187,12 +189,15 @@ public class ContactsPage : SubPage<ContactPage>
     {
         Layout(Layouts.FrontEnd);
 
+        //will be implemented soon
         Add<ContactsList>();
     }
 }
 ```
 
-This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add\<ContactList>()* I told M# that this page should show ContactList module. Implementation of **ContactList.cs** class is like this:
+This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add\<ContactList>()* I told M# that this page should show ContactList module.
+
+Navigate to **Modules** folder of **#UI** project and create folder named **Contact**. Then add a *List module* named **ContactList** using M# context menu:
 
 ```C#
 public class ContactsList : ListModule<Domain.Contact>
@@ -235,7 +240,7 @@ In this class we have included our needed column according to the picture and ad
 
 #### Creating Contact Form Page & Contact Form Module
 
-After creating a contact list its time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project
+After creating a contact list, now it's time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project. Navigate to the **Contact** folder under **Pages** folder and add this class like below:
 
 ```C#
 public class EnterPage : SubPage<ContactsPage>
@@ -250,6 +255,8 @@ public class EnterPage : SubPage<ContactsPage>
 ```
 
 As you can see, this class inherits from Contacts page and by using **Add\<ContactForm\>** it instruct M# framework that this page is responsible for showing contact form module.
+
+Navigate to **Modules** folder of **#UI** project and in **Contact** folder add a *Form module* named **ContactForm** using M# context menu:
 
 ```C#
 public class ContactForm : FormModule<Domain.Contact>
@@ -284,7 +291,7 @@ public class ContactForm : FormModule<Domain.Contact>
 
 Another important module is form module that deals with add or edit entity. This class inherits from **FormModule** class that tell M# framework how to deal with this class. This special class tells M# that it should generate a form page.
 
-### Adding Contact List Page to Menu
+### Adding Pages to the Menu
 
 Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menues of #UI project)* and add *ContactPage* class here as a menu item.
 

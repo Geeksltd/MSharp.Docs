@@ -29,11 +29,11 @@ In this tutorial, we are going to implement a website that manages candidates. U
 
 Candidate page shows a list of all candidates and lets users to do CRUD operations. When a user adds a new candidate, initially its status should be *Pending* and after adding a candidate, the user is able to change candidate status to any other status. In list page, users are able to export the candidates list to *CSV*, search, delete selected candidates and select specific columns to show.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, one entity can be identified; **Candidate**. The candidate has a status that we consider is as a class. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
-Create a **Domain** folder and add these classes:
+Create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
 ```C#
 using MSharp;
@@ -89,7 +89,7 @@ Status class is acting like a Enum, for this purpose we have used `IsEnumReferen
 
 After adding these classes, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
-## Implementation : Logic
+## Implementation: Logic
 
 According to the requirements there's three blocks of logic to implement:
 
@@ -160,7 +160,7 @@ As we can see in the requirements, we should develop these pages:
 - Candidates
   - Add / Edit Candidate
 
-### Candidate Pages
+### Creating Candidate Pages
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Candidate** rootpage:
 
@@ -314,7 +314,7 @@ namespace Modules
 
 Now its time to add these modules to their related root and sub pages. Add them if you let them empty in previous steps.
 
-#### Adding Pages to Menu
+#### Adding Pages to the Menu
 
 After you ended up with form pages, you need to add it to the main menu:
 
