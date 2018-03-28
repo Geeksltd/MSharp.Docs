@@ -24,7 +24,7 @@ In this tutorial, we are going to implement a website that manages countries and
 
 In countries page users can sell all countries and they can do CRUD operations.
 
-## Implementation : Entities
+## Implementation: Entities
 
 As we can see in the requirements, the two entities can be identified, **Country** and **Company**. The country has many companies and each company has one country. After analyzing the requirements and identifying related properties, it's time to create them. Now let's create the corresponding classes in the **#Model** project.
 
@@ -119,7 +119,7 @@ namespace Company
 }
 ```
 
-#### Creating required module of Company Page
+### Creating required module of Company Page
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Company**. Then add a *Form module* named **CompanyForm** using M# context menu:
 
@@ -233,7 +233,7 @@ namespace Country
 }
 ```
 
-#### Creating required module of Country Page
+### Creating required module of Country Page
 
 Move on to the **Modules** folder of **#UI** and add a folder with the name of **Country** which will contain related modules of *country*.
 Now use the M# context menu and add a *form module* named **CountryForm**:
@@ -298,7 +298,7 @@ namespace Modules
 
 Now we are done, county pages and modules are completed.
 
-#### Adding Pages to Menu
+### Adding Pages to the Menu
 
 After you ended up with form pages, you need to add it to the main menu:
 
