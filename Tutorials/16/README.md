@@ -11,7 +11,7 @@ In this tutorial you will learn:
 
 ## Requirements
 
-In this tutorial, we are going to implement a website that shows tennis players with their fans. Users can do CRUD operations on tennis players and fans of the selected tennis player. By clicking on each tennis player users can see a list of all fans and by clicking on *Register to support* button on the tennis player list page, users can add a fan in two steps.
+In this tutorial, we are going to implement a website that shows tennis players with their fans. Users can do CRUD operations on tennis players and fans of the selected tennis player. By clicking on each tennis player users can see a list of all fans and by clicking on **Register to support** button on the tennis player list page, users can add a fan in two steps.
 
 ### Tennis players
 
@@ -23,7 +23,7 @@ This page shows a list of all tennis players and lets users to do CRUD operation
 ### Fan
 ![Register fan](Fan1.PNG "Register fan")
 
-When users click on the *Register to support* button, they will navigate to the **Register to support** page and on this page they will be asked to input their information. In this page user can left *Fan start date* property empty, but in this case this property will be filled by current date time.
+When users click on the **Register to support** button, they will navigate to the **Register to support** page and on this page they will be asked to input their information. In this page user can leave *Fan start date* property empty, but in this case this property will be filled by current date time.
 
 
 ![Complete fan information](Fan2.PNG "Complete fan information")
@@ -230,7 +230,7 @@ namespace Modules
 }
 ```
 
-According to the requirements users should be able to see a list of all players here and they would be able to click on their image to see their fans. By calling **ImageColumn()** method we can show the image in the list module and by calling **.ImageUrl()** M# fluent method we have set its property and navigate users to the **ViewPage** by calling **.OnClick()** method and pass player Id by using **.Send()** method. For showing the number of fans we have used **CustomColumn()** method that let us add custom C# expression by calling **.DisplayExpression()** method.
+According to the requirements users should be able to see a list of all players here and they would be able to click on their image to see their fans. By calling `ImageColumn()` method we can show the image in the list module and by calling `.ImageUrl()` M# fluent method we have set its property and navigate users to the **ViewPage** by calling `.OnClick()` method and pass player Id by using `.Send()` method. For showing the number of fans we have used `CustomColumn()` method that let us add custom C# expression by calling `.DisplayExpression()` method.
 
 Let's continue with adding *Form module* named **PlayerForm** like below:
 
@@ -339,7 +339,7 @@ namespace Modules
 }
 ```
 
-In this page users should be able to see a list of all player's fans and they should be able to see completed or uncompleted registered fans. For this purpose, after **.Search()** method we have used **.MemoryFilterCode()** fluent method and we have put C# expression to include incomplete fans if this checkbox has been checked.
+In this page users should be able to see a list of all player's fans and they should be able to see completed or uncompleted registered fans. For this purpose, after `.Search()` method we have used `.MemoryFilterCode()` fluent method and we have put C# expression to include incomplete fans if this checkbox has been checked.
 
 According to the requirements we should get fans' information on two steps, we will do this by adding two form modules. Let's continue with adding our first *Form module* named **FanForm** like below:
 
@@ -373,9 +373,9 @@ namespace Modules
 }
 ```
 
-On this page we will get **Player** from query string, so we have used **AutoSet()** method to do this. By writing C# expression `@info.Player.Name` in **HeaderText()** method player name will be shown in header text and after saving fans' information we navigate users to the next form module and send current fans Id.
+On this page we will get **Player** from query string, so we have used `AutoSet()` method to do this. By writing C# expression `@info.Player.Name` in `HeaderText()` method player name will be shown in header text and after saving fans' information we navigate users to the next form module and send current fans *Id*.
 
-Let's continue our work by Adding second *Form Module* named **FanCompleteForm** form like below:
+Let's continue with adding second *Form Module* named **FanCompleteForm** form like below:
 
 ```C#
 using MSharp;
@@ -410,7 +410,7 @@ namespace Modules
 }
 ```
 
-In this page we should put a business logic. The reason that we have put business logic here is that we have this logic just for this page and if we have general business logic, it would better put it in a separate file in the **Logic** folder of **Domain** project. By calling **OnBeforeSave()** method we have set the *IsRegistrationCompleted* property to *true* and then save fans' information. After saving fan's information users will be navigated to the **ViewPage** that will be listing all fans of the selected player.
+In this page we should put a business logic. The reason that we have put business logic here is that we have this logic just for this page and if we have general business logic, it would better put it in a separate file in the **Logic** folder of **Domain** project. By calling `OnBeforeSave()` method we have set the *IsRegistrationCompleted* property to *true* and then save fans' information. After saving fan's information users will be navigated to the **ViewPage** that will be listing all fans of the selected player.
 
 Now it's time to add these modules to their related root and sub pages. Add them if you let them empty in previous steps.
 
