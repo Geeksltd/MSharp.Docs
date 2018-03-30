@@ -30,6 +30,7 @@
 
     * Business Domain - Basics
       * [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
+      * [Properties](Domain/Properties.md)
 
 * Tips and tools
 
