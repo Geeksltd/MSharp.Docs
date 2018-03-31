@@ -35,6 +35,7 @@
       * [Transient, Interface, Abstract](Domain/Transient.md)
       * [Generated Code](Domain/GeneratedCode.md)
       * [Partial Class & Business Logic](Domain/PartialClass.md)
+      * [String Property](Domain/StringProperty.md)
 
 * Tips and tools
 
