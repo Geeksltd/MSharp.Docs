@@ -31,6 +31,7 @@
     * Business Domain - Basics
       * [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
       * [Properties](Domain/Properties.md)
+      * [Inheritance](Domain/Inheritance.md)
 
 * Tips and tools
 
