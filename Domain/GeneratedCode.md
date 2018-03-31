@@ -238,7 +238,7 @@ This is a very important method. M# returns a property in this method, which is 
 public override string ToString() => Name;
 ```
 
-The code above demonstrates the "ToString" method of the Employee entity, which returns "Name" property Although Employee inherits the User entity it doesn’t return "Email" because we marked "Name" as "Default Property" in our lesson and M# "Overrides" the inherited method.
+The code above demonstrates the "ToString" method of the Employee entity, which returns "Name" property Although Employee inherits the User entity it doesn't return "Email" because we marked "Name" as "Default Property" in our lesson and M# "Overrides" the inherited method.
 
 #### Clone()
 
