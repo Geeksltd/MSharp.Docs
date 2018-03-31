@@ -79,6 +79,6 @@ public static Task<Status> Parse(string text)
 #### SoftDelete(bool value = true)
 This method is very useful if you need to allow the user to delete data, but you want to retain a copy in the database. If you use Soft delete M# will create a hidden column in the SQL table: `[.Deleted] bit NOT NULL`
 
-![Soft Delete](SoftDelete.jpg "Soft Delete")
+![Soft Delete](Images/SoftDelete.jpg "Soft Delete")
 
 If you call `Database.Delete()` M# will set this flag to "1" and you won't be able to get this instance by calling `Database.GetList()`

@@ -7,7 +7,7 @@ M# allows developers to select "Base Class" for the entity while creating or mod
 ### Adding Entity
 Add a new entity "Employee" using M#’s context menu, *right click > Add > M#*:
 
-![Adding Entity](AddEntity.PNG "Adding Entity")
+![Adding Entity](Images/AddEntity.PNG "Adding Entity")
 
 After creating the entity, you will notice that M# creates a new entity "Employee" which inherit from **SubType** generic class:
 
@@ -82,7 +82,7 @@ Continuing aforementioned example, M# creates a new table called "Employees" in 
 
 |                                                                     |                        SQL Database Structure                      |                                                                                |
 |:------------------------------------------------------------------: |:------------------------------------------------------------------:| :-----------------------------------------------------------------------------:|
-|                                                                     | ![sql structure](sql-structure.jpg "sql structure")                |                                                                                |
-| ![users table](users-sql-table.jpg "users table")                   | ![employees table](employees-sql-table.jpg "employees table")      | ![table relationship](sql-table-relationship-diagram.jpg "table relationship") |
+|                                                                     | ![sql structure](Images/sql-structure.jpg "sql structure")                |                                                                                |
+| ![users table](Images/users-sql-table.jpg "users table")                   | ![employees table](Images/employees-sql-table.jpg "employees table")      | ![table relationship](Images/sql-table-relationship-diagram.jpg "table relationship") |
 | Users database table                                                | Empoyees database table                                            | Users and Employees One-To-One relationship                                    |
 

@@ -31,7 +31,7 @@ public string LastName { get; set; }
 ```
 The SQL table:
 
-![The SQL table](PersistedSQL.jpg "The SQL table")
+![The SQL table](Images/PersistedSQL.jpg "The SQL table")
 
 ## General Methods
 
@@ -154,4 +154,4 @@ public static Task<Employee> FindByEmail(string email)
 #### Database index
 Database index has no effect on the generated C# file. This method will create an index in the database for this column. M# will often suggest you to specify an index on foreign key columns to improve the performance of SQL queries.
 
-![Database Index](DatabaseIndex.jpg "Database Index")
+![Database Index](Images/DatabaseIndex.jpg "Database Index")

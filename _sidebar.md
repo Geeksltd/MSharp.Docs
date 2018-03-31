@@ -32,6 +32,7 @@
       * [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
       * [Properties](Domain/Properties.md)
       * [Inheritance](Domain/Inheritance.md)
+      * [Transient, Interface, Abstract](Domain/Transient.md)
 
 * Tips and tools
 
