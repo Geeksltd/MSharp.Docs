@@ -1,7 +1,7 @@
 # Properties
 Properties define the structure of an entity and usually hold values.
 
-Persisted properties hold data, meaning, it is used to store data permanently. When developer creates a persisted property, M# creates a corresponding SQL Table Column. For example, the illustration below has two persisted properties “First nName” and “Last name”. Both of the properties are used to retrieve and store data permanently and correspond to a SQL Table "Column Names”.
+Persisted properties hold data, meaning, it is used to store data permanently. When developer creates a persisted property, M# creates a corresponding SQL Table Column. For example, the illustration below has two persisted properties "First nName" and "Last name". Both of the properties are used to retrieve and store data permanently and correspond to a SQL Table "Column Names".
 
 ```C#
 using MSharp;
@@ -56,7 +56,7 @@ The SQL table:
 | .Title(string value)                     | String("First name").Title("Name");                                                    | Title will have no effect on the database column definition or the generated C# class. It will just use this value to display labels in UI forms / lists / views.
 
 #### Calculated properties
-Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in “Entity Class” of the “Model Project” and marks them with “Calculated” method. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making. A good example of this could be to have a “Full Name” property on “Member” entity, as shown below.
+Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in "Entity Class" of the "Model Project" and marks them with "Calculated" method. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making. A good example of this could be to have a "Full Name" property on "Member" entity, as shown below.
 
 ```C#
 using MSharp;
@@ -88,7 +88,7 @@ public string FullName
 
 Having such calculated properties allows developers to write more concrete code, eliminating the redundancy of code and making it easier to manage changes.
 
-FOR EXAMPLE: In above scenario, if you do not use a calculated property and concatenate the First and Last Name of Member on different modules or pages instead, If at a later date you need to show “Middle Name” in “Full Name” of member , it will be much more difficult and time consuming to change it on each module rather simply updating the Calculated Property.
+FOR EXAMPLE: In above scenario, if you do not use a calculated property and concatenate the First and Last Name of Member on different modules or pages instead, If at a later date you need to show "Middle Name" in "Full Name" of member , it will be much more difficult and time consuming to change it on each module rather simply updating the Calculated Property.
 
 > **Note:** A calculated property must not contain complex calculations because this is not the intended purpose of entity behaviours. It is always recommended to implement Methods / Functions for such complex calculations.
 

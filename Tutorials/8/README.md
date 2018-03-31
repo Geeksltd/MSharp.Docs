@@ -75,7 +75,7 @@ namespace Domain
 }
 ```
 
-Developer class has "First Name" and "Last Name" and "Full name" string property. "Full name" is a calculated property. Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in “Entity Class” of the “Model Project” and marks them with “Calculated” attribute. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making.
+Developer class has "First Name" and "Last Name" and "Full name" string property. "Full name" is a calculated property. Calculated properties are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in "Entity Class" of the "Model Project" and marks them with "Calculated" attribute. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making.
 
 > **Note**:  A calculated property must not contain complex calculations because this is not the intended purpose of entity behaviours. It is always recommended to implement Methods / Functions for such complex calculations.
 
