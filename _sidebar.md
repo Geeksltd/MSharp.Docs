@@ -33,6 +33,7 @@
       * [Properties](Domain/Properties.md)
       * [Inheritance](Domain/Inheritance.md)
       * [Transient, Interface, Abstract](Domain/Transient.md)
+      * [Generated Code](Domain/GeneratedCode.md)
 
 * Tips and tools
 
