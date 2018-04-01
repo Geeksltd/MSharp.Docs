@@ -36,6 +36,7 @@
       * [Generated Code](Domain/GeneratedCode.md)
       * [Partial Class & Business Logic](Domain/PartialClass.md)
       * [String Property](Domain/StringProperty.md)
+      * [DateTime Property](Domain/DateTimeProperty.md)
 
 * Tips and tools
 
