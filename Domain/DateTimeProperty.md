@@ -24,7 +24,7 @@ The creation of this property will also create the **datetime** SQL type. M# giv
 Lower bound will have no effect on the database column definition, but will create a new validation rule based on the value. For example if you create the properties "DateAdded" and "DateUpdated" you can set the lower bound of DateUpdated to DateAdded:
 
 ```C#
- DateTime("Date created").Mandatory();
+DateTime("Date created").Mandatory();
 
 DateTime("Date updated").Mandatory().LowerBound("DateCreated");
 ```
