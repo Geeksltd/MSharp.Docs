@@ -38,6 +38,7 @@
       * [String Property](Domain/StringProperty.md)
       * [DateTime Property](Domain/DateTimeProperty.md)
       * [Associations](Domain/Associations.md)
+      * [Number Property](Domain/NumberProperty.md)
 
 * Tips and tools
 
