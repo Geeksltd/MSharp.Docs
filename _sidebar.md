@@ -40,6 +40,7 @@
       * [Associations](Domain/Associations.md)
       * [Number Property](Domain/NumberProperty.md)
       * [File](Domain/File.md)
+      * [Boolean](Domain/Boolean.md)
 
 * Tips and tools
 
