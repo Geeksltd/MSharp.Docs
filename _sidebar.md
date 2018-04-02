@@ -41,6 +41,7 @@
       * [Number Property](Domain/NumberProperty.md)
       * [File](Domain/File.md)
       * [Boolean](Domain/Boolean.md)
+      * [Calculated Properties](Domain/CalculatedProperties.md)
 
 * Tips and tools
 
