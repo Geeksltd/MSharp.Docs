@@ -39,6 +39,7 @@
       * [DateTime Property](Domain/DateTimeProperty.md)
       * [Associations](Domain/Associations.md)
       * [Number Property](Domain/NumberProperty.md)
+      * [File](Domain/File.md)
 
 * Tips and tools
 
