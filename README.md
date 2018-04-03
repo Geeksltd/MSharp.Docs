@@ -201,7 +201,7 @@ In this lesson you will learn about:
 
 - [The role of ID](Domain/Advanced/TheRoleOfId.md)
 - [The role of IsNew](Domain/Advanced/TheRoleOfIsNew.md)
-- [The role of ToString()](Domain/Advanced/TheRoleOfToString.md)
+- [The role of ToStringExpression()](Domain/Advanced/TheRoleOfToString.md)
 - [IEntity interface](Domain/Advanced/IEntityInterface.md)
 - [TransientEntity](Domain/Advanced/TransientEntity.md)
 - [MSharp Interfaces](Domain/Advanced/MSharpInterface.md)
