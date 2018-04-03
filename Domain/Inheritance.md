@@ -2,14 +2,14 @@
 Inheritance is one of the fundamental concepts of Object-Oriented Programming. In this lesson we will discuss how inheritance is maintained by M# in business logic and relationships between SQL database tables.
 
 ## Implementing Inheritance in M#
-M# allows developers to select "Base Class" for the entity while creating or modifying the business entity. We will take the example of our "HelloWorld" project and will develop a new entity called "Employee" which will derive from the base entity "User".
+M# allows developers to select `Base Class` for the entity while creating or modifying the business entity. We will take the example of our **HelloWorld** project and will develop a new entity called `Employee` which will derive from the base entity `User`.
 
 ### Adding Entity
-Add a new entity "Employee" using M#’s context menu, *right click > Add > M#*:
+Add a new entity `Employee` using M#’s context menu, *right click > Add > M#*:
 
 ![Adding Entity](Images/AddEntity.PNG "Adding Entity")
 
-After creating the entity, you will notice that M# creates a new entity "Employee" which inherit from **SubType** generic class:
+After creating the entity, you will notice that M# creates a new entity `Employee` which inherit from **SubType** generic class:
 
 ```C#
 using MSharp;
@@ -26,7 +26,7 @@ namespace Domain
 }
 ```
 
-After building **#Model** project M# generates the derived entity class by inheriting the "User" entity:
+After building **#Model** project M# generates the derived entity class by inheriting the `User` entity:
 
 ```C#
 /// <summary>Represents an instance of Employee entity type.</summary>
@@ -78,11 +78,11 @@ For **Clone()** and **ValidateProperties()** method, please note that M# first c
 ### SQL Database Structure
 For any data driven application, it is very important to have a normalized database. This not only helps to increase performance but also makes it more manageable and saleable. M#’s intelligent database generation engine utilizes best practices to normalize databases and generate relationships among data tables.
 
-Continuing aforementioned example, M# creates a new table called "Employees" in the database and creates a "One-to-One" relationship between "Users" and "Employees" tables. The "Employees" table only, contains a "foreign Key" to "Users" table, as shown in below pictures:
+Continuing aforementioned example, M# creates a new table called `Employees` in the database and creates a **One-to-One** relationship between `Users` and `Employees` tables. The `Employees` table only, contains a **foreign Key** to `Users` table, as shown in below pictures:
 
-|                                                                     |                        SQL Database Structure                      |                                                                                |
-|:------------------------------------------------------------------: |:------------------------------------------------------------------:| :-----------------------------------------------------------------------------:|
-|                                                                     | ![sql structure](Images/sql-structure.jpg "sql structure")                |                                                                                |
-| ![users table](Images/users-sql-table.jpg "users table")                   | ![employees table](Images/employees-sql-table.jpg "employees table")      | ![table relationship](Images/sql-table-relationship-diagram.jpg "table relationship") |
-| Users database table                                                | Empoyees database table                                            | Users and Employees One-To-One relationship                                    |
+|    |    SQL Database Structure    |     |
+|:--:|:----------------------------:| :--:|
+| | ![sql structure](Images/sql-structure.jpg "sql structure")  | |
+| ![users table](Images/users-sql-table.jpg "users table") | ![employees table](Images/employees-sql-table.jpg "employees table")  | ![table relationship](Images/sql-table-relationship-diagram.jpg "table relationship") |
+| Users database table | Empoyees database table | Users and Employees One-To-One relationship |
 

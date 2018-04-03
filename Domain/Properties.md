@@ -1,7 +1,7 @@
 # Properties
 Properties define the structure of an entity and usually hold values.
 
-Persisted properties hold data, meaning, it is used to store data permanently. When developer creates a persisted property, M# creates a corresponding SQL Table Column. For example, the illustration below has two persisted properties "First nName" and "Last name". Both of the properties are used to retrieve and store data permanently and correspond to a SQL Table "Column Names".
+Persisted properties hold data, meaning, it is used to store data permanently. When developer creates a persisted property, M# creates a corresponding SQL Table Column. For example, the illustration below has two persisted properties `First name` and `Last name`. Both of the properties are used to retrieve and store data permanently and correspond to a SQL Table `Column Names`.
 
 ```C#
 using MSharp;
