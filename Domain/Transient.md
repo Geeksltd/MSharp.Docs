@@ -90,9 +90,9 @@ namespace Domain
 ## Abstracts
 Abstraction is about encapsulating core concepts but leaving out the concreteness and implementation for specific scenarios, which could be extended later. In Object-Oriented Programing an abstract class contains the core functionalities (definitions or general implementation) for any business logic, which is then inherited and extended as required by derived classes because abstract classes cannot be instantiated and must be inherited in order to consume those core functionalities.
 
-As a developer you can mark any class "Abstract" as required by your business logic. M# allows developers to make any type of entity as Abstract e.g. Transient, Managed etc.
+As a developer you can mark any class `Abstract` as required by your business logic. M# allows developers to make any type of entity as Abstract e.g. Transient, Managed etc.
 
-In our tutorial, a good contender for abstraction could be the "User" entity. User contains few properties, which are inherited by "Employee" and will be validated to login and perform actions on our website. So, User entity has no specific or direct interaction with the system, meaning we can mark it as an "Abstract" class.
+In our tutorial, a good contender for abstraction could be the `User` entity. User contains few properties, which are inherited by `Employee` and will be validated to login and perform actions on our website. So, User entity has no specific or direct interaction with the system, meaning we can mark it as an `Abstract` class.
 
 ```C#
 using MSharp;
