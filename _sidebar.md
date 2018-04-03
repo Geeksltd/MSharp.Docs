@@ -42,6 +42,13 @@
       * [File](Domain/File.md)
       * [Boolean](Domain/Boolean.md)
       * [Calculated Properties](Domain/CalculatedProperties.md)
+    * Business Domain - Advanced
+      * [The role of ID](Domain/Advanced/TheRoleOfId.md)
+      * [The role of IsNew](Domain/Advanced/TheRoleOfIsNew.md)
+      * [The role of ToString()](Domain/Advanced/TheRoleOfToString.md)
+      * [IEntity interface](Domain/Advanced/IEntityInterface.md)
+      * [TransientEntity](Domain/Advanced/TransientEntity.md)
+      * [MSharp Interfaces](Domain/Advanced/MSharpInterface.md)
 
 * Tips and tools
 

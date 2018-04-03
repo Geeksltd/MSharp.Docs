@@ -197,9 +197,14 @@ In this lesson you will learn about:
 - [Boolean](Domain/Boolean.md)
 - [Calculated Properties](Domain/CalculatedProperties.md)
 
-### [Business Domain - Advanced](Domain/Advanced/README.md)
+### Business Domain - Advanced
 
-Soon™ ...
+- [The role of ID](Domain/Advanced/TheRoleOfId.md)
+- [The role of IsNew](Domain/Advanced/TheRoleOfIsNew.md)
+- [The role of ToString()](Domain/Advanced/TheRoleOfToString.md)
+- [IEntity interface](Domain/Advanced/IEntityInterface.md)
+- [TransientEntity](Domain/Advanced/TransientEntity.md)
+- [MSharp Interfaces](Domain/Advanced/MSharpInterface.md)
 
 ### [UI Structure - Basics](UI/README.md)
 
