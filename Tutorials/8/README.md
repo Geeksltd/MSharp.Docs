@@ -125,13 +125,13 @@ namespace Domain
 
             String("Full name").Calculated().Getter("FirstName + ' ' + LastName");
 
-            String("Latest work").Mandatory().Calculated().Getter("this.TimeLogs.GetList().Result.Any() ? this.TimeLogs.GetList().OrderByDescending(x => x.Date).Result.First().Date.ToShortDateString() : string.Empty");
+            String("Latest work").Mandatory().Calculated().Getter("this.TimeLogs.Max(x => x.Date).Get(x => x?.ToShortDateString()).GetAwaiter().GetResult()");
 
             ToStringExpression("FullName");
 
             InverseAssociate<TimeLog>("Time logs", "Developer");
 
-            Decimal("Total work").Mandatory().Calculated().Getter("(decimal)this.TimeLogs.GetList().Sum(x => x.Hours).Result");
+            Decimal("Total work").Mandatory().Calculated().Getter("TimeLogs.GetList().Sum(c => c.Hours).GetAwaiter().GetResult()");
         }
     }
 }
@@ -157,7 +157,7 @@ namespace Domain
             Decimal("Total work hours")
                 .Mandatory()
                 .Calculated()
-                .Getter("this.TimeLogs.GetList().Sum(x => x.Hours).Result");
+                .Getter("TimeLogs.GetList().Sum(x => x.Hours).GetAwaiter().GetResult()");
         }
     }
 }
