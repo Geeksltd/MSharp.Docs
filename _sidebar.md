@@ -56,7 +56,6 @@
       * [Database.Update()](Data/DatabaseUpdate.md)
       * [Database.Delete()](Data/DatabaseDelete.md)
       * [Database.Any(), None() and Count()](Data/DatabaseAnyNoneCount.md)
-      * [DataAccessor](Data/DataAccessor.md)
       * [ConnectionString and config](Data/ConnectionString.md)
       * [Working with existing databases](Data/WorkingWithExistingDatabase.md)
 
