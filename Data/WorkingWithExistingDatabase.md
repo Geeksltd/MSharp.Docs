@@ -50,4 +50,4 @@ namespace Domain
 }
 ```
 
-For custom database mode type entities you must write your data access logic. You should only use this database mode when you need to communicate with an external database. If you do not have an external database and want to create an entity to perform complex business logic then you should consider **Transient** entity types *(Transient entities are explained more in tutorial [Transient, Abstract, Interface](https://github.com/Geeksltd/MSharp.Docs/blob/master/Domain/Transient.md))*.*
+For custom database mode type entities you must write your data access logic. You should only use this database mode when you need to communicate with an external database. If you do not have an external database and want to create an entity to perform complex business logic then you should consider **Transient** entity types *(Transient entities are explained more in tutorial [Transient, Abstract, Interface](https://github.com/Geeksltd/MSharp.Docs/blob/master/Domain/Transient.md))*.

@@ -85,7 +85,7 @@ if (await Database.None<Employee>(e => e.IsActivated))
 }
 ```
 
-## Count()
+## Count\<T\>()
 
 This method is used to determine the number of elements in any sequence and must be used only with expression.
 

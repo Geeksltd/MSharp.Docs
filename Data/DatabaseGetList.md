@@ -2,6 +2,8 @@
 
 This method within M# Data access repository returns a list of records `IEnumerable<T>` for a specific Entity `T`. . M# gives you the possibility to get a list of data from the database and to apply filters. Below are the codes of the overloads for this method:
 
+### OverLoads
+
 ```C#
 namespace Olive.Entities
 {
@@ -16,6 +18,7 @@ namespace Olive.Entities
 }
 ```
 
+### Examples
 ```C#
 var users = Database.GetList<User>();
 
