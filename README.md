@@ -206,6 +206,17 @@ In this lesson you will learn about:
 - [TransientEntity](Domain/Advanced/TransientEntity.md)
 - [MSharp Interfaces](Domain/Advanced/MSharpInterface.md)
 
+### Working with Data
+
+- [Database.Get() VS Database.Find()](Data/DatabaseGet.md)
+- [Database.GetList()](Data/DatabaseGetList.md)
+- [Database.Save()](Data/DatabaseSave.md)
+- [Database.Update()](Data/DatabaseUpdate.md)
+- [Database.Any(), None() and Count()](Data/DatabaseAnyNoneCount.md)
+- [DataAccessor](Data/DataAccessor.md)
+- [ConnectionString and config](Data/ConnectionString.md)
+- [Working with existing databases](Data/WorkingWithExistingDatabase.md)
+
 ### [UI Structure - Basics](UI/README.md)
 
 Soon™ ...
