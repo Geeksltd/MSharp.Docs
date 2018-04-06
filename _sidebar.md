@@ -60,6 +60,7 @@
       * [Working with existing databases](Data/WorkingWithExistingDatabase.md)
     * UI Structure
       * [Master Page](UI/MasterPage.md)
+      * [Modal VS Standard](UI/ModalVSStandard.md)
 
 * Tips and tools
 

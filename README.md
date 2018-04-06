@@ -220,6 +220,7 @@ In this lesson you will learn about:
 ### UI Structure 
 
 - [Master Page](UI/MasterPage.md)
+- [Modal VS Standard](UI/ModalVSStandard.md)
 
 ### We will have more and more titles
 
