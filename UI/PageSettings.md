@@ -41,7 +41,7 @@ By default M# defaine three default key for page setting:
 - SubMenu
 - TopMenu
 
-`TopMenu` and `LeftMenu` page settings requires **Menu Module** name in camel case without any spaces. (Menu Modules are discussed in another lesson).
+`TopMenu` and `LeftMenu` page settings requires **Menu Module** name in camel case without any spaces.
 
 ```C#
 using MSharp;
