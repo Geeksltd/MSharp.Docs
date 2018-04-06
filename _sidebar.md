@@ -63,6 +63,7 @@
       * [Modal VS Standard](UI/ModalVSStandard.md)
       * [Module Hosting](UI/ModuleHosting.md)
       * [OnStart()](UI/OnStart.md)
+      * [Page Settings](UI/PageSettings.md)
 
 * Tips and tools
 
