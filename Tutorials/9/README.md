@@ -308,7 +308,16 @@ namespace Modules
 
             Field(x => x.Postcode);
 
-            MasterDetail<SupplierServiceForm>(x => x.Services).MinCardinality(3);
+            MasterDetail(x => x.Services, s =>
+            {
+                s.HeaderText("Supplier service details");
+
+                s.Field(x => x.ServiceType).Control(ControlType.DropdownList);
+
+                s.Field(x => x.Price);
+
+                s.Button("Add service").OnClick(x => x.AddMasterDetailRow());
+            });
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
@@ -319,20 +328,6 @@ namespace Modules
                 x.GentleMessage("Saved successfully.");
                 x.ReturnToPreviousPage();
             });
-        }
-
-        public class SupplierServiceForm : FormModule<Domain.SupplierService>
-        {
-            public SupplierServiceForm()
-            {
-                HeaderText("Supplier service details");
-
-                Field(x => x.ServiceType).Control(ControlType.DropdownList);
-
-                Field(x => x.Price);
-
-                Button("Add service").OnClick(x => x.AddMasterDetailRow());
-            }
         }
     }
 }
