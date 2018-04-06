@@ -61,6 +61,7 @@
     * UI Structure
       * [Master Page](UI/MasterPage.md)
       * [Modal VS Standard](UI/ModalVSStandard.md)
+      * [Module Hosting](UI/ModuleHosting.md)
 
 * Tips and tools
 
