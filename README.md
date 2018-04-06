@@ -217,9 +217,9 @@ In this lesson you will learn about:
 - [ConnectionString and config](Data/ConnectionString.md)
 - [Working with existing databases](Data/WorkingWithExistingDatabase.md)
 
-### [UI Structure - Basics](UI/README.md)
+### UI Structure 
 
-Soon™ ...
+- [Master Page](UI/MasterPage.md)
 
 ### We will have more and more titles
 

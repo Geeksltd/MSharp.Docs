@@ -119,10 +119,10 @@ Here is an example of how to use those overloads:
 public static void Analytics()
 {
     // Get if analytics are enabled, if no value set false as default
-    var activateAnalytics = Config.Get<bool>("Analytics.Enabled", defaultValue: false);
+    var activateAnalytics = Config.Get<bool>("Analytics:Enabled", defaultValue: false);
 
     // Get Analytics key
-    var key = Config.Get<string>("Analytics.key");
+    var key = Config.Get<string>("Analytics:key");
 
     // Actions ...
 }

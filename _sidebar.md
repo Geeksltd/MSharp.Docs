@@ -58,6 +58,8 @@
       * [Database.Any(), None() and Count()](Data/DatabaseAnyNoneCount.md)
       * [ConnectionString and config](Data/ConnectionString.md)
       * [Working with existing databases](Data/WorkingWithExistingDatabase.md)
+    * UI Structure
+      * [Master Page](UI/MasterPage.md)
 
 * Tips and tools
 
