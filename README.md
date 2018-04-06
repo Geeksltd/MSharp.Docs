@@ -222,6 +222,7 @@ In this lesson you will learn about:
 - [Master Page](UI/MasterPage.md)
 - [Modal VS Standard](UI/ModalVSStandard.md)
 - [Module Hosting](UI/ModuleHosting.md)
+- [OnStart()](UI/OnStart.md)
 
 ### We will have more and more titles
 

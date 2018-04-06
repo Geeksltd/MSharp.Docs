@@ -62,6 +62,7 @@
       * [Master Page](UI/MasterPage.md)
       * [Modal VS Standard](UI/ModalVSStandard.md)
       * [Module Hosting](UI/ModuleHosting.md)
+      * [OnStart()](UI/OnStart.md)
 
 * Tips and tools
 
