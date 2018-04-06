@@ -10,7 +10,7 @@ M# creates three types of master page when you create a new project. All master 
 
 M# encapsulates all the Stylesheets and Master Pages in one folder called **styles** that is located under **wwwroot** folder of **Website** project:
 
-![Master Pages Structure](Images/UIStructure.PNG "Master Pages Structure")
+![Master Pages Structure](images/UIStructure.PNG "Master Pages Structure")
 
 M# generates default template styles, which can be modified later according to the website design.
 
