@@ -303,7 +303,7 @@ namespace Modules
 
 Now add a folder named **City** into **Modules**. Then add a *list module* named **CitiesList** using M# context menu:
 
-```M#
+```C#
 using MSharp;
 
 namespace Modules
@@ -433,22 +433,18 @@ namespace Modules
 
 We are done with *country* and it's subpages. Let's finish up with *reseller*.
 
-This project containes a dedicated page for *resellers*. So add a *root page* named **Reseller** under **Pages** folder of **#UI** using M# context menu (or any oher way that yu are comfortable with):
+This project containes a dedicated page for *resellers*. So add a *root page* class named **ResellerPage** under **Pages** folder of **#UI** using M# context menu (or any oher way that yu are comfortable with):
 
 ```C#
 using MSharp;
 
-namespace Country
+public class ResellerPage : RootPage
 {
-    public class EnterPage : SubPage<CountryPage>
+    public ResellerPage()
     {
-        public EnterPage()
-        {
-            Layout(Layouts.FrontEndModal);
+        Layout(Layouts.FrontEnd);
 
-            Add<Modules.CountryForm>();
-            // Adds a country form
-        }
+        Add<Modules.ResellersList>();
     }
 }
 ```
