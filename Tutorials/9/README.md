@@ -49,7 +49,7 @@ namespace Domain
 }
 ```
 
-*ServiceType* class just have "Name" property.
+**ServiceType** class just have **Name** property.
 
 ```C#
 using MSharp;
@@ -78,7 +78,7 @@ namespace Domain
 }
 ```
 
-*Supplier* class has a computed column with the name of "Address". We have used array to join all address properties into one column because these properties can be null and this way is best practice to join null-able string properties. This class has an inverse association with "SupplierService" property and other properties are just simple sting property.
+**Supplier** class has a computed column named **Address**. We have used array to join all address properties into one column because these properties can be null and this way is best practice to join null-able string properties. This class has an inverse association with **SupplierService** property and other properties are just simple sting property.
 
 ```C#
 using MSharp;
@@ -101,7 +101,7 @@ namespace Domain
 }
 ```
 
-"SupplierService" class has two associations with "Supplier" and "ServiceType" class and a money property.
+**SupplierService** class has two associations with **Supplier** and **ServiceType** class and a money property.
 In solution explorer, right click the *#Model* project and select *Build* and then build the *Domain* project to make sure everything is just fine.
 
 ## Implementation: UI
@@ -116,7 +116,7 @@ According to the requirements, there are these pages to develop:
 
 ### Creating Service Type Pages
 
-Use the M# context menu to add a root page to the "Pages" folder of "#UI" project:
+Use the M# context menu to add a root page to the **Pages** folder of **#UI** project:
 
 ```C#
 using MSharp;
@@ -130,7 +130,7 @@ public class ServiceTypePage : RootPage
 }
 ```
 
-Create a folder with the name of "ServiceType" under "Pages" folder and add this sub page class:
+Create a folder named **ServiceType** under **Pages** folder and add this sub page class:
 
 ```C#
 using MSharp;
@@ -214,7 +214,7 @@ namespace Modules
 
 ### Creating Supplier Pages
 
-Use M# context menu to add *Supplier* root page to the "Pages" folder of "#UI" project:
+Use M# context menu to add **Supplier** root page to the **Pages** folder of **#UI** project:
 
 ```C#
 using MSharp;
@@ -228,7 +228,7 @@ public class SupplierPage : RootPage
 }
 ```
 
-Create a folder with the name of "Supplier" under "Pages" folder and add an *Enter* sub page:
+Create a folder named **Supplier** under **Pages** folder and add an *Enter* sub page:
 
 ```C#
 using MSharp;
@@ -283,7 +283,7 @@ namespace Modules
 }
 ```
 
-For "SuppliersList" class we have used "Address" property and "Services" as requested by requirements.
+For **SuppliersList** class we have used **Address** property and **Services** as requested by requirements.
 
 Let's continue with adding *Form module* named **SupplierForm** like below:
 
@@ -333,7 +333,7 @@ namespace Modules
 }
 ```
 
-The "SupplierForm" has got a new generic method with the name of `MasterDetail\<SupplierServiceForm\>(x => x.Services)`. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is `AddMasterDetailRow()`. By calling `MinCardinality()` method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call `MaxCardinality()` function.
+The **SupplierForm** has got a new generic method named `MasterDetail\<SupplierServiceForm\>(x => x.Services)`. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is `AddMasterDetailRow()`. By calling `MinCardinality()` method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call `MaxCardinality()` function.
 
 ### Creating Supplier Service Pages
 
