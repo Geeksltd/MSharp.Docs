@@ -488,7 +488,7 @@ namespace Modules
 
             Field(x => x.Name);
 
-            Field(x => x.Country).Control(ControlType.DropdownList)
+            Field(x => x.Country).Control(ControlType.AutoComplete)
                 .DataSource("await Database.GetList<Country>().Where(x => x.IsEuropean)");
 
             Button("Cancel").OnClick(x => x.CloseModal());
