@@ -100,23 +100,26 @@ According to the requirements there's three blocks of logic to implement:
 In **Domain** project under **Logic** folder create a partial class named **Candidate** like below:
 
 ```C#
-public partial class Candidate
+namespace Domain
 {
-    public void UpdateStatus(Status status)
+    public partial class Candidate
     {
-        Database.Update(this, x => x.Status = status);
-    }
-
-    public static async void RemindAdminForPendingCandidates()
-    {
-        var pendingCandidates = await Database.GetList<Candidate>(x => x.Status == Status.Pending);
-
-        if (pendingCandidates.None())
+        public void UpdateStatus(Status status)
         {
-            return;
+            Database.Update(this, x => x.Status = status);
         }
 
-        await EmailService.Send(new EmailMessage() { Subject = "Candidate pending reminder", Body = "...", To = "admin@uat.co" });
+        public static async void RemindAdminForPendingCandidates()
+        {
+            var pendingCandidates = await Database.GetList<Candidate>(x => x.Status == Status.Pending);
+
+            if (pendingCandidates.None())
+            {
+                return;
+            }
+
+            await EmailService.Send(new EmailMessage() { Subject = "Candidate pending reminder", Body = "...", To = "admin@uat.co" });
+        }
     }
 }
 ```
@@ -151,7 +154,38 @@ namespace Domain
 }
 ```
 
-According to the requirements, `GetPossibleChanges()` method returns available status.
+AS you can see, `GetPossibleChanges()` method returns the available status according to the current state of the entity.
+
+According to the requirements, **Status** class has four predefined values that should be initially saved to the database when application start for the first time. Under **[DEV-SCRIPTS]** folder of **Domain** project open *ReferenceData.cs* and add this method like below:
+
+```C#
+using System;
+[...]
+
+namespace Domain
+{
+    public class ReferenceData
+    {
+        [...]
+        public static async Task Create()
+        {
+            [...]
+            await InitEnums();
+        }
+
+        [...]
+        static async Task InitEnums()
+        {
+            await Create(new Status { Name = "Pending" });
+            await Create(new Status { Name = "Interviewed" });
+            await Create(new Status { Name = "Rejected" });
+            await Create(new Status { Name = "Offered" });
+        }
+    }
+}
+```
+
+By calling `InitEnums()` method on `ReferenceData` class constructor, M# will seed database with initial value just once.
 
 ## Implementation: UI
 
