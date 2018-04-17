@@ -171,9 +171,9 @@ using MSharp;
 
 namespace Shops
 {
-    class Enter : SubPage<ShopPage>
+    class EnterPage : SubPage<ShopPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.ShopForm>();
         }
@@ -189,9 +189,9 @@ using MSharp;
 
 namespace Categories
 {
-    class Enter : SubPage<CategoryPage>
+    class EnterPage : SubPage<CategoryPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.CategoryForm>();
         }
@@ -206,9 +206,9 @@ using MSharp;
 
 namespace Products
 {
-    class Enter : SubPage<ProductPage>
+    class EnterPage : SubPage<ProductPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.ProductForm>();
         }
@@ -239,7 +239,7 @@ namespace Modules
             Column(x => x.Products);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Categories.Enter>()
+                .OnClick(x => x.Go<Categories.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -251,7 +251,7 @@ namespace Modules
                 });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Categories.Enter>()
+                .OnClick(x => x.Go<Categories.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -315,7 +315,7 @@ namespace Modules
             Column(x => x.Shops);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Products.Enter>()
+                .OnClick(x => x.Go<Products.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -327,7 +327,7 @@ namespace Modules
                });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Products.Enter>()
+                .OnClick(x => x.Go<Products.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -387,7 +387,7 @@ namespace Modules
             Column(x => x.Products);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Shops.Enter>()
+                .OnClick(x => x.Go<Shops.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -399,7 +399,7 @@ namespace Modules
                });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Shops.Enter>()
+                .OnClick(x => x.Go<Shops.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -421,7 +421,7 @@ namespace Modules
 
             Field(x => x.Name);
             Field(x => x.Address);
-            Field(x => x.Products);
+            Field(x => x.ProductsLinks).Control(ControlType.VerticalCheckBoxes);
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 

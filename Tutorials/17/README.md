@@ -109,7 +109,7 @@ public class CategoryPage : RootPage
 {
     public CategoryPage()
     {
-        Add<Modules.CategoryForm>();
+        Add<Modules.CategoriesList>();
         //will be implemented soon.
     }
 }
@@ -155,7 +155,8 @@ namespace Modules
                 .SendReturnUrl());
 
             Button("New Category").Icon(FA.Plus)
-                .OnClick(x => x.Go<Category.EnterPage>());
+                .OnClick(x => x.Go<Category.EnterPage>()
+                .SendReturnUrl());
         }
     }
 }
