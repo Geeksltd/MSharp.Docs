@@ -176,16 +176,16 @@ public class BikePage : RootPage
 }
 ```
 
-In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an *Enter* class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a *Enter* class like below:
+In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an `EnterPage` class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a `EnterPage` class like below:
 
 ```C#
 using MSharp;
 
 namespace Bikes
 {
-    class Enter : SubPage<BikePage>
+    class EnterPage : SubPage<BikePage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.BikeForm>();
         }
@@ -256,7 +256,7 @@ namespace Modules
             Column(x => x.RequiresLicense);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Bikes.Enter>()
+                .OnClick(x => x.Go<Bikes.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -269,7 +269,7 @@ namespace Modules
 
             Button("Add bike").Icon(FA.Plus)
                 .OnClick(x =>
-                x.Go<Bikes.Enter>()
+                x.Go<Bikes.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -294,16 +294,16 @@ public class CarPage : RootPage
 }
 ```
 
-In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an *Enter* class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a *Enter* class like below:
+In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an `EnterPage` class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a `EnterPage` class like below:
 
 ```C#
 using MSharp;
 
 namespace Cars
 {
-    class Enter : SubPage<CarPage>
+    class EnterPage : SubPage<CarPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.CarForm>();
         }
@@ -376,7 +376,7 @@ namespace Modules
             Column(x => x.NumberOfDoors);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Cars.Enter>()
+                .OnClick(x => x.Go<Cars.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
@@ -391,7 +391,7 @@ namespace Modules
                 .OnClick(x => x.Export(ExportFormat.Excel));
 
             Button("Add car").Icon(FA.Plus)
-                .OnClick(x => x.Go<Cars.Enter>()
+                .OnClick(x => x.Go<Cars.EnterPage>()
                 .SendReturnUrl());
         }
     }
