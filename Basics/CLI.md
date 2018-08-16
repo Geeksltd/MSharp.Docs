@@ -12,7 +12,7 @@ By running **msharp.exe** you will see all options and outputs and how to use th
 
 ## msharp.exe
 
-### msharp.exe /build *[/model]* *[/ul]*
+### msharp.exe /build *[/model]* *[/ui]* *[/log]*
 
 By running **msharp.exe /build** m# framwrok will try to compile your current project and show you the result. If your project encounters any errors, you will see the result here.
 For example, in following picture you can see that current project has an error an you will see the detail:
@@ -23,6 +23,9 @@ If you want to build just *#Model* or *#UI* project you can use this command:
 
 - msharp.exe /build /model
 - msharp.exe /build /ui
+
+#### /log option
+When you add the `/log` option, the generated meta-data XML file will be saved under `C:\Temp\MSharpLogs`. If there is an error in that, you can inspect the file to see what's going on. For example some characters may be incorrectly encoded, leading to an invalid XML file.
 
 ### msharp.exe /add:type /name:"TypeName" [/base:"BaseTypeName"] [/folder:"ContainerFolder"]
 
