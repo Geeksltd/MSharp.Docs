@@ -553,3 +553,6 @@ namespace Modules
 ### Final Step
 
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
+
+# Practice
+Now it's your turn to implement an application that corresponds to the following [wireframes](https://design.visualspec.co.uk/?p=MSharp.Practice.3&user=1&S1_2=3).
