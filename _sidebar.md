@@ -5,6 +5,35 @@
     * [Structure](Structure/README.md)
     * [Concepts](Basics/Concepts.md)
 
+* How-to: Domain Model
+
+    * Many to many associations
+   
+    
+* How-to: Validation
+
+    * Mandatory property    
+    * Numeric/date range
+    * Unique property
+    * Uniqueness combination
+    * Custom validation rule
+    * Mutually exclusive
+    * Form-specific validation
+
+* How-to: Form modules
+
+    * Validation: Form-only validation
+
+* How-to: List modules
+
+    * Export to CSV/Excel
+
+* How-to: View modules
+
+* How-to: Misc
+    
+* How-to: Navigation
+
 * M# Tutorials
 
     * [Episode 1: Your First App](Tutorials/1/README.md)
