@@ -111,6 +111,7 @@
 * How-to: Misc
 
     * PDF generation
+    * Page start-up logic
     
 * How-to: Navigation
 
@@ -119,7 +120,8 @@
     
 * How-to: Styling and CSS
 
-    * ...
+    * Standard vs custom css
+    * Mark-up customisation
     
 * How-to: Security
 
