@@ -5,7 +5,7 @@
     * [Structure](Structure/README.md)
     * [Concepts](Basics/Concepts.md)
 
-* How-to: Domain Model
+* How-to: Entity types
 
     * Many to many associations
     * Enum types
@@ -14,15 +14,20 @@
     * ToString()
     * Default sort
     * Title vs name
-    * Plural title
-    * Custom database table name
+    * Plural title    
     * Hierarchy
     * Transient types
-    * Custom data persistence
     * Notes and docs
-    * Custom primary key
     
-   
+* How-to: Properties
+    
+* How-to: Database
+
+    * Custom database table name
+    * Custom primary key
+    * Soft delete
+    * Custom data persistence
+
     
 * How-to: Validation
 
