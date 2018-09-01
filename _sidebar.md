@@ -8,6 +8,20 @@
 * How-to: Domain Model
 
     * Many to many associations
+    * Enum types
+    * Inheritence (including Abstract)
+    * Interface types
+    * ToString()
+    * Default sort
+    * Title vs name
+    * Plural title
+    * Custom database table name
+    * Hierarchy
+    * Transient types
+    * Custom data persistence
+    * Notes and docs
+    * Custom primary key
+    
    
     
 * How-to: Validation
@@ -22,10 +36,13 @@
 
 * How-to: Form modules
 
-    * Validation: Form-only validation
+    * 
 
 * How-to: List modules
 
+    * Paging
+    * Sorting
+    * Manual sorting
     * Export to CSV/Excel
 
 * How-to: View modules
