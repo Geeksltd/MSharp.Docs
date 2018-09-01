@@ -22,7 +22,7 @@
     * Many-to-one
     * One-to-many
     * Many-to-many
-    * Delete: cascade vs Set-Null
+    * Cascade delete
 
     
 * How-to: Model: Properties
