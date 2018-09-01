@@ -4,6 +4,7 @@
     * [Installation](Install/README.md)
     * [Structure](Structure/README.md)
     * [Concepts](Basics/Concepts.md)
+    * M# Entities
 
 * How-to: Model: Entity types
 
@@ -19,6 +20,7 @@
 
 * How-to: Model: Properties
 
+    * ID property
     * Calculated vs persisted    
     * Custom type (C#/DB)
     * Multiline text
@@ -42,6 +44,7 @@
     * Custom data persistence
     * Index
     * Data type conversion
+    * Bootstrap/reference data
 
 * How-to: Model: Misc
 
