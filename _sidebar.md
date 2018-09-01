@@ -115,6 +115,7 @@
     
 * How-to: Navigation
 
+    * Custom page url
     * Auto page redirection
     * Modal (pop-up)
     
