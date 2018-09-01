@@ -72,9 +72,11 @@
    
     * Handling files/documents
     * Handling images
+    * Thumbnails
     * Image optimization
     * Default (empty) image url
     * Secure access
+    * Custom storage
 
 * How-to: Form modules
 
@@ -95,6 +97,8 @@
 * How-to: View modules
 
 * How-to: Misc
+
+    * PDF generation
     
 * How-to: Navigation
 
