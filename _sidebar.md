@@ -5,7 +5,7 @@
     * [Structure](Structure/README.md)
     * [Concepts](Basics/Concepts.md)
 
-* How-to: Entity types
+* How-to: Model: Entity types
 
     * Many to many associations
     * Enum types
@@ -17,17 +17,23 @@
     * Plural title    
     * Hierarchy
     * Transient types
-    * Notes and docs
     
-* How-to: Properties
+* How-to: Model: Properties
+
+    * Calculated vs persisted
     
 * How-to: Database
 
-    * Custom database table name
+    * Custom table/column name
     * Custom primary key
     * Soft delete
     * Custom data persistence
+    * Index
 
+* How-to: Model: Misc
+
+    * Notes/docs/user help
+    * Custom [Attributes]
     
 * How-to: Validation
 
@@ -38,6 +44,7 @@
     * Custom validation rule
     * Mutually exclusive
     * Form-specific validation
+    * Custom validation message
 
 * How-to: Form modules
 
