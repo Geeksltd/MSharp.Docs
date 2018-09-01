@@ -16,11 +16,13 @@
     * Plural title    
     * Hierarchy
     * Transient types
+    * Custom methods
     
 * How-to: Model: Properties
 
     * Calculated vs persisted    
     * Custom type (C#/DB)
+    * Multiline text
     
 * How-to: Database
 
@@ -36,11 +38,14 @@
     * Name vs Title
     * Notes/docs/user help
     * Custom [Attributes]
+    * White-space trimming
     
 * How-to: Validation
 
     * Mandatory property    
     * Numeric/date range
+    * Text length
+    * Text pattern/regex
     * Unique property
     * Uniqueness combination
     * Custom validation rule
