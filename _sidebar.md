@@ -16,6 +16,13 @@
     * Hierarchy
     * Transient types
     * Custom methods
+
+* How-to: Model: Properties
+
+    * Calculated vs persisted    
+    * Custom type (C#/DB)
+    * Multiline text
+    * Numeric scale/precision
     
 * How-to: Model: Associations
 
@@ -24,13 +31,7 @@
     * Many-to-many
     * Cascade delete
 
-    
-* How-to: Model: Properties
 
-    * Calculated vs persisted    
-    * Custom type (C#/DB)
-    * Multiline text
-    
 * How-to: Database
 
     * Custom table/column name
@@ -60,6 +61,12 @@
     * Form-specific validation
     * Custom validation message
     * Delete and referrential integrity
+    * Allowed file extensions
+
+* How-to: Files & images
+    * Image optimization
+    * Default (empty) image url
+    * Secure access
 
 * How-to: Form modules
 
