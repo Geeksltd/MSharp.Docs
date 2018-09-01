@@ -23,6 +23,8 @@
     * Custom type (C#/DB)
     * Multiline text
     * Numeric scale/precision
+    * Nullable (int, bool, ...)
+    * Custom boolean text
     
 * How-to: Model: Associations
 
@@ -64,13 +66,21 @@
     * Allowed file extensions
 
 * How-to: Files & images
+   
+    * Handling files/documents
+    * Handling images
     * Image optimization
     * Default (empty) image url
     * Secure access
 
 * How-to: Form modules
 
-    * 
+    * Adding a textbox
+    * Adding a drop down list
+    * Adding a radio button list
+    * ...
+    * Custom form elements 
+    
 
 * How-to: List modules
 
