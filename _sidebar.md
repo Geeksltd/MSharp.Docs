@@ -87,6 +87,7 @@
     * ...
     * Custom form elements 
     
+    
 
 * How-to: List modules
 
@@ -97,12 +98,23 @@
 
 * How-to: View modules
 
+* How-to: UI composition
+    * Module: Shared vs page-owned
+    * View components
+    * Master detail forms
+    * Merged forms
+    * Module references
+   
+    
+
+
 * How-to: Misc
 
     * PDF generation
     
 * How-to: Navigation
 
+    * Auto page redirection
     * Modal (pop-up)
     
 * How-to: Styling and CSS
