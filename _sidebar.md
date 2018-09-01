@@ -9,18 +9,18 @@
 
     * Many to many associations
     * Enum types
-    * Inheritence (including Abstract)
+    * Inheritence (+Abstract/+DB)
     * Interface types
     * ToString()
     * Default sort
-    * Title vs name
     * Plural title    
     * Hierarchy
     * Transient types
     
 * How-to: Model: Properties
 
-    * Calculated vs persisted
+    * Calculated vs persisted    
+    * Custom type (C#/DB)
     
 * How-to: Database
 
@@ -29,9 +29,11 @@
     * Soft delete
     * Custom data persistence
     * Index
+    * Data type conversion
 
 * How-to: Model: Misc
 
+    * Name vs Title
     * Notes/docs/user help
     * Custom [Attributes]
     
