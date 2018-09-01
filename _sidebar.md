@@ -7,7 +7,6 @@
 
 * How-to: Model: Entity types
 
-    * Many to many associations
     * Enum types
     * Inheritence (+Abstract/+DB)
     * Interface types
@@ -17,6 +16,14 @@
     * Hierarchy
     * Transient types
     * Custom methods
+    
+* How-to: Model: Associations
+
+    * Many-to-one
+    * One-to-many
+    * Many-to-many
+    * Delete: cascade vs Set-Null
+
     
 * How-to: Model: Properties
 
@@ -52,6 +59,7 @@
     * Mutually exclusive
     * Form-specific validation
     * Custom validation message
+    * Delete and referrential integrity
 
 * How-to: Form modules
 
