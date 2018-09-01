@@ -5,6 +5,7 @@
     * [Structure](Structure/README.md)
     * [Concepts](Basics/Concepts.md)
     * M# Entities
+    * Page v module v layout (master-page)
 
 * How-to: Model: Entity types
 
@@ -101,6 +102,24 @@
     * PDF generation
     
 * How-to: Navigation
+
+    * Modal (pop-up)
+    
+* How-to: Styling and CSS
+
+    * ...
+    
+* How-to: Security
+
+    * Role based access
+    * Page role inheritence
+    * Custom page security
+    * Module specific security
+    * Module visibility vs security checks
+    * Sql injection
+    * Parameter tampering
+    * Cross site scripting
+    * Web Api security
 
 * M# Tutorials
 
