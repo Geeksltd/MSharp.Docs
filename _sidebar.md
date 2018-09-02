@@ -63,6 +63,7 @@
     * Unique property
     * Uniqueness combination
     * Custom validation rule
+    * Custom pre-validation logic
     * Mutually exclusive
     * Form-specific validation
     * Custom validation message
@@ -193,6 +194,8 @@
     * Custom module initialization
     * Custom methods in controller
     * Custom view model properties
+    * Scheduled tasks
+    * Sending email notifications
     
 * How-to: Javascript
     * Custom initialization script
@@ -200,6 +203,7 @@
     
 * How-to: Security
 
+    * Authentication
     * Role based access
     * Page role inheritence
     * Custom page security
