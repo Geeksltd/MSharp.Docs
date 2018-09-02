@@ -78,6 +78,8 @@
     * Default (empty) image url
     * Secure access
     * Custom storage
+    * Displaying an image 
+    * Image with click action
 
 * How-to: Form modules
 
@@ -87,7 +89,17 @@
     * ...
     * Custom form elements 
     
-    
+* How-to: Buttons/Links
+
+    * Adding a button
+    * Custom location for a button
+    * Button per row
+    * Multiple buttons from data source
+    * Transactions
+    * Trigerring/skipping validation
+    * Default button
+    * Button actions
+    * Hiding/showing buttons
 
 * How-to: List modules
 
@@ -98,32 +110,38 @@
 
 * How-to: View modules
 
-* How-to: UI composition
-    * Module: Shared vs page-owned
-    * View components
-    * Master detail forms
-    * Merged forms
-    * Module references
+
    
-    
-
-
-* How-to: Misc
-
-    * PDF generation
-    * Page start-up logic
     
 * How-to: Navigation
 
     * Custom page url
     * Auto page redirection
     * Modal (pop-up)
+    * Ajax/no ajax
+    
+* How-to: UI composition
+    * Module: Shared vs page-owned
+    * View components
+    * Master detail forms
+    * Merged forms
+    * Module references
+    * Module boxes
+    
     
 * How-to: Styling and CSS
 
     * Standard vs custom css
     * Mark-up customisation
     * Header text
+    
+
+
+
+* How-to: Misc
+
+    * PDF generation
+    * Page start-up logic
     
 * How-to: Security
 
