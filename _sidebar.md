@@ -113,30 +113,36 @@
     * Button actions
     * Hiding/showing buttons
     
-* How-to: Menus
-    * Creating a menu
-    * Main navigation menu
-    * Sub-navigation menu/tabs
-    * Dynamic menu items
-    * Menu item hierarchy
-    * Current menu item highlighting
 
 * How-to: List modules
 
     * Adding data column
+    * Custom display expression/format
     * Adding link/button column
     * Adding image/icon column
+    * Adding input control column
     * Merging columns
     * Index column
     * Select checkbox column
     * Custom column header text
+    * User column display selection
     * Footer row
     * Hiding header row
     * Paging
     * Sorting
     * Manual sorting
     * Custom data source
+    * Data grouping
     * Export to CSV/Excel
+    
+ * How-to: Search
+ 
+    * Search field on property
+    * Full text search 
+    * Instant search
+    * Default search value
+    * Custom search element
+    * Auto-search on start
 
 * How-to: View modules
     * Custom data source
@@ -152,6 +158,16 @@
     * Modal (pop-up)
     * Ajax/no ajax
     * Passing and using parameters
+    
+
+* How-to: Menus
+    * Creating a menu
+    * Main navigation menu
+    * Sub-navigation menu/tabs
+    * Dynamic menu items
+    * Menu item hierarchy
+    * Current menu item highlighting    
+    
     
 * How-to: UI composition
     * Visibility
