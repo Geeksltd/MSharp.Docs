@@ -123,6 +123,7 @@
 
     * Standard vs custom css
     * Mark-up customisation
+    * Header text
     
 * How-to: Security
 
