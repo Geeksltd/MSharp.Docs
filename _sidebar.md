@@ -85,12 +85,21 @@
 * How-to: Form modules
 
     * Adding a textbox
+    * Adding a check box
     * Adding a html editor
     * Adding a drop down list
     * Adding a radio button list
+    * Adding a checkbox list
+    * Adding a date picker
+    * Adding a time picker
+    * Adding a date/time picker
+    * Limiting time picker hours/minutes
+    * Adding a file upload field
+    * Default values (property setter)
     * ...
     * Custom form elements 
     * Custom data load/save
+    * Custom list control source
     
 * How-to: Buttons/Links
 
