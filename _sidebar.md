@@ -96,7 +96,7 @@
     * Limiting time picker hours/minutes
     * Adding a file upload field
     * Default values (property setter)
-    * ...
+    * Watermark text
     * Custom form elements 
     * Custom data load/save
     * Custom list control source
@@ -112,12 +112,30 @@
     * Default button
     * Button actions
     * Hiding/showing buttons
+    
+* How-to: Menus
+    * Creating a menu
+    * Main navigation menu
+    * Sub-navigation menu/tabs
+    * Dynamic menu items
+    * Menu item hierarchy
+    * Current menu item highlighting
 
 * How-to: List modules
 
+    * Adding data column
+    * Adding link/button column
+    * Adding image/icon column
+    * Merging columns
+    * Index column
+    * Select checkbox column
+    * Custom column header text
+    * Footer row
+    * Hiding header row
     * Paging
     * Sorting
     * Manual sorting
+    * Custom data source
     * Export to CSV/Excel
 
 * How-to: View modules
