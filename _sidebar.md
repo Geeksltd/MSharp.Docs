@@ -68,6 +68,7 @@
     * Custom validation message
     * Delete and referrential integrity
     * Allowed file extensions
+    * Form warning style
 
 * How-to: Files & images
    
@@ -84,10 +85,12 @@
 * How-to: Form modules
 
     * Adding a textbox
+    * Adding a html editor
     * Adding a drop down list
     * Adding a radio button list
     * ...
     * Custom form elements 
+    * Custom data load/save
     
 * How-to: Buttons/Links
 
@@ -110,6 +113,8 @@
 
 * How-to: View modules
     * Custom data source
+    * Structured vs custom template
+    * Hiding empty elements
 
    
     
@@ -161,6 +166,8 @@
     * Parameter tampering
     * Cross site scripting
     * Web Api security
+    * Form insert vs update filtering
+    
 
 * M# Tutorials
 
