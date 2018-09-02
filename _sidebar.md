@@ -121,6 +121,7 @@
     * Ajax/no ajax
     
 * How-to: UI composition
+    * Visibility
     * Module: Shared vs page-owned
     * View components
     * Master detail forms
@@ -135,8 +136,6 @@
     * Mark-up customisation
     * Header text
     
-
-
 
 * How-to: Misc
 
