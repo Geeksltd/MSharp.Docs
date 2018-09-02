@@ -109,7 +109,7 @@
     * Export to CSV/Excel
 
 * How-to: View modules
-
+    * Custom data source
 
    
     
@@ -119,6 +119,7 @@
     * Auto page redirection
     * Modal (pop-up)
     * Ajax/no ajax
+    * Passing and using parameters
     
 * How-to: UI composition
     * Visibility
@@ -141,6 +142,13 @@
 
     * PDF generation
     * Page start-up logic
+    * Custom module initialization
+    * Custom methods in controller
+    * Custom view model properties
+    
+* How-to: Javascript
+    * Custom initialization script
+    * Script to run on Button click
     
 * How-to: Security
 
