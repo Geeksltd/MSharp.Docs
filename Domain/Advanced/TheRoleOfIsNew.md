@@ -2,7 +2,7 @@
 
 When you have to perform an operation on an instance in some cases you need to know whether it is a new or an existing instance. To do so, M# provides you the readonly boolean property IsNew.
 
-```C#
+```csharp
 public partial class Employee
 {
     public void SendEmailForUsername()
@@ -34,7 +34,7 @@ You have two different ways for cloning an instance: `Clone()` or `EntityManager
 
 `EntityManager.CloneAsNew()` returns a clone of the instance, but the difference from `Clone()` is that the clone is marked as new `(IsNew = True)` and it has a new ID.
 
-```C#
+```csharp
 public void SaveClone()
 {
     var clone = this.Clone();

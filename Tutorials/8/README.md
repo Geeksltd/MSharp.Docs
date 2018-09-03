@@ -37,7 +37,7 @@ Time log page show all projects, task and their related starting and ending date
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -54,7 +54,7 @@ namespace Domain
 
 Project class just has a "Name" property right now, we will complete this class soon.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -79,7 +79,7 @@ Developer class has "First Name" and "Last Name" and "Full name" string property
 
 > **Note**:  A calculated property must not contain complex calculations because this is not the intended purpose of entity behaviours. It is always recommended to implement Methods / Functions for such complex calculations.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -110,7 +110,7 @@ Time log class has an association with "Project" and "Developer", because we nee
 
 Now open developer class again and change it like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -141,7 +141,7 @@ We have added "Latest work" property, this calculated property shows all develop
 
 Now open up your "Project" class and change it like so:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -181,7 +181,7 @@ According to the requirements, we have these pages to develop:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **ProjectPage** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class ProjectPage : RootPage
@@ -195,7 +195,7 @@ public class ProjectPage : RootPage
 
 Create a folder named **Project** under **Page** folder and add this sub page:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Project
@@ -217,7 +217,7 @@ namespace Project
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Projects**. Then add a *List module* named **ProjectsList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -251,7 +251,7 @@ This class has a new M# method, `.FooterFormula(AggregateFormula.Sum)` method, a
 
 Let's continue with adding *Form module* named **ProjectForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -282,7 +282,7 @@ namespace Modules
 
 Use M# context menu to add a root page to the "Page" folder:
 
-```C#
+```csharp
 using MSharp;
 
 public class DeveloperPage : RootPage
@@ -296,7 +296,7 @@ public class DeveloperPage : RootPage
 
 Create a folder named "Developer" under "Page" folder and add this sub page:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Developer
@@ -315,7 +315,7 @@ namespace Developer
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Developers**. Then add a *List module* named **DevelopersList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -349,7 +349,7 @@ namespace Modules
 
 Add a folder named *Developer* under *Modules* folder then create a form module named *DeveloperForm* by using the M# context menu like so:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -382,7 +382,7 @@ namespace Modules
 
 Use M# context menu to add a root page to the "Page" folder:
 
-```C#
+```csharp
 using MSharp;
 
 public class TimeLogPage : RootPage
@@ -396,7 +396,7 @@ public class TimeLogPage : RootPage
 
 Create a folder named "TimeLog" under "Page" folder and add this sub page:
 
-```C#
+```csharp
 using MSharp;
 
 namespace TimeLog
@@ -415,7 +415,7 @@ namespace TimeLog
 
 Add a folder named *TimeLogs* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -455,7 +455,7 @@ namespace Modules
 
 Add form module named *TimeLogForm* using the M# context menu like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -496,7 +496,7 @@ namespace Modules
 
 The last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

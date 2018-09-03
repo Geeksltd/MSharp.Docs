@@ -45,7 +45,7 @@ Let's start with creating three entities, "Category", "product" and "Shop". Ther
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -64,7 +64,7 @@ namespace Domain
 
 Category class has a new M# method with the name of `InverseAssociate<>()`. **InverseAssociate** method tells M# framework that we have a flow from parent to child. First parameter is the name of the property and the second one is the name of property in child entity.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -85,7 +85,7 @@ namespace Domain
 
 In product class there is a *one to many assosication* and also a *many to many association*. Every product can have only one category and every product can be sold in many shops. With `Associate<Category>("Category")` generic method we set one to many relation with category entity and with `InverseManyToMany<Shop>("Shops", "Products")` we set inverse association with shops entities that show a flow from parent to child and show all shops that has been sold this product.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -125,7 +125,7 @@ Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Categ
 
 ![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
 
-```C#
+```csharp
 using MSharp;
 
 public class CategoryPage : RootPage
@@ -140,7 +140,7 @@ public class CategoryPage : RootPage
 In this class we have added "CategoriesList" module that is responsible for listing all categories.
 Now let's do the same thing and add *Product* and *Shop* root pages with codes below:
 
-```C#
+```csharp
 using MSharp;
 
 public class ProductPage : RootPage
@@ -152,7 +152,7 @@ public class ProductPage : RootPage
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 public class ShopPage : RootPage
@@ -166,7 +166,7 @@ public class ShopPage : RootPage
 
 Now create three folders named *Shops*, *Catrgories* and *Products*. Then create a class with the name of *EnterPage* in *Shops* folder, then place this code inside of it:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Shops
@@ -184,7 +184,7 @@ namespace Shops
 In this class what happens is that we ask M# to render a ShopForm module (which will be implemented later).
 Now create a class with the name of *EnterPage* in *Categories* folder, then place this code inside of it:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Categories
@@ -201,7 +201,7 @@ namespace Categories
 
 Now do the same thing with the *Products*:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Products
@@ -222,7 +222,7 @@ Navigate to **Modules** folder of **#UI** project and create folder named **Cate
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -264,7 +264,7 @@ Like above use M# context menu to add form module named *CategoryForm* and copy 
 
 Navigate to **Modules** folder of **#UI** project and under **Category** folder add a *Form module* named **CategoryForm** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -297,7 +297,7 @@ Navigate to **Modules** folder of **#UI** project and create folder named **Prod
 
 ![Add List Module](AddListModule.PNG "Add List Module")
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -336,7 +336,7 @@ namespace Modules
 
 Now add "ProductForm" with the same way that you did earlier:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -369,7 +369,7 @@ namespace Modules
 Navigate to **Modules** folder of **#UI** project and create folder named **Shop**. Then add a *List module* named **ShopsList** using M# context menu:
 
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -408,7 +408,7 @@ namespace Modules
 
 Let's continue with adding *Form module* named **ShopForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -441,7 +441,7 @@ namespace Modules
 
 After you ended up with the pages, you need to add them to the main menu:
 
-```C#
+```csharp
 using MSharp;
 using Domain;
 

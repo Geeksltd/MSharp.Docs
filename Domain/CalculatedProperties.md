@@ -3,7 +3,7 @@ Property defines the structure of an entity and usually holds values. M# allows 
 
 **Calculated properties** are created for read-only purposes and returns data based on business requirements. M# defines these types of properties in **Entity Class** of the **#Model** project and marks them with **Calculated** method. No SQL table Column is created for such properties. A calculated property is usually used to display some information on UI or in decision making. A good example of this could be to have a **Full Name** property on `Employee` entity, as shown in the code below.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -22,7 +22,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 /// <summary>Gets the FullName property.</summary>
 [Calculated]
 public string FullName

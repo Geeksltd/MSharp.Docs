@@ -1,7 +1,7 @@
 # DateTime Property
 M# DateTime is a high level representation of a date. By adding a DateTime property, M# will generates a standard C# DateTime property with its XML documentation:
 
-```C#
+```csharp
 /// <summary>Gets or sets the value of DateOfBirth on this Employee instance.</summary>
 public DateTime DateOfBirth { get; set; }
 ```
@@ -23,13 +23,13 @@ The creation of this property will also create the **datetime** SQL type. M# giv
 #### .LowerBound()
 Lower bound will have no effect on the database column definition, but will create a new validation rule based on the value. For example if you create the properties `DateAdded` and `DateUpdated` you can set the lower bound of DateUpdated to DateAdded:
 
-```C#
+```csharp
 DateTime("Date created").Mandatory();
 
 DateTime("Date updated").Mandatory().LowerBound("DateCreated");
 ```
 
-```C#
+```csharp
 if (DateUpdated < DateCreated)                
             result.Add("The provided Date updated is too early.");
 ```
@@ -40,7 +40,7 @@ Testing the behaviour of an application at different dates in not easy, but we o
 #### How to use it?
 Forget using the DateTime class for getting the Date/Time, replace it by LocalTime everywhere in your code to benefit from the power of LocalTime. You can for example change the datetime of your application by using `LocalTime.Set()`. This method implements IDisposable so it is very easy to change the datetime only on a piece of code as shown on the following code:
 
-```C#
+```csharp
 // LocalTime.Now = 01/04/2018
 using (LocalTime.Set(LocalTime.Now.AddYears(1)))
 {
@@ -53,7 +53,7 @@ You may also be interested by `LocalTime.RedifineNow()` to set the current time 
 
 Another useful feature is `LocalTime.Stop()`. By using this you can stop the datetime:
 
-```C#
+```csharp
 using (LocalTime.Stop())
 {
     // Action 1

@@ -6,7 +6,7 @@ In tutorial [Entity, Page, Module](https://github.com/Geeksltd/MSharp.Docs/blob/
 
 When you need to deal with an existing database and want to generate ADO.NET data accessor but not the database table itself then you must select `DatabaseOption.Existing` in `DatabaseMode()` method after creating an entity in M#, as shown below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -33,7 +33,7 @@ M# also generates a data access logic (DAL) class for the created entity to map 
 
 If you want to create an entity without ADO.NET accessor you should call `DatabaseMode(DatabaseOption.Custom);`, as shown below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain

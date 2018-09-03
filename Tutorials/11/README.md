@@ -22,7 +22,7 @@ The employee page, just shows a list of all employees and lets users do CRUD ope
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add this class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -56,7 +56,7 @@ After building #Model project, M# framework will generate its related entities, 
 
 In this scenario, we need a custom method with the name of `GetWarnings()` that return proper result according user input. Add a partial class with the name of **Employee** under **Logic** of **Domain** project then paste these blocks of code:
 
-```C#
+```csharp
 using System.Text;
 
 namespace Domain
@@ -97,7 +97,7 @@ According to the requirement, we have these pages to develop:
 
 Use the M# context menu to add *Employee* root page to the "Pages" folder of "#UI" project:
 
-```C#
+```csharp
 using MSharp;
 
 public class EmployeePage : RootPage
@@ -112,7 +112,7 @@ public class EmployeePage : RootPage
 The "EmployeePage" holds employee list module (which will be implemented later).
 Create a folder with the name of "Employees" under "Pages" folder and add *EnterPage* sub page class with codes bellow:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Employees
@@ -135,7 +135,7 @@ The "EnterPage" class holds employee form module and we have set its layout to "
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Employee**. Then add a *List module* named **EmployeesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -176,7 +176,7 @@ The email column has a used new M# fluent method with the name of `.EmptyMarkup(
 
 Let's continue with adding *Form module* named **EmployeeForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -213,7 +213,7 @@ namespace Modules
 
 After you ended up with the pages, you need to add them to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

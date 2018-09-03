@@ -34,7 +34,7 @@ User can add booking by clicking on "Add booking" button, it will show a modal t
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -55,7 +55,7 @@ namespace Domain
 
 *Agency* class has "Name" string property. "Notes" string property with `.Lines()` fluent M# method that generates a text area with 5 lines and an inverse associate property that list all agency bookings.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -93,7 +93,7 @@ According to the requirements, we have these pages to develop:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **AgencyPage** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class AgencyPage : RootPage
@@ -108,7 +108,7 @@ public class AgencyPage : RootPage
 The "AgencyPage" holds agency list module that we are going to create it in the next steps.
 Create a folder with the name of "Agencies" under "Pages" folder and add *EnterPage* sub page class as shown bellow:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Agencies
@@ -128,7 +128,7 @@ namespace Agencies
 The "EnterPage" class holds agency form module and we have to set it's layout to `Layouts.FrontEnd` as requirement told us.
 Create *ViewPage* sub page class which holds agency view module like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Agencies
@@ -149,7 +149,7 @@ namespace Agencies
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Agency**. Then add a *List module* named **AgenciesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -185,7 +185,7 @@ First column of an agency list module should be a hyper link button and when a u
 
 Let's continue with adding *Form module* named **AgencyForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -216,7 +216,7 @@ namespace Modules
 
 Add a form module with the name of **AgencyForm** by using the M# context menu like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -239,7 +239,7 @@ The header text of view module is dynamic, so for this purpose we have used `Hea
 
 Use M# context menu to add *Booking* root page to the "Pages" folder of "#UI" project:
 
-```C#
+```csharp
 using MSharp;
 
 public class BookingPage : RootPage
@@ -254,7 +254,7 @@ public class BookingPage : RootPage
 Because booking doesn't have any independent list page, we have let this page blank and use it as a root page for "EnterPage" subclass.
 Create a folder with the name of "Bookings" under "Pages" folder and add *EnterPage* sub page:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Bookings
@@ -276,7 +276,7 @@ namespace Bookings
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Booking**. Then add a *List module* named **BookingsList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -321,7 +321,7 @@ namespace Modules
 
 Let's continue with adding *Form module* named **BookingForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -360,7 +360,7 @@ The "BookingForm" has a very important method with the name of `AutoSet()`. As y
 
 The last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

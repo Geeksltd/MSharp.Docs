@@ -4,7 +4,7 @@ M# Boolean is a high level representation of a boolean. By adding a Boolean prop
 ## Creation
 Type and select `Bool` to create the property.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain

@@ -42,7 +42,7 @@ After understanding requirements and identifying its related properties and thei
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -59,7 +59,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -82,7 +82,7 @@ namespace Domain
 
 In owner class, a new M# method have been used. It's `ToStringExpression()`, as its name applies, this method is used for changing default M# `.ToString()` behavior and here we tell M# framework that it should render *First Name + Last Name* for showing entity.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -127,7 +127,7 @@ So, there are three root pages that hold our list modules and 6 sub pages that a
 
 Navigate to *Pages* folder of the *#UI* project; Then add a class named *Asset Type* or you can use M# context menu to add *Asset Type* root page:
 
-```C#
+```csharp
 using MSharp;
 
 public class AssetTypePage : RootPage
@@ -166,7 +166,7 @@ Add a folder with the name of *AssetType* under the *Modules* folder of the *#UI
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -203,7 +203,7 @@ In this class a list of asset types are shown according to the requirements also
 
 Add *AssetTypeForm* class by using the M# context menu under the *AssetType* folder of the *Modules* like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -236,7 +236,7 @@ This class has responsibility for generating related forms for adding and editin
 
 Go to *Pages* folder of *#UI* project then create a class named *Owner*. Also you can use M# context menu to add the *Owner* root page:
 
-```C#
+```csharp
 using MSharp;
 
 public class OwnerPage : RootPage
@@ -250,7 +250,7 @@ public class OwnerPage : RootPage
 
 In this class we added *OwnerList* module which is responsible for showing all owners. Let's continue with creating an *Enter* class that is responsible for adding and editing owner, create new folder with the name of *Owners* under the *Pages* folder in *#UI* project and add an *EnterPage* class like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Owners
@@ -273,7 +273,7 @@ In this class we add *OwnerForm* module which tells the M# framework how to gene
 
 Now it's time to create related *Modules*. Two modules are needed for owner entity; they are **ListModule** and **FormModule**. Create a new folder with the name of *Owner* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -301,7 +301,7 @@ namespace Modules
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -341,7 +341,7 @@ These two classes has responsibility for CRUD (Create, Read, Update, Delete) ope
 
 Our last step is to create related pages for *Asset* entity. Go to *Pages* folder of *#UI* and use M# context menu to add a *Asset* root page class:
 
-```C#
+```csharp
 using MSharp;
 
 public class AssetPage : RootPage
@@ -355,7 +355,7 @@ public class AssetPage : RootPage
 
 In this class *AssetsList* module is added which is responsible for showing all assets, now let's move on with creating an *Enter* class that is responsible for adding and editing asset, create new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add an *EnterPage* class like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Assets
@@ -374,7 +374,7 @@ namespace Assets
 
 In this class we added *AssetForm* module that tells M# framework how to generate related form code for this class.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Assets
@@ -397,7 +397,7 @@ This class is responsible for the view only purpose and we have added *AssetView
 
 Now, let's continue our work by creating related *Modules*, three modules are needed for asset entity, they are **ListModule**, **FormModule** and **ViewModule**. Create a new folder with the name of *Asset* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -430,7 +430,7 @@ namespace Modules
 
 In this class, the `.Label()` method is used, this method helps you to write your custom label for the property and we have added custom text according to requirement.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -478,7 +478,7 @@ namespace Modules
 
 In this class some new M# methods have been used. `Search()` method lets us to add new search and filter capacity. By using `Search(x => x.Type).Label("Type:");` we tell M# that we need a filter over *Type*  property with custom text "Type:". By using `Search(GeneralSearch.AllFields).Label("Find:");` we add search for all columns to our list module and we have added a search button with "Search" label that let users search through entities.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -507,7 +507,7 @@ This class just shows asset detail and let the users go back to the previous pag
 
 Our last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

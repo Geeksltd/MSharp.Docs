@@ -30,7 +30,7 @@ After understanding requirements and identifying its related properties, it's ti
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add this class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -62,7 +62,7 @@ Now it's time to feed our entity to M#. In the solution explorer, right click th
 
 Navigate to *Logic* folder of the *#UI* project; then add a class named *Register* and add logic as shown bellow:
 
-```C#
+```csharp
 using Olive;
 using Olive.Entities;
 using System;
@@ -103,7 +103,7 @@ According to the requirements, there is just one root page named "RegisterPage".
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **RegisterPage** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class RegisterPage : RootPage
@@ -121,7 +121,7 @@ As you can see, we have added `Add<Modules.RegisterForm>();` (which will be impl
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Register**. Then add a *List module* named **RegisterForm** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -166,7 +166,7 @@ This class has responsibility for generating related forms for adding entity. Ac
 
 After you ended up with the pages, you need to add them to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

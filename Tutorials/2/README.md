@@ -34,7 +34,7 @@ Navigate to the **#Model** project and create a **Domain** folder, *right click 
 
 By default M# will create a concrete class that inherits from *EntityType* class, let change our class and add required properties:
 
-```C#
+```csharp
 using MSharp;
 namespace Domain
 {
@@ -53,7 +53,7 @@ The only property of the *Country* class is of type *string* and is called *Name
 
 In a similar way add another entity type called *Customer* but this time with a set of properties shown in the snippet below:
 
-```C#
+```csharp
 using MSharp;
 namespace Domain
 {
@@ -113,7 +113,7 @@ Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Count
 
 ![Add Root Page](AddRootPage.PNG "Add Root Page")
 
-```C#
+```csharp
 using MSharp;
 public class CountryPage : RootPage
 {
@@ -132,7 +132,7 @@ After that we tell M# framework that it should run *CountriesPage* class immedia
 
 Under **Pages** folder create a folder named **Country** and then add the following class:
 
-```C#
+```csharp
 using MSharp;
 namespace Country
 {
@@ -155,7 +155,7 @@ Navigate to **Modules** folder of **#UI** project and create folder named **Coun
 
 ![Add Modules](AddModules.PNG "Add Modules")
 
-```C#
+```csharp
 using MSharp;
 namespace Modules
 {
@@ -193,7 +193,7 @@ After creating a Country list its time to create a country form page that is res
 
 Add a class named *EnterPage* like below:
 
-```C#
+```csharp
 using MSharp;
 namespace Country
 {
@@ -211,7 +211,7 @@ namespace Country
 
 This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add\<Modules.CountryForm\>** we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
 
-```C#
+```csharp
 using MSharp;
 namespace Modules
 {
@@ -243,7 +243,7 @@ We continue our work by repeating former steps. First add customer root page:
 
 ![Add Root Page](AddRootPage.PNG "Add Root Page")
 
-```C#
+```csharp
 using MSharp;
 public class CustomerPage : RootPage
 {
@@ -258,7 +258,7 @@ public class CustomerPage : RootPage
 
 Add a folder named **Customer** under the **Pages** folder of **#UI** project and then add **CustomersPage** class:
 
-```C#
+```csharp
 using MSharp;
 namespace Customer
 {
@@ -276,7 +276,7 @@ namespace Customer
 
 Add a folder named **Customer** under the **Modules** folder of **#UI** project and then add **CustomersList** class:
 
-```C#
+```csharp
 using MSharp;
 namespace Modules
 {
@@ -319,7 +319,7 @@ Now we need to create a form page that let users to add or edit entities.
 
 We continue our work by creating a **EnterPage** class in a **Customer** folder under the **Page** folder in **#UI** project. Add a class named *EnterPage* like below:
 
-```C#
+```csharp
 using MSharp;
 namespace Customer
 {
@@ -337,7 +337,7 @@ namespace Customer
 
 Our next step is to create **CustomerForm** class, Add this class under the **Customer** folder in **Modules** folder like below:
 
-```C#
+```csharp
 using MSharp;
 namespace Modules
 {
@@ -375,7 +375,7 @@ This class generates a form with the required columns according to requirements.
 
 After you ended up with the pages, you need to add them to the main menu, for doing this open **MainMenu.cs** class:
 
-```C#
+```csharp
 using MSharp;
 namespace Modules
 {

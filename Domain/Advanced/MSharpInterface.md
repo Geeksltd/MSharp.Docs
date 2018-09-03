@@ -9,7 +9,7 @@ M# also contains some other features that can be used in your applications. If y
 These interfaces are for performing operations on the database and providing a data provider to the application.
 
 #### IDataProvider
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDataProvider
@@ -47,7 +47,7 @@ namespace Olive.Entities
 
 #### IDataProviderFactory
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDataProviderFactory
@@ -69,7 +69,7 @@ namespace Olive.Entities
 #### IAuditEvent
 This interface allows you to store all application events (creation, update, task, exception...).
 
-```C#
+```csharp
 namespace Olive.Audit
 {
     [LogEvents(false), CacheObjects(false)]
@@ -93,7 +93,7 @@ namespace Olive.Audit
 #### IEmailMessage
 This interface is for storing email messages
 
-```C#
+```csharp
 namespace Olive.Email
 {
     /// <summary>
@@ -198,7 +198,7 @@ namespace Olive.Email
 
 This interface is for email templates.
 
-```C#
+```csharp
 namespace Olive.Email
 {
     /// <summary>
@@ -237,7 +237,7 @@ These interfaces are for Geolocation.
 
 #### IGeoLocated
 
-```C#
+```csharp
 namespace Olive.GeoLocation
 {
     public interface IGeoLocated
@@ -249,7 +249,7 @@ namespace Olive.GeoLocation
 
 #### IGeoLocation
 
-```C#
+```csharp
 namespace Olive.GeoLocation
 {
     public interface IGeoLocation
@@ -268,7 +268,7 @@ For multi-lingual applications, you can use these interfaces to use M# globaliza
 
 This interface is for storing a language.
 
-```C#
+```csharp
 namespace Olive.Globalization
 {
     public interface ILanguage : IEntity
@@ -284,7 +284,7 @@ namespace Olive.Globalization
 
 This interface if for storing a translation.
 
-```C#
+```csharp
 namespace Olive.Globalization
 {
     public interface IPhraseTranslation : IEntity
@@ -302,7 +302,7 @@ namespace Olive.Globalization
 
 This interface is useful for scenarios which contains data on many levels.
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IHierarchy : IEntity
@@ -322,7 +322,7 @@ namespace Olive.Entities
 
 This interface is for PDF conversion.
 
-```C#
+```csharp
 namespace Olive.PDF
 {
     public interface IHtml2PdfConverter
@@ -338,7 +338,7 @@ namespace Olive.PDF
 
 This interface is for storing SMS messages.
 
-```C#
+```csharp
 namespace Olive.SMS
 {
     /// <summary>
@@ -386,7 +386,7 @@ namespace Olive.SMS
 
 This interface is for sending SMS.
 
-```C#
+```csharp
 namespace Olive.SMS
 {
     /// <summary>
@@ -408,7 +408,7 @@ namespace Olive.SMS
 
 #### ISortable
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     /// <summary>

@@ -36,7 +36,7 @@ Therefore, do not expect the code we're writing here to work elsewhere in the so
 In order to equip your entity type with all the functionality that M# offers, make it public and inherit from a class called "EntityType".
 This class is part of the M# framework, so at the top of your document you need to reference the *MSharp* namespace as shown here:
 
-```C#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -60,7 +60,7 @@ You can find the corresponding line in the above snippet.
 In order to make this property mandatory we only need to call the *.Mandatory()* method using M# fluent API.
 In a similar way add another entity type called *Contact* but this time with a set of properties shown in the snippet below:
 
-```C#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -98,7 +98,7 @@ There are other related classes under the *[GEN-DAL]* branch as well. They are r
 
 According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
 
-```C#
+```csharp
 public class ReferenceData
     {
         static Task Create(IEntity item) => Database.Instance.Save(item, SaveBehaviour.BypassAll);
@@ -163,7 +163,7 @@ Now it's time to create our first page. Here we have two pages, one that is resp
 
 ![UI Overview](UI-Overview.PNG "UI Overview")
 
-```C#
+```csharp
 public class ContactPage : RootPage
 {
     public ContactPage()
@@ -182,7 +182,7 @@ This  is our root class that inherits from **RootPage** class, **RootPage** is a
 
 In **#UI** project under **Pages** folder create a folder named **Contact** and add this class:
 
-```C#
+```csharp
 public class ContactsPage : SubPage<ContactPage>
 {
     public ContactsPage()
@@ -199,7 +199,7 @@ This class inherits from *ContactPage* and include Layout and Modules. With *Lay
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Contact**. Then add a *List module* named **ContactList** using M# context menu:
 
-```C#
+```csharp
 public class ContactsList : ListModule<Domain.Contact>
 {
     public ContactsList()
@@ -242,7 +242,7 @@ In this class we have included our needed column according to the picture and ad
 
 After creating a contact list, now it's time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project. Navigate to the **Contact** folder under **Pages** folder and add this class like below:
 
-```C#
+```csharp
 public class EnterPage : SubPage<ContactsPage>
 {
     public EnterPage()
@@ -258,7 +258,7 @@ As you can see, this class inherits from Contacts page and by using **Add\<Conta
 
 Navigate to **Modules** folder of **#UI** project and in **Contact** folder add a *Form module* named **ContactForm** using M# context menu:
 
-```C#
+```csharp
 public class ContactForm : FormModule<Domain.Contact>
 {
     public ContactForm()
@@ -295,7 +295,7 @@ Another important module is form module that deals with add or edit entity. This
 
 Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menues of #UI project)* and add *ContactPage* class here as a menu item.
 
-```C#
+```csharp
 public class MainMenu : MenuModule
 {
     public MainMenu()

@@ -47,7 +47,7 @@ After analyzing the requirements and identifying related properties, it's time t
 
 Navigate to **Domain** folder and add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -64,7 +64,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -87,7 +87,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -106,7 +106,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -139,7 +139,7 @@ As we can see in the requrements, we should develop these pages:
 
 Let's start with the tough one! We'll it's not that tough actually when there's M#. Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Reseller** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class CountryPage : RootPage
@@ -156,7 +156,7 @@ public class CountryPage : RootPage
 
 Now create a folder named **Country** under the **Pages** folder. Then add an **Enter** class here:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Country
@@ -177,7 +177,7 @@ namespace Country
 
 Then add another *subpage* class named **ViewPage**:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Country
@@ -200,7 +200,7 @@ namespace Country
 
 Create a folder with the name of **City** into **Countries** folder then add **Enter** *subpage* class like this:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Country.City
@@ -221,7 +221,7 @@ namespace Country.City
 
 Now create a folder with the name of **Customer** into **Countries** folder then add **Enter** *subpage* class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Country.Customer
@@ -243,7 +243,7 @@ namespace Country.Customer
 
 Navigate to **Modules** folder of **M#** project and create folder named **Country**. Then add a *list module* named **CitiesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -272,7 +272,7 @@ namespace Modules
 
 Then add the **CountryForm** module:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -303,7 +303,7 @@ namespace Modules
 
 Now add a folder named **City** into **Modules**. Then add a *list module* named **CitiesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -335,7 +335,7 @@ namespace Modules
 
 Here, create **CityForm** which is a *form module* via M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -366,7 +366,7 @@ namespace Modules
 
 We're done with city! The next step is the *Customer*. So create a *form module* named **CustomerForm** using M# context menu and place this code inside:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -399,7 +399,7 @@ namespace Modules
 
 Now it's time to add the **CustomersList** module:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -435,7 +435,7 @@ We are done with *country* and it's subpages. Let's finish up with *reseller*.
 
 This project containes a dedicated page for *resellers*. So add a *root page* class named **ResellerPage** under **Pages** folder of **#UI** using M# context menu (or any oher way that yu are comfortable with):
 
-```C#
+```csharp
 using MSharp;
 
 public class ResellerPage : RootPage
@@ -451,7 +451,7 @@ public class ResellerPage : RootPage
 
 Now add a folder named **Reseller** under **Pages** folder, then add an **Enter** *sub page* class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Reseller
@@ -475,7 +475,7 @@ namespace Reseller
 Move on to **Modules** folder of **#UI** and add a folder with the name of **Reseller** which will contain related modules of *reseller* view.
 Now use M# context menu and add a *form module* named **ResellerForm**:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -507,7 +507,7 @@ namespace Modules
 
 And also a *listmodule* named **ResellersList**:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -539,7 +539,7 @@ And yes! now we are done with views.
 
 After you ended up with views, you need to add those to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

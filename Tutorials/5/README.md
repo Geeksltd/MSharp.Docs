@@ -41,7 +41,7 @@ After understanding requirements and identifying its related properties and thei
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -62,7 +62,7 @@ namespace Domain
 
 Vehicle class is our root class for Bike and Car class, it has shared properties and act as a parent.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -79,7 +79,7 @@ namespace Domain
 
 In Bike class, we have used new M# generic class. It's **SubType<>**, this class tell the M# framework that this class inherit from *Vehicle* class.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -116,7 +116,7 @@ Go to *Pages* folder of M# project and add a class named *Vehicle*. Also you can
 
 ![Add Root Menu](AddRootMenu.PNG "Add Root Menu")
 
-```C#
+```csharp
 using MSharp;
 
 public class VehiclePage : RootPage
@@ -137,7 +137,7 @@ Add a folder with the name of *Vehicle* under the *Modules* folder of the *#UI* 
 
 ![M# Context Menu](UsingContextMenu.PNG "M# Context Menu")
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -164,7 +164,7 @@ This class is read only and is used just for showing purposes.
 
 Use M# context menu to add a *Bike* root page:
 
-```C#
+```csharp
 using MSharp;
 
 public class BikePage : RootPage
@@ -178,7 +178,7 @@ public class BikePage : RootPage
 
 In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an `EnterPage` class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a `EnterPage` class like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Bikes
@@ -199,7 +199,7 @@ In this class we added *BikeForm* module to this page.
 
 Now it's time to create other modules, we need two modules for bike entity, they are **BikesList** and **BikeForm**. Create a new folder with the name of *Bike* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -232,7 +232,7 @@ namespace Modules
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -282,7 +282,7 @@ In this class we have used `Search(GeneralSearch.ClientSideFilter)` method that 
 
 Last step is to create related pages for *Car* entity. Use M# context menu to add a *Car* root page:
 
-```C#
+```csharp
 using MSharp;
 
 public class CarPage : RootPage
@@ -296,7 +296,7 @@ public class CarPage : RootPage
 
 In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an `EnterPage` class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a `EnterPage` class like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Cars
@@ -317,7 +317,7 @@ In this class we have added *CarForm* module that tells M# framework how to gene
 
 Now we need to create related *Modules*. We need two modules for car entity, they are **CarForm** and **CarsList**. Create a new folder with the name of *Car* under the *Modules* folder of *#UI* project and then add these classes using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -352,7 +352,7 @@ namespace Modules
 
 In this class, we have used `.Control(ControlType.HorizontalRadioButtons)` method for *Number of doors* property, this method generate horizontal radio button and let user select just one value from 3 to 5.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -404,7 +404,7 @@ In this class we have used `Button("Export")` M# method, this method generates a
 
 Our last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

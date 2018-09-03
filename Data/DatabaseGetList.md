@@ -4,7 +4,7 @@ This method within M# Data access repository returns a list of records `IEnumera
 
 ### OverLoads
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase
@@ -19,7 +19,7 @@ namespace Olive.Entities
 ```
 
 ### Examples
-```C#
+```csharp
 var users = Database.GetList<User>();
 
 var users = Database.GetList<User>(x=>x.Email.Contains("@geeks.ltd.uk"));

@@ -34,7 +34,7 @@ This page is just a list of all suppliers and their related services.
 
 Let's start with creating **Service Type**, **Supplier** and **Supplier Service** classes in a *#Model* project under *Domain* folder:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -51,7 +51,7 @@ namespace Domain
 
 **ServiceType** class just have **Name** property.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -80,7 +80,7 @@ namespace Domain
 
 **Supplier** class has a computed column named **Address**. We have used array to join all address properties into one column because these properties can be null and this way is best practice to join null-able string properties. This class has an inverse association with **SupplierService** property and other properties are just simple sting property.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -118,7 +118,7 @@ According to the requirements, there are these pages to develop:
 
 Use the M# context menu to add a root page to the **Pages** folder of **#UI** project:
 
-```C#
+```csharp
 using MSharp;
 
 public class ServiceTypePage : RootPage
@@ -132,7 +132,7 @@ public class ServiceTypePage : RootPage
 
 Create a folder named **ServiceType** under **Pages** folder and add this sub page class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace ServiceType
@@ -153,7 +153,7 @@ namespace ServiceType
 
 Navigate to **Modules** folder of **#UI** project and create folder named **ServiceType**. Then add a *List module* named **ServiceTypesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -185,7 +185,7 @@ namespace Modules
 
 Let's continue with adding *Form module* named **ServiceTypeForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -216,7 +216,7 @@ namespace Modules
 
 Use M# context menu to add **Supplier** root page to the **Pages** folder of **#UI** project:
 
-```C#
+```csharp
 using MSharp;
 
 public class SupplierPage : RootPage
@@ -230,7 +230,7 @@ public class SupplierPage : RootPage
 
 Create a folder named **Supplier** under **Pages** folder and add an *Enter* sub page:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Supplier
@@ -251,7 +251,7 @@ namespace Supplier
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Supplier**. Then add a *List module* named **SuppliersList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -287,7 +287,7 @@ For **SuppliersList** class we have used **Address** property and **Services** a
 
 Let's continue with adding *Form module* named **SupplierForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -339,7 +339,7 @@ The **SupplierForm** has got a new generic method named `MasterDetail\<SupplierS
 
 Use M# context menu to add *SupplierService* root page to the "Pages" folder:
 
-```C#
+```csharp
 using MSharp;
 
 public class SupplierServicePage : RootPage
@@ -355,7 +355,7 @@ public class SupplierServicePage : RootPage
 
 Navigate to **Modules** folder of **#UI** project and create folder named **SupplierService**. Then add a *List module* named **TimeLogsList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -382,7 +382,7 @@ namespace Modules
 
 The last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

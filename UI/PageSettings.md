@@ -2,7 +2,7 @@
 
 This lesson talks about page level settings in M#. In this lesson we will see how we can utilise page settings to control content and the look and feel of a page. Page settings are created and managed in M# **Project.cs** that is located in **#Model** project.
 
-```C#
+```csharp
 using MSharp;
 
 namespace App
@@ -43,7 +43,7 @@ By default M# defaine three default key for page setting:
 
 `TopMenu` and `LeftMenu` page settings requires **Menu Module** name in camel case without any spaces.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Admin

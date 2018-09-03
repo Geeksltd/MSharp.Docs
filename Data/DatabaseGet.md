@@ -10,7 +10,7 @@ This method has four overloads, requires an "Entity Type" to retrieve a record f
 
 Below are the codes of the seven overloads for this method:
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase

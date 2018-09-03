@@ -4,7 +4,7 @@ M# allows you to quickly create different types of associations between your ent
 ### Creation
 Create a new entity for which you want to create an association with, for example `Status`.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -21,7 +21,7 @@ namespace Domain
 
 Create another new entity which will have association, for example `Employee` and create association using generic `Associate` method:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -41,7 +41,7 @@ namespace Domain
 
 M# will generate following code:
 
-```C#
+```csharp
 /// <summary>Gets or sets the value of Status on this Employee instance.</summary>
 public Status Status
 {

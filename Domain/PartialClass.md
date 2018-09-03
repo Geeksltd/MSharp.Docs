@@ -18,7 +18,7 @@ This `Partial Class` is used to develop core business related functions includin
 #### Implementation
 Use Visual Studio to implement your business logic. As an example we will implement some business logic for the Employee class.
 
-```C#
+```csharp
 protected override async Task OnSaved(SaveEventArgs e)
 {
     await base.OnSaved(e);

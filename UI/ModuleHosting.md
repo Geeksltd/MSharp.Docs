@@ -4,7 +4,7 @@ In this lesson we will learn to host /add modules on the page and how we can def
 
 M# allows developers to host as many modules as required on page. You can add new or existing modules. M# provides a separate folder under **#UI** project name **Modules** where all the modules are hosted and managed. By default, M# renders the modules in the sequence they are hosted on the page, which can be changed by developer.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Supplier

@@ -6,7 +6,7 @@ In this lesson, we will learn about possible ways to persist an entity instance 
 
 ## Overloads
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase
@@ -34,7 +34,7 @@ namespace Olive.Entities
 
 #### Saving a New Employee Instance
 
-```C#
+```csharp
 
 await Database.Save(new Employee
         {
@@ -50,7 +50,7 @@ The code above demonstrates that we are saving a new instance of *Employee* enti
 
 M# runs bulk saves in **Transaction**. Meaning, failure to save one records results rolling back all the saved instances of the current collection.
 
-```C#
+```csharp
 await Database.Save(new Employee[]{
             new Employee{FirstName = "John",LastName="Wills",Email="john.wills@uat.co",Password = "******"},
             new Employee{FirstName = "James",LastName="Wills",Email="james.wills@uat.co",Password = "******"}
@@ -59,7 +59,7 @@ await Database.Save(new Employee[]{
 
 #### Saving a Single Employee by Specifying Save Behaviour
 
-```C#
+```csharp
 await Database.Save(
             new Employee{FirstName = "John",LastName="Wills",Email="john.wills@uat.co",Password = "******"},
             SaveBehaviour.BypassSaved);
@@ -68,7 +68,7 @@ The code above shows that we are saving a new record of *Employee*, but also sup
 
 #### Saving a List of Employees by Specifying Save Behaviour
 
-```C#
+```csharp
 await Database.Save(new Employee[]{
             new Employee{FirstName = "John",LastName="Wills",Email="john.wills@uat.co",Password = "******"},
             new Employee{FirstName = "James",LastName="Wills",Email="james.wills@uat.co",Password = "******"}
@@ -86,7 +86,7 @@ Whenever an entity instance is saved or updated, it goes through a series of eve
 
 Below are the events overridden in Logic class of an entity:
 
-```C#
+```csharp
 public override Task Validate()
 {
     // validate core business logic
@@ -95,7 +95,7 @@ public override Task Validate()
 }
 ``
 
-```C#
+```csharp
 protected override Task OnSaving(CancelEventArgs e)
 {
     if (IsNew)
@@ -114,7 +114,7 @@ protected override Task OnSaving(CancelEventArgs e)
 ## Save Behaviour Enum
 M# provides `Database.Save()` method overloads with an extra parameter of an enum type `SaveBehaviour`. This enum type is used to bypass the events raised (Shown above ) while saving an entity instance as required in the business logic, below is the code of the enum options:
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     [Flags]
@@ -132,7 +132,7 @@ namespace Olive.Entities
 
 For example, if you want to supress the `BypassValidation` event of an entity when you save an entity instance then you should use the `SaveBehaviour.BypassValidation` enum option, as shown in below code:
 
-```C#
+```csharp
 await Database.Save<Employee>(new Employee
         {
             FirstName = "John",

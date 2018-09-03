@@ -30,7 +30,7 @@ As we can see in the requirements, the two entities can be identified, **Country
 
 Create a **Domain** folder and add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -49,7 +49,7 @@ namespace Domain
 
 Country class has just two mandatory string property as shown above.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -89,7 +89,7 @@ As we can see in the requirements, we should develop these pages:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Company** rootpage:
 
-```C#
+```csharp
 using MSharp;
 public class CompanyPage : RootPage
 {
@@ -103,7 +103,7 @@ public class CompanyPage : RootPage
 
 Now create a folder named **Country** under the **Pages** folder. Then add an **EnterPage** class here:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Company
@@ -123,7 +123,7 @@ namespace Company
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Company**. Then add a *Form module* named **CompanyForm** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -161,7 +161,7 @@ According to the requirements, we should display the country name in special for
 
 Add a list module named **CompaniesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -203,7 +203,7 @@ According to the requirements, in this page for search dropdown we have used `.D
 
 Add a *root page* named **Country** under the **Pages** folder of **#UI** using M# context menu (or any other way that you are comfortable with):
 
-```C#
+```csharp
 using MSharp;
 public class CountryPage : RootPage
 {
@@ -217,7 +217,7 @@ public class CountryPage : RootPage
 
 Now add a folder named **Country** under **Pages** folder, then add an **Enter** *sub page* class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Country
@@ -238,7 +238,7 @@ namespace Country
 Move on to the **Modules** folder of **#UI** and add a folder with the name of **Country** which will contain related modules of *country*.
 Now use the M# context menu and add a *form module* named **CountryForm**:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -302,7 +302,7 @@ Now we are done, county pages and modules are completed.
 
 After you ended up with form pages, you need to add it to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

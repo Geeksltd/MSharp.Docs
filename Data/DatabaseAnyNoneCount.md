@@ -8,7 +8,7 @@ In this lesson, we will learn about very useful extension method on `IEnumerable
 
 This method has two overloads and is used with conditional statements where we need to check if the resulting sequence is not empty.
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase
@@ -26,9 +26,9 @@ namespace Olive.Entities
 
 #### Examples
 
-The first overload of this method doesn’t require any criteria / condition and is used just to determine if a sequence holds any elements, as shown below:
+The first overload of this method doesn't require any criteria / condition and is used just to determine if a sequence holds any elements, as shown below:
 
-```C#
+```csharp
 if (await Database.Any<Employee>())
 {
     // Perform business logic
@@ -37,7 +37,7 @@ if (await Database.Any<Employee>())
 
 The second overload requires a condition statement and determines if any element of a sequence satisfies the condition. The supplied condition can contain any number of logical operators.
 
-```C#
+```csharp
 if (await Database.Any<Employee>(e => e.IsActivated))
 {
     // Perform business logic
@@ -50,7 +50,7 @@ This method has also two overloads and is also used with conditional statements 
 
 #### Overloads
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase
@@ -67,9 +67,9 @@ namespace Olive.Entities
 ```
 #### Examples
 
-The first overload of this method doesn’t require any criteria / conditions and is used just to determine if sequence holds no elements, as shown below:
+The first overload of this method doesnï¿½t require any criteria / conditions and is used just to determine if sequence holds no elements, as shown below:
 
-```C#
+```csharp
 if (await Database.None<Employee>())
 {
     // Perform business logic
@@ -78,7 +78,7 @@ if (await Database.None<Employee>())
 
 The second overload requires a condition statement and determines if a sequence contains no elements which satisfy the condition. The supplied condition can contain any number of logical operators.
 
-```C#
+```csharp
 if (await Database.None<Employee>(e => e.IsActivated))
 {
     // Perform business logic
@@ -91,13 +91,13 @@ This method is used to determine the number of elements in any sequence and must
 
 #### Overload
 
-```C#
+```csharp
 Task<int> Count<T>(Expression<Func<T, bool>> criteria) where T : IEntity;
 ```
 
 #### Example
 
-```C#
+```csharp
 if (await Database.Count<Employee>(e => e.IsActivated) > 5)
 {
     // Perform business logic

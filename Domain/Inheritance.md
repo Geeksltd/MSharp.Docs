@@ -5,13 +5,13 @@ Inheritance is one of the fundamental concepts of Object-Oriented Programming. I
 M# allows developers to select `Base Class` for the entity while creating or modifying the business entity. We will take the example of our **HelloWorld** project and will develop a new entity called `Employee` which will derive from the base entity `User`.
 
 ### Adding Entity
-Add a new entity `Employee` using M#’s context menu, *right click > Add > M#*:
+Add a new entity `Employee` using M#ï¿½s context menu, *right click > Add > M#*:
 
 ![Adding Entity](Images/AddEntity.PNG "Adding Entity")
 
 After creating the entity, you will notice that M# creates a new entity `Employee` which inherit from **SubType** generic class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -28,7 +28,7 @@ namespace Domain
 
 After building **#Model** project M# generates the derived entity class by inheriting the `User` entity:
 
-```C#
+```csharp
 /// <summary>Represents an instance of Employee entity type.</summary>
 [EscapeGCop("Auto generated code.")]
 public partial class Employee : User
@@ -76,7 +76,7 @@ public partial class Employee : User
 For **Clone()** and **ValidateProperties()** method, please note that M# first call its parent method.
 
 ### SQL Database Structure
-For any data driven application, it is very important to have a normalized database. This not only helps to increase performance but also makes it more manageable and saleable. M#’s intelligent database generation engine utilizes best practices to normalize databases and generate relationships among data tables.
+For any data driven application, it is very important to have a normalized database. This not only helps to increase performance but also makes it more manageable and saleable. M#ï¿½s intelligent database generation engine utilizes best practices to normalize databases and generate relationships among data tables.
 
 Continuing aforementioned example, M# creates a new table called `Employees` in the database and creates a **One-to-One** relationship between `Users` and `Employees` tables. The `Employees` table only, contains a **foreign Key** to `Users` table, as shown in below pictures:
 

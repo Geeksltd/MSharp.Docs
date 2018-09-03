@@ -2,7 +2,7 @@
 
 All M# entities implement `IEntity`. This interface contains the property `IsNew` (more details [here](https://github.com/Geeksltd/MSharp.Docs/blob/master/Domain/Advanced/TheRoleOfIsNew.md)), the method `Validate()` which is called for validating your object, and the function `GetId()` which returns the ID of the Entity (more details [here](https://github.com/Geeksltd/MSharp.Docs/blob/master/Domain/Advanced/TheRoleOfId.md)).
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     //

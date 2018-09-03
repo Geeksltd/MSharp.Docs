@@ -6,7 +6,7 @@ In this lesson we will learn how to update and persist data. M# provides an `Upd
 
 There are four overloads for the Update method, one for updating one instance and the other for updating a list of instances.
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     public interface IDatabase
@@ -30,7 +30,7 @@ namespace Olive.Entities
 
 This overload allows you to update the properties of one entry.
 
-```C#
+```csharp
 public void Activate()
 {
     Database.Update(this, x => x.IsAvtivated = true);
@@ -39,7 +39,7 @@ public void Activate()
 
 This overload allows you to update the properties of a list of entries in one line and inside a transaction scope. If one update fails all updates will be rolled back.
 
-```C#
+```csharp
 public void Activate(params IEnumerable<Employee> employees)
 {
     Database.Update(employees, x => x.IsAvtivated = true);
@@ -50,7 +50,7 @@ public void Activate(params IEnumerable<Employee> employees)
 
 You can easily update many properties at the same time like this:
 
-```C#
+```csharp
 public void Activate()
 {
     Database.Update(this, x => 

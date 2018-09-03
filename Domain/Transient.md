@@ -7,7 +7,7 @@ Transient by definition is something short-lived or in other words is limited to
 ### Creating Transient Entity
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add **Payment** class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -26,7 +26,7 @@ namespace Domain
 
 M# creates an entity class in C# but no database table is created at this time, as shown in below:
 
-```C#
+```csharp
 /// <summary>Represents an instance of Payment entity type.</summary>
 [TransientEntity]
 [EscapeGCop("Auto generated code.")]
@@ -67,7 +67,7 @@ Interfaces in any programing language accumulate definitions of core related fun
 ### Creating interfaces
 M# allows developers to create Interface types, which can be later be used in Logic partial class of any entity. You can create interfaces using the same process as mentioned above while creating a Transient entity:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -94,7 +94,7 @@ As a developer you can mark any class `Abstract` as required by your business lo
 
 In our tutorial, a good contender for abstraction could be the `User` entity. User contains few properties, which are inherited by `Employee` and will be validated to login and perform actions on our website. So, User entity has no specific or direct interaction with the system, meaning we can mark it as an `Abstract` class.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -117,7 +117,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain

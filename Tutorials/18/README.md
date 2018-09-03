@@ -35,7 +35,7 @@ As we can see in the requirements, one entity can be identified; **Candidate**. 
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -64,7 +64,7 @@ namespace Domain
 
 Candidate class has four string properties with thier related M# fluent methods and a date property and a association with *status* class. Accoding to the requiremtns *status* property should be initially selected and for this purpose we have used `.Default()` method with *Pending* string value.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -99,7 +99,7 @@ According to the requirements there's three blocks of logic to implement:
 
 In **Domain** project under **Logic** folder create a partial class named **Candidate** like below:
 
-```C#
+```csharp
 namespace Domain
 {
     public partial class Candidate
@@ -128,7 +128,7 @@ We will use these methods in **#UI** project soon, but for now you should know t
 
 Create another partial class named **Status** like below:
 
-```C#
+```csharp
 using System.Collections.Generic;
 using System.Linq;
 
@@ -158,7 +158,7 @@ AS you can see, `GetPossibleChanges()` method returns the available status accor
 
 According to the requirements, **Status** class has four predefined values that should be initially saved to the database when application start for the first time. Under **[DEV-SCRIPTS]** folder of **Domain** project open *ReferenceData.cs* and add this method like below:
 
-```C#
+```csharp
 using System;
 [...]
 
@@ -198,7 +198,7 @@ As we can see in the requirements, we should develop these pages:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Candidate** rootpage:
 
-```C#
+```csharp
 using MSharp;
 public class CandidatePage : RootPage
 {
@@ -211,7 +211,7 @@ public class CandidatePage : RootPage
 
 Now create a folder named **Candidate** under the **Pages** folder. Then add an **Enter** class here:
 
-```C#
+```csharp
 using MSharp;
 using MSharp;
 
@@ -231,7 +231,7 @@ namespace Candidate
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Candidate**. Then add a *List module* named **CandidatesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -311,7 +311,7 @@ According to the requirements users should be able to select custom columns; So 
 
 Let's continue with adding *Form module* named **CandidateForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -352,7 +352,7 @@ Now its time to add these modules to their related root and sub pages. Add them 
 
 After you ended up with the pages, you need to add them to the main menu:
 
-```C#
+```csharp
 using MSharp;
 using Domain;
 
@@ -389,7 +389,7 @@ build **#UI** prject to make sure everything regarding it is fine.
 According to the requirements we should check candidate status every 2 hours and send an email to the administrator to process candidates.
 Navigate to **Website** project and under **app_Start** folder, open **TaskManager.cs** file and add `RemindAdminForPendingCandidate()` method like below:
 
-```C#
+```csharp
 public static void Run()
 {
     RecurringJob.AddOrUpdate("Clean old temp uploads", () => CleanOldTempUploads(), Cron.MinuteInterval(10));

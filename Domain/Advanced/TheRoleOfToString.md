@@ -6,7 +6,7 @@ M# uses `ToString()` in a similar way to the standard `ToString()` function of a
 
 To implement ToString(), open your Entity in visual studio and select `ToStringExpression()` method. At this point, if the value is simple, you can specify the value directly, or for more complex requirements, specify a function.
 
-```C#
+```csharp
 ToStringExpression("$\"Employee: {FullName}\"");
 ```
 
@@ -14,7 +14,7 @@ ToStringExpression("$\"Employee: {FullName}\"");
 
 `ToStringExpression()` will have no effect on the database column definition. A standard `ToString()` function will be written in your C# file.
 
-```C#
+```csharp
 /// <summary>Returns a textual representation of this Employee.</summary>
 public override string ToString() => $"Employee: { FullName}";
 ```

@@ -15,7 +15,7 @@ You can mark an entity as Soft Delete by selecting `SoftDelete();` method on the
 
 > For more information on entities in M#, please read lesson [M# Concepts](https://github.com/Geeksltd/MSharp.Docs/blob/master/Basics/Concepts.md).
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -34,7 +34,7 @@ namespace Domain
 
 M# updates the entity class and marks the class with `[SoftDelete]` attribute, as in our case the Employee entity class is marked as **Soft Delete**, as shown below:
 
-```C#
+```csharp
 /// <summary>Represents an instance of Employee entity type.</summary>
 [SoftDelete]
 [EscapeGCop("Auto generated code.")]
@@ -47,7 +47,7 @@ M# creates a new column on the SQL Table shown below to manage soft delete recor
 
 ## Overloads
 
-```C#
+```csharp
 Task Delete(IEntity instance);
 Task Delete(IEntity instance, DeleteBehaviour behaviour);
 Task Delete<T>(IEnumerable<T> instances) where T : IEntity;
@@ -55,17 +55,17 @@ Task Delete<T>(IEnumerable<T> instances) where T : IEntity;
 
 #### Example
 
-```C#
+```csharp
 /// Delete Single Employee Record
 Database.Delete(this);
 ```
 
-```C#
+```csharp
 // Delete Collection of Employee Records
 Database.Delete(lstEmployees);
 ```
 
-```C#
+```csharp
 // Delete Single Employee with Delete behaviour
 Database.Delete(this,DeleteBehaviour.BypassDeleting);
 ```
@@ -74,7 +74,7 @@ The code above shows that we are deleting a record of *Employee*,  also supplyin
 
 ## Events Raised During Database.Delete
 
-```C#
+```csharp
 protected override Task OnDeleting(CancelEventArgs e)
 {
     // Perform any pre-deleting business logic. Fires just befor an instance is deleted
@@ -82,7 +82,7 @@ protected override Task OnDeleting(CancelEventArgs e)
 }
 ```
 
-```C#
+```csharp
 protected override Task OnDeleted(EventArgs e)
 {
     // Perform any post-deleting business logic. Fires just after an instance is deleted
@@ -94,7 +94,7 @@ protected override Task OnDeleted(EventArgs e)
 
 M# provides `Database.Delete()` method overload with an extra parameter of an enum type `DeleteBehaviour`. This enum type is used to bypass the events raised while deleting an entity instance as required in the business logic, the enum options are shown below:
 
-```C#
+```csharp
 namespace Olive.Entities
 {
     [Flags]

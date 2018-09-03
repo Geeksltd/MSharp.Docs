@@ -4,7 +4,7 @@ In this lesson we will discuss the `OnStart()` method in M#, which is used to im
 
 Below is code of `DispatchPage` page that used `OnStart()` method:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Login
@@ -25,7 +25,7 @@ namespace Login
 
 M# will generate this:
 
-```C#
+```csharp
 namespace Controllers
 {
     [ViewData("Title", "Login > Dispatch")]

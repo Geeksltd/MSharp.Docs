@@ -1,7 +1,7 @@
 # String Property
 M# String is a high level representation of a text. By adding a String property, M# will generate a standard C# string property with its XML documentation:
 
-```C#
+```csharp
 /// <summary>Gets or sets the value of Name on this Employee instance.</summary>
 public string Name { get; set; }
 ```
@@ -19,21 +19,21 @@ Lines will have no effect on the database column definition or the generated C# 
 ### .HashPassword()
 Hash password will have no effect on the database column definition or the generated C# class. All passwords must be hashed before being stored in the database. If the property represents a password, set this attribute to `True` to avoid security problems. If you need to compare a value with this password, for example for the authentication, use:
 
-```C#
+```csharp
 "Your value".CreateHash() == this.Password
 ```
 
 ### .DefaultFormatString()
 Default format string will have no effect on the database column definition or the generated C# class. Allows you to display a custom expression in UI Views. Example: The format `Employee {0}` will displays **Employee Smith** if the value of the property is "Smith".
 
-```C#
+```csharp
 String("Name").DefaultFormatString("Employee {0}");
 ```
 
 ### .TrimValues()
 Trim values will have an effect on the database column definition. If set to `True`, M# will remove extra spaces at the beginning and the end of the value. Example: " Smith " will be converted to "Smith".
 
-```C#
+```csharp
 String("Name").TrimValues();
 ```
 

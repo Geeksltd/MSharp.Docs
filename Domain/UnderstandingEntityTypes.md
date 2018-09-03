@@ -40,7 +40,7 @@ M# fully supports and automates most of the tasks required to create association
 #### GenerateParseMethod(bool value = true)
 This method will create a static function that returns the instance of object that is textually represented by a specified string value, or null if no such object is found.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -61,7 +61,7 @@ namespace Domain
 }
 ```
 
-```C#
+```csharp
 /// <summary>
 /// Returns the Status instance that is textually represented with a specified string value, or null if no such object is found.<para/>
 /// </summary>

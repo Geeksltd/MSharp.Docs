@@ -32,7 +32,7 @@ Let's get started with creating two entities, "Client" and "Invoice". There is o
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -51,7 +51,7 @@ namespace Domain
 
 Client class has an inverse association with invoice entity, **InverseAssociate\<Invoice\>("Invoices", "Client")** generic method takes two parameters as you can see, first one is the property name and the second one is related property name in child class.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -86,7 +86,7 @@ According to the requirement, we have three pages to develop:
 
 Use M# context menu to add a *Client* root page intp *Pages* folder:
 
-```C#
+```csharp
 using MSharp;
 
 public class ClientPage : RootPage
@@ -101,7 +101,7 @@ public class ClientPage : RootPage
 In this class we have added "ClientsList" module that is responsible for listing all clients.
 Now create a *Clients* folder under the *Pages* folder, then add this class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Clients
@@ -122,7 +122,7 @@ Let's move on with adding "ClientsList" and "ClientForm" modules.
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Client**. Then add a *List module* named **ClientsList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -181,7 +181,7 @@ You should notice that "Add invoice" button should be a hyper link button, so we
 
 Let's continue with adding *Form module* named **ClientForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -212,7 +212,7 @@ namespace Modules
 
 Create "AddInvoice" page under the *clients* folder *Pages* like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Clients
@@ -233,7 +233,7 @@ This page holds "InvoiceForm" module.
 
 Create a folder with the name of "Invoice" and add "InvoiceForm" module using the M# context menu like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -273,7 +273,7 @@ This class has got a new method, `AutoSet(x => x.Client)` tell M# that its defau
 
 Our last step is to add a root page to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

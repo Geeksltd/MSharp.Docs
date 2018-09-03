@@ -33,7 +33,7 @@ As we can see in the requirements, we can identify two entities, "Project" and "
 
 Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -64,7 +64,7 @@ As you can see, We have used some new M# fluent API here, **DatabaseModel** meth
 **Name** method used to change the name of the object to our custom name that in this case we have set its name to *Project*. As our requirements told us, we should make sure that the project name is unique, to achieve this goal M# has a method named **UniqueCombinarion**. In this method you should write your custom property name here.
 In a similar way add another entity type called *Task* but this time with a set of properties shown in the snippet below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -123,7 +123,7 @@ So, we have two root pages that hold our list modules and 5 sub pages that are r
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **ProjectPage** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class ProjectPage : RootPage
@@ -141,7 +141,7 @@ This page is our main page that is acting like parent for other pages. Now we ne
 
 ![Create Project Folder](AddProjectFolder.PNG "Create Project Folder")
 
-```C#
+```csharp
 using Modules;
 using MSharp;
 
@@ -159,7 +159,7 @@ namespace Project
 }
 ```
 
-```C#
+```csharp
 using Modules;
 using MSharp;
 
@@ -185,7 +185,7 @@ Navigate to **Modules** folder of **#UI** project and create folder named **Proj
 
 ![Add Modules](AddProjectModuleFolder.PNG "Add Modules")
 
-```C#
+```csharp
 using MSharp;
 using Project;
 
@@ -225,7 +225,7 @@ This class properties are ordered as requirements and we have inherited from **L
 
 Now it is time to add a form module that is responsible for adding and editing operations. We continue our work by creating a *ProjectAdd.cs* and *ProjectEdit.cs* class in a *Project* folder under the *Modules* folder in *#UI* project:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -252,7 +252,7 @@ namespace Modules
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -293,7 +293,7 @@ For task page, like *Project* pages we have these pages :
 
 Create *ProjectTask.cs* class under *Pages* folder in #UI project like below:
 
-```C#
+```csharp
 using MSharp;
 
 public class ProjectTaskPage : RootPage
@@ -309,7 +309,7 @@ Add a folder named *ProjectTaskFolder* under *Pages* folder and add these classe
 
 !["Project Task Folder"](ProjectTaskFolder.PNG "Project Task Folder")
 
-```C#
+```csharp
 using Modules;
 using MSharp;
 
@@ -327,7 +327,7 @@ namespace ProjectTask
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace ProjectTask
@@ -344,7 +344,7 @@ namespace ProjectTask
 }
 ```
 
-```C#
+```csharp
 using Modules;
 using MSharp;
 
@@ -368,7 +368,7 @@ As you can see, we have added three pages, *EnterPage* has responsibility for ad
 
 Add a folder named *ProjectTask* under the *Modules* folder of *#UI* project and then add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -401,7 +401,7 @@ namespace Modules
 
 **ProjectTaskAdd** class inherits from *FormModule* class, according to requirement, we have added *HeaderText("Task Details")* method and change the control type of project, we have also set the number of lines of *Description* property and return back to previous page.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -434,7 +434,7 @@ namespace Modules
 
 **ProjectTaskEdit** is like *ProjectTaskAdd* class, but it differs from property and cancel and save action, in this class we didn't change project property and just add *Done* property and change its control type to *CheckBox*.
 
-```C#
+```csharp
 using MSharp;
 using ProjectTask;
 
@@ -492,7 +492,7 @@ namespace Modules
 >**Note:** You should consider using *.SendReturnUrl()* when you want to go to another page and let user to come back, And don't use it for modal.
 >**Note:** You should consider using *.Go<>()* where you want to go to another page and use *.PopUp<>()* when you want an open modal.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -523,7 +523,7 @@ We have set its property according to requirements and for *done* property, we h
 
 After you ended up with the pages, you need to add them to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

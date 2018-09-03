@@ -21,7 +21,7 @@ In the example above our *HelloWorld* project is a project using a TDD database 
 
 The `Config` class allows you to get data from the **appsettings.json** file. In this file you can put static data that will never change, like the key of a third party library, the URL of a payment gateway, ect. The method `Get()` helps you to access this data and has four overloads:
 
-```C#
+```csharp
 namespace Olive
 {
     //
@@ -115,7 +115,7 @@ namespace Olive
 
 Here is an example of how to use those overloads:
 
-```C#
+```csharp
 public static void Analytics()
 {
     // Get if analytics are enabled, if no value set false as default

@@ -4,7 +4,7 @@ Master pages in web development are used to develop a template, which is inherit
 
 In M# master pages are managed in **project.cs** file in **#Model** project as shown below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace App
@@ -44,7 +44,7 @@ You can add more master pages as required by using `Layout()` method. M# creates
 
 You can choose one of the these master pages when you created a `SubPage` as shown in the code below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace SampleEntity

@@ -33,7 +33,7 @@ As we can see in the requirements, the two entities can be identified; **Categor
 
 Create a **Domain** folder and add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -52,7 +52,7 @@ namespace Domain
 
 Category class has one mandatory string property and an inverse association with **Contact** entity.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -102,7 +102,7 @@ As we can see in the requirements, we should develop these pages:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Category** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class CategoryPage : RootPage
@@ -117,7 +117,7 @@ public class CategoryPage : RootPage
 
 Now create a folder named **Category** under the **Pages** folder. Then add an **Enter** class here:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Category
@@ -137,7 +137,7 @@ namespace Category
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Category**. Then add a *List module* named **CategoriesList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -164,7 +164,7 @@ namespace Modules
 
 Let's continue with adding *Form module* named **CategoryForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -197,7 +197,7 @@ Now its time to add these modules to their related root and sub pages. Add them 
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Contact** rootpage:
 
-```C#
+```csharp
 using MSharp;
 public class ContactPage : RootPage
 {
@@ -211,7 +211,7 @@ public class ContactPage : RootPage
 
 Now add a folder named **Contact** under **Pages** folder, then add an **Enter** *sub page* class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Contact
@@ -231,7 +231,7 @@ namespace Contact
 Move to the **Modules** folder of **#UI** and add a folder with the name of **Contact** which will contain related modules of *Contact*.
 Now use the M# context menu and add a *List module* named **ContactsList**:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -325,7 +325,7 @@ On this page there is a new M# method named `Box()`. Where you need to group you
 
 After you ended up with form pages, you need to add it to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules

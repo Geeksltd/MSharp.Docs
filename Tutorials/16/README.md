@@ -40,7 +40,7 @@ As we can see in the requirements, the two entities can be identified; **Player*
 
 Create a **Domain** folder and add these classes:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -63,7 +63,7 @@ namespace Domain
 
 Player class has one string property that is mandatory and it has an image property with height and width of 400 pixels, it also has an inverse association with the *Fan* class that we are going to create it soon.
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -102,7 +102,7 @@ According to the requirements there's one block of logic to implement:
 
 In **Domain** project under **Logic** folder create a partial class named **Fan** like below:
 
-```C#
+```csharp
 using Olive;
 using System;
 using System.Threading.Tasks;
@@ -139,7 +139,7 @@ As we can see in the requirements, we should develop these pages:
 
 Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **TennisPlayer** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class TennisPlayerPage : RootPage
@@ -154,7 +154,7 @@ public class TennisPlayerPage : RootPage
 
 Now create a folder named **Player** under the **Pages** folder. Then add an **Enter** and **View** class here:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Player
@@ -170,7 +170,7 @@ namespace Player
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Player
@@ -190,7 +190,7 @@ namespace Player
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Player**. Then add a *List module* named **PlayersList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -234,7 +234,7 @@ According to the requirements users should be able to see a list of all players 
 
 Let's continue with adding *Form module* named **PlayerForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -267,7 +267,7 @@ namespace Modules
 
 Create a folder named **Fan** under the **Pages** folder of **#UI** project. Then add an **FanForm** and **FanComplete** class here:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Fan
@@ -283,7 +283,7 @@ namespace Fan
 }
 ```
 
-```C#
+```csharp
 using MSharp;
 
 namespace Fan
@@ -303,7 +303,7 @@ namespace Fan
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Fan**. Then add a *List module* named **FansList** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -343,7 +343,7 @@ In this page users should be able to see a list of all player's fans and they sh
 
 According to the requirements we should get fans' information on two steps, we will do this by adding two form modules. Let's continue with adding our first *Form module* named **FanForm** like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -377,7 +377,7 @@ On this page we will get **Player** from query string, so we have used `AutoSet(
 
 Let's continue with adding second *Form Module* named **FanCompleteForm** form like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -418,7 +418,7 @@ Now it's time to add these modules to their related root and sub pages. Add them
 
 After you ended up with form pages, you need to add it to the main menu:
 
-```C#
+```csharp
 using MSharp;
 using Domain;
 

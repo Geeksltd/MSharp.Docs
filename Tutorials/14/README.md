@@ -24,7 +24,7 @@ After analyzing the requirements and identifying related properties, it's time t
 
 Create a **Domain** folder and add this class:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Domain
@@ -57,7 +57,7 @@ After adding **Olive.Email** package, we should implement **IEmailMessage** and 
 
 Create a class with the name of **EmailMessage** under *logic* folder like below:
 
-```C#
+```csharp
 public class EmailMessage : IEmailMessage
 {
     public string Body { get; set; }
@@ -93,7 +93,7 @@ public class EmailMessage : IEmailMessage
 
 Create another class with name of **EmailTemplate** under *logic* folder like below:
 
-```C#
+```csharp
 public class MailTemplate : IEmailTemplate
 {
     public string Body { get; set; }
@@ -114,7 +114,7 @@ public class MailTemplate : IEmailTemplate
 
 Now it's time to add our business logic, create a partial class with the name of **Registration** under *Logic* folder like below:
 
-```C#
+```csharp
 public partial class Registration
 {
     public void SendConfirmation()
@@ -169,7 +169,7 @@ As we can see in the requrements, we should develop one page:
 
 Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Registration** rootpage:
 
-```C#
+```csharp
 using MSharp;
 
 public class RegistrationPage : RootPage
@@ -186,7 +186,7 @@ public class RegistrationPage : RootPage
 
 Navigate to **Modules** folder of **M#** project and create folder named **Registration**. Then add a *Form module* named **RegistrationForm** using M# context menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
@@ -229,7 +229,7 @@ This is the only form that our web site has, now it's time to add this page to t
 
 After you ended up with form page, you need to add it to the main menu:
 
-```C#
+```csharp
 using MSharp;
 
 namespace Modules
