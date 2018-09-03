@@ -141,7 +141,7 @@ public class AssetTypePage : RootPage
 
 As you can see, we have added `Add<Modules.ProjectsList>();`, we are going to create this class soon but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetTypes* then make a class named *EnterPage* class in *AssetTypes* folder like below:
 
-```C#
+```csharp
 using MSharp;
 
 namespace AssetTypes
