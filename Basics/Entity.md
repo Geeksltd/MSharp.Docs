@@ -1,8 +1,4 @@
-# M# Concepts
-
-This lesson gives a bird’s eye view of the core components of M#. The web application structure in M# heavily depends on components described below, which are discussed in further detail within individual chapters. A developer must understand these components **(Entity, Page, Module)** in order to effectively develop and maintain quality web applications in M#.
-
-## Entity
+# What is an M# Entity?
 
 An entity represents a real world object, distinguishable from other entities, which exists in a business domain. In M# the same exact definition is undertaken. In M# the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
 
@@ -55,33 +51,3 @@ Select this option when an entity represents an external database table.
 - **Existing**:
 
 When you have an existing database, but want M# to generate an ADO.NET data accessor for it.
-
-## Pages
-
-Pages are fundamental for any web application and are required to display content on the website. M# provides this feature within #UI project. Pages created here are placed under "Pages" folder of the Visual Studio’s Web Application Project. M# generates a default "Login" page when a project is created.
-
-!["Pages"](ConceptsImages/Pages.PNG "Pages")
-
-### Creating New Pages
-
-A new page is created by right click on "Pages" folder in #UI project and select "Add root page" . M# allows developers to create Root or Subpages as required in application structure.
-
-!["Add Page"](ConceptsImages/AddPage.PNG "Add Page")
-
-!["Add Page Form"](ConceptsImages/AddPageForm.PNG "Add Page Form")
-
-**Page Name**:
-
-This option allows the developer to specify the name of the page. This option works as the title and actual name of the page. Page names with white spaces are assembled using SEO standards e.g. A page name "Hello world" will have a URL "Hello-world"
-
-## Modules
-
-M# generates ASP.NET view called "Module", which is placed in the "Modules" folder within "Website" project. M# uses HTML div design pattern to layout modules. M# allows developers to create as many modules as necessary on Model Entities, or special type modules like menus or generic.
-
-Modules encapsulate the actual operation of any page in M#. Module types include forms, lists, menus or simple data views. Each module is developed based on an Entity Type.
-
-### Add a New Module
-
-A new module is created by right click on "Modules" folder in #UI project and select related module.
-
-!["Add Module"](ConceptsImages/AddModule.PNG "Add Module")
