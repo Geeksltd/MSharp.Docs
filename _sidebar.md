@@ -13,7 +13,8 @@
 * Step-by-step tutorials
 
     * [Example 1: Your First App](Tutorials/1/README.md)
-    * [Example 2: Modal pages, menu, etc](Tutorials/2/README.md)    
+    * [Example 2: Modal pages, menu, etc](Tutorials/2/README.md)
+    * [Your turn: Practice](Practice/readme.md)
 
 * How-to: Model: Entity types
 
