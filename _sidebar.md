@@ -13,8 +13,7 @@
 * Step-by-step tutorials
 
     * [Example 1: Your First App](Tutorials/1/README.md)
-    * [Example 2: Modal pages, menu, etc](Tutorials/2/README.md)
-    * [Example 3: Uniqueness rules](Tutorials/3/README.md)
+    * [Example 2: Modal pages, menu, etc](Tutorials/2/README.md)    
 
 * How-to: Model: Entity types
 
@@ -227,6 +226,7 @@
 
 * More Step-by-step tutorials
 
+    * [Example 3: Uniqueness rules](Tutorials/3/README.md)
     * [Example 4: Search](Tutorials/4/README.md)
     * [Example 5: Inheritance](Tutorials/5/README.md)
     * [Example 6: Advanced Associations](Tutorials/6/README.md)
