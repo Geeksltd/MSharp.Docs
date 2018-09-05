@@ -4,24 +4,6 @@
 
 > Note 2: M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#.
 
-## Introduction
-
-### [What is M#?](Overview/README.md)
-
-Understand the M# development model in a nutshell.
-
-### [Installing M#](Install/README.md)
-
-Learn how to install M# on your computer and create a project to get started.
-
-### [Structure of an M# solution](Structure/README.md)
-
-Learn about the structure of an M# solution and learn the development workflow.
-
-### [M# Concepts](Basics/Concepts.md)
-
-An introduction to all key M# concepts such as Entity Type, Property, Page, Module, ....
-
 ## Tutorials
 
 ### [M# Tutorial - Episode 1: Your First App](Tutorials/1/README.md)
