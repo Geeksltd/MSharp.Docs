@@ -17,7 +17,7 @@
 
 * How-to: Model: Entity types
 
-    * Creating an Enum (reference) type
+    * [Creating an Enum (reference) type](how-to/types/enum.md)
     * Implementing Inheritence *(TODO: Include Abstract and DB mode)*
     * Creating and using Interface types
     * Customising ToString() implementation
