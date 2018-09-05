@@ -1,8 +1,8 @@
 # MSharp Docs
 
-> Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
+> Note 1: Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
 
-## M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#.
+> Note 2: M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#.
 
 ## Introduction
 
