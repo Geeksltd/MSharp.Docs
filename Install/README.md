@@ -10,7 +10,6 @@ Make sure you have all of the following installed on your computer:
 4. NodeJS for Windows ([install from here](https://nodejs.org/en/download/))
 4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
 5. Docker, plus Windows runtime ([install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
-6. Microsoft SQL Server ([install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
 
 ## How to install
 
@@ -23,13 +22,13 @@ Make sure you have all of the following installed on your computer:
 1. In Visual Studio, create a new project.
 2. On the left hand side, select ".NET Core" as the category.
 3. On the right hand side, select "M# - ASP.NET Core" as the template type, then click on "Create".
-4. On the next page, leave the default settings as it is, and click "Create" again.*
+4. On the next page, leave the default settings as it is, and click "Create" again.***
 5. Set Website as your start-up project.
 6. Run the app to see the login page.
 
 ### Note
 
->*At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the Initialize.bat file from the solution root directory which will install bower, packages, etc.
+>***At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the Initialize.bat file from the solution root directory which will install bower, packages, etc.
 
 ## Troubleshooting
 
