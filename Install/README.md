@@ -24,7 +24,7 @@ Make sure you have all of the following installed on your computer:
 1. In Visual Studio, create a new project.
 2. On the left hand side, select ".NET Core" as the category.
 3. On the right hand side, select "M# - ASP.NET Core" as the template type, then click on "Create".
-4. On the next page, leave the default settings as it is, and click "Create" again.(Read note below)
+4. On the next page, leave the default settings as it is, and click "Create" again.(Read the note below)
 5. Set Website as your start-up project.
 6. Go to `appsettings.json` and verify the connection string.
 7. Run the app to see the login page.
