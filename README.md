@@ -6,6 +6,10 @@
 
 ## Tutorials
 
+### [Intro - What is M#](Overview/README.md)
+
+### [Intro - Installation](Install/README.md)
+
 ### [M# Tutorial - Episode 1: Your First App](Tutorials/1/README.md)
 
 In this lesson you will learn about the key M# concepts:
