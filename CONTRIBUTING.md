@@ -1,38 +1,38 @@
 # Contributing guidelines
 
 When contributing to this repository, please first discuss the change you wish to make via [issue](https://github.com/Geeksltd/MSharp.Docs/issues),
-email, or any other method with the lead contributors of this repository before making a change. Also if there was any change that did not require out notice, feel free and make a PR.
+email, or any other method with the lead contributors of this repository before making a change. Also if there was any change that did not require out notice, feel free and make a Pull Request (PR).
 
 ## Pull Request Process
 
-1. First make sure that you have read this document FULLY and you follow our writing styles.
-2. Better to contact lead contributors about the changes
-3. Include documentation information in [README.md](README.md) and [Docksify sidebar](_sidebar.md) if necessary
-4. Fully write abut the changes you made and the reason if necessary in your commit/PR message.
+1. First make sure that you have read this document COMPLETELY and you follow our writing styles.
+2. Better to contact lead contributors about the changes.
+3. Include documentation information in [README.md](README.md) and [Docksify sidebar](_sidebar.md), if necessary.
+4. Describe the changes you made and the reason, if necessary in your commit/PR message.
 
-Your PR will be reviewed by lead contributors and will be edited if necessary
+Your PR will be reviewed by lead contributors and will be edited if necessary.
 
 ## How you can help us
 
-- Tip us good technical writing practices
-- Fix or report any kind of typo or content mistakes
-- Add new content and tutorial about M# (Make sure you contact us before making any new thing or a major change)
+- Tip us good technical writing practices.
+- Fix or report any kind of typo or content mistakes.
+- Add new content and tutorial about M# (Make sure you contact us before making something new or a major change).
 
 ### Documentation source
 
 Currently we are porting [old legacy M# documents](http://msharp.co.uk/Learn/Understanding-MSharp.html) to a [brand new](https://learn.msharp.co.uk/) and [open](https://github.com/Geeksltd/MSharp.Docs) documentation style.
 
-Our next priorities are [issue](https://github.com/Geeksltd/MSharp.Docs/issues) and improvements and also **new M# features**.
+Our next priorities are [issues](https://github.com/Geeksltd/MSharp.Docs/issues), improvements and also **new M# features**.
 
 > **Note:** Documentation about Olive framework (or in another words M# framework) are [HERE](https://geeksltd.github.io/Olive/).
 
 ## Writing guide
 
-For having a good experience of technical authoring in this project you need to follow the instructions below. But these rules are not the best in the world; We are open to your contribution to update our writing styles as well. As you noticed we write out documentation in Markdown format into [this repository](https://github.com/Geeksltd/MSharp.Docs/). It's also available from [this website](https://learn.msharp.co.uk/).
+To have a good experience of technical authoring in this project, you need to follow the instructions below. But these rules are not the best in the world; We are open to your contribution to update our writing styles as well. As you noticed we write out documentation in Markdown format into [this repository](https://github.com/Geeksltd/MSharp.Docs/). It's also available from [this website](https://learn.msharp.co.uk/).
 
 ### Markdown
 
-You must use Markdown styling in this set of documentation. The most symbols and styles that you will be going to use are:
+You must use Markdown styling in this set of documents. The most symbols and styles that you'll be going to use are:
 
 - Headings (With # )
 - `Slices of code`
@@ -95,31 +95,31 @@ Here a list of Markdown roles are listed below:
 
 #### Docsify
 
-We use a pretty tool named [Docsify](docsify.js.org) to turn our markdown files of our repository into a well rounded website.
+We use a handy tool named [Docsify](docsify.js.org) to turn the markdown files of our repository into a well rounded website.
 
 #### Folders
 
-Every topic needs to be stored in it's exact folder architecture. Look at [Tutorials](https://github.com/Geeksltd/MSharp.Docs/tree/master/Domain) or [Basics](https://github.com/Geeksltd/MSharp.Docs/tree/master/Tutorials) folder to get a birds eye about the architecture.
+Every topic needs to be stored in its exact folder. See [Tutorials](https://github.com/Geeksltd/MSharp.Docs/tree/master/Domain) or [Basics](https://github.com/Geeksltd/MSharp.Docs/tree/master/Tutorials) folders to get a better view of the folder structures.
 
-Also the folder [_media](https://github.com/Geeksltd/MSharp.Docs/tree/master/_media) is responsible to store the files which are related to [Docsify](####Docsify) or project information media.
+Also the [_media](https://github.com/Geeksltd/MSharp.Docs/tree/master/_media) folder, is where the files related to [Docsify](####Docsify) or project information media are stored.
 
 #### Media and files
 
-There are two ways of saving and displaying files:
+There are two ways of saving and viewing files:
 
-1. Including media in the repository (Recommended for the media that is strictly about the topic and needs group contribution as the documentation develops)
+1. Storing media in the repository (Recommended for the media that is strictly about the topic and needs group contribution, as the documentation keeps being developed.)
 2. Uploading to github user content (Recommended in most cases)
 
-The good point about saving files in the repo is that it's maintainable by contributors and the dark side is that it can make the repo too heavy as time goes bye.
-You can upload media into github user content by simply pasting the file in a text block of github (such as edit sections or issues) and then github with get you a link.
+The positive point about saving files in the repo, is that it's maintainable by contributors. And the negative point, is that it can make the repo too heavy in the long term.
+You can upload media into github user content, simply by pasting the file in a text block of github (such as edit sections or issues) and then github will give you a link.
 
 Strictly avoid putting binaries and large files.
 
 #### Recommendation
 
-I recommend you to use VSCode for editing markdowns. it helps you tio write better markdown with the ability of previewing Markdown side by side and also spell check.
+I recommend you to use VSCode for editing markdowns. It helps you to write better markdown, with the ability of previewing Markdown side by side and spell checking.
 
-install these plugins into VSCode:
+Install these plugins into VSCode:
 
 - markdownlint
 - code spell check
@@ -130,7 +130,7 @@ install these plugins into VSCode:
 In each **Tutorial** episode there is x main parts that you must cover:
 
 - A name with this format : *M# Tutorial - Episode 18: Automated tasks*
-- A short talk about the whole tutorial with this format:
+- A short description about the whole tutorial with this format:
 
 In this tutorial you will learn:
 
@@ -155,17 +155,17 @@ In this tutorial you will learn:
 
 ### Technical writing good practices
 
-The goal of all technical documents are to learn a user a particular things as easy as possible. So use easy but creative and lovely language. Keep it sort, stupidly simple but effective. Also improve your written English skills during your technical writing.
+The goal of all technical documents are to learn a user, particular things as easy as possible. So use easy but creative and lovely language. Keep it short, stupidly simple but effective. Also, Try to improve your writing skills during your technical writing.
 
-Nothing is worst than an info dump. In any tutorial that you are authoring, be careful of new comers and try to go further the tutorial step by step and clearly; From zero to hero.
+Nothing is worst than an info dump. In any tutorial that you are authoring, consider the new comers, and try to go further the tutorial step by step and clearly; From zero to hero.
 
-Use the power of markdown and differentiate the words where there was any `Code();` or something really **Important** or something that must *differ* from the rest of sentence.
+Use the power of markdown and differentiate the words, where there is any `Code();` or something really **Important** or something that must *differ* from the rest of sentence.
 
-> **Note**: Also you can add notes to your document incase there was something to notice. Don't forget to see this document's raw MD file to see bunch of Markdown good practices 😁.
+> **Note**: Also you can add notes to your document, incase there's something to notice. Don't forget to see this document's raw MD file to see some of Markdown good practices 😁.
 
-Use less jargon and super technical vocabulary. yes it's true in software industry jargons are everywhere, but the art is to express yourself as simple as possible.
+Use less jargon and super technical vocabulary. Yes, it's true that in software industry, jargons are everywhere, but the art is to express yourself as simple as possible.
 
-Use less abbreviations but if you are using them at the first time write the complete form.
+Use less abbreviations, but if you are using them, write the full form of each abbreviation in the first use.
 
 Bad practice:
 
@@ -177,7 +177,7 @@ Good practice:
 
 But be careful that don't extend abbreviations too much. Some of them are known enough (Like CPU) or some of then do not need to be extended (Like MySQL).
 
-Mostly try to use *active* sentences rather than *passive*.
+Try to use *active* sentences rather than *passive*.
 
 Meh practice:
 
@@ -187,11 +187,11 @@ Better practice:
 
 > The real estate vendor set the offering price, and the real estate buyer started negotiating.
 
-But sometimes you must use passive. Like the places that action itself is really important but we don't care about the actor at all.
+But sometimes you must use passive. For example, where the action itself is really important but we don't care about the actor at all.
 
-Read your documentation load and try to improve it. Make sure that your documents meets our standards and there is nothing wrong in your content.
+Read your documentation and try to improve it. Make sure that your documents meet our standards and there is nothing wrong in your content.
 
-By the way, being positive is better than being negative–even in writing!
+By the way, being positive is better than being negative, even in writing!
 
 Meh practice:
 

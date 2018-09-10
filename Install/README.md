@@ -5,13 +5,13 @@
 Make sure you have all of the following installed on your computer:
 
 1. Windows 10
-2. Visual Studio 2017 (latest build)
-3. GIT for Windows ([install from here](http://gitforwindows.org/))
-4. NodeJS for Windows ([install from here](https://nodejs.org/en/download/))
-4. Yarn Package Manager ([install from here](https://yarnpkg.com/latest.msi))
-5. Docker, plus Windows runtime ([install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
-6. An instance of SQLserver ([install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
-7. SSMS (recommended not required [install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
+2. Visual Studio 2017 (Latest build)
+3. GIT for Windows ([Install from here](http://gitforwindows.org/))
+4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))
+4. Yarn Package Manager ([Install from here](https://yarnpkg.com/latest.msi))
+5. Docker, plus Windows runtime ([Install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
+6. An instance of SQLserver ([Install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
+7. SSMS (Recommended not required [Install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
 
 ## How to install
 
