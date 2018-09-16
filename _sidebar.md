@@ -284,6 +284,6 @@
       * [Page Settings](UI/PageSettings.md)
 
 * Tips and tools
-
+    * [VS Extensions](Basics/VSIX.md)
     * [CLI](Basics/CLI.md)
     * [Tips](Basics/Tips.md)
