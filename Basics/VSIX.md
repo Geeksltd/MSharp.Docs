@@ -61,6 +61,11 @@ We have produced a __Custom Project Sub Type__ with name "M# Class Library Templ
 
 ![](images/NewMSharpClassLibraryTemplate.png)
 
+# Build All
+
+![](images/BuildAllMenuItem.PNG)
+
+
 # Generate Project Items
 Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu under solution explorer node.
 
@@ -169,21 +174,21 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) : 
 >
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
->- _Person is sample entity name_
->- _Administrator is sample entity base type_
->- _ContainerFolder is sample folder_
+> msharp.exe /add:Page /name:MySubAdmin /parent:"C:\...\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs"
+>- _MySubAdmin is sample Sub Page name_
+>- _C:\..\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs is sample Parent Page full path_
 
 ## Create CRUD by Page
 ![](images/PageCreateCRUDMenu.PNG)
 ![](images/PageCreateCRUDWindow.PNG)
 
+
 > [![](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) : 
 >
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
->- _Person is sample entity name_
+> msharp.exe /add:Crud /page:"Admin.cs" /type:"Administrator" [/menu:"AdminSettingsMenu"]
+>- _Admin.cs is sample page name_
 >- _Administrator is sample entity base type_
->- _ContainerFolder is sample folder_
+>- _AdminSettingsMenu is sample menu module name_ (optional)
 
 ## Create API Proxy
 ![](images/GenerateApiProxyMenu.PNG)
@@ -214,6 +219,8 @@ Also according to C# class file contents and it's base class in #Model and #UI p
   >These icons are shown in Top Right corner of each M# class modules in code editor window too, for example in M# Entity file it will be look like this : 
 
   ![](images/EntityTextEditorSample.PNG)
+
+
 
 ## Vs Ext: Geeks.StylishCode
 ...
