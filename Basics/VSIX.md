@@ -82,8 +82,8 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
->- _Administrator is sample entity base type_
->- _ContainerFolder is sample folder_
+>- _Administrator is sample entity base type_ (ptional)
+>- _ContainerFolder is sample folder_ (ptional)
 
 ## Create CRUD
 
@@ -95,18 +95,11 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 > msharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
 >- _Admin.cs is sample page name_
 >- _ContentBlock is sample entity base type_
->- _MainMenu is sample menu module name_
+>- _MainMenu is sample menu module name_ (ptional)
 
 ## Create Partial Class
 
 ![](images/CreatePartialClass.PNG)
-
-> [![](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) : 
->
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
->- _Person is sample entity name_
->- _Administrator is sample entity base type_
->- _ContainerFolder is sample folder_
 
 ## Create Form 
 ![](images/AddFormMenu.PNG)
@@ -117,8 +110,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 > msharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
 >- _MyFormName is sample form module name_
->- _ContainerFolder is sample folder_
-
+>- _ContainerFolder is sample folder_ (ptional)
 ## Create List 
 ![](images/AddListMenu.PNG)
 ![](images/AddListWindow.PNG)
@@ -128,7 +120,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 > msharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
 >- _MyListName is sample list  module name_
->- _ContainerFolder is sample folder_
+>- _ContainerFolder is sample folder_ (ptional)
 
 ## Create View 
 ![](images/AddViewMenu.PNG)
@@ -139,7 +131,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 > msharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
 >- _MyViewName is sample view module name_
->- _ContainerFolder is sample folder_
+>- _ContainerFolder is sample folder_ (ptional)
 
 ## Create Menu 
 ![](images/AddMenuMenu.PNG)
@@ -149,7 +141,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 >
 > msharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
 >- _MyMenuName is sample menu module name_
->- _ContainerFolder is sample folder_
+>- _ContainerFolder is sample folder_ (ptional)
 
 ## Create Generic Module
 ![](images/AddGenericModuleMenu.PNG)
@@ -157,10 +149,9 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) : 
 >
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
->- _Person is sample entity name_
->- _Administrator is sample entity base type_
->- _ContainerFolder is sample folder_
+> /add:Custom /name:MyCustomModule /folder:"C:\..\MSharp.Mvc\M#\UI\Modules"
+>- _MyCustomModule is sample generic module name_
+>- _C:\..\MSharp.Mvc\M#\UI\Modules is sample folder path that module should create there_ (ptional)
 
 ## Create Root Page
 ![](images/AddPageMenu.PNG)
