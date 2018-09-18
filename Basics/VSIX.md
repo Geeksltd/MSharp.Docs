@@ -78,7 +78,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > Note : Only compiled Entity Types are availabe in drop down combos to select as Base Type in all Create pages.
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
@@ -90,7 +90,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/CreateCrud.png)
 ![](images/CreateCrudWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
 >- _Admin.cs is sample page name_
@@ -101,7 +101,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 ![](images/CreatePartialClass.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
@@ -112,7 +112,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddFormMenu.PNG)
 ![](images/AddFormWindow.PNG)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addform-onentitytypename-namemyformname-foldercontainerfolder) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addform-onentitytypename-namemyformname-foldercontainerfolder) : 
 >
 > msharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
@@ -123,7 +123,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddListMenu.png)
 ![](images/AddListWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addlist-onentitytypename-namemyformname-foldercontainerfolder) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addlist-onentitytypename-namemyformname-foldercontainerfolder) : 
 >
 > msharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
@@ -134,7 +134,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddViewMenu.png)
 ![](images/AddViewWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addview-onentitytypename-namemyformname-foldercontainerfolder) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addview-onentitytypename-namemyformname-foldercontainerfolder) : 
 >
 > msharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
 >- _EntityTypeName is sample entity name_
@@ -145,7 +145,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddMenuMenu.png)
 ![](images/AddMenuWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
 >- _MyMenuName is sample menu module name_
@@ -155,7 +155,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddGenericModuleMenu.png)
 ![](images/AddGenericModuleWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
@@ -166,7 +166,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddPageMenu.png)
 ![](images/AddPageWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:page /name:"PageName" [/parent:"FullPathToParentFolderOrFile"]
 >- _PageName is sample page or sub-page module name_
@@ -176,7 +176,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/AddSubPageMenu.png)
 ![](images/AddSubPageWindow.png)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
@@ -187,7 +187,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/PageCreateCRUDMenu.PNG)
 ![](images/PageCreateCRUDWindow.PNG)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
@@ -198,7 +198,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![](images/GenerateApiProxyMenu.PNG)
 ![](images/GenerateApiProxyWindow.PNG)
 
-> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](CLI.md) : 
 >
 > msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >- _Person is sample entity name_
