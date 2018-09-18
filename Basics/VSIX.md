@@ -60,11 +60,14 @@ Then M# project wizard tries to download new fresh copy of __M# MVC Microservice
 We have produced a __Custom Project Sub Type__ with name "M# Class Library Template", developers can use this project type as a standard class library in their .NET framework projects.
 
 ![](images/NewMSharpClassLibraryTemplate.png)
-
-# Build All
+# Solution Explorer Context Menu Commands
+## Build All
 
 ![](images/BuildAllMenuItem.PNG)
 
+## Run Fast
+
+![](images/RunFastMenuItem.PNG)
 
 # Generate Project Items
 Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu under solution explorer node.
