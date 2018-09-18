@@ -254,7 +254,3 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
 ## VS Ext: MSharp.CodePreview 
 ...
-
-
-## M# Project Templates
-...
