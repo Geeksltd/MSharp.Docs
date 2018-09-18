@@ -87,8 +87,8 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 ## Create CRUD
 
-![](images/CreateCRUD.png)
-![](images/CreateCRUDWindow.png)
+![](images/CreateCRUD.PNG)
+![](images/CreateCRUDWindow.PNG)
 
 > [![](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) : 
 >
