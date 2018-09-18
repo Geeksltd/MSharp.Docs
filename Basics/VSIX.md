@@ -62,7 +62,7 @@ We have produced a __Custom Project Sub Type__ with name "M# Class Library Templ
 ![](images/NewMSharpClassLibraryTemplate.png)
 
 # Generate Project Items
-Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu of a solution explorer node.
+Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu under solution explorer node.
 
 ## Create New Entity
 In each M# project the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects, in this case developer can select a node (Project root node/Folder) from solution explorer tree in the __#Model__ project then right click on it and choose **"Add Entity ..."** from path "Add > M# > Add Entity ..." menu item of it's context menu.
