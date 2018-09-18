@@ -1,9 +1,9 @@
-# M# Visual Studio Extensions
+## M# Visual Studio Extensions
 (todo: intro)
 
 (todo: for each single feature in this extension, add a section here with screenshots, etc. Also provide a CLI alternative tip for doing the same thing in CMD)
 
-## VS Ext: MSharp.AddNew
+# VS Ext: MSharp.AddNew
 MSharp.AddNew VSIX provides a set of functionality and project templates wizards to make projects from scratch and create M# project items easily. So you can create 3 different M# project types (**M# ASP.NET Core - MVC**, **M# ASP.NET Core - Microservice** and **M# Class Library**) by using this extension.
 
 ![alt text](images/NewProjectTemplates.png "New Project Tempates")
@@ -59,7 +59,7 @@ Then M# project wizard tries to download new fresh copy of __M# MVC Microservice
 ---
 We have produced a __Custom Project Sub Type__ with name "M# Class Library Template", developers can use this project type as a standard class library in their .NET framework projects.
 
-![alt text](images/NewMSharpClassLibraryTemplate.png)
+![](images/NewMSharpClassLibraryTemplate.png)
 
 # Generate Project Items
 Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu of a solution explorer node.
@@ -67,22 +67,165 @@ Depending on the type of project chosen, developers can create/add custom projec
 ## Create New Entity
 In each M# project the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects, in this case developer can select a node (Project root node/Folder) from solution explorer tree in the __#Model__ project then right click on it and choose **"Add Entity ..."** from path "Add > M# > Add Entity ..." menu item of it's context menu.
 
-![alt text](images/AddNewEntity.PNG)
+![](images/AddNewEntity.PNG)
 
 
 M# shows a tool window to get an _Entity/**Type Name**_ with an optional __Base Type__ to generate a plain __M# Entity__ class or a generic __M# Entity SubType__ class under selected node.
 
-![alt text](images/CreateNewEntityWindow.png)
+![](images/CreateNewEntityWindow.png)
 
 So that if developer only specified a __Type Name__ then M# creates a plain Enity type class and if he select a __Base Type__ from dropdown combo then M# will generates a Entity __SubType<*Base Type*>__ class depending on selected item.
 
-> Note : Only compiled Entity Types are availabe in drop down combo to select as Base Type.
+> Note : Only compiled Entity Types are availabe in drop down combos to select as Base Type in all Create pages.
 
-## VS Ext: MSharp.Colorize
-By using __MSharp.Colorize__ extension all M# Projects (MVC, MVC Microservice and Class Library) has specific UI layout in solution explorer tool window. So that Model and UI projects in "M# ASP.NET - MVC" and "M# ASP.NET - MVC Microservice" and project root icon in "M# Class Library" are shown as a simple custom M# purple icon like this : 
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
 
-![alt text](images/MSharpMVCSolutionExplorer.PNG)
+## Create CRUD
 
+![](images/CreateCrud.png)
+![](images/CreateCrudWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
+>- _Admin.cs is sample page name_
+>- _ContentBlock is sample entity base type_
+>- _MainMenu is sample menu module name_
+
+## Create Partial Class
+
+![](images/CreatePartialClass.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
+
+## Create Form 
+![](images/AddFormMenu.PNG)
+![](images/AddFormWindow.PNG)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addform-onentitytypename-namemyformname-foldercontainerfolder) : 
+>
+> msharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
+>- _EntityTypeName is sample entity name_
+>- _MyFormName is sample form module name_
+>- _ContainerFolder is sample folder_
+
+## Create List 
+![](images/AddListMenu.png)
+![](images/AddListWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addlist-onentitytypename-namemyformname-foldercontainerfolder) : 
+>
+> msharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
+>- _EntityTypeName is sample entity name_
+>- _MyListName is sample list  module name_
+>- _ContainerFolder is sample folder_
+
+## Create View 
+![](images/AddViewMenu.png)
+![](images/AddViewWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md#user-content-msharpexe-addview-onentitytypename-namemyformname-foldercontainerfolder) : 
+>
+> msharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
+>- _EntityTypeName is sample entity name_
+>- _MyViewName is sample view module name_
+>- _ContainerFolder is sample folder_
+
+## Create Menu 
+![](images/AddMenuMenu.png)
+![](images/AddMenuWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
+>- _MyMenuName is sample menu module name_
+>- _ContainerFolder is sample folder_
+
+## Create Generic Module
+![](images/AddGenericModuleMenu.png)
+![](images/AddGenericModuleWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
+
+## Create Root Page
+![](images/AddPageMenu.png)
+![](images/AddPageWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:page /name:"PageName" [/parent:"FullPathToParentFolderOrFile"]
+>- _PageName is sample page or sub-page module name_
+>- _FullPathToParentFolderOrFile is sample folder or Page Module file name_
+
+## Create Sub-Page
+![](images/AddSubPageMenu.png)
+![](images/AddSubPageWindow.png)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
+
+## Create CRUD by Page
+![](images/PageCreateCRUDMenu.PNG)
+![](images/PageCreateCRUDWindow.PNG)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
+
+## Create API Proxy
+![](images/GenerateApiProxyMenu.PNG)
+![](images/GenerateApiProxyWindow.PNG)
+
+> [![](images/CLI.PNG "M# Command Line Interface") CLI Command](cli.md) : 
+>
+> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+>- _Person is sample entity name_
+>- _Administrator is sample entity base type_
+>- _ContainerFolder is sample folder_
+
+# VS Ext: MSharp.Colorize
+![](images/MSharp.png) By using __MSharp.Colorize__ extension all M# Projects (MVC, MVC Microservice and Class Library) has specific UI layout in solution explorer tool window. So that Model and UI projects in "M# ASP.NET - MVC" and "M# ASP.NET - MVC Microservice" and project root icon in "M# Class Library" are shown as a simple custom M# purple icon like this : 
+ 
+![](images/MSharpMVCSolutionExplorer.PNG)
+
+Also according to C# class file contents and it's base class in #Model and #UI projects, their icon will be changed in this types:
+- ![](images/CsType.png) : Plain __C#__ files
+- ![](images/EntityType.png) : M# __Entity__ Type and Entity __SubType<*base*>__ 
+- ![](images/FormModule.png) : M# __Form Module__
+- ![](images/ListModule.png) : M# __List Module__
+- ![](images/MenuModule.png) : M# __Menu Type__ and __Menu Module__
+- ![](images/ViewModule.png) : M# __View Module__
+- ![](images/RootPage.png) : M# __Root Page__ and __SubPage__
+- ![](images/GenericModule.png) : M# __Generic Module__
+  
+  >These icons are shown in Top Right corner of each M# class modules in code editor window too, for example in M# Entity file it will be look like this : 
+
+  ![](images/EntityTextEditorSample.png)
+
+## Vs Ext: Geeks.StylishCode
+...
 
 ## VS Ext: MSharp.CodePreview 
 ...
@@ -106,8 +249,6 @@ By using __MSharp.Colorize__ extension all M# Projects (MVC, MVC Microservice an
 ## VS Ext: MSharp.CodePreview 
 ...
 
-## Vs Ext: Geeks.StylishCode
-...
 
 ## M# Project Templates
 ...
