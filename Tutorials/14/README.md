@@ -88,13 +88,13 @@ namespace Domain
     {
         public EmailTemplate()
         {
-            InstanceAccessors("RegistrationConfirmationEmail");
+			InstanceAccessors("RegistrationConfirmationEmail");
 			Implements("Olive.Email.IEmailTemplate");
 
 			DefaultToString = String("Key").Mandatory().Unique();
-            String("Subject").Mandatory();
-            BigString("Body", 10).Mandatory();
-            String("Mandatory placeholders");
+			String("Subject").Mandatory();
+			BigString("Body", 10).Mandatory();
+			String("Mandatory placeholders");
         }
     }
 }
@@ -126,7 +126,7 @@ public partial class Registration
 		var emailMessage = new EmailMessage
 		{
 			Subject = template.MergeSubject(placeHolderValues),
-			To = this.AssigneeEmail,
+			To = this.Email,
 			Body = template.MergeBody(placeHolderValues)
 		};
 
