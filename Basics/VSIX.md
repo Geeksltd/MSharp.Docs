@@ -228,19 +228,19 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
   ![](images/EntityTextEditorSample.PNG)
 
-### M# Code Highlight
+### M# Code Highlighting
 
 MSharp.Colorize VSIX provides attribute classes to apply coloring rules on M# methods, so developer can better work with M# codes.
 
 #### MethodColorAttribute, MethodStyleAttribute classes
 
-MSharp.Colorize VSIX imlemented set of Classifier to show M# code hilighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
+MSharp.Colorize VSIX provides set of Classifiers to show M# code hilighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
 
-Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a method you simply should create a class with name "MethodColorAttribute" derived from Attribute class and a constructor with at least one string parameter, like this :
+Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a method you simply should create a class with name "MethodColorAttribute" derived from Attribute class and a constructor with at least one string parameter in your project, like this :
 ```C#
     public class MethodColorAttribute : Attribute
     {
-        public MethodColorAttribute(string colorHexString/*like: "#F1BA3C" */) 
+        public MethodColorAttribute(string colorHexString/*like: "#8fdd24" */) 
         {
             
         }
@@ -253,10 +253,26 @@ In this case you can decorate all your methods with this new created attribute l
           // Code
         }
 ```
-So whenever developers use your decorated mothod then they will get method name coloured like this :
+So whenever developers use your decorated mothod then they will see method name coloured like this :
 
   ![](images/Colorize_SampleCode1.PNG)
 
+Depending on the current color theme of Visual Studio and the background color of the code editor window, the specified color can vary. That way your decorated method will displayed in specified color if background color is dark (just like previous screenshot).Otherwise, the decorated method will be displayed in reverse color.
+
+  ![](images/Colorize_SampleCode2.PNG)
+
+MethodColorAttribute class constructor can be implement with second string parameter too. In that case first parameter is specified method color in dark theme and second, specified method color in light theme.
+
+>You can test live Colouring functionalies by implementing a **MethodColorAttribute** class in your project and decorate a method with this attribute, then the decorated mrthod reflects method color changes real time. 
+
+## In Dark Theme
+  ![](images/Colorize_SampleCode4.PNG)
+
+## In Light Theme
+  ![](images/Colorize_SampleCode3.PNG)
+
+
+> Note : The background color of M# code editor windows are customized to dark brown in __Dark Theme__ and light blue in __Light Theme__.
 
 ## Vs Ext: Geeks.StylishCode
 ...
