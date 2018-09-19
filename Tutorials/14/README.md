@@ -45,74 +45,69 @@ namespace Domain
 }
 ```
 
+According to the requirement system should send an email after user registration. Olive exposes `IEmailMessage` interface under `Olive.Email` namespace, which enables you to implement email sending functionality. In order to send an email from your project using Olive, you must have an entity which implements this interface and you must have a database table having columns as per the properties in this interface. In the following code we have created an M# entity named `EmailMessage` that this class will implement `IEmailMessage` as shown below:
+
+```csharp
+using MSharp;
+
+namespace Domain
+{
+    public class EmailMessage : EntityType
+    {
+        public EmailMessage()
+        {
+            SoftDelete();
+
+            BigString("Body").Lines(5).Mandatory();
+            String("From address");
+            String("From name");
+            String("Reply to address");
+            String("Reply to name");
+            String("Subject");
+            String("To");
+            BigString("Attachments");
+            String("Bcc").Max(2000);
+            String("Cc").Max(2000);
+            String("VCalendarView");
+            Int("Retries").Mandatory();
+            DateTime("Sendable date").Default("c#:LocalTime.Now").Mandatory();
+            Bool("Html").Mandatory();
+        }
+    }
+}
+```
+
+If you want to create a custom template for your email content you can create another M# entity in your **#Model** project and inherit from `IEmailTemplate`. This class is optional and you can hard-code email style in email message body, but in real project you would always have many styles for email and you have to implement this class. In the code below we have created an entity named `EmailTemplate`:
+
+```csharp
+using MSharp;
+
+namespace Domain
+{
+    public class EmailTemplate : EntityType
+    {
+        public EmailTemplate()
+        {
+            InstanceAccessors("RegistrationConfirmationEmail");
+
+			DefaultToString = String("Key").Mandatory().Unique();
+            String("Subject").Mandatory();
+            BigString("Body", 10).Mandatory();
+            String("Mandatory placeholders");
+        }
+    }
+}
+```
+
 After adding this class, build **#Model** and after that **Domain** project to make sure everything regarding it is fine.
 
 ### Implementation: Logic
 
-According to the requirement system should send an email after user registration. For this purpose, we should add some extra business logic to our application and according to the M# architecture, we should add any business logic to the **Logic** folder of **Domain** project. But before adding any class, please add **Olive.Email** package to the **Domain** project like below:
+Now it's time to add our business logic, we should add any business logic to the **Logic** folder of **Domain** project. But before adding any class, please add **Olive.Email** package to the **Domain** project like below:
 
 ![Olive Email](OliveEmail.PNG "Olive Email")
 
-After adding **Olive.Email** package, we should implement **IEmailMessage** and **IEmailTemplate**, these interfaces are used by the M# framework to customize and send an email. We continue our work by implementing these interfaces.
-
-Create a class with the name of **EmailMessage** under *logic* folder like below:
-
-```csharp
-public class EmailMessage : IEmailMessage
-{
-    public string Body { get; set; }
-    public DateTime SendableDate { get; set; }
-    public bool Html { get; set; }
-    public string FromAddress { get; set; }
-    public string FromName { get; set; }
-    public string ReplyToAddress { get; set; }
-    public string ReplyToName { get; set; }
-    public string Subject { get; set; }
-    public string To { get; set; }
-    public string Attachments { get; set; }
-    public string Bcc { get; set; }
-    public string Cc { get; set; }
-    public int Retries { get; set; }
-    public string VCalendarView { get; set; }
-    public bool? EnableSsl { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public string SmtpHost { get; set; }
-    public int? SmtpPort { get; set; }
-    public bool IsNew => true;
-    public IEntity Clone() => this;
-    public int CompareTo(object obj) => 0;
-    public object GetId() => this;
-    public void InvalidateCachedReferences()
-    {
-    }
-    public Task Validate() => Task.CompletedTask;
-}
-```
-**EmailMessage** class implements *IEmailMessage* and M# use this class to send email to the users, for now we don't have any logic for sending an email, but if we had, we could add our logic to *Validate* method.
-
-Create another class with name of **EmailTemplate** under *logic* folder like below:
-
-```csharp
-public class MailTemplate : IEmailTemplate
-{
-    public string Body { get; set; }
-    public string Key { get; set; }
-    public string MandatoryPlaceholders { get; set; }
-    public string Subject { get; set; }
-    public bool IsNew => true;
-    public IEntity Clone() => this;
-    public int CompareTo(object obj) => 0;
-    public object GetId() => this;
-    public void InvalidateCachedReferences()
-    {
-    }
-    public Task Validate() => Task.CompletedTask;
-}
-```
-**MailTemplate** hold our email template and M# use this class for formatting emails. This class is optional and you can hard-code email style in email message body, but in real project you would always have many styles for email and you have to implement this class.
-
-Now it's time to add our business logic, create a partial class with the name of **Registration** under *Logic* folder like below:
+Now create a partial class named **Registration** under *Logic* folder like below:
 
 ```csharp
 public partial class Registration
@@ -133,26 +128,66 @@ public partial class Registration
         };
 
         EmailService.Send(email);
+
+		var template = EmailTemplate.RegistrationConfirmationEmail;
+
+		var placeHolderValues = new
+		{
+			FirstName = this.FirstName,
+			LastName = this.LastName
+		};
+
+		var emailMessage = new EmailMessage
+		{
+			Subject = template.MergeSubject(placeHolderValues),
+			To = this.AssigneeEmail,
+			Body = template.MergeBody(placeHolderValues)
+		};
+
+		Database.Save(emailMessage);
     }
 }
 ```
+After creating email template, you should used **.MergeSubject()** and **.MergeBody()** fluent method to replace any custom format with registration form entity properties, and in the end we used **Database.Save()** to save email.
 
-In **Registration** partial class we have added a new method with the name of **SendConfirmation**. First of all, we create a template for email, in  **Body** property, we have used special format for inserting the user first name, by using **[#FIRSTNAME#]** M# will change this special string with the **FirstName** property of **Registration** model. After creating email template, we create a new instance of **EmailMessage** class and used **.MergeSubject()** and **.MergeBody()** fluent method to replace any custom format with registration form entity properties, and in the end we used **EmailService.Send()** to send email. Please note that for sending email M# need to know your *SMTP* configuration, you can specify these configuration while you are creating a new instance of **EmailMessage** class and hard-code them or the best solution is to add SMTP configuration to the **appsettings.json** file under the **Website** project like below:
+Now you should initialize `EmailTemplate`, in the **Domain** project open `ReferenceData.cs` under **[DEV-SCRIPTS]** folder and add `CreateEmailTemplate()` method to the `Create()` method as shown below:
+
+```csharp
+static async Task CreateEmailTemplate()
+{
+    await Create(new EmailTemplate
+    {
+        Key = "PasswordResetLink",
+        Subject = "Welcome to our website",
+        Body = "Dear [#FIRSTNAME#] [#LASTNAME#] <br/> <br/> <br/> Thanks for registering <br/> Regards."
+        MandatoryPlaceholders = "FIRSTNAME, LASTNAME"
+
+    });
+}
+```
+
+Please note that for sending email M# need to know your *SMTP* configuration, you can specify these configuration in the **appsettings.json** file under the **Website** project like below:
 
 ```JSON
 "Email": {
     "From": {
-      "Name": "Geeks",
-      "Address": "hello@geeks.ltd.uk"
+      "Name": "My Company",
+      "Address": "noreply@mycompany.com"
+    },
+    "Permitted": {
+      "Domains": "mycompany.com",
+      "Addresses": "..."
     },
     "ReplyTo": {
-      "Name": "Geeks"
+      "Name": "My Company",
+      "Address": "support@mycompany.com"
     },
-    "EnableSsl": "false",
-    "SmtpPort": "25",
-    "SmtpHost": "127.0.0.1",
-    "Username": "username",
-    "Password": "password"
+    "EnableSsl": "true",
+    "SmtpPort": "587",
+    "SmtpHost": "...",
+    "Username": "...",
+    "Password": "...",
+    "MaxRetries": "4"
  }
 ```
 M# will use this information to send emails and if there is any problem with sending emails, M# will enqueue emails and send them later.
@@ -261,6 +296,3 @@ namespace Modules
 ### Final Step
 
 Build **#UI** project, set the **WebSite** project as your default *StartUp* project and configure your *connection string* in **appsetting.json** file and hit F5. Your project is ready to use.
-
-
-
