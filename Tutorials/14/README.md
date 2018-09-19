@@ -45,7 +45,7 @@ namespace Domain
 }
 ```
 
-According to the requirement system should send an email after user registration. Olive exposes `IEmailMessage` interface under `Olive.Email` namespace, which enables you to implement email sending functionality. In order to send an email from your project using Olive, you must have an entity which implements this interface and you must have a database table having columns as per the properties in this interface. In the following code we have created an M# entity named `EmailMessage` that this class will implement `IEmailMessage` as shown below:
+According to the requirements, the system should send an email after user registration. Olive exposes `IEmailMessage` interface under `Olive.Email` namespace, which enables you to implement email sending functionality. In order to send an email from your project using Olive, you must have an entity which implements this interface and you must have a database table having columns as per the properties in this interface. In the following code we have created an M# entity named `EmailMessage` that this class will implement `IEmailMessage` as shown below:
 
 ```csharp
 using MSharp;
@@ -56,7 +56,7 @@ namespace Domain
     {
         public EmailMessage()
         {
-            SoftDelete();
+            SoftDelete().Implements("Olive.Email.IEmailMessage");
 
             BigString("Body").Lines(5).Mandatory();
             String("From address");
@@ -77,7 +77,7 @@ namespace Domain
 }
 ```
 
-If you want to create a custom template for your email content you can create another M# entity in your **#Model** project and inherit from `IEmailTemplate`. This class is optional and you can hard-code email style in email message body, but in real project you would always have many styles for email and you have to implement this class. In the code below we have created an entity named `EmailTemplate`:
+If you want to create a custom template for your email content you can create another M# entity in your **#Model** project and inherit from `IEmailTemplate`. This class is optional and you can hard-code email style in email message body, but in a real project, you would always have many styles for email and you have to implement this class. In the code below we have created an entity named `EmailTemplate`:
 
 ```csharp
 using MSharp;
@@ -89,6 +89,7 @@ namespace Domain
         public EmailTemplate()
         {
             InstanceAccessors("RegistrationConfirmationEmail");
+			Implements("Olive.Email.IEmailTemplate");
 
 			DefaultToString = String("Key").Mandatory().Unique();
             String("Subject").Mandatory();
@@ -114,21 +115,6 @@ public partial class Registration
 {
     public void SendConfirmation()
     {
-        var mailTempalte = new MailTemplate
-        {
-            Subject = "Welcome to our website",
-            Body = "Dear [#FIRSTNAME#] <br/> <br/> <br/> Thanks for registering <br/> Regards."
-        };
-
-        var email = new EmailMessage
-        {
-            Subject = mailTempalte.MergeSubject(this),
-            To = this.Email,
-            Body = mailTempalte.MergeBody(this)
-        };
-
-        EmailService.Send(email);
-
 		var template = EmailTemplate.RegistrationConfirmationEmail;
 
 		var placeHolderValues = new
@@ -157,7 +143,7 @@ static async Task CreateEmailTemplate()
 {
     await Create(new EmailTemplate
     {
-        Key = "PasswordResetLink",
+        Key = "RegistrationConfirmationEmail",
         Subject = "Welcome to our website",
         Body = "Dear [#FIRSTNAME#] [#LASTNAME#] <br/> <br/> <br/> Thanks for registering <br/> Regards."
         MandatoryPlaceholders = "FIRSTNAME, LASTNAME"
