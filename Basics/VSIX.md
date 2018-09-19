@@ -228,6 +228,34 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
   ![](images/EntityTextEditorSample.PNG)
 
+### M# Code Highlight
+
+MSharp.Colorize VSIX provides attribute classes to apply coloring rules on M# methods, so developer can better work with M# codes.
+
+#### MethodColorAttribute, MethodStyleAttribute classes
+
+MSharp.Colorize VSIX imlemented set of Classifier to show M# code hilighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
+
+Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a method you simply should create a class with name "MethodColorAttribute" derived from Attribute class and a constructor with at least one string parameter, like this :
+```C#
+    public class MethodColorAttribute : Attribute
+    {
+        public MethodColorAttribute(string colorHexString/*like: "#F1BA3C" */) 
+        {
+            
+        }
+    }
+```
+In this case you can decorate all your methods with this new created attribute like :
+```C#
+        [MethodColor("#8fdd24")]
+        public StringProperty String(string displayName, int maxCapacity = 200){
+          // Code
+        }
+```
+So whenever developers use your decorated mothod then they will get method name coloured like this :
+
+  ![](images/Colorize_SampleCode1.PNG)
 
 
 ## Vs Ext: Geeks.StylishCode
