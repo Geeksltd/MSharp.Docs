@@ -1,6 +1,6 @@
 # What is an M# Entity?
 
-An entity represents a real world object, recognizable from other entities, which exists in a business domain. In M#, the same exact definition is undertaken. In M#, first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
+An entity represents a real world object, recognizable from other entities, which exists in a business domain. In M#, the same exact definition is undertaken. First thing the developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects.
 
 M# intelligently converts an Entity Domain Model, with all the associations and relationships, into database tables while maintaining entity relationships. This eliminates the need of developing Database and Business entities separately, significantly reducing the development time.
 
