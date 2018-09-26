@@ -13,7 +13,7 @@ This tutorial is assuming readers' familiarity with the M# framework obtained fr
 
 ## Requirements
 
-Implement a contact book that lets the user list all contacts and do *CRUD* operation on them.
+Implement a contact book that lets the user list all contacts and do *CRUD* (Create, Read, Update, Delete) operation on them.
 Sketches for the list and form modules are given below.
 
 ![Contact List](ContactList.PNG "Contact List")
@@ -30,7 +30,7 @@ Right click the folder and add a class called "Category" to it.
 
 ![Model](Model.png "Model")
 
-Please note that ASP.NET consumes classes in the *Domain* project and expects to find the business logic there not here.
+Please note that ASP.NET consumes classes in the *Domain* project and expects to find the business logic there, not here.
 M# translates the code we write here in the *Model* project and *Model* namespace to appropriate classes in the *Domain* project for ASP.NET to consume.
 Therefore, do not expect the code we're writing here to work elsewhere in the solution.  
 In order to equip your entity type with all the functionality that M# offers, make it public and inherit from a class called "EntityType".
@@ -57,7 +57,7 @@ namespace Model
 In M# we use the default constructor to add properties to entity types.
 The only property of the *Category* class is of type *string* and is called *Name*.
 You can find the corresponding line in the above snippet.
-In order to make this property mandatory we only need to call the *.Mandatory()* method using M# fluent API.
+In order to make this property mandatory, we only need to call the *.Mandatory()* method using M# fluent API.
 In a similar way add another entity type called *Contact* but this time with a set of properties shown in the snippet below:
 
 ```csharp
@@ -87,8 +87,8 @@ As you can see we have created an association between *Contact* and *Category*.
 We have a number of mandatory string properties and for the Email we have applied text pattern validation.
 
 **Note:** Always use singular names for entity types. M# is smart enough to automatically use their plural forms when necessary.
-Now it's time to feed our two entity types to M# code generator. You invoke it by building the *#Model* project.
-In solution explorer, right click the *#Model* project and select *Build*.
+Now it's time to feed our two entity types to M# code generator. You can do it by building the *#Model* project.
+In the solution explorer, right click on the *#Model* project and select *Build*.
 After the build process you can find the resulting files in the *Domain* project under the *[GEN-Entities] branch as shown below:
 
 ![Domain](Domain.png "Domain")
@@ -101,15 +101,11 @@ According to the requirements, each contact should have one category and these c
 ```csharp
 public class ReferenceData
     {
-        static Task Create(IEntity item) => Database.Instance.Save(item, SaveBehaviour.BypassAll);
+        static Task Create(IEntity item) => Context.Current.Database()Save(item, SaveBehaviour.BypassAll);
 
         public static async Task Create()
         {
             await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
-
-            await CreateContentBlocks();
-            await CreateAdmin();
-
             await CreateCategory();
         }
 
@@ -159,7 +155,8 @@ Until now, we have done these steps:
 1. Created our entities in **#Model** project and build the project in visual studio
 2. Then build **Domain** project in visual studio.
 
-Now it's time to create our first page. Here we have two pages, one that is responsible for showing a contacts list and the other for adding and editing contact, these two pages can have some property in common, so first we create a parent page and then inherit other required page according to our example.
+Now it's time to create our first page. Here we have two pages, one that is responsible for showing contacts list and the other for adding and editing contacts. These two pages can have some property in common, so first we create a parent page and then inherit other required page according to our example.
+Right click on **Pages** folder, and create a Root page named **ContactPage** using M# context menu, and add the following code to it.
 
 ![UI Overview](UI-Overview.PNG "UI Overview")
 
@@ -168,10 +165,10 @@ public class ContactPage : RootPage
 {
     public ContactPage()
     {
-        Add<MainMenu>();
+        Add<Modules.MainMenu>();
 
         //will be implemented soon
-        OnStart(x => x.Go<ContactsPage>().RunServerSide());
+        OnStart(x => x.Go<Contact.ContactsPage>().RunServerSide());
     }
 }
 ```
@@ -180,7 +177,7 @@ This  is our root class that inherits from **RootPage** class, **RootPage** is a
 
 #### Creating Contact List Page & Contact List Module
 
-In **#UI** project under **Pages** folder create a folder named **Contact** and add this class:
+In **#UI** project under **Pages** folder, create a folder named **Contact**, create a sub-page named **ContactsPage** using M# context menu in that folder and add the following code to it:
 
 ```csharp
 public class ContactsPage : SubPage<ContactPage>
@@ -190,12 +187,12 @@ public class ContactsPage : SubPage<ContactPage>
         Layout(Layouts.FrontEnd);
 
         //will be implemented soon
-        Add<ContactsList>();
+        Add<Modules.ContactsList>();
     }
 }
 ```
 
-This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add\<ContactList>()* I told M# that this page should show ContactList module.
+This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add<Modules.ContactsList>()* I told M# that this page should show ContactList module.
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Contact**. Then add a *List module* named **ContactList** using M# context menu:
 
@@ -215,7 +212,7 @@ public class ContactsList : ListModule<Domain.Contact>
         Column(x => x.Email);
 
         ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
-            .OnClick(x => x.Go<EnterPage>()
+            .OnClick(x => x.Go<Contact.EnterPage>()
             .Send("item", "item.ID").SendReturnUrl(false));
 
         ButtonColumn("Delete").HeaderText("Actions")
@@ -231,7 +228,7 @@ public class ContactsList : ListModule<Domain.Contact>
 
         Button("Add Contact")
             .Icon(FA.Plus)
-            .OnClick(x => x.Go<EnterPage>().SendReturnUrl(false));
+            .OnClick(x => x.Go<Contact.EnterPage>().SendReturnUrl(false));
     }
 }
 ```
@@ -240,7 +237,7 @@ In this class we have included our needed column according to the picture and ad
 
 #### Creating Contact Form Page & Contact Form Module
 
-After creating a contact list, now it's time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project. Navigate to the **Contact** folder under **Pages** folder and add this class like below:
+After creating a contact list, now it's time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project. Navigate to the **Contact** folder under **Pages** folder, create another sub-page using M# context menu and add the following code to it:
 
 ```csharp
 public class EnterPage : SubPage<ContactsPage>
@@ -249,12 +246,12 @@ public class EnterPage : SubPage<ContactsPage>
     {
         Layout(Layouts.FrontEnd);
 
-        Add<ContactForm>();
+        Add<Modules.ContactForm>();
     }
 }
 ```
 
-As you can see, this class inherits from Contacts page and by using **Add\<ContactForm\>** it instruct M# framework that this page is responsible for showing contact form module.
+As you can see, this class inherits from Contacts page and by using **Add<Modules.ContactForm>** it instruct M# framework that this page is responsible for showing contact form module.
 
 Navigate to **Modules** folder of **#UI** project and in **Contact** folder add a *Form module* named **ContactForm** using M# context menu:
 
@@ -302,13 +299,17 @@ public class MainMenu : MenuModule
     {
         AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
 
-        Item("Login").Icon(FA.UnlockAlt).VisibleIf(AppRole.Anonymous)
+        Item("Login")
+            .Icon(FA.UnlockAlt)
+            .VisibleIf(AppRole.Anonymous)
             .OnClick(x => x.Go<LoginPage>());
 
-        Item("Settings").Icon(FA.Cog).VisibleIf(AppRole.Administrator)
-            .OnClick(x => x.Go<SettingsPage>());
-
-        Item("Contacts").Icon(FA.Cog)
+        Item("Settings")
+            .VisibleIf(AppRole.Admin)
+            .Icon(FA.Cog)
+            .OnClick(x => x.Go<Admin.SettingsPage>());
+        Item("Contacts")
+            .Icon(FA.Cog)
             .OnClick(x => x.Go<ContactPage>());
     }
 }

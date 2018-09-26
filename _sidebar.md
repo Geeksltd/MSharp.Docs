@@ -8,7 +8,7 @@
     * [Structure of an M# solution](Structure/README.md)
     * [What is: M# Entity](Basics/Entity.md)
     * [What is: M# Page](Basics/Page.md)
-    * [What is: M# Module](Basics/Concepts.md)
+    * [What is: M# Module](Basics/Module.md)
     
 * Step-by-step tutorials
 

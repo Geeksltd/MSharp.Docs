@@ -56,25 +56,25 @@ NOTE:
 This is your ASP.NET Core MVC project. It consists of everything you'd expect any MVC application to have:
 
 * Controller and ViewComponent classes (for all pages and modules)
-* View (cshtml) files for layouts, pages and modules
-* SASS fiels (for styling)
+* View files for layouts (cshtml), pages and modules
+* SASS files (for styling)
 * Typescript files (for UI effects)
 * Images, fonts and generated CSS, Javascript and any other front-end asset
 * GULP, Bower and other front-end build tools
 
 **Note:**
-> The following folders are managed by M# (generated) and you should not manually change anything there as they will be overwritten. All other files and folders in this project are managed by yourself.
+> The following folders are managed by M# (generated) and you should not manually change anything, as they will be overwritten. All other files and folders in this project can be managed by yourself.
 >- *Controllers\Pages*
 >- *Controllers\Modules*
 >- *Views\Pages*
 >- *Views\Modules*
 
-You will declare your pages and modules inside #UI project using the high level M# concept. M# CLI (msharp.exe) will then automatically generate the final controllers and views automatically.
+You will declare your pages and modules inside #UI project using the high level M# concept. After that, M# CLI (msharp.exe) will automatically generate the final controllers and views automatically.
 
 >- Your definitions in the #UI project will be the true source. But they don't exist at run-time.
->- The generated code in Website folder is the final product which will execute on a server.
->- Typically every one line of M# code (in #UI) will result in 10 lines of generated code (controller actions, views, etc).
+>- The generated code in Website folder is the final product which will be executed on a server.
+>- Typically, every single line of M# code (in #UI) will result in 10 lines of generated code (controller actions, views, etc).
 >- The M# code is also much simpler, more declarative and less error prone.
 
 **Debugging**
-During development, you will use the generated MVC code for debugging. You can temporarily change the code until you get things right. But you should always apply any changes back on #UI files (M# definitions). Otherwise your changes will be lost as soon as M# generates the target code again.
+During development, you will use the generated MVC code for debugging. You can temporarily change the code until you make things right. But you should always apply any changes on #UI files (M# definitions). Otherwise your changes will be lost as soon as M# generates the target code again.
