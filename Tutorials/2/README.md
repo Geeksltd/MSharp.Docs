@@ -28,7 +28,7 @@ Here are the sketches for list and model.
 As we can see in the requirements, we can identify two entities, "Country" and "Customer" that these entities has One-to-Many relationships since any country have many customers and each customer has one country.
 After understanding requirements and identifying its related entities and their relationships, it's time to create them. Now let's create the corresponding classes in the *#Model* project.
 
-Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add these classes:
+Navigate to the **#Model** project and create a **Domain** folder, *right click > Add > M#* and then add an Entity named **Country**:
 
 ![Add Entity](AddEntity.PNG "Add Entity ")
 
@@ -36,6 +36,7 @@ By default M# will create a concrete class that inherits from *EntityType* class
 
 ```csharp
 using MSharp;
+
 namespace Domain
 {
     public class Country : EntityType
@@ -55,6 +56,7 @@ In a similar way add another entity type called *Customer* but this time with a 
 
 ```csharp
 using MSharp;
+
 namespace Domain
 {
     public class Customer : EntityType
@@ -75,7 +77,7 @@ namespace Domain
 }
 ```
 
-As you can see we have used M# fluent API to add *Customer* class properties, we have added One-to-Many relationship with **Associate\<Country>("Country")** property and continue our work to add *Company name* and other properties.
+As you can see we have used M# fluent API to add *Customer* class properties, we have added One-to-Many relationship with **Associate<Country>("Country");** property and continue our work to add *Company name* and other properties.
 Here you should consider these methods:
 
 - String() : Used for simple string property
@@ -115,6 +117,7 @@ Go to **Pages** folder of **#UI**, *right click > Add > M#*  then create **Count
 
 ```csharp
 using MSharp;
+
 public class CountryPage : RootPage
 {
     public CountryPage()
@@ -127,13 +130,14 @@ public class CountryPage : RootPage
 ```
 
 M# framework will create this file for you and you should change it's constructor as shown above.
-In this class we have added *Add\<Modules.MainMenu>();*, by adding this code we tell M# that it should add our main menu class that hold our site menu.
-After that we tell M# framework that it should run *CountriesPage* class immediately after running this page.
+In this class we have added **Add<Modules.MainMenu>();**, by adding this code we tell M# that it should add our **MainMenu** class that holds our site's menu.
+After that we tell M# framework that it should run **CountriesPage** class immediately after running this page.
 
 Under **Pages** folder create a folder named **Country** and then add the following class:
 
 ```csharp
 using MSharp;
+
 namespace Country
 {
     public class CountriesPage : SubPage<CountryPage>
@@ -147,16 +151,17 @@ namespace Country
 }
 ```
 
-This class inherits from *SubPage\<CountryPage>* class. We have added a *CountriesList* class that its responsibility is to list all countries in a grid like the first requirement picture. We continue our work by adding *CountriesList* class that inherits from *ListModule*
+This class inherits from **SubPage<CountryPage>** class. We have added a **CountriesList** class that its responsibility is to list all countries in a grid like the first requirement picture. We continue our work by adding **CountriesList** class that inherits from **ListModule**.
 
 ### Creating required module of Country Pages
 
-Navigate to **Modules** folder of **#UI** project and create folder named **Country**. Then add a *List module* named **CountriesList** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **Country**. Then add a **List module** named **CountriesList** using M# context menu:
 
 ![Add Modules](AddModules.PNG "Add Modules")
 
 ```csharp
 using MSharp;
+
 namespace Modules
 {
     public class CountriesList : ListModule<Domain.Country>
@@ -195,6 +200,7 @@ Add a class named *EnterPage* like below:
 
 ```csharp
 using MSharp;
+
 namespace Country
 {
     public class EnterPage : SubPage<CountriesPage>
@@ -209,10 +215,11 @@ namespace Country
 }
 ```
 
-This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add\<Modules.CountryForm\>** we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
+This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add<Modules.CountryForm>();** we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
 
 ```csharp
 using MSharp;
+
 namespace Modules
 {
     public class CountryForm : FormModule<Domain.Country>
@@ -235,7 +242,7 @@ namespace Modules
 }
 ```
 
-This class inherits from **FormModule** class that tell the M# framework to deal with this class as a form module. This special class tells M# that it should generate a form page and a user can add or edit entity. In this class we have just one filed as requirement told us, so we just use *Field()* method to tell M# how to generate code for this property.
+This class inherits from **FormModule** class that tell the M# framework to deal with this class as a form module. This special class tells M# that it should generate a form page and a user can add or edit entity. In this class we have just one filed as requirement told us, so we just use **Field()** method to tell M# how to generate code for this property.
 
 ### Creating Customer List Pages
 
@@ -245,6 +252,7 @@ We continue our work by repeating former steps. First add customer root page:
 
 ```csharp
 using MSharp;
+
 public class CustomerPage : RootPage
 {
     public CustomerPage()
@@ -260,6 +268,7 @@ Add a folder named **Customer** under the **Pages** folder of **#UI** project an
 
 ```csharp
 using MSharp;
+
 namespace Customer
 {
     public class CustomersPage : SubPage<CustomerPage>
@@ -278,6 +287,7 @@ Add a folder named **Customer** under the **Modules** folder of **#UI** project 
 
 ```csharp
 using MSharp;
+
 namespace Modules
 {
     public class CustomersList : ListModule<Domain.Customer>
@@ -321,6 +331,7 @@ We continue our work by creating a **EnterPage** class in a **Customer** folder 
 
 ```csharp
 using MSharp;
+
 namespace Customer
 {
     public class EnterPage : SubPage<CustomerPage>
@@ -339,6 +350,7 @@ Our next step is to create **CustomerForm** class, Add this class under the **Cu
 
 ```csharp
 using MSharp;
+
 namespace Modules
 {
     public class CustomerForm : FormModule<Domain.Customer>
@@ -377,6 +389,7 @@ After you ended up with the pages, you need to add them to the main menu, for do
 
 ```csharp
 using MSharp;
+
 namespace Modules
 {
     public class MainMenu : MenuModule
@@ -385,15 +398,23 @@ namespace Modules
         {
             AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
 
-            Item("Login").Icon(FA.UnlockAlt).VisibleIf(AppRole.Anonymous)
+            Item("Login")
+                .Icon(FA.UnlockAlt)
+                .VisibleIf(AppRole.Anonymous)
                 .OnClick(x => x.Go<LoginPage>());
 
-            Item("Settings").Icon(FA.Cog).VisibleIf(AppRole.Administrator)
-                .OnClick(x => x.Go<Admin.SettingsPage>());
+            Item("Settings")
+                .VisibleIf(AppRole.Admin)
+                .Icon(FA.Cog)
+               .OnClick(x => x.Go<Admin.SettingsPage>());
 
-            Item("Countries").Icon(FA.Cog).OnClick(x => x.Go<Country.CountriesPage>());
+            Item("Countries")
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<Country.CountriesPage>());
 
-            Item("Customers").Icon(FA.Cog).OnClick(x => x.Go<Customer.CustomersPage>());
+            Item("Customers")
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<Customer.CustomersPage>());
         }
     }
 }
