@@ -99,38 +99,48 @@ There are other related classes under the *[GEN-DAL]* branch as well. They are r
 According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
 
 ```csharp
-public class ReferenceData
+public class ReferenceData : IReferenceData
+{
+    IDatabase Database;
+    public ReferenceData(IDatabase database) => Database = database;
+
+    async Task<T> Create<T>(T item) where T : IEntity
     {
-        static Task Create(IEntity item) => Context.Current.Database()Save(item, SaveBehaviour.BypassAll);
+        await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
+        return item;
+    }
 
-        public static async Task Create()
+    public async Task Create()
+    {
+        await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
+
+        await CreateContentBlocks();
+        await CreateAdmin();
+        await CreateCategory();
+    }
+
+    async Task CreateCategory()
+    {
+
+        await Create(new Category
         {
-            await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
-            await CreateCategory();
-        }
-
-        static async Task CreateCategory()
+            Name = "Family"
+        });
+        await Create(new Category
         {
+            Name = "Friends"
+        });
+        await Create(new Category
+        {
+            Name = "Business"
+        });
+        await Create(new Category
+        {
+            Name = "Other"
+        });
 
-            await Create(new Category
-            {
-                Name = "Family"
-            });
-            await Create(new Category
-            {
-                Name = "Friends"
-            });
-            await Create(new Category
-            {
-                Name = "Business"
-            });
-            await Create(new Category
-            {
-                Name = "Other"
-            });
-
-        }
-        //Other blocks of code
+    }
+    //Other blocks of code
 }
 ```
 
