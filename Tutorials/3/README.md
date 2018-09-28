@@ -91,7 +91,7 @@ namespace Domain
 }
 ```
 
-As you can see we have used M# fluent API to add *Task* class properties, we have added One-to-Many relationship with **Associate\<Project>("Project")** property.
+As you can see we have used M# fluent API to add *Task* class properties, we have added One-to-Many relationship with `Associate<Project>("Project")` property.
 Here you should consider these methods:
 
 - DatabaseMode(): Used to tell M# framework how to store the data
@@ -136,7 +136,7 @@ public class ProjectPage : RootPage
 }
 ```
 
-As you can see, we have added **Add\<Modules.ProjectsList>();**, by calling this method we tell M# that it should render *ProjectsList* module to show list of projects.
+As you can see, we have added `Add<Modules.ProjectsList>();`, by calling this method we tell M# that it should render *ProjectsList* module to show list of projects.
 This page is our main page that is acting like parent for other pages. Now we need to add two more pages, *Add* and *Edit* pages. Add a new folder named **Project** under *Pages* folder in #UI project and then add two sub-pages named **Enter** and **Edit**:
 
 ![Create Project Folder](AddProjectFolder.PNG "Create Project Folder")
@@ -494,7 +494,7 @@ namespace Modules
 **ProjectTaskList** class shows a list of tasks and let users to add or edit tasks, it also lets users to see task details by clicking on the *View* link button.
 
 >**Note:** You should consider using *.SendReturnUrl()* when you want to go to another page and let user to come back, and don't use it for modal.
->**Note:** You should consider using *.Go<>()* when you want to go to another page and use *.PopUp<>()* when you want an open modal.
+>**Note:** You should consider using `.Go<>()` when you want to go to another page and use `.PopUp<>()` when you want an open modal.
 
 Finally, create a *View* module named **ProjectTaskView** in the same folder using M# context menu, and add the following code:
 

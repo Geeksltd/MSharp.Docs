@@ -77,7 +77,7 @@ namespace Domain
 }
 ```
 
-As you can see we have used M# fluent API to add *Customer* class properties, we have added One-to-Many relationship with **Associate<Country>("Country");** property and continue our work to add *Company name* and other properties.
+As you can see we have used M# fluent API to add *Customer* class properties, we have added One-to-Many relationship with `Associate<Country>("Country");` property and continue our work to add *Company name* and other properties.
 Here you should consider these methods:
 
 - String() : Used for simple string property
@@ -130,7 +130,7 @@ public class CountryPage : RootPage
 ```
 
 M# framework will create this file for you and you should change it's constructor as shown above.
-In this class we have added **Add<Modules.MainMenu>();**, by adding this code we tell M# that it should add our **MainMenu** class that holds our site's menu.
+In this class we have added `Add<Modules.MainMenu>();`, by adding this code we tell M# that it should add our **MainMenu** class that holds our site's menu.
 After that we tell M# framework that it should run **CountriesPage** class immediately after running this page.
 
 Under **Pages** folder create a folder named **Country** and then add the following class:
@@ -151,7 +151,7 @@ namespace Country
 }
 ```
 
-This class inherits from **SubPage<CountryPage>** class. We have added a **CountriesList** class that its responsibility is to list all countries in a grid like the first requirement picture. We continue our work by adding **CountriesList** class that inherits from **ListModule**.
+This class inherits from `SubPage<CountryPage>` class. We have added a **CountriesList** class that its responsibility is to list all countries in a grid like the first requirement picture. We continue our work by adding **CountriesList** class that inherits from **ListModule**.
 
 ### Creating required module of Country Pages
 
@@ -215,7 +215,7 @@ namespace Country
 }
 ```
 
-This class inherits from *CountriesPage* class, we have set its layout to be modal and by using **Add<Modules.CountryForm>();** we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
+This class inherits from *CountriesPage* class, we have set its layout to be modal and by using `Add<Modules.CountryForm>();` we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
 
 ```csharp
 using MSharp;
