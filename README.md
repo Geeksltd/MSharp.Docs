@@ -221,6 +221,6 @@ Learn how to use the msharp.exe CLI (Command Line Interface) to diagnose problem
 
 Learn tips and tricks to speed you up and make your life easier when developing M# apps in Visual Studio.
 
-### [Merging action list buttons](Basics/Tips.md)
+### [Merging action list buttons](how-to/MergeColumns.md)
 
 By default, **M#** generate each action button to a seperate table cell. but, if you have lots of action buttons you may prefer to merge them in one cell...
