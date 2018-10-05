@@ -9,7 +9,7 @@ For example, M# generates a default "Login" page when a project is created.
 
 ### Creating New Pages
 
-A new page is created by right click on "Pages" folder in #UI project and select "Add root page" . M# allows developers to create Root or Subpages as required in application structure.
+A new page is created by right click on "Pages" folder in #UI project and select "Add root page" . M# allows developers to create Root or Sub-pages as required in application structure.
 
 !["Add Page"](ConceptsImages/AddPage.PNG "Add Page")
 

@@ -40,4 +40,4 @@ Imagine the best of the two paradigms combined: productivity of declarative prog
 
 Imperative and general purpose languages are powerful, flexible and suitable for a wide range of programming activities. However they are quite verbose and  slow in developer productivity. On the other hand declarative languages are domain-specific and limited in use, yet highly productive and efficient in what they do.
 
-M# mixes the best of the two worlds. It provides a declarative high level language that is very productive and effective. At the same time by providing native support for C# imperative expressions it bypasses any inherent limitations of declarative languages, resuling in a powerful and unlimited yet very productive programming experience.
+M# mixes the best of the two worlds. It provides a declarative high level language that is very productive and effective. At the same time by providing native support for C# imperative expressions it bypasses any inherent limitations of declarative languages, resulting in a powerful and unlimited yet very productive programming experience.

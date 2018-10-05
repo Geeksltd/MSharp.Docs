@@ -37,9 +37,6 @@ In order to equip your entity type with all the functionality that M# offers, ma
 This class is part of the M# framework, so at the top of your document you need to reference the *MSharp* namespace as shown here:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Text;
 using MSharp;
 
 namespace Model
@@ -61,9 +58,6 @@ In order to make this property mandatory, we only need to call the *.Mandatory()
 In a similar way add another entity type called *Contact* but this time with a set of properties shown in the snippet below:
 
 ```csharp
-using System;
-using System.Collections.Generic;
-using System.Text;
 using MSharp;
 
 namespace Model
@@ -99,48 +93,57 @@ There are other related classes under the *[GEN-DAL]* branch as well. They are r
 According to the requirements, each contact should have one category and these categories are fixed and user can just select them from the dropdown. For this purpose, we should insert the values for the first time that the M# generate a database for us and initialize its values. Under [DEV-SCRIPTS] folder, open **ReferenceData.cs** and add **CreateCategory()** method like below:
 
 ```csharp
-public class ReferenceData : IReferenceData
+using Olive;
+using Olive.Entities;
+using Olive.Entities.Data;
+using Olive.Security;
+using System.Threading.Tasks;
+
+namespace Domain
 {
-    IDatabase Database;
-    public ReferenceData(IDatabase database) => Database = database;
-
-    async Task<T> Create<T>(T item) where T : IEntity
+    public class ReferenceData : IReferenceData
     {
-        await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
-        return item;
+        IDatabase Database;
+        public ReferenceData(IDatabase database) => Database = database;
+    
+        async Task<T> Create<T>(T item) where T : IEntity
+        {
+            await Context.Current.Database().Save(item, SaveBehaviour.BypassAll);
+            return item;
+        }
+    
+        public async Task Create()
+        {
+            await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
+    
+            await CreateContentBlocks();
+            await CreateAdmin();
+            await CreateCategory();
+        }
+    
+        async Task CreateCategory()
+        {
+    
+            await Create(new Category
+            {
+                Name = "Family"
+            });
+            await Create(new Category
+            {
+                Name = "Friends"
+            });
+            await Create(new Category
+            {
+                Name = "Business"
+            });
+            await Create(new Category
+            {
+                Name = "Other"
+            });
+    
+        }
+        //Other blocks of code
     }
-
-    public async Task Create()
-    {
-        await Create(new Settings { Name = "Current", PasswordResetTicketExpiryMinutes = 2 });
-
-        await CreateContentBlocks();
-        await CreateAdmin();
-        await CreateCategory();
-    }
-
-    async Task CreateCategory()
-    {
-
-        await Create(new Category
-        {
-            Name = "Family"
-        });
-        await Create(new Category
-        {
-            Name = "Friends"
-        });
-        await Create(new Category
-        {
-            Name = "Business"
-        });
-        await Create(new Category
-        {
-            Name = "Other"
-        });
-
-    }
-    //Other blocks of code
 }
 ```
 
@@ -171,6 +174,8 @@ Right click on **Pages** folder, and create a Root page named **ContactPage** us
 ![UI Overview](UI-Overview.PNG "UI Overview")
 
 ```csharp
+using MSharp;
+
 public class ContactPage : RootPage
 {
     public ContactPage()
@@ -190,56 +195,67 @@ This  is our root class that inherits from **RootPage** class, **RootPage** is a
 In **#UI** project under **Pages** folder, create a folder named **Contact**, create a sub-page named **ContactsPage** using M# context menu in that folder and add the following code to it:
 
 ```csharp
-public class ContactsPage : SubPage<ContactPage>
-{
-    public ContactsPage()
-    {
-        Layout(Layouts.FrontEnd);
+using MSharp;
 
-        //will be implemented soon
-        Add<Modules.ContactsList>();
+namespace Contact
+{
+    public class ContactsPage : SubPage<ContactPage>
+    {
+        public ContactsPage()
+        {
+            Layout(Layouts.FrontEnd);
+
+            //will be implemented soon
+            Add<Modules.ContactsList>();
+        }
     }
 }
 ```
 
-This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling *Add<Modules.ContactsList>()* I told M# that this page should show ContactList module.
+This class inherits from *ContactPage* and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling `Add<Modules.ContactsList>()` I told M# that this page should show ContactList module.
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Contact**. Then add a *List module* named **ContactList** using M# context menu:
 
 ```csharp
-public class ContactsList : ListModule<Domain.Contact>
+using MSharp;
+
+namespace Modules
 {
-    public ContactsList()
+    public class ContactsList : ListModule<Domain.Contact>
     {
-        Column(x => x.Category);
+        public ContactsList()
+        {
+            Column(x => x.Category);
 
-        Column(x => x.FirstName);
+            Column(x => x.FirstName);
 
-        Column(x => x.LastName);
+            Column(x => x.LastName);
 
-        Column(x => x.Tel).LabelText("Telephone");
+            Column(x => x.Tel).LabelText("Telephone");
 
-        Column(x => x.Email);
+            Column(x => x.Email);
 
-        ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
-            .OnClick(x => x.Go<Contact.EnterPage>()
-            .Send("item", "item.ID").SendReturnUrl(false));
+            ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
+                .OnClick(x => x.Go<Contact.EnterPage>()
+                .Send("item", "item.ID").SendReturnUrl(false));
 
-        ButtonColumn("Delete").HeaderText("Actions")
-            .GridColumnCssClass("actions")
-            .ConfirmQuestion("Are you sure you want to delete this Contact?")
-            .CssClass("btn-danger")
-            .Icon(FA.Remove)
-            .OnClick(x =>
-            {
-                x.DeleteItem();
-                x.RefreshPage();
-            });
+            ButtonColumn("Delete").HeaderText("Actions")
+                .GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Contact?")
+                .CssClass("btn-danger")
+                .Icon(FA.Remove)
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
 
-        Button("Add Contact")
-            .Icon(FA.Plus)
-            .OnClick(x => x.Go<Contact.EnterPage>().SendReturnUrl(false));
+            Button("Add Contact")
+                .Icon(FA.Plus)
+                .OnClick(x => x.Go<Contact.EnterPage>().SendReturnUrl(false));
+        }
     }
+
 }
 ```
 
@@ -250,48 +266,59 @@ In this class we have included our needed column according to the picture and ad
 After creating a contact list, now it's time to create a contact form page that is responsible for adding and editing operation. We continue our work by creating a contact form page in **#UI** project. Navigate to the **Contact** folder under **Pages** folder, create another sub-page using M# context menu and add the following code to it:
 
 ```csharp
-public class EnterPage : SubPage<ContactsPage>
-{
-    public EnterPage()
-    {
-        Layout(Layouts.FrontEnd);
+using MSharp;
 
-        Add<Modules.ContactForm>();
+namespace Contact
+{
+    public class EnterPage : SubPage<ContactsPage>
+    {
+        public EnterPage()
+        {
+            Layout(Layouts.FrontEnd);
+
+            Add<Modules.ContactForm>();
+        }
     }
+
 }
 ```
 
-As you can see, this class inherits from Contacts page and by using **Add<Modules.ContactForm>** it instruct M# framework that this page is responsible for showing contact form module.
+As you can see, this class inherits from Contacts page and by using `Add<Modules.ContactForm>` it instruct M# framework that this page is responsible for showing contact form module.
 
 Navigate to **Modules** folder of **#UI** project and in **Contact** folder add a *Form module* named **ContactForm** using M# context menu:
 
 ```csharp
-public class ContactForm : FormModule<Domain.Contact>
+using MSharp;
+
+namespace Modules
 {
-    public ContactForm()
+    public class ContactForm : FormModule<Domain.Contact>
     {
-        HeaderText("Contact Details");
+        public ContactForm()
+        {
+            HeaderText("Contact Details");
 
-        Field(x => x.Category).Control(ControlType.DropdownList);
+            Field(x => x.Category).Control(ControlType.DropdownList);
 
-        Field(x => x.FirstName).Control(ControlType.Textbox).Mandatory();
+            Field(x => x.FirstName).Control(ControlType.Textbox).Mandatory();
 
-        Field(x => x.LastName).Control(ControlType.Textbox);
+            Field(x => x.LastName).Control(ControlType.Textbox);
 
-        Field(x => x.Email).Control(ControlType.Textbox);
+            Field(x => x.Email).Control(ControlType.Textbox);
 
-        Field(x => x.Tel).Control(ControlType.Textbox).Label("Telephone");
+            Field(x => x.Tel).Control(ControlType.Textbox).Label("Telephone");
 
-        Button("Cancel").CausesValidation(false)
-            .OnClick(x => x.ReturnToPreviousPage());
+            Button("Cancel").CausesValidation(false)
+                .OnClick(x => x.ReturnToPreviousPage());
 
-        Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.ReturnToPreviousPage();
-            });
+            Button("Save").IsDefault().Icon(FA.Check)
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.ReturnToPreviousPage();
+                });
+        }
     }
 }
 ```
@@ -300,27 +327,33 @@ Another important module is form module that deals with add or edit entity. This
 
 ### Adding Pages to the Menu
 
-Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menues of #UI project)* and add *ContactPage* class here as a menu item.
+Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menus of #UI project)* and add *ContactPage* class here as a menu item.
 
 ```csharp
-public class MainMenu : MenuModule
+using MSharp;
+
+namespace Modules
 {
-    public MainMenu()
+    public class MainMenu : MenuModule
     {
-        AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
+        public MainMenu()
+        {
+            AjaxRedirect().IsViewComponent().UlCssClass("nav navbar-nav dropped-submenu");
 
-        Item("Login")
-            .Icon(FA.UnlockAlt)
-            .VisibleIf(AppRole.Anonymous)
-            .OnClick(x => x.Go<LoginPage>());
+            Item("Login")
+                .Icon(FA.UnlockAlt)
+                .VisibleIf(AppRole.Anonymous)
+                .OnClick(x => x.Go<LoginPage>());
 
-        Item("Settings")
-            .VisibleIf(AppRole.Admin)
-            .Icon(FA.Cog)
-            .OnClick(x => x.Go<Admin.SettingsPage>());
-        Item("Contacts")
-            .Icon(FA.Cog)
-            .OnClick(x => x.Go<ContactPage>());
+            Item("Settings")
+                .VisibleIf(AppRole.Admin)
+                .Icon(FA.Cog)
+               .OnClick(x => x.Go<Admin.SettingsPage>());
+
+            Item("Contacts")
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<ContactPage>());
+        }
     }
 }
 ```
