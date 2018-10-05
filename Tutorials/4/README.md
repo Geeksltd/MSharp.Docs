@@ -397,7 +397,7 @@ This class is responsible for the view-only purposes and we have added *AssetVie
 
 ### Creating required module of Asset Pages
 
-Now, let's continue our work by creating related *Modules*. Three modules are needed for asset entity; **ListModule**, **FormModule** and **ViewModule**. Create a new folder with the name of *Asset* under the *Modules* folder of *#UI* project, then add the folowing form, list and view classes using M# context menu:
+Now, let's continue our work by creating related *Modules*. Three modules are needed for asset entity; **ListModule**, **FormModule** and **ViewModule**. Create a new folder with the name of *Asset* under the *Modules* folder of *#UI* project, then add the following form, list and view classes using M# context menu:
 
 ```csharp
 using MSharp;
