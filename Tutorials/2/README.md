@@ -215,7 +215,7 @@ namespace Country
 }
 ```
 
-This class inherits from *CountriesPage* class, we have set its layout to be modal and by using `Add<Modules.CountryForm>();` we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Countery** folder in **Modules** folder like below:
+This class inherits from *CountriesPage* class, we have set its layout to be modal and by using `Add<Modules.CountryForm>();` we instruct the M# framework that this page is responsible for showing country form module. Now it's time to create **CountryForm** class, Add this class under the **Country** folder in **Modules** folder like below:
 
 ```csharp
 using MSharp;

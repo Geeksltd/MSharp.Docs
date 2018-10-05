@@ -327,7 +327,7 @@ Another important module is form module that deals with add or edit entity. This
 
 ### Adding Pages to the Menu
 
-Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menues of #UI project)* and add *ContactPage* class here as a menu item.
+Our last step is to include a *contact list page* in the main menu, for doing this open **MainMenu.cs** class *(you can find it in the folder Modules/-Menus of #UI project)* and add *ContactPage* class here as a menu item.
 
 ```csharp
 using MSharp;
