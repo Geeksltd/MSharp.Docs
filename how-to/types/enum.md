@@ -192,4 +192,5 @@ namespace Domain
 ```
 
 ## Remarks
-...
+
+- We usually show these pre-defined sets as DropDowns in forms or modules
