@@ -57,11 +57,7 @@ We will end up with something like this
 
 ```csharp
 
-using Olive;
-using Olive.Entities;
-using Olive.Entities.Data;
-using Olive.Security;
-using System.Threading.Tasks;
+using ...;
 
 namespace Domain
 {
