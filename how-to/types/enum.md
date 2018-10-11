@@ -30,11 +30,13 @@ Because these values are predefined, we need to create them in the database befo
 The place to add these values to our database is the `ReferenceData.cs` file in the project Domain>[DEV-SCRIPTS].
 You need to simply add an entity per distinct value you need in the set.
 
+In order to also be able to easily refer to each distinct value in the code, You should use `InstanceReferences()` method in the public constructor and include all values which you included in your `DataReferences.cs` file for the default property.
+
 #### Example
 
 Let's say we want to represent different types of contacts in an application.
-Each contacontact can be either a friend, family member, business relation or another type of contact.
-We need to create an entity with a `Name1 field like this.n
+Each contact can be either a friend, family member, business relation or another type of contact.
+We need to create an entity with a `string` field like this.
 
 ```csharp
 
@@ -46,9 +48,12 @@ namespace Model
     {
         public ContactType()
         {
+            InstanceAccessors("Friends", "Family", "Business", "Other");
             String("Name").Mandatory();
         }
     }
+}
+
 }
 ```
 
@@ -87,68 +92,155 @@ namespace Domain
 
 Be careful to don't forget to call the method you create in the `Create()` method where other helper methods are called.
 
+Now you can use `ContactType` instead of an enum whenever you want to have a property which can have one of the pre-defined values (Friend, Family, Business and Other).
+Thanks to `AssignReferences()`, you also have access to accessor properties for these values in your `ContactType` class. 
+You can simply use them and even have intel.isense as well like this:
+
+![Assign References Example](images/AssignReferencesExample.png "Assign References Example")
+
 #### Generated code
 
 The generated code for the entity is a simple class
 
 ```ccsharp
 
-namespace Domain
-{
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Xml.Serialization;
-    using Olive;
-    using Olive.Entities;
-    using Olive.Entities.Data;
-    
-    /// <summary>Represents an instance of Contact type entity type.</summary>
-    [EscapeGCop("Auto generated code.")]
-    public partial class ContactType : GuidEntity
+public partial class ContactType : GuidEntity
     {
+        /// <summary>Stores a cache for the Friends Contact type object.</summary>
+        static ContactType friends;
+        
+        /// <summary>Stores a cache for the Family Contact type object.</summary>
+        static ContactType family;
+        
+        /// <summary>Stores a cache for the Business Contact type object.</summary>
+        static ContactType business;
+        
+        /// <summary>Stores a cache for the Other Contact type object.</summary>
+        static ContactType other;
+        
         /* -------------------------- Properties -------------------------*/
+        
+        /// <summary>Gets the Friends Contact type object.</summary>
+        public static ContactType Friends
+        {
+            get
+            {
+                var result = friends;
+                
+                if (result == null)
+                {
+                    result = Task.Factory.RunSync(() =>Parse("Friends"));
+                    
+                    if (result != null && !Database.AnyOpenTransaction())
+                    {
+                        friends = result;
+                        
+                        void release() => friends = null;
+                        
+                        result.Saving.HandleWith(release);
+                        result.Saved.HandleWith(release);
+                        Database.CacheRefreshed.HandleWith(release);
+                    }
+                }
+                
+                return result;
+            }
+        }
+        
+        /// <summary>Gets the Family Contact type object.</summary>
+        public static ContactType Family
+        {
+            get
+            {
+                var result = family;
+                
+                if (result == null)
+                {
+                    result = Task.Factory.RunSync(() =>Parse("Family"));
+                    
+                    if (result != null && !Database.AnyOpenTransaction())
+                    {
+                        family = result;
+                        
+                        void release() => family = null;
+                        
+                        result.Saving.HandleWith(release);
+                        result.Saved.HandleWith(release);
+                        Database.CacheRefreshed.HandleWith(release);
+                    }
+                }
+                
+                return result;
+            }
+        }
+        
+        /// <summary>Gets the Business Contact type object.</summary>
+        public static ContactType Business
+        {
+            get
+            {
+                var result = business;
+                
+                if (result == null)
+                {
+                    result = Task.Factory.RunSync(() =>Parse("Business"));
+                    
+                    if (result != null && !Database.AnyOpenTransaction())
+                    {
+                        business = result;
+                        
+                        void release() => business = null;
+                        
+                        result.Saving.HandleWith(release);
+                        result.Saved.HandleWith(release);
+                        Database.CacheRefreshed.HandleWith(release);
+                    }
+                }
+                
+                return result;
+            }
+        }
+        
+        /// <summary>Gets the Other Contact type object.</summary>
+        public static ContactType Other
+        {
+            get
+            {
+                var result = other;
+                
+                if (result == null)
+                {
+                    result = Task.Factory.RunSync(() =>Parse("Other"));
+                    
+                    if (result != null && !Database.AnyOpenTransaction())
+                    {
+                        other = result;
+                        
+                        void release() => other = null;
+                        
+                        result.Saving.HandleWith(release);
+                        result.Saved.HandleWith(release);
+                        Database.CacheRefreshed.HandleWith(release);
+                    }
+                }
+                
+                return result;
+            }
+        }
         
         /// <summary>Gets or sets the value of Name on this Contact type instance.</summary>
         public string Name { get; set; }
         
-        /* -------------------------- Methods ----------------------------*/
-        
-        /// <summary>Returns a textual representation of this Contact type.</summary>
-        public override string ToString() => Name;
-        
-        /// <summary>Returns a clone of this Contact type.</summary>
-        /// <returns>
-        /// A new Contact type object with the same ID of this instance and identical property values.<para/>
-        ///  The difference is that this instance will be unlocked, and thus can be used for updating in database.<para/>
-        /// </returns>
-        public new ContactType Clone() => (ContactType)base.Clone();
-        
-        /// <summary>
-        /// Validates the data for the properties of this Contact type and throws a ValidationException if an error is detected.<para/>
-        /// </summary>
-        protected override Task ValidateProperties()
-        {
-            var result = new List<string>();
-            
-            if (Name.IsEmpty())
-                result.Add("Name cannot be empty.");
-            
-            if (Name?.Length > 200)
-                result.Add("The provided Name is too long. A maximum of 200 characters is acceptable.");
-            
-            if (result.Any())
-                throw new ValidationException(result.ToLinesString());
-            
-            return Task.CompletedTask;
-        }
+...
     }
-}
 
 ```
+
+As you can see, the code generator generated a cache field and a property per distinct value you added in `InstanceReferences()` method.
+Now you can simply use values like `ContactType.Friend` in your code to refer to a contactType which is a friend.
 
 ## Remarks
 
 - We usually show these pre-defined sets as DropDowns in forms or modules
+- The values in `AssignReferences()` parameters in entity definition and `DataReferences.cs` in [DEV-SCRIPTS] should match.
+- Don't worry too much about the performance of this, as you can see the values are only read once and then cached.
