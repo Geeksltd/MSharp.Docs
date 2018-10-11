@@ -8,7 +8,7 @@ M# fully supports Object Oriented development and encourages developers to use a
 
 ### Adding New Entity
 
-A new entity can be added by right click on your custom folder in **#Model** project and select **Add Entity** from M# context menu as shown bellow
+A new entity can be added by right click on your custom folder in **#Model** project and select **Add Entity** from M# context menu as shown below
 
 !["M# Add Entity"](ConceptsImages/AddEntity.PNG "M# Add Entity")
 
