@@ -21,7 +21,7 @@
     * [Creating an Enum (reference) type](how-to/types/enum.md)
     * [Implementing Inheritance and abstract classes](how-to/types/inheritance.md)
     * [Creating and using Interface types](how-to/types/interfaces.md)
-    * Customising ToString() implementation
+    * [Customizing ToString() implementation](how-to/types/customizingToString.md)
     * Specifying default Sort order
     * Customising plural title
     * Implementing hierarchy types
