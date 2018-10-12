@@ -91,7 +91,7 @@ Be careful to don't forget to call the method you create in the `Create()` metho
 
 The generated code for the entity is a simple class
 
-```ccsharp
+```csharp
 
 namespace Domain
 {
