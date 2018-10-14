@@ -22,7 +22,7 @@
     * Implementing Inheritence *(TODO: Include Abstract and DB mode)*
     * Creating and using Interface types
     * Customising ToString() implementation
-    * Specifying default Sort order
+    * [Specifying default Sort order](how-to/types/sortOrder.md)
     * Customising plural title
     * Implementing hierarchy types
     * Implementing transient (non DB) types
