@@ -26,7 +26,7 @@
     * [Customising plural title](how-to/types/plural.md)
     * Implementing hierarchy types
     * [Implementing transient (non DB) types](how-to/types/transient.md)
-    * Adding custom methods
+    * [Adding custom methods](how-to/types/customMethod.md)
 
 * How-to: Model: Properties
 
