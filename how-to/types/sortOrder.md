@@ -191,7 +191,7 @@ So if we don't set the order then the sorting will be based on the insertion tim
 ## Remarks
 
 - `IComparable`'s `CompareTo()` method  is used to sort fetched items in memory and this happens regardless of the data order in the database. depending on the algorithm used sorting might be faster if the data is already sorted but you should not rely on this knowledge because, first of all the number of elements usually is low enough and secondly because it is an implementation detail of the underlying framework which might change in the future.
-- Sorting the data in the database is a good idea if you need to do range queries which can be imporved by sequencial access to related data.
+- Sorting the data in the database is a good idea if you need to do range queries which can be improved by sequential access to related data.
 - As said if you always need a specific sorting criteria and you read the data a lot more than you write it, it might be a good idea to store it sorted.
 - `IComparable<T>` is implemented for the convenience of the implementation of the `CompareTo()` override and is not used by M# for sorting itself.
 - Most of the times you only need in memory sorting and not in database. If you are not sure, then use the in memory one.
