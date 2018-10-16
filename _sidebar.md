@@ -36,7 +36,7 @@
     * [Multiline text](how-to/properties/multiLineText.md)
     * [Numeric scale/precision](how-to/properties/numericScaleAndPrecision.md)
     * [Nullable (int, bool, ...)](how-to/properties/nullable.md)
-    * Custom boolean text
+    * [Custom boolean text](how-to/properties/customBoolText.md)
     
 * How-to: Model: Associations
 
