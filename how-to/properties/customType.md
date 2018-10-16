@@ -3,7 +3,7 @@
 ## Problem
 
 M# automatically uses specific types for each property type in C# and in the database.
-Sometimes you might want to use a different type in the databae or in C#.
+Sometimes you might want to use a different type in the database or in C#.
 M# allows you to customize both types and even generate conversion code without coding.
 
 ## Implementation
