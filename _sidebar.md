@@ -205,6 +205,8 @@
     * Custom view model properties
     * Scheduled tasks
     * Sending email notifications
+    * [Merging action list buttons](how-to/MergeColumns.md)
+    * [Using global search](how-to/UsingGlobalSearch.md)
     
 * How-to: Javascript
     * Custom initialization script

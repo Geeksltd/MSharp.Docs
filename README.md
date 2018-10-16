@@ -224,3 +224,7 @@ Learn tips and tricks to speed you up and make your life easier when developing 
 ### [Merging action list buttons](how-to/MergeColumns.md)
 
 By default, **M#** generate each action button to a seperate table cell. but, if you have lots of action buttons you may prefer to merge them in one cell...
+
+### [Using global search](how-to/UsingGlobalSearch.md)
+
+This feature let you globally search through your application and navigate to your destination page.
