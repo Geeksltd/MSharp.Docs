@@ -30,7 +30,7 @@
 
 * How-to: Model: Properties
 
-    * Specifying the ID (primary key) property
+    * [Specifying the ID (primary key) property](how-to/properties/primarykey.md)
     * Calculated vs persisted    
     * Custom type (C#/DB)
     * Multiline text
