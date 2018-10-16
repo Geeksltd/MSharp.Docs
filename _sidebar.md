@@ -33,7 +33,7 @@
     * [Specifying the ID (primary key) property](how-to/properties/primarykey.md)
     * [Calculated vs persisted](how-to/properties/calculatedVSPersisted.md)
     * Custom type (C#/DB)
-    * Multiline text
+    * [Multiline text](how-to/properties/multiLineText.md)
     * Numeric scale/precision
     * Nullable (int, bool, ...)
     * Custom boolean text
