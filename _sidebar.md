@@ -31,7 +31,7 @@
 * How-to: Model: Properties
 
     * [Specifying the ID (primary key) property](how-to/properties/primarykey.md)
-    * Calculated vs persisted    
+    * [Calculated vs persisted](how-to/properties/calculatedVSPersisted.md)
     * Custom type (C#/DB)
     * Multiline text
     * Numeric scale/precision
