@@ -102,7 +102,7 @@ You can simply use them and even have intel.isense as well like this:
 
 The generated code for the entity is a simple class
 
-```ccsharp
+```csharp
 
 public partial class ContactType : GuidEntity
     {

@@ -11,4 +11,29 @@ After updating `olive.mvc` package all action buttons which have `.actions` CSS 
 
 ![3](https://user-images.githubusercontent.com/1321544/46538827-d99d2d00-c8c1-11e8-83e3-bc95a0862ca5.PNG)
 
-Please bear in mind that if you don't want this behaviour for some part of your pages you can simply change default CSS class of your action button to something else like `ButtonColumn("New House").HeaderText("Actions1")`.
+In the more complex scenario, you may need to just merge some of the buttons and not all of them. As you can see in this picture, we need two separate action buttons and other actions should be merged:
+
+![4](https://user-images.githubusercontent.com/40687782/46793408-8ef63780-cd3d-11e8-977b-39ae786a54dc.png)
+
+To generate this, you just need to change the title and the class of the two actions buttons and let other actions buttons have `actions` CSS class:
+
+```csharp
+ ButtonColumn("Action A").HeaderText("Action A").GridColumnCssClass("actions-sep").Icon(FA.Edit)
+                .OnClick(x => x.Go<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+
+ButtonColumn("Action B").HeaderText("Action B").GridColumnCssClass("actions-sep").Icon(FA.Edit)
+    .OnClick(x => x.Go<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+
+
+ButtonColumn("Action 1").HeaderText("Action").GridColumnCssClass("actions").Icon(FA.Edit)
+    .OnClick(x => x.Go<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+
+
+ButtonColumn("Action 2").HeaderText("Action").GridColumnCssClass("actions").Icon(FA.Edit)
+    .OnClick(x => x.Go<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+
+
+ButtonColumn("Action 3").HeaderText("Action").GridColumnCssClass("actions").Icon(FA.Edit)
+    .OnClick(x => x.Go<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+```
+As you can see, we have set a custom title for the two `ButtonColumn()` and passed arbitrary `actions-sep` CSS class as a parameter to the `GridColumnCssClass()` method and for other action buttons we have passed `actions`.
