@@ -22,21 +22,21 @@
     * Implementing Inheritence *(TODO: Include Abstract and DB mode)*
     * Creating and using Interface types
     * Customising ToString() implementation
-    * Specifying default Sort order
-    * Customising plural title
+    * [Specifying default Sort order](how-to/types/sortOrder.md)
+    * [Customising plural title](how-to/types/plural.md)
     * Implementing hierarchy types
-    * Implementing transient (non DB) types
-    * Adding custom methods
+    * [Implementing transient (non DB) types](how-to/types/transient.md)
+    * [Adding custom methods](how-to/types/customMethod.md)
 
 * How-to: Model: Properties
 
-    * Specifying the ID (primary key) property
-    * Calculated vs persisted    
-    * Custom type (C#/DB)
-    * Multiline text
-    * Numeric scale/precision
-    * Nullable (int, bool, ...)
-    * Custom boolean text
+    * [Specifying the ID (primary key) property](how-to/properties/primarykey.md)
+    * [Calculated vs persisted](how-to/properties/calculatedVSPersisted.md)
+    * [Custom type (C#/DB)](how-to/properties/customType.md)
+    * [Multiline text](how-to/properties/multiLineText.md)
+    * [Numeric scale/precision](how-to/properties/numericScaleAndPrecision.md)
+    * [Nullable (int, bool, ...)](how-to/properties/nullable.md)
+    * [Custom boolean text](how-to/properties/customBoolText.md)
     
 * How-to: Model: Associations
 
