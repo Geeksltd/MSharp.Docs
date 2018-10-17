@@ -40,10 +40,10 @@
     
 * How-to: Model: Associations
 
-    * Many-to-one
-    * One-to-many
-    * Many-to-many
-    * Cascade delete
+    * [Many-to-one](how-to/associations/manyToOne.md)
+    * [One-to-many](how-to/associations/oneToMany.md)
+    * [Many-to-many](how-to/associations/manyToMany.md)
+    * [Cascade delete](how-to/associations/deleting.md)
 
 
 * How-to: Database
