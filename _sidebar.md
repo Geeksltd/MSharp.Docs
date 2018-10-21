@@ -53,7 +53,7 @@
     * [Soft delete](how-to/database/softDelete.md)
     * Custom data persistence
     * [Index](how-to/database/index.md)
-    * Data type conversion
+    * [Data type conversion](how-to/database/typeConversion.md)
     * [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
 
 * How-to: Model: Misc
