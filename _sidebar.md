@@ -52,7 +52,7 @@
     * [Custom primary key](how-to/database/customPrimaryKey.md)
     * [Soft delete](how-to/database/softDelete.md)
     * Custom data persistence
-    * Index
+    * [Index](how-to/database/index.md)
     * Data type conversion
     * [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
 
