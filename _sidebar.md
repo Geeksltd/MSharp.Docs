@@ -49,12 +49,12 @@
 * How-to: Database
 
     * [Custom table/column name](how-to/database/customNames.md)
-    * Custom primary key
-    * Soft delete
+    * [Custom primary key](how-to/database/customPrimaryKey.md)
+    * [Soft delete](how-to/database/softDelete.md)
     * Custom data persistence
     * Index
     * Data type conversion
-    * Bootstrap/reference data
+    * [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
 
 * How-to: Model: Misc
 
