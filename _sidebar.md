@@ -48,7 +48,7 @@
 
 * How-to: Database
 
-    * Custom table/column name
+    * [Custom table/column name](how-to/database/customNames.md)
     * Custom primary key
     * Soft delete
     * Custom data persistence
