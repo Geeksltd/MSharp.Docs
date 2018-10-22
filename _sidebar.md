@@ -58,7 +58,7 @@
 
 * How-to: Model: Misc
 
-    * Name vs Title
+    * [Name vs Title](how-to/misc/nameAndtitle.md)
     * Notes/docs/user help
     * Custom [Attributes]
     * White-space trimming
