@@ -19,9 +19,9 @@
 * How-to: Model: Entity types
 
     * [Creating an Enum (reference) type](how-to/types/enum.md)
-    * Implementing Inheritence *(TODO: Include Abstract and DB mode)*
-    * Creating and using Interface types
-    * Customising ToString() implementation
+    * [Implementing Inheritance and abstract classes](how-to/types/inheritance.md)
+    * [Creating and using Interface types](how-to/types/interfaces.md)
+    * [Customizing ToString() implementation](how-to/types/customizingToString.md)
     * [Specifying default Sort order](how-to/types/sortOrder.md)
     * [Customising plural title](how-to/types/plural.md)
     * Implementing hierarchy types
@@ -40,10 +40,10 @@
     
 * How-to: Model: Associations
 
-    * Many-to-one
-    * One-to-many
-    * Many-to-many
-    * Cascade delete
+    * [Many-to-one](how-to/associations/manyToOne.md)
+    * [One-to-many](how-to/associations/oneToMany.md)
+    * [Many-to-many](how-to/associations/manyToMany.md)
+    * [Cascade delete](how-to/associations/deleting.md)
 
 
 * How-to: Database
