@@ -19,9 +19,9 @@
 * How-to: Model: Entity types
 
     * [Creating an Enum (reference) type](how-to/types/enum.md)
-    * Implementing Inheritence *(TODO: Include Abstract and DB mode)*
-    * Creating and using Interface types
-    * Customising ToString() implementation
+    * [Implementing Inheritance and abstract classes](how-to/types/inheritance.md)
+    * [Creating and using Interface types](how-to/types/interfaces.md)
+    * [Customizing ToString() implementation](how-to/types/customizingToString.md)
     * [Specifying default Sort order](how-to/types/sortOrder.md)
     * [Customising plural title](how-to/types/plural.md)
     * Implementing hierarchy types
