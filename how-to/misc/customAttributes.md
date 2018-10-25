@@ -42,8 +42,6 @@ The generated code of the employee is presented below.
 ```csharp
 public partial class Employee : GuidEntity
 {
-        /* -------------------------- Properties -------------------------*/
-        
         /// <summary>Gets or sets the value of AdditionalNotes on this Employee instance.</summary>
         [XmlIgnore]
         public string AdditionalNotes { get; set; }
