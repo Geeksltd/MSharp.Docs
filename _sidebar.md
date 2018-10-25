@@ -51,7 +51,7 @@
     * [Custom table/column name](how-to/database/customNames.md)
     * [Custom primary key](how-to/database/customPrimaryKey.md)
     * [Soft delete](how-to/database/softDelete.md)
-    * Custom data persistence
+    * [Custom data persistence](how-to/database/customPersistence.md)
     * [Index](how-to/database/index.md)
     * [Data type conversion](how-to/database/typeConversion.md)
     * [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
