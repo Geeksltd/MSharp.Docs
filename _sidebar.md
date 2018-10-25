@@ -60,7 +60,7 @@
 
     * [Name vs Title](how-to/misc/nameAndtitle.md)
     * [Notes/docs/user help](how-to/misc/noteHelpDocumentation.md)
-    * Custom [Attributes]
+    * [Custom [Attributes]](how-to/misc/customAttributes.md)
     * White-space trimming
     
 * How-to: Validation
