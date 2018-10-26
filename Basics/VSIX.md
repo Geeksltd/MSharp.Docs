@@ -271,13 +271,11 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## In Dark Theme
 
-  (FRZTEST)
-
-  !(images/Colorize_SampleCode4.PNG)
+  ![](images/Colorize_SampleCode4.PNG)
 
 ## In Light Theme
 
-  !(images/Colorize_SampleCode3.PNG)
+  ![](images/Colorize_SampleCode3.PNG)
 
 > Note : The background color of M# code editor windows are customized to dark brown in __Dark Theme__ and light blue in __Light Theme__.
 
