@@ -271,6 +271,8 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## In Dark Theme
 
+  (FRZTEST)
+
   !(images/Colorize_SampleCode4.PNG)
 
 ## In Light Theme
