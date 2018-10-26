@@ -65,12 +65,12 @@
     
 * How-to: Validation
 
-    * Mandatory property    
-    * Numeric/date range
-    * Text length
-    * Text pattern/regex
-    * Unique property
-    * Uniqueness combination
+    * [Mandatory property](how-to/validation/mandatory.md)    
+    * [Numeric/date range](how-to/validation/numericAndDateRange.md)
+    * [Text length](how-to/validation/textLength.md)
+    * [Text pattern/regex](how-to/validation/textPatternAndRegex.md)
+    * [Unique property](how-to/validation/unique.md)
+    * [Uniqueness combination](how-to/validation/uniqueCombination.md)
     * Custom validation rule
     * Custom pre-validation logic
     * Mutually exclusive
