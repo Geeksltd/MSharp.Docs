@@ -343,7 +343,8 @@ Developers can put their C# code in many parts of M# code structures, it means w
 
   ![Image](images/Intellisens1.jpeg)
 
-Write and maintaining the c# code in string literal is not easy, So by using the Intellisense VSIX we can work with those types of code in fast and easy way.
+Writing and maintaining c# codes in string literals are not easy, So by using the Intellisense VSIX we can work with those types of code in fast and easy way.
+
   ![Image](images/Intellisens3.jpeg)
 
 When the cursor is under calling method or its string literal parameter then you can open a code peeker just below the current line by the right click command on the method or the string parameter and selecting "Show Intellisense For String Parameter Alt+ I"
@@ -369,14 +370,13 @@ The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# fi
 
 ### Technical Note 1
 
-Some times it maybe take long time to show peeker with the C# context, it's completely depends on project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file should be populate and create in the _M#_TEMP folder under the WebSite project, 
+Some times it maybe take long time to show peeker with the C# context, it's completely depends on project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file should be populate and create in the _M#_TEMP folder under the WebSite project
 
 ![Image](images/Intellisens6.jpeg)
 
 then Intellisense VSIX shows the code file in the peeker, so during generating file you can see a progress bar in top of displayed empty peeker.
 
 ![Image](images/Intellisens2.jpeg)
-
 
 ### Technical Note 2
 
@@ -399,7 +399,6 @@ You can close peeker panel with or without saving code, so if you push ESC butto
 ![Image](images/Intellisens7.jpeg)
 
 Also you can close intellisense peeker by pressing the CTRL + S key, then all changes are saved and will be reflect to the main code.
-
 
 ## VS Ext: MSharp.Snippet
 
