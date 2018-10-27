@@ -8,7 +8,7 @@
 
 MSharp.AddNew VSIX provides a set of functionality and project templates wizards to make projects from scratch and create M# project items easily. So you can create 3 different M# project types (**M# ASP.NET Core - MVC**, **M# ASP.NET Core - Microservice** and **M# Class Library**) by using this extension.
 
-![alt text](images/NewProjectTemplates.png "New Project Tempates")
+![alt text](images/NewProjectTemplates.png "New Project Templates")
 
 ## ![Image](images/MSharp.png) ASP.NET Core - MVC Project
 
@@ -19,9 +19,9 @@ By using **_M# MVC Project Template Wizard_** you can create a standard M# proje
 * #UI *(Standard .Net Core 2.1)*
 * Domain *(Standard .Net Core 2.1)*
 * Website *(Standard ASP.Net Core App 2.1)*
-* _[Docker-compose]_ *(Docker Contianer)*
+* _[Docker-compose]_ *(Docker Container)*
 
-Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup winodow gets custom __M#__ project options from user In the **M# MVC Project Wizard** window.
+Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup window gets custom __M#__ project options from user In the **M# MVC Project Wizard** window.
 
 ![alt text](images/NewMSharpMVCProjectWizard.png "M# MVC Project Wizard")
 
@@ -33,7 +33,7 @@ Then M# project wizard tries to download new fresh copy of __M# MVC Project__ te
 
 ![alt text](images/DownloadProgressWindow.png "Downloading Window")
 
-After the template downloaded successfully, **Initialize.bat** of downloaded package automatically runs to initialize M# solution by updating projects referenses and all required website packages.
+After the template downloaded successfully, **Initialize.bat** of downloaded package automatically runs to initialize M# solution by updating projects references and all required website packages.
 
 ![alt text](images/SolutionInitialization.png "Downloading Window")
 
@@ -47,7 +47,7 @@ By using **_M# ASP.NET Core MVC Microservice Project_** you can create a standar
 * Domain *(Standard .Net Core 2.1)*
 * Website *(Standard ASP.Net Core App 2.1)*
 
-Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup winodow gets custom __M# Microservice__ project options from user In the **M# Microservice Project Wizard** window.
+Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup window gets custom __M# Microservice__ project options from user In the **M# Microservice Project Wizard** window.
 
 ![alt text](images/NewMSharpMiscroserviceProjectWizard.png "M# Microservice Project Wizard")
 
@@ -94,12 +94,12 @@ M# shows a tool window to get an _Entity/**Type Name**_ with an optional __Base 
 
 ![Image](images/CreateNewEntityWindow.png)
 
-So that if developer only specified a __Type Name__ then M# creates a plain Enity type class and if he select a __Base Type__ from dropdown combo then M# will generates a Entity __SubType<*Base Type*>__ class depending on selected item.
+So that if developer only specified a __Type Name__ then M# creates a plain Entity type class and if he select a __Base Type__ from dropdown combo then M# will generates a Entity __SubType<*Base Type*>__ class depending on selected item.
 
-> Note : Only compiled Entity Types are availabe in drop down combos to select as Base Type in all Create pages.
-> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) :
+> Note : Only compiled Entity Types are available in drop down combos to select as Base Type in all Create pages.
+> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-MSharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) :
 >
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+> MSharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >* _Person is sample entity name_
 >* _Administrator is sample entity base type_ (optional)
 >* _ContainerFolder is sample folder_ (optional)
@@ -111,7 +111,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
 >
-> msharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
+> MSharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
 >* _Admin.cs is sample page name_
 >* _ContentBlock is sample entity base type_
 >* _MainMenu is sample menu module name_ (optional)
@@ -125,9 +125,9 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![Image](images/AddFormMenu.PNG)
 ![Image](images/AddFormWindow.PNG)
 
-> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addform-onentitytypename-namemyformname-foldercontainerfolder) :
+> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-MSharpexe-addform-onentitytypename-namemyformname-foldercontainerfolder) :
 >
-> msharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
+> MSharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
 >* _EntityTypeName is sample entity name_
 >* _MyFormName is sample form module name_
 >* _ContainerFolder is sample folder_ (optional)
@@ -137,9 +137,9 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![Image](images/AddListMenu.PNG)
 ![Image](images/AddListWindow.PNG)
 
-> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addlist-onentitytypename-namemyformname-foldercontainerfolder) :
+> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-MSharpexe-addlist-onentitytypename-namemyformname-foldercontainerfolder) :
 >
-> msharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
+> MSharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
 >* _EntityTypeName is sample entity name_
 >* _MyListName is sample list  module name_
 >* _ContainerFolder is sample folder_ (optional)
@@ -149,9 +149,9 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 ![Image](images/AddViewMenu.PNG)
 ![Image](images/AddViewWindow.PNG)
 
-> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-msharpexe-addview-onentitytypename-namemyformname-foldercontainerfolder) :
+> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-MSharpexe-addview-onentitytypename-namemyformname-foldercontainerfolder) :
 >
-> msharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
+> MSharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
 >* _EntityTypeName is sample entity name_
 >* _MyViewName is sample view module name_
 >* _ContainerFolder is sample folder_ (optional)
@@ -163,7 +163,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
 >
-> msharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
+> MSharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
 >* _MyMenuName is sample menu module name_
 >* _ContainerFolder is sample folder_ (optional)
 
@@ -185,7 +185,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
 >
-> msharp.exe /add:page /name:"PageName" [/parent:"FullPathToParentFolderOrFile"]
+> MSharp.exe /add:page /name:"PageName" [/parent:"FullPathToParentFolderOrFile"]
 >* _PageName is sample page or sub-page module name_
 >* _FullPathToParentFolderOrFile is sample folder or Page Module file name_
 
@@ -196,7 +196,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
 >
-> msharp.exe /add:Page /name:MySubAdmin /parent:"C:\...\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs"
+> MSharp.exe /add:Page /name:MySubAdmin /parent:"C:\...\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs"
 >* _MySubAdmin is sample Sub Page name_
 >* _C:\..\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs is sample Parent Page full path_
 
@@ -207,7 +207,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
 >
-> msharp.exe /add:Crud /page:"Admin.cs" /type:"Administrator" [/menu:"AdminSettingsMenu"]
+> MSharp.exe /add:Crud /page:"Admin.cs" /type:"Administrator" [/menu:"AdminSettingsMenu"]
 >* _Admin.cs is sample page name_
 >* _Admin.cs is sample page name_
 >* _Administrator is sample entity base type_
@@ -220,7 +220,7 @@ So that if developer only specified a __Type Name__ then M# creates a plain Enit
 
 > [![Image](images/CLI.png "M# Command Line Interface")CLI Command](CLI.md):
 >
-> msharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
+> MSharp.exe /add:type /name:"Person" [/base:"Administrator"] [/folder:"ContainerFolder"]
 >* _Person is sample entity name_
 >* _Administrator is sample entity base type_
 >* _ContainerFolder is sample folder_
@@ -258,7 +258,7 @@ MSharp.Colorize VSIX provides attribute classes to apply coloring rules on M# me
 
 ### MethodColorAttribute, MethodStyleAttribute classes
 
-MSharp.Colorize VSIX provides set of Classifiers to show M# code hilighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
+MSharp.Colorize VSIX provides set of Classifiers to show M# code highlighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
 
 Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a method you simply should create a class with name "MethodColorAttribute" derived from Attribute class and a constructor with at least one string parameter in your project, like this :
 
@@ -281,7 +281,7 @@ In this case you can decorate all your methods with this new created attribute l
         }
 ```
 
-So whenever developers use your decorated mothod then they will see method name coloured like this :
+So whenever developers use your decorated method then they will see method name coloured like this :
 
   ![Colorize_SampleCode1](images/Colorize_SampleCode1.PNG)
 
@@ -291,7 +291,7 @@ Depending on the current color theme of Visual Studio and the background color o
 
 MethodColorAttribute class constructor can be implement with second string parameter too. In that case first parameter is specified method color in dark theme and second, specified method color in light theme.
 
->You can test live Colouring functionalies by implementing a **MethodColorAttribute** class in your project and decorate a method with this attribute, then the decorated mrthod reflects method color changes real time.
+>You can test live Colouring functionalities by implementing a **MethodColorAttribute** class in your project and decorate a method with this attribute, then the decorated method reflects method color changes real time.
 
 ## In Dark Theme
 
@@ -321,12 +321,90 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## VS Ext: MSharp.Intellisense
 
-...
+Developers can put their C# code in many parts of M# code structures, it means when M# engine starts generate the code, then that static code part should be placed inside generated code when we use C# syntax methods (decorated by one of this attributes : ExpectsCSharpStatementAttribute, ExpectsCSharpExpressionAttribute, ExpectsCSharpBlockAttribute ) , for example in a header module inside UI project we can write :
+
+```C#
+            OnViewModelClassCode("Return applicable menu").Code(@"public MvcHtmlString GetApplicableMenu(User user, HtmlHelper Html){
+            if (user is VendorManager)
+                return Html.Action<Controllers.VendorMenuController>();
+
+            if (user is ApplicationUser)
+                return Html.Action<Controllers.AdminMenuController>();
+
+            if (user is AgencyUser)
+                return Html.Action<Controllers.AgencyMenuController>();
+
+            if (user is Contractor)
+                return Html.Action<Controllers.ContractorMenuController>();
+
+            return null;
+            }");
+```
+
+  ![Image](images/Intellisens1.jpeg)
+
+Write and maintaining the c# code in string literal is not easy, So by using the Intellisense VSIX we can work with those types of code in fast and easy way.
+  ![Image](images/Intellisens3.jpeg)
+
+When the cursor is under calling method or its string literal parameter then you can open a code peeker just below the current line by the right click command on the method or the string parameter and selecting "Show Intellisense For String Parameter Alt+ I"
+
+  ![Image](images/Intellisens4.jpeg)
+
+or pressing [ALT + I] shortcut key or by invoking the light-bulb command when it suggested or hitting the [CTRL + .] key combination on proper line and select "Show Intellisense for string parameter" command.
+
+  ![Image](images/Intellisens5.jpeg)
+
+The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# file, so peeker loads that temporary file as well and developers can manipulate their codes in right C# code context.
+
+> [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md) :
+>MSharp.exe /intellisense {Switch} /file:{FullFileName} /setting:{Setting} /line:{line number} /text:{C# code}
+>
+> Sample CLI command :
+> MSharp.exe /intellisense /ExpectsCSharpStatement /file:"C:\Geeks\SampleApp\M#\UI\Modules-Custom\Header.cs" /setting:Code /line:39 /text:"var i = Math.Cos(90)"
+>*_Switch_ : all attributes that in ExpectsCSharp category like /ExpectsCSharpStatement
+>*_FullFileName_ : C# file with full path containing Method calling like C:\Geeks\SampleApp\M#\UI\Modules-Custom\Header.cs
+>*_Setting_ : Method name that we would like to have C# context of its code.
+>*_Line Number_ : Line number of the method(_Setting_) in _FullFileName_.
+>*_Text_ : C# code or constant that is currently in parameter of the method(_Setting_).
+
+### Technical Note 1
+
+Some times it maybe take long time to show peeker with the C# context, it's completely depends on project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file should be populate and create in the _M#_TEMP folder under the WebSite project, 
+
+![Image](images/Intellisens6.jpeg)
+
+then Intellisense VSIX shows the code file in the peeker, so during generating file you can see a progress bar in top of displayed empty peeker.
+
+![Image](images/Intellisens2.jpeg)
+
+
+### Technical Note 2
+
+ (**Troubleshooting**) if you cant see the peeker panel after a while, or you get "No Result, We did not find any result." then MSharp.exe has been returned error and file is not generated in the desired location, So you can check this items :
+
+![Image](images/Intellisens8.jpeg)
+
+* Make sure the solution is fully compiled without error.
+* Make sure #UI.dll, #Model.dll, MSharp.exe and MSharp.DLS.exe are exit in the "[Solution Path]\M#\Lib\".
+* Run MSharp.exe from command line with some sample parameters to ensure everything works well.
+
+### **Debugging** Tip
+
+You simply can set "DEBUG:" prefix in start of code in string literal, Then an error log file will be created in Lib folder in this location : "[Solution Path]\M#\Lib\Intellisense.log".
+
+![Image](images/Intellisens9.jpeg)
+
+You can close peeker panel with or without saving code, so if you push ESC button or hit the X corner button then peeker tries to close, but if you have made changes then a messages box appears and ask you about saving changes by reflecting them to the main code or not, otherwise peeker panel will close simply.
+
+![Image](images/Intellisens7.jpeg)
+
+Also you can close intellisense peeker by pressing the CTRL + S key, then all changes are saved and will be reflect to the main code.
+
 
 ## VS Ext: MSharp.Snippet
 
 ...
 
-## VS Ext: MSharp.Warninigs
+## VS Ext: MSharp.Warnings
 
 ...
