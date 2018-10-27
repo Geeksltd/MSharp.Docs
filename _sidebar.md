@@ -72,7 +72,7 @@
     * [Unique property](how-to/validation/unique.md)
     * [Uniqueness combination](how-to/validation/uniqueCombination.md)
     * [Custom validation rule](how-to/validation/customValidation.md)
-    * Custom pre-validation logic
+    * [Custom pre-validation logic](how-to/validation/customPrevalidation.md)
     * Mutually exclusive
     * Form-specific validation
     * Custom validation message
