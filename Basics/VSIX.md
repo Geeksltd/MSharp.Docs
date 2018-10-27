@@ -347,7 +347,7 @@ Writing and maintaining c# codes in string literals are not easy, So by using th
 
   ![Image](images/Intellisens3.jpeg)
 
-When the cursor is under calling method or its string literal parameter then you can open a code peeker just below the current line by the right click command on the method or the string parameter and selecting "Show Intellisense For String Parameter Alt+ I"
+When the cursor is under calling method or its string literal parameter then you can open a code peeker just below the current line by right click command on the method name or its string parameter and then select "Show Intellisense For String Parameter Alt+ I" item from the context menu.
 
   ![Image](images/Intellisens4.jpeg)
 
@@ -368,7 +368,7 @@ The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# fi
 >*_Line Number_ : Line number of the method(_Setting_) in _FullFileName_.
 >*_Text_ : C# code or constant that is currently in parameter of the method(_Setting_).
 
-### Technical Note 1
+### Technical Tip 1
 
 Some times it maybe take long time to show peeker with the C# context, it's completely depends on project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file should be populate and create in the _M#_TEMP folder under the WebSite project
 
@@ -378,15 +378,19 @@ then Intellisense VSIX shows the code file in the peeker, so during generating f
 
 ![Image](images/Intellisens2.jpeg)
 
-### Technical Note 2
+### Technical Tip 2
 
- (**Troubleshooting**) if you cant see the peeker panel after a while, or you get "No Result, We did not find any result." then MSharp.exe has been returned error and file is not generated in the desired location, So you can check this items :
-
-![Image](images/Intellisens8.jpeg)
+ (**Troubleshooting**) if you cant see the peeker panel after a while, or you get "No Result, We did not find any result." message, then maybe MSharp.exe has been returned an error and intellisense temporary file is not generated correctly in  _M#_TEMP, So you can check these:
 
 * Make sure the solution is fully compiled without error.
 * Make sure #UI.dll, #Model.dll, MSharp.exe and MSharp.DLS.exe are exit in the "[Solution Path]\M#\Lib\".
 * Run MSharp.exe from command line with some sample parameters to ensure everything works well.
+
+![Image](images/Intellisens8.jpeg)
+
+### Technical Note
+
+C# code file that opened by Intellisense Peeker Panel, is used only for specific manner, So developers can not make changes (and they do not need to do this) in top and bottom code area that wraps the original code/text, so those parts of code are read-only.
 
 ### **Debugging** Tip
 
