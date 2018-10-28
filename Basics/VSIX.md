@@ -321,15 +321,15 @@ In many cases developers need to switch to the definition and in other hand refe
 By using the MSharp GoTo VSIX you can switch better and faster to the declaration of generated classes or properties.
 So when in C# generated class in the Gen-Entities folder in Domain project you request a suggestion in the editor by pressing [CTRL+.] over class identifier name (Class Name) or property identifier name (Property Name) then a light-bulb pops up with a custom suggestion with name "Goto Definition.", then if you select this suggestion iem you will navigate to the declaration class to the Model project.
 
-  ![Image](images/Goto1.jpg)
+  ![Image](images/Goto1.JPG)
   
 In other hand you can navigate to this generated class by invoking a suggestion request (Ctrl+.) over class name identifier then you can see 2 custom suggestions in light-bulb items "Where is {ClassName} used?" and "Show generated class for {ClassName}.".
 
-  ![Image](images/Goto2.jpg)
+  ![Image](images/Goto2.JPG)
 
 So if you select "Where is {ClassName} used?" item , then you can navigate to all references by selection an item in the opened references toolbox panel.
 
-  ![Image](images/Goto3.jpg)
+  ![Image](images/Goto3.JPG)
 
 Also you can navigate to the generated class in the Domain project by selecting the "Show generated class fo {ClassName}." item as well.
 
