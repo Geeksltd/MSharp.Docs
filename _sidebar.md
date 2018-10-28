@@ -76,8 +76,8 @@
     * Mutually exclusive
     * Form-specific validation
     * Custom validation message
-    * Delete and referrential integrity
-    * Allowed file extensions
+    * [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
+    * [Allowed file extensions](how-to/validation/fileExtension.md)
     * Form warning style
 
 * How-to: Files & images
