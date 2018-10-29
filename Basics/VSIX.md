@@ -462,12 +462,18 @@ MSharp Snippet is custom Visual Studio extension that contained with many useful
 Each Snippet contains in 2 parts, Header and Snippet, and you can use them by writing their shortcut name and press TAB key.
 In this example shortcut name is "Button" and template code is :
 
-```
+![Image](images/Snippet1.JPG)
+
+```C#
     Button("$name$")
       .Action(x => $action$);
 ```
 
+![Image](images/Snippet2.JPG)
+
 For more simplicity and usefulness there are some place holder in some snippets that you help you write your code more robust and fast so just need to fill in the blanks. In our example $name$ and $action$ are code placeholders and $end$ is defined the end cursor location after snippet completion. Also you can see every Snippet have metadata in it's definition point. This metadata can be used in Visual Studio Snippet Manager Window.
+
+
 
 In general it is better you know Snippets, their shortcut names and functionalities.
 Here is the list of all Snippets that supported in the latest extension version :
