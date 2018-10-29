@@ -78,12 +78,12 @@
     * Custom validation message
     * [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
     * [Allowed file extensions](how-to/validation/fileExtension.md)
-    * Form warning style
+    * [Form warning style](how-to/validation/warningStyle.md)
 
 * How-to: Files & images
    
-    * Handling files/documents
-    * Handling images
+    * [Handling files/documents](how-to/filesAndImages/files.md)
+    * [Handling images](how-to/filesAndImages/image.md)
     * Thumbnails
     * Image optimization
     * Default (empty) image url
