@@ -388,7 +388,7 @@ Some times it maybe take long time to show peeker with the C# context, it's comp
 
 ![Image](images/Intellisens6.jpeg)
 
-then Intellisense VSIX shows the code file in the peeker, so during generating file you can see a progress bar in top of displayed empty peeker.
+Then Intellisense VSIX shows the code file in the peeker, so during generating file you can see a progress bar in top of displayed empty peeker.
 
 ![Image](images/Intellisens2.jpeg)
 
@@ -420,7 +420,133 @@ Also you can close intellisense peeker by pressing the CTRL + S key, then all ch
 
 ## VS Ext: MSharp.Snippet
 
-...
+Development with M# always is fun also this work is more simple and fun if you use our custom Visual Studio extensions too.
+
+Snippet is a programming term for a small region of re-usable source code. Ordinarily, these are formally defined operative units to incorporate into larger programming modules.
+
+MSharp Snippet is custom Visual Studio extension that contained with many useful small parts of code and are useful when you want to write some UI codes. Snippets are defined in MSharp.Snippet extension, and each one are declared in simple XML file and after Visual Studio loads this package you can call their shortcut name to put template in side your code, for example this is a button create snippet :
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>Button</Title>
+    <Author>Geeks Ltd</Author>
+    <Shortcut>Button</Shortcut>
+    <Description>Code snippet for simple button.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>name</ID>
+        <ToolTip>Button name</ToolTip>
+        <Default>ButtonName</Default>
+      </Literal>
+      <Literal>
+        <ID>action</ID>
+        <ToolTip>The action</ToolTip>
+        <Default>...</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="csharp">
+      <![CDATA[Button("$name$")
+                .Action(x => $action$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
+```
+
+Each Snippet contains in 2 parts, Header and Snippet, and you can use them by writing their shortcut name and press TAB key.
+In this example shortcut name is "Button" and template code is :
+
+```
+    Button("$name$")
+      .Action(x => $action$);
+```
+
+For more simplicity and usefulness there are some place holder in some snippets that you help you write your code more robust and fast so just need to fill in the blanks. In our example $name$ and $action$ are code placeholders and $end$ is defined the end cursor location after snippet completion. Also you can see every Snippet have metadata in it's definition point. This metadata can be used in Visual Studio Snippet Manager Window.
+
+In general it is better you know Snippets, their shortcut names and functionalities.
+Here is the list of all Snippets that supported in the latest extension version :
+
+>* Shortcut name : *Button*
+>* M# Code:
+>* **Button("$name$").Action(x => $action$);**
+>* Description: Code snippet for simple button.
+
+>* Shortcut name : *ButtonAddNew*
+>* M# Code:
+>* **Button("$name$").Icon($icon$)
+            .Action(x => x.Go<$page$>()
+            $sendReturnUrl$);**
+>* Description: Code snippet for a add new button.
+
+>* Shortcut name : *ButtonBack*
+>* M# Code:
+>* **Button("$name$")
+            .Action(x => $back$);**
+>* Description: Code snippet for a back button.
+
+>* Shortcut name : *ButtonCancel*
+>* M# Code:
+>* **Button("$name$").CausesValidation(value: false)
+            .Action(x => $close$);**
+>* Description: Code snippet for a cancel button.
+
+>* Shortcut name : *ButtonDelete*
+>* M# Code:
+>* **ButtonColumn("$name$").Icon($icon$)
+            .Action(x => 
+            {
+               $delete$
+               $reload$
+            });**
+>* Description: Code snippet for a delete button.
+
+>* Shortcut name : *ButtonEdit*
+>* M# Code:
+>* **ButtonColumn("$name$").Icon($icon$)
+            .Action(x => x.Go<$page$>()
+            $sendReturnUrl$$send$);**
+>* Description: Code snippet for a edit button.
+
+>* Shortcut name : *ButtonExportToCsv*
+>* M# Code:
+>* **CButton("$name$").Icon($icon$)
+            .Action(x => $action$);**
+>* Description: Code snippet for an export-to-csv button.
+
+>* Shortcut name : *ButtonExportToExcel*
+>* M# Code:
+>* **Button("$name$").Icon($icon$)
+            .Action(x => $action$);**
+>* Description: Code snippet for an export-to-excel button.
+
+>* Shortcut name : *ButtonSave*
+>* M# Code:
+>* **Button("$name$").IsDefault().Icon($icon$)
+            .Action(x =>
+            {
+                $saveAction$
+                $showMessage$
+                $close$
+            });**
+>* Description: Code snippet for a save button.
+
+>* Shortcut name : *ButtonSearch*
+>* M# Code:
+>* **Button("$name$").Icon($icon$)
+            .Action(x => $action$);**
+>* Description: Code snippet for a search button.
+
+>* Shortcut name : *ButtonSort*
+>* M# Code:
+>* **Button("$name$")
+            .Action(x => $action$);**
+>* Description: Code snippet for a sort button.
 
 ## VS Ext: MSharp.Warnings
 
