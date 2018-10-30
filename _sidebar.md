@@ -89,8 +89,8 @@
     * [Default (empty) image url](how-to/filesAndImages/defaultURL.md)
     * Secure access
     * Custom storage
-    * Displaying an image 
-    * Image with click action
+    * [Displaying an image](how-to/filesAndImages/displayImage.md)
+    * [Image with click action](how-to/filesAndImages/interactiveImage.md)
 
 * How-to: Form modules
 
