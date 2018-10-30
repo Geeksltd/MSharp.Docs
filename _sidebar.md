@@ -85,7 +85,7 @@
     * [Handling files/documents](how-to/filesAndImages/files.md)
     * [Handling images](how-to/filesAndImages/image.md)
     * Thumbnails
-    * Image optimization
+    * [Image optimization](how-to/filesAndImages/optimizations.md)
     * Default (empty) image url
     * Secure access
     * Custom storage
