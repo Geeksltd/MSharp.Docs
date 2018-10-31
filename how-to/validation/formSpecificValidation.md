@@ -13,13 +13,13 @@ In this topic we describe how to do so.
 
 `OnBeforeSave()` event of the form module can be used for writing validation code which gets executed before the form gets saved in the database.
 We can write custom code for the event like this `OnBeforeSave("some name").Code("//custom code");`.
-Since we are writing the code as a string, if it is complicated, we can put the method in a partial clas but still call it from here.
+Since we are writing the code as a string, if it is complicated, we can put the method in a partial class but still call it from here.
 
 #### Example
 
 Let's say we have a form for entering product details.
 There is some very specific logic when entering product data.
-We had a special product previously called main which we renamed to CompanySpecial and we want to make employee job easier to change the name of the product whenever they enter this.
+We had a special product previously called main which we renamed to CompanySpecial and we want to make employees job easier to change the name of the product whenever they enter this.
 Later on we might replace all names including the word main with CompanySpecial but for now let's just rename the product which its name is main.
 The form will look like this
 
