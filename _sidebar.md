@@ -95,9 +95,9 @@
 * How-to: Form modules
 
     * [Adding a textbox](how-to/formModules/addingTextbox.md)
-    * Adding a check box
-    * Adding a html editor
-    * Adding a drop down list
+    * [Adding a check box](how-to/formModules/addingCheckbox.md)
+    * [Adding a html editor](how-to/formModules/addingHtmlEditor.md)
+    * [Adding a drop down list](how-to/formModules/addingDropDownList.md)
     * Adding a radio button list
     * Adding a checkbox list
     * Adding a date picker

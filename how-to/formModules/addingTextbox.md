@@ -39,5 +39,11 @@ namespace Modules
 }
 ```
 
+![textbox](images/textbox.PNG)
+
 The `ProductName` property is a string and would have a textbox as the control type anyways but here is how to define it explicitly.
 sometimes you might want to define the control type of other data-types as textbox which explicit definition will be useful for.
+
+## Remarks
+
+If you want to make the textbox multi-line, call the `Lines()` method on the property definition when defining the entity.
