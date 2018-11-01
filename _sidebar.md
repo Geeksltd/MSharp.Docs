@@ -100,7 +100,7 @@
     * [Adding a drop down list](how-to/formModules/addingDropdownList.md)
     * [Adding a radio button list](how-to/formModules/addingRadiobuttonList.md)
     * [Adding a checkbox list](how-to/formModules/addingCheckboxList.md)
-    * Adding a date picker
+    * [Adding a date picker](how-to/formModules/addingDatePicker.md)
     * Adding a time picker
     * Adding a date/time picker
     * Limiting time picker hours/minutes
