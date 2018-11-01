@@ -101,8 +101,8 @@
     * [Adding a radio button list](how-to/formModules/addingRadiobuttonList.md)
     * [Adding a checkbox list](how-to/formModules/addingCheckboxList.md)
     * [Adding a date picker](how-to/formModules/addingDatePicker.md)
-    * Adding a time picker
-    * Adding a date/time picker
+    * [Adding a time picker](how-to/formModules/addingTimePicker.md)
+    * [Adding a date/time picker](how-to/formModules/addingDatetimePicker.md)
     * Limiting time picker hours/minutes
     * Adding a file upload field
     * Default values (property setter)
