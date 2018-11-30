@@ -10,7 +10,9 @@
     color: #eccb84; 
 }
 
-.sidebar li { margin: 0; line-height: 22px }
+.sidebar li li { margin: 0; line-height: 22px; color:red; font-size: 13px;}
+.sidebar li li li { color: #42AAA9; }
+.sidebar li li li a { color: #42AAA9; }
 
 .sidebar li > p { margin-top: 15px; }
 .sidebar ul li a {font-size: 13px;}
