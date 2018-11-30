@@ -16,3 +16,5 @@
 
 .sidebar li > p { margin-top: 15px; }
 .sidebar ul li a {font-size: 13px;}
+
+.sidebar ul li.active > a { display:inlnie-block; background: #42AAA9; color:#fff; border-radius: 12px; padding: 0 10px; margin-left:-11px; font-weight:normal}
