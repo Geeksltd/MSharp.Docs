@@ -9,6 +9,7 @@ Make sure you have all of the following installed on your computer:
 3. GIT for Windows ([Install from here](http://gitforwindows.org/))
 4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))
 4. Yarn Package Manager ([Install from here](https://yarnpkg.com/latest.msi))
+5. Install Bower `npm install -g bower`
 5. Docker, plus Windows runtime ([Install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
 6. An instance of SQL Server ([Install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
 7. SSMS (Recommended not required [Install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
@@ -31,14 +32,14 @@ Make sure you have all of the following installed on your computer:
 
 ### Note
 
-> At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the Initialize.bat file from the solution root directory which will install bower, packages, etc.
+> At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the Build.bat file from the solution root directory which will install yarn's packages, compite CSS and TypeScript files, etc.
 
 ## Troubleshooting
 
 If you experienced any problem try the following:
 
-1. Open a cmd and run Initialize.bat file and watch for errors. You might have missing components.
+1. Open a `CMD` with administrator permission and run `Build.bat` file and watch for errors. You might have missing components.
 2. Make sure all nuget packages are successfully restored.
 3. If your package did not restore correctly, remove the .nuget contents folder from `C:\Users\{YOUR USER NAME}`
-4. Make sure that the path to the solution is not too long or it does not contain special characters such as space.
+4. Make sure that the path to the solution is not too long or it does not contain special characters such as space. (It's suggested that you create all project in the `C:\Project\` path.')
 5. If you had any kind of difficulties and unexpected problems or you faced with M#/Olive template issues, just leave an issue [HERE](https://github.com/Geeksltd/Olive.MvcTemplate/issues).
