@@ -9,7 +9,7 @@ Make sure you have all of the following installed on your computer:
 3. GIT for Windows ([Install from here](http://gitforwindows.org/))
 4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))
 5. Yarn Package Manager ([Install from here](https://yarnpkg.com/latest.msi))
-6. Install Bower by typing `npm install -g bower` in the **CMD** or **Git Bash**
+6. Install **Bower** by typing `npm install -g bower` in the **CMD** or **Git Bash**
 7. Docker, plus Windows runtime ([Install from here](https://docs.docker.com/toolbox/toolbox_install_windows/))
 8. An instance of SQL Server ([Install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
 9. SSMS (Recommended not required [Install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
@@ -23,16 +23,16 @@ Make sure you have all of the following installed on your computer:
 ## Create your first application
 
 1. In Visual Studio, create a new project.
-2. On the left hand side, select ".NET Core" as the category.
-3. On the right hand side, select "M# - ASP.NET Core" as the template type, then click on "Create".
-4. On the next page, leave the default settings as it is, and click "Create" again.(Read the note below)
-5. Set Website as your start-up project.
+2. On the left hand side, select **.NET Core** as the category.
+3. On the right hand side, select **M# - ASP.NET Core** as the template type, then click on **Create**.
+4. On the next page, leave the default settings as it is, and click **Create** again.(Read the note below)
+5. Set **Website** as your start-up project.
 6. Go to `appsettings.json` and verify the connection string.
 7. Run the app to see the login page.
 
 ### Note
 
-> At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the Build.bat file from the solution root directory which will install yarn's packages, compite CSS and TypeScript files, etc.
+> At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the **Build.bat** file from the solution root directory which will install yarn's packages, compite CSS and TypeScript files, etc.
 
 ## Troubleshooting
 
