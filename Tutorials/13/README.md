@@ -137,7 +137,7 @@ As we can see in the requrements, we should develop these pages:
 -Resellers
   - Add seller
 
-Let's start with the tough one! We'll it's not that tough actually when there's M#. Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Reseller** rootpage:
+Let's start with the tough one! We'll it's not that tough actually when there's M#. Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Country** rootpage:
 
 ```csharp
 using MSharp;
