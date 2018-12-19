@@ -151,7 +151,7 @@ namespace Modules
             Button("Register").IsDefault()
             .OnClick(x =>
             {
-                x.If("info.InvitationCode != \"SuperSecretFormula\"").GentleMessage("Invalid registration key.").Exits();
+                x.If("info.InvitationCode != \"SuperSecretFormula\"").GentleMessage("Invalid registration key.").AndExit();
 
                 x.SaveInDatabase();
             });
