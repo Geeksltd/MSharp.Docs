@@ -65,44 +65,44 @@
     
 * How-to: Validation
 
-    * Mandatory property    
-    * Numeric/date range
-    * Text length
-    * Text pattern/regex
-    * Unique property
-    * Uniqueness combination
-    * Custom validation rule
-    * Custom pre-validation logic
+    * [Mandatory property](how-to/validation/mandatory.md)    
+    * [Numeric/date range](how-to/validation/numericAndDateRange.md)
+    * [Text length](how-to/validation/textLength.md)
+    * [Text pattern/regex](how-to/validation/textPatternAndRegex.md)
+    * [Unique property](how-to/validation/unique.md)
+    * [Uniqueness combination](how-to/validation/uniqueCombination.md)
+    * [Custom validation rule](how-to/validation/customValidation.md)
+    * [Custom pre-validation logic](how-to/validation/customPrevalidation.md)
     * Mutually exclusive
-    * Form-specific validation
+    * [Form-specific validation](how-to/validation/formSpecificValidation.md)
     * Custom validation message
-    * Delete and referrential integrity
-    * Allowed file extensions
-    * Form warning style
+    * [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
+    * [Allowed file extensions](how-to/validation/fileExtension.md)
+    * [Form warning style](how-to/validation/warningStyle.md)
 
 * How-to: Files & images
    
-    * Handling files/documents
-    * Handling images
+    * [Handling files/documents](how-to/filesAndImages/files.md)
+    * [Handling images](how-to/filesAndImages/image.md)
     * Thumbnails
-    * Image optimization
-    * Default (empty) image url
+    * [Image optimization](how-to/filesAndImages/optimizations.md)
+    * [Default (empty) image url](how-to/filesAndImages/defaultURL.md)
     * Secure access
     * Custom storage
-    * Displaying an image 
-    * Image with click action
+    * [Displaying an image](how-to/filesAndImages/displayImage.md)
+    * [Image with click action](how-to/filesAndImages/interactiveImage.md)
 
 * How-to: Form modules
 
-    * Adding a textbox
-    * Adding a check box
-    * Adding a html editor
-    * Adding a drop down list
-    * Adding a radio button list
-    * Adding a checkbox list
-    * Adding a date picker
-    * Adding a time picker
-    * Adding a date/time picker
+    * [Adding a textbox](how-to/formModules/addingTextbox.md)
+    * [Adding a check box](how-to/formModules/addingCheckbox.md)
+    * [Adding a html editor](how-to/formModules/addingHtmlEditor.md)
+    * [Adding a drop down list](how-to/formModules/addingDropdownList.md)
+    * [Adding a radio button list](how-to/formModules/addingRadiobuttonList.md)
+    * [Adding a checkbox list](how-to/formModules/addingCheckboxList.md)
+    * [Adding a date picker](how-to/formModules/addingDatePicker.md)
+    * [Adding a time picker](how-to/formModules/addingTimePicker.md)
+    * [Adding a date/time picker](how-to/formModules/addingDatetimePicker.md)
     * Limiting time picker hours/minutes
     * Adding a file upload field
     * Default values (property setter)
