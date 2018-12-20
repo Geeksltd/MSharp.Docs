@@ -139,12 +139,12 @@ public class AssetTypePage : RootPage
 }
 ```
 
-As you can see, we have added `Add<Modules.ProjectsList>();`. We're going to create this class soon, but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetTypes* then make a class named *EnterPage* class in *AssetTypes* folder like below:
+As you can see, we have added `Add<Modules.AssetTypesList>();`. We're going to create this class soon, but for now let's skip it for a while. In the *Pages* folder create a new folder named *AssetType* then make a class named *EnterPage* class in *AssetType* folder like below:
 
 ```csharp
 using MSharp;
 
-namespace AssetTypes
+namespace AssetType
 {
     class EnterPage : SubPage<AssetTypePage>
     {
@@ -180,19 +180,23 @@ namespace Modules
             Column(x => x.Name);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<AssetTypes.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<AssetType.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Asset Type?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
                     x.Reload();
                 });
 
-            Button("New Asset Types").Icon(FA.Plus)
-                .OnClick(x => x.Go<AssetTypes.EnterPage>()
+            Button("Add Asset Type").Icon(FA.Plus)
+                .OnClick(x => x.Go<AssetType.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -230,7 +234,7 @@ namespace Modules
 }
 ```
 
-This class is responsible for generating related forms for adding and editing entity. After creating these modules, add them to *AssetType.cs* class that is our root page, and *Enter.cs* class under *AssetTypes* folder if you have let them empty in previous sections.
+This class is responsible for generating related forms for adding and editing entity. After creating these modules, add them to *AssetTypePage.cs* class that is our root page, and *Enter.cs* class under *AssetType* folder if you have let them empty in previous sections.
 
 ### Creating Owner Pages
 
@@ -248,12 +252,12 @@ public class OwnerPage : RootPage
 }
 ```
 
-In this class we added *OwnerList* module which is responsible for showing all owners. Let's continue with creating an *Enter* class that is responsible for adding and editing owners. Create a new folder with the name of *Owners* under the *Pages* folder in *#UI* project, then add an *EnterPage* class like below:
+In this class we added *OwnerList* module which is responsible for showing all owners. Let's continue with creating an *Enter* class that is responsible for adding and editing owners. Create a new folder with the name of *Owner* under the *Pages* folder in *#UI* project, then add an *EnterPage* class like below:
 
 ```csharp
 using MSharp;
 
-namespace Owners
+namespace Owner
 {
     class EnterPage : SubPage<OwnerPage>
     {
@@ -316,19 +320,23 @@ namespace Modules
             Column(x => x.LastName);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Owners.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Owner.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Owner?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
                     x.Reload();
                 });
 
-            Button("New Owner").Icon(FA.Plus)
-                .OnClick(x => x.Go<Owners.EnterPage>()
+            Button("Add Owner").Icon(FA.Plus)
+                .OnClick(x => x.Go<Owner.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -353,12 +361,12 @@ public class AssetPage : RootPage
 }
 ```
 
-In this class *AssetsList* module is added, which is responsible for showing all assets. Now let's continue with creating an *Enter* class for adding and editing assets. Create a new folder with the name of *Assets* under the *Pages* folder of *#UI* project and add an *Enter* sub page using M# context menu:
+In this class *AssetsList* module is added, which is responsible for showing all assets. Now let's continue with creating an *Enter* class for adding and editing assets. Create a new folder with the name of *Asset* under the *Pages* folder of *#UI* project and add an *Enter* sub page using M# context menu:
 
 ```csharp
 using MSharp;
 
-namespace Assets
+namespace Asset
 {
     class EnterPage : SubPage<AssetPage>
     {
@@ -379,7 +387,7 @@ Add another sub page, named "View":
 ```csharp
 using MSharp;
 
-namespace Assets
+namespace Asset
 {
     class ViewPage : SubPage<AssetPage>
     {
@@ -450,7 +458,7 @@ namespace Modules
             SearchButton("Search");
 
             ButtonColumn("View").HeaderText("View").Icon(FA.SearchPlus)
-                .OnClick(x => x.Go<Assets.ViewPage>().Send("item", "item.ID").SendReturnUrl());
+                .OnClick(x => x.Go<Asset.ViewPage>().Send("item", "item.ID").SendReturnUrl());
 
             Column(x => x.Code);
             Column(x => x.Name);
@@ -459,19 +467,23 @@ namespace Modules
             Column(x => x.Owner);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Assets.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Asset.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+				.ConfirmQuestion("Are you sure you want to delete this Asset?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
                     x.Reload();
                 });
 
-            Button("New Asset").Icon(FA.Plus)
-                .OnClick(x => x.Go<Assets.EnterPage>()
+            Button("Add Asset").Icon(FA.Plus)
+                .OnClick(x => x.Go<Asset.EnterPage>()
                 .SendReturnUrl());
         }
     }
