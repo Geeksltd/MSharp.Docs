@@ -48,20 +48,20 @@
 
 * How-to: Database
 
-    * Custom table/column name
-    * Custom primary key
-    * Soft delete
-    * Custom data persistence
-    * Index
-    * Data type conversion
-    * Bootstrap/reference data
+    * [Custom table/column name](how-to/database/customNames.md)
+    * [Custom primary key](how-to/database/customPrimaryKey.md)
+    * [Soft delete](how-to/database/softDelete.md)
+    * [Custom data persistence](how-to/database/customPersistence.md)
+    * [Index](how-to/database/index.md)
+    * [Data type conversion](how-to/database/typeConversion.md)
+    * [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
 
 * How-to: Model: Misc
 
-    * Name vs Title
-    * Notes/docs/user help
-    * Custom [Attributes]
-    * White-space trimming
+    * [Name vs Title](how-to/misc/nameAndtitle.md)
+    * [Notes/docs/user help](how-to/misc/noteHelpDocumentation.md)
+    * [Custom [Attributes]](how-to/misc/customAttributes.md)
+    * [White-space trimming](how-to/misc/whitespaceTrimming.md)
     
 * How-to: Validation
 
