@@ -111,26 +111,34 @@ Now it's time to add our business logic, we should add any business logic to the
 Now create a partial class named **Registration** under *Logic* folder like below:
 
 ```csharp
-public partial class Registration
+using Domain;
+using Olive.Email;
+using Olive.Entities.Data;
+
+namespace Domain
 {
-    public void SendConfirmation()
+    public partial class Registration
     {
-		var template = EmailTemplate.RegistrationConfirmationEmail;
 
-		var placeHolderValues = new
-		{
-			FirstName = this.FirstName,
-			LastName = this.LastName
-		};
+        public void SendConfirmation()
+        {
+            var template = EmailTemplate.RegistrationConfirmationEmail;
 
-		var emailMessage = new EmailMessage
-		{
-			Subject = template.MergeSubject(placeHolderValues),
-			To = this.Email,
-			Body = template.MergeBody(placeHolderValues)
-		};
+            var placeHolderValues = new
+            {
+                FirstName = this.FirstName,
+                LastName = this.LastName
+            };
 
-		Database.Save(emailMessage);
+            var emailMessage = new EmailMessage
+            {
+                Subject = template.MergeSubject(placeHolderValues),
+                To = this.Email,
+                Body = template.MergeBody(placeHolderValues)
+            };
+
+            Database.Save(emailMessage);
+        }
     }
 }
 ```
