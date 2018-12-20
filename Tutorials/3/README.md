@@ -305,12 +305,11 @@ public class ProjectTaskPage : RootPage
 }
 ```
 
-Add a folder named *ProjectTaskFolder* under *Pages* folder, add three sub-pages named **Edit**, **Enter** and **View**, and edit them using the following code snippets:
+Add a folder named *ProjectTask* under *Pages* folder, add three sub-pages named **Edit**, **Enter** and **View**, and edit them using the following code snippets:
 
 !["Project Task Folder"](ProjectTaskFolder.PNG "Project Task Folder")
 
 ```csharp
-using Modules;
 using MSharp;
 
 namespace ProjectTask
@@ -321,7 +320,7 @@ namespace ProjectTask
         {
             Layout(Layouts.FrontEnd);
 
-            Add<ProjectTaskAdd>();
+            Add<Modules.ProjectTaskAdd>();
         }
     }
 }
@@ -345,7 +344,6 @@ namespace ProjectTask
 ```
 
 ```csharp
-using Modules;
 using MSharp;
 
 namespace ProjectTask
@@ -356,7 +354,7 @@ namespace ProjectTask
         {
             Layout(Layouts.FrontEnd);
 
-            Add<ProjectTaskView>();
+            Add<Modules.ProjectTaskView>();
         }
     }
 }
@@ -401,7 +399,7 @@ namespace Modules
 
 **ProjectTaskAdd** class inherits from *FormModule* class, according to requirement, we have added *HeaderText("Task Details")* method and changed the control type of project *DropdownList*. We have also set the number of lines of *Description* property and returned back to the previous page.
 
-Add another *Form* module named **ProjectTaskAdd** in the same folder and edit it with the following code:
+Add another *Form* module named **ProjectTaskEdit** in the same folder and edit it with the following code:
 
 ```csharp
 using MSharp;
@@ -516,6 +514,9 @@ namespace Modules
             Field(x => x.Description);
 
             Field(x => x.Done).LabelText("Is done?");
+			
+			Button("Back").Icon(FA.ChevronLeft)
+				.OnClick(x => x.ReturnToPreviousPage());
 
         }
     }
