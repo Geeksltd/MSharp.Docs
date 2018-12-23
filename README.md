@@ -1,9 +1,5 @@
 # MSharp Docs
 
-> Note 1: Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
-
-> Note 2: M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/) which you must learn in order to use M#.
-
 ## Tutorials
 
 ### [Intro - What is M#](Overview/README.md)
@@ -228,3 +224,7 @@ By default, **M#** generate each action button to a seperate table cell. but, if
 ### [Using global search](how-to/UsingGlobalSearch.md)
 
 This feature let you globally search through your application and navigate to your destination page.
+
+
+## Want to contribute to these docs?
+Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
