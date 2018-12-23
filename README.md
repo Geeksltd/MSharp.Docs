@@ -9,4 +9,4 @@ To begin, go through the items in the left hand side menu, starting from the top
 
 
 ### Want to contribute to these docs?
-Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to participate in M# documentation.
+Read our [contribution rules](CONTRIBUTING.md) if you want to participate in improving the M# documentation.
