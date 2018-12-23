@@ -1,4 +1,4 @@
-# What is MSharp
+# What is M# (M-Sharp)?
 
 M# is a model-driven declarative programming model intended for developing data-focused .NET web applications. M# CLI (msharp.exe) will transform everything into standard ASP.NET MVC and C# project source code. So it's safe to adopt for mission critical projects.
 
@@ -41,3 +41,12 @@ Imagine the best of the two paradigms combined: productivity of declarative prog
 Imperative and general purpose languages are powerful, flexible and suitable for a wide range of programming activities. However they are quite verbose and  slow in developer productivity. On the other hand declarative languages are domain-specific and limited in use, yet highly productive and efficient in what they do.
 
 M# mixes the best of the two worlds. It provides a declarative high level language that is very productive and effective. At the same time by providing native support for C# imperative expressions it bypasses any inherent limitations of declarative languages, resulting in a powerful and unlimited yet very productive programming experience.
+
+## Based on Olive
+M# is based on the [Olive Framework](https://geeksltd.github.io/Olive/#/), which is built top of .NET for more productive cross-platform software development in all kinds of .NET solutions *(.NET Framework 4.6.1, .NET Core 2.1, UWP, Mono 5.4, Xamarin.iOS 10.14, Xamarin.Mac 3.8, Xamarin.Android 7.5)*.
+
+Olive provides a whole set of productivity tools to make .NET development easier, cleaner and more expressive. It's available under the GPLv3 license.
+
+Olive is a .NET Standard 2.0 library and so compatible with .NET Framework 4.6.1, .NET Core 2.0, Mono 5.4, .
+
+To use M# effectively (especially when you get more advanced), a good basic understanding of Olive is recommended.
