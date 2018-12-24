@@ -193,7 +193,7 @@ public class ProjectPage : RootPage
 }
 ```
 
-Create a folder named **Project** under **Page** folder and add this sub page:
+Create a folder named **Project** under **Pages** folder and add this sub page:
 
 ```csharp
 using MSharp;
@@ -215,7 +215,7 @@ namespace Project
 
 ### Creating required module of Project Pages
 
-Navigate to **Modules** folder of **#UI** project and create folder named **Projects**. Then add a *List module* named **ProjectsList** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **Project**. Then add a *List module* named **ProjectsList** using M# context menu:
 
 ```csharp
 using MSharp;
@@ -235,9 +235,20 @@ namespace Modules
             Column(x => x.TotalWorkHours).FooterFormula(AggregateFormula.Sum);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+				.HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Project.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
+				
+			ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Project?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
 
             Button("Add project").Icon(FA.Plus)
                 .OnClick(x => x.Go<Project.EnterPage>()
@@ -280,7 +291,7 @@ namespace Modules
 
 ### Creating Developer Pages
 
-Use M# context menu to add a root page to the "Page" folder:
+Use M# context menu to add a root page to the "Pages" folder:
 
 ```csharp
 using MSharp;
@@ -294,7 +305,7 @@ public class DeveloperPage : RootPage
 }
 ```
 
-Create a folder named "Developer" under "Page" folder and add this sub page:
+Create a folder named "Developer" under "Pages" folder and add this sub page:
 
 ```csharp
 using MSharp;
@@ -313,7 +324,7 @@ namespace Developer
 
 ### Creating required module of Developer Pages
 
-Navigate to **Modules** folder of **#UI** project and create folder named **Developers**. Then add a *List module* named **DevelopersList** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **Developer**. Then add a *List module* named **DevelopersList** using M# context menu:
 
 ```csharp
 using MSharp;
@@ -335,9 +346,20 @@ namespace Modules
             Column(x => x.TotalWork);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+				.HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Developer.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
+
+			ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Developer?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
 
             Button("Add developer").Icon(FA.Plus)
                 .OnClick(x => x.Go<Developer.EnterPage>()
@@ -380,7 +402,7 @@ namespace Modules
 
 ### Creating Time Log Pages
 
-Use M# context menu to add a root page to the "Page" folder:
+Use M# context menu to add a root page to the "Pages" folder:
 
 ```csharp
 using MSharp;
@@ -394,7 +416,7 @@ public class TimeLogPage : RootPage
 }
 ```
 
-Create a folder named "TimeLog" under "Page" folder and add this sub page:
+Create a folder named "TimeLog" under "Pages" folder and add this sub page:
 
 ```csharp
 using MSharp;
@@ -413,7 +435,7 @@ namespace TimeLog
 
 ### Creating required module of Time Log Pages
 
-Add a folder named *TimeLogs* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
+Add a folder named *TimeLog* under the *Modules* folder of the *#UI* project and add *TimeLogsList* by using the M# context menu like below:
 
 ```csharp
 using MSharp;
@@ -441,11 +463,22 @@ namespace Modules
             Column(x => x.Hours);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+				.HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<TimeLog.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
 
-            Button("New Time log").Icon(FA.Plus)
+			ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this TimeLog?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
+
+            Button("Add Time log").Icon(FA.Plus)
                 .OnClick(x => x.Go<TimeLog.EnterPage>()
                 .SendReturnUrl());
         }

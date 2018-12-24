@@ -99,16 +99,16 @@ public class ClientPage : RootPage
 ```
 
 In this class we have added "ClientsList" module that is responsible for listing all clients.
-Now create a *Clients* folder under the *Pages* folder, then add this class:
+Now create a *Client* folder under the *Pages* folder, then add this class:
 
 ```csharp
 using MSharp;
 
-namespace Clients
+namespace Client
 {
-    class Enter : SubPage<ClientPage>
+    class EnterPage : SubPage<ClientPage>
     {
-        public Enter()
+        public EnterPage()
         {
             Add<Modules.ClientForm>();
         }
@@ -144,18 +144,20 @@ namespace Modules
             Column(x => x.Invoices).IsSortable(false);
 
             ButtonColumn("Add Invoice").Style(ButtonStyle.Link)
-                .OnClick(x => x.Go<Clients.AddInvoice>()
+                .OnClick(x => x.Go<Client.AddInvoicePage>()
                 .SendReturnUrl()
                 .Send("client", "item.ID"));
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .HeaderText("Edit")
-                .OnClick(x => x.Go<Clients.Enter>()
+                .HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Client.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
 
             ButtonColumn("Delete").Icon(FA.Remove)
-                .HeaderText("Delete")
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Client?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
@@ -163,7 +165,7 @@ namespace Modules
                 });
 
             Button("Add client").Icon(FA.Plus)
-                .OnClick(x => x.Go<Clients.Enter>()
+                .OnClick(x => x.Go<Client.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -215,11 +217,11 @@ Create "AddInvoice" page under the *clients* folder *Pages* like below:
 ```csharp
 using MSharp;
 
-namespace Clients
+namespace Client
 {
-    class AddInvoice : SubPage<ClientPage>
+    class AddInvoicePage : SubPage<ClientPage>
     {
-        public AddInvoice()
+        public AddInvoicePage()
         {
             Add<Modules.InvoiceForm>();
         }
