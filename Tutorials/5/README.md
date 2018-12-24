@@ -176,12 +176,12 @@ public class BikePage : RootPage
 }
 ```
 
-In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an `EnterPage` class that is responsible for adding and editing a bike, create new folder with the name of *Bikes* under the *Pages* folder in *#UI* project and add a `EnterPage` class like below:
+In this class we add *BikesList* module that is responsible for showing all bikes, let's move on with creating an `EnterPage` class that is responsible for adding and editing a bike, create new folder with the name of *Bike* under the *Pages* folder in *#UI* project and add a `EnterPage` class like below:
 
 ```csharp
 using MSharp;
 
-namespace Bikes
+namespace Bike
 {
     class EnterPage : SubPage<BikePage>
     {
@@ -256,11 +256,14 @@ namespace Modules
             Column(x => x.RequiresLicense);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Bikes.EnterPage>()
+                .OnClick(x => x.Go<Bike.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Bike?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
@@ -269,7 +272,7 @@ namespace Modules
 
             Button("Add bike").Icon(FA.Plus)
                 .OnClick(x =>
-                x.Go<Bikes.EnterPage>()
+                x.Go<Bike.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -294,12 +297,12 @@ public class CarPage : RootPage
 }
 ```
 
-In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an `EnterPage` class that is responsible for adding and editing a car, create new folder with the name of *Cars* under the *Pages* folder of *#UI* project and add a `EnterPage` class like below:
+In this class we add *CarsList* module that is responsible for showing all assets, let's continue with creating an `EnterPage` class that is responsible for adding and editing a car, create new folder with the name of *Car* under the *Pages* folder of *#UI* project and add a `EnterPage` class like below:
 
 ```csharp
 using MSharp;
 
-namespace Cars
+namespace Car
 {
     class EnterPage : SubPage<CarPage>
     {
@@ -376,11 +379,14 @@ namespace Modules
             Column(x => x.NumberOfDoors);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Cars.EnterPage>()
+                .OnClick(x => x.Go<Car.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Car?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
@@ -391,7 +397,7 @@ namespace Modules
                 .OnClick(x => x.Export(ExportFormat.Excel));
 
             Button("Add car").Icon(FA.Plus)
-                .OnClick(x => x.Go<Cars.EnterPage>()
+                .OnClick(x => x.Go<Car.EnterPage>()
                 .SendReturnUrl());
         }
     }
