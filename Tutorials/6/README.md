@@ -164,12 +164,12 @@ public class ShopPage : RootPage
 }
 ```
 
-Now create three folders named *Shops*, *Catrgories* and *Products*. Then create a class with the name of *EnterPage* in *Shops* folder, then place this code inside of it:
+Now create three folders named *Shop*, *Catrgory* and *Product*. Then create a class with the name of *EnterPage* in *Shop* folder, then place this code inside of it:
 
 ```csharp
 using MSharp;
 
-namespace Shops
+namespace Shop
 {
     class EnterPage : SubPage<ShopPage>
     {
@@ -187,7 +187,7 @@ Now create a class with the name of *EnterPage* in *Categories* folder, then pla
 ```csharp
 using MSharp;
 
-namespace Categories
+namespace Category
 {
     class EnterPage : SubPage<CategoryPage>
     {
@@ -199,12 +199,12 @@ namespace Categories
 }
 ```
 
-Now do the same thing with the *Products*:
+Now do the same thing with the *Product*:
 
 ```csharp
 using MSharp;
 
-namespace Products
+namespace Product
 {
     class EnterPage : SubPage<ProductPage>
     {
@@ -239,11 +239,15 @@ namespace Modules
             Column(x => x.Products);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Categories.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Category.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Category?")
+                .CssClass("btn-danger")
                 .OnClick(x =>
                 {
                     x.DeleteItem();
@@ -251,7 +255,7 @@ namespace Modules
                 });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Categories.EnterPage>()
+                .OnClick(x => x.Go<Category.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -315,11 +319,15 @@ namespace Modules
             Column(x => x.Shops);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Products.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Product.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Product?")
+                .CssClass("btn-danger")
                .OnClick(x =>
                {
                    x.DeleteItem();
@@ -327,7 +335,7 @@ namespace Modules
                });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Products.EnterPage>()
+                .OnClick(x => x.Go<Product.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -387,11 +395,15 @@ namespace Modules
             Column(x => x.Products);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Shops.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Shop.EnterPage>()
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
+				.HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Shop?")
+                .CssClass("btn-danger")
                .OnClick(x =>
                {
                    x.DeleteItem();
@@ -399,7 +411,7 @@ namespace Modules
                });
 
             Button("Add").Icon(FA.Plus)
-                .OnClick(x => x.Go<Shops.EnterPage>()
+                .OnClick(x => x.Go<Shop.EnterPage>()
                 .SendReturnUrl());
         }
     }
