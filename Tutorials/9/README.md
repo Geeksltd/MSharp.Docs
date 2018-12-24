@@ -169,10 +169,20 @@ namespace Modules
             Column(x => x.Name);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+                .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<ServiceType.EnterPage>()
-                .SendReturnUrl()
-                .Send("item", "item.ID"));
+                .Send("item", "item.ID")
+                .SendReturnUrl());
 
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this ServiceType?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
             Button("New Service type").Icon(FA.Plus)
                 .OnClick(x => x.Go<ServiceType.EnterPage>()
                 .SendReturnUrl());
@@ -271,11 +281,22 @@ namespace Modules
             Column(x => x.Services);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+                .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Supplier.EnterPage>()
-                .SendReturnUrl()
-                .Send("item", "item.ID"));
+                .Send("item", "item.ID")
+                .SendReturnUrl());
 
-            Button("New Supplier").Icon(FA.Plus)
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Supplier?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
+
+            Button("Add Supplier").Icon(FA.Plus)
                 .OnClick(x => x.Go<Supplier.EnterPage>()
                 .SendReturnUrl());
         }
@@ -317,7 +338,7 @@ namespace Modules
                 s.Field(x => x.Price);
 
                 s.Button("Add service").OnClick(x => x.AddMasterDetailRow());
-            });
+            }).MinCardinality(3);
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
@@ -333,7 +354,7 @@ namespace Modules
 }
 ```
 
-The **SupplierForm** has got a new generic method named `MasterDetail\<SupplierServiceForm\>(x => x.Services)`. This method tells M# that this page has a nested form and act like a master detail page. **SupplierServiceForm** class is detail form that inherits from *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is `AddMasterDetailRow()`. By calling `MinCardinality()` method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call `MaxCardinality()` function.
+The **SupplierForm** has got a new generic method named `MasterDetail<SupplierService>(x => x.Services,*System.Action<FormModule<Domain.SupplierService>> supplierServiceForm*)`. This method tells M# that this page has a nested form and act like a master detail page. **supplierServiceForm** is detail form that is a *FormModule* and is like other usual M# form pages, but it has a special method for saving its content and this method is `AddMasterDetailRow()`. By calling `MinCardinality()` method we have initialized this detail page with three preselected values and user can't inset less that 3 values. If you need to put a restriction on maximum recodes, you can call `MaxCardinality()` function.
 
 ### Creating Supplier Service Pages
 
