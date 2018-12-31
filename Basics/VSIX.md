@@ -73,19 +73,28 @@ We have produced a **Custom Project Sub Type** with name "M# Class Library Templ
 
 ![Image](images/NewItemEntity.PNG)
 
+You can create a new Entity class from simple class template by selecting the M# Entity item from *Add new Item* panel.
+
+> Either you can create new Entity or SubType< Entity > classes by selecting the context menu item in solution explorer over the M# Model project or project folder. (you can read more about this item later in this document)
+![Image](images/AddNewEntity.PNG)
+
 ## Solution Explorer Context Menu Commands
 
 ### Build All
+
+-=***=- There is an useful M# build task that you can use it by selecting first context menu item of the solution node in the __Solution Explorer__ window.
 
 ![Image](images/BuildAllMenuItem.PNG)
 
 ### Run Fast
 
+-=***=- Compile, Build and run every projects are Time-consuming task, so there is an item in __Website__ node context menu with name __Run Fast__ you can run your website project without need of solution builds. 
+
 ![Image](images/RunFastMenuItem.PNG)
 
 ## Generate Project Items
 
-Depending on the type of project chosen, developers can create/add custom project requirements by using M# context menu under solution explorer node.
+Depending on the type of project you are working on, you can create/add custom project requirements by using M# context menu under solution explorer node.
 
 ## Create New Entity
 
@@ -122,6 +131,8 @@ So that if developer only specified a **Type Name** then M# creates a plain Enti
 > - _MainMenu is sample menu module name_ (optional)
 
 ## Create Partial Class
+
+In many cases maybe you want to have a partial classes in the Domain project to separate your concern into two partial files so you can select the *Create Partial Class ...* item in the context menu of entity classes  in the Solution explorer window. Then a new partial file will be create in the Domain\Logic folder.
 
 ![Image](images/CreatePartialClass.PNG)
 
@@ -248,7 +259,7 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
 - ![Image](images/CsType.png) : Plain **C#** files
 
-- ![Image](images/EntityType.png) : M# **Entity** Type and Entity **SubType<_base_>**
+- ![Image](images/EntityType.png) : M# **Entity** Type and Entity **SubType< _base_ >**
 
 - ![Image](images/FormModule.png) : M# **Form Module**
 
@@ -323,11 +334,28 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## VS Ext: MSharp.CodePreview
 
-...
+CodePreview VSIX is one of useful extensions that developed to help M# programmers to rapidly observe generated code by M# engine in real-time (after each project build) within a tool-window that displays in the right side of code editor window.
+You can open the Code Preview too-window by selecting the first menu item of the currently opened code editor window with name **"Show Generated Code"**.
 
-## VS Ext: MSharp.F7
+![Image](images/CodePreview4.PNG)
 
-...
+There will be 3 tabs in the _Preview Generated Code_ window with different titles, So that if you invoke this command in the M# UI modules then the Preview Generated Code window will bew appear with these 3 tabs :
+_Preview_, _Controller_, _Cshtml_.
+
+![Image](images/CodePreview1.PNG)
+
+![Image](images/CodePreview2.PNG)
+
+![Image](images/CodePreview3.PNG)
+
+In other hand if you invoke this command in the M# Entity classes then you can see the Preview Generated Code window with these 3 tabs :
+_Sql_, _DAL_, _Structure_.
+
+![Image](images/CodePreview5.PNG)
+
+![Image](images/CodePreview6.PNG)
+
+![Image](images/CodePreview7.PNG)
 
 ## VS Ext: MSharp.Goto
 
@@ -346,6 +374,19 @@ So if you select "Where is {ClassName} used?" item , then you can navigate to al
 ![Image](images/Goto3.JPG)
 
 Also you can navigate to the generated class in the Domain project by selecting the "Show generated class fo {ClassName}." item as well.
+
+Often when you're working with code, for every concept there are multiple code files, which are effectively sister files all related to that concept.
+
+With this extension, when you open a M# class file and it has a sister or sisters then in right corner of code editor window all sister files will be displayed as navigation buttons so by pressing each one you can jump switch to the sister file of the currently opened file in Visual Studio. When there are multiple sister files in the same category then all other sisters will be shown as drop-down list you can navigate to.
+
+![Image](images/SisterButtons.PNG)
+
+These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 another button if you installed CodePreview VSIX) categorized by these 4 colors :
+
+> ![Image](images/Purple.PNG) Pink  : Currently opened document button will be displayed as Purple with the title of current file type.
+> ![Image](images/Magenta.PNG) Purple : Other sister files will be shown as purple button with the title of sister type.
+> ![Image](images/Green.PNG) Cyan : Cyan buttons are not really sister files but this buttons are relative files that are related to currently open file, So that you can navigate to these relative files.
+>> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** then if you open an M# UI classes then an additional button in Orange color with M# icon will appear to the end of navigation buttons list. So when you push this button, you can see the HTML preview of your currently UI class.
 
 ## VS Ext: MSharp.Intellisense
 
