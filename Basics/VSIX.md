@@ -330,7 +330,8 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## Vs Ext: Geeks.StylishCode
 
-...
+__Geeks Stylish Code__ has been developed specially to decorate C# source codes with colors and text styles just like CSS rules.
+You can make all class members coloured by decorating them with special Stylish code attributes : _MethodColorAttribute_ and _MemberStyleAttribute_
 
 ## VS Ext: MSharp.CodePreview
 
