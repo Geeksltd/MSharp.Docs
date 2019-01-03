@@ -372,9 +372,9 @@ public class SupplierServicePage : RootPage
 }
 ```
 
-### Creating required module of Supplier Servic Pages
+### Creating required module of Supplier Service Pages
 
-Navigate to **Modules** folder of **#UI** project and create folder named **SupplierService**. Then add a *List module* named **TimeLogsList** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **SupplierService**. Then add a *List module* named **SupplierServicesList** using M# context menu:
 
 ```csharp
 using MSharp;
