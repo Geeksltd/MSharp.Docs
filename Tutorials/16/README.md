@@ -80,7 +80,7 @@ namespace Domain
 
             Date("Start date").Mandatory();
 
-            Date("Date of birth").Mandatory();
+            Date("Date of birth").Mandatory(false);
 
             String("Support comments").Lines(5);
 
