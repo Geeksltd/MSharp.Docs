@@ -110,12 +110,12 @@ public class EmployeePage : RootPage
 ```
 
 The "EmployeePage" holds employee list module (which will be implemented later).
-Create a folder with the name of "Employees" under "Pages" folder and add *EnterPage* sub page class with codes bellow:
+Create a folder with the name of "Employee" under "Pages" folder and add *EnterPage* sub page class with codes bellow:
 
 ```csharp
 using MSharp;
 
-namespace Employees
+namespace Employee
 {
     class EnterPage : SubPage<EmployeePage>
     {
@@ -158,13 +158,24 @@ namespace Modules
             Column(x => x.Warnings).DisplayExpression("@Html.Raw(item.Warnings)");
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Employees.EnterPage>()
+                .HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Employee.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
 
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Employee?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.Reload();
+                });
+
             Button("New Employee").Icon(FA.Plus)
                 .OnClick(x => x
-                .Go<Employees.EnterPage>()
+                .Go<Employee.EnterPage>()
                 .SendReturnUrl()
                 );
         }
