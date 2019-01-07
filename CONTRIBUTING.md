@@ -111,7 +111,7 @@ There are two ways of saving and viewing files:
 2. Uploading to github user content (Recommended in most cases)
 
 The positive point about saving files in the repo, is that it's maintainable by contributors. And the negative point, is that it can make the repo too heavy in the long term.
-You can upload media into github user content, simply by pasting the file in a text block of github (such as edit sections or issues) and then github will give you a link.
+**You can upload media into github user content, simply by pasting the file in a text block of github (such as edit sections or issues) and then github will give you a link**.
 
 Strictly avoid putting binaries and large files.
 
