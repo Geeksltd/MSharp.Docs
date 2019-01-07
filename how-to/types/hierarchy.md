@@ -27,7 +27,7 @@ namespace Domain
     }
 }
 ```
-As you can see above, we have used `IsHirarchy()` method here which will cause `Node.cs` class inherits from `[IHierarchy](http://learn.msharp.co.uk/#/Domain/Advanced/MSharpInterface?id=hierarchy)` interface. This special interface will add some extra validations and methods that will be very handy for hierarchy. Here is defination of some of them:
+As you can see above, we have used `IsHirarchy()` method here which will cause `Node.cs` class inherits from [IHierarchy](http://learn.msharp.co.uk/#/Domain/Advanced/MSharpInterface?id=hierarchy) interface. This special interface will add some extra validations and methods that will be very handy for hierarchy. Here is defination of some of them:
 
 - `.GetAllChildren()`: Get all children hierarchy of the selected node.
 - `.GetAllParents()`: Get all parent hierarchy of the selected node.
