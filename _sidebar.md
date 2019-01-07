@@ -112,7 +112,6 @@
     * Custom list control source
     
 * How-to: Buttons/Links
-
     * Adding a button
     * Custom location for a button
     * Button per row
@@ -125,7 +124,6 @@
     
 
 * How-to: List modules
-
     * Adding data column
     * Custom display expression/format
     * Adding link/button column
@@ -146,7 +144,6 @@
     * Export to CSV/Excel
     
  * How-to: Search
- 
     * Search field on property
     * Full text search 
     * Instant search
@@ -162,7 +159,6 @@
    
     
 * How-to: Navigation
-
     * Custom page url
     * Auto page redirection
     * Modal (pop-up)
@@ -198,6 +194,7 @@
 
 * How-to: Misc
 
+    * Dependency Injection
     * PDF generation
     * Page start-up logic
     * Custom module initialization
@@ -207,6 +204,7 @@
     * Sending email notifications
     * [Merging action list buttons](how-to/MergeColumns.md)
     * [Using global search](how-to/UsingGlobalSearch.md)
+    
     
 * How-to: Javascript
     * Custom initialization script
