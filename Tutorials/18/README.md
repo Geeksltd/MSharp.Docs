@@ -100,6 +100,10 @@ According to the requirements there's three blocks of logic to implement:
 In **Domain** project under **Logic** folder create a partial class named **Candidate** like below:
 
 ```csharp
+using Olive;
+using Olive.Email;
+using System.Threading.Tasks;
+
 namespace Domain
 {
     public partial class Candidate
@@ -109,7 +113,7 @@ namespace Domain
             Database.Update(this, x => x.Status = status);
         }
 
-        public static async void RemindAdminForPendingCandidates()
+        public static async Task RemindAdminForPendingCandidates()
         {
             var pendingCandidates = await Database.GetList<Candidate>(x => x.Status == Status.Pending);
 
@@ -164,17 +168,17 @@ using System;
 
 namespace Domain
 {
-    public class ReferenceData
+    public class ReferenceData : IReferenceData
     {
         [...]
-        public static async Task Create()
+        public async Task Create()
         {
             [...]
             await InitEnums();
         }
 
         [...]
-        static async Task InitEnums()
+        async Task InitEnums()
         {
             await Create(new Status { Name = "Pending" });
             await Create(new Status { Name = "Interviewed" });
@@ -186,6 +190,34 @@ namespace Domain
 ```
 
 By calling `InitEnums()` method on `ReferenceData` class constructor, M# will seed database with initial value just once.
+
+### Automated Task
+
+According to the requirements we should check candidate status every 2 hours and send an email to the administrator to process candidates.
+Navigate to **#Model** project , open **Project.cs** file and add `RemindAdminForPendingCandidate()` method like below:
+
+```csharp
+        public Project()
+        {
+			[...]
+
+            AutoTask("Clean old temp uploads").Every(10, TimeUnit.Minute)
+                .Run("await Olive.Mvc.FileUploadService.DeleteTempFiles(olderThan: 1.Hours());");
+			
+			//Every 2 hours if there are any pending candidates, an email should be sent to admin@uat.co to remind them to process the candidates.
+            AutoTask("Remind admin for pending candidate").Every(2, TimeUnit.Hour)
+                .Run("await Candidate.RemindAdminForPendingCandidates();");
+
+        }
+```
+
+Also make sure that inside **appsetting.json** in **WebSite** project, the setting related to *Automated Tasks* is marked as *true*.
+
+```json
+"Automated.Tasks": {
+        "Enabled": true
+    }
+```
 
 ## Implementation: UI
 
@@ -279,12 +311,15 @@ namespace Modules
                 .Send("item", "item.ID")
                 .SendReturnUrl());
 
-            ButtonColumn("Delete").Icon(FA.Remove)
-                .OnClick(x =>
-                {
-                    x.DeleteItem();
-                    x.Reload();
-                });
+			ButtonColumn("Delete").Icon(FA.Remove)
+					.HeaderText("Delete").GridColumnCssClass("actions")
+					.ConfirmQuestion("Are you sure you want to delete this Candidate?")
+					.CssClass("btn-danger")
+					.OnClick(x =>
+					{
+						x.DeleteItem();
+						x.Reload();
+					});
 
             Button("New Candidate").Icon(FA.Plus)
                 .CssClass("pull-right")
@@ -383,34 +418,6 @@ namespace Modules
 ```
 
 build **#UI** prject to make sure everything regarding it is fine.
-
-### Automated Task
-
-According to the requirements we should check candidate status every 2 hours and send an email to the administrator to process candidates.
-Navigate to **Website** project and under **app_Start** folder, open **TaskManager.cs** file and add `RemindAdminForPendingCandidate()` method like below:
-
-```csharp
-public static void Run()
-{
-    RecurringJob.AddOrUpdate("Clean old temp uploads", () => CleanOldTempUploads(), Cron.MinuteInterval(10));
-
-    RecurringJob.AddOrUpdate("Remind admin for pending candidate", () => RemindAdminForPendingCandidate(), Cron.HourInterval(2));
-}
-
-//Every 2 hours if there are any pending candidates, an email should be sent to admin@uat.co to remind them to process the candidates.
-public static async Task RemindAdminForPendingCandidate()
-{
-    Candidate.RemindAdminForPendingCandidates();
-}
-```
-
-Also make sure that in **appsetting.json** the setting related to *Automated Tasks* is marked as *true*.
-
-```json
-"Automated.Tasks": {
-        "Enabled": false
-    }
-```
 
 ### Final Step
 

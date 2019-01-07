@@ -106,12 +106,12 @@ public class AgencyPage : RootPage
 ```
 
 The "AgencyPage" holds agency list module that we are going to create it in the next steps.
-Create a folder with the name of "Agencies" under "Pages" folder and add *EnterPage* sub page class as shown bellow:
+Create a folder with the name of "Agency" under "Pages" folder and add *EnterPage* sub page class as shown bellow:
 
 ```csharp
 using MSharp;
 
-namespace Agencies
+namespace Agency
 {
     class EnterPage : SubPage<AgencyPage>
     {
@@ -131,7 +131,7 @@ Create *ViewPage* sub page class which holds agency view module like below:
 ```csharp
 using MSharp;
 
-namespace Agencies
+namespace Agency
 {
     class ViewPage : SubPage<AgencyPage>
     {
@@ -163,18 +163,29 @@ namespace Modules
 
             ButtonColumn("c#:item.Name").HeaderText("Name")
                 .Style(ButtonStyle.Link)
-                .OnClick(x => x.Go<Agencies.ViewPage>()
+                .OnClick(x => x.Go<Agency.ViewPage>()
                 .Send("item", "item.ID"));
 
             Column(x => x.Notes);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.Go<Agencies.EnterPage>()
+				.HeaderText("Edit").GridColumnCssClass("actions")
+                .OnClick(x => x.Go<Agency.EnterPage>()
                 .SendReturnUrl()
                 .Send("item", "item.ID"));
 
+            ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Agency?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.Reload();
+                });
+
             Button("Add agency").Icon(FA.Plus)
-                .OnClick(x => x.Go<Agencies.EnterPage>()
+                .OnClick(x => x.Go<Agency.EnterPage>()
                 .SendReturnUrl());
         }
     }
@@ -252,12 +263,12 @@ public class BookingPage : RootPage
 ```
 
 Because booking doesn't have any independent list page, we have let this page blank and use it as a root page for "EnterPage" subclass.
-Create a folder with the name of "Bookings" under "Pages" folder and add *EnterPage* sub page:
+Create a folder with the name of "Booking" under "Pages" folder and add *EnterPage* sub page:
 
 ```csharp
 using MSharp;
 
-namespace Bookings
+namespace Booking
 {
     class EnterPage : SubPage<BookingPage>
     {
@@ -296,12 +307,12 @@ namespace Modules
             Column(x => x.Destination);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-                .OnClick(x => x.PopUp<Bookings.EnterPage>()
+                .OnClick(x => x.PopUp<Booking.EnterPage>()
                 .Send("item", "item.ID")
                 .Send("agency", "item.AgencyId"));
 
             Button("Add booking").Icon(FA.Plus)
-                .OnClick(x => x.PopUp<Bookings.EnterPage>()
+                .OnClick(x => x.PopUp<Booking.EnterPage>()
                 .Send("agency", "info.Agency.ID"));
 
             ViewModelProperty("Agency", "Agency").FromRequestParam("item");
@@ -380,10 +391,6 @@ namespace Modules
                 .VisibleIf(AppRole.Admin)
                 .Icon(FA.Cog)
                 .OnClick(x => x.Go<Admin.SettingsPage>());
-
-            Item("Booking")
-               .Icon(FA.Cog)
-               .OnClick(x => x.Go<BookingPage>());
 
             Item("Agencies")
                .Icon(FA.Cog)

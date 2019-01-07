@@ -151,9 +151,19 @@ namespace Modules
             Column(x => x.Name);
 
             ButtonColumn("Edit").Icon(FA.Edit)
+				.HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Category.EnterPage>().Send("item", "item.ID")
                 .SendReturnUrl());
 
+			ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Category?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
             Button("New Category").Icon(FA.Plus)
                 .OnClick(x => x.Go<Category.EnterPage>()
                 .SendReturnUrl());
@@ -255,10 +265,21 @@ namespace Modules
             DataSource("info.Category == null ? await  Database.GetList<Contact>() : await info.Category.Contacts.GetList()");
 
             ButtonColumn("Edit").Icon(FA.Edit)
+				.HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Contact.EnterPage>().Send("item", "item.ID"));
 
+			ButtonColumn("Delete").Icon(FA.Remove)
+                .HeaderText("Delete").GridColumnCssClass("actions")
+                .ConfirmQuestion("Are you sure you want to delete this Contact?")
+                .CssClass("btn-danger")
+                .OnClick(x =>
+                {
+                    x.DeleteItem();
+                    x.RefreshPage();
+                });
+
             Button("New Contact").Icon(FA.Plus)
-                .OnClick(x => x.Go<Contact.EnterPage>().Send("category", "item.CategoryId"));
+                .OnClick(x => x.Go<Contact.EnterPage>().Send("category", "info.Category?.ID"));
         }
     }
 }
@@ -357,6 +378,7 @@ namespace Modules
             Item<ContactPage>()
                .DataSourceType<Domain.Category>()
                .Name("Category")
+			   .Text("C#:item.Name")
                .Key("C#:item.ID")
                .Icon(FA.Cog)
                .OnClick(x => x.Go<ContactPage>().Send("category", "item.ID"));
