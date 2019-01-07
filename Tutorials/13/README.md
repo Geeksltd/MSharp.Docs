@@ -134,7 +134,7 @@ As we can see in the requrements, we should develop these pages:
     - Add city
     - Add customer
   - Add country
--Resellers
+- Resellers
   - Add seller
 
 Let's start with the tough one! We'll it's not that tough actually when there's M#. Go to **Pages** folder of **#UI**, right *click > Add > M#*  then create **Reseller** rootpage:
@@ -198,7 +198,7 @@ namespace Country
 }
 ```
 
-Create a folder with the name of **City** into **Countries** folder then add **Enter** *subpage* class like this:
+Create a folder with the name of **City** into **Country** folder then add **Enter** *subpage* class like this:
 
 ```csharp
 using MSharp;
@@ -219,7 +219,7 @@ namespace Country.City
 
 ```
 
-Now create a folder with the name of **Customer** into **Countries** folder then add **Enter** *subpage* class:
+Now create a folder with the name of **Customer** into **Country** folder then add **Enter** *subpage* class:
 
 ```csharp
 using MSharp;
@@ -241,7 +241,7 @@ namespace Country.Customer
 
 ### Creating required modules of country
 
-Navigate to **Modules** folder of **M#** project and create folder named **Country**. Then add a *list module* named **CitiesList** using M# context menu:
+Navigate to **Modules** folder of **#UI** project and create folder named **Country**. Then add a *list module* named **CountriesList** using M# context menu:
 
 ```csharp
 using MSharp;
