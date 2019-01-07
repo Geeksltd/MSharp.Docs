@@ -28,6 +28,6 @@ namespace Domain
 | .TrueText(string value)                |` Bool("Is activated") .TrueText("Yes");`                | True text will have no effect on the database column definition or the generated C# class. This will only replace the True value with your custom value in UI modules. For example you may set this text value as `Yes` to change all your forms using this property. If your control for this property is a radio button list the true text will be `Yes`. |
 
 
-Sample Test for [nav](Advanced/IEntityInterface.md)
+Sample Test for [nav](/Advanced/IEntityInterface.md)
 
 sampe content
