@@ -24,7 +24,7 @@
     * [Customizing ToString() implementation](how-to/types/customizingToString.md)
     * [Specifying default Sort order](how-to/types/sortOrder.md)
     * [Customising plural title](how-to/types/plural.md)
-    * Implementing hierarchy types
+    * [Implementing hierarchy types](how-to/types/hierarchy.md)
     * [Implementing transient (non DB) types](how-to/types/transient.md)
     * [Adding custom methods](how-to/types/customMethod.md)
 
