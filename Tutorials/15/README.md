@@ -101,7 +101,7 @@ public class CompanyPage : RootPage
 }
 ```
 
-Now create a folder named **Country** under the **Pages** folder. Then add an **EnterPage** class here:
+Now create a folder named **Company** under the **Pages** folder. Then add an **EnterPage** class here:
 
 ```csharp
 using MSharp;
