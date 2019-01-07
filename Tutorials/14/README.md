@@ -139,13 +139,13 @@ After creating email template, you should used **.MergeSubject()** and **.MergeB
 Now you should initialize `EmailTemplate`, in the **Domain** project open `ReferenceData.cs` under **[DEV-SCRIPTS]** folder and add `CreateEmailTemplate()` method to the `Create()` method as shown below:
 
 ```csharp
-static async Task CreateEmailTemplate()
+async Task CreateEmailTemplate()
 {
     await Create(new EmailTemplate
     {
         Key = "RegistrationConfirmationEmail",
         Subject = "Welcome to our website",
-        Body = "Dear [#FIRSTNAME#] [#LASTNAME#] <br/> <br/> <br/> Thanks for registering <br/> Regards."
+        Body = "Dear [#FIRSTNAME#] [#LASTNAME#] <br/> <br/> <br/> Thanks for registering <br/> Regards.",
         MandatoryPlaceholders = "FIRSTNAME, LASTNAME"
 
     });
