@@ -1,8 +1,11 @@
 # How to use hierarchy
 
-## Implementation
+## Problem
 
-Sometimes you need to create a parent/child pattern in your application which parent and all children are the same. For instance, consider `Node` class as a parent that possess many children which are the same as their parent and we have have a tree list of them. To achieve this M# provide `IsHirarchy()` method which will ease the creating of the parent/child pattern by providing some extra methods and validations.
+Sometimes you need to create a parent/child pattern in your application which parent and all children have the same type and they should be displayed in a hierarchy order. To achieve this, you should create a property with the same type of the class which is usually called **Parent** and a collection of the children, then you should add some validation to prevent any potential loop -in your application which could be time consuming but M# will help you through this in the easiest way.
+
+## Implementation
+Because hierarchy is a very repetitive scenario, M# has a built-in feature to implement it in the easiest way. For instance, consider `Node` class as a parent that possess many children with the same type as their parent and we have a tree list of them. To achieve this M# provide `IsHirarchy()` method which will ease the creating of the parent/child pattern by providing some extra methods and validations.
 
 ### Example
 Let's say we need a `Node` class which has many children and each child will have a parent, our ultimate goal is to have a tree list of nodes.
