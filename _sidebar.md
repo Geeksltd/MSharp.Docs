@@ -82,7 +82,7 @@
 
 * How-to: Files & images
    
-    * [Handling files/documents](how-to/filesAndImages/files.md)
+    * [Handling files/documents](how-to/filesAndImages/file.md)
     * [Handling images](how-to/filesAndImages/image.md)
     * Thumbnails
     * [Image optimization](how-to/filesAndImages/optimizations.md)
