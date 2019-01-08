@@ -32,6 +32,6 @@ namespace Model
 
 Now when you want to add a product or edit one, the description field will be a text area.
 
-![multiline text image](images/multilineText.png)
+![multiline text image](images/multilineText.PNG)
 
 And M# did this without any hints from us when creating the `EnterProductModule`

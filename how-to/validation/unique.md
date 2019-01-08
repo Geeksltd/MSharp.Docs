@@ -43,6 +43,7 @@ We call `Unique()` on the name property so only products with unique names are a
 The generated code is interesting to look at
 
 ```csharp
+
 public partial class Product : GuidEntity
 {
         /// <summary>Gets or sets the value of Cost on this Product instance.</summary>
@@ -91,7 +92,8 @@ public partial class Product : GuidEntity
                 throw new ValidationException(result.ToLinesString());
         }
 }
-```e
+
+```
 
 As you can see a `FindByProductName()` method is generated which allows you to search the database by using a product name. 
 It either returns a product or null if no product can be found.

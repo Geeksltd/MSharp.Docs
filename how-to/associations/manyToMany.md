@@ -164,4 +164,4 @@ The generated code will make it more clear
 A new table is created for many to many relationships which stores the relations by storing IDs of the related touples together.
 The schema for the previous example can is this one
 
-![book and shop relation's table](images/bookShopRelation.png)
+![book and shop relation's table](images/bookShopRelation.PNG)

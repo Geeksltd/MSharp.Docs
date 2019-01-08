@@ -38,4 +38,4 @@ It only affects the texts displayed in the UI.
 
 Now the property will be shown in the UI with your custom texts.
 
-![custom bool text](images/customBoolText.png)
+![custom bool text](images/customBoolText.PNG)
