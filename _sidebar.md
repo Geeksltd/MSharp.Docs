@@ -73,7 +73,7 @@
     * [Uniqueness combination](how-to/validation/uniqueCombination.md)
     * [Custom validation rule](how-to/validation/customValidation.md)
     * [Custom pre-validation logic](how-to/validation/customPrevalidation.md)
-    * Mutually exclusive
+    * [Mutually exclusive](how-to/validation/mutuallyExclusive.md)
     * [Form-specific validation](how-to/validation/formSpecificValidation.md)
     * Custom validation message
     * [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
