@@ -96,7 +96,7 @@ Now you can use `ContactType` instead of an enum whenever you want to have a pro
 Thanks to `AssignReferences()`, you also have access to accessor properties for these values in your `ContactType` class. 
 You can simply use them and even have intel.isense as well like this:
 
-![Assign References Example](images/AssignReferencesExample.png "Assign References Example")
+![Assign References Example](images/AssignReferencesExample.PNG "Assign References Example")
 
 #### Generated code
 

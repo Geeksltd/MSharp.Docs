@@ -33,4 +33,4 @@ namespace Model
 
 M# will follow the instruction and will use this name at any place it needs to make the employee name plural like the database table name.
 
-![plural name in the DB](images/plural.png)
+![plural name in the DB](images/plural.PNG)
