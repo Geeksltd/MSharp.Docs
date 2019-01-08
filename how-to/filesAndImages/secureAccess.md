@@ -18,8 +18,8 @@ namespace Domain
         public Product()
         {
             String("Name").Mandatory();
-            SecureImage("Photo").Mandatory().ValidExtensions("png,jpg").SecureAccess();
-            SecureImage("Thumbnail").OptimizationQuality(70).Width(100).Height(50).SecureAccess(false);
+            SecureImage("Photo").SecureAccess();
+            SecureImage("Thumbnail").SecureAccess();
         }
     }
 }
