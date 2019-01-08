@@ -88,7 +88,7 @@
     * [Image optimization](how-to/filesAndImages/optimizations.md)
     * [Default (empty) image url](how-to/filesAndImages/defaultURL.md)
     * [Secure access](how-to/filesAndImages/secureAccess.md)
-    * Custom storage
+    * [Custom storage](how-to/filesAndImages/customStorage.md)
     * [Displaying an image](how-to/filesAndImages/displayImage.md)
     * [Image with click action](how-to/filesAndImages/interactiveImage.md)
 
