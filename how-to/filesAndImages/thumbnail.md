@@ -1,4 +1,4 @@
-# Handling Images
+# Thumbnail
 
 ## Problem
 

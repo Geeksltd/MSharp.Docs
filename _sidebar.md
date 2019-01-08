@@ -87,7 +87,7 @@
     * [Thumbnails](how-to/filesAndImages/thumbnail.md)
     * [Image optimization](how-to/filesAndImages/optimizations.md)
     * [Default (empty) image url](how-to/filesAndImages/defaultURL.md)
-    * Secure access
+    * [Secure access](how-to/filesAndImages/secureAccess.md)
     * Custom storage
     * [Displaying an image](how-to/filesAndImages/displayImage.md)
     * [Image with click action](how-to/filesAndImages/interactiveImage.md)
