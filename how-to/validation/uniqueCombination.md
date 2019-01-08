@@ -160,12 +160,14 @@ public partial class Student : GuidEntity
 As you can see in `ValidateProperties()` there is a section which checks if the combination of `StudentID` and `School` is unique
 
 ```csharp
+
 // Ensure uniqueness of School and StudentID
 // Find an existing Student with the same School and StudentID            
 if (await Database.Any<Student>(s => s != this && s.StudentID == StudentID && s.SchoolId == SchoolId))
 {
     throw new ValidationException("There is an existing Student with the same School and StudentID in the database already.");
 }
+
 ```
 
 Other than this, we have a method called `FindBySchoolAndStudentID()` which helps us to find a student by supplying the student ID and school of the student.
