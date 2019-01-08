@@ -119,7 +119,7 @@ In the example above it creates a `Products` table and a `QuantifiableProducts` 
 
 |    |    SQL Database Structure    |     |
 |:--:|:----------------------------:| :--:|
-| ![Product](images/Products.PNG "Product") | ![QuantifiableProduct](images/QuantifiableProducts.PNG "QuantifiableProduct") | ![relationship](images/ProductAndQuantifiableProductRelationship.PNG "relationship")  |
+| ![Product](images/Products.PNG "Product") | ![QuantifiableProduct](images/QuantifiableProducts.PNG "QuantifiableProduct") | ![relationship](images/ProductAndQuantifiableProductRelationShip.PNG "relationship")  |
  | Products database table | QuantifiableProducts database table | Products and QuantifiableProducts One-To-One relationship |
 
 ## Abstract classes
