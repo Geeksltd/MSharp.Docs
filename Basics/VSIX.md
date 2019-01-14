@@ -615,7 +615,7 @@ Here is the list of all Snippets that supported in the latest extension version 
 ## VS Ext: MSharp.Warnings
 
 When you are developing M# project then maybe you write some code that they produce warnings when complied with MSharp.dsl.
-According to the Olive compatibility change log In a normal M# projects (Model and UI sub-project) you should at least have a after build target task to participate M# build task to your projects, So your _Model.csproject_ and _UI.csproject_ files should contain theses section in the project structure node like :
+According to the Olive compatibility change log (3th Jan) In a normal M# projects (Model and UI sub-project) you should at least have an after build target task to participate M# build to your projects, So your _Model.csproject_ and _UI.csproject_ files should contain theses section in the project structure node like this:
 
 ```XML
 <Target Name="Generate code" AfterTargets="AfterBuild">
@@ -639,7 +639,7 @@ or
 ...\M#\lib> msharp.dsl.exe /build [/model|/ui] [/warn]
 ```
 
-So when you run build your M# projects with **/WARN** switch then if any projects has one or more warnings an XML file in the OBJ folder of each project should be placed :
+So when you build your M# projects with **/WARN** switch then if any projects has one or more warnings an XML file in the __obj__ folder of each project should be placed :
 
 ```
 ...\M#\Model\Obj\MSharp.Warnings.xml
@@ -688,7 +688,7 @@ So decorated M# line will be something like this :
 /*M#:w[25]T-Prop:Title-Type:BooleanProperty-Property title should be « Proper case ».*/Bool("ToClientContractors").Mandatory();
 ```
 
-__it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the warning text will be placed in tooltip windows after mouse hover on the icon or squiggle.
+__it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the warning text will be placed in the tooltip window after a mouse hover on the icon or squiggles.
 
 > __Hidden feature (1)__: Currently Warning VSIX is supported 5 different types of notifications : 
 > * ![Image](images/Warning16.png) Warning (type : __w__)
@@ -710,3 +710,18 @@ __it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the w
 ![Image](images/WarningsMSharpCode3.PNG)
 > _Line-Number_, _Prop_ and _Type_ sections can be fill with temp data in these cases.
 
+> __Hidden Feature (2)__: Descriptive text will be display whenever you hover your mouse cursor over the icons or squiggles, but it is possible to show text notifications just beside of the icon :
+> * By put a " "_(SPACE)_ after close bracket of line number (**[xx]**) and before __"-prop:"__
+> ```c#
+> /*M#:w[15] -Prop:Title-Type:Custom-Custom Notification Warning Text*/ // Warning
+> ```
+> * By put an __H__ character after close bracket of line number (**[xx]**) and before __"-prop:"__
+> ```c#
+> /*M#:i[16]H-Prop:Title-Type:Custom-Custom Notification Information Text*/ // Information
+> ```
+> 
+> in these cases a  button will be displayed after each icon so you can collapse or expand the descriptions interactively in your code.
+>
+> ![Image](images/WarningsMSharpCode4.PNG)
+>
+> So descriptions with " "_(SPACE)_ should be displayed expanded in front of icons by default and __H__ means they have to be shown after pressing the expand button (hidden by default).
