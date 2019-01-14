@@ -3,6 +3,9 @@
         "Microservice",
         "Postgre",
         "VSIX",
-        "peeker"
+        "csproject",
+        "m",
+        "peeker",
+        "sharpexe"
     ]
 }

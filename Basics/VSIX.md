@@ -385,8 +385,11 @@ With this extension, when you open a M# class file and it has a sister or sister
 These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 another button if you installed CodePreview VSIX) categorized by these 4 colors :
 
 > ![Image](images/Purple.PNG) Pink  : Currently opened document button will be displayed as Purple with the title of current file type.
+> 
 > ![Image](images/Magenta.PNG) Purple : Other sister files will be shown as purple button with the title of sister type.
+> 
 > ![Image](images/Green.PNG) Cyan : Cyan buttons are not really sister files but this buttons are relative files that are related to currently open file, So that you can navigate to these relative files.
+> 
 >> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** then if you open an M# UI classes then an additional button in Orange color with M# icon will appear to the end of navigation buttons list. So when you push this button, you can see the HTML preview of your currently UI class.
 
 ## VS Ext: MSharp.Intellisense
@@ -611,4 +614,99 @@ Here is the list of all Snippets that supported in the latest extension version 
 
 ## VS Ext: MSharp.Warnings
 
-...
+When you are developing M# project then maybe you write some code that they produce warnings when complied with MSharp.dsl.
+According to the Olive compatibility change log In a normal M# projects (Model and UI sub-project) you should at least have a after build target task to participate M# build task to your projects, So your _Model.csproject_ and _UI.csproject_ files should contain theses section in the project structure node like :
+
+```XML
+<Target Name="Generate code" AfterTargets="AfterBuild">
+    <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'" WorkingDirectory="$(TargetDir)" 
+	  Command="dotnet msharp.dsl.dll /build /model /warn" />
+</Target>
+```
+for _M# Model project_ And :
+
+```XML
+<Target Name="Generate code" AfterTargets="AfterBuild">
+    <Exec Condition="'$(MSHARP_BUILD)' != 'FULL'" WorkingDirectory="$(TargetDir)" 
+	  Command="dotnet msharp.dsl.dll /build /ui /warn" />
+</Target>
+```
+for _M# UI project_. In fact you can run the M# build command from the command line as a CLI command in this style :
+
+```
+...\M#\lib> dotnet msharp.dsl.dll /build [/model|/ui] [/warn]
+or
+...\M#\lib> msharp.dsl.exe /build [/model|/ui] [/warn]
+```
+
+So when you run build your M# projects with **/WARN** switch then if any projects has one or more warnings an XML file in the OBJ folder of each project should be placed :
+
+```
+...\M#\Model\Obj\MSharp.Warnings.xml
+and/or
+...\M#\UI\Obj\MSharp.Warnings.xml
+```
+These are simple XML files that contains valuable information about M# coding styles. as you maybe know M# warnings are notices about best practices or some M# development designing patterns to help M# developers write better code for develop and maintenance that shows in the Visual Studio Standard Error Window. 
+
+For example this is a simple **UI** warning file :
+```XML
+<Warnings>
+  <Warning Type="ViewElement" Property="LabelText" Source="UI\Modules\..abc.cs:line 115">As this module is using a custom Markup, this column will be ignored, so remove it to prevent confusion.</Warning>
+  <Warning Type="ApplicationPage" Property="Name" Source="UI\Pages\...xyz.cs:line 13">This page seems to be orphand. There is no standard Navigate Activity pointing to it.</Warning>
+    <Warning Type="ModuleCodeExtension" Property="Code" Source="UI\Modules\..ijk.cs:line 44">Custom code is too long. Do you really need it? Can you reuse some M# alternatives?
+If not, you should still break it into smaller methods with well defined, self-explanatory names.</Warning>
+  <Warning Type="GenericFormElement" Property="ControlMarkup" Source="UI\Modules\...qwe.cs:line 30">There is too much custom code here. Refactor it, break it down, move logic to Model project, etc.</Warning>
+</Warnings>
+```
+
+And this is a simple **Model** warning file :
+
+```XML
+<Warnings>
+  <Warning Type="Association" Property="DatabaseIndex" Source="Model\...abc.cs:line 9">This association is referenced in its inverse association. So it's likely to get frequent queries on this column. Consider putting an index on it.</Warning>
+  <Warning Type="BooleanProperty" Property="Title" Source="Model\...ijk.cs:line 71">Property title should be « Proper case ».</Warning>
+</Warnings>
+```
+
+![Image](images/WarningsErrorsList.PNG)
+
+So When you double Click on a warning row in the Errors List Tool-window then you will navigate to the exact line of code that produced a warning.
+
+![Image](images/WarningsMSharpCode.PNG)
+
+As you can see in the code editor window, an exclamation triangle icon will be displayed in front of each line that has a warning. Also, a purple squiggle line will be drawn under each warning lines, so you can see brief information about warning as a meta tooltip window as well.
+
+>Technical Note: Exclamation icon and squiggle line are displayed in the code window by implementing Visual Studio Adornment Tagger, So when we populate warnings from warning file, after inserting each one in the error window, a C# regional standard comment will be placed in front of code line that describes warning information for the tagger in this reqular expression style :
+
+```regex
+\/\*M#:(?<type>\w)\[(?<line>\d+)\](?<show>[ |-|H|T])-Prop:(?<prp>\w*)-Type:(?<typ>\w*)-(?<txt>.*)?\*\/
+```
+
+So decorated M# line will be something like this :
+
+```c#
+/*M#:w[25]T-Prop:Title-Type:BooleanProperty-Property title should be « Proper case ».*/Bool("ToClientContractors").Mandatory();
+```
+
+__it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the warning text will be placed in tooltip windows after mouse hover on the icon or squiggle.
+
+> __Hidden feature (1)__: Currently Warning VSIX is supported 5 different types of notifications : 
+> * ![Image](images/Warning16.png) Warning (type : __w__)
+> * ![Image](images/Info16.png) Information (type : __i__)
+> * ![Image](images/Error16.png) Error (type : __e__)
+> * ![Image](images/Event16.png) Event (type : __v__)
+> * ![Image](images/MSharp16.png) MSharp (type : __m__)
+>
+> So if you write a regional comment in pre-defined format with special type just like one of notification style in above list then you can have a notification icon in your code ;) just like this :
+
+```C#
+            /*M#:w[15]T-Prop:Title-Type:Custom-Custom Notification Warning Text*/ // Warning
+            /*M#:i[16]T-Prop:Title-Type:Custom-Custom Notification Information Text*/ // Information
+            /*M#:e[17]T-Prop:Title-Type:Custom-Custom Notification Error Text*/ // Error
+            /*M#:v[18]T-Prop:Title-Type:Custom-Custom Notification Event Text*/ // Event
+            /*M#:m[19]T-Prop:Title-Type:Custom-Custom Notification MSharp Text*/ // MSharp
+```
+
+![Image](images/WarningsMSharpCode3.PNG)
+> _Line-Number_, _Prop_ and _Type_ sections can be fill with temp data in these cases.
+
