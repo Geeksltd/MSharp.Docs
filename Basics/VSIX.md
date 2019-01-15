@@ -277,6 +277,11 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
   ![Image](images/EntityTextEditorSample.PNG)
 
+## Vs Ext: Geeks.StylishCode
+
+__Geeks Stylish Code__ has been developed specially to decorate C# source codes with colors and text styles just like CSS rules.
+You can make all class members coloured by decorating them with special Stylish code attributes : _MethodColorAttribute_ and _MemberStyleAttribute_
+
 ## M# Code Highlighting
 
 MSharp.Colorize VSIX provides attribute classes to apply coloring rules on M# methods, so developer can better work with M# codes.
@@ -327,11 +332,6 @@ MethodColorAttribute class constructor can be implement with second string param
 ![Image](images/Colorize_SampleCode3.PNG)
 
 > Note : The background color of M# code editor windows are customized to dark brown in **Dark Theme** and light blue in **Light Theme**.
-
-## Vs Ext: Geeks.StylishCode
-
-__Geeks Stylish Code__ has been developed specially to decorate C# source codes with colors and text styles just like CSS rules.
-You can make all class members coloured by decorating them with special Stylish code attributes : _MethodColorAttribute_ and _MemberStyleAttribute_
 
 ## VS Ext: MSharp.CodePreview
 
