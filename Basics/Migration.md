@@ -74,11 +74,9 @@ Also consider the following architectural changes:
 
 | Old M# | The MC# way |
 |:-:|:-:|
-| **@M#\*.msharp**
-
-These json files defined your M# elements such as entity types, pages, modules, etc | The metadata is defined as C# files inside the #Model and #UI projects |
-| **@M#\Tables\*.Create.sql** These files defined your application database schema. When you loaded a project in the M# Agent app, it read the above files and create a database named MyApp.DesignTime from the schema | Entity definitions are enough. Upon building the #Model project, M# will generate the schema of the database into \DB folder. |
-| **@M#\Tables\*.Data.sql** These SQL files contained your reference data. Upon loading a project, these were inserted into the MyApp.DesignTime database. | Reference data is defined as C# code rather than SQL files inside ReferenceData.cs class. |
+| **@M#\*.msharp** : These json files defined your M# elements such as entity types, pages, modules, etc | The metadata is defined as C# files inside the #Model and #UI projects |
+| **@M#\Tables\*.Create.sql** : These files defined your application database schema. When you loaded a project in the M# Agent app, it read the above files and create a database named MyApp.DesignTime from the schema | Entity definitions are enough. Upon building the #Model project, M# will generate the schema of the database into \DB folder. |
+| **@M#\Tables\*.Data.sql** : These SQL files contained your reference data. Upon loading a project, these were inserted into the MyApp.DesignTime database. | Reference data is defined as C# code rather than SQL files inside ReferenceData.cs class. |
 
 
 # Migrating apps from .NET Framework to .NET Core
