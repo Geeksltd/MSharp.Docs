@@ -284,7 +284,7 @@
       * [Page Settings](UI/PageSettings.md)
 
 * Tips and tools
-    * [Migration](Basics/Migration.md)
+    * [Migration from legacy M#](Basics/Migration.md)
     * [VS Extensions](Basics/VSIX.md)
     * [CLI](Basics/CLI.md)
     * [Tips](Basics/Tips.md)
