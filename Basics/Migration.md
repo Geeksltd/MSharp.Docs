@@ -54,15 +54,18 @@ protected override void InitiateApplication()
 
 ### Step 5: Verify the result
 In Visual Studio, compile the following projects in the following order:
-	1. #Model
-	2. Domain
-	3. #UI
-	4. Website
+
+ 1. #Model
+ 2. Domain
+ 3. #UI
+ 4. Website
+
 If you faced any problem, please report to Paymon immediately. Otherwise you're good to go.
 
 ### Troubleshooting
-	- Learn to use the [M# CLI](http://learn.msharp.co.uk/#/Basics/CLI) to diagnose problems
-	- If your application has an entity named "Project", rename the generated #Model\Project.cs class to "OverallProject".
+
+- Learn to use the [M# CLI](http://learn.msharp.co.uk/#/Basics/CLI) to diagnose problems
+- If your application has an entity named "Project", rename the generated #Model\Project.cs class to "OverallProject".
 
 Also consider the following architectural changes:
 
