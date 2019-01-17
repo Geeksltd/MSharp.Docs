@@ -1,8 +1,6 @@
 # Migrating from Json (web-based IDE) to MC# (Visual Studio based)
 
-# Migrating an existing M# app to MC#
-## Conversion process
-To convert an existing application to the new model, you need to convert the meta-data into the new format and then delete the old meta-data files.
+To convert an existing application to the new model, you need to convert the meta-data into the new format (*MC# files*) and then delete the old meta-data files (*.msharp files*).
 
 ### Step 1: Prepare
 1. Open the project in the old M# as before and build everything.
@@ -34,8 +32,8 @@ If your project is WebForms, perhaps your domain model project name is **"Model"
 ```csharp
 protected override void InitiateApplication()
 {
-        TestDatabaseGenerator.CreateReferenceData = ReferenceData.Create;
-        base.InitiateApplication();
+     TestDatabaseGenerator.CreateReferenceData = ReferenceData.Create;
+     base.InitiateApplication();
 }
 ```
 
