@@ -6,7 +6,7 @@ To convert an existing application to the new model, you need to convert the met
 1. Open the project in the old M# as before and build everything.
 2. Open the solution in Visual Studio.
 	- For all projects in the solution, go to properties window and change it to .NET 4.7.2
-		- Open `packages.config` and check `targetFramework` to make sure it's indicating to the `net472` and if it's not, you should run `Update-Package -Reinstall -IgnoreDependencies` in the **Package Manager Console*
+		- Open `packages.config` and check `targetFramework` to make sure it's indicating to the `net472` and if it's not, you should run `Update-Package -Reinstall -IgnoreDependencies` in the **Package Manager Console**
 	- Update `MSharp.Framework` nuget packages to the latest version
 	- In Website, add the nuget package: `Microsoft.CodeDom.Providers.DotNetCompilerPlatform`
 	- Compile everything.
@@ -52,6 +52,12 @@ protected override void InitiateApplication()
 
 ```xml
 <add key="M#.Meta.Location" value="C:\Projects\[YOURProjectNAME]\DB" />
+```
+
+Depending on your project you may need to add this part too:
+
+```xml
+<add key="Temp.Databases.Location" value="C:\@Database.Files" />
 ```
 
 ### Step 5: Verify the result
