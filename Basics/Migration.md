@@ -6,18 +6,20 @@ To convert an existing application to the new model, you need to convert the met
 1. Open the project in the old M# as before and build everything.
 2. Open the solution in Visual Studio.
 	- For all projects in the solution, go to properties window and change it to .NET 4.7.2
-	- Update MSharp.Framework nuget packages to the latest version
+		- Open `packages.config` and check `targetFramework` to make sure it's indicating to the `net472` and if it's not, you should run `Update-Package -Reinstall -IgnoreDependencies` in the **Package Manager Console*
+	- Update `MSharp.Framework` nuget packages to the latest version
 	- In Website, add the nuget package: `Microsoft.CodeDom.Providers.DotNetCompilerPlatform`
 	- Compile everything.
+		- In this step, if you get an error related to the enum values, you can simply comment those parts and after adding *#Model* project you can specify enum values in the `InstanceAccessors(..)` method and then uncomment those parts again.
 
 ### Step 2: Model -> Domain (WebForms only)
 If your project is WebForms, perhaps your domain model project name is **"Model"** instead of **"Domain"**. You should change it to **"Domain"**:
 
-1. In the project settings in M# IDE, set _ModelProjectFolder_ to "Domain".
-2. _Visual Studio_: Remove the Model project from the solution and save everything.
+1. In the project settings in M# IDE, set _Model Project Folder_ to **"Domain"**.
+2. _Visual Studio:_ Remove the Model project from the solution and save everything.
 3. Rename the folder from Model to Domain
 4. Rename the csproj file inside that folder to also Domain
-5. In Visual Studio, right click on the solution and choose "_Add > Existing project_" and select the new `Domain.csproj` file.
+5. In Visual Studio, right click on the solution and choose _Add > Existing project_ and select the new `Domain.csproj` file.
 
 ### Step 3: Convert Meta-data
 
@@ -25,14 +27,16 @@ If your project is WebForms, perhaps your domain model project name is **"Model"
 	- It will create a new folder in the solution named **M#**. Inside that, it will generate two new folders: **Model** and **UI**.
 2. Close the project in the old IDE.
 3. In Visual Studio, use **Add Existing** project and add `M#\Model` and `M#\UI` projects to the solution.
+	- If `#Model > ProjectSettings.cs` has `.GeneratedDALFolder("DAL")` method, please comment it.
 4. In Visual Studio, go to Manage Nuget packages and click on the Restore button at the top.
+	- Sometimes even after restoring nuget packages some of them are not loaded completely, if you experience this issue you should use `Update-Package -reinstall` command in the *Package Manager Console*.
 5. In the Domain project, include the newly generated **[DEV-SCRIPTS]\ReferenceData.cs**
 6. In `TheApplication.cs` (or `Global.asax` in Web Forms) add the following:
 
 ```csharp
 protected override void InitiateApplication()
 {
-     TestDatabaseGenerator.CreateReferenceData = ReferenceData.Create;
+     MSharp.Framework.Services.TestDatabaseGenerator.CreateReferenceData = ReferenceData.Create;
      base.InitiateApplication();
 }
 ```
