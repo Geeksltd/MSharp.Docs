@@ -88,7 +88,7 @@ You can create a new Entity class from simple class template by selecting the M#
 
 ### Run Fast
 
--=***=- Compile, Build and run every projects are Time-consuming task, so there is an item in __Website__ node context menu with name __Run Fast__ you can run your website project without need of solution builds. 
+-=***=- Compile, Build and run every projects are Time-consuming task, so there is an item in __Website__ node context menu with name __Run Fast__ you can run your website project without need of solution builds.
 
 ![Image](images/RunFastMenuItem.PNG)
 
@@ -333,6 +333,31 @@ MethodColorAttribute class constructor can be implement with second string param
 
 > Note : The background color of M# code editor windows are customized to dark brown in **Dark Theme** and light blue in **Light Theme**.
 
+## _MemberStyle[Attribute]_
+
+There is an attribute that works more than colouring the code with name _MemberStyleAttribute_. as you know we can use attributes without using the __attribute__ postfix (This is one of the c# attribute using rules).
+So simply we can use _MemberStyle_ attribute instead of __MethodColor__. Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
+
+* _MemberStyle_ works just like _MethodColor_ with one or two simple string parameters (first for fore color in Dark them and the second one fore color in the Light theme).
+* _MemberStyle_ can be used for styling any part of the C# code for example Classes, Properties, Methods, Events and etc.
+* _MemberStyle_ now supports 14 options to decorate the C# code :
+  1. __ForeColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Dark_ themes.
+  2. __ForeColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Light_ themes.
+  3. __ForeColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the ForeColor in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
+  4. __BackColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Dark_ theme.
+  5. __BackColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Light_ theme.
+  6. __BackColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the Background Color in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
+  7. __Bold__ : (_[boolean property] a boolean variable with true/false value_) change the text style to __bold__ when it's value is true and false for regular style.
+  8. __Italic__ :(_[boolean property] a boolean variable with true/false value_) change the text style to _italic_ when it's value is true and false for regular style.
+  9. __Underline__ : (_[boolean property] a boolean variable with true/false value_) placed a line under the text when it's value is true and clears underline when it's value is not set or false.
+  10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) placed a line over the text when it's value is true and clears over-line when it's value is not set or false.
+  11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) changes the line color (under-line or over-line ) in both color themes.
+  12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_) changes the line offset of the under-line and over-line from the text base line. this property will be in action when you set one of under-line or over-line or both to true.
+  13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) changes the line thickness of the under-line or over-line. this property will be in action when you set one of under-line or over-line or both to true.
+  14. __FontSize__ :(_[int property] integer number [example: 16]_) changes the font size of the text.
+
+  >(*) : _The Color can be in gradient style as well, so we explain how you can use it in the next section._
+ 
 ## VS Ext: MSharp.CodePreview
 
 CodePreview VSIX is one of useful extensions that developed to help M# programmers to rapidly observe generated code by M# engine in real-time (after each project build) within a tool-window that displays in the right side of code editor window.
