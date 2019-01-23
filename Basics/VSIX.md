@@ -396,12 +396,12 @@ Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
   >(*) : _The Color can be in gradient style as well, so we explain how you can use it in the next section._
   >
   >Note : There is built-in an Color Picker Panel to help you choose your desired colors easily, So whenever you write an hex color strings (like "#aabbcc") then a small coloured box with specified color will be placed in left side of the string literal, so you can click the box and then StylishCode Color Picker Panel will be display and you can pick the color with these 4 different ways :
-      >1. Change the color string text interactively by the color text editor.
-      >2. Pick color (Select Color Range) from saturation gradient color levels.
-      >3. Pick color from Hue color area.
-      >4. Select the color transparency.
-      >
-    >![Image](images/StylishCode_ColorPickerInputs.jpg)
+  >1. Change the color string text interactively by the color text editor.
+  >2. Pick color (Select Color Range) from saturation gradient color levels.
+  >3. Pick color from Hue color area.
+  >4. Select the color transparency.
+  >
+  >![Image](images/StylishCode_ColorPickerInputs.jpg)
 
 ## VS Ext: MSharp.CodePreview
 
