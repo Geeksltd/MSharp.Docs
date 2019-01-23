@@ -335,21 +335,58 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ## _MemberStyle[Attribute]_
 
-There is an attribute that works more than colouring the code with name _MemberStyleAttribute_. as you know we can use attributes without using the __attribute__ postfix (This is one of the c# attribute using rules).
-So simply we can use _MemberStyle_ attribute instead of __MethodColor__. Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
+There is an attribute class is in the Geeks.StylishCode do more than simple colouring code, with name _MemberStyleAttribute_. (As you better know we can use attributes without using the __attribute__ postfix) So simply we can use _MemberStyle_ attribute instead of __MethodColor__. 
 
-* _MemberStyle_ works just like _MethodColor_ with one or two simple string parameters (first for fore color in Dark them and the second one fore color in the Light theme).
-* _MemberStyle_ can be used for styling any part of the C# code for example Classes, Properties, Methods, Events and etc.
-* _MemberStyle_ now supports 14 options to decorate the C# code :
-  1. __ForeColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Dark_ themes.
+![Image](images/StylishCode_ForeColor.PNG)
+
+Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
+
+  * _MemberStyle_ works just like _MethodColor_ with one or two simple string parameters (first for fore color in Dark them and the second one fore color in the Light theme).
+  * _MemberStyle_ can be used for styling any part of the C# code for example Classes, Properties, Methods, Events and etc.
+  * _MemberStyle_ now supports 14 options to decorate the C# code :
+  1. __ForeColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Dark_ themes.  
+  
+  ![Image](images/StylishCode_ForeColor2.PNG)
+
+> Note : If you do not specify the __ForeColorLight__ for light themes then this color will be changed to the _Inverse_ color of this color value when you see this member in light themes.
+>
+>![Image](images/StylishCode_ForeColor3.jpg)
+
   2. __ForeColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Light_ themes.
-  3. __ForeColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the ForeColor in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
+
+  ![Image](images/StylishCode_ForeColorLight.PNG)
+
+> Note : If you do not specify the __ForeColor__ for dark themes then this color will be changed to the _Inverse_ color of this color value when you see this member in dark themes.
+>
+>![Image](images/StylishCode_ForeColorLight2.jpg)
+
+  3. __ForeColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the ForeColor in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.  
+   ![Image](images/StylishCode_ForeColorOpacity.PNG)
+   >Note : Opacity will be apply for both _Dark_ and _Light_ fore color themes.
+
   4. __BackColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Dark_ theme.
+   
+  ![Image](images/StylishCode_BackColor.PNG)
+
+> Note : If you do not specify the __BackColorLight__ for light themes then this color will be changed to the _Inverse_ color of this color value when you see this member in light themes.
+>
+>![Image](images/StylishCode_BackColorInversLight.PNG)
+
   5. __BackColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Light_ theme.
+
+  ![Image](images/StylishCode_BackColorLight.PNG)
+
+> Note : If you do not specify the __BackColor__ for dark themes then this color will be changed to the _Inverse_ color of this color value when you see this member in dark themes.
+>
+>![Image](images/StylishCode_BackColorLightInversDark.PNG)
+
   6. __BackColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the Background Color in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
+   
+  ![Image](images/StylishCode_BackColorOpacity.PNG)
+   
   7. __Bold__ : (_[boolean property] a boolean variable with true/false value_) change the text style to __bold__ when it's value is true and false for regular style.
   8. __Italic__ :(_[boolean property] a boolean variable with true/false value_) change the text style to _italic_ when it's value is true and false for regular style.
-  9. __Underline__ : (_[boolean property] a boolean variable with true/false value_) placed a line under the text when it's value is true and clears underline when it's value is not set or false.
+  9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) placed a line under the text when it's value is true and clears underline when it's value is not set or false.
   10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) placed a line over the text when it's value is true and clears over-line when it's value is not set or false.
   11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) changes the line color (under-line or over-line ) in both color themes.
   12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_) changes the line offset of the under-line and over-line from the text base line. this property will be in action when you set one of under-line or over-line or both to true.
@@ -357,7 +394,15 @@ So simply we can use _MemberStyle_ attribute instead of __MethodColor__. Using t
   14. __FontSize__ :(_[int property] integer number [example: 16]_) changes the font size of the text.
 
   >(*) : _The Color can be in gradient style as well, so we explain how you can use it in the next section._
- 
+  >
+  >Note : There is built-in an Color Picker Panel to help you choose your desired colors easily, So whenever you write an hex color strings (like "#aabbcc") then a small coloured box with specified color will be placed in left side of the string literal, so you can click the box and then StylishCode Color Picker Panel will be display and you can pick the color with these 4 different ways :
+      >1. Change the color string text interactively by the color text editor.
+      >2. Pick color (Select Color Range) from saturation gradient color levels.
+      >3. Pick color from Hue color area.
+      >4. Select the color transparency.
+      >
+    >![Image](images/StylishCode_ColorPickerInputs.jpg)
+
 ## VS Ext: MSharp.CodePreview
 
 CodePreview VSIX is one of useful extensions that developed to help M# programmers to rapidly observe generated code by M# engine in real-time (after each project build) within a tool-window that displays in the right side of code editor window.
