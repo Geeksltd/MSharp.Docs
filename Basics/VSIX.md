@@ -385,13 +385,36 @@ Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
   ![Image](images/StylishCode_BackColorOpacity.PNG)
    
   7. __Bold__ : (_[boolean property] a boolean variable with true/false value_) change the text style to __bold__ when it's value is true and false for regular style.
+
+![Image](images/StylishCode_Bold.PNG)
+
   8. __Italic__ :(_[boolean property] a boolean variable with true/false value_) change the text style to _italic_ when it's value is true and false for regular style.
+  
+  ![Image](images/StylishCode_BoldItalic.PNG)
+  
   9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) placed a line under the text when it's value is true and clears underline when it's value is not set or false.
+  
+  ![Image](images/StylishCode_Underline.PNG)
+
   10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) placed a line over the text when it's value is true and clears over-line when it's value is not set or false.
+
+  ![Image](images/StylishCode_Overline.PNG)
+
   11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) changes the line color (under-line or over-line ) in both color themes.
+  
+  ![Image](images/StylishCode_line_color.PNG)
+  
   12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_) changes the line offset of the under-line and over-line from the text base line. this property will be in action when you set one of under-line or over-line or both to true.
+  
+  ![Image](images/StylishCode_line_offset.PNG)
+
   13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) changes the line thickness of the under-line or over-line. this property will be in action when you set one of under-line or over-line or both to true.
+  
+  ![Image](images/StylishCode_line_tickness.PNG)
+  
   14. __FontSize__ :(_[int property] integer number [example: 16]_) changes the font size of the text.
+
+  ![Image](images/StylishCode_FontSize.PNG)
 
   >(*) : _The Color can be in gradient style as well, so we explain how you can use it in the next section._
   >
@@ -403,6 +426,28 @@ Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
   >
   >![Image](images/StylishCode_ColorPickerInputs.jpg)
 
+### Attribute Decoration, Color values and Gradient Styles
+
+There is some coloring rules in GeeksStylishCode VSIX that you can use them for better coding and styling your code:
+
+1. You can write your styling rules in the separated attributes decoration, like all above attribute definitions for __FontSize__  in most of the examples.
+
+2. You can write exact HTML color names in the string literal colors with the (>) prefix (greater than sign) instead of color code hex values, like this :
+
+  ![Image](images/StylishCode_ColorNames.PNG)
+
+3. You can define a gradient colors instead of solid colors in all Fore Color and Back Color properties.
+   
+   ![Image](images/StylishCode_ColorGradient1.PNG)
+  > Note 1: You can separate your stop colors with the (-)_Dash_ or the (|)_Pipe_ signs.
+  >
+  > Note 2: You can define the offset value from start by a numeric value with or without _percent_ (__%__) sign that separates with a _space_ after each color to change the length of each color in the gradient.  
+  >![Image](images/StylishCode_ColorGradient2.PNG)
+  >
+  > Note 3: You can change the orientation of the linear color gradient with the first integer parameter that separates with a _Dash_ or _Pipe_ signs in front of each color gradient string literals.
+  >
+  >![Image](images/StylishCode_ColorGradient3.PNG)
+  
 ## VS Ext: MSharp.CodePreview
 
 CodePreview VSIX is one of useful extensions that developed to help M# programmers to rapidly observe generated code by M# engine in real-time (after each project build) within a tool-window that displays in the right side of code editor window.
