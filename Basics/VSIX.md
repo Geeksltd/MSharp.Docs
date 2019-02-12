@@ -30,7 +30,7 @@ In **M# MVC Project Wizard** window developers should specify a **M# Project Nam
 
 ![alt text](images/NewMSharpMVCProjectWizard_DB.png "M# MVC Project Wizard DB Select")
 
-Then the M# project wizard tries to download new fresh copy of **M# MVC Project** template from web server.
+Then the M# project wizard tries to download a fresh new copy of **M# MVC Project** template from web server.
 
 ![alt text](images/DownloadProgressWindow.png "Downloading Window")
 
@@ -57,7 +57,7 @@ In **M# Microservice Project Wizard** window developers should specify a **M# Mi
 
 ![alt text](images/NewMSharpMicroserviceProjectWizard_DB.png "M# MVC Project Wizard DB Select")
 
-Then M# project wizard tries to download new fresh copy of **M# MVC Microservice Project** template from web server.
+Then M# project wizard tries to download a fresh new copy of **M# MVC Microservice Project** template from web server.
 
 ![alt text](images/DownloadProgressWindow.png "Downloading Window")
 
@@ -288,9 +288,9 @@ MSharp.Colorize VSIX provides attribute classes to apply colouring rules to M# m
 
 ### MethodColorAttribute, MethodStyleAttribute classes
 
-MSharp.Colorize VSIX provides a set of Classifiers to show M# code as highlighted. The M# framework team have used this attribute class to decorate their methods with some styling features like color.
+MSharp.Colorize VSIX provides a set of Classifiers to highlight M# code. The M# framework team have used this attribute class to decorate their methods with some styling features like color.
 
-Using "MSharp.Colorize VSIX code highlighter" is very simple. To colour a method you should create a class with the name "MethodColorAttribute" derived from Attribute class, and a constructor with at least one string parameter in your project, like this :
+Using "MSharp.Colorize VSIX code highlighter" is very simple. To colour a method you should create a class with the name "MethodColorAttribute" inheriting from the Attribute class, and a constructor with at least one string parameter in your project, like this :
 
 ```C#
     public class MethodColorAttribute : Attribute
@@ -302,7 +302,7 @@ Using "MSharp.Colorize VSIX code highlighter" is very simple. To colour a method
     }
 ```
 
-In this case you can decorate all your methods with this new created attribute like :
+In this case you can decorate all your methods with this newly created attribute like this :
 
 ```C#
         [MethodColor("#8fdd24")]
@@ -311,17 +311,17 @@ In this case you can decorate all your methods with this new created attribute l
         }
 ```
 
-Whenever developers use your decorated method, they will see method name coloured like this :
+Whenever developers use your decorated method, they will see the method name coloured like this :
 
 ![Colorize_SampleCode1](images/Colorize_SampleCode1.PNG)
 
-Depending on the current color theme of Visual Studio and the background color of the code editor window, the specified color can vary. Your decorated method will be displayed in the specified color if background color is dark (as in the previous screenshot). Otherwise, the decorated method will be displayed in reverse color.
+Depending on the current color theme of Visual Studio and the background color of the code editor window, the specified color can vary. Your decorated method will be displayed in the specified color if the colour of the code editor background is dark (as in the previous screenshot). Otherwise, the decorated method will be displayed in the opposite colour.
 
 ![Colorize_SampleCode2](images/Colorize_SampleCode2.PNG)
 
-MethodColorAttribute class constructor can be implement with a second string parameter too. In this case, the first parameter is the specified method color in dark theme and second is the specified method color in light theme.
+MethodColorAttribute class constructor can also be implemented with a second string parameter. In this case, the first parameter is the specified method color for the dark theme and second is the specified method color for the light theme.
 
-> You can test live colouring functionalities by implementing a **MethodColorAttribute** class in your project, and decorating a method with this attribute. The decorated method will reflect method color changes in real time.
+> You can test live colouring functionalities by implementing a **MethodColorAttribute** class in your project, and then decorating a method with this attribute. Colour changes for the decorated method will reflected in real time.
 
 ## In Dark Theme
 
@@ -331,11 +331,11 @@ MethodColorAttribute class constructor can be implement with a second string par
 
 ![Image](images/Colorize_SampleCode3.PNG)
 
-> Note : The background color of M# code editor windows are customized to dark brown in **Dark Theme** and light blue in **Light Theme**.
+> Note : The background color of the M# code editor windows are modified to dark brown in **Dark Theme** and light blue in **Light Theme**.
 
 ## _MemberStyle[Attribute]_
 
-The attribute class _MemberStyleAttribute_  in Geeks.StylishCode does more than simply colour code. (As you know we can use attributes without using the __attribute__ postfix) We can use the _MemberStyle_ attribute instead of __MethodColor__. 
+There is an attribute in Geeks.StylishCode that does more than simply colour code called _MemberStyleAttribute_. As you know we apply attributes without using the __attribute__ postfix, we can add the _MemberStyle_ attribute instead of __MethodColor__. 
 
 ![Image](images/StylishCode_ForeColor.PNG)
 
@@ -368,7 +368,7 @@ Using _MemberStyle_ instead of _MethodColor_ has many benefits :
    
   ![Image](images/StylishCode_BackColor.PNG)
 
-> Note : If you do not specify the __BackColorLight__ for light themes, this will be changed to the _Inverse_ color of this color value when you see this member in light themes.
+> Note : If you do not specify the __BackColorLight__ for light themes, this will be changed to the _Inverse_ of the colour value you see in the dark theme.
 >
 >![Image](images/StylishCode_BackColorInversLight.PNG)
 
@@ -376,7 +376,7 @@ Using _MemberStyle_ instead of _MethodColor_ has many benefits :
 
   ![Image](images/StylishCode_BackColorLight.PNG)
 
-> Note : If you do not specify the __BackColor__ for dark themes then this color will be changed to the _Inverse_ color of this color value when you see this member in dark themes.
+> Note : If you do not specify the __BackColor__ for dark themes this will be changed to the _Inverse_ of the color value you see in the light theme.
 >
 >![Image](images/StylishCode_BackColorLightInversDark.PNG)
 
@@ -392,23 +392,23 @@ Using _MemberStyle_ instead of _MethodColor_ has many benefits :
   
   ![Image](images/StylishCode_BoldItalic.PNG)
   
-  9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) - Underlines the text when it's value is true and clears underline when it's value is not set or false.
+  9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) - Underlines the text when it's value is true and clears the underline when it's value is not set or false.
   
   ![Image](images/StylishCode_Underline.PNG)
 
-  10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) - Places a line over the text when it's value is true and clears over-line when it's value is not set or false.
+  10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) - Places a line over the text when it's value is true and clears the overline when it's value is not set or false.
 
   ![Image](images/StylishCode_Overline.PNG)
 
-  11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) - Changes the line color (under-line or over-line) in both color themes.
+  11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) - Changes the line color (underline or overline) in both color themes.
   
   ![Image](images/StylishCode_line_color.PNG)
   
-  12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_)- Changes the line offset of the under-line and over-line from the text base line. This property will be in action when you set under-line, over-line, or both to true.
+  12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_)- Changes the line offset of the under-line and over-line from the text base line. This property will only take effect when you set underline, overline, or both to true.
   
   ![Image](images/StylishCode_line_offset.PNG)
 
-  13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) - Changes the line thickness of the under-line or over-line. This property will be in action when you set under-line, over-line, or both to true.
+  13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) - Changes the line thickness of the underline or overline. This property will only take effect when you set underline, overline, or both to true.
   
   ![Image](images/StylishCode_line_tickness.PNG)
   
@@ -416,9 +416,9 @@ Using _MemberStyle_ instead of _MethodColor_ has many benefits :
 
   ![Image](images/StylishCode_FontSize.PNG)
 
-  >(*) : _The Color can be in gradient style as well. We will explain how to use it in the next section._
+  >(*) : _The Color can be in a gradient style as well. We will explain how to use this in the next section._
   >
-  >Note : There is built-in an Color Picker Panel to help you choose your desired colours easily. Whenever you write hex colour strings (like "#aabbcc"), a small coloured box with the specified color will be placed in left side of the string literal. You can click the box and the StylishCode Color Picker Panel will be displayed. You can then pick the color in 4 different ways :
+  >Note : There is a built-in Color Picker Panel to help you choose your desired colours easily. Whenever you write hex colour strings (like "#aabbcc"), a small coloured box with the specified color will be placed on the left side of the string literal. You can click the box and a StylishCode Color Picker Panel will be displayed. You can then pick the color in 4 different ways :
   >1. Change the color string text interactively using the color text editor.
   >2. Pick the colour (Select Colour Range) from saturation gradient colour levels.
   >3. Pick the colour from hue colour area.
@@ -428,29 +428,29 @@ Using _MemberStyle_ instead of _MethodColor_ has many benefits :
 
 ### Attribute Decoration, Color values and Gradient Styles
 
-Thereare some coloring rules in GeeksStylishCode VSIX which you can use for better coding and styling your code:
+Here are some tips you can use to further stylize your code using the GeeksStylishCode extension:
 
-1. You can write your styling rules in the separated attributes decoration, like the above attribute definitions for __FontSize__  in most of the examples.
+1. You can decorate your attributes separately, refer to some of the sections above for examples like __FontSize__.
 
-2. You can write exact HTML color names in the string literal colours with the (>) prefix, (greater than sign) instead of colour code hex values, like this :
+2. You can use the string literal html colour names with the (>) prefix (greater than sign) instead of colour code hex values, like this:
 
   ![Image](images/StylishCode_ColorNames.PNG)
 
-3. You can define a gradient colours instead of solid colours in all Fore Color and Back Color properties.
+3. You can define gradient colours instead of solid colours in both ForeColor and BackColor properties.
    
    ![Image](images/StylishCode_ColorGradient1.PNG)
   > Note 1: You can separate your stop colours with the (-)_Dash_ or the (|)_Pipe_ signs.
   >
-  > Note 2: You can define the offset value from the start using a numeric value with or without _percent_ (__%__) sign that separates with a _space_ after each colour to change the length of each colour in the gradient.  
+  > Note 2: You can define the offset value using a numeric value in front of the colour - with or without a _percent_ (__%__) sign, you must then separate the colour with a _space_ to change the length of the colours in the gradient.  
   >![Image](images/StylishCode_ColorGradient2.PNG)
   >
-  > Note 3: You can change the orientation of the linear colour gradient with the first integer parameter that separates with a _Dash_ or _Pipe_ signs in front of each color gradient string literals.
+  > Note 3: You can change the orientation of the linear colour gradient with an integer parameter in front of each color gradient separated by a _Dash_ or _Pipe_ sign.
   >
   >![Image](images/StylishCode_ColorGradient3.PNG)
   
 ## VS Ext: MSharp.CodePreview
 
-CodePreview VSIX is a useful extension developed to help M# programmers rapidly observe code generated by the M# engine in real-time. After each project built, this is displayed within a tool-window on the right hand side of code editor window.
+CodePreview VSIX is a useful extension developed to help M# programmers rapidly observe code generated by the M# engine in real-time. After the whole project is built, the preview is displayed within a tool-window on the right hand side of code editor window.
 You can open the Code Preview too-window by selecting **"Show Generated Code"** from the currently open code editor window menu.
 
 ![Image](images/CodePreview4.PNG)
@@ -475,17 +475,17 @@ _Sql_, _DAL_, _Structure_.
 
 ## VS Ext: MSharp.Goto
 
-In many cases developers need to switch to definitions or references across the solution, especially when using with M# Entities in Model and generated code. Using MSharp.Goto, you can go to declared classes and all references.
-Using MSharp GoTo VSIX, you can switch to the declaration of generated classes or properties faster and more effectively.
-In C# generated classes, in the Gen-Entities folder in the Domain project, you can request a suggestion in the editor by pressing [CTRL+.] over class identifier name (Class Name) or property identifier name (Property Name). A light-bulb pops up with the custom suggestion "Goto Definition.".If you select this, you will navigate to the declaration class to the Model project.
+In many cases developers need to switch to definitions and references throughout the solution, for example between the Model and generated code when using M# Entities. Using MSharp.Goto, you can go to the declared classes and all its references.
+Using MSharp GoTo VSIX, you can switch to the declaration of generated classes or its properties faster and more effectively.
+In C#, generated classes are in the Gen-Entities folder in the Domain project, you can toggle the context-based suggestion menu in the editor by pressing [CTRL+.] over the class identifier name (Class Name) or property identifier name (Property Name). A light-bulb pops up with a custom suggestion "Goto Definition.".If you select this, you will navigate to the declaration class in the Model project.
 
 ![Image](images/Goto1.JPG)
 
-You can also navigate to this generated class by invoking a suggestion request (Ctrl+.) over class name identifier. You will then see 2 custom suggestions; "Where is {ClassName} used?" and "Show generated class for {ClassName}.".
+You can also navigate to the generated class by invoking the suggestion menu (Ctrl+.) over class name identifier. You will then see 2 custom suggestions; "Where is {ClassName} used?" and "Show generated class for {ClassName}.".
 
 ![Image](images/Goto2.JPG)
 
-If you select "Where is {ClassName} used?", you can navigate to all references by selecting an item in the opened references toolbox panel.
+If you select "Where is {ClassName} used?", you can navigate to any of the references in the references toolbox panel by selecting an item.
 
 ![Image](images/Goto3.JPG)
 
@@ -493,11 +493,11 @@ Also you can navigate to the generated class in the Domain project by selecting 
 
 Often when you're working with code, for every concept there are multiple code files, which are effectively sister files all related to that concept.
 
-With this extension, when you open a M# class file that has sisters, in right corner of code editor window all the sister files will be displayed as navigation buttons. By pressing each one you can jump to the sister of file of the currently opened file in Visual Studio. When there are multiple sister files in the same category, all other sisters will be shown as drop-down list you can navigate to.
+With this extension, when you open a M# class file that has sister files, all of the related files will be displayed as navigation buttons in right corner of code editor window. By pressing each one you can jump to the related file in Visual Studio. When there are multiple sister files in the same category, all other files will be shown in the drop-down list you can navigate to.
 
 ![Image](images/SisterButtons.PNG)
 
-These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 another button if you installed CodePreview VSIX) categorized by these 4 colors :
+These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 other button if you installed CodePreview VSIX) categorized by these 4 colors :
 
 > ![Image](images/Purple.PNG) Pink  : Currently opened document button will be displayed as Pink, with the title of current file type.
 > 
@@ -505,11 +505,11 @@ These buttons are shown in different colors, so you can navigate better across s
 > 
 > ![Image](images/Green.PNG) Cyan : Cyan buttons are not really sister files. This buttons shows files that are related to currently open file, so that you can navigate to these files.
 > 
->> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** and you open an M# UI class, an additional Orange button with the M# icon will appear to the end of navigation buttons list. If you click this button, you can see the HTML preview of your currently UI class.
+>> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** and you open an M# UI class, an additional Orange button with the M# icon will appear at the end of navigation buttons list. If you click this button, you can see the HTML preview of your current UI class.
 
 ## VS Ext: MSharp.Intellisense
 
-Writing C# in in M# modules can be a pain. For example, writing the below bit of code in a string can be annoying with no intellisense and visual studio features.
+Writing C# in M# modules can be a pain. For example, writing the below bit of code in a string can be annoying with no intellisense and visual studio features.
 
 ![Image](images/Intellisens1.jpeg)
 
@@ -521,15 +521,15 @@ When the cursor is under calling method or its string literal parameter, you can
 
 ![Image](images/Intellisens4.jpeg)
 
-or pressing [ALT + I] shortcut key or by invoking the light-bulb command when it suggested or hitting the [CTRL + .] key combination on proper line and select "Show Intellisense for string parameter" command.
+or pressing [ALT + I] shortcut key or by invoking the light-bulb command when it's suggested or hitting the [CTRL + .] key combination on the proper line and select the "Show Intellisense for string parameter" command.
 
 ![Image](images/Intellisens5.jpeg)
 
-The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# file. The peeker loads that temporary file as well and developers can manipulate their code in right C# code context. When hitting [CTRL + S] it will close the peeker menu and add the code as a string.
+The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# file. The peeker loads that temporary file and developers can manipulate their code in the right C# code context. When hitting [CTRL + S] it will close the peeker menu and add the code as a string.
 
 ### Technical Tip 1
 
-Sometimes it may take long time to show peeker with the C# context. This depends on the project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file will be populated and created in the \_M#\_TEMP folder under the WebSite project.
+Sometimes it may take a while to show the peeker with the C# context. This depends on the project size and system performance, because a temporary C# (with name **IntellisenseTemp.cs**) file will be populated and created in the \_M#\_TEMP folder under the WebSite project.
 
 ![Image](images/Intellisens6.jpeg)
 
@@ -539,7 +539,7 @@ Then Intellisense VSIX shows the code file in the peeker, while the file is bein
 
 ### Technical Tip 2
 
-(**Troubleshooting**) If you can't see the peeker panel after a while, or you get a "No Result or "We did not find any result." message,  MSharp.exe might have returned an error and intellisense temporary file has not been generated correctly in \_M#\_TEMP. In this case check the following :
+(**Troubleshooting**) If you can't see the peeker panel after a while, or you get a "No Result or "We did not find any result." message,  MSharp.exe might have returned an error and the intellisense temporary file has not been generated correctly in \_M#\_TEMP. In this case check the following :
 
 - Make sure the solution is fully compiled without any errors.
 - Make sure #UI.dll, #Model.dll, MSharp.exe and MSharp.DLS.exe exist in the "[Solution Path]\M#\Lib\".
