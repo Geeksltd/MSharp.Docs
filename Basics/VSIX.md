@@ -6,7 +6,7 @@
 
 ## VS Ext: MSharp.AddNew
 
-MSharp.AddNew VSIX provides a set of functionality and project templates wizards to make projects from scratch and create M# project items easily. So you can create 3 different M# project types (**M# ASP.NET Core - MVC**, **M# ASP.NET Core - Microservice** and **M# Class Library**) by using this extension.
+MSharp.AddNew VSIX provides a set of functionality and project template wizards to make projects from scratch and create M# project items easily. You can create 3 different M# project types (**M# ASP.NET Core - MVC**, **M# ASP.NET Core - Microservice** and **M# Class Library**) using this extension.
 
 ![alt text](images/NewProjectTemplates.png "New Project Templates")
 
@@ -14,7 +14,7 @@ MSharp.AddNew VSIX provides a set of functionality and project templates wizards
 
 ---
 
-By using **_M# MVC Project Template Wizard_** you can create a standard M# project from scratch. Each M# ASP.NET MVC Application at least should consists of 4 different projects.
+Using **_M# MVC Project Template Wizard_** you can create a standard M# project from scratch. Each M# ASP.NET MVC Application should consist of at least 4 different projects.
 
 - #Model _(Standard .Net Core 2.1)_
 - #UI _(Standard .Net Core 2.1)_
@@ -22,19 +22,19 @@ By using **_M# MVC Project Template Wizard_** you can create a standard M# proje
 - Website _(Standard ASP.Net Core App 2.1)_
 - _[Docker-compose]_ _(Docker Container)_
 
-Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup window gets custom **M#** project options from user In the **M# MVC Project Wizard** window.
+Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit the **OK** button. Then the project wizard popup window gets custom **M#** project options from user in the **M# MVC Project Wizard** window.
 
 ![alt text](images/NewMSharpMVCProjectWizard.png "M# MVC Project Wizard")
 
-In **M# MVC Project Wizard** window developers should specify a **M# Project Name** and choose a **Database Type** providers such as _Sql Server_, _MySQL_, _PostgreSQL_, _Sqlite_ as Database Management System for new M# Application. Also developers should specify related **Connections String** according to selected **Database Type** as well.
+In **M# MVC Project Wizard** window developers should specify a **M# Project Name** and choose a **Database Type** provider, such as _Sql Server_, _MySQL_, _PostgreSQL_, _Sqlite_ as the Database Management System for new M# Application. Developers should also specify related **Connections String** according to selected **Database Type**.
 
 ![alt text](images/NewMSharpMVCProjectWizard_DB.png "M# MVC Project Wizard DB Select")
 
-Then M# project wizard tries to download new fresh copy of **M# MVC Project** template from web server.
+Then the M# project wizard tries to download a fresh new copy of **M# MVC Project** template from web server.
 
 ![alt text](images/DownloadProgressWindow.png "Downloading Window")
 
-After the template downloaded successfully, **Initialize.bat** of downloaded package automatically runs to initialize M# solution by updating projects references and all required website packages.
+After the template has downloaded successfully, **Initialize.bat** of the downloaded package runs automatically. It initializes the M# solution by updating projects references and all required website packages.
 
 ![alt text](images/SolutionInitialization.png "Downloading Window")
 
@@ -42,22 +42,22 @@ After the template downloaded successfully, **Initialize.bat** of downloaded pac
 
 ---
 
-By using **_M# ASP.NET Core MVC Microservice Project_** you can create a standard M# Microservice project from scratch. Each M# ASP.NET Microservice Application at least should consists of 4 different projects.
+Using **_M# ASP.NET Core MVC Microservice Project_** you can create a standard M# Microservice project from scratch. Each M# ASP.NET Microservice Application should consist of at least 4 different projects.
 
 - #Model _(Standard .Net Core 2.1)_
 - #UI _(Standard .Net Core 2.1)_
 - Domain _(Standard .Net Core 2.1)_
 - Website _(Standard ASP.Net Core App 2.1)_
 
-Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit **OK** button, then a project wizard with a popup window gets custom **M# Microservice** project options from user In the **M# Microservice Project Wizard** window.
+Developers should specify the _Name_, _Location_ and _Solution name_ of new project and hit the **OK** button. A project wizard then gets custom **M# Microservice** project options from the user in the **M# Microservice Project Wizard** window.
 
 ![alt text](images/NewMSharpMiscroserviceProjectWizard.png "M# Microservice Project Wizard")
 
-In **M# Microservice Project Wizard** window developers should specify a **M# Microservice Project Name** and choose a **Database Type** providers such as _Sql Server_, _MySQL_, _PostgreSQL_, _Sqlite_ as Database Management System for new M# Microservice Application. Also developers should specify related **Connections String** according to selected **Database Type** as well.
+In **M# Microservice Project Wizard** window developers should specify a **M# Microservice Project Name** and choose a **Database Type** provider such as _Sql Server_, _MySQL_, _PostgreSQL_, _Sqlite_ as Database Management System for new M# Microservice Application. Developers should also specify related **Connections String** according to selected **Database Type**.
 
 ![alt text](images/NewMSharpMicroserviceProjectWizard_DB.png "M# MVC Project Wizard DB Select")
 
-Then M# project wizard tries to download new fresh copy of **M# MVC Microservice Project** template from web server.
+Then M# project wizard tries to download a fresh new copy of **M# MVC Microservice Project** template from web server.
 
 ![alt text](images/DownloadProgressWindow.png "Downloading Window")
 
@@ -65,7 +65,7 @@ Then M# project wizard tries to download new fresh copy of **M# MVC Microservice
 
 ---
 
-We have produced a **Custom Project Sub Type** with name "M# Class Library Template", developers can use this project type as a standard class library in their .NET framework projects.
+We have produced a **Custom Project Sub Type** called the "M# Class Library Template", which developers can use as a standard class library in their .NET framework projects.
 
 ![Image](images/NewMSharpClassLibraryTemplate.png)
 
@@ -73,51 +73,51 @@ We have produced a **Custom Project Sub Type** with name "M# Class Library Templ
 
 ![Image](images/NewItemEntity.PNG)
 
-You can create a new Entity class from simple class template by selecting the M# Entity item from *Add new Item* panel.
+You can create a new Entity class from the simple class template by selecting the M# Entity item from *Add new Item* panel.
 
-> Either you can create new Entity or SubType< Entity > classes by selecting the context menu item in solution explorer over the M# Model project or project folder. (you can read more about this item later in this document)
+> You can also can create new Entity or SubType< Entity > classes by selecting the context menu item in solution explorer over the M# Model project or project folder. (You can read more about this item later in this document)
 ![Image](images/AddNewEntity.PNG)
 
 ## Solution Explorer Context Menu Commands
 
 ### Build All
 
--=***=- There is an useful M# build task that you can use it by selecting first context menu item of the solution node in the __Solution Explorer__ window.
+-=***=- Build all is a useful M# build task. You can use by it by selecting the first context menu item of the solution node in the __Solution Explorer__ window.
 
 ![Image](images/BuildAllMenuItem.PNG)
 
 ### Run Fast
 
--=***=- Compile, Build and run every projects are Time-consuming task, so there is an item in __Website__ node context menu with name __Run Fast__ you can run your website project without need of solution builds.
+-=***=- Compiling, building and running every project is a time-consuming task. In the __Website__ node context menu there is an item called __Run Fast__ which you can use to run your website project without needing solution builds.
 
 ![Image](images/RunFastMenuItem.PNG)
 
 ## Generate Project Items
 
-Depending on the type of project you are working on, you can create/add custom project requirements by using M# context menu under solution explorer node.
+Depending on the type of project you are working on, you can create/add custom project requirements using the M# context menu under solution explorer node.
 
-## Create New Entity
+## Create a New Entity
 
-In each M# project the first thing a developer needs to do is to build a concrete business domain model, which consists of entities often referred to as business objects, in this case developer can select a node (Project root node/Folder) from solution explorer tree in the **#Model** project then right click on it and choose **"Add Entity ..."** from path "Add > M# > Add Entity ..." menu item of it's context menu.
+In each M# project, the first thing a developer needs to do is build a concrete business domain model. This consists of entities often referred to as business objects. To do this, select a node (Project root node/Folder) from the solution explorer tree in the **#Model** project. Right click on it and choose the **"Add Entity ..."** item from the path "Add > M# > Add Entity ...".
 
 ![Image](images/AddNewEntity.PNG)
 
-M# shows a tool window to get an _Entity/**Type Name**_ with an optional **Base Type** to generate a plain **M# Entity** class or a generic **M# Entity SubType** class under selected node.
+M# then shows a window where you can select an _Entity/**Type Name**_ with an optional **Base Type**, to generate a plain **M# Entity** class, or a generic **M# Entity SubType** class under selected node.
 
 ![Image](images/CreateNewEntityWindow.png)
 
-So that if developer only specified a **Type Name** then M# creates a plain Entity type class and if he select a **Base Type** from dropdown combo then M# will generates a Entity **SubType<_Base Type_>** class depending on selected item.
+If you only specify a **Type Name**,  M# creates a plain Entity type class. If you select a **Base Type**, M# will generate an Entity **SubType<_Base Type_>** class depending on selected item.
 
-> Note : Only compiled Entity Types are available in drop down combos to select as Base Type in all Create pages.
+> Note : Only compiled Entity Types are available to select as the Base Type in all Create pages.
 > [![Image](images/CLI.png "M# Command Line Interface") CLI Command](CLI.md#user-content-MSharpexe-addtype-nametypename-basebasetypename-foldercontainerfolder) :
 >
 > MSharp.exe /add:type /name:"Person" [/base:"Administrator"][/folder:"containerfolder"]
 >
-> - _Person is sample entity name_
-> - _Administrator is sample entity base type_ (optional)
-> - _ContainerFolder is sample folder_ (optional)
+> - _Person is a sample entity name_
+> - _Administrator is a sample entity base type_ (optional)
+> - _ContainerFolder is a sample folder_ (optional)
 
-## Create CRUD
+## Create a CRUD
 
 ![Image](images/CreateCRUD.PNG)
 ![Image](images/CreateCRUDWindow.PNG)
@@ -126,17 +126,17 @@ So that if developer only specified a **Type Name** then M# creates a plain Enti
 >
 > MSharp.exe /add:Crud /page:"Admin.cs" /type:"ContentBlock" [/menu:"MainMenu"]
 >
-> - _Admin.cs is sample page name_
-> - _ContentBlock is sample entity base type_
-> - _MainMenu is sample menu module name_ (optional)
+> - _Admin.cs is a sample page name_
+> - _ContentBlock is a sample entity base type_
+> - _MainMenu is a sample menu module name_ (optional)
 
 ## Create Partial Class
 
-In many cases maybe you want to have a partial classes in the Domain project to separate your concern into two partial files so you can select the *Create Partial Class ...* item in the context menu of entity classes  in the Solution explorer window. Then a new partial file will be create in the Domain\Logic folder.
+In many cases, you may want to have partial classes in the Domain project, in order to separate your concern into two partial files. To do this, go to the Solution explorer window and select *Create Partial Class ...* from the context menu of entity classes. Then a new partial file will be created in the Domain\Logic folder.
 
 ![Image](images/CreatePartialClass.PNG)
 
-## Create Form
+## Create a Form
 
 ![Image](images/AddFormMenu.PNG)
 ![Image](images/AddFormWindow.PNG)
@@ -145,11 +145,11 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:form /on:"EntityTypeName" /name:"MyFormName" [/folder:"ContainerFolder"]
 >
-> - _EntityTypeName is sample entity name_
-> - _MyFormName is sample form module name_
-> - _ContainerFolder is sample folder_ (optional)
+> - _EntityTypeName is a sample entity name_
+> - _MyFormName is a sample form module name_
+> - _ContainerFolder is a sample folder_ (optional)
 
-## Create List
+## Create a List
 
 ![Image](images/AddListMenu.PNG)
 ![Image](images/AddListWindow.PNG)
@@ -158,11 +158,11 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:list /on:"EntityTypeName" /name:"MyListName" [/folder:"ContainerFolder"]
 >
-> - _EntityTypeName is sample entity name_
-> - _MyListName is sample list module name_
+> - _EntityTypeName is a sample entity name_
+> - _MyListName is a sample list module name_
 > - _ContainerFolder is sample folder_ (optional)
 
-## Create View
+## Create a View
 
 ![Image](images/AddViewMenu.PNG)
 ![Image](images/AddViewWindow.PNG)
@@ -171,11 +171,11 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:view /on:"EntityTypeName" /name:"MyViewName" [/folder:"ContainerFolder"]
 >
-> - _EntityTypeName is sample entity name_
-> - _MyViewName is sample view module name_
-> - _ContainerFolder is sample folder_ (optional)
+> - _EntityTypeName is a sample entity name_
+> - _MyViewName is a sample view module name_
+> - _ContainerFolder is a sample folder_ (optional)
 
-## Create Menu
+## Create a Menu
 
 ![Image](images/AddMenuMenu.PNG)
 ![Image](images/AddMenuWindow.PNG)
@@ -184,10 +184,10 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:menu /name:"MyMenuName" [/folder:"ContainerFolder"]
 >
-> - _MyMenuName is sample menu module name_
-> - _ContainerFolder is sample folder_ (optional)
+> - _MyMenuName is a sample menu module name_
+> - _ContainerFolder is a sample folder_ (optional)
 
-## Create Generic Module
+## Create a Generic Module
 
 ![Image](images/AddGenericModuleMenu.PNG)
 ![Image](images/AddGenericModuleWindow.PNG)
@@ -196,10 +196,10 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > /add:Custom /name:MyCustomModule /folder:"C:\..\MSharp.Mvc\M#\UI\Modules"
 >
-> - _MyCustomModule is sample generic module name_
-> - _C:\..\MSharp.Mvc\M#\UI\Modules is sample folder path that module should create there_ (optional)
+> - _MyCustomModule is a sample generic module name_
+> - _C:\..\MSharp.Mvc\M#\UI\Modules is a sample folder path that module should create there_ (optional)
 
-## Create Root Page
+## Create a Root Page
 
 ![Image](images/AddPageMenu.PNG)
 ![Image](images/AddPageWindow.PNG)
@@ -208,10 +208,10 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:page /name:"PageName" [/parent:"FullPathToParentFolderOrFile"]
 >
-> - _PageName is sample page or sub-page module name_
-> - _FullPathToParentFolderOrFile is sample folder or Page Module file name_
+> - _PageName isa  sample page or sub-page module name_
+> - _FullPathToParentFolderOrFile is a sample folder or Page Module file name_
 
-## Create Sub-Page
+## Create a Sub-Page
 
 ![Image](images/AddSubPageMenu.PNG)
 ![Image](images/AddSubPageWindow.PNG)
@@ -220,7 +220,7 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:Page /name:MySubAdmin /parent:"C:\...\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs"
 >
-> - _MySubAdmin is sample Sub Page name_
+> - _MySubAdmin is a sample Sub Page name_
 > - _C:\..\MSharp.Mvc73\MSharp.Mvc\M#\UI\Pages\Admin.cs is sample Parent Page full path_
 
 ## Create CRUD by Page
@@ -232,12 +232,12 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:Crud /page:"Admin.cs" /type:"Administrator" [/menu:"AdminSettingsMenu"]
 >
-> - _Admin.cs is sample page name_
-> - _Admin.cs is sample page name_
-> - _Administrator is sample entity base type_
-> - _AdminSettingsMenu is sample menu module name_ (optional)
+> - _Admin.cs is a sample page name_
+> - _Admin.cs is a sample page name_
+> - _Administrator is a sample entity base type_
+> - _AdminSettingsMenu is a sample menu module name_ (optional)
 
-## Create API Proxy
+## Create an API Proxy
 
 ![Image](images/GenerateApiProxyMenu.PNG)
 ![Image](images/GenerateApiProxyWindow.PNG)
@@ -246,16 +246,16 @@ In many cases maybe you want to have a partial classes in the Domain project to 
 >
 > MSharp.exe /add:type /name:"Person" [/base:"Administrator"][/folder:"containerfolder"]
 >
-> - _Person is sample entity name_
-> - _Administrator is sample entity base type_
-> - _ContainerFolder is sample folder_
+> - _Person is a sample entity name_
+> - _Administrator is a sample entity base type_
+> - _ContainerFolder is a sample folder_
 
 ## VS Ext: MSharp.Colorize
 
-![Image](images/MSharp.png) By using **MSharp.Colorize** extension all M# Projects (MVC, MVC Microservice and Class Library) has specific UI layout in solution explorer tool window. So that Model and UI projects in "M# ASP.NET - MVC" and "M# ASP.NET - MVC Microservice" and project root icon in "M# Class Library" are shown as a simple custom M# purple icon like this :
+![Image](images/MSharp.png) The **MSharp.Colorize** extension gives all M# Projects (MVC, MVC Microservice and Class Library) a specific UI layout in solution explorer window. In "M# ASP.NET - MVC" and "M# ASP.NET - MVC Microservice" projects, the Model and UI projects are shown as a simple custom M# purple icon (see below). In "M# Class Library", the project root has this icon.
 ![Image](images/MSharpMVCSolutionExplorer.PNG)
 
-Also according to C# class file contents and it's base class in #Model and #UI projects, their icon will be changed in this types:
+Depending on a C# class file's contents and it's base class in the #Model and #UI projects, its icon will be as follows:
 
 - ![Image](images/CsType.png) : Plain **C#** files
 
@@ -273,24 +273,24 @@ Also according to C# class file contents and it's base class in #Model and #UI p
 
 - ![Image](images/GenericModule.png) : M# **Generic Module**
 
-  > These icons are shown in Top Right corner of each M# class modules in code editor window too, for example in M# Entity file it will be look like this :
+  > These icons are shown in the top right corner M# class modules in code editor window. For example, an M# Entity file it will look like this:
 
   ![Image](images/EntityTextEditorSample.PNG)
 
 ## Vs Ext: Geeks.StylishCode
 
-__Geeks Stylish Code__ has been developed specially to decorate C# source codes with colors and text styles just like CSS rules.
+__Geeks Stylish Code__ has been developed specially to decorate C# source code with colour and text styles just like CSS rules.
 You can make all class members coloured by decorating them with special Stylish code attributes : _MethodColorAttribute_ and _MemberStyleAttribute_
 
 ## M# Code Highlighting
 
-MSharp.Colorize VSIX provides attribute classes to apply coloring rules on M# methods, so developer can better work with M# codes.
+MSharp.Colorize VSIX provides attribute classes to apply colouring rules to M# methods, so developers can work better with M# code.
 
 ### MethodColorAttribute, MethodStyleAttribute classes
 
-MSharp.Colorize VSIX provides set of Classifiers to show M# code highlighted. And M# framework team used this attribute classes to decorate their methods with some styling features like color.
+MSharp.Colorize VSIX provides a set of Classifiers to highlight M# code. The M# framework team have used this attribute class to decorate their methods with some styling features like color.
 
-Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a method you simply should create a class with name "MethodColorAttribute" derived from Attribute class and a constructor with at least one string parameter in your project, like this :
+Using "MSharp.Colorize VSIX code highlighter" is very simple. To colour a method you should create a class with the name "MethodColorAttribute" inheriting from the Attribute class, and a constructor with at least one string parameter in your project, like this :
 
 ```C#
     public class MethodColorAttribute : Attribute
@@ -302,7 +302,7 @@ Using "MSharp.Colorize VSIX code highlighter" is very simple. To colouring a met
     }
 ```
 
-In this case you can decorate all your methods with this new created attribute like :
+In this case you can decorate all your methods with this newly created attribute like this :
 
 ```C#
         [MethodColor("#8fdd24")]
@@ -311,17 +311,17 @@ In this case you can decorate all your methods with this new created attribute l
         }
 ```
 
-So whenever developers use your decorated method then they will see method name coloured like this :
+Whenever developers use your decorated method, they will see the method name coloured like this :
 
 ![Colorize_SampleCode1](images/Colorize_SampleCode1.PNG)
 
-Depending on the current color theme of Visual Studio and the background color of the code editor window, the specified color can vary. That way your decorated method will displayed in specified color if background color is dark (just like previous screenshot).Otherwise, the decorated method will be displayed in reverse color.
+Depending on the current color theme of Visual Studio and the background color of the code editor window, the specified color can vary. Your decorated method will be displayed in the specified color if the colour of the code editor background is dark (as in the previous screenshot). Otherwise, the decorated method will be displayed in the opposite colour.
 
 ![Colorize_SampleCode2](images/Colorize_SampleCode2.PNG)
 
-MethodColorAttribute class constructor can be implement with second string parameter too. In that case first parameter is specified method color in dark theme and second, specified method color in light theme.
+MethodColorAttribute class constructor can also be implemented with a second string parameter. In this case, the first parameter is the specified method color for the dark theme and second is the specified method color for the light theme.
 
-> You can test live Colouring functionalities by implementing a **MethodColorAttribute** class in your project and decorate a method with this attribute, then the decorated method reflects method color changes real time.
+> You can test live colouring functionalities by implementing a **MethodColorAttribute** class in your project, and then decorating a method with this attribute. Colour changes for the decorated method will reflected in real time.
 
 ## In Dark Theme
 
@@ -331,131 +331,131 @@ MethodColorAttribute class constructor can be implement with second string param
 
 ![Image](images/Colorize_SampleCode3.PNG)
 
-> Note : The background color of M# code editor windows are customized to dark brown in **Dark Theme** and light blue in **Light Theme**.
+> Note : The background color of the M# code editor windows are modified to dark brown in **Dark Theme** and light blue in **Light Theme**.
 
 ## _MemberStyle[Attribute]_
 
-There is an attribute class is in the Geeks.StylishCode do more than simple colouring code, with name _MemberStyleAttribute_. (As you better know we can use attributes without using the __attribute__ postfix) So simply we can use _MemberStyle_ attribute instead of __MethodColor__. 
+There is an attribute in Geeks.StylishCode that does more than simply colour code called _MemberStyleAttribute_. As you know we apply attributes without using the __attribute__ postfix, we can add the _MemberStyle_ attribute instead of __MethodColor__. 
 
 ![Image](images/StylishCode_ForeColor.PNG)
 
-Using the _MemberStyle_ instead of _MethodColor_ has many benefices :
+Using _MemberStyle_ instead of _MethodColor_ has many benefits :
 
-  * _MemberStyle_ works just like _MethodColor_ with one or two simple string parameters (first for fore color in Dark them and the second one fore color in the Light theme).
-  * _MemberStyle_ can be used for styling any part of the C# code for example Classes, Properties, Methods, Events and etc.
+  * _MemberStyle_ works just like _MethodColor_ with one or two simple string parameters (the first for for colour in Dark theme, and the second for color in the Light theme).
+  * _MemberStyle_ can be used for styling any part of the C# code. For instance, Classes, Properties, Methods, Events and etc.
   * _MemberStyle_ now supports 14 options to decorate the C# code :
-  1. __ForeColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Dark_ themes.  
+  1. __ForeColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) - Changes the ForeColor in  _Dark_ themes.  
   
   ![Image](images/StylishCode_ForeColor2.PNG)
 
-> Note : If you do not specify the __ForeColorLight__ for light themes then this color will be changed to the _Inverse_ color of this color value when you see this member in light themes.
+> Note : If you do not specify the __ForeColorLight__ for light themes, it will be changed to the _Inverse_  colour of the colour value when you see this member in light themes.
 >
 >![Image](images/StylishCode_ForeColor3.jpg)
 
-  2. __ForeColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) Changes the ForeColor in the _Light_ themes.
+  2. __ForeColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) - Changes the ForeColor in  _Light_ themes.
 
   ![Image](images/StylishCode_ForeColorLight.PNG)
 
-> Note : If you do not specify the __ForeColor__ for dark themes then this color will be changed to the _Inverse_ color of this color value when you see this member in dark themes.
+> Note : If you do not specify the __ForeColor__ for dark themes, it will be changed to the _Inverse_ colour of the colour value when you see this member in dark themes.
 >
 >![Image](images/StylishCode_ForeColorLight2.jpg)
 
-  3. __ForeColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the ForeColor in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.  
+  3. __ForeColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) - Changes the opacity of the ForeColor in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid colour.  
    ![Image](images/StylishCode_ForeColorOpacity.PNG)
-   >Note : Opacity will be apply for both _Dark_ and _Light_ fore color themes.
+   >Note : Opacity will be applied for both _Dark_ and _Light_ fore colour themes.
 
-  4. __BackColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Dark_ theme.
+  4. __BackColor__ (*): (_[string property] hex web color [example:"#aabbcc"]_) - Changes the background colour in _Dark_ theme.
    
   ![Image](images/StylishCode_BackColor.PNG)
 
-> Note : If you do not specify the __BackColorLight__ for light themes then this color will be changed to the _Inverse_ color of this color value when you see this member in light themes.
+> Note : If you do not specify the __BackColorLight__ for light themes, this will be changed to the _Inverse_ of the colour value you see in the dark theme.
 >
 >![Image](images/StylishCode_BackColorInversLight.PNG)
 
-  5. __BackColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) changes the Background color in the _Light_ theme.
+  5. __BackColorLight__ (*): (_[string property] hex web color [example:"#aabbcc"]_) - Changes the Background color in the _Light_ theme.
 
   ![Image](images/StylishCode_BackColorLight.PNG)
 
-> Note : If you do not specify the __BackColor__ for dark themes then this color will be changed to the _Inverse_ color of this color value when you see this member in dark themes.
+> Note : If you do not specify the __BackColor__ for dark themes this will be changed to the _Inverse_ of the color value you see in the light theme.
 >
 >![Image](images/StylishCode_BackColorLightInversDark.PNG)
 
-  6. __BackColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) Changes the opacity of the Background Color in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
+  6. __BackColorOpacity__ : (_[double property] floating point number between 0 and 1 [example: 0.5]_) - Changes the opacity of the Background Color in both _Dark_ and _Light_ themes. 0 is fully transparent and 1 is solid color.
    
   ![Image](images/StylishCode_BackColorOpacity.PNG)
    
-  7. __Bold__ : (_[boolean property] a boolean variable with true/false value_) change the text style to __bold__ when it's value is true and false for regular style.
+  7. __Bold__ : (_[boolean property] a boolean variable with true/false value_) - Changes the text style to __bold__ when it's value is true and false for regular style.
 
 ![Image](images/StylishCode_Bold.PNG)
 
-  8. __Italic__ :(_[boolean property] a boolean variable with true/false value_) change the text style to _italic_ when it's value is true and false for regular style.
+  8. __Italic__ :(_[boolean property] a boolean variable with true/false value_) - Changes the text style to _italic_ when it's value is true and false for regular style.
   
   ![Image](images/StylishCode_BoldItalic.PNG)
   
-  9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) placed a line under the text when it's value is true and clears underline when it's value is not set or false.
+  9.  __Underline__ : (_[boolean property] a boolean variable with true/false value_) - Underlines the text when it's value is true and clears the underline when it's value is not set or false.
   
   ![Image](images/StylishCode_Underline.PNG)
 
-  10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) placed a line over the text when it's value is true and clears over-line when it's value is not set or false.
+  10. __Overline__ : (_[boolean property] a boolean variable with true/false value_) - Places a line over the text when it's value is true and clears the overline when it's value is not set or false.
 
   ![Image](images/StylishCode_Overline.PNG)
 
-  11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) changes the line color (under-line or over-line ) in both color themes.
+  11. __Line_Color__ :(_[string property] hex web color [example:"#aabbcc"]_) - Changes the line color (underline or overline) in both color themes.
   
   ![Image](images/StylishCode_line_color.PNG)
   
-  12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_) changes the line offset of the under-line and over-line from the text base line. this property will be in action when you set one of under-line or over-line or both to true.
+  12. __Line_Offset__ : (_[double property] floating point number [default: 0.3]_)- Changes the line offset of the under-line and over-line from the text base line. This property will only take effect when you set underline, overline, or both to true.
   
   ![Image](images/StylishCode_line_offset.PNG)
 
-  13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) changes the line thickness of the under-line or over-line. this property will be in action when you set one of under-line or over-line or both to true.
+  13. __Line_Thikness__ :(_[double property] floating point number [default: 1]_) - Changes the line thickness of the underline or overline. This property will only take effect when you set underline, overline, or both to true.
   
   ![Image](images/StylishCode_line_tickness.PNG)
   
-  14. __FontSize__ :(_[int property] integer number [example: 16]_) changes the font size of the text.
+  14. __FontSize__ :(_[int property] integer number [example: 16]_) - Changes the font size of the text.
 
   ![Image](images/StylishCode_FontSize.PNG)
 
-  >(*) : _The Color can be in gradient style as well, so we explain how you can use it in the next section._
+  >(*) : _The Color can be in a gradient style as well. We will explain how to use this in the next section._
   >
-  >Note : There is built-in an Color Picker Panel to help you choose your desired colors easily, So whenever you write an hex color strings (like "#aabbcc") then a small coloured box with specified color will be placed in left side of the string literal, so you can click the box and then StylishCode Color Picker Panel will be display and you can pick the color with these 4 different ways :
-  >1. Change the color string text interactively by the color text editor.
-  >2. Pick color (Select Color Range) from saturation gradient color levels.
-  >3. Pick color from Hue color area.
+  >Note : There is a built-in Color Picker Panel to help you choose your desired colours easily. Whenever you write hex colour strings (like "#aabbcc"), a small coloured box with the specified color will be placed on the left side of the string literal. You can click the box and a StylishCode Color Picker Panel will be displayed. You can then pick the color in 4 different ways :
+  >1. Change the color string text interactively using the color text editor.
+  >2. Pick the colour (Select Colour Range) from saturation gradient colour levels.
+  >3. Pick the colour from hue colour area.
   >4. Select the color transparency.
   >
   >![Image](images/StylishCode_ColorPickerInputs.jpg)
 
 ### Attribute Decoration, Color values and Gradient Styles
 
-There is some coloring rules in GeeksStylishCode VSIX that you can use them for better coding and styling your code:
+Here are some tips you can use to further stylize your code using the GeeksStylishCode extension:
 
-1. You can write your styling rules in the separated attributes decoration, like all above attribute definitions for __FontSize__  in most of the examples.
+1. You can decorate your attributes separately, refer to some of the sections above for examples like __FontSize__.
 
-2. You can write exact HTML color names in the string literal colors with the (>) prefix (greater than sign) instead of color code hex values, like this :
+2. You can use the string literal html colour names with the (>) prefix (greater than sign) instead of colour code hex values, like this:
 
   ![Image](images/StylishCode_ColorNames.PNG)
 
-3. You can define a gradient colors instead of solid colors in all Fore Color and Back Color properties.
+3. You can define gradient colours instead of solid colours in both ForeColor and BackColor properties.
    
    ![Image](images/StylishCode_ColorGradient1.PNG)
-  > Note 1: You can separate your stop colors with the (-)_Dash_ or the (|)_Pipe_ signs.
+  > Note 1: You can separate your stop colours with the (-)_Dash_ or the (|)_Pipe_ signs.
   >
-  > Note 2: You can define the offset value from start by a numeric value with or without _percent_ (__%__) sign that separates with a _space_ after each color to change the length of each color in the gradient.  
+  > Note 2: You can define the offset value using a numeric value in front of the colour - with or without a _percent_ (__%__) sign, you must then separate the colour with a _space_ to change the length of the colours in the gradient.  
   >![Image](images/StylishCode_ColorGradient2.PNG)
   >
-  > Note 3: You can change the orientation of the linear color gradient with the first integer parameter that separates with a _Dash_ or _Pipe_ signs in front of each color gradient string literals.
+  > Note 3: You can change the orientation of the linear colour gradient with an integer parameter in front of each color gradient separated by a _Dash_ or _Pipe_ sign.
   >
   >![Image](images/StylishCode_ColorGradient3.PNG)
   
 ## VS Ext: MSharp.CodePreview
 
-CodePreview VSIX is one of useful extensions that developed to help M# programmers to rapidly observe generated code by M# engine in real-time (after each project build) within a tool-window that displays in the right side of code editor window.
-You can open the Code Preview too-window by selecting the first menu item of the currently opened code editor window with name **"Show Generated Code"**.
+CodePreview VSIX is a useful extension developed to help M# programmers rapidly observe code generated by the M# engine in real-time. After the whole project is built, the preview is displayed within a tool-window on the right hand side of code editor window.
+You can open the Code Preview too-window by selecting **"Show Generated Code"** from the currently open code editor window menu.
 
 ![Image](images/CodePreview4.PNG)
 
-There will be 3 tabs in the _Preview Generated Code_ window with different titles, So that if you invoke this command in the M# UI modules then the Preview Generated Code window will bew appear with these 3 tabs :
+There will be 3 tabs in the _Preview Generated Code_ window with different titles. If you invoke this command in M# UI modules, the Preview Generated Code window will appear with the following tabs :
 _Preview_, _Controller_, _Cshtml_.
 
 ![Image](images/CodePreview1.PNG)
@@ -464,7 +464,7 @@ _Preview_, _Controller_, _Cshtml_.
 
 ![Image](images/CodePreview3.PNG)
 
-In other hand if you invoke this command in the M# Entity classes then you can see the Preview Generated Code window with these 3 tabs :
+If you invoke this command in M# Entity classes, you will see the Preview Generated Code window with the following tabs :
 _Sql_, _DAL_, _Structure_.
 
 ![Image](images/CodePreview5.PNG)
@@ -475,41 +475,41 @@ _Sql_, _DAL_, _Structure_.
 
 ## VS Ext: MSharp.Goto
 
-In many cases developers need to switch to the definition and in other hand references across the solution specially when using with M# Entities in Model and generated codes, so they can go to declared class and all references as well.
-By using the MSharp GoTo VSIX you can switch better and faster to the declaration of generated classes or properties.
-So when in C# generated class in the Gen-Entities folder in Domain project you request a suggestion in the editor by pressing [CTRL+.] over class identifier name (Class Name) or property identifier name (Property Name) then a light-bulb pops up with a custom suggestion with name "Goto Definition.", then if you select this suggestion iem you will navigate to the declaration class to the Model project.
+In many cases developers need to switch to definitions and references throughout the solution, for example between the Model and generated code when using M# Entities. Using MSharp.Goto, you can go to the declared classes and all its references.
+Using MSharp GoTo VSIX, you can switch to the declaration of generated classes or its properties faster and more effectively.
+In C#, generated classes are in the Gen-Entities folder in the Domain project, you can toggle the context-based suggestion menu in the editor by pressing [CTRL+.] over the class identifier name (Class Name) or property identifier name (Property Name). A light-bulb pops up with a custom suggestion "Goto Definition.".If you select this, you will navigate to the declaration class in the Model project.
 
 ![Image](images/Goto1.JPG)
 
-In other hand you can navigate to this generated class by invoking a suggestion request (Ctrl+.) over class name identifier then you can see 2 custom suggestions in light-bulb items "Where is {ClassName} used?" and "Show generated class for {ClassName}.".
+You can also navigate to the generated class by invoking the suggestion menu (Ctrl+.) over class name identifier. You will then see 2 custom suggestions; "Where is {ClassName} used?" and "Show generated class for {ClassName}.".
 
 ![Image](images/Goto2.JPG)
 
-So if you select "Where is {ClassName} used?" item , then you can navigate to all references by selection an item in the opened references toolbox panel.
+If you select "Where is {ClassName} used?", you can navigate to any of the references in the references toolbox panel by selecting an item.
 
 ![Image](images/Goto3.JPG)
 
-Also you can navigate to the generated class in the Domain project by selecting the "Show generated class fo {ClassName}." item as well.
+Also you can navigate to the generated class in the Domain project by selecting the "Show generated class fo {ClassName}." item.
 
 Often when you're working with code, for every concept there are multiple code files, which are effectively sister files all related to that concept.
 
-With this extension, when you open a M# class file and it has a sister or sisters then in right corner of code editor window all sister files will be displayed as navigation buttons so by pressing each one you can jump switch to the sister file of the currently opened file in Visual Studio. When there are multiple sister files in the same category then all other sisters will be shown as drop-down list you can navigate to.
+With this extension, when you open a M# class file that has sister files, all of the related files will be displayed as navigation buttons in right corner of code editor window. By pressing each one you can jump to the related file in Visual Studio. When there are multiple sister files in the same category, all other files will be shown in the drop-down list you can navigate to.
 
 ![Image](images/SisterButtons.PNG)
 
-These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 another button if you installed CodePreview VSIX) categorized by these 4 colors :
+These buttons are shown in different colors, so you can navigate better across sister files. There are 3 types of buttons available to navigate to sister files (and 1 other button if you installed CodePreview VSIX) categorized by these 4 colors :
 
-> ![Image](images/Purple.PNG) Pink  : Currently opened document button will be displayed as Purple with the title of current file type.
+> ![Image](images/Purple.PNG) Pink  : Currently opened document button will be displayed as Pink, with the title of current file type.
 > 
-> ![Image](images/Magenta.PNG) Purple : Other sister files will be shown as purple button with the title of sister type.
+> ![Image](images/Magenta.PNG) Purple : Other sister files will be shown as purple buttons, with the title of sister type.
 > 
-> ![Image](images/Green.PNG) Cyan : Cyan buttons are not really sister files but this buttons are relative files that are related to currently open file, So that you can navigate to these relative files.
+> ![Image](images/Green.PNG) Cyan : Cyan buttons are not really sister files. This buttons shows files that are related to currently open file, so that you can navigate to these files.
 > 
->> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** then if you open an M# UI classes then an additional button in Orange color with M# icon will appear to the end of navigation buttons list. So when you push this button, you can see the HTML preview of your currently UI class.
+>> ![Image](images/Preview.PNG) Orange : If you have installed the **CodePreview VSIX** and you open an M# UI class, an additional Orange button with the M# icon will appear at the end of navigation buttons list. If you click this button, you can see the HTML preview of your current UI class.
 
 ## VS Ext: MSharp.Intellisense
 
-Writing C# in in M# modules can be a pain, for example writing the below bit of code in a string can be annoying! Having no intellisense and visual studio features when writing this.
+Writing C# in M# modules can be a pain. For example, writing the below bit of code in a string can be annoying with no intellisense and visual studio features.
 
 ![Image](images/Intellisens1.jpeg)
 
@@ -517,31 +517,31 @@ This is where the Intellisense VSIX comes in! We can work with code in fast and 
 
 ![Image](images/Intellisens3.jpeg)
 
-When the cursor is under calling method or its string literal parameter then you can open a code peeker just below the current line by the right click command on the method name or its string parameter and then select "Show Intellisense For String Parameter Alt+ I" item from the context menu.
+When the cursor is under calling method or its string literal parameter, you can open a code peeker just below the current line by the right clicking on the method name or its string parameter. Then select "Show Intellisense For String Parameter Alt+ I" item from the context menu.
 
 ![Image](images/Intellisens4.jpeg)
 
-or pressing [ALT + I] shortcut key or by invoking the light-bulb command when it suggested or hitting the [CTRL + .] key combination on proper line and select "Show Intellisense for string parameter" command.
+or pressing [ALT + I] shortcut key or by invoking the light-bulb command when it's suggested or hitting the [CTRL + .] key combination on the proper line and select the "Show Intellisense for string parameter" command.
 
 ![Image](images/Intellisens5.jpeg)
 
-The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# file, so peeker loads that temporary file as well and developers can manipulate their code in right C# code context. When hitting [CTRL + S] it will close the peaker menu and add the code as a string.
+The Intellisense VSIX uses MSharp.exe to generate a temporary intellisense C# file. The peeker loads that temporary file and developers can manipulate their code in the right C# code context. When hitting [CTRL + S] it will close the peeker menu and add the code as a string.
 
 ### Technical Tip 1
 
-Sometimes it may take long time to show peeker with the C# context, it's completely depends on project size and system performance, because temporary C# (with name **IntellisenseTemp.cs**) file will be populated and created in the \_M#\_TEMP folder under the WebSite project
+Sometimes it may take a while to show the peeker with the C# context. This depends on the project size and system performance, because a temporary C# (with name **IntellisenseTemp.cs**) file will be populated and created in the \_M#\_TEMP folder under the WebSite project.
 
 ![Image](images/Intellisens6.jpeg)
 
-Then Intellisense VSIX shows the code file in the peeker, so during generating file you can see a progress bar in top of displayed empty peeker.
+Then Intellisense VSIX shows the code file in the peeker, while the file is being generated, you can see a progress bar on top of displayed empty peeker.
 
 ![Image](images/Intellisens2.jpeg)
 
 ### Technical Tip 2
 
-(**Troubleshooting**) If you cant see the peeker panel after a while, or you get "No Result, We did not find any result." message, then maybe MSharp.exe has been returned an error and intellisense temporary file is not generated correctly in \_M#\_TEMP, So you can check these:
+(**Troubleshooting**) If you can't see the peeker panel after a while, or you get a "No Result or "We did not find any result." message,  MSharp.exe might have returned an error and the intellisense temporary file has not been generated correctly in \_M#\_TEMP. In this case check the following :
 
-- Make sure the solution is fully compiled without any error.
+- Make sure the solution is fully compiled without any errors.
 - Make sure #UI.dll, #Model.dll, MSharp.exe and MSharp.DLS.exe exist in the "[Solution Path]\M#\Lib\".
 - Run MSharp.exe from command line with some sample parameters to ensure everything works well.
 
@@ -563,23 +563,23 @@ C# code file that opened by Intellisense Peeker Panel, is used only for specific
 
 ### **Debugging** Tip
 
-You simply can set "DEBUG:" prefix in start of code in string literal, Then an error log file will be created in Lib folder in this location : "[Solution Path]\M#\Lib\Intellisense.log".
+If you the set "DEBUG:" prefix in start of code in a string literal, an error log file will be created in Lib folder in this location : "[Solution Path]\M#\Lib\Intellisense.log".
 
 ![Image](images/Intellisens9.jpeg)
 
-You can close peeker panel with or without saving code, so if you push ESC button or hit the X corner button then peeker tries to close, but if you have made changes then a messages box appears and ask you about saving changes by reflecting them to the main code or not, otherwise peeker panel will close simply.
+You can close peeker panel with or without saving code. If you have made changes and you try to close the peeker, a messages box appears  asking you about saving changes by reflecting them to the main code or not. Otherwise peeker panel will simply close.
 
 ![Image](images/Intellisens7.jpeg)
 
-Also you can close intellisense peeker by pressing the CTRL + S key, then all changes are saved and will be reflect to the main code.
+You can also close the peeker by pressing the CTRL + S key. All changes will be saved and will be reflect to the main code.
 
 ## VS Ext: MSharp.Snippet
 
-Development with M# always is fun also this work is more simple and fun if you use our custom Visual Studio extensions too.
+Development with M# always is fun! This work is more simple and fun if you use our custom Visual Studio extensions.
 
-Snippet is a programming term for a small region of re-usable source code. Ordinarily, these are formally defined operative units to incorporate into larger programming modules.
+ A snippet is a programming term for a small region of re-usable source code. Ordinarily, these are formally defined operative units to incorporate into larger programming modules.
 
-MSharp Snippet is custom Visual Studio extension that contained with many useful small parts of code and are useful when you want to write some UI codes. Snippets are defined in MSharp.Snippet extension, and each one are declared in simple XML file and after Visual Studio loads this package you can call their shortcut name to put template in side your code, for example this is a button create snippet :
+MSharp Snippet is custom Visual Studio extension that contains many useful small parts of code. These are useful when you want to write UI code. Snippets are defined in MSharp.Snippet extension, and each one are declared in simple XML file. After Visual Studio loads this package, you can call their shortcut name to put the template inside your code. This example is a button create snippet :
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -614,7 +614,7 @@ MSharp Snippet is custom Visual Studio extension that contained with many useful
 </CodeSnippet>
 ```
 
-Each Snippet contains in 2 parts, Header and Snippet, and you can use them by writing their shortcut name and press TAB key.
+Each Snippet contains in 2 parts, Header and Snippet. You can use them by writing their shortcut name and pressing the TAB key.
 In this example shortcut name is "Button" and template code is :
 
 ![Image](images/Snippet1.JPG)
@@ -626,9 +626,9 @@ In this example shortcut name is "Button" and template code is :
 
 ![Image](images/Snippet2.JPG)
 
-For more simplicity and usefulness there are some place holder in some snippets that you help you write your code more robust and fast so just need to fill in the blanks. In our example $name$ and $action$ are code placeholders and $end$ is defined the end cursor location after snippet completion. Also you can see every Snippet have metadata in it's definition point. This metadata can be used in Visual Studio Snippet Manager Window.
+For greater simplicity and usefulness there are place holders in some snippets, you just need to fill in the blanks. This will help you write code faster, and make it more robust. In our example, $name$ and $action$ are code placeholders and $end$ is defined the end cursor location after snippet completion. Also you can see every Snippet have metadata in it's definition point. This metadata can be used in Visual Studio Snippet Manager Window.
 
-In general it is better you know Snippets, their shortcut names and functionalities.
+In general it is better that you know Snippets, their shortcut names and functionality.
 Here is the list of all Snippets that supported in the latest extension version :
 
 > - Shortcut name : _Button_
@@ -643,7 +643,7 @@ Here is the list of all Snippets that supported in the latest extension version 
             .Action(x => x.Go<$page$>()
             $sendReturnUrl$);**
 
-> - Description: Code snippet for a add new button.
+> - Description: Code snippet for a adding new button.
 
 > - Shortcut name : _ButtonBack_
 > - M# Code:
@@ -680,7 +680,7 @@ Here is the list of all Snippets that supported in the latest extension version 
             .Action(x => x.Go<$page$>()
             $sendReturnUrl$$send$);**
 
-> - Description: Code snippet for a edit button.
+> - Description: Code snippet for an edit button.
 
 > - Shortcut name : _ButtonExportToCsv_
 > - M# Code:
@@ -729,8 +729,8 @@ Here is the list of all Snippets that supported in the latest extension version 
 
 ## VS Ext: MSharp.Warnings
 
-When you are developing M# project then maybe you write some code that they produce warnings when complied with MSharp.dsl.
-According to the Olive compatibility change log (3th Jan) In a normal M# projects (Model and UI sub-project) you should at least have an after build target task to participate M# build to your projects, So your _Model.csproject_ and _UI.csproject_ files should contain theses section in the project structure node like this:
+When you are developing M# project, you might write some code that produces warnings when complied with MSharp.dsl.
+According to the Olive compatibility change log (3th Jan), in normal M# projects (Model and UI sub-project) you should at least have an after build target task to participate M# build to your projects, so your _Model.csproject_ and _UI.csproject_ files should contain theses section in the project structure node like this:
 
 ```XML
 <Target Name="Generate code" AfterTargets="AfterBuild">
@@ -754,14 +754,14 @@ or
 ...\M#\lib> msharp.dsl.exe /build [/model|/ui] [/warn]
 ```
 
-So when you build your M# projects with **/WARN** switch then if any projects has one or more warnings an XML file in the __obj__ folder of each project should be placed :
+So when you build your M# projects with **/WARN** switch, if any projects have warnings an XML file should be placed in the __obj__ folder of each project :
 
 ```
 ...\M#\Model\Obj\MSharp.Warnings.xml
 and/or
 ...\M#\UI\Obj\MSharp.Warnings.xml
 ```
-These are simple XML files that contains valuable information about M# coding styles. as you maybe know M# warnings are notices about best practices or some M# development designing patterns to help M# developers write better code for develop and maintenance that shows in the Visual Studio Standard Error Window. 
+These are simple XML files containing valuable information about M# coding styles. As you may know, M# warnings are notices about best practices or some M# development designing patterns. They exist to help M# developers write better, more maintainable code, and are displayed in the Visual Studio Standard Error Window. 
 
 For example this is a simple **UI** warning file :
 ```XML
@@ -785,13 +785,13 @@ And this is a simple **Model** warning file :
 
 ![Image](images/WarningsErrorsList.PNG)
 
-So When you double Click on a warning row in the Errors List Tool-window then you will navigate to the exact line of code that produced a warning.
+When you double click on a warning row in the Error List window, you will navigate to the exact line of code that produced the warning.
 
 ![Image](images/WarningsMSharpCode.PNG)
 
-As you can see in the code editor window, an exclamation triangle icon will be displayed in front of each line that has a warning. Also, a purple squiggle line will be drawn under each warning lines, so you can see brief information about warning as a meta tooltip window as well.
+As you can see in the code editor window, an exclamation triangle icon is displayed in front of each line that has a warning. A purple squiggle line is drawn under each of the warning lines, so you can see a brief description of the warning as a meta tooltip window.
 
->Technical Note: Exclamation icon and squiggle line are displayed in the code window by implementing Visual Studio Adornment Tagger, So when we populate warnings from warning file, after inserting each one in the error window, a C# regional standard comment will be placed in front of code line that describes warning information for the tagger in this reqular expression style :
+>Technical Note: Exclamation icon and squiggle lines are displayed in the code window by implementing Visual Studio Adornment Tagger. So when we populate warnings from warning file, after inserting each one into the error window, a C# regional standard comment will be placed in front of code line that describes warning information for the tagger in this reqular expression style :
 
 ```regex
 \/\*M#:(?<type>\w)\[(?<line>\d+)\](?<show>[ |-|H|T])-Prop:(?<prp>\w*)-Type:(?<typ>\w*)-(?<txt>.*)?\*\/
@@ -803,7 +803,7 @@ So decorated M# line will be something like this :
 /*M#:w[25]T-Prop:Title-Type:BooleanProperty-Property title should be « Proper case ».*/Bool("ToClientContractors").Mandatory();
 ```
 
-__it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the warning text will be placed in the tooltip window after a mouse hover on the icon or squiggles.
+__it should be displayed as :__  ![Image](images/WarningsMSharpCode2.PNG) and the warning text will be placed in the tooltip window after a mouse hover on the icon/squiggles.
 
 > __Hidden feature (1)__: Currently Warning VSIX is supported 5 different types of notifications : 
 > * ![Image](images/Warning16.png) Warning (type : __w__)
@@ -812,7 +812,7 @@ __it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the w
 > * ![Image](images/Event16.png) Event (type : __v__)
 > * ![Image](images/MSharp16.png) MSharp (type : __m__)
 >
-> So if you write a regional comment in pre-defined format with special type just like one of notification style in above list then you can have a notification icon in your code ;) just like this :
+> So if you write a regional comment in pre-defined format with special type, like the one of the notification style above, you can have a notification icon in your code ;) like this :
 
 ```C#
             /*M#:w[15]T-Prop:Title-Type:Custom-Custom Notification Warning Text*/ // Warning
@@ -825,7 +825,7 @@ __it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the w
 ![Image](images/WarningsMSharpCode3.PNG)
 > _Line-Number_, _Prop_ and _Type_ sections can be fill with temp data in these cases.
 
-> __Hidden Feature (2)__: Descriptive text will be display whenever you hover your mouse cursor over the icons or squiggles, but it is possible to show text notifications just beside of the icon :
+> __Hidden Feature (2)__: Descriptive text will be displayed whenever you hover your mouse cursor over the icons or squiggles, but it is possible to show text notifications just beside of the icon :
 > * By put a " "_(SPACE)_ after close bracket of line number (**[xx]**) and before __"-prop:"__
 > ```c#
 > /*M#:w[15] -Prop:Title-Type:Custom-Custom Notification Warning Text*/ // Warning
@@ -839,4 +839,4 @@ __it should be displayed :__  ![Image](images/WarningsMSharpCode2.PNG) and the w
 >
 > ![Image](images/WarningsMSharpCode4.PNG)
 >
-> So descriptions with " "_(SPACE)_ should be displayed expanded in front of icons by default and __H__ means they have to be shown after pressing the expand button (hidden by default).
+> Descriptions with " "_(SPACE)_ should be displayed expanded in front of icons by default and __H__ means they have to be shown after pressing the expand button (hidden by default).
