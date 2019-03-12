@@ -5,17 +5,17 @@ To convert an existing application to the new model, you need to convert the met
 ### Step 1: Prepare
 1. Open the project in the old M# as before and build everything.
 2. Open the solution in Visual Studio.
-	- For all projects in the solution, go to properties window and change it to .NET 4.7.2
-		- Open `packages.config` and check `targetFramework` to make sure it's indicating to the `net472` and if it's not, you should run `Update-Package -Reinstall -IgnoreDependencies` in the **Package Manager Console**
+	- For all projects in the solution, go to properties window and change it to `.NET 4.7.2`
 	- Update `MSharp.Framework` nuget packages to the latest version
-	- In Website, add the nuget package: `Microsoft.CodeDom.Providers.DotNetCompilerPlatform`
+	- In Website, add the nuget package: `Microsoft.CodeDom.Providers.DotNetCompilerPlatform` if it has not been referenced before
+	- Open `web.config` and change connection string to use `MyProject.Temp` as the DB name, and `.\SqlExpress`
 	- Compile everything.
 		- In this step, if you get an error related to the enum values, you can simply comment those parts and after adding *#Model* project you can specify enum values in the `InstanceAccessors(..)` method and then uncomment those parts again.
 
 ### Step 2: Model -> Domain (WebForms only)
 If your project is WebForms, perhaps your domain model project name is **"Model"** instead of **"Domain"**. You should change it to **"Domain"**:
 
-1. In the project settings in M# IDE, set _Model Project Folder_ to **"Domain"**.
+1. In the project settings in M# IDE, set _Model Project Folder_ to **"Domain"**
 2. _Visual Studio:_ Remove the Model project from the solution and save everything.
 3. Rename the folder from Model to Domain
 4. Rename the csproj file inside that folder to also Domain
