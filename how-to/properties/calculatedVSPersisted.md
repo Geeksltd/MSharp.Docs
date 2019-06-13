@@ -12,7 +12,7 @@ Calculated properties are read only and cause no database column to be created.
 To mark some property as calculated, we call `Calculated()` method on the property using the fluent API.
 Then we need to define the getter for the property to specify what business logic should be executed for the property using the `Getter()` method.
 
-#### Example
+### Example
 
 Let's define an `Employee` entity and add a `FullName` property to it which returns the combination of the first and last names.
 
@@ -36,6 +36,7 @@ namespace Model
 
 As you can see, we define the C# expression for the `FullName` property as a string in the `Getter()` method.
 The combination of `Calculated()` and `Getter()` will cause a read-only property to be created and also tells M# to not create a database column for the property.
+
 #### Generated Code
 
 ```csharp
