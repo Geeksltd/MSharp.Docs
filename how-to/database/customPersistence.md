@@ -15,7 +15,7 @@ M# handles both cases
 ## Implementation
 
 The case of creating entity code and DAL code is very easily handled by setting the entity's `DatabaseMode()` to `Existing`.
-Then M# will not generate the SQL queries for creating the table for you and only generates the code to connect to it in the `[GEN-DAL]` folder.
+Then M# will not generate the SQL queries for creating the table for you.
 You just need to be careful to set correct table and column names for your entity.
 
 However connecting to external data sources is more involved and you need to do the following:
@@ -58,7 +58,3 @@ public interface IDataProvider
         bool SupportValidationBypassing();
     }
 ```
-
-If you go to the `[]GEN-DAL]` folder. You can see a `AdoDotNetDataProviderFactory` class which returns the `IDataProvider`s for all of your managed entities based on the type supplied.
-You can take a look at their implementation to understand the way you need to implement yours better.
-
