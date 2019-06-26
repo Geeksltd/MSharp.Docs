@@ -59,7 +59,6 @@ namespace Model
 #### Generated code
 
 Let's take a look at the generated data access layer code for both.
-The generated data access layer (DAL) code can be found in the `Domain` project in the `[GEN-DAL]` folder.
 The important function here is the one which reads the fields from the database columns.
 
 This is the first `Employee` without any datatype changes/conversions.
