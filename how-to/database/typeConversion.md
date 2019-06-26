@@ -46,25 +46,6 @@ This still doesn't guarantee that the float will not be overflowed and that's up
 Also we did not use `float` as the C# type name in the `CSharpTypeName()` call because then the generated code for `Convert` would be `ToFloat()` which doesn't exist. 
 `Single` is the actual .NET type name which its C# alias is `float`.
 
-#### Generated code
-
-The `[GEN-DAL]` folder of the `Domain` project contains a `PositionDataProvider` class which provides access to CRUD operations for position entities in the database.
-One method in the class which reads the data is modified because of the type conversion which is presented below:
-
-```csharp
-internal void FillData(IDataReader reader, Domain.Position entity)
-        {
-            var values = new object[reader.FieldCount];
-            reader.GetValues(values);
-            
-            entity.X = Convert.ToSingle(values[Fields.X]);
-            entity.Y = Convert.ToSingle(values[Fields.Y]);
-            entity.Z = Convert.ToSingle(values[Fields.Z]);
-        }
-```
-
-This can be done for any type which is convertible using the `Convert` class's methods in the .NET framework.
-
 ### Setting data type in the database
 
 Sometimes you might want to also set the type that the database uses as well.

@@ -2,7 +2,7 @@
 
 When you create a new M# ASP.NET Core MVC project you will see the following structure in Visual Studio.
 
-![Solution](Solution.JPG)
+![Solution](https://user-images.githubusercontent.com/1321544/60179565-36b38700-9833-11e9-9a8e-db784ac8313a.png)
 
 The following diagram explains the relationship between these projects, and also how you, as the developer, will interact with these projects:
 
@@ -22,14 +22,15 @@ An entity represents a real world object which exists in a business domain. In M
 
 This is the home for your business domain objects and business logic. By default you will have the following folders:
 
-![Domain project](Domain.JPG)
+![Domain project](https://user-images.githubusercontent.com/1321544/60179798-b5102900-9833-11e9-8e68-21c82c81e00e.png)
 
+
+* **[DEV-SCRIPTS]**: Here you can write scripts and utilities which are not really a part of the final solution, but can help during development and testing time..
 * **[GEN-Entities]**: For every entity definition in your *#Model* project, M# will generate a business class (partial) here.
-* **[GEN-DAL]**: For every entity definition in your *#Model* project, M# will generate a data access class here.
 * **Logic**: This is where you write any custom code *(as partial classes)* for the generated business entity classes.
 * **Services**: This is where you write service classes for complex business logic scenarios.
 * **Utilities**: This is where you can write extension methods (on system types) or any other handy utility function that doesn't belong anywhere else.
-* **[DEV-SCRIPTS]**: Here you can write scripts and utilities which are not really a part of the final solution, but can help during development and testing time..
+
 
 M# intelligently converts your high level entity definitions, with all the associations, inheritence, validation, data access, etc into the two generated folders explained above. It will also generate the database creation scripts (SQL). This eliminates the need of developing Database and Business entities manually.
 
