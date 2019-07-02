@@ -2,7 +2,7 @@
 
 ## Problem
 
-Ideally, each page in your application should have a default button that the focus will start on.  This will be predetermined as the most used button on that page and will therefore have input focus priority over other buttons on the page.  This allows the user to press enter at any time and this will be the button that is pressed.
+Ideally, each page in your application should have a default button that the focus will start on. This will be predetermined as the most used button on that page and will therefore have input focus priority over other buttons on the page. This allows the user to press enter at any time and this will be the button that is pressed.
 
 ## Implementation
 
@@ -13,8 +13,9 @@ M# makes it easy to mark a button as default on a page by using the aptly named 
 This example shows how to use this method.
 
 ```csharp
-SearchButton("Search").IsDefault()
-                .OnClick(x => x.ReturnView());
+SearchButton("Search")
+    .IsDefault()
+    .OnClick(x => x.ReturnView());
 ```
 
 ### Remarks

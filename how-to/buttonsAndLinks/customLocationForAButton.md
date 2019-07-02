@@ -23,15 +23,17 @@ namespace Modules
 
             Field(x => x.Body).AsHtmlEditor();
 
-            Button("Cancel").CssClass("pull-left").OnClick(x => x.ReturnToPreviousPage());
+            Button("Cancel")
+                .CssClass("pull-left")
+                .OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault()
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.Go<Admin.CMS.TermsAndConditionsPage>();
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.Go<Admin.CMS.TermsAndConditionsPage>();
+                });
         }
     }
 }

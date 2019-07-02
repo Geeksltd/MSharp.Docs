@@ -28,7 +28,8 @@ namespace Modules
             Field(x => x.Body);
             Markup(@"<div>@Html.Raw(item.Body)</div>");
             Button("Edit")
-               .OnClick(x => x.Go<Admin.CMS.PrivacyPolicy.EnterPage>().Send("item", "item.ID"));
+                .OnClick(x => x.Go<Admin.CMS.PrivacyPolicy.EnterPage>()
+                    .Send("item", "item.ID"));
         }
     }
 }
@@ -72,7 +73,7 @@ public async Task<bool> SaveInDatabase(vm.ApplicantOwnSolicitorForm info)
         }
 ```
 
- This saves the data populated in a form to the database.
+This saves the data populated in a form to the database.
 
 #### `CloseModal()`
 
@@ -83,28 +84,36 @@ If your module is going to live on a pop up, then adding this method to the `OnC
 These 3 tend to be used in conjunction with each other quite frequently
 
 ```CSharp
- Button("Save").IsDefault().Icon(FA.Check)
+ Button("Save")
+    .IsDefault()
+    .Icon(FA.Check)
     .OnClick(x =>
     {
         x.CSharp("var isNew = info.Item.IsNew;");
         x.SaveInDatabase();
         x.If("isNew").CSharp(@"
-                await MortgageSolicitorService.ActivateSolicit(info.Item.Application, info.Item);
-                await new MortgageApplicationServi(info.Item.Application).MarkSolicitorDetailsAsComplete;");
-        x.UpdateMortgageApplicationStatus("info.Item.Application");
+                await MortgageSolicitorService.ActivateSolicitor(info.Item.Application, info.Item);
+                await MortgageApplicationService.Of(info.Item.Application).MarkSolicitorDetailsAsComplete();");
+
         x.GentleMessage("Saved successfully.");
-        x.If(AppRole.Advise.Go<Adviser.ViewApplication.Solicitor.SolicitorPage>().Se("application", "info.Item.Application.ID");
-        x.If(AppRole.Admin).Go<Admin.Applicants.SolicitorPage>().Se("application", "info.Item.Application.ID");
-        x.Else().Go<Applicant.SolicitorInformationPage>();
+
+        x.If(AppRole.Adviser)
+            .Go<Adviser.ViewApplication.Solicitor.SolicitorPage>()
+                .Send("application", "info.Item.Application.ID");
+        x.If(AppRole.Admin)
+            .Go<Admin.Applicants.SolicitorPage>()
+                .Send("application", "info.Item.Application.ID");
+        x.Else()
+            .Go<Applicant.SolicitorInformationPage>();
     });
 ```
 
-The `If()` and `Else()` methods work like if and else statements in C#.  The `CSharp()` method allows us to write C# code directly into the controller.  The first `If()` and `CSharp()` instances create the following code in the controller.
+The `If()` and `Else()` methods work like if and else statements in C#. The `CSharp()` method allows us to write C# code directly into the controller.  The first `If()` and `CSharp()` instances create the following code in the controller.
 
 ```CSharp
 if (isNew)
     {
         await MortgageSolicitorService.ActivateSolicitor(info.Item.Application, info.Item);
-        await new MortgageApplicationService(info.Item.Application).MarkSolicitorDetailsAsComplete();
+        await MortgageApplicationService.Of(info.Item.Application).MarkSolicitorDetailsAsComplete();
     }
 ```

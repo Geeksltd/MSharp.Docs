@@ -31,7 +31,9 @@ namespace Modules
             Column(x => x.Title);
             Column(x => x.Body);
 
-            ButtonColumn("Edit").HeaderText("Edit").GridColumnCssClass("actions")
+            ButtonColumn("Edit")
+                .HeaderText("Edit")
+                .GridColumnCssClass("actions")
                 .Icon("mz mz-edit")
                 .NoText()
                 .OnClick(x => x.Go<Admin.CMS.Home.AboutUs.EnterPage>().Send("item", "item.ID"));

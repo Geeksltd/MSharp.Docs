@@ -26,30 +26,25 @@ using (var scope = Database.CreateTransactionScope())
 We can add anything we wish to occur together.
 
 ```csharp
- using (var scope = Database.CreateTransactionScope())
+using (var scope = Database.CreateTransactionScope())
+{
+    if (User.IsInRole("Adviser") || User.IsInRole("Admin"))
     {
-        if ((User.IsInRole("Adviser") || User.IsInRole("Admin") || !CurrentApplication.IsSubmitted()))
-            {
-                    try
-                    {
-                        if (!await SaveInDatabase(info)) return JsonActions(info);
-                    }
-                        catch (Olive.Entities.ValidationException ex)
-                    {
-                        return Notify(ex.Message, "error");
-                    }
-                    try
-                    {
-                        await new MortgageApplicationService(info.Item.Application).MarkAsFurtherDetailsComplete();
-                    }
-                    catch (Olive.Entities.ValidationException ex)
-                    {
-                        Notify(ex.Message, "error");
-                        return View(info);
-                    }
-                    await new MortgageApplicationService(info.Item.Application).UpdateStatus();
- 
-                scope.Complete();
-            }
+        try
+        {
+            if (!await SaveInDatabase(info)) return JsonActions(info);
+            await MortgageApplicationService.Of(info.Item.Application)
+                .MarkAsFurtherDetailsComplete();
+            await MortgageApplicationService.Of(info.Item.Application)
+                .UpdateStatus();
+        }
+        catch (Olive.Entities.ValidationException ex)
+        {
+            Notify(ex.Message, "error");
+            return View(info);
+        }
     }
+
+    scope.Complete();
+}
 ```

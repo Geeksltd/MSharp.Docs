@@ -10,14 +10,14 @@ M# allows you to decide on this per relation.
 ## Implementation
 
 The `OnDelete()` method can be used on the relation to tell M# what to do with the entity when a delete operation of the association is taking place.
-For example if you define this in your `Book` entity `Associate<Category>("book Category").Mandatory().OnDelete(CascadeAction.ThrowWarning)`, you are defining what to do with book entities when the category assigned to them is being deleted.
+For example if you define this in your `Book` entity `Associate<Category>("Book category").Mandatory().OnDelete(CascadeAction.ThrowWarning)`, you are defining what to do with book entities when the category assigned to them is being deleted.
 
 `CascadeAction` can have the following values
 
 - `ThrowWarning` (default value) Means the association cannot be deleted until an entity associated with it exists. This is the default behavior. In the example above, the category cannot be deleted unless no books with the category exist.
 - `SetToNull` sets all associated columns/properties to `null`. In the example above, all those books which their category got deleted, set their category to `null`.
 - `CascadeDelete` means all associated entities will be deleted as well. In the example above, if you delete a category, all books which had that category will be deleted as well.
-- `CallReleaseXXXMethod` will call a method named `ReleaseXXX()` where XXX is the name of your association's property. In the above example it would be `ReleaseBookCategory()` and you should define it in your `Book` entity's logic in a partial class.
+- Call `ReleaseXXX()` method will call a method named `ReleaseXXX()` where XXX is the name of your association's property. In the above example it would be `ReleaseBookCategory()` and you should define it in your `Book` entity's logic in a partial class.
 
 Let's take a look at an example that when we delete the category, all books with the category will be deleted.
 
@@ -36,7 +36,10 @@ namespace Model
         {
             String("Name").Mandatory();
             String("Author").Mandatory();
-            Associate<Category>("book Category").Mandatory().OnDelete(CascadeAction.CascadeDelete);
+            Associate<Category>("book Category")
+                .Mandatory()
+                .OnDelete(CascadeAction.CascadeDelete);
+
             InverseManyToMany<Shop>("Shops", "Books");
         }
     }
@@ -55,7 +58,8 @@ namespace Model
         public Category()
         {
             String("Name").Mandatory();
-            InverseAssociate<Book>("Book", "BookCategory").Mandatory();
+            InverseAssociate<Book>("Book", "BookCategory")
+                .Mandatory();
         }
     }
 }

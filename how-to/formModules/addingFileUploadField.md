@@ -2,7 +2,7 @@
 
 ## Problem
 
-Sometimes you will want your user to be able to upload a file to be saved in the database of the application.  A good example of this is if they want to be able to change their logo in the application.
+Sometimes you will want your user to be able to upload a file to be saved on the server where the application is running.  A good example of this is if they want to be able to change their logo in the application.
 
 ## Implementation
 
@@ -62,6 +62,20 @@ namespace Modules
 }
 ```
 
-The `Field(x => x.Document)` will show as a field with an upload button called "Choose File" where they can select a file and add it to the application.  This is then saved in the database as a `blob` file.
+The `Field(x => x.Document)` will show as a field with an upload button called "Choose File" where they can select a file and add it to the application. This file is then saved in a folder on the server and a reference to the file is stored in the database as a `blob` file.
 
 ![New document details](images/newDocumentDetails.PNG)
+
+The location of the blob files can be changed by setting `Blob:RootPath` key in `appsettings.json`.
+
+```json
+"Blob": {
+    "RootPath": "Blob", // Relative path to the application root path
+    "BaseUrl": "/file?",
+
+    "WebTest": {
+        "SuppressPersistence": false,
+        "Origin": "..\\Test\\ReferenceFiles"
+    }
+}
+```

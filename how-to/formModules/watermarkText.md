@@ -28,6 +28,7 @@ namespace Modules
             Button("Login").ValidateAntiForgeryToken(false)
                 .OnClick(x =>
                 {
+                    // Login logic here...
                     x.Go<Login.DispatchPage>();
                 });
 

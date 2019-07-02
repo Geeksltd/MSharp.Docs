@@ -28,7 +28,7 @@ namespace Model.Domain
         public Employee()
         {
             TableName("staff");
-            String("first Name").Mandatory().ColumnName("fname");
+            String("First Name").Mandatory().ColumnName("fname");
             String("Last Name").Mandatory().ColumnName("lname");
         }
     }

@@ -21,49 +21,62 @@ Here we have an example of a field that is creating a property that adds a boole
     .Control(ControlType.CheckBox);
 ```
 
-In this example we see a whole module with some elements using a `ViewModelProperty<T>` as the data source.
+In this example we see a whole module with a custom field element for confirming the user password.
 
 ```csharp
-using Domain;
 using MSharp;
+using Domain;
 
 namespace Modules
 {
-    public class RecommendedMortgagesReportDetailsView : ViewModule<Domain.MortgageApplication>
+    public class ResetUserPassword : FormModule<Domain.User>
     {
-        public RecommendedMortgagesReportDetailsView()
+        public ResetUserPassword()
         {
-            IsViewComponent();
-
-            SecurityChecks(@"User.IsInRole(""Admin"") || 
-                            (User.IsInRole(""Adviser"") && info.RecommendedMortgage.SelectedBy == User) ||
-                             info.Application.Applicant == CurrentApplicantUser || info.CoApplicant?.Applicant == CurrentApplicantUser");
-            DataSource("info.Application");
-            RootCssClass("recommended-mortgages-report-details-view");
+            SupportsAdd(false)
+                .SupportsEdit()
+                .HeaderText("Reset Password")
+                .DataSource("info.Ticket.User")
+                .SecurityChecks("Request.Has(\"Ticket\")");
 
             ///================ View model properties: ================
 
-            ViewModelProperty<ApplicationRecommendedMortgage>("RecommendedMortgage").FromRequestParam("recommendedmortgage");
-            ViewModelProperty<MortgageApplication>("Application").OnBound("info.Application = info.RecommendedMortgage.Application;");
-            ViewModelProperty<CoApplicant>("CoApplicant").OnBound("info.CoApplicant = await info.Application.CoApplicant;");
+            ViewModelProperty<PasswordResetTicket>("Ticket").FromRequestParam("ticket");
 
 
             ///================ Fields: ================
-            Box("Applicant Details", BoxTemplate.WrapperDiv)
-                .ContainerLayout("<h2>Applicant Details</h2>[#GROUP#]").Add(
-                Field(x => x.Title),
-                Field(x => x.FirstNames),
-                Field(x => x.LastName),
-                Field(x => x.DateOfBirth).DisplayFormat("{0:d}")
-            );
-            Box("Co-Applicant Details", BoxTemplate.WrapperDiv).Visibility("info.Application.IsJointApplicant == true && info.CoApplicant != null")
-                .ContainerLayout("<h2>Co-Applicant Details</h2>[#GROUP#]").Add(
-                CustomField().LabelText("Title").DisplayExpression("@info.CoApplicant.Title"),
-                CustomField().LabelText("First names").DisplayExpression("@info.CoApplicant.FirstName"),
-                CustomField().LabelText("Last name").DisplayExpression("@info.CoApplicant.LastName"),
-                CustomField().LabelText("Last name").DisplayExpression(@"@info.CoApplicant.DateOfBirth.ToString(""d"")")
-            );
+
+            Field(x => x.Password)
+                .Mandatory()
+                .AfterControl("<div class='password-strength'></div>");
+            CustomField()
+                .Label("Confirm new password")
+                .Mandatory()
+                .PropertyName("ConfirmPassword")
+                //.PropertyType("string") // Default type is string
+                .ExtraControlAttributes("type=\"password\"")
+                .ViewModelAttributes("[System.ComponentModel.DataAnnotations.Compare(\"Password\",ErrorMessage=\"New password and Confirm password do not match. Please try again.\")]")
+                .Control(ControlType.Textbox);
+
+
+            ///================ Buttons: ================
+
+            Button("Cancel")
+                .OnClick(x => x.Go<LoginPage>());
+
+            Button("Reset")
+                .IsDefault()
+                .OnClick(x =>
+                {
+                    // Reset password logic here
+                    x.Go<Login.ResetPassword.ConfirmPage>()
+                        .Send("item", "info.Ticket.UserId");
+                });
         }
     }
 }
 ```
+
+![New document details](images/resetpassword.PNG)
+
+`ConfirmPassword` custom field is not a member of `Domain.User` class, but it is used to confirm the entered password in `Password` field.

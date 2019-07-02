@@ -13,7 +13,7 @@ We can use the `.RequiredValidationMessage()` method to amend this.  By passing 
 ### Example
 
 ```csharp
- Field(x => x.HasExistingMortgage
+ Field(x => x.HasExistingMortgage)
                 .Control(ControlType.HorizontalRadioButtons)
                 .Label("Do you have any existing mortgages?")
                 .Mandatory();

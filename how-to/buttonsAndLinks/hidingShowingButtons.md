@@ -20,8 +20,10 @@ SearchButton("Search").VisibleIf(AppRole.Adviser)
 In this example the "Search" button should only be visible if the current user has the `AppRole` of an "Adviser"
 
 ```csharp
-Button("View Recommended Mortgage").VisibleIf("await CurrentApplication.GetCurrentRecommendedMortgage() != null")
-                        .OnClick(x => x.Go<Applicant.Dashboard.ApplicantRecommendedMortgagePage>().Send("recommendedMortgage", "item.ID"));
+Button("View Recommended Mortgage")
+    .VisibleIf("await CurrentApplication.GetCurrentRecommendedMortgage() != null")
+    .OnClick(x => x.Go<Applicant.Dashboard.ApplicantRecommendedMortgagePage>()
+        .Send("recommendedMortgage", "item.ID"));
 ```
 
 In this example we have passed a boolean statement so that the button "View Recommended Mortgage" can only be seen if the current application has a recommended mortgage to view.
@@ -30,3 +32,4 @@ In this example we have passed a boolean statement so that the button "View Reco
 
 * The `VisibleIf()` method can also be used to control field visibility as well.
 * Other methods such as `ColumnVisibleIf()` and `Visible()` methods are similar methods that can be used in other scenarios and work in a similar way.
+* The logic passed to `VisibleIf()` method is generated in both the Controller and the View files. Properties or methods used in the visibility code should be accessible in both. *e.g. If we have a method named `IsSearchButtonVisible()` in our controller and this is used in `VisibleIf("IsSearchButtonVisible()")`, then we get a runtime error when viewing this page as view file does not have access to the controller class scope.*
