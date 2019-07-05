@@ -6,7 +6,7 @@ One of the needs of every software project is documentation and help in differen
 We need to have different types of documentation and user help in different levels for different purposes which we'll talk about them here.
 
 Some of the entities which we define are used by code so the developer using them should know how to use the entity and needs documentation.
-We usually use XML documentation for this purpase and document our classes so the IDE will show the relevant docs when the class is being used.
+We usually use XML documentation for this purpose and document our classes so the IDE will show the relevant docs when the class is being used.
 
 Sometimes we want to show some help to the user when entering or modifying an entity of a type because the title on its own might not be enough to describe what we want.
 Usually a question mark or a tooltip beside the field is used to describe its purpose in detail and we should be able to add such help to our forms as well.
