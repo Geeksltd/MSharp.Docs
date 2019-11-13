@@ -75,7 +75,7 @@
     * [Custom pre-validation logic](how-to/validation/customPrevalidation.md)
     * [Mutually exclusive](how-to/validation/mutuallyExclusive.md)
     * [Form-specific validation](how-to/validation/formSpecificValidation.md)
-    * Custom validation message
+    * [Custom validation message](how-to/validation/customValidationMessage.md)
     * [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
     * [Allowed file extensions](how-to/validation/fileExtension.md)
     * [Form warning style](how-to/validation/warningStyle.md)
