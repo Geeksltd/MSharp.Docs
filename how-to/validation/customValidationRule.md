@@ -22,7 +22,7 @@ The product entity is defined like this
 using MSharp;
 
 
-namespace Model
+namespace Domain
 {
     public class Product : EntityType
     {
