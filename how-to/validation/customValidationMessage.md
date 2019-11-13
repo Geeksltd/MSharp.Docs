@@ -87,6 +87,36 @@ namespace Modules
 }
 ```
 
+These modifications are visible in the view-model:
+
+```csharp
+
+public partial class NotificationForm : IViewModel
+    {
+        // some class members
+        // ...
+
+        [DataType(DataType.DateTime), DisplayName("Production date/time")]
+        [Required(ErrorMessage="Please add the time and date!")]
+        public DateTime? ProductionDate_time { get; set; }
+        
+        [Required]
+        public bool IsFood { get; set; }
+        
+        [Required, DisplayName("Product website")]
+        [StringLength(200, ErrorMessage = "Please enter the product's website.")]
+        [RegularExpression("^(ht|f)tp(s?)\\:\\/\\/[0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*(:(0-9)*)*(\\/?)([a-zA-Z0-9\\u00a1-\\uffff\\-\\.\\?\\,\\'\\/\\\\\\\\(\\)\\;+&%\\$#=_]*)?$", ErrorMessage = "Please enter an internet URL for your message.")]
+        public string ProductWebsite { get; set; }
+        
+        [Required(ErrorMessage="The Send to field is required.")]
+        public List<string> Types { get; set; } = new List<string>();
+
+        // some more class members
+        // ...
+    }
+
+```
+
 With these entity- and module-level customisations, our `SpecialProductForm` is now customised suitably on the UI.
 
 ![logic folder](images/custom-validation-message.png)
