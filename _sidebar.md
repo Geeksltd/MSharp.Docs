@@ -71,7 +71,7 @@
     * [Text pattern/regex](how-to/validation/textPatternAndRegex.md)
     * [Unique property](how-to/validation/unique.md)
     * [Uniqueness combination](how-to/validation/uniqueCombination.md)
-    * [Custom validation rule](how-to/validation/customValidation.md)
+    * [Custom validation rule](how-to/validation/customValidationRule.md)
     * [Custom pre-validation logic](how-to/validation/customPrevalidation.md)
     * [Mutually exclusive](how-to/validation/mutuallyExclusive.md)
     * [Form-specific validation](how-to/validation/formSpecificValidation.md)

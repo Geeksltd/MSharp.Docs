@@ -1,4 +1,4 @@
-# Custom Validation
+# Custom Validation Rule
 
 ## Problem
 
