@@ -12,7 +12,8 @@ The `Control()` method should be called on the field which you want to show as a
 #### Example 
 
 We have a `ProductionDateTime` property which in this application is used as a string.
-The property is defined in the entity as a string but we want to show it as a DateTime when entering it so the user can easily choose a date and time for the production of the productt.
+The property is defined in the entity as a string but we want to show it as a DateTime 
+when entering it so the user can easily choose a date and time for the production of the product.
 
 The form will be defined like this
 
