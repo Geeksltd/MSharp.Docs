@@ -1,4 +1,4 @@
-# Custom Validation
+# Custom Validation Rule
 
 ## Problem
 
@@ -16,13 +16,13 @@ If everything is right, you should just call `return base.Validate();`, otherwis
 Let's say we have a product class which has a creation year and a price.
 In our specification, products older than 2015 should have price less than $100.
 Implementing this requires custom validation.
-The entity product is defined like this
+The product entity is defined like this
 
 ```csharp
 using MSharp;
 
 
-namespace Model
+namespace Domain
 {
     public class Product : EntityType
     {
