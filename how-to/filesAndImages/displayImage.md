@@ -1,6 +1,6 @@
 # Displaying an images
 
-## Problemm
+## Problem
 
 When you display an entity which contains an image in the UI, you usually want to display the image that the entity refers to instead of the address of the image.
 Naturally M# allows you to do that.
