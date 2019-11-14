@@ -104,7 +104,7 @@
     * [Adding a time picker](how-to/formModules/addingTimePicker.md)
     * [Adding a date/time picker](how-to/formModules/addingDatetimePicker.md)
     * Limiting time picker hours/minutes
-    * [Adding a file upload field](how-to\formModules\addingFileUploadField.md)
+    * [Adding a file upload field](how-to/formModules/addingFileUploadField.md)
     * Default values (property setter)
     * Watermark text
     * Custom form elements 
