@@ -113,7 +113,7 @@
     
 * How-to: Buttons/Links
     * [Adding a button](how-to/buttons-links/adding-a-button.md)
-    * Custom location for a button
+    * [Custom location for a button](how-to/buttons-links/Custom-location-for-a-button.md)
     * Button per row
     * Multiple buttons from data source
     * Transactions
