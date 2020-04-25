@@ -112,7 +112,7 @@
     * Custom list control source
     
 * How-to: Buttons/Links
-    * Adding a button
+    * [Adding a button](how-to/buttons-links/adding-a-button.md)
     * Custom location for a button
     * Button per row
     * Multiple buttons from data source
