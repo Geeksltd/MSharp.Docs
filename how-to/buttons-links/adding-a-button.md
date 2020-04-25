@@ -2,11 +2,11 @@
 
 ## Problem
 
-When working with M#’s modules, especially form modules, users need to perform certain workflows like Save the form or Cancel submission. In order to enable users to perform such actions you need to add buttons to your modules.
+When working with M#’s modules, especially form modules, users need to perform certain workflows like Save the form or Cancel submission. In order to enable users to perform such actions you need to add buttons or links to your modules.
 
 ## Implementation
 
-To add a button to a M# module, use the Button method. Pass the desired name of the button to its first argument like below and chain the method with OnClick method to provide the workflow like below:
+Both buttons and links methods of the fluent API return an instance of ModuleButton class, you can configure both the same way, the only difference is how they are rendered to Html. To add a button to a M# module, use the Button method. Pass the desired name of the button to its first argument like below and chain the method with OnClick method to provide the workflow like below:
 
 ```csharp
 
@@ -21,7 +21,7 @@ class SlideFrm : FormModule<Domain.Slide>
             Field(x => x.DisplayOrder);
             Field(x => x.Image);        
 
-            Button("Cancel")
+            Link("Cancel")
                 .OnClick(x => x.Go<Admin.SlidesPage>());
             
             Button("Save")
@@ -38,7 +38,7 @@ class SlideFrm : FormModule<Domain.Slide>
 
 ```
 
-Here is the list of most used methods you can chain with Button method:
+Here is the list of most used methods you can chain with Button and Link methods:
 
 * Icon(FA icon) or Icon(string value): to add an icon to the button, M# natively supports Font Awesome.
 * ImageUrl(string value): Set an Image URL for the button. Usually used in conjunction with NoText().
