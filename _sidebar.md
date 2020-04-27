@@ -114,7 +114,7 @@
 * How-to: Buttons/Links
     * [Adding a button](how-to/buttons-links/adding-a-button.md)
     * [Custom location for a button](how-to/buttons-links/Custom-location-for-a-button.md)
-    * Button per row
+    * [Button per row](how-to/buttons-links/button-per-row.md)
     * Multiple buttons from data source
     * Transactions
     * Trigerring/skipping validation
