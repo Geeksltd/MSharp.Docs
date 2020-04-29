@@ -118,7 +118,7 @@
     * [Multiple buttons from data source](how-to/buttons-links/multiple-buttons-from-data-source.md)
     * [Transactions](how-to/buttons-links/transactions.md)
     * [Trigering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
-    * Default button
+    * [Default button](how-to/buttons-links/default-button.md)
     * Button actions
     * Hiding/showing buttons
     
