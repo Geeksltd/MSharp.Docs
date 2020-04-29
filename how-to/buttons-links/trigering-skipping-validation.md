@@ -1,4 +1,4 @@
-# Trigerring/skipping validation
+# Trigering/skipping validation
 
 When working on M# form modules sometimes we need to allow the user to complete the form partially or without accurate input, for example when developing the form and we just need some dummy data for testing purposes. In order to instruct M# To lift any validations’ defined on the entity we should chain the Button method with the CauseValidation and enter false for its first argument.
 
