@@ -116,7 +116,7 @@
     * [Custom location for a button](how-to/buttons-links/Custom-location-for-a-button.md)
     * [Button per row](how-to/buttons-links/button-per-row.md)
     * [Multiple buttons from data source](how-to/buttons-links/multiple-buttons-from-data-source.md)
-    * Transactions
+    * [Transactions](how-to/buttons-links/transactions.md)
     * Trigerring/skipping validation
     * Default button
     * Button actions
