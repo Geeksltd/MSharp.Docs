@@ -15,6 +15,7 @@
     * [Example 1: Your First App](Tutorials/1/README.md)
     * [Example 2: Modal pages, menu, etc](Tutorials/2/README.md)
     * [Your turn: Practice](Practice/readme.md)
+    * [Example 3: Building a simple website](Tutorials/Building-a-simple-website/README.md)
 
 * How-to: Model: Entity types
 
@@ -119,7 +120,7 @@
     * [Transactions](how-to/buttons-links/transactions.md)
     * [Trigering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
     * [Default button](how-to/buttons-links/default-button.md)
-    * Button actions
+    * button-actions
     * Hiding/showing buttons
     
 
