@@ -120,7 +120,7 @@
     * [Transactions](how-to/buttons-links/transactions.md)
     * [Trigering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
     * [Default button](how-to/buttons-links/default-button.md)
-    * button-actions
+    * [Button actions](how-to/buttons-links/button-actions.md)
     * Hiding/showing buttons
     
 
