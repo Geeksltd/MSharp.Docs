@@ -30,7 +30,7 @@ Every button on M# has a Workflow, which contains a collection of Actions which 
 	+ LoadJavascriptModule
     + LoadJavascriptService
 
-In order to create execution branches based on condition we can chain each of the actions with conditional methods of the fluent API like If ElseIf Else M# provides common conditions as an enum named CommonCriterion. You can define your own Rules on the logic of each Entity.
+In order to create execution branches based on condition we can chain each of the actions with conditional methods of the fluent API like If ElseIf Else M# provides common conditions as an enum named CommonCriterion.
 
 If we need to execute a method which we wrote for our entities on the Domain project > Logic we can call them by using CSharp Action.
 

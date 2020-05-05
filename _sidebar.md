@@ -121,7 +121,7 @@
     * [Trigering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
     * [Default button](how-to/buttons-links/default-button.md)
     * [Button actions](how-to/buttons-links/button-actions.md)
-    * Hiding/showing buttons
+    * [Hiding/showing buttons](how-to/buttons-links/hiding-showing-buttons.md)
     
 
 * How-to: List modules
