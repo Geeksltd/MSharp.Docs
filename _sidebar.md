@@ -127,7 +127,7 @@
 * How-to: List modules
     * [Adding data column](how-to/list-modules/adding-data-column.md)
     * [Custom display expression/format](how-to/list-modules/custom-display-expression-format.md)
-    * Adding link/button column
+    * [Adding link/button column](how-to/list-modules/adding-link-button-column.md)
     * Adding image/icon column
     * Adding input control column
     * Merging columns
