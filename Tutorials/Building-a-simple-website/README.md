@@ -221,7 +221,7 @@ First let’s create a Homepage for our imaginary client. Here is the rundown of
 
 ### Creating Layout
 
-Add an empty cshtml file to the Website>Views>Layouts folder, just right click on layout folder and choose new>new item on the dialogue search for layout and choose razor layout and name the file Default.cshtml
+Add an empty cshtml file to the Website>Views>Layouts folder, just right click on layout folder and choose Add > New item on the dialogue search for layout and choose razor layout and name the file Default.cshtml
 
 ![Add New Item Dialogue](Images/05-Creating-Homepage/01-Add-New-Item-Dialogue.png)
 
@@ -377,26 +377,19 @@ namespace App
             Role("Anonymous");
             Role("Admin").SkipQueryStringSecurity();
 
-            Layout("Admin default")
-                .AjaxRedirect()
-                .Default()
-                .VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
-
-            Layout("Admin default Modal")
-                .Modal()
-                .VirtualPath("~/Views/Layouts/AdminDefault.Modal.cshtml");
-
-            Layout("Login")
-                .AjaxRedirect()
-                .VirtualPath("~/Views/Layouts/Login.cshtml");
+            Layout("Admin default").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
+            Layout("Admin default Modal").Modal().VirtualPath("~/Views/Layouts/AdminDefault.Modal.cshtml");
+            Layout("Login").AjaxRedirect().VirtualPath("~/Views/Layouts/Login.cshtml");
+            Layout("Blank").AjaxRedirect().VirtualPath("~/Views/Layouts/Blank.cshtml");
+            
+            PageSetting("LeftMenu");
+            PageSetting("SubMenu");
+            PageSetting("TopMenu");
 
             // The new layout
             Layout("Default")
                 .AjaxRedirect()
                 .VirtualPath("~/Views/Layouts/Default.cshtml");
-
-            PageSetting("AdminLeftMenu");
-            PageSetting("AdminSubMenu");
 
             // The new placeholders
             PageSetting("MainNav");
@@ -633,7 +626,7 @@ Here is the rundown of what we’re going to do:
 
 ### Creating Slide Entity
 
-Head over to the #Model project and create a new folder called Domain. Right click on Domain folder and select new > M# > Add Entity on the popped up dialogue enter Slide for Type Name field and leave the Base Type empty. Use the M# fluent API to add properties in the constructor method like below:
+Head over to the #Model project and create a new folder called Domain. Right click on Domain folder and select Add > M# > Add Entity on the popped up dialogue enter Slide for Type Name field and leave the Base Type empty. Use the M# fluent API to add properties in the constructor method like below:
 
 ```csharp
 using MSharp;
@@ -711,7 +704,7 @@ Now let’s create the SlidePage which will house the SlideTbl module.
 
 ### Creating Slides Page on Admin Panel
 
-On M# Explorer panel right click on the admin page and create a subpage named Slides. Open the SlidesPage.cs up and by using the Add method, place the SlideTbl module on SlidesPage like below after that build the solution.
+On M# Explorer panel right click on the admin page and create a subpage named Slides. Open the Slides.cs up and by using the Add method, place the SlideTbl module on SlidesPage like below after that build the solution.
 
 ```csharp
 using MSharp;
@@ -730,7 +723,7 @@ namespace Admin
 
 ### Creating Form Module for Admin Panel
 
-Just like creating a list module for slides, now repeat the process but this time instead of adding a List Module add a Form module and name it SlideFrm. You’ll end up with the following SlideFrm class which we don’t need to modify.
+Just like creating a list module for slides, now repeat the process but this time instead of adding a List Module add a Form module and name it SlideFrm. You’ll end up with the following SlideFrm class which we need to replace ~~x.ReturnToPreviousPage();~~ with **x.Go<Admin.SlidesPage>();**
 
 ```csharp
 using MSharp;
@@ -858,7 +851,7 @@ public class AdminPage : RootPage
 
         Set(PageSettings.AdminLeftMenu, "AdminMenu");
 
-        OnStart(x => x.Go<Admin.SettingsPage>().RunServerSide());
+        OnStart(x => x.Go<Admin.SlidesPage>().RunServerSide());
     }
 }
 ```
@@ -911,4 +904,5 @@ namespace Modules
 }
 ```
 
-Build the solution and run the website project, head over to /admin and add some dummy slides to the database.
+Build the solution and run the website project, head over to /admin/slides and add some dummy slides to the database.
+
