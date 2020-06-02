@@ -23,7 +23,7 @@ If it has 7 digits at the left side of the decimal point, the right side can hav
 ### Scale
 
 Scale of each number is defined as the minimum number of digits that you want to have at the right side of the decimal point.
-If you have a double of scale 2 then the numeric type is SQL Server will be Numeric(27,2).
+If you have a double of scale 2 then the numeric type in SQL Server will be Numeric(27,2).
 It means that the left side of the decimal point will store at most 25 digits and always reserves at least 2 digits for the right side of the decimal point.
 
 #### Example

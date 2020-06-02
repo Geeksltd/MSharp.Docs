@@ -54,7 +54,7 @@ The only special thing about the entity is the fact that we are calling `SoftDel
     {
 ```
 
-The generated class will have a `[]SoftDelete]` attribute which tells M# to execute an update query for soft deleting instead of executing the actual delete query when the user wants to delete the entity.
+The generated class will have a `[SoftDelete]` attribute which tells M# to execute an update query for soft deleting instead of executing the actual delete query when the user wants to delete the entity.
     
 #### Database Schema
     

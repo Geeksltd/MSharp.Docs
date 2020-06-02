@@ -34,7 +34,7 @@
     * [Specifying the ID (primary key) property](how-to/properties/primarykey.md)
     * [Calculated vs persisted](how-to/properties/calculatedVSPersisted.md)
     * [Custom type (C#/DB)](how-to/properties/customType.md)
-    * [Multiline text](how-to/properties/multiLineText.md)
+    * [Multi-line text](how-to/properties/multiLineText.md)
     * [Numeric scale/precision](how-to/properties/numericScaleAndPrecision.md)
     * [Nullable (int, bool, ...)](how-to/properties/nullable.md)
     * [Custom boolean text](how-to/properties/customBoolText.md)
@@ -59,8 +59,8 @@
 
 * How-to: Model: Misc
 
-    * [Name vs Title](how-to/misc/nameAndtitle.md)
-    * [Notes/docs/user help](how-to/misc/noteHelpDocumentation.md)
+    * [Name vs Title](how-to/misc/nameAndTitle.md)
+    * [Notes/docs/user help](how-to/misc/NoteHelpDocumentation.md)
     * [Custom [Attributes]](how-to/misc/customAttributes.md)
     * [White-space trimming](how-to/misc/whitespaceTrimming.md)
     

@@ -18,7 +18,7 @@ So if you don't call `Mandatory()` on a property of a value type, it will be nul
 
 Let's define an entity to represent paintings in a gallery.
 Each item will have a name, an optional purchase date and another optional purchase cost.
-Some of them are not purchased and are either donated or inherited which se set their purchase date and cost to null.
+Some of them are not purchased and are either donated or inherited which we set their purchase date and cost to null.
 
 ```csharp
 using MSharp;

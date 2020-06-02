@@ -40,7 +40,7 @@ namespace Model
 
 ```
 
-```chsarp
+```csharp
 using MSharp;
 
 namespace Model
@@ -178,5 +178,5 @@ In this way you can make sure `User` is not instantiatable on its own but other 
 ## Remarks
 
 - Use inheritance with care, deep levels of inheritance can make programs hard to understand and databases hard to maintain. Try to keep it below 5-7 levels best is below 3
-- transient entities can be inherited as well but no database table is created for them
+- Transient entities can be inherited as well but no database table is created for them
 - Transient entities can derive from none-transient ones but not vice versa

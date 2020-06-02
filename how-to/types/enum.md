@@ -94,7 +94,7 @@ Be careful to don't forget to call the method you create in the `Create()` metho
 
 Now you can use `ContactType` instead of an enum whenever you want to have a property which can have one of the pre-defined values (Friend, Family, Business and Other).
 Thanks to `AssignReferences()`, you also have access to accessor properties for these values in your `ContactType` class. 
-You can simply use them and even have intel.isense as well like this:
+You can simply use them and even have intellisense as well like this:
 
 ![Assign References Example](images/AssignReferencesExample.PNG "Assign References Example")
 

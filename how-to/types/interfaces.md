@@ -104,10 +104,10 @@ The code for product is like this
         ...
     }
 ```
-As you can see the class iimplements the `ISellable` interface correctly.
+As you can see the class implements the `ISellable` interface correctly.
 
 ## Remarks
 
 - An entity which want to define an interface should be transient but none-transient entities can implement interfaces.
-- interfaces can help you make your code modular with easy to understand conceptual models and inheritance hierarchies
+- Interfaces can help you make your code modular with easy to understand conceptual models and inheritance hierarchies
 - Use interfaces when the entity itself doesn't need to implement any functionality instead of defining an abstract class.

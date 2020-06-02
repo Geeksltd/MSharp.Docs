@@ -43,7 +43,7 @@ namespace Model
             String("Painting Name").Mandatory();
             Int("Cost").CSharpTypeName("long")
                 .Notes("We put this as long to test M# features, don't follow it as good design")
-                .HelpText("Should be entered as USD value multiplied by 100, so $3.5 should be enterred as 3500")
+                .HelpText("Should be entered as USD value multiplied by 100, so $3.5 should be entered as 350")
                 .Documentation("The amount of money paid as usd value * 100 to buy this, not applicable for non-bought paintings");
 
             Date("Purchase date");

@@ -1,4 +1,4 @@
-# Custom typ (C#/DB)
+# Custom type (C#/DB)
 
 ## Problem
 
@@ -110,7 +110,7 @@ It can be achieved by using the `CSharpTypeName()` method as said before.
 #### Example
 
 If we define our properties as `Int()` in the entity definition, then the generated code uses `int` as the datatype for properties.
-If we know we need a bigger range and want to use `long, we should do this both for the database and the class like this:
+If we know we need a bigger range and want to use `long`, we should do this both for the database and the class like this:
 
 ```csharp
 using MSharp;

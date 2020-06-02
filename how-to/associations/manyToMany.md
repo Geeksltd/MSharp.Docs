@@ -11,7 +11,7 @@ Each book can be sold in multiple shops and each shop can sell multiple books.
 ## Implementation
 
 We use the `AssociateManyToMany<T>()` and `InverseManyToMany<T>()` to implement many to many relationship for two entities. 
-The entity which needs to modify the relationship, and add/remote instances of the other entity should call `AssociateManyToMany<T>() and the other one should call the `InverseManyToMany<T>()` mentioning the property in the other entity (similar to the way one to many and many to one relationship works).
+The entity which needs to modify the relationship, and add/remote instances of the other entity should call `AssociateManyToMany<T>()` and the other one should call the `InverseManyToMany<T>()` mentioning the property in the other entity (similar to the way one to many and many to one relationship works).
 
 Let's continue our books example and define a `Shop` entity and set a many to many relationship between it and our books.
 
@@ -60,7 +60,7 @@ namespace Model
 
 The way to understand which entity should contain the actual association and which one should contain the inverse one is to find out which entity will actually contain the other entity or is the parent of it.
 For example in a schools management system, between teachers and schools, school should have the main association and the teacher the inverse one.
-However if the system is for managing super stars and movies, then the  main relation shiuld be in the `SuperStar` entity and the movie should contain the inverse association since we usually add and remove movies from the list of works of an actor/actress but the system should be able to tell us who played in a movie if needed.
+However if the system is for managing super stars and movies, then the  main relation should be in the `SuperStar` entity and the movie should contain the inverse association since we usually add and remove movies from the list of works of an actor/actress but the system should be able to tell us who played in a movie if needed.
 The part that needs to be modified is the main association and the one which is only used for reading is the inverse one.
 
 #### Generated Code
@@ -162,6 +162,6 @@ The generated code will make it more clear
 ## Database schema
 
 A new table is created for many to many relationships which stores the relations by storing IDs of the related touples together.
-The schema for the previous example can is this one
+The schema for the previous example is this one:
 
 ![book and shop relation's table](images/bookShopRelation.PNG)

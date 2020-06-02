@@ -49,7 +49,7 @@ namespace Model
 ```
 
 As you can see, we called `IsPrimaryKey()` on a mandatory `string` field.
-Also we called `PrimaryKeyType()` and told the entity that we want it to have a string primary key.h
+Also we called `PrimaryKeyType()` and told the entity that we want it to have a string primary key.
 Since a primary key cannot be null, the key should be a mandatory property, otherwise you'll get a build error when building the #Model project.
 
 #### Generated Code

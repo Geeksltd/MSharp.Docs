@@ -88,5 +88,5 @@ The generated code for the `Book` entity shows the relation as well.
 ```
 
 Since the database table for a book now contains the ID of the category which it belongs to , it now has a `Guid` field for that and a property to get the actual category.
-Also the value is cached so is only read once until the cache gets invalidated and you don't hit the database constantly.
+Also the value is cached so is only read once until the cache gets invalidated so you don't hit the database constantly.
 

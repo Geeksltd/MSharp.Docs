@@ -1,17 +1,17 @@
-# Multiline text
+# Multi-line text
 
 Sometimes the text input of the user is longer than a single word or sentence.
-Usually you want to show a multiline text field in those situations.
+Usually you want to show a multi-line text field in those situations.
 M# makes it easily possible to do this in the fluent API.
 
 ## Implementation
 
-You need to simply call the `Lines()` method on the ``String` property to let the M# UI know that you want a multiline text area control for the property.
+You need to simply call the `Lines()` method on the `String` property to let the M# UI know that you want a multi-line text area control for the property.
 This has no effect neither on the database column's type nor on the generated class.
 
 #### Example
 
-Let's define a `Description` property for a product class and set it to show a multiline text area as UI.
+Let's define a `Description` property for a product class and set it to show a multi-line text area as UI.
 
 ```csharp
 using MSharp;
