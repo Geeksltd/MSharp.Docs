@@ -129,7 +129,7 @@
   - [Adding image/icon column](how-to/list-modules/adding-image-icon-column.md)
   - Adding input control column
   - [Merging columns](how-to/list-modules/merging-columns.md)
-  - Index column
+  - [Index column](how-to/list-modules/index-column.md)
   - Select checkbox column
   - Custom column header text
   - User column display selection
