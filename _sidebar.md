@@ -131,7 +131,7 @@
   - [Merging columns](how-to/list-modules/merging-columns.md)
   - [Index column](how-to/list-modules/index-column.md)
   - Select checkbox column
-  - Custom column header text
+  - [Custom column header text](how-to/list-modules/custom-column-header-text.md)
   - User column display selection
   - Footer row
   - Hiding header row

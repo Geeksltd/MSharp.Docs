@@ -1,6 +1,6 @@
-# Index Column
+# Custom Column Header Text
 
-In case you need to have a row counter on any List Module’s generated Html table you can use the IndexColumn method of the fluent API. Bear in mind that no matter where you put the IndexColumn it will always appear as the first column in the generated Html.
+You can change the column’s header text by using the HeaderTemplate method of the fluent API. Not only you can specify the name of the column, you can also change the markup inside the th element.
 
 ```csharp
 using MSharp;
@@ -15,10 +15,9 @@ namespace Modules
 
             Search(GeneralSearch.AllFields).Label("Find:");
 
-            IndexColumn(); // generates row counter column
-            Column(x => x.Title);
+            Column(x => x.Title).HeaderTemplate("<strong>Title</strong>");
             Column(x => x.Description);
-            Column(x => x.LinkUrl);
+            Column(x => x.LinkUrl).HeaderTemplate("Url");
             Column(x => x.LinkText);
             Column(x => x.DisplayOrder);
             Column(x => x.Image);
