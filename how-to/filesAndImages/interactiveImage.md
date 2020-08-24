@@ -1,4 +1,4 @@
-# Click action on am image
+# Click action on an image
 
 ## Problem
 
