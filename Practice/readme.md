@@ -18,6 +18,15 @@ To successfully build each practice project, you will be using and reusing some 
 | [Practice 07](https://design.visualspec.co.uk/?p=MSharp.Practice.7) | Range validation - Paging - Button style (link) - Property setter - Expected lines |   [Step-by-step example](../Tutorials/7/README.md)|
 | [Practice 08](https://design.visualspec.co.uk/?p=MSharp.Practice.8) | Footer - Cascade delete -Calculated property |   [Step-by-step example](../Tutorials/8/README.md)|
 | [Practice 09](https://design.visualspec.co.uk/?p=MSharp.Practice.9) | Master-detail forms |   [Step-by-step example](../Tutorials/9/README.md)|
+| [Practice 10](https://design.visualspec.co.uk/?p=MSharp.Practice.10) | List data source - View module property - Link button |   [Step-by-step example](../Tutorials/10/README.md)|
+| [Practice 11](https://design.visualspec.co.uk/?p=MSharp.Practice.11) | Html.Raw - Empty markup - Method logic |   [Step-by-step example](../Tutorials/11/README.md)|
+| [Practice 12](https://design.visualspec.co.uk/?p=MSharp.Practice.12) | Validate() method of objects - Form level custom validation - Form element header markup - Module header text |   [Step-by-step example](../Tutorials/12/README.md)|
+| [Practice 13](https://design.visualspec.co.uk/?p=MSharp.Practice.13) | Control type - Form element data source - Form element source criteria |   [Step-by-step example](../Tutorials/13/README.md)|
+| [Practice 14](https://design.visualspec.co.uk/?p=MSharp.Practice.14) | Boolean form element (true, false text) - Custom workflow action - Sending emails - Email Templates |   [Step-by-step example](../Tutorials/14/README.md)|
+| [Practice 15](https://design.visualspec.co.uk/?p=MSharp.Practice.15) | List column format (date and percentage, and number separator) - Form element display expression - Search element display expression |   [Step-by-step example](../Tutorials/15/README.md)|
+| [Practice 16](https://design.visualspec.co.uk/?p=MSharp.Practice.16) | Mandatory property, but optional on a form - Optional property, but mandatory on a form - Setting a form value automatically only if the user didn't - Interactive image (using buttons) - Custom search behaviour |   [Step-by-step example](../Tutorials/16/README.md)|
+| [Practice 17](https://design.visualspec.co.uk/?p=MSharp.Practice.17) | Dynamic menu item - Custom Active menu item - Visibility - Module box - After control, Before control settings |   [Step-by-step example](../Tutorials/17/README.md)|
+| [Practice 18](https://design.visualspec.co.uk/?p=MSharp.Practice.18) | Repeated buttons - Button markup template - Checkbox column for list modules - Display option for columns - Instance accessor for entity types - Automated tasks |   [Step-by-step example](../Tutorials/18/README.md)|
 | ...|  ... | ... |
 | [Practice 22](https://design.visualspec.co.uk/?p=MSharp.Practice.22) |  Interface types - Transient entities - Logging - Application events log |  [Step-by-step example](../Tutorials/22/README.md)|
 
