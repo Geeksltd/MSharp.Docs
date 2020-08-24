@@ -6,15 +6,14 @@ There are 22 practice projects that you should implement using M#. Each one shou
 
 To successfully build each practice project, you will be using and reusing some M# skills that you will have gained previously, plus one or two new skills and M# features. Links are provided for each one to the how-to documentation pages of specifically those new features.
 
-
 | Practice       | To learn | Help |
 |-------------|-----------|------|
-| [Practice 01](https://design.visualspec.co.uk/?p=MSharp.Practice.1) | Creating types, associations, page, lists, forms, buttons and navigation | [Step-by-step example](../Tutorials/1/README.md)|
+| [Practice 01](https://design.visualspec.co.uk/?p=MSharp.Practice.1) | Creating entities, associations, pages, lists, forms, buttons and navigation | [What is an M# Entity?](../Basics/Entity.md) [Associations,](../Domain/Associations.md) [What is an M# Page?](../Basics/Page.md) [Adding a Button,](../how-to/buttons-links/adding-a-button.md) [What is an M# Module?](../Basics/Module) [Step-by-step example](../Tutorials/1/README.md)|
 | [Practice 02](https://design.visualspec.co.uk/?p=MSharp.Practice.2) | Creating menu, pop-up (modal) pages, image and file properties | [Step-by-step example](../Tutorials/2/README.md)|
-| [Practice 03](https://design.visualspec.co.uk/?p=MSharp.Practice.3) | Uniqueness rules | [Step-by-step example](../Tutorials/3/README.md)|
+| [Practice 03](https://design.visualspec.co.uk/?p=MSharp.Practice.3) | Uniqueness rules | [Unique Property,](../how-to/validation/unique.md) [Step-by-step example](../Tutorials/3/README.md)|
 | [Practice 04](https://design.visualspec.co.uk/?p=MSharp.Practice.4) |  CRUD - Property search element - All fields search element - Custom Label for form / search elements |   [Step-by-step example](../Tutorials/4/README.md)|
-| [Practice 05](https://design.visualspec.co.uk/?p=MSharp.Practice.5) | Inheritence - Export to excel - client-side filter - Index column |  [Step-by-step example](../Tutorials/5/README.md)|
-| [Practice 06](https://design.visualspec.co.uk/?p=MSharp.Practice.6) | One to Many (inverse) associations - Many to Many associations |   [Step-by-step example](../Tutorials/6/README.md)|
+| [Practice 05](https://design.visualspec.co.uk/?p=MSharp.Practice.5) | Inheritance - Export to excel - client-side filter - Index column |  [Step-by-step example](../Tutorials/5/README.md)|
+| [Practice 06](https://design.visualspec.co.uk/?p=MSharp.Practice.6) | One to Many (inverse) associations - Many to Many associations |  [One-To-Many,](../how-to/associations/manyToOne.md) [Many-To-Many,](../how-to/associations/manyToMany.md) [Step-by-step example](../Tutorials/6/README.md)|
 | [Practice 07](https://design.visualspec.co.uk/?p=MSharp.Practice.7) | Range validation - Paging - Button style (link) - Property setter - Expected lines |   [Step-by-step example](../Tutorials/7/README.md)|
 | [Practice 08](https://design.visualspec.co.uk/?p=MSharp.Practice.8) | Footer - Cascade delete -Calculated property |   [Step-by-step example](../Tutorials/8/README.md)|
 | [Practice 09](https://design.visualspec.co.uk/?p=MSharp.Practice.9) | Master-detail forms |   [Step-by-step example](../Tutorials/9/README.md)|
@@ -30,6 +29,5 @@ To successfully build each practice project, you will be using and reusing some 
 | ...|  ... | ... |
 | [Practice 22](https://design.visualspec.co.uk/?p=MSharp.Practice.22) |  Interface types - Transient entities - Logging - Application events log |  [Step-by-step example](../Tutorials/22/README.md)|
 
-TODO: Complete this from 
+TODO: Complete this from
 http://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc
-
