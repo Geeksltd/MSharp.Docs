@@ -14,4 +14,6 @@
 | ...|  ... | ... |
 | [Practice 22](https://design.visualspec.co.uk/?p=MSharp.Practice.22) |  Interface types - Transient entities - Logging - Application events log | [How to: ...](../....md)|
 
-TODO: Complete this from https://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc
+TODO: Complete this from 
+http://learndotnet.geeksltd.co.uk/User/My-learning.aspx?id=92f88779-5603-4756-98cf-a96d5e3dd4dc
+
