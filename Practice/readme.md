@@ -1,5 +1,12 @@
 # M# Practice challenges
 
+To learn M# properly, the best way is by doing. Every M# feature provides a shortcut way to implement a current requirement quickly, without having to write the full code. These features are defined under the how-to sections of this documentation. You should try to have a quick read to make yourself familiar with those. But to properly learn them, you should use them practically. That's why the M# tutorials are defined in the following format.
+
+There are 22 practice projects that you should implement using M#. Each one should normally take less than an hours, and some maybe a bit longer. Each project is defined using a wireframe that explains what the software should do and how it should be structured. These wireframes are straight forward, but you should make sure to understand them fully before implementing.
+
+To successfully build each practice project, you will be using and reusing some M# skills that you will have gained previously, plus one or two new skills and M# features. Links are provided for each one to the how-to documentation pages of specifically those new features.
+
+
 | Practice       | To learn | Help |
 |-------------|-----------|------|
 | [Practice 01](https://design.visualspec.co.uk/?p=MSharp.Practice.1) | Creating types, associations, page, lists, forms, buttons and navigation | [Step-by-step example](../Tutorials/1/README.md)|
