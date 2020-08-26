@@ -157,7 +157,7 @@
 - How-to: Navigation
   - Custom page url
   - Auto page redirection
-  - Modal (pop-up)
+  - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax
   - Passing and using parameters
 
