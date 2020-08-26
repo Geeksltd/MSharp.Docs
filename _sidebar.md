@@ -144,7 +144,7 @@
 - How-to: Search
 
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
-  - Full text search
+  - [Full text search](how-to/search/fullTextSearch.md)
   - Instant search
   - Default search value
   - Custom search element
