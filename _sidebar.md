@@ -143,7 +143,7 @@
   - Export to CSV/Excel
 - How-to: Search
 
-  - Search field on property
+  - [Search field on property](how-to/search/searchFieldOnProperty.md)
   - Full text search
   - Instant search
   - Default search value
