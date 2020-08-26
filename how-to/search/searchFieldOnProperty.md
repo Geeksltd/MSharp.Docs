@@ -14,7 +14,6 @@ public ContactsList()
     {
         HeaderText("Contacts");
 
-
         Search(x => x.Category)
             .AsRadioButtons(Arrange.Horizontal)
             .Label("Classification")
