@@ -140,7 +140,7 @@
   - Manual sorting
   - Custom data source
   - Data grouping
-  - Export to CSV/Excel
+  - [Export to CSV/Excel](how-to/list-modules/exportToCsvExcel.md)
 - How-to: Search
 
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
