@@ -162,7 +162,7 @@
   - Passing and using parameters
 
 * How-to: Menus
-  - Creating a menu
+  - [Creating a menu](how-to/menus/creatingMenu.md)
   - Main navigation menu
   - Sub-navigation menu/tabs
   - Dynamic menu items
