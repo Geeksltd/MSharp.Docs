@@ -135,7 +135,7 @@
   - User column display selection
   - Footer row
   - Hiding header row
-  - Paging
+  - [Pagination](how-to/list-modules/pagination.md)
   - Sorting
   - Manual sorting
   - Custom data source
