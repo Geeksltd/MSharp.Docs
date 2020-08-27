@@ -76,7 +76,7 @@
   - [Mutually exclusive](how-to/validation/mutuallyExclusive.md)
   - [Form-specific validation](how-to/validation/formSpecificValidation.md)
   - [Custom validation message](how-to/validation/customValidationMessage.md)
-  - [Delete and referrential integrity](how-to/validation/referentialIntegrity.md)
+  - [Delete and referential integrity](how-to/validation/referentialIntegrity.md)
   - [Allowed file extensions](how-to/validation/fileExtension.md)
   - [Form warning style](how-to/validation/warningStyle.md)
 
@@ -105,7 +105,7 @@
   - [Adding a date/time picker](how-to/formModules/addingDatetimePicker.md)
   - Limiting time picker hours/minutes
   - [Adding a file upload field](how-to/formModules/addingFileUploadField.md)
-  - Default values (property setter)
+  - [Default values (property setter)](how-to/formModules/defaultValuesPropertySetter.md)
   - Watermark text
   - Custom form elements
   - Custom data load/save
