@@ -14,7 +14,7 @@ MSharp allows you to specify your data source, by using DataSource() in your lis
     public EmployeeList()
     {
         HeaderText("Employees")
-            .DataSource("info.Employer != null ? info.Employer.Employees.GetList().Result : Employee.GetAllEmployees().Result ");
+            .DataSource("info.Employer != null ? info.Employer.Employees.GetList().Result : Employee.GetAllEmployees().Result");
 
         /*
         * other code
@@ -35,13 +35,13 @@ If you open the Controller you can see how the code is implemented.
 If you are having difficulty forming the appropriate C# as a string it can help to formulate it in the Controller and then copy and paste it back into the Module
 
 ```csharp
-    async Task<IEnumerable<Costume>> GetBaseSource(vm.CostumeList info)
+    async Task<IEnumerable<Employee>> GetBaseSource(vm.EmployeeList info)
     {
-        IEnumerable<Costume> result = info.CachedBaseSource;
+        IEnumerable<Employee> result = info.CachedBaseSource;
 
         if (result != null) return result;
 
-        result = info.CachedBaseSource = (info.Wearer != null ? info.Wearer.Costumes.GetList().Result : Costume.GetAllCostumes().Result).ToList();
+        result = info.CachedBaseSource = (info.Employer != null ? info.Employer.Employees.GetList().Result : Employee.GetAllEmployees().Result).ToList();
 
         return result;
     }
