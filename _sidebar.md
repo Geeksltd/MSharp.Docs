@@ -117,7 +117,7 @@
   - [Button per row](how-to/buttons-links/button-per-row.md)
   - [Multiple buttons from data source](how-to/buttons-links/multiple-buttons-from-data-source.md)
   - [Transactions](how-to/buttons-links/transactions.md)
-  - [Trigering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
+  - [Triggering/skipping validation](how-to/buttons-links/trigering-skipping-validation.md)
   - [Default button](how-to/buttons-links/default-button.md)
   - [Button actions](how-to/buttons-links/button-actions.md)
   - [Hiding/showing buttons](how-to/buttons-links/hiding-showing-buttons.md)
@@ -138,7 +138,7 @@
   - [Pagination](how-to/list-modules/pagination.md)
   - Sorting
   - Manual sorting
-  - Custom data source
+  - [Custom data source](how-to/list-modules/customDataSource.md)
   - Data grouping
   - [Export to CSV/Excel](how-to/list-modules/exportToCsvExcel.md)
 - How-to: Search
