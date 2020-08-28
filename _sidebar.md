@@ -172,7 +172,7 @@
   - Visibility
   - Module: Shared vs page-owned
   - View components
-  - Master detail forms
+  - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
   - Merged forms
   - Module references
   - Module boxes
