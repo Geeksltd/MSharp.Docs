@@ -317,7 +317,7 @@ namespace Modules
 
             ViewModelProperty("Agency", "Agency").FromRequestParam("item");
 
-            DataSource("info.Agency.Bookings.GetList().Result");
+            DataSource("await info.Agency.Bookings.GetList()");
         }
     }
 }
@@ -326,7 +326,7 @@ namespace Modules
 "BookingsList" class has four important parts:
 
 - `ViewModelProperty()`: This  method tells M# that this list module has a property with the name of "Agency" and this agency come from query string with the key of **item** that we have introduced in  **AgenciesList** module with the button property. With the help of this view model property, when a user click on an agency and come to its detail page, M# will use a query string to select a related agency and now as a developer, we have selected agency in this view module by calling `ViewModelProperty("Agency", "Agency").FromRequestParam("item")` method.
-- `DataSource()`: This view module should just list bookings that related to selected agency, for this purpose we have used `DataSource("info.Agency.Bookings.GetList().Result")` which changes the default data source and as requirement told us we should traverse from agency to its related booking.
+- `DataSource()`: This view module should just list bookings that related to selected agency, for this purpose we have used `DataSource("await info.Agency.Bookings.GetList()")` which changes the default data source and as requirement told us we should traverse from agency to its related booking.
 - `ButtonColumn()`: This method should navigate users to the edit page. This page should be aware of selected booking and agency, so we should pass two query string with the key of **item** and **agency**. For this purpose we have used `.Send("item", "item.ID").Send("agency", "item.AgencyId")`.
 - `Button()`*: When a user click on add booking, a modal should be open and this modal should be aware of selected agency, so we should send agency Id to the modal with the help of query string and we have used: `.Send("agency", "info.Agency.ID")` this method use view model property and sent selected agency Id to the modal.
 

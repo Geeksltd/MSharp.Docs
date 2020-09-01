@@ -14,7 +14,7 @@ MSharp allows you to specify your data source, by using DataSource() in your lis
     public EmployeeList()
     {
         HeaderText("Employees")
-            .DataSource("info.Employer != null ? info.Employer.Employees.GetList().Result : Employee.GetAllEmployees().Result");
+            .DataSource("info.Employer != null ? await info.Employer.Employees.GetList() : await Employee.GetAllEmployees()");
 
         /*
         * other code
@@ -41,7 +41,7 @@ If you are having difficulty forming the appropriate C# as a string it can help 
 
         if (result != null) return result;
 
-        result = info.CachedBaseSource = (info.Employer != null ? info.Employer.Employees.GetList().Result : Employee.GetAllEmployees().Result).ToList();
+        result = info.CachedBaseSource = (info.Employer != null ? await info.Employer.Employees.GetList() : await Employee.GetAllEmployees()).ToList();
 
         return result;
     }
@@ -55,4 +55,4 @@ If the desired behaviour, is to display an empty list if there is no Company pro
 
 Best Practice is to put any database calls or complex expressions into Methods that can be called from the Controller instead of putting them directly into DataSource().
 
-Using .Result is important as the Controller uses async Methods.
+Using await is important as the Controller uses async Methods, Result() should not be used as it will block the thread.
