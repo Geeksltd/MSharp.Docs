@@ -189,7 +189,7 @@
   - Page start-up logic
   - Custom module initialization
   - Custom methods in controller
-  - Custom view model properties
+  - [Custom view model properties](how-to/misc/customViewModelProperties.md)
   - Scheduled tasks
   - Sending email notifications
   - [Merging action list buttons](how-to/MergeColumns.md)
