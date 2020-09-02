@@ -179,7 +179,7 @@
 * How-to: Styling and CSS
 
   - Standard vs custom css
-  - Mark-up customisation
+  - [Mark-up customisation](how-to/stylingAndCSS/markupCustomisation.md)
   - Header text
 
 - How-to: Misc
