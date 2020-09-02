@@ -106,7 +106,7 @@
   - Limiting time picker hours/minutes
   - [Adding a file upload field](how-to/formModules/addingFileUploadField.md)
   - [Default values (property setter)](how-to/formModules/defaultValuesPropertySetter.md)
-  - Watermark text
+  - [Watermark text](how-to/formModules/watermarkText.md)
   - Custom form elements
   - Custom data load/save
   - Custom list control source
@@ -202,7 +202,7 @@
 
   - Authentication
   - Role based access
-  - Page role inheritence
+  - Page role inheritance
   - Custom page security
   - Module specific security
   - Module visibility vs security checks
