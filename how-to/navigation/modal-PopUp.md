@@ -21,22 +21,24 @@ You want a page to open as a Pop-up instead of redirecting the user. Modal pages
 
 ```
 
-2) When navigating to the page, open it as a Popup() instead of using Go()
+2) When navigating to the page, open it as a Popup() instead of using Go(). 
+
+   ModalWidth() can be used to set the width in px.
 
 ```csharp
 
         public ContactsList()
         {
             HeaderText("Contacts");
-            
+
             Column(x => x.Name);
             Column(x => x.Phone);
-            
+
             ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
                 .OnClick(x=> x.PopUp<Contact.EnterPage>().Send("item", "item.ID"));
-                
+
             Button("New Contact").Icon(FA.Plus)
-                .OnClick(x => x.PopUp<Contact.EnterPage>());
+                .OnClick(x => x.PopUp<Contact.EnterPage>().ModalWidth("300"));
         }
 ```
 
@@ -47,14 +49,14 @@ You want a page to open as a Pop-up instead of redirecting the user. Modal pages
         public ContactForm()
         {
             HeaderText("Contact details");
-            
+
             Field(x => x.Name).Control(ControlType.Textbox);
             Field(x => x.Phone).Control(ControlType.Textbox);
-            
+
             Button("Cancel")
                 .CausesValidation(false)
                 .OnClick(x => x.CloseModal());
-            
+
             Button("Save").IsDefault().Icon(FA.Check)
             .OnClick(x =>
             {
