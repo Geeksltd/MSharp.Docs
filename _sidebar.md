@@ -109,7 +109,7 @@
   - [Watermark text](how-to/formModules/watermarkText.md)
   - Custom form elements
   - Custom data load/save
-  - Custom list control source
+  - [Custom list control source](how-to/formModules/customListControlSource.md)
 
 * How-to: Buttons/Links
   - [Adding a button](how-to/buttons-links/adding-a-button.md)
