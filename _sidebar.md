@@ -181,7 +181,7 @@
 
   - Standard vs custom css
   - [Mark-up customisation](how-to/stylingAndCSS/markupCustomisation.md)
-  - Header text
+  - [Header text](how-to/stylingAndCSS/headerText.md)
 
 - How-to: Misc
 
