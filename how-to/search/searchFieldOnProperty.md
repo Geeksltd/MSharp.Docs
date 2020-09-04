@@ -16,6 +16,7 @@ public ContactsList()
 
         Search(x => x.Category)
             .AsRadioButtons(Arrange.Horizontal)
+	    .DataSource("#ALL#")
             .Label("Classification")
             .ReloadOnChange();
         Search(x => x.Name)
@@ -33,6 +34,8 @@ public ContactsList()
 Useful Methods Include:
 
 - As…() - set the input type
+
+- .DataSource("#ALL#") - Displays all options instead of only those with results
 
 - Label() – change the label text, default is the property name
 
