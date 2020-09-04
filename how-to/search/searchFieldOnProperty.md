@@ -35,7 +35,7 @@ Useful Methods Include:
 
 - As…() - set the input type
 
-- .DataSource("#ALL#") - Displays all options instead of only those with results
+- DataSource("#ALL#") - Displays all options instead of only those with results
 
 - Label() – change the label text, default is the property name
 
