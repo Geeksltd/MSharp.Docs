@@ -192,7 +192,7 @@
   - Custom methods in controller
   - [Custom view model properties](how-to/misc/customViewModelProperties.md)
   - Scheduled tasks
-  - Sending email notifications
+  - [Sending email notifications](how-to/misc/sendingEmailNotifications.md)
   - [Merging action list buttons](how-to/MergeColumns.md)
   - [Using global search](how-to/UsingGlobalSearch.md)
 
