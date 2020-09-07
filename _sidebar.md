@@ -168,7 +168,7 @@
   - Sub-navigation menu/tabs
   - [Dynamic menu items](how-to/menus/dynamicMenuItems.md)
   - Menu item hierarchy
-  - Current menu item highlighting
+  
 * How-to: UI composition
   - Visibility
   - Module: Shared vs page-owned
