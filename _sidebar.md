@@ -148,7 +148,7 @@
   - [Full text search](how-to/search/fullTextSearch.md)
   - Instant search
   - Default search value
-  - Custom search element
+  - [Custom search element](how-to/search/customSearchElement.md)
   - Auto-search on start
 
 - How-to: View modules
