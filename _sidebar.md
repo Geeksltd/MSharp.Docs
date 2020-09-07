@@ -166,7 +166,7 @@
   - [Creating a menu](how-to/menus/creatingMenu.md)
   - Main navigation menu
   - Sub-navigation menu/tabs
-  - Dynamic menu items
+  - [Dynamic menu items](how-to/menus/dynamicMenuItems.md)
   - Menu item hierarchy
   - Current menu item highlighting
 * How-to: UI composition
