@@ -131,7 +131,7 @@
   - Adding input control column
   - [Merging columns](how-to/list-modules/merging-columns.md)
   - [Index column](how-to/list-modules/index-column.md)
-  - Select checkbox column
+  - [Select checkbox column](how-to/list-modules/selectCheckboxColumn.md)
   - [Custom column header text](how-to/list-modules/custom-column-header-text.md)
   - User column display selection
   - [Footer row](how-to/list-modules/footerRow.md)
