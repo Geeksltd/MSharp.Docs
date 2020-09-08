@@ -176,7 +176,7 @@
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
   - Merged forms
   - Module references
-  - Module boxes
+  - [Module boxes](how-to/uiComposition/moduleBoxes.md)
 * How-to: Styling and CSS
 
   - Standard vs custom css
