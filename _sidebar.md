@@ -133,7 +133,7 @@
   - [Index column](how-to/list-modules/index-column.md)
   - [Select checkbox column](how-to/list-modules/selectCheckboxColumn.md)
   - [Custom column header text](how-to/list-modules/custom-column-header-text.md)
-  - User column display selection
+  - [User column display selection](how-to/list-modules/userColumnDisplaySelection.md)
   - [Footer row](how-to/list-modules/footerRow.md)
   - Hiding header row
   - [Pagination](how-to/list-modules/pagination.md)
