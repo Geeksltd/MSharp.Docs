@@ -170,7 +170,7 @@
   - Menu item hierarchy
   
 * How-to: UI composition
-  - Visibility
+  - [Visibility](how-to/uiComposition/visibility.md)
   - Module: Shared vs page-owned
   - [View components](how-to/uiComposition/viewComponents.md)
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
