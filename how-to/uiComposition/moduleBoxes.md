@@ -50,9 +50,9 @@ Laying it out this way is not necessary, but is advisable. Boxes are generated i
 Boxes can be nested using NestedBoxes()
 
 ```csharp
-            var outerBox = Box("Outer Box", BoxTemplate.HeaderBox);
-            var nestedBox = outerBox.NestedBox("Nested One", BoxTemplate.HeaderBox);
-            var secondNestedBox = outerBox.NestedBox("Nested Two", BoxTemplate.HeaderBox);
+    var outerBox = Box("Outer Box", BoxTemplate.HeaderBox);
+    var nestedBox = outerBox.NestedBox("Nested One", BoxTemplate.HeaderBox);
+    var secondNestedBox = outerBox.NestedBox("Nested Two", BoxTemplate.HeaderBox);
 ```
 
 Elements can be added to either of the these three boxes, but elements added to outerBox will be displayed after the nested boxes.
