@@ -25,7 +25,7 @@ Steps 1-7 only need to be completed for the first email.
 
 This can be done using NuGet Package Manager
 
-![NuGet Package Manager for Olive.Email](images/NuGetOliveEmail.PNG)
+![NuGet Package Manager for Olive.Email](images/NuGetOliveEmail.png)
 
 ### 2) Add SMTP Configuration
 
