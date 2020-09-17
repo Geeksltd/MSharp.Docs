@@ -138,7 +138,7 @@
   - Hiding header row
   - [Pagination](how-to/list-modules/pagination.md)
   - Sorting
-  - Manual sorting
+  - [Manual sorting](how-to/list-modules/manualSorting.md)
   - [Custom data source](how-to/list-modules/customDataSource.md)
   - Data grouping
   - [Export to CSV/Excel](how-to/list-modules/exportToCsvExcel.md)
