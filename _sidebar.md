@@ -137,7 +137,7 @@
   - [Footer row](how-to/list-modules/footerRow.md)
   - Hiding header row
   - [Pagination](how-to/list-modules/pagination.md)
-  - Sorting
+  - [Sorting](how-to/list-modules/sorting.md)
   - [Manual sorting](how-to/list-modules/manualSorting.md)
   - [Custom data source](how-to/list-modules/customDataSource.md)
   - Data grouping
