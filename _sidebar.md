@@ -186,7 +186,7 @@
 - How-to: Misc
 
   - Dependency Injection
-  - PDF generation
+  - [PDF generation](how-to/misc/pdfGeneration.md)
   - Page start-up logic
   - Custom module initialization
   - Custom methods in controller
