@@ -135,7 +135,7 @@
   - [Custom column header text](how-to/list-modules/custom-column-header-text.md)
   - [User column display selection](how-to/list-modules/userColumnDisplaySelection.md)
   - [Footer row](how-to/list-modules/footerRow.md)
-  - Hiding header row
+  - [Hiding header row](how-to/list-modules/hidingHeaderRow.md)
   - [Pagination](how-to/list-modules/pagination.md)
   - [Sorting](how-to/list-modules/sorting.md)
   - [Manual sorting](how-to/list-modules/manualSorting.md)
