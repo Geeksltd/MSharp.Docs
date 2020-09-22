@@ -128,7 +128,7 @@
   - [Empty markup](how-to/list-modules/emptyMarkup.md)
   - [Adding link/button column](how-to/list-modules/adding-link-button-column.md)
   - [Adding image/icon column](how-to/list-modules/adding-image-icon-column.md)
-  - Adding input control column
+  - [Adding input control column](how-to/list-modules/addingInputControlColumn.md)
   - [Merging columns](how-to/list-modules/merging-columns.md)
   - [Index column](how-to/list-modules/index-column.md)
   - [Select checkbox column](how-to/list-modules/selectCheckboxColumn.md)
