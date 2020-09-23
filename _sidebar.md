@@ -202,7 +202,7 @@
 - How-to: Security
 
   - Authentication
-  - Role based access
+  - [Role based access](how-to/security/roleBasedAccess.md)
   - Page role inheritance
   - Custom page security
   - Module specific security
