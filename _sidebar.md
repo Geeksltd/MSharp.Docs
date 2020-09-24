@@ -46,7 +46,7 @@
   - [Many-to-many](how-to/associations/manyToMany.md)
   - [Cascade delete](how-to/associations/deleting.md)
 
-* How-to: Database
+- How-to: Database
 
   - [Custom table/column name](how-to/database/customNames.md)
   - [Custom primary key](how-to/database/customPrimaryKey.md)
@@ -56,14 +56,14 @@
   - [Data type conversion](how-to/database/typeConversion.md)
   - [Bootstrap/reference data](how-to/database/bootstrapReferenceData.md)
 
-* How-to: Model: Misc
+- How-to: Model: Misc
 
   - [Name vs Title](how-to/misc/nameAndTitle.md)
   - [Notes/docs/user help](how-to/misc/NoteHelpDocumentation.md)
   - [Custom [Attributes]](how-to/misc/customAttributes.md)
   - [White-space trimming](how-to/misc/whitespaceTrimming.md)
 
-* How-to: Validation
+- How-to: Validation
 
   - [Mandatory property](how-to/validation/mandatory.md)
   - [Numeric/date range](how-to/validation/numericAndDateRange.md)
@@ -80,7 +80,7 @@
   - [Allowed file extensions](how-to/validation/fileExtension.md)
   - [Form warning style](how-to/validation/warningStyle.md)
 
-* How-to: Files & images
+- How-to: Files & images
 
   - [Handling files/documents](how-to/filesAndImages/file.md)
   - [Handling images](how-to/filesAndImages/image.md)
@@ -92,7 +92,7 @@
   - [Displaying an image](how-to/filesAndImages/displayImage.md)
   - [Image with click action](how-to/filesAndImages/interactiveImage.md)
 
-* How-to: Form modules
+- How-to: Form modules
 
   - [Adding a textbox](how-to/formModules/addingTextbox.md)
   - [Adding a check box](how-to/formModules/addingCheckbox.md)
@@ -111,7 +111,7 @@
   - Custom data load/save
   - [Custom list control source](how-to/formModules/customListControlSource.md)
 
-* How-to: Buttons/Links
+- How-to: Buttons/Links
   - [Adding a button](how-to/buttons-links/adding-a-button.md)
   - [Custom location for a button](how-to/buttons-links/Custom-location-for-a-button.md)
   - [Button per row](how-to/buttons-links/button-per-row.md)
@@ -142,6 +142,7 @@
   - [Custom data source](how-to/list-modules/customDataSource.md)
   - Data grouping
   - [Export to CSV/Excel](how-to/list-modules/exportToCsvExcel.md)
+
 - How-to: Search
 
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
@@ -155,6 +156,7 @@
   - Custom data source
   - Structured vs custom template
   - Hiding empty elements
+
 - How-to: Navigation
   - Custom page url
   - Auto page redirection
@@ -162,14 +164,14 @@
   - Ajax/no ajax
   - Passing and using parameters
 
-* How-to: Menus
+- How-to: Menus
   - [Creating a menu](how-to/menus/creatingMenu.md)
   - Main navigation menu
   - Sub-navigation menu/tabs
   - [Dynamic menu items](how-to/menus/dynamicMenuItems.md)
   - Menu item hierarchy
   
-* How-to: UI composition
+- How-to: UI composition
   - [Visibility](how-to/uiComposition/visibility.md)
   - Module: Shared vs page-owned
   - [View components](how-to/uiComposition/viewComponents.md)
@@ -177,8 +179,8 @@
   - Merged forms
   - Module references
   - [Module boxes](how-to/uiComposition/moduleBoxes.md)
-* How-to: Styling and CSS
 
+- How-to: Styling and CSS
   - Standard vs custom css
   - [Mark-up customisation](how-to/stylingAndCSS/markupCustomisation.md)
   - [Header text](how-to/stylingAndCSS/headerText.md)
@@ -198,7 +200,8 @@
 
 - How-to: Javascript
   - Custom initialization script
-  - Script to run on Button click
+  - [Script to run on Button click](how-to/javascript/scriptOnButtonClick.md)
+
 - How-to: Security
 
   - Authentication
@@ -213,7 +216,7 @@
   - Web Api security
   - Form insert vs update filtering
 
-* More Step-by-step tutorials
+- More Step-by-step tutorials
 
   - [Example 3: Uniqueness rules](Tutorials/3/README.md)
   - [Example 4: Search](Tutorials/4/README.md)
@@ -232,7 +235,7 @@
   - [Example 17: Dynamic menu](Tutorials/17/README.md)
   - [Example 18: Automated tasks](Tutorials/18/README.md)
 
-* Structure Tutorial
+- Structure Tutorial
 
   - Business Domain - Basics
     - [Understanding Entity Types](Domain/UnderstandingEntityTypes.md)
@@ -271,7 +274,7 @@
     - [OnStart()](UI/OnStart.md)
     - [Page Settings](UI/PageSettings.md)
 
-* Tips and tools
+- Tips and tools
   - [Migration from legacy M#](Basics/Migration.md)
   - [VS Extensions](Basics/VSIX.md)
   - [CLI](Basics/CLI.md)
