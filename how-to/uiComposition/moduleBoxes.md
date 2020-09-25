@@ -8,15 +8,16 @@ For example, for a new Customer form you may need contact details, billing detai
 
 ## Implementation
 
-You can use Module Boxes to display the data in separate sections. 
+You can use Module Boxes to display the data in separate sections.
 
 Start by creating a new Box variable. This box will require a Name, used as the Header where appropriate, and a BoxTemplate.
 
 There are a few built in Box Templates that you can use depending on your needs.
--	WrapperDiv - When necessary for styling, try using with CssClass().
--	Header Box - Simply adds a header to your sections.
--	Collapsible Panel - The user can expand or collapse the section by clicking the Header
--	Tabs - The User can display one tabbed box at a time by clicking tabs
+
+- WrapperDiv - When necessary for styling, try using with CssClass().
+- Header Box - Simply adds a header to your sections.
+- Collapsible Panel - The user can expand or collapse the section by clicking the Header
+- Tabs - The User can display one tabbed box at a time by clicking tabs
 
 Having created a Box you can add any elements you want to it using Box().
 
@@ -43,7 +44,7 @@ Having created a Box you can add any elements you want to it using Box().
     Field(x => x.WantsEmail).Box(preferencesBox);
 ```
 
-Laying it out this way is not necessary, but is advisable. Boxes are generated in the same order they are declared and fields that are not in a box will be displayed first. 
+Laying it out this way is not necessary, but is advisable. Boxes are generated in the same order they are declared and fields that are not in a box will be displayed first.
 
 ### Nesting
 
@@ -56,3 +57,8 @@ Boxes can be nested using NestedBoxes()
 ```
 
 Elements can be added to either of the these three boxes, but elements added to outerBox will be displayed after the nested boxes.
+
+### Layout
+
+THe CssClass() and ContainerCssClass() methods add classes to these boxes.
+You can also create a ContainerLayout() using [#GROUP#] as a placeholder for the content.
