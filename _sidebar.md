@@ -140,7 +140,7 @@
   - [Sorting](how-to/list-modules/sorting.md)
   - [Manual sorting](how-to/list-modules/manualSorting.md)
   - [Custom data source](how-to/list-modules/customDataSource.md)
-  - Data grouping
+  - [Data grouping](how-to/list-modules/dataGrouping.md)
   - [Export to CSV/Excel](how-to/list-modules/exportToCsvExcel.md)
 
 - How-to: Search
