@@ -7,6 +7,7 @@ Make sure you have all of the following installed on your computer:
 1. Windows 10
 2. Visual Studio 2019 (Latest build)
 3. GIT for Windows ([Install from here](http://gitforwindows.org/))
+3. .NET Core SDK ([Install from here](https://dotnet.microsoft.com/download/dotnet-core/3.1))
 4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))
 5. Yarn Package Manager ([Install from here](https://yarnpkg.com/latest.msi))
 6. Docker, plus Windows runtime ([Install from here](https://docs.docker.com/docker-for-windows/install/))
@@ -15,9 +16,12 @@ Make sure you have all of the following installed on your computer:
 
 ## How to install
 
-1. Close all instances of Visual Studio.
-2. Install all M# Visual Studio extensions [from here](https://marketplace.visualstudio.com/search?term=msharp&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance)
-3. Open your Visual Studio as **ADMINISTRATOR** (It's recommended that you make this the default.)
+1. Run `dotnet tool install --global msharp-build`
+2. Run cmd in admin mode and execute `powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"`
+3. Run cmd in admin mode and execute `msharp-build /tools`
+4. Close all instances of Visual Studio.
+5. Install all M# Visual Studio extensions [from here](https://marketplace.visualstudio.com/search?term=msharp&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance)
+6. Open your Visual Studio as **ADMINISTRATOR** (It's recommended that you make this the default.)
 
 ## Create your first application
 
