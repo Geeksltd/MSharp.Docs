@@ -151,7 +151,7 @@ namespace Project
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<ProjectAdd>();
         }
@@ -169,7 +169,7 @@ namespace Project
     {
         public EditPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<ProjectEdit>();
         }
@@ -318,7 +318,7 @@ namespace ProjectTask
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.ProjectTaskAdd>();
         }
@@ -335,7 +335,7 @@ namespace ProjectTask
     {
         public EditPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.ProjectTaskEdit>();
         }
@@ -352,7 +352,7 @@ namespace ProjectTask
     {
         public ViewPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.ProjectTaskView>();
         }

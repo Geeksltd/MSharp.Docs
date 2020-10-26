@@ -141,7 +141,7 @@ namespace ServiceType
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.ServiceTypeForm>();
         }
@@ -249,7 +249,7 @@ namespace Supplier
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.SupplierForm>();
         }

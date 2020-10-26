@@ -121,7 +121,7 @@ namespace Employee
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.EmployeeForm>();
         }
@@ -129,7 +129,7 @@ namespace Employee
 }
 ```
 
-The "EnterPage" class holds employee form module and we have set its layout to "Layouts.FrontEnd" according to requirements.
+The "EnterPage" class holds employee form module and we have set its layout to "Layouts.AdminDefault" according to requirements.
 
 ### Creating required module of Employee Pages
 

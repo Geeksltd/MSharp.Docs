@@ -5,8 +5,8 @@ In this lesson we will learn about two types of pages provided in M#. We will al
 ## Structure
 M# creates three types of master page when you create a new project. All master pages are loaded with a default layout and set of CSS files.
 
-- FrontEnd (Standard Pages)
-- FrontEnd.Modal (Modal / popup pages)
+- AdminDefault (Standard Pages)
+- AdminDefault.Modal (Modal / popup pages)
 
 M# encapsulates all the Stylesheets and Master Pages in one folder called **styles** that is located under **wwwroot** folder of **Website** project:
 
@@ -20,17 +20,11 @@ This stylesheet contains the global design related styles, which can be used gen
 ### Blank.scss
 This template is used for **Blank** master page
 
-### FrontEnd.scss
-This template is used for **Front end** master page
-
-### FrontEnd-Modal.scss
-This template is used for **Front end Modal** master page
-
-## FrontEnd Master Page
+## AdminDefault Master Page
 Although there is no hard and fast rule for using master pages, pages inheriting this type of master page are usually used to display primary data in the website. M# creates three default modules for this type of page as shown in the code below:
 
 ```HTML
-@{Layout = Request.IsAjaxCall() ? null : "~/Views/Layouts/FrontEnd.Container.cshtml";}
+@{Layout = Request.IsAjaxCall() ? null : "~/Views/Layouts/AdminDefault.Container.cshtml";}
 @{ var leftMenu = ViewData["LeftMenu"].ToStringOrEmpty(); }
 
 <main>
@@ -75,7 +69,7 @@ This module holds all the footer related info in the default template and is als
 Pages inheriting this master page are displayed on top of standard pages in a modal or popup form.
 
 ```HTML
-@{Layout = Request.IsAjaxRequest() ? null : "~/Views/Layouts/FrontEnd.Modal.Container.cshtml";}
+@{Layout = Request.IsAjaxRequest() ? null : "~/Views/Layouts/AdminDefault.Modal.Container.cshtml";}
 <main>
     <div class="container-fluid">
         <div class="page">
