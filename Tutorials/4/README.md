@@ -150,7 +150,7 @@ namespace AssetType
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.AssetTypeForm>();
         }
@@ -263,7 +263,7 @@ namespace Owner
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.OwnerForm>();
         }
@@ -372,7 +372,7 @@ namespace Asset
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.AssetForm>();
         }
@@ -393,7 +393,7 @@ namespace Asset
     {
         public ViewPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.AssetView>();
         }

@@ -146,7 +146,7 @@ public class CountryPage : RootPage
 {
     public CountryPage()
     {
-        Layout(Layouts.FrontEnd);
+        Layout(Layouts.AdminDefault);
 
         Add<Modules.CountriesList>();
         //Adds a country list into this page. Countries list will be implemented later
@@ -165,7 +165,7 @@ namespace Country
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.CountryForm>();
             // Adds a country form
@@ -186,7 +186,7 @@ namespace Country
     {
         public ViewPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.CitiesList>();
             // Adds cities list to this page
@@ -209,7 +209,7 @@ namespace Country.City
     {
         public CityEnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.CityForm>();
             //Adds a city form into this page
@@ -230,7 +230,7 @@ namespace Country.Customer
     {
         public CustomerEnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.CustomerForm>();
             //Adds a customer form into this page
@@ -442,7 +442,7 @@ public class ResellerPage : RootPage
 {
     public ResellerPage()
     {
-        Layout(Layouts.FrontEnd);
+        Layout(Layouts.AdminDefault);
 
         Add<Modules.ResellersList>();
     }
@@ -460,7 +460,7 @@ namespace Reseller
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.ResellerForm>();
             // Adds a reseller form into the webpage

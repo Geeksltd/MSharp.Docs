@@ -13,7 +13,7 @@ namespace Supplier
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             // Add modules here like this one:
             Add<Modules.SampleForm>();
