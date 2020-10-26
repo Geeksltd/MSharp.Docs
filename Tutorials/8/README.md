@@ -204,7 +204,7 @@ namespace Project
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.ProjectForm>();
         }
