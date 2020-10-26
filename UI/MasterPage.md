@@ -21,9 +21,9 @@ namespace App
             Role("Anonymous");
             Role("Admin").SkipQueryStringSecurity();
 
-            Layout("Front end").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/FrontEnd.cshtml");
+            Layout("Front end").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
             Layout("Blank").AjaxRedirect().VirtualPath("~/Views/Layouts/Blank.cshtml");
-            Layout("Front end Modal").Modal().VirtualPath("~/Views/Layouts/FrontEnd.Modal.cshtml");
+            Layout("Front end Modal").Modal().VirtualPath("~/Views/Layouts/AdminDefault.Modal.cshtml");
 
             PageSetting("LeftMenu");
             PageSetting("SubMenu");
@@ -53,7 +53,7 @@ namespace SampleEntity
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             // Add related modules
         }

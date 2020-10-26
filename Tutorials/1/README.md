@@ -202,7 +202,7 @@ namespace Contact
     {
         public ContactsPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             //will be implemented soon
             Add<Modules.ContactsList>();
@@ -211,7 +211,7 @@ namespace Contact
 }
 ```
 
-This class inherits from **SubPage** and include Layout and Modules. With *Layout(Layouts.FrontEnd)* method I have specified page layout and by calling `Add<Modules.ContactsList>()` I told M# that this page should show ContactList module.
+This class inherits from **SubPage** and include Layout and Modules. With *Layout(Layouts.AdminDefault)* method I have specified page layout and by calling `Add<Modules.ContactsList>()` I told M# that this page should show ContactList module.
 
 Navigate to **Modules** folder of **#UI** project and create folder named **Contact**. Then add a *List module* named **ContactList** using M# context menu:
 
@@ -273,7 +273,7 @@ namespace Contact
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.ContactForm>();
         }

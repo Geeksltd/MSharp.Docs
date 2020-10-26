@@ -207,7 +207,7 @@ namespace Country
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.CountryForm>();
         }
@@ -338,7 +338,7 @@ namespace Customer
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.CustomerForm>();
         }

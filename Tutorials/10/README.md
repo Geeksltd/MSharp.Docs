@@ -117,7 +117,7 @@ namespace Agency
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEnd);
+            Layout(Layouts.AdminDefault);
 
             Add<Modules.AgencyForm>();
         }
@@ -125,7 +125,7 @@ namespace Agency
 }
 ```
 
-The "EnterPage" class holds agency form module and we have to set it's layout to `Layouts.FrontEnd` as requirement told us.
+The "EnterPage" class holds agency form module and we have to set it's layout to `Layouts.AdminDefault` as requirement told us.
 Create *ViewPage* sub page class which holds agency view module like below:
 
 ```csharp
@@ -274,7 +274,7 @@ namespace Booking
     {
         public EnterPage()
         {
-            Layout(Layouts.FrontEndModal);
+            Layout(Layouts.AdminDefaultModal);
 
             Add<Modules.BookingForm>();
         }
