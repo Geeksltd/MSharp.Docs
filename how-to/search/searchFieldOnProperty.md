@@ -33,7 +33,7 @@ public ContactsList()
 
 Useful Methods Include:
 
-- As…() - set the input type
+- AsCheckbox(), AsRadioButtons(), ... - set the input type
 
 - DataSource("#ALL#") - Displays all options instead of only those with results
 
@@ -42,5 +42,7 @@ Useful Methods Include:
 - WatermarkText() – Add a watermark to text fields
 
 - ReloadOnChange() – Have the page reload automatically on entry without having to press a Search button.
+
+For selectable choices, by default, M# will add a pseudo first option in the list, reading "-Select-". In cases where the field is `mandatory` and you always have a `default value`, then that first option will become meaningless. In such case, you can remove it by setting `Field(x => x.Something).NoWatermarkText()`.
 
 You can add a Search button if it is required.
