@@ -33,16 +33,11 @@ public ContactsList()
 
 Useful Methods Include:
 
-- AsCheckbox(), AsRadioButtons(), ... - set the input type
+- `AsCheckbox()`, `AsRadioButtons()`, ... set the input type
+- `DataSource("#ALL#")` or simply `ShowAllRecords()` displays all options in the database instead of only those used within the results
+- `Label(...)` changes the label text, default is the property name
+- `Label("#EMPTY#])` or simply `.NoLabel()` removes the label.
+- `WatermarkText(...)` add a placeholder to text fields. For dropdown list and other select controls, it allows you to change `-Select-` to your desired text.
+- `ReloadOnChange()` means the page reloads automatically on data entry without having to press a Search button.
+- `NoWatermarkText()` removes the 'All' option (in dropdown list and other select controls).
 
-- DataSource("#ALL#") - Displays all options instead of only those with results
-
-- Label() – change the label text, default is the property name
-
-- WatermarkText() – Add a watermark to text fields
-
-- ReloadOnChange() – Have the page reload automatically on entry without having to press a Search button.
-
-For selectable choices, by default, M# will add a pseudo first option in the list, reading "-Select-". In cases where the field is `mandatory` and you always have a `default value`, then that first option will become meaningless. In such case, you can remove it by setting `Field(x => x.Something).NoWatermarkText()`.
-
-You can add a Search button if it is required.
