@@ -46,6 +46,5 @@ As you can see **YES**, **NO** and **N/A** are the possible answers here.
 
 ## Remarks
 
-The text for the answers can be changed when defining the entity using `TrueText()`, `FalseText()` and `NullText()` methods.
-
-For associations, by default, M# will add a pseudo first option in the list, reading "-Select-". In cases where the field is `mandatory` and you always have a `default value`, then that first option will become meaningless. In such case, you can remove it by setting `Field(x => x.Something).WatermarkText("[#EMPTY#]")` or simply `.NoWatermarkText()`.
+1. The text for the answers can be changed when defining the entity using `TrueText()`, `FalseText()` and `NullText()` methods.
+1. For associations, by default, M# will add a pseudo first option in the list, reading "-Select-". In cases where the field is `mandatory` and you always have a `default value`, then that first option will become meaningless. In such case, you can remove it by setting `Field(x => x.Something).WatermarkText("[#EMPTY#]")` or simply `.NoWatermarkText()`.
