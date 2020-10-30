@@ -174,7 +174,7 @@ namespace Modules
 
             Search(c => c.Country).DisplayExpression("item.Code");
 
-            SearchButton("Search");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             Column(x => x.Name).LabelText("Company name");
 

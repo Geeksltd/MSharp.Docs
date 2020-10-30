@@ -455,7 +455,7 @@ namespace Modules
 
             Search(GeneralSearch.AllFields).Label("Find:");
 
-            SearchButton("Search");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             ButtonColumn("View").HeaderText("View").Icon(FA.SearchPlus)
                 .OnClick(x => x.Go<Asset.ViewPage>().Send("item", "item.ID").SendReturnUrl());

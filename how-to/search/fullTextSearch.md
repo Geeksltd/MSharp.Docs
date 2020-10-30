@@ -10,21 +10,19 @@ Or maybe you have several similar fields that it would be meaningless to disting
 
 With MSharp you can search all fields by text.
 
-Simply Search() using GeneralSearch.AllFields. There is no default label, so it is recommended that you add one.
+Simply `Search()` using `GeneralSearch.AllFields`. There is no default label, so it is recommended that you add one.
 
 ```csharp
+public ContactsList()
+{
+    HeaderText("Contacts");
 
-    public ContactsList()
-    {
-        HeaderText("Contacts");
+    Search(GeneralSearch.AllFields).Label("Find:");
 
-        Search(GeneralSearch.AllFields).Label("Find:");
+    SearchButton("Search").OnClick(x => x.Reload());
 
-        SearchButton("Search").OnClick(x=>x.Reload());
-
-        Column(x => x.Name);
-        Column(x => x.Alias);
-        Column(x => x.Email);
-    }
-
+    Column(x => x.Name);
+    Column(x => x.Alias);
+    Column(x => x.Email);
+}
 ```

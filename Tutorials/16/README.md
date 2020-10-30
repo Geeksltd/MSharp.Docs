@@ -319,7 +319,7 @@ namespace Modules
                 .Control(ControlType.CheckBox)
                 .MemoryFilterCode("if(!info.IsRegistrationCompleted){ result = result.Where(x=>x.IsRegistrationCompleted == true);}");
 
-            SearchButton("Search");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             Column(x => x.StartDate).LabelText("Fan start date");
 

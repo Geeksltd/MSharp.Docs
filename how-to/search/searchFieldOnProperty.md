@@ -6,7 +6,7 @@ There are a lot of items in a list and you need to be able to search for specifi
 
 ## Implementation
 
-Using Search(x=> x.Property) allows you to search by any property of the entity.
+Using `Search(x=> x.Property)` allows you to search by any property of the entity.
 
 ```csharp
 
@@ -23,7 +23,7 @@ public ContactsList()
             .NoLabel()
             .WatermarkText("Enter Name");
             
-        SearchButton("Search").OnClick(x=>x.Reload());
+        SearchButton("Search").OnClick(x => x.Reload());
 
         Column(x => x.Category);
         Column(x => x.Name);

@@ -279,7 +279,7 @@ namespace Modules
 
             Search(GeneralSearch.AllFields).Label("Find:");
 
-            SearchButton("Search");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             Column(x => x.DateAdded);
 
