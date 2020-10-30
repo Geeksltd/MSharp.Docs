@@ -14,6 +14,7 @@ namespace Modules
             HeaderText("Slides");
 
             Search(GeneralSearch.AllFields).Label("Find:");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             Column(x => x.Title).HeaderTemplate("<strong>Title</strong>");
             Column(x => x.Description);

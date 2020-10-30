@@ -14,6 +14,7 @@ namespace Modules
             HeaderText("Slides");
 
             Search(GeneralSearch.AllFields).Label("Find:");
+            SearchButton("Search").OnClick(x => x.Reload());
 
             IndexColumn(); // generates row counter column
             Column(x => x.Title);
