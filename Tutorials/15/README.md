@@ -136,7 +136,7 @@ namespace Modules
 
             Field(x => x.Name);
 
-            Field(x => x.RegistrationDate);
+            Field(x => x.RegistrationDate).Control(ControlType.DatePicker);
 
             Field(x => x.MarketShare);
 

@@ -347,7 +347,7 @@ namespace Modules
 
             Field(x => x.Destination);
 
-            Field(x => x.Date);
+            Field(x => x.Date).Control(ControlType.DatePicker);
 
             Button("Cancel").OnClick(x => x.CloseModal());
 

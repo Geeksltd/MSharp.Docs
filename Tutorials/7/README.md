@@ -249,7 +249,7 @@ namespace Modules
             RequestParam("clientId");
 
             Field(x => x.Client);
-            Field(x => x.Date);
+            Field(x => x.Date).Control(ControlType.DatePicker);
             Field(x => x.Amount);
             Field(x => x.Description);
 

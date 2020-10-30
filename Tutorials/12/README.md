@@ -138,7 +138,7 @@ namespace Modules
 
             Field(x => x.LastName);
 
-            Field(x => x.DateOfBirth);
+            Field(x => x.DateOfBirth).Control(ControlType.DatePicker);
 
             Field(x => x.Email);
 

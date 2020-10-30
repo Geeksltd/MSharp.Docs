@@ -322,7 +322,7 @@ namespace Modules
 
             Field(x => x.Comments).Box(notesBox);
 
-            Field(x => x.DateOfBirth).Box(notesBox);
+            Field(x => x.DateOfBirth).Control(ControlType.DatePicker);
 
             AutoSet(x => x.Category);
 

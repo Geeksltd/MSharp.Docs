@@ -365,7 +365,7 @@ namespace Modules
 
             Field(x => x.Contract).Control(ControlType.FileUpload).Mandatory(value: false);
 
-            Field(x => x.ContractStartDate).Control(ControlType.DateAndTimePicker);
+            Field(x => x.ContractStartDate).Control(ControlType.DatePicker);
 
             Button("Cancel").CausesValidation(false).Icon(FA.Backward)
                 .OnClick(x => x.CloseModal());

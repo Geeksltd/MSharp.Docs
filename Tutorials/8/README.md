@@ -503,7 +503,7 @@ namespace Modules
 
             Field(x => x.Developer).Control(ControlType.DropdownList);
 
-            Field(x => x.Date);
+            Field(x => x.Date).Control(ControlType.DatePicker);
 
             Field(x => x.StartTime);
 
