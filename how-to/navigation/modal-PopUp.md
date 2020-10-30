@@ -6,66 +6,61 @@ You want a page to open as a Pop-up instead of redirecting the user. Modal pages
 
 ## Implementation
 
-1) Give the page a Modal Layout – Msharp features a predesigned layout AdminDefaultModal
+1) Give the page a Modal Layout – M# features a predesigned layout `AdminDefaultModal`
 
 ```csharp
-
-    public class EnterPage : SubPage<ContactsPage>
+public class EnterPage : SubPage<ContactsPage>
+{
+    public EnterPage()
     {
-        public EnterPage()
-        {
-            Layout(Layouts.AdminDefaultModal);
-            Add<Modules.ContactForm>();
-        }
+        Layout(Layouts.AdminDefaultModal);
+        Add<Modules.ContactForm>();
     }
-
+}
 ```
 
-2) When navigating to the page, open it as a Popup() instead of using Go(). 
+2) When navigating to the page, open it as a `Popup()` instead of using `Go()`. 
 
-   ModalWidth() can be used to set the width in px.
+   `ModalWidth()` can be used to set the width in px.
 
 ```csharp
+public ContactsList()
+{
+    HeaderText("Contacts");
 
-        public ContactsList()
-        {
-            HeaderText("Contacts");
+    Column(x => x.Name);
+    Column(x => x.Phone);
 
-            Column(x => x.Name);
-            Column(x => x.Phone);
+    ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
+        .OnClick(x=> x.PopUp<Contact.EnterPage>().Send("item", "item.ID"));
 
-            ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
-                .OnClick(x=> x.PopUp<Contact.EnterPage>().Send("item", "item.ID"));
-
-            Button("New Contact").Icon(FA.Plus)
-                .OnClick(x => x.PopUp<Contact.EnterPage>().ModalWidth("300"));
-        }
+    Button("New Contact").Icon(FA.Plus)
+        .OnClick(x => x.PopUp<Contact.EnterPage>().ModalWidth("300"));
+}
 ```
 
 3) When Navigating away from the pop up, make sure the Modal is closed instead of being redirected
 
 ```csharp
+public ContactForm()
+{
+    HeaderText("Contact details");
 
-        public ContactForm()
-        {
-            HeaderText("Contact details");
+    Field(x => x.Name).Control(ControlType.Textbox);
+    Field(x => x.Phone).Control(ControlType.Textbox);
 
-            Field(x => x.Name).Control(ControlType.Textbox);
-            Field(x => x.Phone).Control(ControlType.Textbox);
+    Button("Cancel")
+        .CausesValidation(false)
+        .OnClick(x => x.CloseModal());
 
-            Button("Cancel")
-                .CausesValidation(false)
-                .OnClick(x => x.CloseModal());
-
-            Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Ajax);
-            });
-        }
-
+    Button("Save").IsDefault().Icon(FA.Check)
+    .OnClick(x =>
+    {
+        x.SaveInDatabase();
+        x.GentleMessage("Saved successfully.");
+        x.CloseModal(Refresh.Ajax);
+    });
+}
 ```
 
-Adding Refresh.Ajax to CloseModal() means the parent page is reloaded when the modal page is closed.
+Adding `Refresh.Ajax` to `CloseModal()` means the parent page is reloaded when the modal page is closed.
