@@ -235,7 +235,7 @@ namespace Modules
             {
                 x.SaveInDatabase();
                 x.GentleMessage("Saved successfully.");
-                x.CloseModal();
+                x.CloseModal(Refresh.Full);
             });
         }
     }
@@ -374,7 +374,7 @@ namespace Modules
             {
                 x.SaveInDatabase();
                 x.GentleMessage("Saved successfully.");
-                x.CloseModal();
+                x.CloseModal(Refresh.Full);
             });
         }
     }
