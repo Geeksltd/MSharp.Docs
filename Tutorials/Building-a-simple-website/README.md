@@ -136,7 +136,7 @@ Well it’s a class with just a constructor method which is housing some code wr
 
 Basically the layout method introduces the layout files to the M# compiler which can be used on M#’s page classes. The PageSettings method defines placeholders on layout files which can be filled by M#’s modules. Go ahead and check the AdminDefault.cshtml file located on the website project > views > layouts you’ll see a div with the left-panel class which looks like it is loading an Asp.net Component View if some conditions are right. The function of PageSettings is kinda like razor sections.
 
-In a nutshell, on #Domain’s  project.cs we define some global options and variables which we can then use on other solution’s project especially the #UI project.
+In a nutshell, on #Model’s project.cs we define some global options and variables which we can then use on other solution’s project especially the #UI project.
 
 Now let’s focus our attention to one of entities, I want you to open these 3 files:
 
