@@ -54,7 +54,7 @@ namespace ViewModel
 }
 ```
 
-- `MemoryFilterCode()` - Insert the code to control the search functionality. Use info. to refer to the filter properties generated above. This code is also generated in the Controller, in the GetSource() method:
+- `MemoryFilterCode()` - Insert the code to control the search functionality. Use `info.` to refer to the filter properties generated above. This code is also generated in the Controller, in the `GetSource()` method:
 
 ```csharp
 async Task<IEnumerable<Gadget>> GetSource(vm.GadgetsList info)

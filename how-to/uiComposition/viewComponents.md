@@ -30,7 +30,7 @@ When you add a module to multiple pages MSharp removes the module’s code from 
         }
 ```
 
-Now Msharp will generate all the necessary controllers and bindings without it needing to be explicitly added to a page in the UI. ViewComponent controllers are generated in Website>Views>Modules>Components.
+Now MSharp will generate all the necessary controllers and bindings without it needing to be explicitly added to a page in the UI. ViewComponent controllers are generated in Website > Views > Modules > Components.
 
 Now it can instead be invoked from a Layout page or from inside Markup.
 
@@ -38,6 +38,6 @@ Now it can instead be invoked from a Layout page or from inside Markup.
     <footer>@await Component.InvokeAsync(typeof(Footer))</footer>
 ```
 View Components are particularly suited to
--	Dynamic Menus
--	Login Panels
+-	Dynamic menus
+-	Login panels
 -	Shopping carts 

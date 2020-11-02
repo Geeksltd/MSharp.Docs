@@ -39,7 +39,7 @@ public ContactsList()
 }
 ```
 
-3) When Navigating away from the pop up, make sure the Modal is closed instead of being redirected
+3) When navigating away from the pop up, make sure the Modal is closed instead of being redirected
 
 ```csharp
 public ContactForm()
@@ -54,12 +54,12 @@ public ContactForm()
         .OnClick(x => x.CloseModal());
 
     Button("Save").IsDefault().Icon(FA.Check)
-    .OnClick(x =>
-    {
-        x.SaveInDatabase();
-        x.GentleMessage("Saved successfully.");
-        x.CloseModal(Refresh.Ajax);
-    });
+        .OnClick(x =>
+        {
+            x.SaveInDatabase();
+            x.GentleMessage("Saved successfully.");
+            x.CloseModal(Refresh.Ajax);
+        });
 }
 ```
 
