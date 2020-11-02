@@ -4,7 +4,7 @@
 
 In some cases, even if no image exists in an entity when you are displaying it, you might want to show some default image.
 This is the case for example when a user has no profile picture.
-M# Allows you to choose different default images for different entities easily.
+M# allows you to choose different default images for different entities easily.
 
 ## Implementation
 

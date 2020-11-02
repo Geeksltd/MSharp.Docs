@@ -1,6 +1,6 @@
 # Custom location for a button
 
-By Default Links and Buttons are wrapped in a div element with the “buttons-row” class, which will be rendered at the bottom of the module, you can render them at the top of the module by calling ButtonsLocation(string value) method and set its input to “Top” or “Bottom”. Like below:
+By default Links and Buttons are wrapped in a div element with the `buttons-row` class, which will be rendered at the bottom of the module, you can render them at the top of the module by calling `ButtonsLocation(string value)` method and set its input to `Top` or `Bottom`. Like below:
 
 ```csharp
 
@@ -26,12 +26,12 @@ namespace Modules
             Link("Cancel").OnClick(x => x.Go<Admin.SlidesPage>());
             
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.Go<Admin.SlidesPage>();
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.Go<Admin.SlidesPage>();
+                });
         }
     }
 }
@@ -64,19 +64,17 @@ namespace Modules
             Button("Cancel").OnClick(x => x.Go<Admin.SlidesPage>());
             
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.Go<Admin.SlidesPage>();
-            })
-            .MarkupTemplate(@"
-                <div class='custom-button-template'>
-                    [#Button#]
-                </div>
-            ");
-
-            
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.Go<Admin.SlidesPage>();
+                })
+                .MarkupTemplate(@"
+                    <div class='custom-button-template'>
+                        [#Button#]
+                    </div>
+                ");
         }
     }
 }

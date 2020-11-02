@@ -2,7 +2,7 @@
 
 ## Problem
 
-Sometimes, you need to show a thumbnail image of a bigger image. this thumbnail should be same as original image but more optimized with smaller size and dimension.
+Sometimes, you need to show a thumbnail image of a bigger image. This thumbnail should be same as original image but more optimized with smaller size and dimension.
 
 ## Implementation
 

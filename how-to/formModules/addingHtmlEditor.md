@@ -2,7 +2,7 @@
 
 ## Problem
 
-Sometimes you need to provide the capability to create formattedtext to your users.
+Sometimes you need to provide the capability to create formatted text to your users.
 The way to format text on the web is using HTML tags but since the users might not know HTML and it is not convenient to write HTML for them even if they know it, you usually use HTML Editors which provide rich text capabilities similar in spirit to what Microsoft Word and wordpad have.
 M# allows you to place rich text editors in your forms easily.
 

@@ -1,6 +1,6 @@
 # Handling files and documents
 
-## problem
+## Problem
 
 Some entities need to store files with them. 
 Users of a job/talent seeking website need to store their resumes for potential employers with them.

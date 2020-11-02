@@ -5,7 +5,7 @@
 Sometimes you want to get a time value from the user but don't want to store it as a time object in your entity.
 In these cases you should explicitly choose to have a time picker in your form for the property.
 
-## implementation
+## Implementation
 
 You should call the `Control()` method on your field and pass the `ControlType.TimePicker` value to it.
 

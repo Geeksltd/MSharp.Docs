@@ -5,7 +5,7 @@
 Sometimes your data is stored in an external database so you  have to connect to that database to read/modify it.
 It might be accessed using a REST API or stored in another database of your company.
 
-sometimes it is already in a database table in your SQL Server database and you don't want the M# code generator to generate database tables for you.
+Sometimes it is already in a database table in your SQL Server database and you don't want the M# code generator to generate database tables for you.
 
 You still want the DAL code and entity code but not the table generation queries.
 It might be the case that the data for the table is imported or is migrated from an old version of the application or ...
