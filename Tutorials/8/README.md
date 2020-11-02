@@ -98,7 +98,10 @@ namespace Domain
 
             Time("End time").Mandatory();
 
-            Decimal("Hours").Mandatory().Calculated().Getter("(decimal)EndTime.Subtract(StartTime).TotalHours.Round(2)");
+            Decimal("Hours")
+                .Mandatory()
+                .Calculated()
+                .Getter("(decimal)EndTime.Subtract(StartTime).TotalHours.Round(2)");
 
             String("Details").Lines(5).HelpText("Help information so the user knows what to write here.");
         }
@@ -107,6 +110,8 @@ namespace Domain
 ```
 
 Time log class has an association with "Project" and "Developer", because we need to delete all related time logs when a developer delete, we have changed the default cascade action by calling this method: `.OnDelete(CascadeAction.CascadeDelete)`. "Hours" property is a calculated property and as requirement told us, we have calculated total hours. "Details" property has a new method, `HelpText()` add an information icon on UI and when a user click on that icon a simple text will be displayed for the user.
+
+> **Note**:  If you feel you need intellisense to write the expression in calculated properties, you might go to the generated code for the model class, write your property there using intellisense, and then copy back the expression in the model class. Please note that generated code is overwritten every time model is build. We add the property there for using intellisense and then delete it after we get the expression.
 
 Now open developer class again and change it like below:
 
@@ -123,15 +128,23 @@ namespace Domain
 
             String("Last name");
 
-            String("Full name").Calculated().Getter("FirstName + ' ' + LastName");
+            String("Full name")
+                .Calculated()
+                .Getter("FirstName + ' ' + LastName");
 
-            String("Latest work").Mandatory().Calculated().Getter("this.TimeLogs.Max(x => x.Date).Get(x => x?.ToShortDateString()).GetAwaiter().GetResult()");
+            String("Latest work")
+                .Mandatory()
+                .Calculated()
+                .Getter("TimeLogs.Max(x => x.Date).Get(x => x?.ToShortDateString()).GetAwaiter().GetResult()");
 
             ToStringExpression("FullName");
 
             InverseAssociate<TimeLog>("Time logs", "Developer");
 
-            Decimal("Total work").Mandatory().Calculated().Getter("TimeLogs.GetList().Sum(c => c.Hours).GetAwaiter().GetResult()");
+            Decimal("Total work")
+                .Mandatory()
+                .Calculated()
+                .Getter("TimeLogs.GetList().Sum(c => c.Hours).GetAwaiter().GetResult()");
         }
     }
 }
