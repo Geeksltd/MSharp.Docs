@@ -6,7 +6,7 @@ Some entities need to contain images.
 An image is a file but M# can support additional features for an image.
 In this page we'll talk about how M# helps you to work with images.
 
-## implementation
+## Implementation
 
 When defining your entity, `SecureImage` allows you to have an image file as a property which can be entered in forms and displayed and ...
 
@@ -137,6 +137,6 @@ There are multiple things which worth discussing:
 
 - `Blob` data-type in M# is used to represent binary data like file content
 - There is a `Blob` property and a field with the same type. The field stores the actual data and the property contains the logic to check if the content is changing to null or changing from null to a value, correct file attachment/detachments happen.
-- The `Blob` property named `Photo` has a `[SecureFile]` attribute and a `JsonIgnore]` attribute which tells `JSON.Net` to skip it when serializing the entity.
+- The `Blob` property named `Photo` has a `[SecureFile]` attribute and a `[JsonIgnore]` attribute which tells `JSON.Net` to skip it when serializing the entity.
 - When cloning the entity, the `Photo` property is cloned separately and then the clone is referenced by the cloned object. This is because the shallow copying of the object which is used for cloning will not copy clone the blob automatically.
 - There are methods in the setter of the `Photo` property for optimizing the image which will be described in the optimizations page.

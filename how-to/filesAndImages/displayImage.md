@@ -1,4 +1,4 @@
-# Displaying an images
+# Displaying an image
 
 ## Problem
 
@@ -53,5 +53,5 @@ namespace Modules
 }
 ```
 
-`@item.Photo` means the `Photo` property of the current image.
+`@item.Photo` means the `Photo` property of the current product.
 As you can see `ImageColumn` in combination with the `ImageUrl()` method allows us to display images in our UI modules.

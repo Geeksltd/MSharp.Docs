@@ -6,7 +6,7 @@ Sometimes, you need to show a file to the end users even if they are unauthorize
 
 #### Example
 
-Let's say we have a product which has a name, an image and thumbnail properties. we what to show the thumbnail of the project to anyone and we don't plan to have any security for this property.
+Let's say we have a product which has a name, an image and thumbnail properties. We what to show the thumbnail of the project to anyone and we don't plan to have any security for this property.
 
 ```csharp
 using MSharp;
@@ -26,4 +26,4 @@ namespace Domain
 
 ```
 
-As you can see, we have used `.SecureAccess()` method which will manage file access permission. by setting `false` there would be no protection on the file and it's available for anyone.
+As you can see, we have used `.SecureAccess()` method which will manage file access permission. By setting `false` there would be no protection on the file and it's available for anyone.

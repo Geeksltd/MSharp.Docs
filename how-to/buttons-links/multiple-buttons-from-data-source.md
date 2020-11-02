@@ -51,9 +51,9 @@ using MSharp;
 
 namespace Modules
 {
-    class CategoryViw : ViewModule<Domain.Category>
+    class CategoryView : ViewModule<Domain.Category>
     {
-        public CategoryViw()
+        public CategoryView()
         {
             HeaderText("Category details");
             
@@ -82,9 +82,9 @@ using MSharp;
 
 namespace Modules
 {
-    class CategoryViw : ViewModule<Domain.Category>
+    class CategoryView : ViewModule<Domain.Category>
     {
-        public CategoryViw()
+        public CategoryView()
         {
             HeaderText("Category details");
             
@@ -92,7 +92,7 @@ namespace Modules
 
             Button("Product")
                 // item refers the current category
-                .RepeatDataSource("item.Products.GetList().Result") 
+                .RepeatDataSource("await item.Products.GetList()") 
                 // option refers to the product, check the generated cshtml
                 .Text("C#:option.Name")
                 .OnClick(x=> {

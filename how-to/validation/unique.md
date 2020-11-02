@@ -16,7 +16,7 @@ If no entity with the specified property cannot be found, `null` will be returne
 #### Example
 
 Let's define a product class which its name should be unique.
-no two products with the same name should be added to our system.
+No two products with the same name should be added to our system.
 
 ```csharp
 using MSharp;

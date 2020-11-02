@@ -41,7 +41,6 @@ namespace Modules
                     x.RefreshPage();
                 });
 
-
             Button("New Slide")
                 .Icon(FA.Plus)
                 .IsDefault()

@@ -72,5 +72,5 @@ As you can see the difference between these is only the enum type which could be
 
 ## Remarks
 
-- For fields with many values, dropdown or AutoComplete are much better options
+- For fields with many values, dropdown or AutoComplete are much better options.
 - The text for true, false and null values of the nullable bool can be changed when defining the properties in the entity using `TrueText()`, `FalseText()` and `NullText()` methods.

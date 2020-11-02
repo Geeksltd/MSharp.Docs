@@ -9,7 +9,7 @@ When you design a website, the images can be optimized by the artist working on 
 Since M# always thinks of your needs, it has methods to optimize images and deal with this issue.
 Using them is as easy as it possibly could be and we will take a look at the feature here.
 
-## implementation
+## Implementation
 
 When you define a `SecureImage` property in an entity, you can use the following methods on the property to optimize it.
 
@@ -92,7 +92,7 @@ public partial class Product : GuidEntity
 }
 ```
 
-In the setter of the `Photo` property, the `OptimizeImage()` method is called which optimizes the imagebased on the specified settings before we actually store it in the entity.
+In the setter of the `Photo` property, the `OptimizeImage()` method is called which optimizes the image based on the specified settings before we actually store it in the entity.
 
 ## Remarks
 
