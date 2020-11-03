@@ -70,7 +70,9 @@ namespace Domain
 
             String("Postcode");
 
-            String("Address").Calculated().Getter("new[] { AddressLine1, AddressLine2, Town, Postcode }.ToString(\", \")");
+            String("Address")
+                .Calculated()
+                .Getter("new[] { AddressLine1, AddressLine2, Town, Postcode }.ToString(\", \")");
 
             InverseAssociate<SupplierService>("Services", "Supplier");
         }
@@ -95,7 +97,7 @@ namespace Domain
 
             Money("Price");
 
-            ToStringExpression("ServiceType.Name");
+            ToStringExpression("ServiceType?.Name");
         }
     }
 }
