@@ -2,7 +2,7 @@
 
 ## Problem
 
-sometimes you have fields with limited possible set of values but the user should be able to choose multiple of them.
+Sometimes you have fields with limited possible set of values but the user should be able to choose multiple of them.
 In these cases you will need a list of checkboxes which the user can tick.
 
 ## Implementation
@@ -13,7 +13,7 @@ To make a field a list of checkboxes, you should call the `Control()` method on 
 - `HorizontalCheckBoxes`
 
 The field itself should be a many to many relationship so it can store multiple values and you should return the `%PropertyName%Links` instead of the `%PropertyName%` itself.
-so if your many to many relation is named `Category`, you should return `CategoryLinks` in the lambda expression of the `Field()` method.
+So if your many to many relation is named `Category`, you should return `CategoryLinks` in the lambda expression of the `Field()` method.
 An example will make it much more clear.
 
 #### Example

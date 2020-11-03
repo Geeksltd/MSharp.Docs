@@ -46,5 +46,5 @@ The generated table is called staff and the column names are what we chose as we
 
 ## Remarks
 
-- The database namespace which M# uses as prefix for tables is `dto`, that is not changed when setting custom table names
+- The database namespace which M# uses as prefix for tables is `dbo`, that is not changed when setting custom table names
 - If you want to generate a data access layer class for an entity which connects to an existing table, usually you need to define all column names and the table name unless your existing database uses M# conventions.

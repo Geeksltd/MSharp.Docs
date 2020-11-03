@@ -59,7 +59,7 @@ For example `"book Category"` would become `"BookCategory"`.
 
 #### Generated Code
 
-Thegenerated code for the `Category` entity now contains a method which loads all of  the books which have ths category from the database.
+The generated code for the `Category` entity now contains a method which loads all of  the books which have this category from the database.
 
 ```csharp
     public partial class Category : GuidEntity
