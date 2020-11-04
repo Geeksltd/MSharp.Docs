@@ -6,7 +6,7 @@ You have a module shown on multiple pages. For example, you have a Patient View 
 
 ## Implementation
 
-There are 2 different ways to do this
+There are 2 different ways to do this:
 
 1) Simply Add the Module to multiple Pages.
 
@@ -20,14 +20,14 @@ When you add a module to multiple pages MSharp removes the module’s code from 
 2) Make the module a View Component. You do not always want to Add() the module to individual pages.
 
 ```csharp
-        public Footer()
-        {
-            IsViewComponent();
+    public Footer()
+    {
+        IsViewComponent();
 
-            /*
-             * other code
-             */
-        }
+        /*
+         other code
+        */
+    }
 ```
 
 Now Msharp will generate all the necessary controllers and bindings without it needing to be explicitly added to a page in the UI. ViewComponent controllers are generated in Website>Views>Modules>Components.
@@ -35,7 +35,7 @@ Now Msharp will generate all the necessary controllers and bindings without it n
 Now it can instead be invoked from a Layout page or from inside Markup.
 
 ```csharp
-    <footer>@await Component.InvokeAsync(typeof(Footer))</footer>
+<footer>@await Component.InvokeAsync(typeof(Footer))</footer>
 ```
 View Components are particularly suited to
 -	Dynamic Menus

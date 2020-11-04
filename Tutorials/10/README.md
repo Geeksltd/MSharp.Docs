@@ -3,7 +3,7 @@
 In this tutorial you will learn:
 
 - List data source
-- View module property
+- ViewModel property
 - Link button
 
 ## Requirements
@@ -236,7 +236,7 @@ namespace Modules
     {
         public AgencyView()
         {
-            HeaderText("Agency @item.Name");
+            HeaderText("Agency: @item.Name");
 
             Field(x => x.Notes);
         }
@@ -297,8 +297,6 @@ namespace Modules
         public BookingsList()
         {
             HeaderText("Bookings");
-
-            Column(x => x.Agency);
 
             Column(x => x.Customer);
 
