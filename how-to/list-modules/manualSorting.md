@@ -62,9 +62,9 @@ To do this, add a method GetSiblings() to the Domain Logic for your Entity.
 
 This method must:
 
--	be called GetSiblings
--	be public
--	return a Task which returns an Enumerable of your Entity
+-	Be called GetSiblings
+-	Be public
+-	Return a Task which returns an Enumerable of your Entity
 
 If this method exists MSharp will automatically use it to only apply unique order to siblings.
 

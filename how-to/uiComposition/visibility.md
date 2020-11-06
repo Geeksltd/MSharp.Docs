@@ -10,9 +10,9 @@ This allows for more dynamic content and less repetition of code.
 
 Visibility can be changed on a variety of elements, including columns, buttons, menu items and whole modules.
 
-VisibleIf() can be invoked by writing the desired code in a string, this code is then generated in the Cshtml file.
+`VisibleIf()` can be invoked by writing the desired code in a string, this code is then generated in the Cshtml file.
 
-Often you want to limit visibility based on the Users role, in this case you can invoke VisibleIf() using AppRole. 
+Often you want to limit visibility based on the Users role, in this case you can invoke `VisibleIf()` using `AppRole`. 
 
 ## Examples
 
@@ -24,7 +24,7 @@ If a Contacts List is filtered by query string “category” the Category colum
     Column(x => x.Category).VisibleIf("info.Category == null");
 ```
 
-To only effect the visibility of certain cells in a column, depending on item, use CellVisibleIf().
+To only effect the visibility of certain cells in a column, depending on item, use `CellVisibleIf()`.
 
 ### Using AppRole
 
@@ -50,4 +50,4 @@ Only Admin Users can view the button column, a button should only be visible if 
         .OnClick(x => x.Go<ContactsPage>().Send("item", "item.ID"));
 ```
 
-On a button column VisibleIf() affects the visibility of the  individual buttons, so to hide the column use ColumnVisibleIf(). 
+On a button column `VisibleIf()` affects the visibility of the individual buttons, so to hide the column use `ColumnVisibleIf()`. 

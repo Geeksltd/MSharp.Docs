@@ -26,6 +26,6 @@ In this example, Products are sorted by Category in reverse alphabetical order a
 This causes the following code to be generated in the GetSource method of the controller
 
 ```csharp
-    result = result.OrderByDescending(item => item.Wearer)
+    result = result.OrderByDescending(item => item.Category)
                    .ThenBy(item => item.WeightInKg);
 ```

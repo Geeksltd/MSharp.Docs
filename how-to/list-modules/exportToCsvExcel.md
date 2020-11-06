@@ -24,4 +24,4 @@ If you wish you can change the file name to something more appropriate using Com
 
 ```
 
-On clicking this button the User will download file “My Contacts”, this will be an excel or csv file with all the data and layout of the list visible in the browser window, including any active search filters.
+By clicking on this button the User will download file “My Contacts”, this will be an excel or csv file with all the data and layout of the list visible in the browser window, including any active search filters.
