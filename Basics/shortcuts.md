@@ -23,19 +23,37 @@ Button("Save")
 ```
 
 ```csharp
-button.Save();
-
-// Shortcut to create:
-Button("Save").OnClick(x => { x.SaveInDatabase(); x.ReturnToPreviousPage(); });
-```
-
-```csharp
 button.CancelSave();
 
 // Shortcut to the two above:
 button.Cancel();
 button.Save();
 ```
+
+```csharp
+button.Delete();
+
+// Shortcut to create:
+Button("Delete", file, line)
+    .VisibleIf(CommonCriterion.IsEditMode_Item_IsNew)
+    .ConfirmQuestion("Are you sure you want to delete it?")
+       .OnClick(x =>
+       {
+           x.DeleteItem();
+           x.GentleMessage("Deleted successfully.");
+           x.ReturnToPreviousPage();
+       });
+```
+
+```csharp
+button.DeleteCancelSave();
+
+// Shortcut to the three above:
+button.Delete();
+button.Cancel();
+button.Save();
+```
+
 
 ## Form Module (hosted in Modal)
 
