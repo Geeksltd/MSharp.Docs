@@ -10,10 +10,9 @@ When arranged in a methodical and hierarchical structure, menus enable easy navi
 
 Fortunately MSharp makes Menus easy.
 
-Menus can be added to UI -> Modules. Right clicking on the menu folder will allow you to add a new M# menu item, which provides a handy template.
+Menus can be added to **UI -> Modules**. Right clicking on the menu folder will allow you to add a new M# menu item, which provides a handy template.
 
 ```csharp
-
 using MSharp;
 
 namespace Modules
@@ -48,23 +47,21 @@ There are many methods which can be applied to the menu, here extra CSS classes 
 
 Useful Methods for Items include:
 
-- OnClick(): Determines the destination of the link
+- `OnClick()`: Determines the destination of the link
 
-- VisibleIf() : especially useful with AppRole allowing for a different user experience depending on the role of the User.
+- `VisibleIf()` : especially useful with `AppRole` allowing for a different user experience depending on the role of the User.
 
-- Icon(FA icon) or Icon(string value): to add an icon to the button, M# natively supports Font Awesome.
+- `Icon(FA icon)` or `Icon(string value)`: to add an icon to the button, M# natively supports Font Awesome.
 
-Once created the Menu can be Set() on any Pages you want, the use of root pages is very useful in this endeavour. 
+Once created, the Menu can be `Set()` on any Pages you want, the use of root pages is very useful in this endeavour. 
 
 ```csharp
+public InventoryPage()
+{
+    Set(PageSettings.LeftMenu, "AdminInventoryMenu");
 
-        public InventoryPage()
-        {
-            Set(PageSettings.LeftMenu, "AdminInventoryMenu");
-
-            OnStart(x => x.Go<Inventory.CostumesPage>().RunServerSide());
-        }
-
+    OnStart(x => x.Go<Inventory.CostumesPage>().RunServerSide());
+}
 ```
 
-PageSettings include TopMenu, LeftMenu and SubMenu which provide simple styling as standard but you can add your own if you fancy a challenge.
+`PageSettings` include `TopMenu`, `LeftMenu` and `SubMenu` which provide simple styling as standard but you can add your own if you fancy a challenge.

@@ -58,6 +58,4 @@ public Status Status
 | .MaxCardinality(int? value)            | `Associate<Status>("Status") .MaxCardinality(5);` | Max cardinality will have no effect on the database column definition. M# will generate a new validation rule to make sure that your instance has not more than five statuses. |
 | .OnDelete(CascadeAction value)         | `Associate<Status>("Status") .OnDelete(CascadeAction.CascadeDelete);` | This attribute allows you to define a specific action when the associated instance is deleted. `Throw warning: `This is the default behaviour of the association, the Status cannot be deleted if it is associated to an Employee and a ValidationException is thrown. `Cascade delete:`If the Status is deleted all employees with this status will also be deleted. `Set to null:`If the Status is deleted all employees associated to this Status will have a null status. `Call ReleaseXXX method:`This will allow you to have the full control on the behaviour, in our example you will have to create the method: `public void ReleaseStatus()`. |
 
-> Notice
-
-In some scenarios, you may have `InverseAssociate()` on another side of the relationship and in this case, you should use `MinCardinality()` and `MaxCardinality()` only in the inverse side after `InverseAssociate()`.
+> **Note** : In some scenarios, you may have `InverseAssociate()` on another side of the relationship and in this case, you should use `MinCardinality()` and `MaxCardinality()` only in the inverse side after `InverseAssociate()`.
