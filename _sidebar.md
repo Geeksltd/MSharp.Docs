@@ -275,6 +275,7 @@
     - [Page Settings](UI/PageSettings.md)
 
 - Tips and tools
+  - [Shortcut methods](Basics/shortcuts.md)
   - [Migration from legacy M#](Basics/Migration.md)
   - [VS Extensions](Basics/VSIX.md)
   - [CLI](Basics/CLI.md)
