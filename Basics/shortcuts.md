@@ -1,4 +1,4 @@
-# Shortcuts
+# Shortcut methods
 
 ## Form Module
 In a form module, you can use the following shortcut methods for typical definitions:
@@ -34,7 +34,7 @@ button.Save();
 button.Delete();
 
 // Shortcut to create:
-Button("Delete", file, line)
+Button("Delete")
     .VisibleIf(CommonCriterion.IsEditMode_Item_IsNew)
     .ConfirmQuestion("Are you sure you want to delete it?")
        .OnClick(x =>
@@ -74,4 +74,18 @@ button.ModalSave();
                     x.SaveInDatabase();
                     x.CloseModal(Refresh.Full);
                 });
+```
+
+
+## List Module
+In a list module, you can use the following shortcut methods for typical definitions:
+
+```csharp
+column.Edit(default(MyEditPage));
+
+// Shortcut to create:
+Button("Edit").Icon(FA.Edit).NoText()
+     .HeaderText("Actions")
+     .GridColumnCssClass("actions")
+     .OnClick(x => x.Go<TPage>().SendItemId().SendReturnUrl());
 ```
