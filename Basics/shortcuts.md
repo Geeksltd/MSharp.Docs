@@ -95,3 +95,25 @@ button.Add<MyEnterPage>();
 ListButton("Add").Icon(FA.Plus)
    .OnClick(x => x.Go<MyEnterPage>().SendReturnUrl());
 ```
+
+```csharp
+button.Export(ExportFormat.Csv);
+
+// Shortcut to create:
+Button("Export").OnClick(x => x.Export(ExportFormat.Csv));
+```
+
+```csharp
+search.Icon();
+
+// Shortcut to create:
+SearchButton("Search").NoText().Icon(FA.Search).OnClick(x => x.Reload());
+```
+
+```csharp
+search.FullWithIcon();
+
+// Shortcut to create:
+var searchButton = search.Button("Search").NoText().Icon(FA.Search).OnClick(x => x.Reload());
+Search(GeneralSearch.AllFields).AfterControlAddon(searchButton.Ref);
+```
