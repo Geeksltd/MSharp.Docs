@@ -117,3 +117,10 @@ search.FullWithIcon();
 var searchButton = search.Button("Search").NoText().Icon(FA.Search).OnClick(x => x.Reload());
 Search(GeneralSearch.AllFields).AfterControlAddon(searchButton.Ref);
 ```
+
+```csharp
+column.Custom("Header", "c#:item.Blah");
+
+// Shortcut to create:
+CusomColumn().HeaderText("Header").DisplayExpression("c#:item.Blah");
+```
