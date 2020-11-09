@@ -87,5 +87,5 @@ column.Edit(default(MyEditPage));
 Button("Edit").Icon(FA.Edit).NoText()
      .HeaderText("Actions")
      .GridColumnCssClass("actions")
-     .OnClick(x => x.Go<TPage>().SendItemId().SendReturnUrl());
+     .OnClick(x => x.Go<MyEditPage>().SendItemId().SendReturnUrl());
 ```
