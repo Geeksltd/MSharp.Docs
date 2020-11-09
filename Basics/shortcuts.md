@@ -37,12 +37,12 @@ button.Delete();
 Button("Delete")
     .VisibleIf(CommonCriterion.IsEditMode_Item_IsNew)
     .ConfirmQuestion("Are you sure you want to delete it?")
-       .OnClick(x =>
-       {
-           x.DeleteItem();
-           x.GentleMessage("Deleted successfully.");
-           x.ReturnToPreviousPage();
-       });
+    .OnClick(x =>
+    {
+        x.DeleteItem();
+        x.GentleMessage("Deleted successfully.");
+        x.ReturnToPreviousPage();
+    });
 ```
 
 ```csharp
@@ -53,7 +53,6 @@ button.Delete();
 button.Cancel();
 button.Save();
 ```
-
 
 ## Form Module (hosted in Modal)
 
@@ -68,24 +67,31 @@ Button("Cancel").OnClick(x => x.CloseModal());
 button.ModalSave();
 
 // Shortcut to create:
- return @this.Button("Save")
-                .OnClick(x =>
-                {
-                    x.SaveInDatabase();
-                    x.CloseModal(Refresh.Full);
-                });
+Button("Save")
+    .OnClick(x =>
+    {
+        x.SaveInDatabase();
+        x.CloseModal(Refresh.Full);
+    });
 ```
-
 
 ## List Module
 In a list module, you can use the following shortcut methods for typical definitions:
 
 ```csharp
-column.Edit(default(MyEditPage));
+column.Edit<MyEditPage>();
 
 // Shortcut to create:
 Button("Edit").Icon(FA.Edit).NoText()
      .HeaderText("Actions")
      .GridColumnCssClass("actions")
      .OnClick(x => x.Go<MyEditPage>().SendItemId().SendReturnUrl());
+```
+
+```csharp
+button.Add<MyEnterPage>();
+
+// Shortcut to create:
+ListButton("Add").Icon(FA.Plus)
+   .OnClick(x => x.Go<MyEnterPage>().SendReturnUrl());
 ```
