@@ -75,6 +75,20 @@ Button("Save")
     });
 ```
 
+```csharp
+button.ModalDelete();
+
+// Shortcut to create:
+Button("ModalDelete")
+    .ConfirmQuestion("Are you sure you want to delete it?")
+    .OnClick(x =>
+    {
+        x.DeleteItem();
+        x.GentleMessage("Deleted successfully.");
+        x.CloseModal(Refresh.Full);
+    });
+```
+
 ## List Module
 In a list module, you can use the following shortcut methods for typical definitions:
 
@@ -89,10 +103,10 @@ Button("Edit").Icon(FA.Edit).NoText()
 ```
 
 ```csharp
-button.Add<MyEnterPage>();
+button.New<MyEnterPage>();
 
 // Shortcut to create:
-ListButton("Add").Icon(FA.Plus)
+ListButton("New").Icon(FA.Plus)
    .OnClick(x => x.Go<MyEnterPage>().SendReturnUrl());
 ```
 
@@ -123,4 +137,12 @@ column.Custom("Header", "c#:item.Blah");
 
 // Shortcut to create:
 CusomColumn().HeaderText("Header").DisplayExpression("c#:item.Blah");
+```
+
+
+```csharp
+column.Link(x => x.Company);
+
+// Shortcut to create:
+LinkColumn("c#:item.Company").HeaderText("Company")
 ```
