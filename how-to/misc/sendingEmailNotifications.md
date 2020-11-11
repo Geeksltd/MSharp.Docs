@@ -11,7 +11,7 @@ There are a number of steps to allow your application to send emails, however on
 1) Install Olive.Email on the Domain Project
 2)	Add SMTP Configuration
 3)	Enable Background Tasks
-4)	Add AddEmail() Service to Startup
+4)	Add `AddEmail()` Service to Startup
 5)	Add an Automated Task to Project
 6)	Add Entity, EmailMessage
 7)	Add Entity, EmailTemplate
@@ -55,8 +55,8 @@ In Website > appsettings.json add a section for Email
 ```
 
 Of Note:
- - Permitted – You can control who can receive emails from this application - Especially important during testing, to make sure you don’t accidentally send emails out to all the client’s users
- - SmtpHost, Username, Password – These are specific to the email account that physically sends the emails, it will not work without them. Eventually this should be set up with a Client email account but for testing you could use a test Gmail account you have access to. In this case use `"SmtpHost": "smtp.gmail.com"`.
+ - **Permitted** – You can control who can receive emails from this application - Especially important during testing, to make sure you don’t accidentally send emails out to all the client’s users
+ - **SmtpHost, Username, Password** – These are specific to the email account that physically sends the emails, it will not work without them. Eventually this should be set up with a Client email account but for testing you could use a test Gmail account you have access to. In this case use `"SmtpHost": "smtp.gmail.com"`.
  - If using a Gmail account ensure that you have enabled Less Secure App Access, this can be found in the Account Settings under Security.
 
 
@@ -64,29 +64,29 @@ Of Note:
 
 While in appsettings.json ensure that Automated.Tasks are set to "Enabled": true. This is often turned off during testing and once you have checked emails are sending correctly you can set it back to false.
 
-### 4) Add AddEmail() Service to Startup.
+### 4) Add `AddEmail()` Service to Startup.
 
-In Website > app_Start > Startup.cs you will need to add the AddEmail() service to ConfigureServices().
+In **Website > app_Start > Startup.cs** you will need to add the `AddEmail()` service to `ConfigureServices()`.
 
 ```csharp
-    public override void ConfigureServices(IServiceCollection services)
-    {
-        base.ConfigureServices(services);
+public override void ConfigureServices(IServiceCollection services)
+{
+    base.ConfigureServices(services);
 
-        services.AddDataAccess(x => x.SqlServer());
-        services.AddDatabaseLogger();
-        services.AddScheduledTasks();
-        services.AddEmail();
-        if (Environment.IsDevelopment())
-            services.AddDevCommands(x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
-    }
+    services.AddDataAccess(x => x.SqlServer());
+    services.AddDatabaseLogger();
+    services.AddScheduledTasks();
+    services.AddEmail();
+    if (Environment.IsDevelopment())
+        services.AddDevCommands(x => x.AddTempDatabase<SqlServerManager, ReferenceData>());
+}
 ```
 
-This extension implements IEmailOutbox and handles the sending of emails saved in the database. You will need to use the Olive.Email library.
+This extension implements `IEmailOutbox` and handles the sending of emails saved in the database. You will need to use the **Olive.Email** library.
 
 ### 5)	Add an Automated Task to Project
 
-In #Model > Project.cs you will need to add a new automated task. This Task will check for emails in the database every minute and send any due to be sent.
+In **#Model > Project.cs** you will need to add a new automated task. This Task will check for emails in the database every minute and send any due to be sent.
 
 ```csharp
     AutoTask("Send emails").Every(1, TimeUnit.Minute)
@@ -100,7 +100,7 @@ Your application is now capable of sending emails, you just need to make them.
 
 ### 6) Add Entity, EmailMessage
 
-Add a new Entity, EmailMessage to the Model. This EmailMessage will implement IEmailMessage and will therefore require the following properties:
+Add a new Entity, `EmailMessage` to the Model. This `EmailMessage` will implement `IEmailMessage` and will therefore require the following properties:
 
 ```csharp
     public EmailMessage()
@@ -122,7 +122,7 @@ Add a new Entity, EmailMessage to the Model. This EmailMessage will implement IE
         Int("Retries").Mandatory();
         DateTime("Sendable date").Default("c#:LocalTime.Now").Mandatory();
         Bool("Html").Mandatory();
-        }
+    }
 ```
 
 ### 7) Add Entity, EmailTemplate
@@ -152,7 +152,7 @@ This is done in the same way you would initialise an Enum type.
 
 If you have not already added an Instance Accessor for this template, go back to Email Template in the Model and add one.
 
-In Domain > [DEV-SCRIPTS] > ReferenceData.cs create a new async task that will create all the email templates that you require.
+In **Domain > [DEV-SCRIPTS] > ReferenceData.cs** create a new async task that will create all the email templates that you require.
 
 ```csharp
     async Task CreateEmailTemplates()
@@ -167,7 +167,7 @@ In Domain > [DEV-SCRIPTS] > ReferenceData.cs create a new async task that will c
     }
 ```
 
-This method has to be added to those called from Create().
+This method has to be added to those called from `Create()`.
 
 ```csharp
     public async Task Create()
@@ -222,18 +222,18 @@ namespace Domain
 
 In this method, required data is taken and merged with the chosen template to create a new EmailMessage which is saved to the Database.
 
-MergeSubject() and MergeBody() can be found in the Olive.Email library.
+`MergeSubject()` and `MergeBody()` can be found in the **Olive.Email** library.
 
 ### 10)	Trigger this logic from the UI
 
-The original problem was to send an email when a booking was created, so you want to trigger the above logic when the booking is saved. You can add the code as follows to the Save Button on the BookingForm module.
+The original problem was to send an email when a booking was created, so you want to trigger the above logic when the booking is saved. You can add the code as follows to the Save Button on the `BookingForm` module.
 
 ```csharp
     Button("Save").IsDefault().Icon(FA.Check)
         .OnClick(x =>
         {
             x.SaveInDatabase();
-            x.CSharp("EmailService.SendBookingConfirmationEmail(info.Item);");
+            x.CSharp("await EmailService.SendBookingConfirmationEmail(info.Item);");
             x.GentleMessage("Saved successfully.");
             x.CloseModal(Refresh.Ajax);
         });
