@@ -256,7 +256,7 @@ namespace Modules
                 .ShowHeaderRow();
 
             LinkColumn("c#:item.Name").OnClick(x => x.Go<Country.ViewPage>()
-            .Send("item", "item.ID"));
+                .Send("item", "item.ID"));
 
             Column(x => x.IsEuropean).LabelText("Is European?");
 
@@ -290,12 +290,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Full);
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.CloseModal(Refresh.Full);
+                });
         }
     }
 }
@@ -318,12 +318,12 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.PopUp<Country.City.CityEnterPage>()
-                .Send("item", "item.ID")
-                .Send("country", "item.CountryId"));
+                    .Send("item", "item.ID")
+                    .Send("country", "item.CountryId"));
 
             Button("New City").Icon(FA.Plus)
                 .OnClick(x => x.PopUp<Country.City.CityEnterPage>()
-                .Send("country", "info.Country.ID"));
+                    .Send("country", "info.Country.ID"));
 
             ViewModelProperty("Country", "Country").FromRequestParam("item");
 
@@ -353,12 +353,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Full);
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.CloseModal(Refresh.Full);
+                });
         }
     }
 }
@@ -386,12 +386,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Full);
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.CloseModal(Refresh.Full);
+                });
         }
     }
 }
@@ -416,12 +416,12 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.PopUp<Country.Customer.CustomerEnterPage>()
-                .Send("item", "item.ID")
-                .Send("country", "item.CountryId"));
+                    .Send("item", "item.ID")
+                    .Send("country", "item.CountryId"));
 
             Button("Add Customer").Icon(FA.Plus)
                 .OnClick(x => x.PopUp<Country.Customer.CustomerEnterPage>()
-                .Send("country", "info.Country.ID"));
+                    .Send("country", "info.Country.ID"));
 
             ViewModelProperty("Country", "Country").FromRequestParam("item");
 
@@ -494,12 +494,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Full);
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.CloseModal(Refresh.Full);
+                });
         }
     }
 }

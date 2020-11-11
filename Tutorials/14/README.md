@@ -119,8 +119,7 @@ namespace Domain
 {
     public partial class Registration
     {
-
-        public void SendConfirmation()
+        public async Task SendConfirmation()
         {
             var template = EmailTemplate.RegistrationConfirmationEmail;
 
@@ -137,12 +136,12 @@ namespace Domain
                 Body = template.MergeBody(placeHolderValues)
             };
 
-            Database.Save(emailMessage);
+            await Database.Save(emailMessage);
         }
     }
 }
 ```
-After creating email template, you should used **.MergeSubject()** and **.MergeBody()** fluent method to replace any custom format with registration form entity properties, and in the end we used **Database.Save()** to save email.
+After creating email template, you should used `.MergeSubject()` and `.MergeBody()` fluent method to replace any custom format with registration form entity properties, and in the end we used `Database.Save()` to save email.
 
 Now you should initialize `EmailTemplate`, in the **Domain** project open `ReferenceData.cs` under **[DEV-SCRIPTS]** folder and add `CreateEmailTemplate()` method to the `Create()` method as shown below:
 
@@ -208,7 +207,6 @@ public class RegistrationPage : RootPage
         Add<Modules.RegistrationForm>();
     }
 }
-
 ```
 
 ### Creating required module of Register Page
@@ -240,14 +238,14 @@ namespace Modules
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.RunInTransaction(false);
-                x.SaveInDatabase();
-                x.CSharp("info.Item.SendConfirmation();");
-                x.Display("Saved successfully.")
-                .DisplayOnModule();
-            });
+                .OnClick(x =>
+                {
+                    x.RunInTransaction(false);
+                    x.SaveInDatabase();
+                    x.CSharp("await info.Item.SendConfirmation();");
+                    x.Display("Saved successfully.")
+                        .DisplayOnModule();
+                });
         }
     }
 }
