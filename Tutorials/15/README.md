@@ -188,8 +188,8 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.Go<Company.EnterPage>()
-                .Send("item", "item.ID")
-                .SendReturnUrl());
+                    .Send("item", "item.ID")
+                    .SendReturnUrl());
 
             Button("New Company").Icon(FA.Plus)
                 .OnClick(x => x.Go<Company.EnterPage>().SendReturnUrl());
@@ -286,8 +286,8 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.Go<Country.EnterPage>()
-                .Send("item", "item.ID")
-                .SendReturnUrl());
+                    .Send("item", "item.ID")
+                    .SendReturnUrl());
 
             Button("New Country").Icon(FA.Plus)
                 .OnClick(x => x.Go<Country.EnterPage>().SendReturnUrl());
@@ -322,10 +322,6 @@ namespace Modules
                 .VisibleIf(AppRole.Admin)
                 .Icon(FA.Cog)
                 .OnClick(x => x.Go<Admin.SettingsPage>());
-
-            Item("Register")
-                .Icon(FA.Cog)
-                .OnClick(x => x.Go<RegistrationPage>());
 
             Item("Companies")
                 .Icon(FA.Cog)
