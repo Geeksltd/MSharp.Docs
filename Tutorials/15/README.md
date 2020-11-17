@@ -256,12 +256,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.ReturnToPreviousPage();
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 }
@@ -269,7 +269,7 @@ namespace Modules
 
 And also a *listmodule* named **CountriesList**:
 
-```
+```csharp
 using MSharp;
 
 namespace Modules

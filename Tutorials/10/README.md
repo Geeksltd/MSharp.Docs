@@ -169,10 +169,10 @@ namespace Modules
             Column(x => x.Notes);
 
             ButtonColumn("Edit").Icon(FA.Edit)
-				.HeaderText("Edit").GridColumnCssClass("actions")
+                .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Agency.EnterPage>()
-                .SendReturnUrl()
-                .Send("item", "item.ID"));
+                    .SendReturnUrl()
+                    .Send("item", "item.ID"));
 
             ButtonColumn("Delete").Icon(FA.Remove)
                 .HeaderText("Delete").GridColumnCssClass("actions")
@@ -186,7 +186,7 @@ namespace Modules
 
             Button("Add agency").Icon(FA.Plus)
                 .OnClick(x => x.Go<Agency.EnterPage>()
-                .SendReturnUrl());
+                    .SendReturnUrl());
         }
     }
 }
@@ -214,12 +214,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.ReturnToPreviousPage();
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 }
@@ -306,12 +306,12 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.PopUp<Booking.EnterPage>()
-                .Send("item", "item.ID")
-                .Send("agency", "item.AgencyId"));
+                    .Send("item", "item.ID")
+                    .Send("agency", "item.AgencyId"));
 
             Button("Add booking").Icon(FA.Plus)
                 .OnClick(x => x.PopUp<Booking.EnterPage>()
-                .Send("agency", "info.Agency.ID"));
+                    .Send("agency", "info.Agency.ID"));
 
             ViewModelProperty("Agency", "Agency").FromRequestParam("item");
 
@@ -350,12 +350,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.CloseModal());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.CloseModal(Refresh.Full);
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.CloseModal(Refresh.Full);
+                });
 
             AutoSet(x => x.Agency);
         }

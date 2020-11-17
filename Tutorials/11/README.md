@@ -160,8 +160,8 @@ namespace Modules
             ButtonColumn("Edit").Icon(FA.Edit)
                 .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Employee.EnterPage>()
-                .SendReturnUrl()
-                .Send("item", "item.ID"));
+                    .SendReturnUrl()
+                    .Send("item", "item.ID"));
 
             ButtonColumn("Delete").Icon(FA.Remove)
                 .HeaderText("Delete").GridColumnCssClass("actions")
@@ -174,10 +174,8 @@ namespace Modules
                 });
 
             Button("New Employee").Icon(FA.Plus)
-                .OnClick(x => x
-                .Go<Employee.EnterPage>()
-                .SendReturnUrl()
-                );
+                .OnClick(x => x.Go<Employee.EnterPage>()
+                    .SendReturnUrl());
         }
     }
 }
@@ -209,12 +207,12 @@ namespace Modules
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
             Button("Save").IsDefault().Icon(FA.Check)
-            .OnClick(x =>
-            {
-                x.SaveInDatabase();
-                x.GentleMessage("Saved successfully.");
-                x.ReturnToPreviousPage();
-            });
+                .OnClick(x =>
+                {
+                    x.SaveInDatabase();
+                    x.GentleMessage("Saved successfully.");
+                    x.ReturnToPreviousPage();
+                });
         }
     }
 }
