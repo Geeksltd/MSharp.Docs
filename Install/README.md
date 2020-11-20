@@ -25,17 +25,12 @@ Make sure you have all of the following installed on your computer:
 
 ## Create your first application
 
-1. In Visual Studio, create a new project.
-2. On the left hand side, select **.NET Core** as the category.
-3. On the right hand side, select **M# - ASP.NET Core** as the template type, then click on **Create**.
-4. On the next page, leave the default settings as it is, and click **Create** again.(Read the note below)
+1. Open a command prompt and `cd` into ** C:\Projects\ ** or whereever your projects usually are.
+2. Run `msharp-build /new /n:MyProjectName` changing *MyProjectName* to your actual project name.
+3. Open the generated solution in Visual Studio.
 5. Set **Website** as your start-up project.
 6. Go to `appsettings.json` and verify the connection string.
 7. Run the app to see the login page.
-
-### Note
-
-> At this stage, it will download the latest project template [from here](https://github.com/Geeksltd/Olive.MvcTemplate) and replace the name placeholder with your specified app name. It will also run the **Build.bat** file from the solution root directory which will install yarn's packages, compite CSS and TypeScript files, etc.
 
 ## Troubleshooting
 
