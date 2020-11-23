@@ -26,7 +26,7 @@ Make sure you have all of the following installed on your computer:
 ## Create your first application
 
 1. Open a command prompt and `cd` into ** C:\Projects\ ** or whereever your projects usually are.
-2. Run `msharp-build /new /n:MyProjectName` changing *MyProjectName* to your actual project name.
+2. Run `msharp-build /new /n:MyProjectName` changing *MyProjectName* to your actual project name ((learnmore)[https://github.com/Geeksltd/msharp-build])
 3. Open the generated solution in Visual Studio.
 5. Set **Website** as your start-up project.
 6. Go to `appsettings.json` and verify the connection string.
