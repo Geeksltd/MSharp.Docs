@@ -58,3 +58,25 @@ When you use F5 in Visual Studio to run the project, it will always build the we
 
 - In Solution Explorer right click on the Website
 - Select Just Run
+
+## Metadata hook
+When you define your #M#\Model and M#\UI projects, your M# definitions are typically defined as C# types. Those are serialized into XML when you run `dotnet msharp.dsl.dll` with either `/model` or `/ui` options. The generated XML is then used by `msharp.exe` to get the M# metadata objects and generate the application code.
+
+It is possible to hook into this process. Just before the XML is generated, an event will be fired called `MSharp.Repo.BeforeSerialize`. You can handle this event by writing your code in the static constructor of any of your M# definitions. Example:
+
+```csharp
+class HomePage : RootPage
+{
+   ... 
+   static HomePage()
+   {
+       MSharp.Repo.BeforeSerialize += Hook;
+   }
+   
+   static void Hook()
+   {
+       foreach(var page in MSharp.Repo.Everything.OfType<MSharp.ApplicationPage>())
+          page.Roles(AppRole.TaDa);
+   }
+}
+```
