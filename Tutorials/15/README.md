@@ -142,7 +142,7 @@ namespace Modules
 
             Field(x => x.NumberOfEmployees);
 
-            Field(x => x.Country).DisplayExpression("item.Code + \"(\" + item.Name + \")\"");
+            Field(x => x.Country).DisplayExpression("item.Code + \" (\" + item.Name + \")\"");
 
             Button("Cancel").OnClick(x => x.ReturnToPreviousPage());
 
@@ -178,7 +178,8 @@ namespace Modules
 
             Column(x => x.Name).LabelText("Company name");
 
-            Column(x => x.RegistrationDate).DisplayFormat("{0:yy-MMM-dd}");
+            Column(x => x.RegistrationDate)
+                .DisplayExpression("c#:string.Format(\"{0:yyyy-MMM-dd}\", item.RegistrationDate).ToUpper()");
 
             Column(x => x.MarketShare);
 
@@ -197,7 +198,7 @@ namespace Modules
     }
 }
 ```
-According to the requirements, in this page for search dropdown we have used `.DisplayExpression()` to display country code and for *RegistrationDate* and *NumberOfEmployees* column, we have used `.DisplayFormat()` method to show its value in special format as we want.
+According to the requirements, in this page for search dropdown  and *RegistrationDate* column we have used `.DisplayExpression()` to display country code and date. For *NumberOfEmployees* column, we have used `.DisplayFormat()` method to show its value in special format as we want.
 
 ### Country Pages
 
