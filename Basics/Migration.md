@@ -23,9 +23,10 @@ If your project is WebForms, perhaps your domain model project name is **"Model"
 
 ### Step 3: Convert Meta-data
 
-1. In the IDE (in your browser) request http://localhost:3022/?Command=GenerateMCS
+1. Close the project in IDE 
+2. Copy MSharpTools to your computer.
+3. Run msharptools.exe "{solutionRoot}" /mcs
 	- It will create a new folder in the solution named **M#**. Inside that, it will generate two new folders: **Model** and **UI**.
-2. Close the project in the old IDE.
 3. In Visual Studio, use **Add Existing** project and add `M#\Model` and `M#\UI` projects to the solution.
 	- If `#Model > ProjectSettings.cs` has `.GeneratedDALFolder("DAL")` method, please comment it.
 4. In Visual Studio, go to Manage Nuget packages and click on the Restore button at the top.
