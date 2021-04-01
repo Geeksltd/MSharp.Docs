@@ -107,8 +107,8 @@
   - [Adding a file upload field](how-to/formModules/addingFileUploadField.md)
   - [Default values (property setter)](how-to/formModules/defaultValuesPropertySetter.md)
   - [Watermark text](how-to/formModules/watermarkText.md)
-  - Custom form elements
-  - Custom data load/save
+  - [Custom form elements](how-to/formModules/customFormElements.md)
+  - [Custom data load/save](how-to/formModules/customLoadAndSave.md)
   - [Custom list control source](how-to/formModules/customListControlSource.md)
 
 - How-to: Buttons/Links
@@ -148,7 +148,7 @@
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
   - [Full text search](how-to/search/fullTextSearch.md)
   - Instant search
-  - Default search value
+  - [Default search value](how-to/search/defaultSearchValue.md)
   - [Custom search element](how-to/search/customSearchElement.md)
   - Auto-search on start
 
