@@ -1,3 +1,7 @@
+# Understanding the M# development model
+TODO: Describe how the development philosophy is, what parts are written as M# concepts, what is written as direct C#, Html, etc.
+
+
 # Structure of an MSharp solution
 
 When you create a new M# ASP.NET Core MVC project you will see the following structure in Visual Studio.
