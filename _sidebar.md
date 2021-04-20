@@ -147,7 +147,7 @@
 
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
   - [Full text search](how-to/search/fullTextSearch.md)
-  - Instant search
+  - [Instant search](how-to/search/instantSearch.md)
   - [Default search value](how-to/search/defaultSearchValue.md)
   - [Custom search element](how-to/search/customSearchElement.md)
   - Auto-search on start
