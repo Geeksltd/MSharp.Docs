@@ -176,7 +176,7 @@
   - Module: Shared vs page-owned
   - [View components](how-to/uiComposition/viewComponents.md)
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
-  - Merged forms
+  - [Merged forms](how-to/uiComposition/mergedForms.md)
   - Module references
   - [Module boxes](how-to/uiComposition/moduleBoxes.md)
 
