@@ -153,13 +153,13 @@
   - Auto-search on start
 
 - How-to: View modules
-  - Custom data source
+  - [Custom data source](how-to/view-modules/customDataSource.md)
   - Structured vs custom template
   - Hiding empty elements
 
 - How-to: Navigation
-  - Custom page url
-  - Auto page redirection
+  - [Custom page url](how-to/navigation/customPageUrl.md)
+  - [Auto page redirection](how-to/navigation/autoPageRedirection.md)
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax
   - Passing and using parameters
