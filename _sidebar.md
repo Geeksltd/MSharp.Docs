@@ -206,7 +206,7 @@
 
   - Authentication
   - [Role based access](how-to/security/roleBasedAccess.md)
-  - Page role inheritance
+  - [Page role inheritance](how-to/security/pageRoleInheritance.md)
   - Custom page security
   - Module specific security
   - Module visibility vs security checks
