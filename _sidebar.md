@@ -189,7 +189,7 @@
 
   - Dependency Injection
   - [PDF generation](how-to/misc/pdfGeneration.md)
-  - Page start-up logic
+  - [Page start-up logic](how-to/misc/pageStartUpLogic.md)
   - Custom module initialization
   - Custom methods in controller
   - [Custom ViewModel properties](how-to/misc/customViewModelProperties.md)
