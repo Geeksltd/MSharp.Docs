@@ -4,7 +4,7 @@ To learn M# properly, the best way is by doing. Every M# feature provides a shor
 
 There are 22 practice projects that you should implement using M#. Each one should normally take less than an hours, and some maybe a bit longer. Each project is defined using a wireframe that explains what the software should do and how it should be structured. These wireframes are straight forward, but you should make sure to understand them fully before implementing.
 
-To successfully build each practice project, you will be using and reusing some M# skills that you will have gained previously, plus one or two new skills and M# features. Links are provided for each one to the how-to documentation pages of specifically those new features.
+To successfully build each practice project, you will be using and reusing some M# and Pangolin test cases skills that you will have gained previously, plus one or two new skills and M# features. Links are provided for each one to the how-to documentation pages of specifically those new features. Please use Pangolin to follow test driven development for each practice.
 
 | Practice       | To learn | Help |
 |-------------|-----------|------|

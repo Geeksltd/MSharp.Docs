@@ -147,19 +147,19 @@
 
   - [Search field on property](how-to/search/searchFieldOnProperty.md)
   - [Full text search](how-to/search/fullTextSearch.md)
-  - Instant search
+  - [Instant search](how-to/search/instantSearch.md)
   - [Default search value](how-to/search/defaultSearchValue.md)
   - [Custom search element](how-to/search/customSearchElement.md)
   - Auto-search on start
 
 - How-to: View modules
-  - Custom data source
+  - [Custom data source](how-to/view-modules/customDataSource.md)
   - Structured vs custom template
   - Hiding empty elements
 
 - How-to: Navigation
-  - Custom page url
-  - Auto page redirection
+  - [Custom page url](how-to/navigation/customPageUrl.md)
+  - [Auto page redirection](how-to/navigation/autoPageRedirection.md)
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax
   - Passing and using parameters
@@ -176,7 +176,7 @@
   - Module: Shared vs page-owned
   - [View components](how-to/uiComposition/viewComponents.md)
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
-  - Merged forms
+  - [Merged forms](how-to/uiComposition/mergedForms.md)
   - Module references
   - [Module boxes](how-to/uiComposition/moduleBoxes.md)
 
@@ -189,9 +189,9 @@
 
   - Dependency Injection
   - [PDF generation](how-to/misc/pdfGeneration.md)
-  - Page start-up logic
+  - [Page start-up logic](how-to/misc/pageStartUpLogic.md)
   - Custom module initialization
-  - Custom methods in controller
+  - [Custom methods in controller](how-to/misc/customMethodsInController.md)
   - [Custom ViewModel properties](how-to/misc/customViewModelProperties.md)
   - [Scheduled tasks](how-to/misc/scheduledTasks.md)
   - [Sending email notifications](how-to/misc/sendingEmailNotifications.md)
@@ -206,7 +206,7 @@
 
   - Authentication
   - [Role based access](how-to/security/roleBasedAccess.md)
-  - Page role inheritance
+  - [Page role inheritance](how-to/security/pageRoleInheritance.md)
   - Custom page security
   - Module specific security
   - Module visibility vs security checks
