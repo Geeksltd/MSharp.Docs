@@ -35,6 +35,7 @@ button.Delete();
 
 // Shortcut to create:
 Button("Delete")
+    .CssClass("btn-danger float-left")
     .VisibleIf(CommonCriterion.IsEditMode_Item_IsNew)
     .ConfirmQuestion("Are you sure you want to delete it?")
     .OnClick(x =>
@@ -81,6 +82,7 @@ button.ModalDelete();
 // Shortcut to create:
 Button("ModalDelete")
     .ConfirmQuestion("Are you sure you want to delete it?")
+    .CssClass("btn-danger float-left")
     .OnClick(x =>
     {
         x.DeleteItem();
