@@ -56,3 +56,5 @@ If the desired behaviour, is to display an empty list if there is no Company pro
 Best Practice is to put any database calls or complex expressions into Methods that can be called from the Controller instead of putting them directly into DataSource().
 
 Using `await` is important as the Controller uses async Methods, `Result()` should not be used as it will block the thread.
+
+You can also use `DataSource` on the custom elements as described [here](../formModules/customLoadAndSave.md).

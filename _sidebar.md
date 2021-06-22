@@ -153,7 +153,7 @@
   - Auto-search on start
 
 - How-to: View modules
-  - Custom data source
+  - [Custom data source](how-to/list-modules/customDataSource.md)
   - Structured vs custom template
   - Hiding empty elements
 

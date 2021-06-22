@@ -1,8 +1,9 @@
-# Custom Data Source
+# Custom data load/save
+
 
 ## Problem
 
-When you use a custom element on the form, it doesn't come with any binding by default. For example, if it's a drop-down you need to set the Datasource for that and if you want to save the inserted value in your database you need to map that value with one of your entity properties.
+When you use a custom element on the form, it doesn't come with any binding by default. For example, if it's a drop-down you need to set the `DataSource` for that and if you want to save the inserted value in your database you need to map that value with one of your entity properties.
 
 ## Implementation
 
@@ -13,10 +14,10 @@ For loading data, MSharp allows you to specify your data source, by using `DataS
 ```csharp
  
  CustomField().Label("Your Unit")
-                .PropertyName("Unit").PropertyType("Unit")
-                .DataSource("await info.GetAllUnits()")
-                .ItemValueExpression("item.ID")
-                .AsAutoComplete();
+              .PropertyName("Unit").PropertyType("Unit")
+              .DataSource("await info.GetAllUnits()")
+              .ItemValueExpression("item.ID")
+              .AsAutoComplete();
                 
 ```
 
@@ -31,11 +32,11 @@ For saving data, MSharp allows you to bind the data to one of your entity proper
 ```csharp
  
   CustomField().Label("Your Unit")
-                .PropertyName("Unit").PropertyType("Unit")
-                .DataSource("await info.GetAllUnits()")
-                .ItemValueExpression("item.ID")
-                .CustomDataSave("item.Property = info.Unit;")
-                .AsAutoComplete();
+               .PropertyName("Unit").PropertyType("Unit")
+               .DataSource("await info.GetAllUnits()")
+               .ItemValueExpression("item.ID")
+               .CustomDataSave("item.Property = info.Unit;")
+               .AsAutoComplete();
                 
 ```
 
