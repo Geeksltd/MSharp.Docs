@@ -247,8 +247,6 @@ namespace Modules
 
             Search(GeneralSearch.ClientSideFilter).Label("Filter:");
 
-            SearchButton("Search").OnClick(x => x.Reload());
-
             Column(x => x.Make);
 
             Column(x => x.Model);
