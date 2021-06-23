@@ -150,7 +150,7 @@
   - [Instant search](how-to/search/instantSearch.md)
   - [Default search value](how-to/search/defaultSearchValue.md)
   - [Custom search element](how-to/search/customSearchElement.md)
-  - Auto-search on start
+  - [Auto-search on start](how-to/search/AutosearchOnStart.md)
 
 - How-to: View modules
   - [Custom data source](how-to/list-modules/customDataSource.md)
