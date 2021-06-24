@@ -29,7 +29,7 @@ Elements can be referenced within the markup using placeholders, `[# #]`. For ex
 
 Using `@` makes this a verbatim string literal that doesn’t require escaping of most special characters
 
-- `MarkupWrapper()` – Add markup around the Module, the module itself is referenced using [#MODULE#]
+- `MarkupWrapper()` – Add markup around the Module, the module itself is referenced using `[#MODULE#]`
 
 ```csharp
 .MarkupWrapper("<div class='extra-div'>[#MODULE#]</div>");

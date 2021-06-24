@@ -3,7 +3,7 @@
 M# goal is to make developing data-focused .NET web applications as easy as possible. The key enabler for this purpose is module types in M#. You can create view components in 2 different ways in M#-based application, as explained below. 
 
 ## Structured approach
-In structured mode, the intention is specified with minimal code and let the M# do its magic. Module types for this approach are shown in the following table:
+In the structured approach, the intention is expressed with minimal code without specifying the markup to let the M# do its magic and create the markup template for you. Module types for this approach are shown in the following table:
 
 | Type   |     Class     | View element |              Usage                           |
 | -------|:-------------:|:------------:|:---------------------------------------------|
@@ -12,7 +12,7 @@ In structured mode, the intention is specified with minimal code and let the M# 
 | View   | `ViewModule` | `Field`     | Showing a single entity instance             |
 | Menu   | `MenuModule` | `Item`      | Creating menu                                |
 
-By using any of these modules you declare view elements in each component, and then M# generate appropriate markup templates and binding code inferred from the domain model.
+By using any of these modules, you specify view elements in each component, and then M# generate appropriate markup templates and binding code inferred from the domain model.
 
 Using the structured approach doesn't mean you completely give up customisation. You have a lot of flexibility within this approach by further creating custom elements, styling and CSS for elements, setting button positions, changing default labels, etc.
 
