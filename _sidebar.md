@@ -155,7 +155,7 @@
 - How-to: View modules
   - [Custom data source](how-to/list-modules/customDataSource.md)
   - [Structured vs custom template](how-to/list-modules/StructuredvsCustomTemplate.md)
-  - Hiding empty elements
+  - [Hiding empty elements](how-to/list-modules/hidingEmptyElements.md)
 
 - How-to: Navigation
   - Custom page url

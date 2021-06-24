@@ -23,6 +23,7 @@ In this code:
 - `WatermarkText("Search...")` – Places the specified text as a watermark inside the search box. It will be removed as soon as the user starts typing. 
 - `NoLabel()` – No label is used for the search box because the purpose is specified with the watermark text. 
 
+### Generated code
 The generated code for the above code creates the following section in the markup:
 
 ```html

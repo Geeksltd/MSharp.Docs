@@ -14,6 +14,7 @@ M# has a `StartUpBehaviour` attribute in Lists that you can utilize to set the p
 - `AutoSearch`: List will be populated based on the specified data source but the data source will be filtered based on the search elements default set values.
 - `WaitForSearch`: List will not be populated unless a postback happens on the page.
 
+### Examles
 For example, you display product catalogues with options to filter products. You need to display products based on the default set filters e.g. Most Reviewed, Most Rated etc. In this case, you can use the `AutoSearch` option to automatically filter the result set initially. When the list is shown for the first time, only the most rated product catalogues are shown.
 
 ```csharp
@@ -43,6 +44,8 @@ public PaymentsList()
     //...
 }
 ```
+
+### Note
 `StartUpBehaviour` attribute can also be chained to `HeaderText` as follows: 
 ```csharp
 public AgenciesList()
