@@ -29,7 +29,7 @@ public ProductCataloguesList()
 }
 ```
 
-As another example, you need to display a batch of payment which needs to be verified at the month-end which has a huge number of records. Showing all the results is not desired here. In this case, you can use `WaitForSearch` to display only the records which need to be managed by their status. Initially, the list will be empty till the client select the status and press the `Search` button.
+As another example, you need to display a batch of payments which needs to be verified at the month-end which has a huge number of records. Showing all the results is not desired here. In this case, you can use `WaitForSearch` to display only the records which need to be managed by their status. Initially, the list will be empty till the client select the status and press the `Search` button.
 
 ```csharp
 public PaymentsList()
