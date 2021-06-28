@@ -166,7 +166,7 @@
 
 - How-to: Menus
   - [Creating a menu](how-to/menus/creatingMenu.md)
-  - Main navigation menu
+  - [Main navigation menu](how-to/menus/mainNavigationMenu.md)
   - Sub-navigation menu/tabs
   - [Dynamic menu items](how-to/menus/dynamicMenuItems.md)
   - Menu item hierarchy
