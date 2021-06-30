@@ -6,7 +6,7 @@ You want to have a menu that is shown for all users when they are logged in to t
 
 ## Implementation
 
-You can create the main menu by adding the `MainMenu` class in **UI -> Modules** and following the instructions from [this page](https://www.msharp.co.uk/#/how-to/menus/creatingMenu).
+There is already a `MainMenu` class in **UI -> Modules**. You can add menu items to this class following the instructions from [this page](https://www.msharp.co.uk/#/how-to/menus/creatingMenu).
 
 Once this module class created, it can be added to either individual pages or the header.
 
@@ -73,6 +73,7 @@ public Project()
     Layout("Admin default").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
 }
 ```
+The placeholder for **Header** should be in the template cshtml file. This file can be found in the **Website** project in **Views\Layouts\[TEMPLATE].cshtml**.
 ```html
 <!-- AdminDefault.cshtml -->
 <main>

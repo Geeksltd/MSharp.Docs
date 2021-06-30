@@ -167,9 +167,9 @@
 - How-to: Menus
   - [Creating a menu](how-to/menus/creatingMenu.md)
   - [Main navigation menu](how-to/menus/mainNavigationMenu.md)
-  - Sub-navigation menu/tabs
+  - [Sub-navigation menu/tabs](how-to/menus/subNavigationMenuTabs.md)
   - [Dynamic menu items](how-to/menus/dynamicMenuItems.md)
-  - Menu item hierarchy
+  - [Menu item hierarchy](how-to/menus/menuItemHierarchy.md)
   
 - How-to: UI composition
   - [Visibility](how-to/uiComposition/visibility.md)
