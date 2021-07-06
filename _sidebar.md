@@ -158,7 +158,7 @@
   - [Hiding empty elements](how-to/list-modules/hidingEmptyElements.md)
 
 - How-to: Navigation
-  - Custom page url
+  - [Custom page URL](how-to/navigation/customPageUrl.md)
   - Auto page redirection
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax

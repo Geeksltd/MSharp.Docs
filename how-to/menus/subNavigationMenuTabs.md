@@ -94,7 +94,7 @@ public Project()
     PageSetting("TopMenu");
 }
 ```
-Having these page settings defined, then the next step would be checking the placeholder for each of them in the template cshtml file. This file can be found in the **Website** project in **Views\Layouts\[TEMPLATE].cshtml**.
+Having these page settings defined, then the next step would be checking the placeholder for each of them in the template cshtml file. This file can be found in the **Website** project in **Views/Layouts/[TEMPLATE].cshtml** path.
 ```html
 <!-- AdminDefault.cshtml -->
 @{ var leftMenu = ViewData["LeftMenu"].ToStringOrEmpty(); }

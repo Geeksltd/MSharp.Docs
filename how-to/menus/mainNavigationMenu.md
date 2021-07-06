@@ -73,7 +73,7 @@ public Project()
     Layout("Admin default").AjaxRedirect().Default().VirtualPath("~/Views/Layouts/AdminDefault.cshtml");
 }
 ```
-The placeholder for **Header** should be in the template cshtml file. This file can be found in the **Website** project in **Views\Layouts\[TEMPLATE].cshtml**.
+The placeholder for **Header** should be in the template cshtml file. This file can be found in the **Website** project in **Views/Layouts/[TEMPLATE].cshtml** path.
 ```html
 <!-- AdminDefault.cshtml -->
 <main>
