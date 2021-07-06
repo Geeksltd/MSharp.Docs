@@ -162,7 +162,7 @@
   - Auto page redirection
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax
-  - Passing and using parameters
+  - [Passing and using parameters](how-to/navigation/PassingAndUsingParameters.md)
 
 - How-to: Menus
   - [Creating a menu](how-to/menus/creatingMenu.md)
