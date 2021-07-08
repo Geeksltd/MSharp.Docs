@@ -2,13 +2,14 @@
 
 ## Problem
 
-You want a page to be redirected automatically to another page within the same website.
+You want a page to be redirected automatically to another page within the same website and resolve an existing URL for the page to a different one.
 
 ## Usage patterns
 
 You may want to redirect to another page for one of the following reasons:
 
-- **Security**: You want only a subset of users with necessary privileges visit the page. If the user has not logged in or don't have the desired privilege then being redirected to the login or error page.
+- **Access right**: You want only a subset of users with necessary privileges visit the page. If the user has not logged in or don't have the desired privilege then being redirected to the login or error page.
+- **Security**: You trust a third party such as Google, Facebook or Microsoft, for user authentication using security mechanisms such as OAuth and OpenID for social media login. In this way, the login page on your website will be redirected to the 3rd party provider.
 - **Query parameters**: UI module is defined in a way that is using query string parameters for showing, resolving or filtering data. If query parameters aren't provided, the page is redirected.
 - **Menu highlighting**: You have a navigation menu that when items are clicked, highlight the menu item to show the current navigated page. When the page is invoked from a link other than the menu, we may redirect the page to be invoked from the menu the get the menu highlighting right.
 
