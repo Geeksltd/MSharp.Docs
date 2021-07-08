@@ -159,7 +159,7 @@
 
 - How-to: Navigation
   - [Custom page URL](how-to/navigation/customPageUrl.md)
-  - Auto page redirection
+  - [Auto page redirection](how-to/navigation/autoPageRedirection.md)
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
   - Ajax/no ajax
   - [Passing and using parameters](how-to/navigation/PassingAndUsingParameters.md)
