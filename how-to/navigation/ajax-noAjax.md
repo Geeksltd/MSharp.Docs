@@ -5,7 +5,7 @@
 M# application is powered by Ajax-based navigation to bring the SPA experience. You want to know related pieces in play and how to enable or disable this feature on the various levels like master page, module or a single button.
 
 ## Motivation
-Web technologies like HTML and HTTP originally were created for sharing documents without user experience in mind. We can’t get a new Web redesigned from the foundation up and break the existing systems. Improvements like interactivity and user experience have been added later to the existing foundation. Ajax was one of the technologies created for providing a continuous feel, flicker-free updates, interface facilities, live data and so on.
+Web technologies like HTML and HTTP originally were created for sharing documents without user experience in mind. We can't get a new web redesigned from the foundation up and break the existing systems. Improvements like interactivity and user experience have been added later to the existing foundation. Ajax was one of the technologies created for providing a continuous feel, flicker-free updates, interface facilities, live data and so on.
 
 Traditional web and ASP.Net is based on a request/response model that for each request all the content files like HTML, javascript, CSS, images will be sent to the browser. That is inefficient, slow and affects user experience. Single-page applications (SPA) emerged as a solution to this problem.
 
@@ -57,7 +57,7 @@ public ContactsList : ListModule<Domain.Contact>
     }
 }
 ```
-or similarly, in the menu you can use ths method:
+or similarly, in the menu you can use this method:
 ```csharp
 public class MainMenu : MenuModule
 {
