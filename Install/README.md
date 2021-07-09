@@ -10,9 +10,8 @@ Make sure you have all of the following installed on your computer:
 3. .NET Core SDK ([Install from here](https://dotnet.microsoft.com/download/dotnet-core/3.1))
 4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))
 5. Yarn Package Manager ([Install from here](https://yarnpkg.com/latest.msi))
-6. Docker, plus Windows runtime ([Install from here](https://docs.docker.com/docker-for-windows/install/))
-7. An instance of SQL Server ([Install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
-8. SSMS (Recommended not required [Install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
+6. An instance of SQL Server ([Install from here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads))
+7. SSMS (Recommended not required [Install from here](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017))
 
 ## How to install
 
