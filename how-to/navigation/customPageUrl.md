@@ -55,8 +55,8 @@ http://www.company.com/contact/contacts/view/alexander-smith
 
 This can be done by following the steps below.
 
-### Registering the Binder
- Olive framework makes it relatively easy to add a binding. We just need to register a binding parser for the type in the application startup logic. We need to provide a type (e.g. `Contact`) and a function that receives the route segment (e.g. "alexander-smith") and returns the entity:
+### Registering the Model Binder
+ Olive framework makes it relatively easy to add a Model binding. We just need to register a binding parser for the type in the application startup logic. We need to provide a type (e.g. `Contact`) and a function that receives the route segment (e.g. "alexander-smith") and returns the entity:
 
 ```csharp
 public class Startup : Olive.Mvc.Startup
@@ -74,9 +74,9 @@ Here, `EntityModelBinder` is a type defined in `Olive.Mvc` and `FindByName` is a
 ```csharp
 partial class Contact
 {
-    public static Task<IEntity> FindByName(string route)
+    public static Task<IEntity> FindByName(string name)
     {
-        return Database.FirstOrDefault<Contact>(c => c.FullName == route).AsTask<Contact, IEntity>();
+        return Database.FirstOrDefault<Contact>(c => c.FullName == name).AsTask<Contact, IEntity>();
     }
 }
 ```

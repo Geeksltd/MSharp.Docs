@@ -161,7 +161,7 @@
   - [Custom page URL](how-to/navigation/customPageUrl.md)
   - [Auto page redirection](how-to/navigation/autoPageRedirection.md)
   - [Modal (pop-up)](how-to/navigation/modal-PopUp.md)
-  - Ajax/no ajax
+  - [Ajax/no ajax](how-to/navigation/ajax-noAjax.md)
   - [Passing and using parameters](how-to/navigation/PassingAndUsingParameters.md)
 
 - How-to: Menus
