@@ -26,6 +26,10 @@ Navigation is done with `Go()` or `PopUp()` methods. By calling `Send("item", "i
 
 By calling `SendReturnUrl()` we are sending the Url of the current page to the navigated page in the query string too. After doing our work on the target page we can return to the current page using this Url.
 
+Note:
+
+> We can use `SendItemId()` instead of `Send("item", "item.ID")` as a shorthand syntax.
+
 ## How sending data works
 If you want to know what is represented by the input arguments in the `Send` method, you should have a look at the generated code. The schematic below shows different related pieces in the model and generated code for a scenario that the user clicks a link column in the contact list page to navigate to the contact's view page.
 
@@ -56,7 +60,7 @@ public class AddressesList : ListModule<Domain.Address>
 When editing each address, we are sending both the address we want to edit along with the person who owns this address to the form for editing address. Here, `info` represents the bound ViewModel instance.
 
 ## Using for the ViewModel property
-you can use the parameter sent to the form and store it in a newly created ViewModel property for further processing or showing in other parts of the view.
+You can use the parameter sent to the form and store it in a newly created ViewModel property for further processing or showing in other parts of the view.
 
 ### Example
 Consider the address list page for a given `Person`. The parameter `item` has been sent to this form that contains the person ID.
@@ -74,7 +78,9 @@ public class AddressesList : ListModule<Domain.Address>
 Here we have used `ViewModelProperty` with the type and name of `Person` that comes from the query string for being used on the header of the form.
 
 ## Setting directly from the query string
-If both sending and receiving parameters have the same name we can use the `AutoSet`method.
+If both sending and receiving parameters have the same name we can use:
+-  the `AutoSet`method in form module
+-  the `NotReadOnly`method in list or view module
 
 ### Example
 In the address form, we have used `AutoSet` for setting the `Person` property from the query string parameter with the same name.
@@ -89,3 +95,26 @@ public class AddressForm : FormModule<Domain.Address>
     }
 }
 ```
+
+### Example
+In the address list, we have used the `NotReadOnly` method for setting the `Person` ViewModel property from the query string parameter with the same name.
+
+```csharp
+public class AddressesList : ListModule<Domain.Address>
+{
+    public AddressesList()
+    {
+        //...
+        ViewModelProperty("Person", "Person").NotReadOnly();
+    }
+}
+```
+In this code, using 
+
+`ViewModelProperty("Person", "Person").NotReadOnly()` 
+
+has the same effect as 
+
+`ViewModelProperty("Person", "Person").FromRequestParam("Person")`
+
+M# generates `[ReadOnly(true)]` attribute in the generated code for the ViewModel properties by default to avoid unwanted misuse. Using `NotReadOnly()` means I am aware of what I'm doing and want to set this propert from query string parameter.

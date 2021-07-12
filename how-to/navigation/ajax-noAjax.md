@@ -2,7 +2,7 @@
 
 ## Problem
 
-M# application is powered by Ajax-based navigation to bring the SPA experience. You want to know related pieces in play and how to enable or disable this feature on the various levels like master page, module or a single button.
+M# application is powered by Ajax-based navigation to bring the SPA experience. This is the preferred  way of navigation in most situations. You want to know related pieces in play and how to disable this feature for special cases on the various levels like master page, module or a single button.
 
 ## Motivation
 Web technologies like HTML and HTTP originally were created for sharing documents without user experience in mind. We can't get a new web redesigned from the foundation up and break the existing systems. Improvements like interactivity and user experience have been added later to the existing foundation. Ajax was one of the technologies created for providing a continuous feel, flicker-free updates, interface facilities, live data and so on.
@@ -84,3 +84,17 @@ public ContactsList : ListModule<Domain.Contact>
     }
 }
 ```
+You can also use full post instead of the default Ajax post when submitting the form modules.
+```csharp
+public SocialMediaLogin : FormModule<Domain.User>
+{
+    public SocialMediaLogin()
+    {
+        //...
+        Button("Facebook")
+                .ExtraTagAttributes("formmethod='post'")
+                .OnClick(x => x.CSharp("await OAuth.Instance.LoginBy(\"Facebook\");"));
+    }
+}
+```
+Using `ExtraTagAttributes` method with the argument `formmethod='post'` generates this attribute on the generated markup and causes a full post when clicking the button. Using full post is often used in scenarios like export or file upload/downloads.
