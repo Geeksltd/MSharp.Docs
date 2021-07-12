@@ -117,4 +117,4 @@ has the same effect as
 
 `ViewModelProperty("Person", "Person").FromRequestParam("Person")`
 
-M# generates `[ReadOnly(true)]` attribute in the generated code for the ViewModel properties by default to avoid unwanted misuse. Using `NotReadOnly()` means I am aware of what I'm doing and want to set this propert from query string parameter.
+M# generates `[ReadOnly(true)]` attribute in the generated code for the ViewModel properties by default to avoid unwanted misuse. Using `NotReadOnly()` means I am aware of what I'm doing and want that this property can be set from the query string parameter.
