@@ -173,7 +173,7 @@
   
 - How-to: UI composition
   - [Visibility](how-to/uiComposition/visibility.md)
-  - Module: Shared vs page-owned
+  - [Module: Shared vs page-owned](how-to/uiComposition/sharedvsPage-ownedModules.md)
   - [View components](how-to/uiComposition/viewComponents.md)
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
   - Merged forms

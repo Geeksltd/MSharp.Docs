@@ -33,11 +33,11 @@ public class ViewPage : SubPage<ContactsPage>
 ```
 In this example, we have change the default rout template for the page from `contact/contacts/view/{item:Guid}` to `contact/contacts/{item:Guid}/view`. In other words, the page that opens in this URL by default:
 
-http://www.company.com/contact/contacts/view/c5b91323-4c21-444b-bf68-8305d6dbd3e3
+http://www.acompany.com/contact/contacts/view/c5b91323-4c21-444b-bf68-8305d6dbd3e3
 
 now opens in this URL:
 
-http://www.company.com/contact/contacts/c5b91323-4c21-444b-bf68-8305d6dbd3e3/view
+http://www.acompany.com/contact/contacts/c5b91323-4c21-444b-bf68-8305d6dbd3e3/view
 
 This change is a kind of URL rewriting that other navigation codes and parameter settings don't need to be changed.
 
@@ -45,17 +45,17 @@ This change is a kind of URL rewriting that other navigation codes and parameter
 You can go beyond simple URL rewriting and change the routing mechanism, however with few more steps. 
 
 ### Example
-A common scenario for this case is using routes that are not IDs. Normally the main route segment for referring to object IDs are in the form of Guid. There are cases (for example for SEO) in which you may want to use a human-readable route segment instead of ID. For example instead of:
+A common scenario for this case is using routes that are not IDs. Normally the main route segment for referring to object IDs are in the form of Guid. There are cases (for example for SEO) in which you may want to use a human-readable route segment instead of ID. For example instead of this URL:
 
-http://www.company.com/contact/contacts/view/c5b91323-4c21-444b-bf68-8305d6dbd3e3
+http://www.acompany.com/contact/contacts/view/c5b91323-4c21-444b-bf68-8305d6dbd3e3
 
 we want to have:
 
-http://www.company.com/contact/contacts/view/alexander-smith
+http://www.acompany.com/contact/contacts/view/alexander-smith
 
 This can be done by following the steps below.
 
-### Registering the Model Binder
+#### 1. Registering the Model Binder
  Olive framework makes it relatively easy to add a Model binding. We just need to register a binding parser for the type in the application startup logic. We need to provide a type (e.g. `Contact`) and a function that receives the route segment (e.g. "alexander-smith") and returns the entity:
 
 ```csharp
@@ -81,7 +81,7 @@ partial class Contact
 }
 ```
 
-### Updating the links
+#### 2. Updating the links
 The links for the view page should now be updated to accommodate this change and send name instead of ID. 
 
 ```csharp
@@ -103,7 +103,7 @@ When you have links to a page with query parameters, M# will look at the destina
 - If a route parameter is matched with the same name as the query parameter, then it will include the parameter as part of the URL.
 - If the destination page doesn't have a route parameter matching it, then the parameter will be attached as the query string.
 
-### Specifying the route
+#### 3. Specifying the route
 With binding parser and links in place, we can use the updated routing on the view page:
 ```csharp
 public class ViewPage : SubPage<ContactsPage>

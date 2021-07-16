@@ -24,9 +24,9 @@ public class ContactsList : ListModule<Domain.Contact>
 ```
 Navigation is done with `Go()` or `PopUp()` methods. By calling `Send("item", "item.ID")` we are sending a query string with the name of the contact and with the value of the contact ID to the desired page. Here we are sending this data to the editing form to prefill its elements with pre-existing data.
 
-By calling `SendReturnUrl()` we are sending the Url of the current page to the navigated page in the query string too. After doing our work on the target page we can return to the current page using this Url.
+By calling `SendReturnUrl()` we are sending the URL of the current page to the navigated page in the query string too. After doing our work on the target page we can return to the current page using this Url.
 
-Note:
+#### Note
 
 > We can use `SendItemId()` instead of `Send("item", "item.ID")` as a shorthand syntax.
 
@@ -79,8 +79,8 @@ Here we have used `ViewModelProperty` with the type and name of `Person` that co
 
 ## Setting directly from the query string
 If both sending and receiving parameters have the same name we can use:
--  the `AutoSet`method in form module
--  the `NotReadOnly`method in list or view module
+-  the `AutoSet`method in the form module
+-  the `NotReadOnly`method in the list or view module
 
 ### Example
 In the address form, we have used `AutoSet` for setting the `Person` property from the query string parameter with the same name.
