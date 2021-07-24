@@ -2,7 +2,7 @@
 
 ## Problem
 
-You want to know the difference between shared and page own modules and their lifecycle and implications.
+You want to know the difference between shared and page-owned modules and their lifecycle and implications.
 
 For example, for a new Customer form, you may need contact details, billing details, delivery details and preferences. We can have a page for each one of these items and a shared page for basic contact info that is shared among them.
 
