@@ -20,7 +20,7 @@ Each book has only one category and each category, obviously can be assigned to 
 The relation between a book and a category, is a many to one relationship as described above.
 We can use the generic `Associate<T>()` method to form the relationship.
 
-#### ExamExample
+#### Example
 
 The `Book` entity can be defined like this:
 

@@ -41,6 +41,7 @@
 
 - How-to: Model: Associations
 
+  - [One-to-one](how-to/associations/oneToOne.md)
   - [Many-to-one](how-to/associations/manyToOne.md)
   - [One-to-many](how-to/associations/oneToMany.md)
   - [Many-to-many](how-to/associations/manyToMany.md)

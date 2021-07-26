@@ -58,7 +58,7 @@ public class PropertyForm : FormModule<Domain.Property>
         //...
         MergedForm(x => x.BookCategory, s =>
         {
-            s.Field(x => x.Name).LabelText("Book category name");    
+            s.field.Name().LabelText("Book category name");    
         });
     }
 }
