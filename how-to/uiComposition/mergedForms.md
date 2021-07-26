@@ -9,18 +9,8 @@ We can use `MergedForm` method in the form. Its usage is similar to `MasterDetai
 
 
 ## One-to-one association example
-Suppose that we have a `Property` entity that has a one-to-one association relationship with the `Address` entity.
-```csharp
-public class Property : EntityType
-{
-    public Property()
-    {
-        //...
-        Associate<Address>("Main address");
-    }
-}
-```
-Then we can create a `PropertyForm` that is merged with address fields.
+Suppose that we have a `Property` entity that has a one-to-one association relationship with the `Address` entity as discussed [here](https://www.msharp.co.uk/#/how-to/associations/oneToOne).
+We can create a `PropertyForm` that is merged with address fields.
 ```csharp
 public class PropertyForm : FormModule<Domain.Property>
 {
@@ -40,7 +30,7 @@ public class PropertyForm : FormModule<Domain.Property>
 ## Many-to-one association example
 Suppose that we have a many-to-one association relationship between `Book` and `Category` entities as defined [here](https://www.msharp.co.uk/#/how-to/associations/manyToOne). We can give the user option to select one of the predefined categories shown in a drop-down control.
 ```csharp
-public class PropertyForm : FormModule<Domain.Property>
+public class BookForm : FormModule<Domain.Property>
 {
     public BookForm()
     {
@@ -51,9 +41,9 @@ public class PropertyForm : FormModule<Domain.Property>
 ```
 Alternatively, we can let the user insert a new category for the associated `Category` entity along with specifying the relation.
 ```csharp
-public class PropertyForm : FormModule<Domain.Property>
+public class BookForm : FormModule<Domain.Property>
 {
-    public PropertyForm()
+    public BookForm()
     {
         //...
         MergedForm(x => x.BookCategory, s =>
