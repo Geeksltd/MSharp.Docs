@@ -178,7 +178,7 @@
   - [View components](how-to/uiComposition/viewComponents.md)
   - [Master detail forms](how-to/uiComposition/masterDetailForms.md)
   - [Merged forms](how-to/uiComposition/mergedForms.md)
-  - Module references
+  - [Module references](how-to/uiComposition/moduleReferences.md)
   - [Module boxes](how-to/uiComposition/moduleBoxes.md)
 
 - How-to: Styling and CSS
