@@ -2,7 +2,7 @@
 
 ## Problem
 
-The client wants show a module inside another module.
+The client wants to show a module inside another module to form a more complex view structure. This way view parts can be in separated parts in their own view modules in a more manageable and maintainable way.
 
 ## Implementation
 We can create a reference to the submodule we want to show by using the generic `Reference<T>` method in the parent module. Then this reference is used inside the markup in the parent module using the techniques discussed in [markup customisation](https://www.msharp.co.uk/#/how-to/stylingAndCSS/markupCustomisation) topic.
@@ -89,7 +89,7 @@ public class FormParent : FormModule<Domain.AnEntity>
 ```
 
 ## Static referenced module hierarchy
-You can have nested modules to form a hierarchy with multiple levels of module references similarly. For example for 2 levels of nesting we can create the following structure:
+You can have nested modules to form a hierarchy with multiple levels of module references similarly. For example for 2 levels of nesting, we can create the following structure:
 
 ```csharp
 public class FormParent : FormModule<Domain.AnEntity>
@@ -171,7 +171,9 @@ public class NodeView : ViewModule<Domain.Node>
             </div>
         ");
         OnPreBinding("setting child views")
-                .Code(@"info.ChildrenViews = await info.Item.Children.GetList().Select(n => new vm.NodeView() { Item = n }).ToList();");
+                .Code(@"info.ChildrenViews = await info.Item.Children.GetList()
+                            .Select(n => new vm.NodeView() { Item = n })
+                            .ToList();");
     }
 }
 ```
@@ -195,7 +197,9 @@ public class NodesView : GenericModule
             </div>
         ");
         OnPreBinding("setting NodeViews")
-                .Code(@"info.NodeViews = await Node.GetRootNodes().Select(n => new vm.NodeView() { Item = n }).ToList();");
+                .Code(@"info.NodeViews = await Node.GetRootNodes()
+                            .Select(n => new vm.NodeView() { Item = n })
+                            .ToList();");
     }
 }
 ```
