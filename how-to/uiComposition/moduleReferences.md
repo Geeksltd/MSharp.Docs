@@ -2,7 +2,7 @@
 
 ## Problem
 
-The client wants to show a module inside another module to form a more complex view structure. This way view parts can be in separated parts in their own view modules in a more manageable and maintainable way.
+The client wants to show a module inside another module to form a more complex view structure. This way, view parts could be in different view modules and let the classes be organized in a more manageable and maintainable way.
 
 ## Implementation
 We can create a reference to the submodule we want to show by using the generic `Reference<T>` method in the parent module. Then this reference is used inside the markup in the parent module using the techniques discussed in [markup customisation](https://www.msharp.co.uk/#/how-to/stylingAndCSS/markupCustomisation) topic.
@@ -206,9 +206,9 @@ public class NodesView : GenericModule
 Here, `GetRootNodes` method is a static method created in domain logic for populating all the root nodes from the database.
 
 ```csharp
-   partial class Node
-   {
-        public static Task<IEnumerable<Node>> GetRootNodes() => 
-            Database.Of<Node>().Where(n => n.ParentId == null).GetList();
-    }
+partial class Node
+{
+    public static Task<IEnumerable<Node>> GetRootNodes() => 
+        Database.Of<Node>().Where(n => n.ParentId == null).GetList();
+}
 ```
