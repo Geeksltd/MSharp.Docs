@@ -88,7 +88,7 @@ public class FormParent : FormModule<Domain.AnEntity>
 }
 ```
 
-## Static Reference hierarchy
+## Static referenced module hierarchy
 You can have nested modules to form a hierarchy with multiple levels of module references similarly. For example for 2 levels of nesting we can create the following structure:
 
 ```csharp
@@ -132,7 +132,7 @@ public class ViewChild1 : GenericModule
     }
 }
 ```
-The `ViewChild2` is a simple class without the module reference.
+The `ViewChild2` is a simple class without any module reference.
 ```csharp
 public class ViewChild2 : GenericModule
 {
@@ -143,4 +143,68 @@ public class ViewChild2 : GenericModule
     }
 }
 ```
-This kind of structure is useful for creating complex layout structure statically because the references are all known at compile time.
+This kind of structure is useful for creating complex layout structure statically because the references are all known at the compile-time.
+
+## Dynamic referenced module hierarchy
+For dynamic hierarchical data that the number and level are unknown at the compile-time, we should tweak the markup and code a little more to make it work. 
+
+For example, consider the `Node` class presented [here](https://www.msharp.co.uk/#/how-to/types/hierarchy?id=implementation) which has `children` and `Parent` association properties of the same type. We can create the following view module to show each node and its children:
+
+```csharp
+public class NodeView : ViewModule<Domain.Node>
+{
+    public NodeView()
+    {
+        IsViewComponent();
+        Reference<NodeView>();
+        HeaderText("@info.Item.Name");
+        ViewModelProperty<List<NodeView>>("ChildrenViews");
+        MarkupWrapper(@"
+            <div>
+                [#MODULE#]
+                <div>
+                @foreach (var view in Model.ChildrenViews)
+                {
+                    <div>@(await Component.InvokeAsync<NodeView>(view))</div>
+                }
+                </div>
+            </div>
+        ");
+        OnPreBinding("setting child views")
+                .Code(@"info.ChildrenViews = await info.Item.Children.GetList().Select(n => new vm.NodeView() { Item = n }).ToList();");
+    }
+}
+```
+In this code, all the children are populated in the markup using direct invocation instead of using the reference to the `Refrerence<T>` because of the dynamic nature of the data. The `Refrerence<T>` is only used for resolving the type and namespace.
+
+With this view module, we can create the following view module to populate all the parent nodes using the `NodeView`.
+
+```csharp
+public class NodesView : GenericModule
+{
+    public NodesView()
+    {
+        Reference<NodeView>();
+        ViewModelProperty<List<NodeView>>("NodeViews");
+        Markup(@"
+            <div>
+            @foreach (var view in Model.NodeViews)
+            {
+                <div>@(await Component.InvokeAsync<NodeView>(view))</div>
+            }
+            </div>
+        ");
+        OnPreBinding("setting NodeViews")
+                .Code(@"info.NodeViews = await Node.GetRootNodes().Select(n => new vm.NodeView() { Item = n }).ToList();");
+    }
+}
+```
+Here, `GetRootNodes` method is a static method created in domain logic for populating all the root nodes from the database.
+
+```csharp
+   partial class Node
+   {
+        public static Task<IEnumerable<Node>> GetRootNodes() => 
+            Database.Of<Node>().Where(n => n.ParentId == null).GetList();
+    }
+```
