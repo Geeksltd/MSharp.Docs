@@ -216,3 +216,43 @@ partial class Node
         Database.Of<Node>().Where(n => n.ParentId == null).GetList();
 }
 ```
+
+## Module referenced inside a list
+You can have module references to be used inside lists. They can be created for each list item by using `UsedPerItem` method on the object returned by the `Reference<T>`.
+
+Two common scenarios for using this pattern are nested lists and custom form per list item.
+
+### Nested list
+Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README).  We may want to change the `AgenciesList` so that a new column be added to show the `BookingsList` for that agency nested inside the list for each row. This column can be added using a custom column.
+
+```csharp
+public class AgenciesList : ListModule<Domain.Agency>
+{
+    public AgenciesList()
+    {
+        //...
+        var view = Reference<BookingsList>().UsedPerItem();
+        CustomColumn()
+            .LabelText("Bookings")
+            .DisplayExpression(view.Ref);
+        OnPostBound("setting agencies for each row")
+            .Code("listItem.BookingsListInfo.Agency = item;")
+            .PerListItem();
+    }
+}
+```
+Here `UsedPerItem` and `PerListItem` is used because we have different references for each row. The template for `BookingsList` is placed inside the column by using `DisplayExpression(view.Ref)`. After doing this, the code for `BookingsList` should be changed a little because the agency is no longer coming from the request parameters.
+
+```csharp
+public class BookingsList : ListModule<Domain.Booking>
+{
+    public BookingsList()
+    {
+        HeaderText("@info.Agency.Name 's bookings");
+        //...
+        ViewModelProperty("Agency", "Agency").RetainInPost();
+        //...
+    }
+}
+```
+Here, the `RetainInPost` method is used to retain the state of the ViewModel property in the post requests.
