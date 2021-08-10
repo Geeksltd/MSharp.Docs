@@ -75,7 +75,8 @@ public class FormParent : FormModule<Domain.AnEntity>
 {
     public FormParent()
     {
-        var view = Reference<ViewChild>();
+        var view1 = Reference<ViewChild>().ViewModelName("ViewInfo1");
+        var view2 = Reference<ViewChild>().ViewModelName("ViewInfo2");
         ViewModelProperty<ViewChild>("ViewInfo1");
         ViewModelProperty<ViewChild>("ViewInfo2");
         OnPreBinding("setting child viewes data")
@@ -83,8 +84,8 @@ public class FormParent : FormModule<Domain.AnEntity>
                         info.ViewInfo2 = new vm.ViewChild() { Prop1 = ""value2""};" );
         MarkupWrapper($@"
             <div>
-                {view.ViewModelName("ViewInfo1").Ref}
-                {view.ViewModelName("ViewInfo2").Ref}
+                {view1.Ref}
+                {view2.Ref}
                 [#MODULE#]
             </div>
         ");
@@ -180,7 +181,7 @@ public class NodeView : ViewModule<Domain.Node>
     }
 }
 ```
-In this code, all the children are populated in the markup using direct invocation instead of using the reference to the `Refrerence<T>` because of the dynamic nature of the data. 
+In this code, all the children are populated in the markup using direct invocation instead of using the reference to the `Refrerence<T>` because the module can't reference itself. For doing this, we have used `NodeView` as a view component.
 
 With this view module, we can create the following view module to populate all the root nodes using the `NodeView`.
 
@@ -189,14 +190,14 @@ public class RootNodesView : GenericModule
 {
     public RootNodesView()
     {
-        Reference<NodeView>();
+        var nodeView = Reference<NodeView>();
         ViewModelProperty<List<NodeView>>("NodeViews");
-        Markup(@"
+        Markup($@"
             <div>
             @foreach (var view in Model.NodeViews)
-            {
-                <div>@(await Component.InvokeAsync<NodeView>(view))</div>
-            }
+            {{
+                <div>{nodeView.GetRef("view")}</div>
+            }}
             </div>
         ");
         OnPreBinding("setting NodeViews")
@@ -206,7 +207,7 @@ public class RootNodesView : GenericModule
     }
 }
 ```
-Here, `GetRootNodes` method is a static method created in domain logic for populating all the root nodes from the database. The `Refrerence<T>` methid is only used for resolving the type and namespace.
+Here, `GetRootNodes` method is a static method created in the domain logic for populating all the root nodes from the database. The `Reference<T>` method is only used for resolving the type and namespace.
 
 ```csharp
 partial class Node
