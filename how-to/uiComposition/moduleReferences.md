@@ -79,7 +79,7 @@ public class FormParent : FormModule<Domain.AnEntity>
         var view2 = Reference<ViewChild>().ViewModelName("ViewInfo2");
         ViewModelProperty<ViewChild>("ViewInfo1");
         ViewModelProperty<ViewChild>("ViewInfo2");
-        OnPreBinding("setting child viewes data")
+        OnPreBinding("setting child views data")
                 .Code(@"info.ViewInfo1 = new vm.ViewChild() { Prop1 = ""value1""};
                         info.ViewInfo2 = new vm.ViewChild() { Prop1 = ""value2""};" );
         MarkupWrapper($@"
