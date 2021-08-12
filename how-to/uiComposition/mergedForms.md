@@ -19,9 +19,9 @@ public class PropertyForm : FormModule<Domain.Property>
         //...
         MergedForm(x => x.MainAddress, s =>
         {
-            s.Field(x => x.AddressLine1);
-            s.Field(x => x.Town);
-            s.Field(x => x.Postcode);
+            s.field.AddressLine1();
+            s.field.Town();
+            s.field.Postcode();
         });
     }
 }
