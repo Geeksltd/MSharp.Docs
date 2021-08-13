@@ -217,8 +217,8 @@ partial class Node
 }
 ```
 
-## Module referenced inside a list
-You can have module references to be used inside lists. They can be created for each list item by using `UsedPerItem` method on the object returned by the `Reference<T>`.
+## Module reference inside a list
+You can have module references for using inside lists. They can be created for each list item by using `UsedPerItem` method on the object returned by the `Reference<T>`.
 
 Two common scenarios for using this pattern are nested lists and custom form per list item.
 
@@ -256,3 +256,37 @@ public class BookingsList : ListModule<Domain.Booking>
 }
 ```
 Here, the `RetainInPost` method is used to retain the state of the ViewModel property in the post requests.
+
+### Custom form per list item
+Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README).  We may want to change the `AgenciesList` to embed a full form module inside each list item of the list module. In that case, each row in the list module should show an instance of the `AgencyForm`. The steps are similar to the nested list example above.
+
+```csharp
+public class AgenciesList : ListModule<Domain.Agency>
+{
+    public AgenciesList()
+    {
+        //...
+        var view = Reference<AgencyForm>()
+            .UsedPerItem()
+            .Prefix("c#:item.ID.ToString()");
+        CustomColumn()
+            .LabelText("Agencies")
+            .DisplayExpression(view.Ref);
+        OnPostBound("setting items")
+            .Code("listItem.AgencyFormInfo.Agency = item;")
+            .PerListItem();
+    }
+}
+```
+The code for `AgencyForm` Should define the ViewModel property that has been set in the list module and change the form data source to this property.
+```csharp
+public class AgencyForm : FormModule<Domain.Agency>
+{
+    public AgencyForm()
+    {
+        //...
+        ViewModelProperty("Agency", "Agency").RetainInPost();
+        DataSource("info.Agency");
+    }
+}
+```
