@@ -218,12 +218,12 @@ partial class Node
 ```
 
 ## Module reference inside a list
-You can have module references for using inside lists. They can be created for each list item by using `UsedPerItem` method on the object returned by the `Reference<T>`.
+You may want to have a module reference for showing another module inside a list. The list should show different instances of the referenced module for each row in the list. The module reference for this purpose can be created by using the `UsedPerItem` method on the object returned by the `Reference<T>`.
 
 Two common scenarios for using this pattern are nested lists and custom form per list item.
 
 ### Nested list
-Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README).  We may want to change the `AgenciesList` so that a new column be added to show the `BookingsList` for that agency nested inside the list for each row. This column can be added using a custom column.
+Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README). You may want to change the `AgenciesList` so that a new column be added to show the `BookingsList` for that agency nested inside the list for each row. This column can be added using a custom column.
 
 ```csharp
 public class AgenciesList : ListModule<Domain.Agency>
@@ -258,7 +258,7 @@ public class BookingsList : ListModule<Domain.Booking>
 Here, the `RetainInPost` method is used to retain the state of the ViewModel property in the post requests.
 
 ### Custom form per list item
-Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README).  We may want to change the `AgenciesList` to embed a full form module inside each list item of the list module. In that case, each row in the list module should show an instance of the `AgencyForm`. The steps are similar to the nested list example above.
+Consider the example in [this page](https://www.msharp.co.uk/#/../Tutorials/10/README). You may want to change the `AgenciesList` to embed a full form module inside each list item of the list module. In that case, each row in the list module should show an instance of the `AgencyForm`. The steps are similar to the nested list example above.
 
 ```csharp
 public class AgenciesList : ListModule<Domain.Agency>
