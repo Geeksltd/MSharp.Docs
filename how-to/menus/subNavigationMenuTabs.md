@@ -39,18 +39,15 @@ public class MainMenu : MenuModule
         IsViewComponent().UlCssClass("nav flex-column");
         RootCssClass("sidebar-menu");
 
-        Item("Contacts")
-                .OnClick(x => x.Go<ContactPage>());
+        Item("Home")
+            .OnClick(x => x.Go<HomePage>());
 
-            Item("Home")
-                .OnClick(x => x.Go<HomePage>());
+        Item("Task")
+            .OnClick(x => x.Go<TaskPage>());
 
-            Item("Task")
-                .OnClick(x => x.Go<TaskPage>());
-
-            Item("Project")
-                .OnClick(x => x.Go<ProjectPage>());
-            //...
+        Item("Project")
+            .OnClick(x => x.Go<ProjectPage>());
+        //...
     }
 }
 ```
