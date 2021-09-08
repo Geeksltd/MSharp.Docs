@@ -10,34 +10,34 @@ M# has a `StartUpBehaviour` attribute in Lists that you can utilize to set the p
 
 `OnStart` can have the following values:
 
-- `LoadList`: List will be populated based on the specified data source. This is the default startup behaviour, so in this case, you can skip the entire attribute.
-- `AutoSearch`: List will be populated based on the specified data source but the data source will be filtered based on the search elements default set values.
-- `WaitForSearch`: List will not be populated unless a postback happens on the page.
+- `LoadList`: The list will be populated based on the specified data source. This is the default startup behaviour, so in this case, you can skip the entire attribute.
+- `AutoSearch`: The list will be populated based on the specified data source but the data source will be filtered based on the search elements default set values.
+- `WaitForSearch`: The list will not be populated unless a postback happens on the page.
 
-### Examles
-For example, you display product catalogues with options to filter products. You need to display products based on the default set filters e.g. Most Reviewed, Most Rated etc. In this case, you can use the `AutoSearch` option to automatically filter the result set initially. When the list is shown for the first time, only the most rated product catalogues are shown.
+### Examples
+For example, you display product catalogues with the option to filter the products. You need to display products based on the default set filters e.g. Most Reviewed, Most Rated etc. In this case, you can use the `AutoSearch` option to automatically filter the result set initially. When the list is shown for the first time, only the most rated product catalogues are shown.
 
 ```csharp
 public ProductCataloguesList()
 {
     StartUpBehaviour(OnStart.AutoSearch);
 
-    Search(x => x.Filter).Control(ControlType.HorizontalRadioButtons).DefaultValueExpression("MostRated");
+    search.Filter().AsRadioButtons(Arrange.Horizontal).DefaultValueExpression("MostRated");
 
     SearchButton("Search").OnClick(x => x.Reload());
 
     //...
 }
 ```
-
-As another example, you need to display a batch of payments which needs to be verified at the month-end which has a huge number of records. Showing all the results is not desired here. In this case, you can use `WaitForSearch` to display only the records which need to be managed by their status. Initially, the list will be empty till the client select the status and press the `Search` button.
+Note that in this code, `search.Filter().AsRadioButtons(Arrange.Horizontal)` is used instead of `Search(x => x.Filter).Control(ControlType.HorizontalRadioButtons)` as a shortcut syntax. Methods used here are extension methods created by M#.
+As another example, you need to display a batch of payments that need to be verified at the month-end which has a huge number of records. Showing all the results is not desired here. In this case, you can use `WaitForSearch` to display only the records which need to be managed by their status. Initially, the list will be empty till the client select the status and press the `Search` button.
 
 ```csharp
 public PaymentsList()
 {
     StartUpBehaviour(OnStart.WaitForSearch);
 
-    Search(x => x.Status).Control(ControlType.DropdownList);
+    search.Status().AsDropDown();
 
     SearchButton("Search").OnClick(x => x.Reload());
 
