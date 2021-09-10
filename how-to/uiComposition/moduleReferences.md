@@ -206,7 +206,7 @@ public class RootNodesView : GenericModule
     }
 }
 ```
-Here, `GetRootNodes` method is a static method created in the domain logic for populating all the root nodes from the database. The `Reference<T>` method is only used for resolving the type and namespace.
+Here, `GetRootNodes` method is a static method created in the domain logic for populating all the root nodes from the database.
 
 ```csharp
 partial class Node
