@@ -151,7 +151,7 @@ public class ViewChild2 : GenericModule
 This kind of structure is useful for creating complex layout structure statically because the references are all known at the compile-time.
 
 ## Dynamic referenced module hierarchy
-For dynamic hierarchical data that the number and level are unknown at the compile-time, we should tweak the markup and code a little more to make it work. 
+For dynamic hierarchical data that the number and level of module nesting are not known at the compile-time, we should tweak the markup and code a little more to make it work. 
 
 For example, consider the `Node` class presented [here](https://www.msharp.co.uk/#/how-to/types/hierarchy?id=implementation) which has `children` and `Parent` association properties of the same type. We can create the following view module to show each node and its children:
 
