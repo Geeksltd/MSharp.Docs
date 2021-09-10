@@ -41,7 +41,6 @@ When you have a module (e.g. `ViewChild`) referenced inside another module named
 
 When `ViewChild` is view component, the ViewModel property is not generated and should be defined. In this case, the code for configuring the `ViewChild` from the parent module will be as follows:
 
-IsViewComponent
 ```csharp
 public class FormParent : FormModule<Domain.AnEntity>
 {
