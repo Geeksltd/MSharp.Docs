@@ -282,3 +282,4 @@
   - [VS Extensions](Basics/VSIX.md)
   - [CLI](Basics/CLI.md)
   - [Tips](Basics/Tips.md)
+  - [Change log](Basics/changeLog.md)
