@@ -201,6 +201,7 @@
 
 - How-to: Javascript
   - [Javascript lifecycle](how-to/javascript/javascriptLifecycle.md)
+  - [Calling API from javascript](how-to/javascript/callingApiFromJavascript.md)
   - Custom initialization script
   - [Script to run on Button click](how-to/javascript/scriptOnButtonClick.md)
 
