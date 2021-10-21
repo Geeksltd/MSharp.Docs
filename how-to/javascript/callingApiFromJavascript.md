@@ -56,9 +56,7 @@ Sometimes it is needed to inspect individual AJAX requests to help diagnose a pr
 
 You can now see the AJAX requests as shown in the following picture:
 
-<p align="center">
-  <img src="images/chrome-xhr.png">
-</p>
+![Chrome AJAX](images/chrome-xhr.png)
 
 Click on an individual request to see the request details. You can find a similar tool in other browsers.
 
