@@ -4,9 +4,11 @@
 
 You want to know the JavaScript scope level and its implication on running JavaScript code on your M# pages.
 
-### JavaScript Scope
+## Overview
+For understanding the scope level, we should consider the following topics.
+### JavaScript Scopes
 Scope refers to language rules regarding when a variable can be referenced or assigned. The scope is also used to
-determine the accessibility of variables and functions to other callers. In JavaScript, we have 3 scopes: the global scope, the function scope and the block scope.
+determine the accessibility of variables and functions to other callers. In JavaScript, we have 3 scopes: the global scope, the function scope and the block scope. More info can be found [here](https://www.w3schools.com/js/js_scope.asp).
 
 ### Why should we care?
 With the use of script files and third-party libraries in M# based solutions, we often encounter the problem of polluted global namespaces, causing name collision between components in the global namespace. Therefore, we need a way to organize blocks of code so that variables, objects, and classes are uniquely identified. It is also another reason why we categorize views in the form of modules in M#.
@@ -28,7 +30,8 @@ Modules are declarative; the relationships between modules are specified in term
 
 In TypeScript, any file containing a top-level import or export is considered a module. Conversely, a file without any top-level import or export declarations is treated as a script whose contents are available in the global scope (and therefore to modules as well).
 
-So by using the TypeScript code like the following code and using the generated JavaScript file in the M# module we can resolve the scope problem.
+## Solution
+Based on the discussion above, by using the TypeScript code like the following code and using the generated JavaScript file in the M# module we can resolve the scope problem.
 
 ```typescript
 import AppPage from "../AppPage"
@@ -41,4 +44,15 @@ export default class ClassName {
     //...
 }
 ```
- 
+ The generated JavaScript code for the above code use the function scope and remove any chance for the name conflict.
+```javascript
+define(["require", "exports"], function (require, exports) {
+    Object.defineProperty(exports, "__esModule", { value: true });
+    class ClassName {
+        static run() {
+            //...
+        }
+        //...
+    }
+});
+```
