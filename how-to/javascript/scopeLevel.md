@@ -19,14 +19,12 @@ For example, let's consider an example that what will happen when the scope is n
 
 In this diagram, the function `x` added in script2 has a name conflict with the function in script1 added at the root level. By adding script2, this function is replaced with the function in script1, so the functionality of script1 would not be as expected.
 
-This small detail can become crucial as our M# project grows in size and complexity. Luckily by using TypeScript's Modules this problem can be solved easily.
+This small detail can become crucial as our M# project grows in size and complexity.
 
 ### Modules in TypeScript
 Starting with ECMAScript 2015, JavaScript has a concept of modules and TypeScript has shared this concept.
 
 Modules are executed within their own scope, not in the global scope; this means that variables, functions, classes, etc. declared in a module are not visible outside the module unless they are explicitly exported using one of the export forms. Conversely, to consume a variable, function, class, interface, etc. exported from a different module, it has to be imported using one of the import forms.
-
-Modules are declarative; the relationships between modules are specified in terms of imports and exports at the file level. Modules import one another using a module loader. At runtime, the module loader (using RequireJS) is responsible for locating and executing all dependencies of a module before executing it. 
 
 In TypeScript, any file containing a top-level import or export is considered a module. Conversely, a file without any top-level import or export declarations is treated as a script whose contents are available in the global scope (and therefore to modules as well).
 
@@ -44,7 +42,7 @@ export default class ClassName {
     //...
 }
 ```
- The generated JavaScript code for the above code use the function scope and remove any chance for the name conflict.
+ The generated JavaScript code for the above code uses the function scope thus leaving no chance for the name conflict.
 ```javascript
 define(["require", "exports"], function (require, exports) {
     Object.defineProperty(exports, "__esModule", { value: true });
