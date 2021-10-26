@@ -203,7 +203,7 @@
   - [Javascript lifecycle](how-to/javascript/javascriptLifecycle.md)
   - [Calling API from javascript](how-to/javascript/callingApiFromJavascript.md)
   - Custom initialization script
-  - [Script to run on Button click](how-to/javascript/scriptOnButtonClick.md)
+  - [Running a script on an event](how-to/javascript/eventScript.md)
   - [Scope level](how-to/javascript/scopeLevel.md)
 
 - How-to: Security
