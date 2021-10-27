@@ -205,6 +205,7 @@
   - [Custom initialization script](how-to/javascript/customInitializationScript.md)
   - [Running a script on an event](how-to/javascript/eventScript.md)
   - [Scope level](how-to/javascript/scopeLevel.md)
+  - [Adding library](how-to/javascript/addingLibrary.md)
 
 - How-to: Security
 
