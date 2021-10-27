@@ -54,12 +54,45 @@ public class SomePage : RootPage
 M# will generate this code:
 
 ```csharp
-public class SomePage : RootPage
+[NonAction, OnBound]
+public async Task OnBound(vm.EventSourcesList info)
 {
-    public SomePage()
-    {
-        JavaScript(JavascriptModule.Absolute("scripts/myScript.js"), "run()");
-        //...
-    }
+    JavaScript(JavascriptModule.Absolute("scripts/myScript.js"), "run()");
+    //...
 }
 ```
+
+## Server-side vs client-side
+Using this method, JavaScript code is registered on the server-side. Then on the client-side, it will get added as a task to a hidden field named `Startup.Actions` along with other M# generated tasks and form an array of Javascript instructions as a JSON array. 
+```html
+<form data-module="ClientsList" method="get" action="@Url.Current()" data-redirect="ajax">
+   @Html.StartupActionsJson()
+    <!-- ... -->
+</form>
+```
+In this code `StartupActionsJson` method is defined in Olive as follows:
+```csharp
+public static IHtmlContent StartupActionsJson(this IHtmlHelper @this)
+{
+    if (!@this.Request().IsAjaxPost()) return null;
+    var startupActions = @this.GetActionsJson().ToString().Unless("[]");
+    if (startupActions.HasValue())
+    {
+        @this.ClearActionsJson();
+        return @this.Hidden("Startup.Actions", startupActions);
+    }
+    return HtmlString.Empty;
+}
+```
+
+Those instructions are executed one by one in **olivePage.ts** in MvcJs library, which is inherited by **appPage.ts**.
+```typescript
+protected onViewChanged() 
+{
+    const standardAction = this.getService<StandardAction>(Services.StandardAction);
+    standardAction.runStartup(container, trigger, "PreInit");
+    //...
+}
+```
+
+Each task can be scheduled for either `PreInit` or `Init` (default) stage. `PreInit` tasks run before the `initialize` method, and Init tasks after.
