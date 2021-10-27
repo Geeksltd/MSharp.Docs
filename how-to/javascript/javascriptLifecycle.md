@@ -11,7 +11,7 @@ Olive and MvcJs are two libraries referenced in the M#-base applications that ar
 
 The diagram below shows various stages in the lifecycle.
 
-![JavaScript lifecycle](images/JavaScriptLifecycle.png)
+![JavaScript lifecycle](images/JavascriptLifecycle.png)
 
 
 ### Layout
