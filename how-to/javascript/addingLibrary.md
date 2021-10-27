@@ -17,7 +17,7 @@ Sometimes your modules may need some 3rd-party libraries or dependencies. You wa
 }
 ```
 
-By doing this, Visual Studio will automatically download the packages. After adding libraries, then use this code:
+By doing this, Visual Studio will automatically download the packages. After adding libraries, then you can use this code:
 
 ```csharp
 public class SomePage : RootPage
@@ -26,20 +26,20 @@ public class SomePage : RootPage
     {
         OnBound("JS dependency")
             .Code("var module = JavascriptModule.Absolute(\"scripts/myScript.js\")" +
-                ".Add(JavascriptDependency.Absolute(\"lib/fullcalendar/dist/chart.js\"));" +
+                ".Add(JavascriptDependency.Absolute(\"lib/chart/dist/chart.js\"));" +
                 "JavaScript(module);");
         //...
     }
 }
 ```
-M# will generate this code:
+M# will generate this code in the controller:
 ```csharp
 [NonAction, OnBound]
 public async Task OnBound(vm.EventSourcesList info)
 {
     // JS dependency
     var module = JavascriptModule.Absolute("scripts/myScript.js")
-        .Add(JavascriptDependency.Absolute("lib/fullcalendar/dist/chart.js")); 
+        .Add(JavascriptDependency.Absolute("lib/chart/dist/chart.js")); 
 	
     JavaScript(module);
     //...
