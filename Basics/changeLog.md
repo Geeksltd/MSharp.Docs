@@ -2,12 +2,12 @@
 ### 5.2.XXX
 #### 5.2.209 (4 November  2021): Pangloin page model
  
-"Added a feature in M# to generate page model for all elements in UI for a project for being used in Pangolin test cases in order to:
+Added a feature in M# to generate page model for all elements in UI for a project for being used in Pangolin test cases in order to:
 - Quicker to write pangolin tests
 - Cleaner and more reliable tests
 - Faster end results due to compile time checking
 - More enjoyable to write and change
-- Enables instantaneous test coverage report to know which application pages and modules are not touched by the tests"
+- Enables instantaneous test coverage report to know which application pages and modules are not touched by the tests
 
 #### 5.2.209 (25 October  2021): Bug fix
  
