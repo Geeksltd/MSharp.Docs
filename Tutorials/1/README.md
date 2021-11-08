@@ -117,36 +117,55 @@ namespace Domain
     
             await CreateContentBlocks();
             await CreateAdmin();
-            await CreateCategory();
+            await CreateCategoriesAndContacts();
         }
     
-        async Task CreateCategory()
+        async Task CreateCategoriesAndContacts()
         {
+            var family = await AddCategory("Family");
+            var friends = await AddCategory("Friends");
+            var business = await AddCategory("Business");
+            var other = await AddCategory("Other");
     
-            await Create(new Category
-            {
-                Name = "Family"
-            });
-            await Create(new Category
-            {
-                Name = "Friends"
-            });
-            await Create(new Category
-            {
-                Name = "Business"
-            });
-            await Create(new Category
-            {
-                Name = "Other"
-            });
+            await AddContact(friends.ID, "Oliver", "Jones", "020 8549 1245", "oliver@jones.com");
+            await AddContact(friends.ID, "Daniel", "Williams", "084 5264 8548","daniel@williams.com");
+            await AddContact(friends.ID, "Thomas", "Davies", "020 7569 3254","thomas@davis.com");
+            await AddContact(family.ID, "Harry", "Evans", "0127 7786 5314","harry@evans.com");
+            await AddContact(family.ID, "Jack", "Roberts", "079 8556 7059","jack@roberts.com");
+            await AddContact(family.ID, "Samuel", "Morgan", "0800 6325 978","samuel@morgan.com");
+            await AddContact(business.ID, "James", "Edwards", "0109 6455 2135","james@edwards.com");
+            await AddContact(business.ID, "Alexander", "Smith", "078 9563 2157","alexander@smith.com");
+            await AddContact(business.ID, "Charlie", "Phillips", "0203 6654 162","charlie@phillips.com");
+            await AddContact(other.ID, "Emma", "Richards", "020 8549 1245","emma@richards.com");
+            await AddContact(other.ID, "Andrew", "Richards", "020 9587 8765","andrew@richards.com");
     
+        }
+        //Modify AddContact method:
+        private Task<Contact> AddContact(Guid categoryId, string firstName, string lastName, string tel, string email)
+        {
+            return Create(new Contact
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Tel = tel,
+                Email = email,
+                CategoryId = categoryId
+            });
+        }
+        //AddCategory method:
+        private Task<Category> AddCategory(string name)
+        {
+            return Create(new Category
+            {
+                Name = name
+            });
         }
         //Other blocks of code
     }
 }
 ```
 
-As you can see we have added a method with the name of **CreateCategory()** and initiate category value in it.
+As you can see we have changed **CreateContact()** method name to **CreateCategoriesAndContacts()** and initiate categories and contacts in it.
 
 Before moving on to developing the UI let's build the *Domain* project to make sure everything regarding it is fine.
 
