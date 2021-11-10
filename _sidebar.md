@@ -192,7 +192,7 @@
   - [PDF generation](how-to/misc/pdfGeneration.md)
   - Page start-up logic
   - Custom module initialization
-  - Custom methods in controller
+  - [Custom methods in the controller](how-to/misc/customMethodsInController.md)
   - [Custom ViewModel properties](how-to/misc/customViewModelProperties.md)
   - [Scheduled tasks](how-to/misc/scheduledTasks.md)
   - [Sending email notifications](how-to/misc/sendingEmailNotifications.md)
