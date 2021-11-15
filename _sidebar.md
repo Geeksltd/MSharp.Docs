@@ -182,7 +182,7 @@
   - [Module boxes](how-to/uiComposition/moduleBoxes.md)
 
 - How-to: Styling and CSS
-  - Standard vs custom css
+  - [Standard vs custom CSS](how-to/stylingAndCSS/standardvsCustomCSS.md)
   - [Mark-up customisation](how-to/stylingAndCSS/markupCustomisation.md)
   - [Header text](how-to/stylingAndCSS/headerText.md)
 
