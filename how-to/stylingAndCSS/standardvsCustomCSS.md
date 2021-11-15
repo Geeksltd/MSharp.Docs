@@ -12,9 +12,9 @@ You have 3 choices regarding the website design:
 
 2- You want to change some elements of design and layout in a limited way. You either change the styles from the existing CSS framework or add your CSS library.
 
-3- Your website has a lot of unique UI/UX features and should have its own customized layout and design while ensuring consistency. This approach should be chosen with care as it requires a lot of effort and needs you to have UI/UX designers in your team.
+3- Your website has a lot of unique UI/UX features and should have its own customized layout and design while ensuring consistency. This approach should be chosen with care as it requires a lot of effort and needs having UI/UX designers in your team.
 
-## Supported CSS frameworks
+### Supported CSS frameworks
 M# natively support some common libraries like [Font Awesome](https://fontawesome.com/) and [Bootstarap](https://getbootstrap.com/), so you can use styles and classes from these libraries right away from CSS related methods in the model classes. 
 
 Other libraries can be added as described [here](https://www.msharp.co.uk/#/how-to/javascript/addingLibrary).
