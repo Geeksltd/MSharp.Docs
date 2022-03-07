@@ -58,3 +58,18 @@ public interface IDataProvider
         bool SupportValidationBypassing();
     }
 ```
+
+## Configuration
+You will need to notify the Database engine to use your provider for the types in a given assembly.
+```json
+{
+  // ...
+  "Database": {
+    "Providers": [
+      {
+        "AssemblyName": "Domain.dll",
+        "ProviderFactoryType": "MyDotNetDataProviderFactory"
+      }
+    ]
+  }
+```
