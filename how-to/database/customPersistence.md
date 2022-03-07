@@ -73,3 +73,17 @@ You will need to notify the Database engine to use your provider for the types i
     ]
   }
 ```
+You can also map a specific type rather than the entire assembly:
+```json
+{
+  // ...
+  "Database": {
+    "Providers": [
+      {
+        "AssemblyName": "Domain.dll",
+        "TypeName": "Domain.MyEntity",
+        "ProviderFactoryType": "MyDotNetDataProviderFactory"
+      }
+    ]
+  }
+```
