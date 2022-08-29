@@ -5,7 +5,7 @@
 Make sure you have all of the following installed on your computer:
 
 1. Windows 10
-2. Visual Studio 2019 (Latest build)
+2. Visual Studio 2022 (Latest build)
 3. GIT for Windows ([Install from here](http://gitforwindows.org/))
 3. .NET Core SDK ([Install from here](https://dotnet.microsoft.com/download/dotnet-core/3.1))
 4. NodeJS for Windows ([Install from here](https://nodejs.org/en/download/))

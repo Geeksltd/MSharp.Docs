@@ -6,6 +6,18 @@ TODO: Describe how the development philosophy is, what parts are written as M# c
 
 When you create a new M# ASP.NET Core MVC project you will see the following structure in Visual Studio.
 
+MSharp Explorer 
+
+(click on View > M# Explorer to open MSharp Explorer) 
+
+![Developer Model](OpenMsharpExplorer.png)
+
+Project files on M# Explorer
+
+![Developer Model](ProjectOnMsharpExplorer.png)
+
+Solution Explorer:
+
 ![Solution](https://user-images.githubusercontent.com/1321544/60179565-36b38700-9833-11e9-9a8e-db784ac8313a.png)
 
 The following diagram explains the relationship between these projects, and also how you, as the developer, will interact with these projects:
@@ -15,6 +27,9 @@ The following diagram explains the relationship between these projects, and also
 ## #Model
 
 This is where you define your application entities using the high level M# concept.
+
+![Developer Model](Model.PNG)
+
 An entity represents a real world object which exists in a business domain. In M# development you always start here. Think of it as your database design stage, but at a more conceptual level. Here you declare your business data types and their associations, which will be the foundation of everything else.
 
 >- This project does not reference any other project in your solution.
@@ -44,6 +59,8 @@ M# fully supports Object Oriented development and encourages developers to use a
 
 This is where you define your application UI using the high level M# concept.
 
+![Developer Model](UIView.PNG)
+
 It consists of the following folders:
 
 * **Pages**: Here you will define your application pages as a hierarchy. Each page has a URL, and can host modules.
@@ -59,6 +76,8 @@ NOTE:
 ## Website
 
 This is your ASP.NET Core MVC project. It consists of everything you'd expect any MVC application to have:
+
+![Developer Model](ViewWebsite.PNG)
 
 * Controller and ViewComponent classes (for all pages and modules)
 * View files for layouts (cshtml), pages and modules
