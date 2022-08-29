@@ -28,7 +28,7 @@ The following diagram explains the relationship between these projects, and also
 
 This is where you define your application entities using the high level M# concept.
 
-![Developer Model](Model.PNG)
+![Developer Model](Model.png)
 
 An entity represents a real world object which exists in a business domain. In M# development you always start here. Think of it as your database design stage, but at a more conceptual level. Here you declare your business data types and their associations, which will be the foundation of everything else.
 
@@ -59,7 +59,7 @@ M# fully supports Object Oriented development and encourages developers to use a
 
 This is where you define your application UI using the high level M# concept.
 
-![Developer Model](UIView.PNG)
+![Developer Model](UIView.png)
 
 It consists of the following folders:
 
@@ -77,7 +77,7 @@ NOTE:
 
 This is your ASP.NET Core MVC project. It consists of everything you'd expect any MVC application to have:
 
-![Developer Model](ViewWebsite.PNG)
+![Developer Model](ViewWebsite.png)
 
 * Controller and ViewComponent classes (for all pages and modules)
 * View files for layouts (cshtml), pages and modules
