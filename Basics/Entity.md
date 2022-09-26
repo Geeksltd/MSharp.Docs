@@ -8,13 +8,13 @@ M# fully supports Object Oriented development and encourages developers to use a
 
 ### Adding New Entity
 
-A new entity can be added by right click on your custom folder in **#Model** project and select **Add Entity** from M# context menu as shown below
+A new entity can be added by right click on your custom folder in **#Model** tree project and select **Add Entity** from M# context menu as shown below
 
 !["M# Add Entity"](ConceptsImages/AddEntity.PNG "M# Add Entity")
 
 !["M# Add Entity Form"](ConceptsImages/CreateEntityForm.PNG "M# Add Entity Form ")
 
-### Name
+### Type Name
 
 #### The Name of the Entity
 
@@ -26,7 +26,7 @@ For example: creating the entity shown in above image, M# creates a visual studi
 
 For example: creating an entity name as "Hello world entity" will be converted to "HelloWorldEntity" entity name and "HelloWorldEntities" database table name. Same applies to Properties.
 
-#### Base Type
+#### Inherits from
 
 This property is used when a developer wants to inherit an existing entity type. M# creates a Member entity, which inherits from the "User" entity and also creates "dbo.Members" database table with one to one association on "dbo.Users" database table. This property is also available while editing the entity structure.
 

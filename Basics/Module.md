@@ -6,6 +6,6 @@ Modules encapsulate the actual operation of any page in M#. Module types include
 
 ### Adding a New Module
 
-You can add a new module by right clicking on "Modules" folder in #UI project and selecting your desired module type.
+You can add a new module by right clicking on a created "Page" item in #UI project tree and selecting your desired module type.
 
 !["Add Module"](ConceptsImages/AddModule.PNG "Add Module")
