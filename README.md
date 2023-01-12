@@ -11,6 +11,5 @@ This website provides you with an architectural overview, as well as detailed ex
 To begin, go through the items in the left hand side menu, starting from the top.
 
 
-
 ### Want to contribute to these docs?
 Read our [contribution rules](CONTRIBUTING.md) if you want to participate in improving the M# documentation.
