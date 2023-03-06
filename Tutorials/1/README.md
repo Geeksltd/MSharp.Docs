@@ -39,7 +39,7 @@ This class is part of the M# framework, so at the top of your document you need 
 ```csharp
 using MSharp;
 
-namespace Model
+namespace Domain
 {
     public class Category : EntityType
     {
@@ -60,7 +60,7 @@ In a similar way add another entity type called *Contact* but this time with a s
 ```csharp
 using MSharp;
 
-namespace Model
+namespace Domain
 {
     public class Contact : EntityType
     {
