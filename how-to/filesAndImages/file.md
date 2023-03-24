@@ -148,7 +148,7 @@ public partial class TestResult : GuidEntity
 There are multiple things to note:
 
 - `Blob` is an M# type to represent binary data (blob stands for binary large object)
-- As you see in the comment above the generated property for `blob`, you should add a method in the entitiy's logic for `IsDataVisibleTo(IUser)` for specifying all the users that are allowed to access the file. If you want to anable it for all users, just return `true` in the method.
+- As you see in the comment above the generated property for `blob`, you should add a method in the entitiy's logic for `IsDataVisibleTo(IUser)` for specifying all the users that are allowed to access the file. If you want to enable it for all users, just return `true` in the method.
 - The file uses a backing field and the property unlike other properties which don't have any backing fields
 - `ValidateProperties()` checks to see if the file has any unsafe extensions. That's for security reasons to not allow the user to upload files which can compromise the server.
 - The `Clone()` method clones the file separately and stores the reference of the cloned file in the cloned object because cloning the original object will not clone it deeply with all of the referenced classes in its fields (to learn more see [this](https://stackoverflow.com/questions/184710/what-is-the-difference-between-a-deep-copy-and-a-shallow-copy)).
